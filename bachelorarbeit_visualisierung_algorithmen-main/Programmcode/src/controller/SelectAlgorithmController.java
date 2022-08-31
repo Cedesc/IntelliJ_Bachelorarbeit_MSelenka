@@ -39,7 +39,8 @@ public class SelectAlgorithmController implements Controller, Initializable {
     // creates the table list of all files of the "Algorithms" folder
     public void createList(){
 
-        File folder = new File("src/Algorithms");
+//        File folder = new File("src/Algorithms");
+        File folder = new File("bachelorarbeit_visualisierung_algorithmen-main/Programmcode/src/Algorithms");
         File[] javaFiles = folder.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {

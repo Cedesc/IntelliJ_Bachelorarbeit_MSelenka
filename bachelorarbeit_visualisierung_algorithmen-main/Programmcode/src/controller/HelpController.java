@@ -35,7 +35,9 @@ public class HelpController implements Controller, Initializable {
         try {
             helpText.setStyle("-fx-font-size: 1.5em;");
             File file = null;
-            file = new File("src\\supportClasses\\helpText.txt");
+//            file = new File("src\\supportClasses\\helpText.txt");
+            file = new File("bachelorarbeit_visualisierung_algorithmen-main/Programmcode/src/supportClasses/" +
+                    "helpText.txt");
             Scanner s = new Scanner(file).useDelimiter("<");
             while (s.hasNext()) {
                 if (s.hasNextInt()) { // check if next token is an int
