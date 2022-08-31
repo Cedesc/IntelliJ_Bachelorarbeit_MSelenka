@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="BorderPane" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SelectAlgorithmVisualizationController" >
+
+    <top>
+
+        <AnchorPane fx:id="AnchorPane" >
+
+            <HBox>
+
+                <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
+                <!-- "help" button in top left corner !-->
+                <Button fx:id="helpButton" prefWidth="100.0" onAction="#helpButton" text="Help" AnchorPane.topAnchor="0.0"/>
+
+            </HBox>
+
+        </AnchorPane>
+
+    </top>
+
+    <center>
+
+        <GridPane alignment="CENTER">
+
+            <VBox spacing="100">
+
+                <Label fx:id="textHeader" text="Choose a type of visualization for your algorithm:"/>
+
+                <!-- "step by step" button in the mid center !-->
+                <Button fx:id="stepByStepButton" prefWidth="200" onAction="#stepByStepButton" text="step by step visualization"/>
+
+                <!-- "step by step" button in the mid center !-->
+                <Button fx:id="completeButton" prefWidth="200" onAction="#completeButton" text="complete visualization"/>
+
+            </VBox>
+
+        </GridPane>
+
+    </center>
+
+    <bottom>
+
+        <HBox>
+
+            <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
+            <!-- "back" button in the bottom left corner !-->
+            <HBox alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
+                <Button fx:id="backButton" onAction="#backButton" prefWidth="100.0"
+                        text="Back" GridPane.columnIndex="0" visible="false" />
+            </HBox>
+
+            <!-- "terminate" button in bottom right corner !-->
+            <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
+                <Button fx:id="terminateButton" onAction="#terminateButton" prefWidth="100.0"
+                        text="Terminate" GridPane.columnIndex="2"/>
+            </HBox>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
