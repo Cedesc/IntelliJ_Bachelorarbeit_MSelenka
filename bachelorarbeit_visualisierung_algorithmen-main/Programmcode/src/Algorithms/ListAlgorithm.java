@@ -11,6 +11,7 @@ public class ListAlgorithm extends AbstractAlgorithm {
     public void executeAlgorithm() throws InterruptedException {
         List list = create_List();
         List list2 = create_List();
+
         Variable variable = create_Variable(types.NUMBER);
         variable.setValue(3);
         Variable variable2 = create_Variable(types.NUMBER);
