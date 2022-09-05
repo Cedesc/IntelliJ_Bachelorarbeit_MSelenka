@@ -17,7 +17,7 @@ public class InsertElementList extends ListCommand {
         this.variable = variable;
         this.value = value;
         this.index = index;
-        setCommandString("insert Listlement by Index: value = " + value + " index = " + index);
+        setCommandString("Insert list element by index:  value = "+value+"  index = "+index);
     }
 
     // executes command during visualization

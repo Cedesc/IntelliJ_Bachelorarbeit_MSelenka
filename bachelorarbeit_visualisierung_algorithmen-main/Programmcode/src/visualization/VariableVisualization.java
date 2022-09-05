@@ -37,7 +37,7 @@ public class VariableVisualization{
 
     }
 
-    // sets execut algorithm controller
+    // sets execute algorithm controller
     public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
     }
@@ -63,7 +63,7 @@ public class VariableVisualization{
         generateNode();
     }
 
-    // visualiation of deleting a variable
+    // visualization of deleting a variable
     public void deleteVariable(InfoVariable infoVariable) throws InterruptedException {
         // deletes the variable and the corresponding visualization object from the arrays
         for(int i = 0; i < infoVariables.size(); i++){

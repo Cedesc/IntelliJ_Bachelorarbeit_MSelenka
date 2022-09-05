@@ -14,7 +14,7 @@ public class InsertElementArray extends ArrayCommand {
         this.infoArray = infoArray;
         this.index = index;
         this.value = value;
-        setCommandString("Insert Arrayelement: index = "+index+" value = "+ value);
+        setCommandString("Insert array element:  index = "+index+"  value = "+value);
     }
 
     // execute command during visualization

@@ -15,7 +15,7 @@ public class DeleteList extends ListCommand {
     public DeleteList(InfoList list){
         this.list = list;
         this.values = list.getListValues();
-        setCommandString("delete List");
+        setCommandString("Delete list");
     }
 
     // executes command during visualization

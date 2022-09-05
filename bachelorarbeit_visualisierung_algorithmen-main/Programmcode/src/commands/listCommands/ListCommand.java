@@ -4,7 +4,7 @@ import commands.Command;
 import datastructures.InfoList;
 
 public abstract class ListCommand extends Command {
-    // exists ao the model can differtiate between the datastructures the command is operating on
+    // exists so the model can differentiate between the data structures the command is operating on
 
 
     // returns the infoList the command is operating on

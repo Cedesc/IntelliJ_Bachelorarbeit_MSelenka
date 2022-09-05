@@ -18,7 +18,7 @@ public class SwapElementsByIndexArray extends ArrayCommand {
         this.index2 = index2;
         this.value1 = value1;
         this.value2 = value2;
-        setCommandString("Swap Arrayelements by Index: index 1 = "+index1+" value 1 = "+ value1+ "index 2 = "+index2+" value 2 = "+ value2);
+        setCommandString("Swap array elements by index:  index1 = "+index1+"  value1 = "+value1+"  index2 = "+index2+"  value2 = "+value2);
     }
 
     // execute command during visualization

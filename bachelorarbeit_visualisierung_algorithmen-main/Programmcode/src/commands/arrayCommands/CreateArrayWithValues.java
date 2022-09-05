@@ -17,7 +17,7 @@ public class CreateArrayWithValues extends ArrayCommand {
         this.type = type;
         this.length = length;
         this.values = values;
-        setCommandString("Create Array with values :"+ this.values.toString() +"length: "+this.length + " type : "+this.type);
+        setCommandString("Create array with  values :"+this.values.toString()+"  length: "+this.length+"  type : "+this.type);
     }
 
     // execute command during visualization

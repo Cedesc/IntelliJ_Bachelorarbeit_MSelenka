@@ -17,7 +17,7 @@ public class GetIndexByElementList extends ListCommand {
         this.variable = variable;
         this.value = value;
         this.index = index;
-        setCommandString("get Listindex by Element: value = " + value + " index = " + index);
+        setCommandString("Get list index by element:  value = "+value+"  index = "+index);
     }
 
     // executes command during visualization

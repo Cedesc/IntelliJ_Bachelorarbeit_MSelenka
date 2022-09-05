@@ -58,7 +58,7 @@ public class InfoArray extends AbstractDatastructure {
 
     // creates the array with given values
     // not called directly from user
-    // called from Array class if initial values should be added by initialization, from "deletArray" and "createArrayWithValues" command
+    // called from Array class if initial values should be added by initialization, from "deleteArray" and "createArrayWithValues" command
     public void createArrayWithValues(types type, int length, Object[] values) throws InterruptedException {
         if (length < 1 && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'createArray' :\nParameter length < 1.");
@@ -73,7 +73,7 @@ public class InfoArray extends AbstractDatastructure {
         }
     }
 
-    // inserts a new value with an given index to the array
+    // inserts a new value with a given index to the array
     public void insertElement(int index, Object value) throws InterruptedException {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'insertElement' of an array :\nIndex out of bound.");
@@ -86,13 +86,13 @@ public class InfoArray extends AbstractDatastructure {
         }
         else {
             if (this.algorithm.getErrorString().equals("")){
-                this.algorithm.setErrorString("Error function 'insertElement' of an array :\nValue not same Type as Arrayelements.");
+                this.algorithm.setErrorString("Error function 'insertElement' of an array :\nValue not same Type as array elements.");
             }
 
         }
     }
 
-    // returns the value of the array by an given index
+    // returns the value of the array by a given index
     public Object getElementByIndex(int index) {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'getElementByIndex' of an array :\nIndex out of bound.");
@@ -103,7 +103,7 @@ public class InfoArray extends AbstractDatastructure {
     // returns the index by a given value
     public int getIndexByValue(Object value){
         if (!sameType(value) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'getIndexByValue' of an array :\nValue not same type as Arrayelements.");
+            this.algorithm.setErrorString("Error function 'getIndexByValue' of an array :\nValue not same type as array elements.");
         }
         if (!this.array.contains(value) && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'getIndexByValue' of an array :\nArray doesn't contain value.");
@@ -125,7 +125,7 @@ public class InfoArray extends AbstractDatastructure {
         return this.array.size();
     }
 
-    // sets a new value to the element of an given index
+    // sets a new value to the element of a given index
     public void setElement(int index, Object newValue) throws InterruptedException {
         if (sameType(newValue)){
             this.array.set(index, newValue);
@@ -139,7 +139,7 @@ public class InfoArray extends AbstractDatastructure {
             }
             else {
                 if (this.algorithm.getErrorString().equals("")){
-                    this.algorithm.setErrorString("Error function 'setElement' of an array :\nValue not same type as Arrayelements.");
+                    this.algorithm.setErrorString("Error function 'setElement' of an array :\nValue not same type as array elements.");
                 }
             }
 
@@ -169,7 +169,7 @@ public class InfoArray extends AbstractDatastructure {
         }
     }
 
-    // deletes the element of the array by an given index
+    // deletes the element of the array by a given index
     public void deleteElementByIndex(int index) throws InterruptedException {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'deleteElementByIndex' of an array :\nIndex out of bound.");
@@ -186,7 +186,7 @@ public class InfoArray extends AbstractDatastructure {
             this.algorithm.setErrorString("Error function 'deleteElementByValue' of an array :\nArray doesn't contain value.");
         }
         if (!sameType(value) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'deleteElementByValue' of an array :\nValue not same Type as Arrayelements.");
+            this.algorithm.setErrorString("Error function 'deleteElementByValue' of an array :\nValue not same Type as array elements.");
         }
         if (this.arrayVisualization != null){
             int index = this.array.indexOf(value);

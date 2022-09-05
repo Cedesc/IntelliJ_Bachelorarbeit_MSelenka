@@ -61,7 +61,7 @@ public class List extends AbstractDatastructure {
     }
 
     // for deleting a variable element of a list by a given value
-    // fails if the list does'nt contain the value
+    // fails if the list doesn't contain the value
     // deletes the first element of the list if the list contains a duplicate of the value
     // creates "deleteElementByValue" command
     public void deleteElementByValue(Object value) throws InterruptedException {
@@ -106,7 +106,7 @@ public class List extends AbstractDatastructure {
         return index;
     }
 
-    // returns the Variable of a list by an given index
+    // returns the Variable of a list by a given index
     // creates "getElementByIndex" command
     public Variable getElementByIndex(int index){
         Variable memVar = this.infoList.getElement(index);

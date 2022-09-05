@@ -102,7 +102,7 @@ public class SelectAlgorithmController implements Controller, Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             Stage stage = (Stage) helpButton.getScene().getWindow();
             String errorText = this.parentViewModel.setSelectedItem(this.selectedItem);
-            // errorText is the return value of the algorithm, if it is empty the algorithm is well defined without errors
+            // errorText is the return value of the algorithm, if it is empty the algorithm is well-defined without errors
             if (!errorText.equals("")){
                 Parent errorView = fxmlLoader.load(getClass().getResource("../views/ErrorView.fxml").openStream());
                 ErrorController errorController = (ErrorController) fxmlLoader.getController();
@@ -116,7 +116,7 @@ public class SelectAlgorithmController implements Controller, Initializable {
                 stage.setWidth(prevWidth);
             }
             else {
-                // algorithm has at least one error an the first error is presented in the error-view
+                // algorithm has at least one error and the first error is presented in the error-view
                 this.notSelectedLabel.setVisible(false);
                 Parent selectAlgorithmVisualizationView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmVisualizationView.fxml").openStream());
                 SelectAlgorithmVisualizationController selectAlgorithmVisualizationController = (SelectAlgorithmVisualizationController) fxmlLoader.getController();

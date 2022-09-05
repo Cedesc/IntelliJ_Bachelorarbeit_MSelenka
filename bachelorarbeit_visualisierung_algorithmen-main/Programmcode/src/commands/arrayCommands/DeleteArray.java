@@ -17,7 +17,7 @@ public class DeleteArray extends ArrayCommand {
         infoArray.deleteArray();
         this.infoArray = infoArray;
         this.type = infoArray.getType();
-        setCommandString("Delete Array");
+        setCommandString("Delete array");
     }
 
     // execute command during visualization

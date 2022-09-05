@@ -34,7 +34,7 @@ public abstract class AbstractAlgorithm {
         return this.errorString;
     }
 
-    // appends current copmmand list
+    // appends current command list
     public void appendCommandOrder(Command command){
         this.commandOrder.add(command);
     }
@@ -80,7 +80,7 @@ public abstract class AbstractAlgorithm {
     // create Array
     public Array create_Array(types type, int length){
         if (length <= 0){
-            this.errorString = "Error create Array: length <= 0.\nlength should be positiv and greater 0.";
+            this.errorString = "Error create Array: length <= 0.\nlength should be positive and greater 0.";
             return null;
         }
         if (this.arrayBuilder == null){
@@ -94,7 +94,7 @@ public abstract class AbstractAlgorithm {
     // create Array with values
     public Array create_ArrayWithValues(types type, int length, Object[] values) throws InterruptedException {
         if (length <= 0){
-            this.errorString = "Error create Array: length <= 0.\nlength should be positiv and greater 0.";
+            this.errorString = "Error create Array: length <= 0.\nlength should be positive and greater 0.";
             return null;
         }
         if (values.length == 0){

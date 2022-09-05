@@ -8,11 +8,11 @@ public class GetSizeArray extends ArrayCommand {
     private InfoArray infoArray;
     private int size;
 
-    // construcotr
+    // constructor
     public GetSizeArray(InfoArray infoArray, int size){
         this.infoArray = infoArray;
         this.size = size;
-        setCommandString("Get Array size: size = "+size);
+        setCommandString("Get array size:  size = "+size);
     }
 
     // execute command during visualization

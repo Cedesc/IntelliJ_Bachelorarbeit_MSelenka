@@ -17,7 +17,7 @@ public class DeleteElementList extends ListCommand {
         this.variable = variable;
         this.value = value;
         this.index = index;
-        setCommandString("delete Listelement by Variable: value = " + value + " index = " + index);
+        setCommandString("Delete list element by variable:  value = "+value+"  index = "+index);
     }
 
     // executes command during visualization

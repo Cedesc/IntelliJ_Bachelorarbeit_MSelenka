@@ -14,7 +14,7 @@ public class GetValueByIndexArray extends ArrayCommand {
         this.infoArray = infoArray;
         this.index = index;
         this.value = value;
-        setCommandString("Get Arrayelement Value by Index: index = "+index+" value = "+ value);
+        setCommandString("Get array element value by index:  index = "+index+"  value = "+ value);
     }
 
     // execute command during visualization

@@ -19,7 +19,7 @@ public class SetElementList extends ListCommand {
         this.newValue = value;
         this.index = index;
         this.oldValue = infoList.getElement(index).getValue();
-        setCommandString("set Listelement by Variable: old value = " + value + " new value = " +newValue+" index = " + index);
+        setCommandString("Set list element by variable:  old value = "+value+"  new value = "+newValue+"  index = "+index);
     }
 
     // executes command during visualization

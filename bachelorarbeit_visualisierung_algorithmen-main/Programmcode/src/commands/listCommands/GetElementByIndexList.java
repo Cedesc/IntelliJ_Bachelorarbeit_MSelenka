@@ -17,7 +17,7 @@ public class GetElementByIndexList extends ListCommand {
         this.variable = variable;
         this.value = value;
         this.index = index;
-        setCommandString("get Listelement by Index: value = " + value + " index = " + index);
+        setCommandString("Get list element by index:  value = "+value+"  index = "+index);
     }
 
     // executes command during visualization

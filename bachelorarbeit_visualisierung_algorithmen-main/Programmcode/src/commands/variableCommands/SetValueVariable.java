@@ -14,7 +14,7 @@ public class SetValueVariable extends VariableCommand {
         this.newValue = newValue;
         this.oldValue = var.getValue();
         this.variable = var;
-        setCommandString("Set Variable old value : " + oldValue.toString() +" new value : " + newValue.toString());
+        setCommandString("Set Variable:  old value = "+oldValue.toString()+" new value = "+newValue.toString());
     }
 
     public void exeCommand() throws InterruptedException {

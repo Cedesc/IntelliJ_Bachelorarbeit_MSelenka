@@ -12,7 +12,7 @@ public class GetSizeList extends ListCommand {
     public GetSizeList(InfoList infoList, int size){
         this.infoList = infoList;
         this.size = size;
-        setCommandString("Get size List : " + this.size);
+        setCommandString("Get list size: "+this.size);
     }
 
     // executes command during visualization

@@ -15,7 +15,7 @@ public class CreateVariable extends VariableCommand {
         this.variable = variable;
         this.typ = typ;
         this.initialValue = value;
-        setCommandString("Create Variable value : " + value + "type: " + this.typ);
+        setCommandString("Create variable:  value = "+value+"  type = "+this.typ);
     }
 
     public void exeCommand() throws InterruptedException {

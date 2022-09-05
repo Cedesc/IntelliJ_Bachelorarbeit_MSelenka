@@ -11,12 +11,12 @@ public class GetValueVariable extends VariableCommand {
     // constructor
     public GetValueVariable(InfoVariable var){
         if (var.getValue() == null){
-            System.out.println("Variable : " + var + " deleted");
+            System.out.println("Variable : "+var+" deleted");
         }
         else {
             this.variable = var;
             this.value = var.getValue();
-            setCommandString("Get Variable value : " + var.getValue());
+            setCommandString("Get Variable value : "+var.getValue());
         }
     }
 

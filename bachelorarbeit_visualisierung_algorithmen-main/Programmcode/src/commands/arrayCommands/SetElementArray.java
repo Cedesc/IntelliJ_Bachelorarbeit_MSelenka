@@ -16,7 +16,7 @@ public class SetElementArray extends ArrayCommand {
         this.index = index;
         this.newValue = value;
         this.oldValue = infoArray.getElementByIndex(index);
-        setCommandString("Set Arrayelement by Index: index = "+index+" old value = "+ oldValue + " new value = " + newValue);
+        setCommandString("Set array element by index:  index = "+index+"  old value = "+oldValue+"  new value = "+newValue);
     }
 
     // execute command during visualzation

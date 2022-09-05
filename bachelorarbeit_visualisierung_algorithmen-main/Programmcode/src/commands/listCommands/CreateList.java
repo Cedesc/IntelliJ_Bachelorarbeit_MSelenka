@@ -13,7 +13,7 @@ public class CreateList extends ListCommand {
         this.newList = list;
         this.oldList = list;
         this.oldList.deleteList();
-        setCommandString("create List");
+        setCommandString("Create list");
     }
 
     // execute command during visualization

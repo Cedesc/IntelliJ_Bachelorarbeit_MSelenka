@@ -81,7 +81,7 @@ public class ArrayVisualization {
                 hBox.getChildren().add(stackPane2);
             }
             else{
-                // the rest oof the array will be empty, but the visualiation objects will  be created
+                // the rest oof the array will be empty, but the visualization objects will  be created
                 Text value = new Text("");
                 value.setId("textValue"+String.valueOf(this.infoArrays.size())+"."+String.valueOf(i));
                 StackPane stackPane2 = new StackPane(stackPane, value);
@@ -119,7 +119,7 @@ public class ArrayVisualization {
         // new
 
 
-        // get visualiation text of inde 2
+        // get visualization text of index 2
         FilteredList element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index2)));
         StackPane stackPaneElement2 = (StackPane) element2.get(0);
         ObservableList<Node> stackPaneChildren2 = stackPaneElement2.getChildren();
@@ -135,7 +135,7 @@ public class ArrayVisualization {
         generateNode();
     }
 
-    // visualization of deleteing an array element by an given index
+    // visualization of deleting an array element by a given index
     public void deleteElement(InfoArray infoArray, int index) throws InterruptedException{
         // get visualization text of the index
         int indexArray = this.infoArrays.indexOf(infoArray);
@@ -165,7 +165,7 @@ public class ArrayVisualization {
     }
 
     // deletes the infoArray from the list
-    // deltes the related Node-Object from the Array as well
+    // deletes the related Node-Object from the Array as well
     public void deleteArray(InfoArray infoArray) throws InterruptedException{
         int index = this.infoArrays.indexOf(infoArray);
         this.infoArrays.remove(index);
@@ -173,7 +173,7 @@ public class ArrayVisualization {
         generateNode();
     }
 
-    // visualization of inserting an array element with an given index and value
+    // visualization of inserting an array element with a given index and value
     public void insertElement(InfoArray infoArray, int index, Object value) throws InterruptedException{
         // sets the Box
         int indexArray = this.infoArrays.indexOf(infoArray);
@@ -204,7 +204,7 @@ public class ArrayVisualization {
 
     }
 
-    // visualization of setting an array element with an given index and value
+    // visualization of setting an array element with a given index and value
     public void setElement(InfoArray infoArray, int index, Object value) throws InterruptedException{
         int indexArray = this.infoArrays.indexOf(infoArray);
         VBox vBoxArray = this.layoutArray.get(indexArray);

@@ -40,7 +40,7 @@ public class ParentViewModel extends Application {
         launch(args);
     }
 
-    // visual start of the programm
+    // visual start of the program
     // sets the window and the first view: selection of the algorithm
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -267,7 +267,7 @@ public class ParentViewModel extends Application {
     }
 
     // sets the visualization type
-    // called from select algorithm visualization controller and starts the complete visualization of the command list if choosen
+    // called from select algorithm visualization controller and starts the complete visualization of the command list if chosen
     public void setVisualization(boolean completeVisualization) throws InterruptedException {
         this.currentCommandCount = 0;
         if (completeVisualization){
@@ -276,7 +276,7 @@ public class ParentViewModel extends Application {
     }
 
     // sets the used execute algorithm controller
-    // rests also all datastructure visualizations if they are set (so the visualization can start over again)
+    // rests also all data structure visualizations if they are set (so the visualization can start over again)
     // called by the execute algorithm controller
     public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) throws InterruptedException {
         this.executeAlgorithmController = executeAlgorithmController;
@@ -293,7 +293,7 @@ public class ParentViewModel extends Application {
         }
     }
 
-    // resets all datastructure visualizations if they are set
+    // resets all data structure visualizations if they are set
     // called by the execute algorithm controller if the visualization should start over again
     // also called by the select algorithm visualization controller if it is changed after a visualization was already represented
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController){

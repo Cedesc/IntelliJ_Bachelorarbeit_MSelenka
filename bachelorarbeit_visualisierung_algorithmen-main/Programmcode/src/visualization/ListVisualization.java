@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class ListVisualization{
 
-    // saves all relavant data
+    // saves all relevant data
     private ExecuteAlgorithmController executeAlgorithmController;
     private ArrayList<VBox> layoutList = new ArrayList<VBox>();
     private ArrayList<InfoList> infoLists = new ArrayList<InfoList>();
@@ -56,7 +56,7 @@ public class ListVisualization{
     public void setElement(InfoList infoList, Variable variable, Object object) {
     }
 
-    // visualiation of deleting a list
+    // visualization of deleting a list
     public void deleteList(InfoList infoList) {
         for (int i = 0; i < this.infoLists.size(); i++){
             if (this.infoLists.get(i).equals(infoList)){

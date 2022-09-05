@@ -14,7 +14,7 @@ public class DeleteElementByValueArray extends ArrayCommand {
         this.infoArray = infoArray;
         this.index = index;
         this.value = value;
-        setCommandString("Delete Arrayelement by Value: index = "+index+" value = "+ value);
+        setCommandString("Delete array element by value:  index = "+index+"  value = "+ value);
     }
 
     // executes command during visualization

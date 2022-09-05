@@ -34,7 +34,7 @@ public class Variable extends AbstractDatastructure {
         this.infoVariable.deleteVariable();
     }
 
-    // for setting an new value of the variable
+    // for setting a new value of the variable
     // creates "setValueVariable" command
     public void setValue(Object value) throws InterruptedException {
         SetValueVariable SetValueVariable = new SetValueVariable(this.infoVariable, value, this.infoVariable.getValue());

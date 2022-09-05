@@ -1,6 +1,6 @@
 REQUIREMENTS FOR THE ALGORITHM FILE:
 
-            - Algorithms needs to be saved in an Java-file. Save it inside a file with the ending .java (e.g. exampleAlgorithm.java)
+            - Algorithms needs to be saved in a Java-file. Save it inside a file with the ending .java (e.g. exampleAlgorithm.java)
             - Store the files inside the folder "Algorithms"
               The relative path of the folder is */Programmcode/src/Algorithms (* is the folder the program is stored in)
             - The algorithm file needs some package and imports at the beginning of it to fully function.
@@ -12,7 +12,7 @@ REQUIREMENTS FOR THE ALGORITHM FILE:
                 import supportClasses.types;
 
             - The algorithm function is wrapped inside a class which inherits from the "AbstractAlgorithm" class.
-              Inside it the function executeAlgorithm needs to be overriden. Therefore copy and past the following as well:
+              Inside it the function executeAlgorithm needs to be overridden. Therefore, copy and past the following as well:
 
                 public class ArrayAlgorithm extends AbstractAlgorithm {
                         @Override
@@ -21,18 +21,18 @@ REQUIREMENTS FOR THE ALGORITHM FILE:
                     }
                 }
 
-            - the preparation is now finished and you can start to write the functions inside the executeAlgorithm function.
+            - the preparation is now finished, and you can start to write the functions inside the executeAlgorithm function.
 
-DATASTRCUTRES :
+DATASTRUCTURES :
 
             The following datastructures are wrapped inside the program and are free to use.
-            Remember only to use the prepared datastructures of the programm and not the ones from java.
+            Remember only to use the prepared datastructures of the program and not the ones from java.
             In other case the visualization of different datastructures will NOT be visualized.
-            Whenever the types- type is requested it needs to be one of the following enum types:
+            Whenever the types-type is requested it needs to be one of the following enum types:
 
-            - types.BOOLEAN for a boolean type
-            - types.NUMBER for a number type
-            - types.STRING for a string/text type
+            - "types.BOOLEAN" for a boolean type
+            - "types.NUMBER" for a number type
+            - "types.STRING" for a string/text type
 
 
 VARIABLE :
@@ -41,19 +41,19 @@ VARIABLE :
                     Parameter : types-type (see datastructures)
                     Return : Variable-Object
                     Description : Created with the direct function call in your algorithm class: Variable var = create_Variable(type);
-                                it will return an Object of the Variable type. Therefor save it in an corresponding named object.
+                                it will return an Object of the Variable type. Therefor save it in a corresponding named object.
 
             Hint : The rest of the functions are called from the variable itself. E.g. a variable called var and a function f is called by var.f;
 
             - getVariableType() :
                     Parameter:
                     Return: types-type (see datastructures)
-                    Description : Returns the enum types, which represents the variable type it is casted at the construction
+                    Description : Returns the enum types, which represents the variable type it is cast at the construction
 
             - getValue() :
                     Parameter :
                     Return : value of type Object
-                    Description : Returns the obect value of its variable. Type of the value is alsways an object, but can be cast to a its value type but regular Java type conversion.
+                    Description : Returns the object value of its variable. Type of the value is always an object, but can be cast to a value type but regular Java type conversion.
 
             - setValue(Object value) :
                     Parameter :
@@ -74,7 +74,7 @@ ARRAY :
                             length : positive integer, which represent the length of the array
                     Return : Array-Object
                     Description : created with the direct function call in your algorithm class: Array array = create_Array(type, length);
-                                it will return an Object of the Array type. Therefor save it in an corresponding named object.
+                                it will return an Object of the Array type. Therefor save it in a corresponding named object.
 
             - create _ArrayWithValues(types type, int length, Object[] values) :
                     Parameter :
@@ -83,7 +83,7 @@ ARRAY :
                             values : an Object list with initial values for the array (see Java List)
                     Return : Array-Object with initial values
                     Description : created with the direct function call in your algorithm class: Array array = create_Array(type, length, values);
-                                it will return an Object of the Array type. Therefor save it in an corresponding named object.
+                                it will return an Object of the Array type. Therefor save it in a corresponding named object.
 
             Hint : The rest of the functions are called from the array itself. E.g. an array called array and a function f is called by array.f;
 
@@ -105,7 +105,7 @@ ARRAY :
                             value : value of type Object which is inserted to the array
                     Return :
                     Description : Inserts the new 'value' Object to the end of the array.
-                                  New position of the 'value' is always array.getSize() (see fucntion getSize()).
+                                  New position of the 'value' is always array.getSize() (see function getSize()).
 
             - deleteElementByIndex(int index) :
                     Parameter :
@@ -142,14 +142,14 @@ ARRAY :
             - getIndexByValue(Object value) :
                     Parameter :
                             value : value of type Object
-                    Return : index position as an positive integer of type int
+                    Return : index position as a positive integer of type int
                     Description : Returns the positive integer of the element of the array if it exists.
                                   If the Array contains duplicates it will always return the first element of it.
 
             - getSize() :
                     Parameter :
-                    Return : length of the array as an positive integer of type int
-                    Description : Returns the size/length of the array as an positive integer.
+                    Return : length of the array as a positive integer of type int
+                    Description : Returns the size/length of the array as a positive integer.
 
 
 LIST :
@@ -163,7 +163,7 @@ LIST :
                     Parameter :
                     Return : List-Object
                     Description : created with the direct function call in your algorithm class: List list = create_List();
-                                  it will return an Object of the List type. Therefor save it in an corresponding named object.
+                                  it will return an Object of the List type. Therefor save it in a corresponding named object.
 
             Hint : The rest of the functions are called from the array itself. E.g. a list called list and a function f is called by list.f;
 
@@ -236,5 +236,5 @@ LIST :
 
             - getSize() :
                 Parameter :
-                Return : length of the list as an positive integer as type int.
-                Description : Returns the size/length of the list as an positive integer.
+                Return : length of the list as a positive integer as type int.
+                Description : Returns the size/length of the list as a positive integer.

@@ -15,7 +15,7 @@ public class CreateArray extends ArrayCommand {
         this.createdArray = infoArray;
         this.type = type;
         this.length = length;
-        setCommandString("Create Array");
+        setCommandString("Create array");
     }
 
     // execute command during visualization

@@ -14,10 +14,10 @@ public class DeleteElementByIndexArray extends ArrayCommand {
         this.infoArray = infoArray;
         this.index = index;
         this.value = value;
-        setCommandString("Delete Arrayelement by Index: index = "+index+" value = "+ value);
+        setCommandString("Delete array element by index:  index = "+index+"  value = "+value);
     }
 
-    // execute command during viusalization
+    // execute command during visualization
     public void exeCommand() throws InterruptedException {
         this.infoArray.deleteElementByIndex(index);
     }

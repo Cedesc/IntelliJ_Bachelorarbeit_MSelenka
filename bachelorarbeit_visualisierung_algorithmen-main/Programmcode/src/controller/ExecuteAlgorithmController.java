@@ -32,7 +32,7 @@ public class ExecuteAlgorithmController implements Controller{
     private ParentViewModel parentViewModel;
     private boolean completeVisualization;
 
-    // intertaction with the "terminate" button, shuts down the application
+    // interaction with the "terminate" button, shuts down the application
     public void terminateButton(ActionEvent actionEvent) {
         Platform.exit();
         System.exit(0);
@@ -72,7 +72,7 @@ public class ExecuteAlgorithmController implements Controller{
     // called if the visualization is terminated
     public void terminateVisualization(){
         if (!this.completeVisualization){
-            // set the "step forward" and "step back" button to unvisible if the visualization type is "step by step"
+            // set the "step forward" and "step back" button invisible if the visualization type is "step by step"
             this.stepBackButton.setVisible(false);
             this.stepForwardButton.setVisible(false);
         }
@@ -81,7 +81,7 @@ public class ExecuteAlgorithmController implements Controller{
     }
 
     // interaction with the "repeat visualization" button
-    // resets all visulization and repeats it with the same parameter
+    // resets all visualization and repeats it with the same parameter
     public void repeatButton(ActionEvent actionEvent) throws IOException, InterruptedException {
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -147,7 +147,7 @@ public class ExecuteAlgorithmController implements Controller{
         Boolean edited = false;
         for (int i = 0; i < this.algorithmVisualization.getChildren().size(); i++) {
             if (this.algorithmVisualization.getChildren().get(i).getId().equals(newId)) {
-                // executed if the visualization and datastrucutre alreday exists and only needs to update its node
+                // executed if the visualization and data structure already exists and only needs to update its node
                 this.algorithmVisualization.getChildren().set(i, node);
                 edited = true;
                 break;
@@ -155,7 +155,7 @@ public class ExecuteAlgorithmController implements Controller{
 
         }
         if (!edited) {
-            // executed if a new datastructure is added to the visualization
+            // executed if a new data structure is added to the visualization
             this.algorithmVisualization.getChildren().add(node);
         }
 
@@ -172,12 +172,12 @@ public class ExecuteAlgorithmController implements Controller{
         }
     }
 
-    // sets the "step forward" button to unvisible, called if the last command of the algorithm is executed
+    // sets the "step forward" button to invisible, called if the last command of the algorithm is executed
     public void setStepForwardButtonUnvisible(){
         this.stepForwardButton.setVisible(false);
     }
 
-    // sets the "step back" button to unvisible, called it the and set if the first command of the algorithm should be executed
+    // sets the "step back" button to invisible, called it the and set if the first command of the algorithm should be executed
     public void setStepBackButtonUnvisible(){
         this.stepBackButton.setVisible(false);
     }

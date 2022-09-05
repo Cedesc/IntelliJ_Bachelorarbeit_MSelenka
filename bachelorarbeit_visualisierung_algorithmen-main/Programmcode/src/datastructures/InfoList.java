@@ -53,7 +53,7 @@ public class InfoList extends AbstractDatastructure {
         }
     }
 
-    // get variable element of the list by an given index
+    // get variable element of the list by a given index
     // returns null if index is out of bound
     public Variable getElement(int index){
         if ((index < 0 || index > this.list.size())){
@@ -79,7 +79,7 @@ public class InfoList extends AbstractDatastructure {
         return -1;
     }
 
-    // returns the variable element of the list by an given index
+    // returns the variable element of the list by a given index
     // returns null if index is out of bound
     public Object getElementIndex(int index){
         if ((index < 0 || index > this.list.size())){
@@ -91,7 +91,7 @@ public class InfoList extends AbstractDatastructure {
         return this.list.get(index).getValue();
     }
 
-    // deletes the whole list, but not the class instance itsef
+    // deletes the whole list, but not the class instance itself
     public void deleteList(){
         if (this.listVisualization != null){
             this.listVisualization.deleteList(this);
@@ -125,7 +125,7 @@ public class InfoList extends AbstractDatastructure {
         return null;
     }
 
-    // returns the index of an given index
+    // returns the index of a given index
     // returns -1 if not contained
     public int searchIndex(Object value){
         for (int i = 0; i < list.size(); i++){
@@ -156,10 +156,10 @@ public class InfoList extends AbstractDatastructure {
         return this.list.size();
     }
 
-    // deletes an element of the list by an given index
+    // deletes an element of the list by a given index
     public void deleteElementByIndex(int index) throws InterruptedException {
         if ((index < 0 || index > this.list.size()) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'deleteElementByInde' of a list :\nIndex is out of bound.");
+            this.algorithm.setErrorString("Error function 'deleteElementByIndex' of a list :\nIndex is out of bound.");
         }
         if (this.listVisualization != null){
             this.listVisualization.deleteElement(this, this.list.get(index));
@@ -167,7 +167,7 @@ public class InfoList extends AbstractDatastructure {
         this.list.remove(index);
     }
 
-    // deletes an element of the list by an given value
+    // deletes an element of the list by a given value
     public void deleteElementByValue(Object value) throws InterruptedException {
         boolean contained = false;
         for (int i = 0; i < this.list.size(); i++){

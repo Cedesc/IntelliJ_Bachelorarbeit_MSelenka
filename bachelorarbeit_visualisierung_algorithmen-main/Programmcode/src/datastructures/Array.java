@@ -14,7 +14,7 @@ public class Array extends AbstractDatastructure {
     private types typ;
     private int length;
 
-    // constructor wihtout initial values
+    // constructor without initial values
     public Array(AbstractAlgorithm AbstractAlgorithm, InfoArray infoArray, types typ, int length){
         this.algorithm = AbstractAlgorithm;
         this.infoArray = infoArray;
@@ -35,8 +35,8 @@ public class Array extends AbstractDatastructure {
         this.algorithm.appendCommandOrder(CreateArrayWithValues);
     }
 
-    // for inserting a new value into the array by an given index
-    public void insertELement(int index, Object value) throws InterruptedException {
+    // for inserting a new value into the array by a given index
+    public void insertElement(int index, Object value) throws InterruptedException {
         InsertElementArray InsertElementArray = new InsertElementArray(this.infoArray, index, value);
         this.infoArray.insertElement(index, value);
         this.algorithm.appendCommandOrder(InsertElementArray);
@@ -65,7 +65,7 @@ public class Array extends AbstractDatastructure {
         this.algorithm.appendCommandOrder(DeleteElementByValueArray);
     }
 
-    // for deleting an element of the array by an given index
+    // for deleting an element of the array by a given index
     public void deleteElementByIndex(int index) throws InterruptedException {
         Object value = this.infoArray.getElementByIndex(index);
         DeleteElementByIndexArray DeleteElementByIndexArray = new DeleteElementByIndexArray(this.infoArray, index, value);
@@ -90,7 +90,7 @@ public class Array extends AbstractDatastructure {
         this.infoArray.swapElementsByIndex(index1, index2, value1, value2);
     }
 
-    // for setting a new value to an element of the array by an given index
+    // for setting a new value to an element of the array by a given index
     public void setElement(int index, Object value) throws InterruptedException {
         SetElementArray SetElementArray = new SetElementArray(this.infoArray, index, value);
         this.algorithm.appendCommandOrder(SetElementArray);
@@ -105,7 +105,7 @@ public class Array extends AbstractDatastructure {
         return index;
     }
 
-    // for returning the value of an element by an given index
+    // for returning the value of an element by a given index
     public Object getValueByIndex(int index){
         Object value = infoArray.getElementByIndex(index);
         GetValueByIndexArray GetValueByIndexArray = new GetValueByIndexArray(this.infoArray, index, value);

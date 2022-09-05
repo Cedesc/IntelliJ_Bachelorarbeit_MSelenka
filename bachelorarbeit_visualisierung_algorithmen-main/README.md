@@ -7,9 +7,9 @@ SYSTEM REQUIREMENTS:
 
 INSTALLATION:
 
-1. Download the Gitlab in your prefered folder.
+1. Download the Gitlab in your preferred folder.
 2. Configure the Project with your preferred IDE (System requirements)
-3. Implement an Algorithm file with the subsequent quirements
+3. Implement an Algorithm file with the subsequent requirements
 4. Put the Algorithm file in the "Algorithms" folder
 5. Execute the Main-Class via IDE in the "model" folder
 6. Follow the instructions and visualize your algorithm
@@ -40,7 +40,7 @@ REQUIREMENTS FOR THE ALGORITHM FILE:
 
             - the preparation is now finished and you can start to write the functions inside the executeAlgorithm function.
 
-DATASTRCUTRES :
+DATASTRUCTURES :
 
             The following datastructures are wrapped inside the program and are free to use.
             Remember only to use the prepared datastructures of the programm and not the ones from java.
@@ -122,7 +122,7 @@ ARRAY :
                             value : value of type Object which is inserted to the array
                     Return :
                     Description : Inserts the new 'value' Object to the end of the array.
-                                  New position of the 'value' is always array.getSize() (see fucntion getSize()).
+                                  New position of the 'value' is always array.getSize() (see function getSize()).
 
             - deleteElementByIndex(int index) :
                     Parameter :
@@ -160,7 +160,7 @@ ARRAY :
                     Parameter :
                             value : value of type Object
                     Return : index position as an positive integer of type int
-                    Description : Returns the positive integer of the element of the array if it exists.
+                    Description : Returns the index position of the element of the array if it exists.
                                   If the Array contains duplicates it will always return the first element of it.
 
             - getSize() :

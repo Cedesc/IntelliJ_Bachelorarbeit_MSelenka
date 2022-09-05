@@ -1,7 +1,7 @@
 package supportClasses;
 
 public class CommandListColumn {
-    // support class for visulization of the used commands in a table view
+    // support class for visualization of the used commands in a table view
 
     private String command;
 

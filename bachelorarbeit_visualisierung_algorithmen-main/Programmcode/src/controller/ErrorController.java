@@ -66,7 +66,7 @@ public class ErrorController implements Initializable,Controller  {
         this.parentViewModel = parentViewModel;
     }
 
-    // interaction of the "change algoithm" Button, next View is the selection of the algoriohtm
+    // interaction of the "change algorithm" Button, next View is the selection of the algorithm
     public void changeAlgorithmButton(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) helpButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
