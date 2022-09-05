@@ -5,6 +5,7 @@ import datastructures.*;
 import supportClasses.types;
 
 public class ArrayAlgorithm extends AbstractAlgorithm {
+
     @Override
     public void executeAlgorithm() throws InterruptedException {
         Array array1 = create_Array(types.NUMBER, 15);
@@ -23,4 +24,5 @@ public class ArrayAlgorithm extends AbstractAlgorithm {
         array1.deleteArray();
 
     }
+
 }

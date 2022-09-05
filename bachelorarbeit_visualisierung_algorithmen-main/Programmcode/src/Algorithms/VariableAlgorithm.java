@@ -5,6 +5,7 @@ import datastructures.Variable;
 import supportClasses.types;
 
 public class VariableAlgorithm extends AbstractAlgorithm {
+
     @Override
     public void executeAlgorithm() throws InterruptedException {
         Variable var1 = create_Variable(types.NUMBER);
@@ -17,4 +18,5 @@ public class VariableAlgorithm extends AbstractAlgorithm {
         var1.deleteVariable();
 
     }
+
 }
