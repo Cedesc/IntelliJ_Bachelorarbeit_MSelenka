@@ -61,8 +61,7 @@ public abstract class AbstractAlgorithm {
             this.variablenBuilder = new VariablenBuilder();
         }
         InfoVariable infoVariable = this.variablenBuilder.createInfoVariable(this, type);
-        Variable variable = this.variablenBuilder.createVariable(this, infoVariable, type);
-        return variable;
+        return this.variablenBuilder.createVariable(this, infoVariable, type);
     }
 
 
@@ -72,8 +71,7 @@ public abstract class AbstractAlgorithm {
             this.listBuilder = new ListBuilder();
         }
         InfoList infoList = this.listBuilder.createInfoList(this);
-        datastructures.List list = this.listBuilder.createList(this, infoList);
-        return list;
+        return this.listBuilder.createList(this, infoList);
     }
 
 
@@ -87,8 +85,7 @@ public abstract class AbstractAlgorithm {
             this.arrayBuilder = new ArrayBuilder();
         }
         InfoArray infoArray = this.arrayBuilder.createInfoArray(this, type, length);
-        Array array = this.arrayBuilder.createArray(this, infoArray, type , length);
-        return array;
+        return this.arrayBuilder.createArray(this, infoArray, type , length);
     }
 
     // create Array with values
@@ -105,8 +102,7 @@ public abstract class AbstractAlgorithm {
             this.arrayBuilder = new ArrayBuilder();
         }
         InfoArray infoArray = this.arrayBuilder.createInfoArray(this, type, length, values);
-        Array array = this.arrayBuilder.createArray(this, infoArray, type , length, values);
-        return array;
+        return this.arrayBuilder.createArray(this, infoArray, type , length, values);
     }
 
     public abstract void executeAlgorithm() throws InterruptedException;
