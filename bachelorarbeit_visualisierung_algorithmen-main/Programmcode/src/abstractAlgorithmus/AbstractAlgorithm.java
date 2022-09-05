@@ -2,6 +2,7 @@ package abstractAlgorithmus;
 
 import builders.ArrayBuilder;
 import builders.ListBuilder;
+import builders.TableBuilder;
 import builders.VariablenBuilder;
 import commands.Command;
 import datastructures.*;
@@ -106,5 +107,25 @@ public abstract class AbstractAlgorithm {
     }
 
     public abstract void executeAlgorithm() throws InterruptedException;
+
+
+
+
+
+    // own test stuff
+
+    public TableBuilder tableBuilder;
+
+    public Table create_Table(types type, int length) {
+        if (length <= 0){
+            this.errorString = "Error create Array: length <= 0.\nlength should be positive and greater 0.";
+            return null;
+        }
+        if (this.tableBuilder == null){
+            this.tableBuilder = new TableBuilder();
+        }
+        InfoTable infoTable = this.tableBuilder.createInfoTable(this, type, length);
+        return this.tableBuilder.createTable(this, infoTable, type , length);
+    }
 
 }

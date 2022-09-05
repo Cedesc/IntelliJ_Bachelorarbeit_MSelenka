@@ -1,9 +1,12 @@
 package model;
 
+import commands.tableCommands.TableCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
+import datastructures.InfoTable;
 import visualization.ArrayVisualization;
 import visualization.ListVisualization;
+import visualization.TableVisualization;
 import visualization.VariableVisualization;
 import abstractAlgorithmus.AbstractAlgorithm;
 import commands.Command;
@@ -33,6 +36,8 @@ public class ParentViewModel extends Application {
     private VariableVisualization variableVisualization;
     private ArrayVisualization arrayVisualization;
     private ListVisualization listVisualization;
+    // OWN TEST TABLE STUFF
+    private TableVisualization tableVisualization;
     private int currentCommandCount;
 
     // Start of the Program
@@ -108,7 +113,23 @@ public class ParentViewModel extends Application {
                 }
                 arrayCommand.exeCommand();
                 break;
+            // OWN TEST TABLE STUFF
+            case "TableCommand":
+                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoTable infoTable = tableCommand.getTable();
+                if (infoTable.getTableVisualization() == null) {
+                    if (this.tableVisualization == null) {
+                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoTable.setTableVisualization(this.tableVisualization);
+                }
+                tableCommand.exeCommand();
+                break;
             default:
+                System.out.println("Warning! Unknown command type!");
                 break;
         }
 
@@ -172,7 +193,23 @@ public class ParentViewModel extends Application {
                 }
                 arrayCommand.backCommand();
                 break;
+            // OWN TEST TABLE STUFF
+            case "TableCommand":
+                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
+                InfoTable infoTable = tableCommand.getTable();
+                if (infoTable.getTableVisualization() == null) {
+                    if (this.tableVisualization == null) {
+                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoTable.setTableVisualization(this.tableVisualization);
+                }
+                tableCommand.backCommand();
+                break;
             default:
+                System.out.println("Warning! Unknown command type!");
                 break;
         }
 
@@ -242,6 +279,7 @@ public class ParentViewModel extends Application {
                     }
                     arrayCommand.exeCommand();
                 default:
+                    System.out.println("Warning! Unknown command type!");
                     break;
             }
             if (i == commandOrder.size()-1){
@@ -276,7 +314,7 @@ public class ParentViewModel extends Application {
     }
 
     // sets the used execute algorithm controller
-    // rests also all data structure visualizations if they are set (so the visualization can start over again)
+    // resets also all data structure visualizations if they are set (so the visualization can start over again)
     // called by the execute algorithm controller
     public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) throws InterruptedException {
         this.executeAlgorithmController = executeAlgorithmController;
@@ -290,6 +328,10 @@ public class ParentViewModel extends Application {
         }
         if (this.arrayVisualization != null) {
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
+        }
+        // OWN TEST TABLE STUFF
+        if (this.tableVisualization != null) {
+            this.tableVisualization.resetVisualization(executeAlgorithmController);
         }
     }
 
@@ -305,6 +347,10 @@ public class ParentViewModel extends Application {
         }
         if (this.arrayVisualization != null){
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
+        }
+        // OWN TEST TABLE STUFF
+        if (this.tableVisualization != null) {
+            this.tableVisualization.resetVisualization(executeAlgorithmController);
         }
     }
 }
