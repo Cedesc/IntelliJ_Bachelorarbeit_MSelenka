@@ -71,7 +71,8 @@ public class ListVisualization{
     // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
     // TODO: 09.09.2022 Das tatsächliche Einfügen des Elements fehlt
     public void insertElement(InfoList infoList, Variable variable, int index) throws InterruptedException {
-        for (int i = 0; i < this.layoutList.size(); i++){
+        int sizeOfLayoutList = layoutList.size();
+        for (int i = 0; i < sizeOfLayoutList; i++){
             if (this.infoLists.get(i).equals(infoList)){
 
                 // Rechteck (für Wert) erstellen
@@ -212,7 +213,7 @@ public class ListVisualization{
         Label label = new Label("Liste "+(this.infoLists.size()));
 
         // Eine vbox mit der zuvor erstellten hbox für die Liste erstellen.
-        // Diese vbox soll alle listen umfassen.
+        // Diese vbox enthält zwei Elemente: das Label und die Liste.
         VBox vBox = new VBox();
         vBox.setId("Content");
         vBox.setSpacing(5);
