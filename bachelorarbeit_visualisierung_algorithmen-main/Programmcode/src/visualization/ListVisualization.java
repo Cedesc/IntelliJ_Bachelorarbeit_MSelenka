@@ -162,7 +162,7 @@ public class ListVisualization{
 
     // visualization of creating a list, creates the first element without a value
     public void createList(InfoList infoList) throws InterruptedException {
-        // todo warum das?
+        // todo ist das das, was bei ListVisualization.insertElement fehlt? Fragwürdig, da das hier createList ist
         this.infoLists.add(infoList);
 
         // Rechteck (für Wert) erstellen
