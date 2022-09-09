@@ -66,72 +66,7 @@ public class ParentViewModel extends Application {
     // called from the execute algorithm controller
     public void exeNextCommand() throws InterruptedException {
         this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount+1);
-        String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
-        switch (currentClassCommand){
-            case "VariableCommand":
-                VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoVariable infoVariable = variableCommand.getVariable();
-                if (infoVariable.getVariableVisualization() == null){
-                    if (this.variableVisualization == null){
-                        this.variableVisualization = new VariableVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoVariable.setVariableVisualization(this.variableVisualization);
-
-                }
-                variableCommand.exeCommand();
-                break;
-            case "ListCommand":
-                ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoList infoList = listCommand.getList();
-                if (infoList.getListVisualization() == null){
-                    if (this.listVisualization == null){
-                        this.listVisualization = new ListVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoList.setListVisualization(this.listVisualization);
-
-                }
-                listCommand.exeCommand();
-                break;
-            case "ArrayCommand":
-                ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoArray infoArray = arrayCommand.getArray();
-                if (infoArray.getArrayVisualization() == null){
-                    if (this.arrayVisualization == null){
-                        this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoArray.setArrayVisualization(this.arrayVisualization);
-
-                }
-                arrayCommand.exeCommand();
-                break;
-            // OWN TEST TABLE STUFF
-            case "TableCommand":
-                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoTable infoTable = tableCommand.getTable();
-                if (infoTable.getTableVisualization() == null) {
-                    if (this.tableVisualization == null) {
-                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoTable.setTableVisualization(this.tableVisualization);
-                }
-                tableCommand.exeCommand();
-                break;
-            default:
-                System.out.println("Warning! Unknown command type!");
-                break;
-        }
+        exeCommand();
 
         if (currentCommandCount == 0){
             this.executeAlgorithmController.setStepBackButtonVisible();
@@ -144,6 +79,7 @@ public class ParentViewModel extends Application {
 
     // inserts the last command, the command reverts itself and changes the visualization in the background
     // called from the execute algorithm controller
+
     public void exePreviousCommand() throws InterruptedException {
         this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount-1);
         String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount-1).getClass().getSuperclass().getSimpleName();
@@ -221,83 +157,88 @@ public class ParentViewModel extends Application {
         }
         this.currentCommandCount -= 1;
     }
-
     // executes the whole command list in the order
     // called if the complete visualization is selected
     // DOES NOT WAIT BETWEEN THE COMMAND!!!! ONLY THE END RESULT OF THE ALGORITHM WILL BE SEEN
+
     public void startVisualization() throws InterruptedException {
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
         for (int i = 0; i < commandOrder.size(); i++){
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-            String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
-            switch (currentClassCommand){
-                case "VariableCommand":
-                    VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                    InfoVariable infoVariable = variableCommand.getVariable();
-                    if (infoVariable.getVariableVisualization() == null){
-                        if (this.variableVisualization == null){
-                            this.variableVisualization = new VariableVisualization(executeAlgorithmController);
-                        }
-                        else {
-                            this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                        }
-                        infoVariable.setVariableVisualization(this.variableVisualization);
-                    }
-                    variableCommand.exeCommand();
-                    break;
-                case "ListCommand":
-                    ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                    InfoList infoList = listCommand.getList();
-                    if (infoList.getListVisualization() == null){
-                        if (this.listVisualization == null){
-                            this.listVisualization = new ListVisualization(executeAlgorithmController);
-                        }
-                        else {
-                            this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                        }
-                        infoList.setListVisualization(this.listVisualization);
-
-                    }
-                    listCommand.exeCommand();
-                    break;
-                case "ArrayCommand":
-                    ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                    InfoArray infoArray = arrayCommand.getArray();
-                    if (infoArray.getArrayVisualization() == null){
-                        if (this.arrayVisualization == null){
-                            this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
-                        }
-                        else {
-                            this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                        }
-                        infoArray.setArrayVisualization(this.arrayVisualization);
-
-                    }
-                    arrayCommand.exeCommand();
-                    break;
-                // OWN TEST TABLE STUFF
-                case "TableCommand":
-                    TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                    InfoTable infoTable = tableCommand.getTable();
-                    if (infoTable.getTableVisualization() == null) {
-                        if (this.tableVisualization == null) {
-                            this.tableVisualization = new TableVisualization(executeAlgorithmController);
-                        }
-                        else {
-                            this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                        }
-                        infoTable.setTableVisualization(this.tableVisualization);
-                    }
-                    tableCommand.exeCommand();
-                    break;
-                default:
-                    System.out.println("Warning! Unknown command type!");
-                    break;
-            }
+            exeCommand();
             if (i == commandOrder.size()-1){
                 this.executeAlgorithmController.terminateVisualization();
             }
             this.currentCommandCount += 1;
+        }
+    }
+
+    private void exeCommand() throws InterruptedException {
+        String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
+        switch (currentClassCommand){
+            case "VariableCommand":
+                VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoVariable infoVariable = variableCommand.getVariable();
+                if (infoVariable.getVariableVisualization() == null){
+                    if (this.variableVisualization == null){
+                        this.variableVisualization = new VariableVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoVariable.setVariableVisualization(this.variableVisualization);
+
+                }
+                variableCommand.exeCommand();
+                break;
+            case "ListCommand":
+                ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoList infoList = listCommand.getList();
+                if (infoList.getListVisualization() == null){
+                    if (this.listVisualization == null){
+                        this.listVisualization = new ListVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoList.setListVisualization(this.listVisualization);
+
+                }
+                listCommand.exeCommand();
+                break;
+            case "ArrayCommand":
+                ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoArray infoArray = arrayCommand.getArray();
+                if (infoArray.getArrayVisualization() == null){
+                    if (this.arrayVisualization == null){
+                        this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoArray.setArrayVisualization(this.arrayVisualization);
+
+                }
+                arrayCommand.exeCommand();
+                break;
+            // OWN TEST TABLE STUFF
+            case "TableCommand":
+                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoTable infoTable = tableCommand.getTable();
+                if (infoTable.getTableVisualization() == null) {
+                    if (this.tableVisualization == null) {
+                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
+                    }
+                    else {
+                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                    }
+                    infoTable.setTableVisualization(this.tableVisualization);
+                }
+                tableCommand.exeCommand();
+                break;
+            default:
+                System.out.println("Warning! Unknown command type!");
+                break;
         }
     }
 
