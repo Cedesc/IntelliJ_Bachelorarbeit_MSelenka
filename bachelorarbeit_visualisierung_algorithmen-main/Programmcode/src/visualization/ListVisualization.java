@@ -68,46 +68,67 @@ public class ListVisualization{
     }
 
     // visualization of inserting an element in the list
+    // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
+    // TODO: 09.09.2022 Das tatsächliche Einfügen des Elements fehlt
     public void insertElement(InfoList infoList, Variable variable, int index) throws InterruptedException {
         for (int i = 0; i < this.layoutList.size(); i++){
             if (this.infoLists.get(i).equals(infoList)){
+
+                // Rechteck (für Wert) erstellen
                 Rectangle rectangleValue = new Rectangle();
                 rectangleValue.setWidth(50);
                 rectangleValue.setHeight(50);
                 rectangleValue.setStroke(Color.BLACK);
                 rectangleValue.setFill(Color.TRANSPARENT);
                 rectangleValue.setStrokeType(StrokeType.OUTSIDE);
+                // Rechteck (für Pfeil) erstellen
                 Rectangle rectanglePointer = new Rectangle();
                 rectanglePointer.setWidth(20);
                 rectanglePointer.setHeight(50);
                 rectanglePointer.setStroke(Color.BLACK);
                 rectanglePointer.setFill(Color.TRANSPARENT);
                 rectanglePointer.setStrokeType(StrokeType.OUTSIDE);
+                // Kreis (Pfeilursprung) erstellen
                 Circle circle = new Circle(rectanglePointer.getX()+10, rectanglePointer.getY()+25, 3);
                 circle.setFill(Color.BLACK);
+                // Stackpane aus Rechteck (für Pfeil) und Kreis (Pfeilursprung) erstellen
                 StackPane pointerStackpane = new StackPane();
                 pointerStackpane.getChildren().addAll(circle,rectanglePointer);
-                StackPane valueStackPane = new StackPane();
+                // Pfeilspitze erstellen
                 Line line = new Line(10, 26, 25, 26);
                 line.setStrokeWidth(2);
                 Line lineUp = new Line(25, 26, 17, 21);
                 lineUp.setStrokeWidth(2);
                 Line lineDown = new Line(25,26, 17, 31);
                 lineDown.setStrokeWidth(2);
+                // Gruppe aus PointerStackpane (Rechteck mit Kreis in der Mitte) und Pfeilspitze erstellen
                 Group pointerGroup = new Group();
                 pointerGroup.getChildren().addAll(pointerStackpane,line, lineUp, lineDown);
+                // Stackpane aus Rechteck (für Wert) erstellen
+                StackPane valueStackPane = new StackPane();
                 valueStackPane.getChildren().addAll(rectangleValue);
+
+                // Eine hbox aus dem Rechteck für den Wert und zuvor erstellten Gruppe erstellen (quasi alles zuvor).
+                // Diese hbox umfasst nur ein Element.
                 HBox firstElement = new HBox();
                 firstElement.setId("0");
                 firstElement.getChildren().addAll(valueStackPane,pointerGroup);
+                // Eine hbox mit der hbox von zuvor erstellen.
+                // Diese hbox soll alle Elemente der Liste umfassen.
                 HBox listElementsHBox = new HBox();
                 listElementsHBox.setId("Elements");
                 listElementsHBox.getChildren().add(firstElement);
+                // Label für Liste erstellen
                 Label label = new Label("Liste "+(this.infoLists.size()));
+
+                // Eine vbox mit der zuvor erstellten hbox für die Liste erstellen.
+                // Diese vbox soll alle listen umfassen.
                 VBox vBox = new VBox();
                 vBox.setId("Content");
                 vBox.setSpacing(5);
                 vBox.getChildren().addAll(label, listElementsHBox);
+
+                // Die letztendliche vbox zur layoutList hinzufügen
                 this.layoutList.add(vBox);
             }
         }
@@ -140,45 +161,66 @@ public class ListVisualization{
 
     // visualization of creating a list, creates the first element without a value
     public void createList(InfoList infoList) throws InterruptedException {
+        // todo warum das?
         this.infoLists.add(infoList);
+
+        // Rechteck (für Wert) erstellen
         Rectangle rectangleValue = new Rectangle();
         rectangleValue.setWidth(50);
         rectangleValue.setHeight(50);
         rectangleValue.setStroke(Color.BLACK);
         rectangleValue.setFill(Color.TRANSPARENT);
         rectangleValue.setStrokeType(StrokeType.OUTSIDE);
+        // Rechteck (für Pfeil) erstellen
         Rectangle rectanglePointer = new Rectangle();
         rectanglePointer.setWidth(20);
         rectanglePointer.setHeight(50);
         rectanglePointer.setStroke(Color.BLACK);
         rectanglePointer.setFill(Color.TRANSPARENT);
         rectanglePointer.setStrokeType(StrokeType.OUTSIDE);
+        // Kreis (Pfeilursprung) erstellen
         Circle circle = new Circle(rectanglePointer.getX()+10, rectanglePointer.getY()+25, 3);
         circle.setFill(Color.BLACK);
+        // Stackpane aus Rechteck (für Pfeil) und Kreis (Pfeilursprung) erstellen
         StackPane pointerStackpane = new StackPane();
         pointerStackpane.getChildren().addAll(circle,rectanglePointer);
-        StackPane valueStackPane = new StackPane();
+        // Pfeilspitze erstellen
         Line line = new Line(10, 26, 25, 26);
         line.setStrokeWidth(2);
         Line lineUp = new Line(25, 26, 17, 21);
         lineUp.setStrokeWidth(2);
         Line lineDown = new Line(25,26, 17, 31);
         lineDown.setStrokeWidth(2);
+        // Gruppe aus PointerStackpane (Rechteck mit Kreis in der Mitte) und Pfeilspitze erstellen
         Group pointerGroup = new Group();
         pointerGroup.getChildren().addAll(pointerStackpane,line, lineUp, lineDown);
+        // Stackpane aus Rechteck (für Wert) erstellen
+        StackPane valueStackPane = new StackPane();
         valueStackPane.getChildren().addAll(rectangleValue);
+
+        // Eine hbox aus dem Rechteck für den Wert und zuvor erstellten Gruppe erstellen (quasi alles zuvor).
+        // Diese hbox umfasst nur ein Element.
         HBox firstElement = new HBox();
         firstElement.setId("0");
         firstElement.getChildren().addAll(valueStackPane,pointerGroup);
+        // Eine hbox mit der hbox von zuvor erstellen.
+        // Diese hbox soll alle Elemente der Liste umfassen.
         HBox listElementsHBox = new HBox();
         listElementsHBox.setId("Elements");
         listElementsHBox.getChildren().add(firstElement);
+        // Label für Liste erstellen
         Label label = new Label("Liste "+(this.infoLists.size()));
+
+        // Eine vbox mit der zuvor erstellten hbox für die Liste erstellen.
+        // Diese vbox soll alle listen umfassen.
         VBox vBox = new VBox();
         vBox.setId("Content");
         vBox.setSpacing(5);
         vBox.getChildren().addAll(label, listElementsHBox);
+
+        // Die letztendliche vbox zur layoutList hinzufügen
         this.layoutList.add(vBox);
+
         generateNode();
     }
 
