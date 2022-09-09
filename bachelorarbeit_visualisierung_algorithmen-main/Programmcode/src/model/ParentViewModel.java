@@ -230,10 +230,7 @@ public class ParentViewModel extends Application {
         Stage stage = (Stage) this.executeAlgorithmController.terminateButton.getScene().getWindow();
         for (int i = 0; i < commandOrder.size(); i++){
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-            String currentClassCommand = commandOrder.get(i).getClass().getSuperclass().getSimpleName();
-            //stage.show();
-            //Thread.sleep(1000);
-            //stage.show();
+            String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
             switch (currentClassCommand){
                 case "VariableCommand":
                     VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
@@ -278,6 +275,7 @@ public class ParentViewModel extends Application {
 
                     }
                     arrayCommand.exeCommand();
+                    break;
                 default:
                     System.out.println("Warning! Unknown command type!");
                     break;
@@ -285,6 +283,7 @@ public class ParentViewModel extends Application {
             if (i == commandOrder.size()-1){
                 this.executeAlgorithmController.terminateVisualization();
             }
+            this.currentCommandCount += 1;
         }
     }
 
