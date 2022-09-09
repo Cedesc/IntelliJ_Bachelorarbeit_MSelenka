@@ -227,7 +227,6 @@ public class ParentViewModel extends Application {
     // DOES NOT WAIT BETWEEN THE COMMAND!!!! ONLY THE END RESULT OF THE ALGORITHM WILL BE SEEN
     public void startVisualization() throws InterruptedException {
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
-        Stage stage = (Stage) this.executeAlgorithmController.terminateButton.getScene().getWindow();
         for (int i = 0; i < commandOrder.size(); i++){
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
             String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
@@ -275,6 +274,21 @@ public class ParentViewModel extends Application {
 
                     }
                     arrayCommand.exeCommand();
+                    break;
+                // OWN TEST TABLE STUFF
+                case "TableCommand":
+                    TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                    InfoTable infoTable = tableCommand.getTable();
+                    if (infoTable.getTableVisualization() == null) {
+                        if (this.tableVisualization == null) {
+                            this.tableVisualization = new TableVisualization(executeAlgorithmController);
+                        }
+                        else {
+                            this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                        }
+                        infoTable.setTableVisualization(this.tableVisualization);
+                    }
+                    tableCommand.exeCommand();
                     break;
                 default:
                     System.out.println("Warning! Unknown command type!");
