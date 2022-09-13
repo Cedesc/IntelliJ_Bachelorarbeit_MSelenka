@@ -17,7 +17,8 @@ import java.util.ArrayList;
 
 public class ArrayVisualization {
 
-    // saves all current using infoArrays and their visualizations also as an array, as well as the used execute algorithm controller
+    // saves all current using infoArrays and their visualizations also as an array, as well as the used execute
+    // algorithm controller
     private ExecuteAlgorithmController executeAlgorithmController;
     private ArrayList<VBox> layoutArray = new ArrayList<VBox>();
     private ArrayList<InfoArray> infoArrays = new ArrayList<InfoArray>();
@@ -129,7 +130,8 @@ public class ArrayVisualization {
         HBox elements = (HBox) vBoxChildren.get(1);
 
         // get visualization text of index 1
-        FilteredList element1 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index1)));
+        FilteredList element1 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                String.valueOf(indexArray)+"."+String.valueOf(index1)));
         StackPane stackPaneElement1 = (StackPane) element1.get(0);
         ObservableList<Node> stackPaneChildren1 = stackPaneElement1.getChildren();
         Text textValue = (Text) stackPaneChildren1.get(1);
@@ -139,7 +141,8 @@ public class ArrayVisualization {
 
 
         // get visualization text of index 2
-        FilteredList element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index2)));
+        FilteredList element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                String.valueOf(indexArray)+"."+String.valueOf(index2)));
         StackPane stackPaneElement2 = (StackPane) element2.get(0);
         ObservableList<Node> stackPaneChildren2 = stackPaneElement2.getChildren();
         Text textValue2 = (Text) stackPaneChildren2.get(1);
@@ -161,7 +164,8 @@ public class ArrayVisualization {
         VBox vBoxArray = this.layoutArray.get(indexArray);
         ObservableList<Node> observableVBoxChildren = vBoxArray.getChildren();
         HBox elements = (HBox) observableVBoxChildren.get(1);
-        FilteredList elementStackpaneFilteredList = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index)));
+        FilteredList elementStackpaneFilteredList = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                String.valueOf(indexArray)+"."+String.valueOf(index)));
         StackPane stackPaneElement = (StackPane) elementStackpaneFilteredList.get(0);
         ObservableList<Node> stackPaneElementChildren = stackPaneElement.getChildren();
         Text textValue = (Text) stackPaneElementChildren.get(1);
@@ -171,7 +175,8 @@ public class ArrayVisualization {
         for (int i = index+1; i < this.infoArrays.get(indexArray).getSize()+1; i++){
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            FilteredList elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(finalI)));
+            FilteredList elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
+                    String.valueOf(indexArray)+"."+String.valueOf(finalI)));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             Text textValueNext = (Text) stackPaneChildrenNext.get(1);
@@ -195,7 +200,7 @@ public class ArrayVisualization {
     // visualization of inserting an array element with a given index and value
     // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
     public void insertElement(InfoArray infoArray, int index, Object value) throws InterruptedException{
-        // todo ???
+        // Bestimmen welcher index das infoArray in den infoArrays hat und anhand dessen an die zugehörige vbox gelangen
         // sets the Box
         int indexArray = this.infoArrays.indexOf(infoArray);
         // Auf die Elemente zugreifen, indem man das zweite Element (also Index 1) von der vbox nimmt, da das erste
@@ -206,7 +211,8 @@ public class ArrayVisualization {
         // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
         // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
         // vielleicht sogar per Indexzugriff das Element finden?
-        FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index)));
+        FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                String.valueOf(indexArray)+"."+String.valueOf(index)));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
         // Der TextValue wird abgespeichert
@@ -222,7 +228,8 @@ public class ArrayVisualization {
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
             // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
-            FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(finalI)));
+            FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
+                    String.valueOf(indexArray)+"."+String.valueOf(finalI)));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             // Der TextValue wird abgespeichert
@@ -245,7 +252,8 @@ public class ArrayVisualization {
         VBox vBoxArray = this.layoutArray.get(indexArray);
         ObservableList<Node> vBoxChildren = vBoxArray.getChildren();
         HBox elements = (HBox) vBoxChildren.get(1);
-        FilteredList element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(index)));
+        FilteredList element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                String.valueOf(indexArray)+"."+String.valueOf(index)));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
         Text textValue = (Text) stackPaneChildren.get(1);
