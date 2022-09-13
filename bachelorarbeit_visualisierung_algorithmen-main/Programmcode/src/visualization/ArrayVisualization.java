@@ -218,14 +218,20 @@ public class ArrayVisualization {
 
         // iterates over the rest of the array and moves all elements one position forward
         for (int i = index+1; i < this.infoArrays.get(indexArray).getSize()+1; i++){
+            // i in Variable speichern, da Parameter für lambda expressions final sein sollten
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
+            // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
             FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+String.valueOf(indexArray)+"."+String.valueOf(finalI)));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
+            // Der TextValue wird abgespeichert
             textValue = (Text) stackPaneChildrenNext.get(1);
+            // Der momentane, später veraltete Wert, wird für später abgespeichert
             String memValueNext = textValue.getText();
+            // Der geschriebene Wert wird überschrieben
             textValue.setText(memValue);
+            // Der nächste Wert wird abgespeichert
             memValue = memValueNext;
         }
 
