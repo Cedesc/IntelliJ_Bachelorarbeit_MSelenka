@@ -167,8 +167,9 @@ public class ExecuteAlgorithmController implements Controller{
             //seqTransition.play();
             Stage stage = (Stage) terminateButton.getScene().getWindow();
             stage.show();
-            Thread.sleep(100);
-            stage.show();
+            // Diese beiden Zeilen haben nichts gebracht und den Code nur verlangsamt durch unnötiges warten
+//            Thread.sleep(100);
+//            stage.show();
         }
     }
 
