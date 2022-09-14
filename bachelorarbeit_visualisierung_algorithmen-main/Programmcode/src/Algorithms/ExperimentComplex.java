@@ -29,6 +29,8 @@ public class ExperimentComplex extends AbstractAlgorithm {
         experiment1.insertElementAtEnd(13);
 
         experiment2.swapElements(1, 0);
+        experiment2.swapElements(2, 0);
+        experiment2.swapElements(1, 2);
 
         experiment1.swapElements(0, 2);
 
