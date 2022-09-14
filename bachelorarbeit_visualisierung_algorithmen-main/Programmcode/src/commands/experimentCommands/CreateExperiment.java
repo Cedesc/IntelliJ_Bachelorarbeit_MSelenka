@@ -13,7 +13,7 @@ public class CreateExperiment extends ExperimentCommand {
         this.createdExperiment = infoExperiment;
         this.type = type;
         this.length = length;
-        setCommandString("Create table");
+        setCommandString("Create experiment");
     }
 
     @Override

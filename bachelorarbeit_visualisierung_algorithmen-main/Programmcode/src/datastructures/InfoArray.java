@@ -228,13 +228,16 @@ public class InfoArray extends AbstractDatastructure {
         if (type.equals(types.NUMBER)){
             return simpleTypeName.equals("Integer") || simpleTypeName.equals("Double") || simpleTypeName.equals("Float");
         }
-        if (type.equals(types.STRING)){
+        else if (type.equals(types.STRING)){
             return simpleTypeName.equals("String") || simpleTypeName.equals("Character");
         }
-        if (type.equals(types.BOOLEAN)){
+        else if (type.equals(types.BOOLEAN)){
             return simpleTypeName.equals("Boolean");
         }
-        return false;
+        else {
+            System.out.println("Warning! Unknown Type!");
+            return false;
+        }
     }
 
 }
