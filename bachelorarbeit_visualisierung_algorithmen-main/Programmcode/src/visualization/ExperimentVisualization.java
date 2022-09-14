@@ -1,8 +1,7 @@
 package visualization;
 
 import controller.ExecuteAlgorithmController;
-import datastructures.InfoArray;
-import datastructures.InfoTable;
+import datastructures.InfoExperiment;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
@@ -15,20 +14,20 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
-public class TableVisualization {
+public class ExperimentVisualization {
 
     private ExecuteAlgorithmController executeAlgorithmController;
-    private ArrayList<VBox> layoutTable = new ArrayList<VBox>();
-    private ArrayList<InfoTable> infoTables = new ArrayList<InfoTable>();
+    private ArrayList<VBox> layoutExperiment = new ArrayList<VBox>();
+    private ArrayList<InfoExperiment> infoExperiments = new ArrayList<InfoExperiment>();
 
     // constructor
-    public TableVisualization(ExecuteAlgorithmController executeAlgorithmController){
+    public ExperimentVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
     }
 
-    public void createTable(InfoTable infoTable, int length) throws InterruptedException {
+    public void createExperiment(InfoExperiment infoExperiment, int length) throws InterruptedException {
         HBox hBox = new HBox();
-        hBox.setId("Elementarray"+String.valueOf(this.infoTables.size()));
+        hBox.setId("Elementarray"+String.valueOf(this.infoExperiments.size()));
         for (int i = 0; i < length; i++){
             Rectangle rectangleValue = new Rectangle();
             rectangleValue.setWidth(50);
@@ -37,20 +36,20 @@ public class TableVisualization {
             rectangleValue.setFill(Color.TRANSPARENT);
             rectangleValue.setStrokeType(StrokeType.OUTSIDE);
             Text indexText = new Text(String.valueOf(i)+" ");
-            indexText.setId("textIndex"+this.infoTables.size()+"."+String.valueOf(i));
+            indexText.setId("textIndex"+this.infoExperiments.size()+"."+String.valueOf(i));
             StackPane stackPane = new StackPane(rectangleValue, indexText);
             stackPane.setAlignment(Pos.BOTTOM_RIGHT);
             Text value = new Text("");
-            value.setId("textValue"+this.infoTables.size()+"."+String.valueOf(i));
+            value.setId("textValue"+this.infoExperiments.size()+"."+String.valueOf(i));
             StackPane stackPane2 = new StackPane(stackPane, value);
-            stackPane2.setId("stackPane"+this.infoTables.size()+"."+String.valueOf(i));
+            stackPane2.setId("stackPane"+this.infoExperiments.size()+"."+String.valueOf(i));
             hBox.getChildren().add(stackPane2);
         }
-        Text label = new Text("Array "+(this.infoTables.size()+1));
+        Text label = new Text("Array "+(this.infoExperiments.size()+1));
         VBox vBox = new VBox();
         vBox.getChildren().addAll(label, hBox);
-        this.infoTables.add(infoTable);
-        this.layoutTable.add(vBox);
+        this.infoExperiments.add(infoExperiment);
+        this.layoutExperiment.add(vBox);
         generateNode();
     }
 
@@ -58,8 +57,8 @@ public class TableVisualization {
     public void generateNode() throws InterruptedException {
         Node node = new VBox();
         node.setId("Table");
-        for (int i = 0; i < layoutTable.size(); i++){
-            ((VBox) node).getChildren().add(layoutTable.get(i));
+        for (int i = 0; i < layoutExperiment.size(); i++){
+            ((VBox) node).getChildren().add(layoutExperiment.get(i));
         }
         this.executeAlgorithmController.updateVisualization(node);
     }
@@ -70,8 +69,8 @@ public class TableVisualization {
 
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController) {
         this.executeAlgorithmController = executeAlgorithmController;
-        this.layoutTable = new ArrayList<VBox>();
-        this.infoTables = new ArrayList<InfoTable>();
+        this.layoutExperiment = new ArrayList<VBox>();
+        this.infoExperiments = new ArrayList<InfoExperiment>();
     }
 
 }

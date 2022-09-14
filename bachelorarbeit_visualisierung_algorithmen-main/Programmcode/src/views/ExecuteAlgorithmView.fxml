@@ -28,7 +28,7 @@
                     <ScrollPane fx:id="scrollPaneCommand">
                         <TableView fx:id="commandListTable" minWidth="350">
                             <columns>
-                                <!-- table view object for command list of algorithm !-->
+                                <!-- experiment view object for command list of algorithm !-->
                                 <TableColumn fx:id="commandListColumn" minWidth="350" sortable="false" text="Command List"/>
                             </columns>
                         </TableView>

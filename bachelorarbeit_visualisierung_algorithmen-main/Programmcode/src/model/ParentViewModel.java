@@ -1,12 +1,12 @@
 package model;
 
-import commands.tableCommands.TableCommand;
+import commands.tableCommands.ExperimentCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
-import datastructures.InfoTable;
+import datastructures.InfoExperiment;
 import visualization.ArrayVisualization;
 import visualization.ListVisualization;
-import visualization.TableVisualization;
+import visualization.ExperimentVisualization;
 import visualization.VariableVisualization;
 import abstractAlgorithmus.AbstractAlgorithm;
 import commands.Command;
@@ -36,8 +36,8 @@ public class ParentViewModel extends Application {
     private VariableVisualization variableVisualization;
     private ArrayVisualization arrayVisualization;
     private ListVisualization listVisualization;
-    // OWN TEST TABLE STUFF
-    private TableVisualization tableVisualization;
+    // OWN TEST STUFF
+    private ExperimentVisualization experimentVisualization;
     private int currentCommandCount;
 
     // Start of the Program
@@ -129,20 +129,20 @@ public class ParentViewModel extends Application {
                 }
                 arrayCommand.backCommand();
                 break;
-            // OWN TEST TABLE STUFF
-            case "TableCommand":
-                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
-                InfoTable infoTable = tableCommand.getTable();
-                if (infoTable.getTableVisualization() == null) {
-                    if (this.tableVisualization == null) {
-                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
+            // OWN TEST STUFF
+            case "ExperimentCommand":
+                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
+                InfoExperiment infoExperiment = experimentCommand.getExperiment();
+                if (infoExperiment.getExperimentVisualization() == null) {
+                    if (this.experimentVisualization == null) {
+                        this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
                     }
                     else {
-                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                        this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
                     }
-                    infoTable.setTableVisualization(this.tableVisualization);
+                    infoExperiment.setExperimentVisualization(this.experimentVisualization);
                 }
-                tableCommand.backCommand();
+                experimentCommand.backCommand();
                 break;
             default:
                 System.out.println("Warning! Unknown command type!");
@@ -221,20 +221,20 @@ public class ParentViewModel extends Application {
                 }
                 arrayCommand.exeCommand();
                 break;
-            // OWN TEST TABLE STUFF
-            case "TableCommand":
-                TableCommand tableCommand = (TableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoTable infoTable = tableCommand.getTable();
-                if (infoTable.getTableVisualization() == null) {
-                    if (this.tableVisualization == null) {
-                        this.tableVisualization = new TableVisualization(executeAlgorithmController);
+            // OWN TEST STUFF
+            case "ExperimentCommand":
+                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
+                InfoExperiment infoExperiment = experimentCommand.getExperiment();
+                if (infoExperiment.getExperimentVisualization() == null) {
+                    if (this.experimentVisualization == null) {
+                        this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
                     }
                     else {
-                        this.tableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                        this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
                     }
-                    infoTable.setTableVisualization(this.tableVisualization);
+                    infoExperiment.setExperimentVisualization(this.experimentVisualization);
                 }
-                tableCommand.exeCommand();
+                experimentCommand.exeCommand();
                 break;
             default:
                 System.out.println("Warning! Unknown command type!");
@@ -283,9 +283,9 @@ public class ParentViewModel extends Application {
         if (this.arrayVisualization != null) {
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
         }
-        // OWN TEST TABLE STUFF
-        if (this.tableVisualization != null) {
-            this.tableVisualization.resetVisualization(executeAlgorithmController);
+        // OWN TEST STUFF
+        if (this.experimentVisualization != null) {
+            this.experimentVisualization.resetVisualization(executeAlgorithmController);
         }
     }
 
@@ -302,9 +302,9 @@ public class ParentViewModel extends Application {
         if (this.arrayVisualization != null){
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
         }
-        // OWN TEST TABLE STUFF
-        if (this.tableVisualization != null) {
-            this.tableVisualization.resetVisualization(executeAlgorithmController);
+        // OWN TEST STUFF
+        if (this.experimentVisualization != null) {
+            this.experimentVisualization.resetVisualization(executeAlgorithmController);
         }
     }
 }
