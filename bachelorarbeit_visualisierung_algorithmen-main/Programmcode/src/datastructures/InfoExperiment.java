@@ -33,6 +33,14 @@ public class InfoExperiment extends AbstractDatastructure {
         }
     }
 
+    // deletes the array list, but not the instance of the class
+    public void deleteExperiment() throws InterruptedException {
+        this.experimentContent = null;
+        if (this.experimentVisualization != null){
+            this.experimentVisualization.deleteExperiment(this);
+        }
+    }
+
     // returns the value of the array by a given index
     public Object getElementByIndex(int index) {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){

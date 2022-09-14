@@ -57,6 +57,16 @@ public class ExperimentVisualization {
     }
 
 
+    // deletes the infoArray from the list
+    // deletes the related Node-Object from the Array as well
+    public void deleteExperiment(InfoExperiment infoExperiment) throws InterruptedException{
+        int index = this.infoExperiments.indexOf(infoExperiment);
+        this.infoExperiments.remove(index);
+        this.layoutExperiment.remove(index);
+        generateNode();
+    }
+
+
     // visualization of inserting an array element with a given index and value
     public void insertElement(InfoExperiment infoExperiment, int index, Object value) throws InterruptedException{
         // Bestimmen welcher index das infoExperiment in den infoArrays hat und anhand dessen an die zugehörige vbox gelangen

@@ -23,7 +23,7 @@ public class CreateExperiment extends ExperimentCommand {
 
     @Override
     public void backCommand() throws InterruptedException {
-        this.createdExperiment.createExperiment(3);
+        this.createdExperiment.deleteExperiment();
     }
 
     @Override
