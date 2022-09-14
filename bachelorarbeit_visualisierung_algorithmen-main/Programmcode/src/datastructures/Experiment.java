@@ -1,7 +1,7 @@
 package datastructures;
 
 import abstractAlgorithmus.AbstractAlgorithm;
-import commands.tableCommands.CreateExperiment;
+import commands.experimentCommands.CreateExperiment;
 import supportClasses.types;
 
 public class Experiment extends AbstractDatastructure {

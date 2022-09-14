@@ -1,4 +1,4 @@
-package commands.tableCommands;
+package commands.experimentCommands;
 
 import commands.Command;
 import datastructures.InfoExperiment;

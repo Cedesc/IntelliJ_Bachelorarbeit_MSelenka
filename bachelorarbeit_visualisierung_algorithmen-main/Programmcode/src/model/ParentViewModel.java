@@ -1,6 +1,6 @@
 package model;
 
-import commands.tableCommands.ExperimentCommand;
+import commands.experimentCommands.ExperimentCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
 import datastructures.InfoExperiment;
