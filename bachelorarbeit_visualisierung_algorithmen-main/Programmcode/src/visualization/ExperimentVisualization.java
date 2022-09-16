@@ -2,6 +2,7 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoExperiment;
+import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Pos;
@@ -13,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 
@@ -53,6 +55,15 @@ public class ExperimentVisualization {
         this.infoExperiments.add(infoExperiment);
         this.layoutExperiment.add(vBox);
         generateNode();
+
+        // TODO: 16.09.2022 delete unnecessary comments
+//        TranslateTransition translate = new TranslateTransition();
+//        translate.setNode(label);
+//        translate.setDuration(Duration.millis(500));
+//        translate.setCycleCount(4);
+//        translate.setByX(100);
+//        translate.setAutoReverse(true);
+//        translate.play();
     }
 
 

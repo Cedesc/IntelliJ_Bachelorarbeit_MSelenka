@@ -1,5 +1,9 @@
 package controller;
 
+import javafx.animation.TranslateTransition;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 import model.ParentViewModel;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -34,8 +38,29 @@ public class ExecuteAlgorithmController implements Controller{
 
     // interaction with the "terminate" button, shuts down the application
     public void terminateButton(ActionEvent actionEvent) {
-        Platform.exit();
-        System.exit(0);
+        // TODO: 16.09.2022 change the method back to its normal work
+//        Platform.exit();
+//        System.exit(0);
+
+        // TODO: 16.09.2022 delete unnecessary comments
+        //  Kann ich in den einzelnen Befehlen (also in ExperimentVisualization, wo auch Rectangles
+        //  erstellt werden) die Formen bzw Textfelder abspeichern und dort bzw in einer anderen Funktion animieren?
+        //  -> JA!!! Siehe createExperiment in ExperimentVisualization
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(
+                ((StackPane)
+                        ((HBox)
+                                ((VBox)
+                                        ((VBox) algorithmVisualization.getChildren().get(0))
+                                                .getChildren().get(1))
+                                        .getChildren().get(1))
+                                .getChildren().get(1))
+                        .getChildren().get(1));
+        translate.setDuration(Duration.millis(500));
+        translate.setCycleCount(4);
+        translate.setByX(100);
+        translate.setAutoReverse(true);
+        translate.play();
     }
 
     // interaction with the "change algorithm" button
@@ -58,7 +83,6 @@ public class ExecuteAlgorithmController implements Controller{
     // calls the parent to invert the last command of the algorithm
     public void stepBackButton(ActionEvent actionEvent) throws InterruptedException {
         this.parentViewModel.exePreviousCommand();
-
     }
 
     // interaction with the "step forward" button
