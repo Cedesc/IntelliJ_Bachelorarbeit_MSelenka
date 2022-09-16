@@ -1,4 +1,10 @@
 
+1. Animationen eingliedern
+	- nur kurz versuchen, sollte es sich als komplizierter rausstellen, dann zunächst verwerfen
+2. Zoomen besser verstehen können
+3. Zoomen eingliedern? Vereinbar mit Eingliedern der Animationen?
 
-- Zoomen besser verstehen können
-- Zoomen eingliedern? Vereinbar mit Eingliedern der Animationen?
+5. "Datenstruktur: Baum" Kapitel schreiben
+	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
+
+10. Refactoring
