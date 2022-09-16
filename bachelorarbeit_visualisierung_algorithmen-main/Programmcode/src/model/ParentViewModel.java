@@ -56,10 +56,9 @@ public class ParentViewModel extends Application {
         Parent selectAlgorithmView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmView.fxml").
                 openStream());
         SelectAlgorithmController selectAlgorithmController = (SelectAlgorithmController) fxmlLoader.getController();
-        Scene rootScene = new Scene(selectAlgorithmView);
+        Scene rootScene = new Scene(selectAlgorithmView, 1200, 800);
         primaryStage.setScene(rootScene);
         selectAlgorithmController.setParentViewModel(this);
-        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
