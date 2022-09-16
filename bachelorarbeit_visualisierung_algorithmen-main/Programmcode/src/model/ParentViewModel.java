@@ -53,7 +53,8 @@ public class ParentViewModel extends Application {
         primaryStage.setTitle("Algorithm Visual Studio");
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent selectAlgorithmView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmView.fxml").openStream());
+        Parent selectAlgorithmView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmView.fxml").
+                openStream());
         SelectAlgorithmController selectAlgorithmController = (SelectAlgorithmController) fxmlLoader.getController();
         Scene rootScene = new Scene(selectAlgorithmView);
         primaryStage.setScene(rootScene);
