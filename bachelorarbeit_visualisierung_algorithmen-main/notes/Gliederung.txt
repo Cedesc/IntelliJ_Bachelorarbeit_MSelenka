@@ -1,0 +1,103 @@
+
+
+
+Titel: „Erweiterung der Visualisierungs-Software für Datenstrukturen um Animationen am Beispiel von Bäumen“
+
+
+Gliederung (meine BA):
+
+	1 Einleitung 1 (5)
+		1.1 Motivation 1 (2)
+			- Animationen machen dem Nutzer die Sachen leichter verständlich
+			- Bäume sind voll wichtig und so
+		1.2 Vergleich von bestehenden ähnlichen Programmen 3 (1)
+		1.3 Zielsetzung 4 (1)
+		1.4 Strukturierung des Inhalts der Arbeit 5 (1)
+
+	2 Datenstruktur: Baum 6 (8)
+		2.1 Definition 6 (3)
+		2.2 Terminologie 9 (1)
+		2.3 Verschiedene Arten von Bäumen 10 (2)
+			2.3.1 Binärbaum
+			2.3.2 ...
+		2.4 Eigenschaften 12 (1)
+			2.4.1 Vorteile
+			2.4.2 Nachteile
+		2.5 Zusammenfassung 13 (1)
+
+	5 Erweiterung der Darstellung 20 (5)
+		5.1 Animationen an den bestehenden Datenstrukturen 20 (4)
+			5.1.1 Variablen
+			5.1.2 Array
+			5.1.3 Liste
+		5.2 Zoomen 24 (1) mehr
+
+	3 Algorithmen auf Bäumen 14 (4)
+		3.1 Atomare Operationen 14 (3)
+			3.1.1 Einfügen
+			3.1.2 Löschen
+			3.1.3 Rotieren
+			3.1.4 ...
+		3.2 (spezifische) Algorithmen auf Bäumen 17 (1)
+
+	4 Darstellung Baum im Programm 18 (2)
+		4.1 Problematik 18 (1)
+		4.2 balanciert vs unbalanciert 19 (1)
+
+	6 Implementierung 25 (6) (mehr)
+		6.1 Ablauf und Organisation 25 (1)
+		6.2 Änderungen am bestehenden Code 26 (2)
+		6.3 Herausforderungen und Umsetzung 28 (2)
+		6.4 Zusammenfassung 30 (1)
+
+	7 Zusammenfassung 31 (3)
+		7.1 Fazit 31 (2)
+		7.2 Ausblick 33 (1)
+
+	Literatur 34
+
+
+
+
+
+Gliederung (MS BA):
+	1 Einleitung
+		1.1 Motivation
+		1.2 Problemstellung und theoretischer Hintergrund
+		1.3 Vergleich von bestehenden ähnlichen Programmen
+		1.4 Zielsetzung
+		1.5 Strukturierung des Inhalts der Arbeit
+	2 Theoretische Grundlagen
+		2.1 Algorithmen
+		2.2 Datenstrukturen
+			2.2.1 Variablen
+			2.2.2 Array
+			2.2.3 Verkettete Liste
+		2.3 Zusammenfassung
+	3 Anforderungen
+		3.1 Szenarien
+			3.1.1 Szenario 1
+			3.1.2 Szenario 2
+			3.1.3 Szenario 3
+		3.2 Nutzeranforderungen
+		3.3 Nicht-funktionale Anforderungen
+			3.3.1 Produktanforderungen
+			3.3.2 Nutzbarkeitsanforderungen
+			3.3.3 Effizienzanforderungen
+			3.3.4 Leistungsanforderungen
+		3.4 Funktionale Anforderungen
+		3.5 Zusammenfassung
+	4 Architektur
+		4.1 Allgemeine Struktur
+		4.2 Aufbau und UML-Diagramme
+		4.3 Ablauf und Sequenzdiagramme
+		4.4 Zusammenfassung
+	5 Implementierung
+		5.1 Ablauf und Organisation
+		5.2 Herausforderungen und Umsetzung
+		5.3 Zusammenfassung
+	6 Zusammenfassung
+		6.1 Fazit
+		6.2 Ausblick
+	Literatur
+

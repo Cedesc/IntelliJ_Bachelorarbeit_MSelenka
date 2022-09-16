@@ -1,0 +1,16 @@
+
+
+- Animationen möglich machen
+    - vollständiges Durchgehen als "Film" ablaufen lassen können?
+- Zoomen
+- Kapitel über Theorie der Bäume schreiben
+- Fehler in Code beheben
+    - notierte Fehler ausfindig machen
+        - Fehler, wenn man den ArrayAlgorithm komplett Schritt für Schritt ausführt und dann zwei Schritte zurückgehen will
+        - Bei Array wird bei Deletions (wie bei einer Liste) der Rest eingerückt, als wäre es eine Liste (kein Fehler, nur fragwürdiges Design)
+        - setElement beim Array kann kein Element an einer Stelle setzen, wo noch keine Zahl steht (Gewollt? Macht keinen Sinn, oder?)
+        - deleteArray() kann leicht zu Fehlern führen. Nutzt man das, rücken die Arrays darunter nach oben, und wird dann noch ein neues erstellt, ist es mit den Namen ("Array2") falsch
+        - Weitere Fehler in Fehler.txt
+- Andere Programme zum Visualisieren vergleichen
+    - 'graphvis' (von Fischer genannt)
+    - Aus BA rauslesen

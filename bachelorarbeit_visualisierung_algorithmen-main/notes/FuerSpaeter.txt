@@ -1,0 +1,13 @@
+
+
+- "OWN TEST TABLE STUFF" entfernen
+    - Table.java, InfoTable.java, TableVisualization.java, TableBuilder.java, CreateTable.java, TableCommand.java, TableAlgorithm.java
+    - Von AbstractAlgorithm.java folgendes:
+        - public TableBuilder tableBuilder
+        - public Table create_Table(types type, int length)
+    - Von ParentViewModel.java jede Zeile, über der "OWN TEST TABLE STUFF" steht
+- SimpleListAlgorithm.java entfernen
+- SimpleArrayAlgortihm.java entfernen
+- "ownTestStuff"-package löschen
+- Kommentare auf englisch übersetzen
+- TODOs durchgehen

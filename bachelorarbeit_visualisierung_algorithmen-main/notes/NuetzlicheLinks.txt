@@ -1,0 +1,11 @@
+
+
+- Baum Theorie
+	- https://en.wikipedia.org/wiki/Tree_(data_structure)#Examples_of_trees_and_non-trees
+	- https://en.wikipedia.org/wiki/Binary_tree
+	- https://en.wikipedia.org/wiki/Tree_rotation
+- javafx Animation
+	- https://www.youtube.com/watch?v=UdGiuDDi7Rg
+	- https://www.youtube.com/watch?v=-WfyzkDodlI&list=PLhs1urmduZ2-4hFJxb2dgfWwcinNqEz0c
+- Zoomen
+    - https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer

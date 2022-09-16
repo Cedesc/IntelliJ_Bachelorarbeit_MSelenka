@@ -1,0 +1,34 @@
+
+
+
+Arrays
+
+
+	Fehler 1:
+
+        Array array2 = create_ArrayWithValues(types.NUMBER, 10, new Object[]{1, 2, 3, 4});
+        // Array array2 = create_Array(types.NUMBER, 10);
+
+        array2.insertElementAtStart(2);
+
+		/*
+		Initialisiert man das Array ohne Werte, geht es.
+		Tatsächlich wird die 2 am Anfang hinzugefügt, ABER es wird ein Fehler ausgegeben und klickt man auf "step forward" wird der Befehl nur wiederholt.
+		Nutzt man statt insertElementAtStart insertElementAtEnd wird auch ein Fehler geworfen und die 2 hinzugefügt, jedoch nicht bei Index 4, wo es richtig wäre, sondern bei Index 8.
+		Weiterer Hinweis, dass durch das Erstellen mit Elementen bereits mehr Zellen irgendwie mit Zahlen besetzt sind (?): array2.setElement(6, 8) klappt, wobei setElement(8, 8) nicht klappt. Gleiches bei swapElements(6, 1) und swapElements(8, 1).
+		*/
+
+
+
+	Fehler 2:
+
+		Array array1 = create_Array(types.NUMBER, 15);
+		Array array2 = create_Array(types.NUMBER, 10);
+
+        array1.deleteArray();
+        array2.insertElementAtStart(4);
+
+
+		/*
+		Vertauscht man die Reihenfolge beim Erstellen der Arrays, also tauscht man einfach Zeile 1 und 2 miteinander, dann geht es.
+		*/
