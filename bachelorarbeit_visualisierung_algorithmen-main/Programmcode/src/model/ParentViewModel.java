@@ -25,6 +25,7 @@ import supportClasses.CommandListColumn;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ParentViewModel extends Application {
@@ -41,7 +42,7 @@ public class ParentViewModel extends Application {
     private int currentCommandCount;
 
     // Start of the Program
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         launch(args);
     }
 
@@ -53,20 +54,22 @@ public class ParentViewModel extends Application {
         primaryStage.setTitle("Algorithm Visual Studio");
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent selectAlgorithmView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmView.fxml").
-                openStream());
-        SelectAlgorithmController selectAlgorithmController = (SelectAlgorithmController) fxmlLoader.getController();
+        Parent selectAlgorithmView = fxmlLoader.load(Objects.requireNonNull(getClass().
+                        getResource("../views/SelectAlgorithmView.fxml")).openStream());
+        SelectAlgorithmController selectAlgorithmController = fxmlLoader.getController();
         Scene rootScene = new Scene(selectAlgorithmView, 1200, 800);
         primaryStage.setScene(rootScene);
         selectAlgorithmController.setParentViewModel(this);
         primaryStage.show();
     }
 
+
     // gets the next command of the algorithm and executes it and the visualization of it in the background
     // called from the execute algorithm controller
     public void exeNextCommand() throws InterruptedException {
         this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount+1);
-        exeCommand();
+
+        exeCommand(true);
 
         if (currentCommandCount == 0){
             this.executeAlgorithmController.setStepBackButtonVisible();
@@ -79,75 +82,10 @@ public class ParentViewModel extends Application {
 
     // inserts the last command, the command reverts itself and changes the visualization in the background
     // called from the execute algorithm controller
-
     public void exePreviousCommand() throws InterruptedException {
         this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount-1);
-        String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount-1).getClass().getSuperclass().getSimpleName();
-        switch (currentClassCommand){
-            case "VariableCommand":
-                VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
-                InfoVariable infoVariable = variableCommand.getVariable();
-                if (infoVariable.getVariableVisualization() == null){
-                    if (this.variableVisualization == null){
-                        this.variableVisualization = new VariableVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoVariable.setVariableVisualization(this.variableVisualization);
 
-                }
-                variableCommand.backCommand();
-                break;
-            case "ListCommand":
-                ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
-                InfoList infoList = listCommand.getList();
-                if (infoList.getListVisualization() == null){
-                    if (this.listVisualization == null){
-                        this.listVisualization = new ListVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoList.setListVisualization(this.listVisualization);
-
-                }
-                listCommand.backCommand();
-                break;
-            case "ArrayCommand":
-                ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
-                InfoArray infoArray = arrayCommand.getArray();
-                if (infoArray.getArrayVisualization() == null){
-                    if (this.arrayVisualization == null){
-                        this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoArray.setArrayVisualization(this.arrayVisualization);
-
-                }
-                arrayCommand.backCommand();
-                break;
-            // OWN TEST STUFF
-            case "ExperimentCommand":
-                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount-1);
-                InfoExperiment infoExperiment = experimentCommand.getExperiment();
-                if (infoExperiment.getExperimentVisualization() == null) {
-                    if (this.experimentVisualization == null) {
-                        this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoExperiment.setExperimentVisualization(this.experimentVisualization);
-                }
-                experimentCommand.backCommand();
-                break;
-            default:
-                System.out.println("Warning! Unknown command type!");
-                break;
-        }
+        exeCommand(false);
 
         if (currentCommandCount == 1){
             this.executeAlgorithmController.setStepBackButtonUnvisible();
@@ -157,15 +95,15 @@ public class ParentViewModel extends Application {
         }
         this.currentCommandCount -= 1;
     }
+
     // executes the whole command list in the order
     // called if the complete visualization is selected
     // DOES NOT WAIT BETWEEN THE COMMAND!!!! ONLY THE END RESULT OF THE ALGORITHM WILL BE SEEN
-
     public void startVisualization() throws InterruptedException {
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
         for (int i = 0; i < commandOrder.size(); i++){
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-            exeCommand();
+            exeCommand(true);
             if (i == commandOrder.size()-1){
                 this.executeAlgorithmController.terminateVisualization();
             }
@@ -173,81 +111,106 @@ public class ParentViewModel extends Application {
         }
     }
 
-    private void exeCommand() throws InterruptedException {
-        String currentClassCommand = this.algorithm.getCommandOrder().get(currentCommandCount).getClass().getSuperclass().getSimpleName();
-        switch (currentClassCommand){
-            case "VariableCommand":
-                VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoVariable infoVariable = variableCommand.getVariable();
-                if (infoVariable.getVariableVisualization() == null){
-                    if (this.variableVisualization == null){
-                        this.variableVisualization = new VariableVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoVariable.setVariableVisualization(this.variableVisualization);
 
-                }
-                variableCommand.exeCommand();
-                break;
-            case "ListCommand":
-                ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoList infoList = listCommand.getList();
-                if (infoList.getListVisualization() == null){
-                    if (this.listVisualization == null){
-                        this.listVisualization = new ListVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoList.setListVisualization(this.listVisualization);
+    private void exeCommand(Boolean isNextCommand) throws InterruptedException {
+        int wantedCommandCount;
+        if (isNextCommand) wantedCommandCount = this.currentCommandCount;
+        else wantedCommandCount = this.currentCommandCount - 1;
 
-                }
-                listCommand.exeCommand();
-                break;
-            case "ArrayCommand":
-                ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoArray infoArray = arrayCommand.getArray();
-                if (infoArray.getArrayVisualization() == null){
-                    if (this.arrayVisualization == null){
-                        this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoArray.setArrayVisualization(this.arrayVisualization);
-
-                }
-                arrayCommand.exeCommand();
-                break;
+        String currentClassCommand = this.algorithm.getCommandOrder().get(wantedCommandCount).getClass().
+                getSuperclass().getSimpleName();
+        switch (currentClassCommand) {
+            case "VariableCommand" -> {
+                VariableCommand variableCommand = (VariableCommand) this.algorithm.getCommandOrder().
+                        get(wantedCommandCount);
+                exeVariableCommand(variableCommand);
+                if (isNextCommand) variableCommand.exeCommand();
+                else variableCommand.backCommand();
+            }
+            case "ListCommand" -> {
+                ListCommand listCommand = (ListCommand) this.algorithm.getCommandOrder().
+                        get(wantedCommandCount);
+                exeListCommand(listCommand);
+                if (isNextCommand) listCommand.exeCommand();
+                else listCommand.backCommand();
+            }
+            case "ArrayCommand" -> {
+                ArrayCommand arrayCommand = (ArrayCommand) this.algorithm.getCommandOrder().
+                        get(wantedCommandCount);
+                exeArrayCommand(arrayCommand);
+                if (isNextCommand) arrayCommand.exeCommand();
+                else arrayCommand.backCommand();
+            }
             // OWN TEST STUFF
-            case "ExperimentCommand":
-                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().get(this.currentCommandCount);
-                InfoExperiment infoExperiment = experimentCommand.getExperiment();
-                if (infoExperiment.getExperimentVisualization() == null) {
-                    if (this.experimentVisualization == null) {
-                        this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
-                    }
-                    else {
-                        this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
-                    }
-                    infoExperiment.setExperimentVisualization(this.experimentVisualization);
-                }
-                experimentCommand.exeCommand();
-                break;
-            default:
-                System.out.println("Warning! Unknown command type!");
-                break;
+            case "ExperimentCommand" -> {
+                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().
+                        get(wantedCommandCount);
+                exeExperimentCommand(experimentCommand);
+                if (isNextCommand) experimentCommand.exeCommand();
+                else experimentCommand.backCommand();
+            }
+            default -> System.out.println("Warning! Unknown command type!");
         }
     }
+
+    private void exeExperimentCommand(ExperimentCommand experimentCommand) {
+        InfoExperiment infoExperiment = experimentCommand.getExperiment();
+        if (infoExperiment.getExperimentVisualization() == null) {
+            if (this.experimentVisualization == null) {
+                this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
+            } else {
+                this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+            }
+            infoExperiment.setExperimentVisualization(this.experimentVisualization);
+        }
+    }
+
+    private void exeArrayCommand(ArrayCommand arrayCommand) {
+        InfoArray infoArray = arrayCommand.getArray();
+        if (infoArray.getArrayVisualization() == null) {
+            if (this.arrayVisualization == null) {
+                this.arrayVisualization = new ArrayVisualization(executeAlgorithmController);
+            } else {
+                this.arrayVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+            }
+            infoArray.setArrayVisualization(this.arrayVisualization);
+
+        }
+    }
+
+    private void exeListCommand(ListCommand listCommand) {
+        InfoList infoList = listCommand.getList();
+        if (infoList.getListVisualization() == null) {
+            if (this.listVisualization == null) {
+                this.listVisualization = new ListVisualization(executeAlgorithmController);
+            } else {
+                this.listVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+            }
+            infoList.setListVisualization(this.listVisualization);
+
+        }
+    }
+
+    private void exeVariableCommand(VariableCommand variableCommand) {
+        InfoVariable infoVariable = variableCommand.getVariable();
+        if (infoVariable.getVariableVisualization() == null) {
+            if (this.variableVisualization == null) {
+                this.variableVisualization = new VariableVisualization(executeAlgorithmController);
+            } else {
+                this.variableVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+            }
+            infoVariable.setVariableVisualization(this.variableVisualization);
+
+        }
+    }
+
 
     // set the selected algorithm, instance it and execute the "executeAlgorithm" function
     // called from the select algorithm controller
     public String setSelectedItem(Object selectedItem) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException, InterruptedException {
         ClassLoader classLoader = ParentViewModel.class.getClassLoader();
         try {
-            Class classAlgorithm = classLoader.loadClass("Algorithms."+selectedItem);
+            Class<?> classAlgorithm = classLoader.loadClass("Algorithms."+selectedItem);
             Constructor<?> constructorAlgo = classAlgorithm.getConstructor();
             this.algorithm = (AbstractAlgorithm) constructorAlgo.newInstance();
             this.algorithm.executeAlgorithm();
@@ -274,19 +237,7 @@ public class ParentViewModel extends Application {
         this.executeAlgorithmController = executeAlgorithmController;
         ArrayList<CommandListColumn> commandArrayList = this.algorithm.getCommandListString();
         this.executeAlgorithmController.setCommandListTable(commandArrayList);
-        if (this.variableVisualization != null) {
-            this.variableVisualization.resetVisualization(executeAlgorithmController);
-        }
-        if (this.listVisualization != null) {
-            this.listVisualization.resetVisualization(executeAlgorithmController);
-        }
-        if (this.arrayVisualization != null) {
-            this.arrayVisualization.resetVisualization(executeAlgorithmController);
-        }
-        // OWN TEST STUFF
-        if (this.experimentVisualization != null) {
-            this.experimentVisualization.resetVisualization(executeAlgorithmController);
-        }
+        resetVisualization(executeAlgorithmController);
     }
 
     // resets all data structure visualizations if they are set
