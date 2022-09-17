@@ -71,8 +71,6 @@ public class ListVisualization{
     }
 
     // visualization of inserting an element in the list
-    // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
-    // TODO: 09.09.2022 Das tatsächliche Einfügen des Elements fehlt
     public void insertElement(InfoList infoList, Variable variable, int index) throws InterruptedException {
         int sizeOfLayoutList = layoutList.size();
         for (int i = 0; i < sizeOfLayoutList; i++){
@@ -140,60 +138,6 @@ public class ListVisualization{
         generateNode();
     }
 
-    /*
-    public void insertElement(InfoList infoList, Variable variable, int index) throws InterruptedException {
-        // Bestimmen welcher index die infoList in den infoLists hat und anhand dessen an die zugehörige vbox gelangen
-        int indexList = this.infoLists.indexOf(infoList);
-        // Auf die Elemente zugreifen, indem man das zweite Element (also Index 1) von der vbox nimmt, da das erste
-        // Element nur das Label ist, während das zweite Element die Elemente des Arrays sind.
-        VBox vBoxList = this.layoutList.get(indexList);
-        HBox elements = (HBox) vBoxList.getChildren().get(1);
-
-        // Das eine gesuchte Element an Index "index" finden, indem alle Elemente des Arrays nach der ID gefiltert
-        // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
-        // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
-        // vielleicht sogar per Indexzugriff das Element finden?
-        FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("HBox[id"+
-                String.valueOf(indexList)+"."+String.valueOf(index)));
-
-        // ACHTUNG! Ab hier wird ein Index out of bounds error geworfen, da 1. die grundlegende Verschachtelung der
-        // Elemente hier ander ist als bei den Arrays und 2. gar kein "TextValue" für den Wert in createList erstellt
-        // wird, wodurch es keine Variable gibt, in der man den Wert reinschreiben kann
-        StackPane stackPaneElement = (StackPane) element.get(0);
-
-        ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
-        // Der TextValue wird abgespeichert
-        Text textValue = (Text) stackPaneChildren.get(1);
-        // Der momentane, später veraltete Wert, wird für später abgespeichert
-        String memValue = textValue.getText();
-        // Der geschriebene Wert wird überschrieben
-        textValue.setText(variable.toString());
-
-        // iterates over the rest of the array and moves all elements one position forward
-        for (int i = index+1; i < this.infoLists.get(indexList).getSize()+1; i++){
-            // i in Variable speichern, da Parameter für lambda expressions final sein sollten
-            int finalI = i;
-            ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
-            FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
-                    String.valueOf(indexList)+"."+String.valueOf(finalI)));
-            StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
-            ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
-            // Der TextValue wird abgespeichert
-            textValue = (Text) stackPaneChildrenNext.get(1);
-            // Der momentane, später veraltete Wert, wird für später abgespeichert
-            String memValueNext = textValue.getText();
-            // Der geschriebene Wert wird überschrieben
-            textValue.setText(memValue);
-            // Der nächste Wert wird abgespeichert
-            memValue = memValueNext;
-        }
-
-        generateNode();
-
-    }
-    */
-
     // visualization of deleting an element of the list
     public void deleteElement(InfoList infoList, Variable variable) throws InterruptedException {
         int k = 0;
@@ -219,7 +163,6 @@ public class ListVisualization{
 
     // visualization of creating a list, creates the first element without a value
     public void createList(InfoList infoList) throws InterruptedException {
-        // todo ist das das, was bei ListVisualization.insertElement fehlt? Fragwürdig, da das hier createList ist
         this.infoLists.add(infoList);
 
         // Rechteck (für Wert) erstellen
