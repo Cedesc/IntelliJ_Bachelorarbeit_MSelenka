@@ -1,10 +1,15 @@
 
-1. Animationen eingliedern
-	- nur kurz versuchen, sollte es sich als komplizierter rausstellen, dann zunächst verwerfen
+CHECK! 1. Animationen eingliedern (nur naiver Versuch)
+	
 2. Zoomen besser verstehen können
 3. Zoomen eingliedern? Vereinbar mit Eingliedern der Animationen?
 
+4. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
+
 5. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
+
+
+8. Animationen -> Was wenn man während Animationen was klickt? Animation bricht ab und Element ist am Ziel? Gibt es eine Funktion dafür, die Animation vorzeitig zu beenden? 
 
 10. Refactoring

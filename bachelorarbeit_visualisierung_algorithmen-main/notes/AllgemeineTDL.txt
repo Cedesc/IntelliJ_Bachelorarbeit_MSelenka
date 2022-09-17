@@ -14,3 +14,5 @@
 - Andere Programme zum Visualisieren vergleichen
     - 'graphvis' (von Fischer genannt)
     - Aus BA rauslesen
+- Wartbarkeit erhöhen indem...
+	- eine config-Datei erstellt wird, in der die zwei nötigen filepaths und Fenstergröße drin stehen
