@@ -20,8 +20,8 @@ public class ArrayVisualization {
     // saves all current using infoArrays and their visualizations also as an array, as well as the used execute
     // algorithm controller
     private ExecuteAlgorithmController executeAlgorithmController;
-    private ArrayList<VBox> layoutArray = new ArrayList<VBox>();
-    private ArrayList<InfoArray> infoArrays = new ArrayList<InfoArray>();
+    private ArrayList<VBox> layoutArray = new ArrayList<>();
+    private ArrayList<InfoArray> infoArrays = new ArrayList<>();
 
     // constructor
     public ArrayVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -29,11 +29,10 @@ public class ArrayVisualization {
     }
 
     // creates an empty array with a given length
-    // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
     public void createArray(InfoArray infoArray,int length) throws InterruptedException{
-        // hbox für Darstellung des Arrays
+        // HBox für Darstellung des Arrays
         HBox hBox = new HBox();
-        hBox.setId("Elementarray"+String.valueOf(this.infoArrays.size()));
+        hBox.setId("Elementarray"+ this.infoArrays.size());
 
         for (int i = 0; i < length; i++){
             // Rechteck (für einzelnen Wert) erstellen
@@ -44,30 +43,29 @@ public class ArrayVisualization {
             rectangleValue.setFill(Color.TRANSPARENT);
             rectangleValue.setStrokeType(StrokeType.OUTSIDE);
             // Index als kleine Zahl rechts unten ins Rechteck schreiben
-            Text indexText = new Text(String.valueOf(i)+" ");
-            indexText.setId("textIndex"+this.infoArrays.size()+"."+String.valueOf(i));
-            // Stackpane aus Rechteck (für einzelnen Wert) und Index erstellen
+            Text indexText = new Text(i +" ");
+            indexText.setId("textIndex"+this.infoArrays.size()+"."+ i);
+            // StackPane aus Rechteck (für einzelnen Wert) und Index erstellen
             StackPane stackPane = new StackPane(rectangleValue, indexText);
             stackPane.setAlignment(Pos.BOTTOM_RIGHT);
             // Wert als Text erstellen
             Text value = new Text("");
-            value.setId("textValue"+this.infoArrays.size()+"."+String.valueOf(i));
-            // Stackpane aus Rechteck-Stackpane und Wert erstellen
+            value.setId("textValue"+this.infoArrays.size()+"."+ i);
+            // StackPane aus Rechteck-StackPane und Wert erstellen
             StackPane stackPane2 = new StackPane(stackPane, value);
-            stackPane2.setId("stackPane"+this.infoArrays.size()+"."+String.valueOf(i));
-            // Das zuvor erstellte Element zur hbox, also der Darstellung des Arrays, hinzufügen
+            stackPane2.setId("stackPane"+this.infoArrays.size()+"."+ i);
+            // Das zuvor erstellte Element zur HBox, also der Darstellung des Arrays, hinzufügen
             hBox.getChildren().add(stackPane2);
         }
 
         // Label für Array erstellen
         Text label = new Text("Array "+(this.infoArrays.size()+1));
 
-        // Eine vbox mit der zuvor erstellten hbox für das Array erstellen.
+        // Eine vbox mit der zuvor erstellten HBox für das Array erstellen.
         // Diese vbox enthält zwei Elemente: das Label und das Array.
         VBox vBox = new VBox();
         vBox.getChildren().addAll(label, hBox);
 
-        // todo ist das das, was bei ListVisualization.insertElement fehlt? Fragwürdig, da das hier createArray ist
         this.infoArrays.add(infoArray);
 
         // Die letztendliche vbox zum layoutArray hinzufügen
@@ -79,7 +77,7 @@ public class ArrayVisualization {
     // visualization of creating an array with given values and length
     public void createArrayWithValues(InfoArray infoArray, int length, Object[] values) throws InterruptedException{
         HBox hBox = new HBox();
-        hBox.setId("Elementarray"+String.valueOf(this.infoArrays.size()));
+        hBox.setId("Elementarray"+ this.infoArrays.size());
         for (int i = 0; i < length; i++){
             // creates all array boxes
             Rectangle rectangleValue = new Rectangle();
@@ -88,24 +86,24 @@ public class ArrayVisualization {
             rectangleValue.setStroke(Color.BLACK);
             rectangleValue.setFill(Color.TRANSPARENT);
             rectangleValue.setStrokeType(StrokeType.OUTSIDE);
-            Text indexText = new Text(String.valueOf(i)+" ");
+            Text indexText = new Text(i +" ");
             StackPane stackPane = new StackPane(rectangleValue, indexText);
             stackPane.setAlignment(Pos.BOTTOM_RIGHT);
             if (i < values.length){
                 // set the boxes with the given values in the visualization
                 Text value = new Text(String.valueOf(values[i]));
-                value.setId("textValue"+String.valueOf(this.infoArrays.size())+"."+String.valueOf(i));
+                value.setId("textValue"+ this.infoArrays.size() +"."+ i);
                 StackPane stackPane2 = new StackPane(stackPane, value);
-                stackPane2.setId("stackPane"+String.valueOf(this.infoArrays.size())+"."+String.valueOf(i));
+                stackPane2.setId("stackPane"+ this.infoArrays.size() +"."+ i);
 
                 hBox.getChildren().add(stackPane2);
             }
             else{
                 // the rest oof the array will be empty, but the visualization objects will  be created
                 Text value = new Text("");
-                value.setId("textValue"+String.valueOf(this.infoArrays.size())+"."+String.valueOf(i));
+                value.setId("textValue"+ this.infoArrays.size() +"."+ i);
                 StackPane stackPane2 = new StackPane(stackPane, value);
-                stackPane2.setId("stackPane"+String.valueOf(this.infoArrays.size())+"."+String.valueOf(i));
+                stackPane2.setId("stackPane"+ this.infoArrays.size() +"."+ i);
 
                 hBox.getChildren().add(stackPane2);
             }
@@ -130,8 +128,8 @@ public class ArrayVisualization {
         HBox elements = (HBox) vBoxChildren.get(1);
 
         // get visualization text of index 1
-        FilteredList element1 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexArray)+"."+String.valueOf(index1)));
+        FilteredList<Node> element1 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                indexArray +"."+ index1));
         StackPane stackPaneElement1 = (StackPane) element1.get(0);
         ObservableList<Node> stackPaneChildren1 = stackPaneElement1.getChildren();
         Text textValue = (Text) stackPaneChildren1.get(1);
@@ -141,8 +139,8 @@ public class ArrayVisualization {
 
 
         // get visualization text of index 2
-        FilteredList element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexArray)+"."+String.valueOf(index2)));
+        FilteredList<Node> element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                indexArray +"."+ index2));
         StackPane stackPaneElement2 = (StackPane) element2.get(0);
         ObservableList<Node> stackPaneChildren2 = stackPaneElement2.getChildren();
         Text textValue2 = (Text) stackPaneChildren2.get(1);
@@ -164,9 +162,9 @@ public class ArrayVisualization {
         VBox vBoxArray = this.layoutArray.get(indexArray);
         ObservableList<Node> observableVBoxChildren = vBoxArray.getChildren();
         HBox elements = (HBox) observableVBoxChildren.get(1);
-        FilteredList elementStackpaneFilteredList = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexArray)+"."+String.valueOf(index)));
-        StackPane stackPaneElement = (StackPane) elementStackpaneFilteredList.get(0);
+        FilteredList<Node> elementStackPaneFilteredList = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                indexArray +"."+ index));
+        StackPane stackPaneElement = (StackPane) elementStackPaneFilteredList.get(0);
         ObservableList<Node> stackPaneElementChildren = stackPaneElement.getChildren();
         Text textValue = (Text) stackPaneElementChildren.get(1);
         textValue.setText("");
@@ -175,8 +173,8 @@ public class ArrayVisualization {
         for (int i = index+1; i < this.infoArrays.get(indexArray).getSize()+1; i++){
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            FilteredList elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
-                    String.valueOf(indexArray)+"."+String.valueOf(finalI)));
+            FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
+                    indexArray +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             Text textValueNext = (Text) stackPaneChildrenNext.get(1);
@@ -198,7 +196,6 @@ public class ArrayVisualization {
     }
 
     // visualization of inserting an array element with a given index and value
-    // TODO: 08.09.2022 ListVisualization.insertElement mit createArray und insertElement vergleichen
     public void insertElement(InfoArray infoArray, int index, Object value) throws InterruptedException{
         // Bestimmen welcher index das infoArray in den infoArrays hat und anhand dessen an die zugehörige vbox gelangen
         // sets the Box
@@ -212,7 +209,7 @@ public class ArrayVisualization {
         // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
         // vielleicht sogar per Indexzugriff das Element finden?
         FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexArray)+"."+String.valueOf(index)));
+                indexArray +"."+ index));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
         // Der TextValue wird abgespeichert
@@ -229,7 +226,7 @@ public class ArrayVisualization {
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
             // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
             FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
-                    String.valueOf(indexArray)+"."+String.valueOf(finalI)));
+                    indexArray +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             // Der TextValue wird abgespeichert
@@ -252,8 +249,8 @@ public class ArrayVisualization {
         VBox vBoxArray = this.layoutArray.get(indexArray);
         ObservableList<Node> vBoxChildren = vBoxArray.getChildren();
         HBox elements = (HBox) vBoxChildren.get(1);
-        FilteredList element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexArray)+"."+String.valueOf(index)));
+        FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
+                indexArray +"."+ index));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
         Text textValue = (Text) stackPaneChildren.get(1);
@@ -264,10 +261,10 @@ public class ArrayVisualization {
 
     // generates a node object to include in the visualization
     public void generateNode() throws InterruptedException {
-        Node node = new VBox();
+        VBox node = new VBox();
         node.setId("Array");
-        for (int i = 0; i < layoutArray.size(); i++){
-            ((VBox) node).getChildren().add(layoutArray.get(i));
+        for (VBox vBox : layoutArray) {
+            node.getChildren().add(vBox);
         }
         this.executeAlgorithmController.updateVisualization(node);
 
@@ -276,8 +273,8 @@ public class ArrayVisualization {
     // resets all relative data
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
-        this.layoutArray = new ArrayList<VBox>();
-        this.infoArrays = new ArrayList<InfoArray>();
+        this.layoutArray = new ArrayList<>();
+        this.infoArrays = new ArrayList<>();
     }
 
     // sets execute algorithm controller

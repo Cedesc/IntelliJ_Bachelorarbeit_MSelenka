@@ -2,7 +2,6 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoExperiment;
-import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Pos;
@@ -14,15 +13,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.util.ArrayList;
 
 public class ExperimentVisualization {
 
     private ExecuteAlgorithmController executeAlgorithmController;
-    private ArrayList<VBox> layoutExperiment = new ArrayList<VBox>();
-    private ArrayList<InfoExperiment> infoExperiments = new ArrayList<InfoExperiment>();
+    private ArrayList<VBox> layoutExperiment = new ArrayList<>();
+    private ArrayList<InfoExperiment> infoExperiments = new ArrayList<>();
 
     // constructor
     public ExperimentVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -31,7 +29,7 @@ public class ExperimentVisualization {
 
     public void createExperiment(InfoExperiment infoExperiment, int length) throws InterruptedException {
         HBox hBox = new HBox();
-        hBox.setId("Elementarray"+String.valueOf(this.infoExperiments.size()));
+        hBox.setId("Elementarray"+ this.infoExperiments.size());
         for (int i = 0; i < length; i++){
             Rectangle rectangleValue = new Rectangle();
             rectangleValue.setWidth(50);
@@ -39,14 +37,14 @@ public class ExperimentVisualization {
             rectangleValue.setStroke(Color.BLACK);
             rectangleValue.setFill(Color.TRANSPARENT);
             rectangleValue.setStrokeType(StrokeType.OUTSIDE);
-            Text indexText = new Text(String.valueOf(i)+" ");
-            indexText.setId("textIndex"+this.infoExperiments.size()+"."+String.valueOf(i));
+            Text indexText = new Text(i +" ");
+            indexText.setId("textIndex"+this.infoExperiments.size()+"."+ i);
             StackPane stackPane = new StackPane(rectangleValue, indexText);
             stackPane.setAlignment(Pos.BOTTOM_RIGHT);
             Text value = new Text("");
-            value.setId("textValue"+this.infoExperiments.size()+"."+String.valueOf(i));
+            value.setId("textValue"+this.infoExperiments.size()+"."+ i);
             StackPane stackPane2 = new StackPane(stackPane, value);
-            stackPane2.setId("stackPane"+this.infoExperiments.size()+"."+String.valueOf(i));
+            stackPane2.setId("stackPane"+this.infoExperiments.size()+"."+ i);
             hBox.getChildren().add(stackPane2);
         }
         Text label = new Text("Array "+(this.infoExperiments.size()+1));
@@ -110,7 +108,7 @@ public class ExperimentVisualization {
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
             // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
             FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
-                    String.valueOf(indexOfExperiment)+"."+String.valueOf(finalI)));
+                    indexOfExperiment +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             // Der TextValue wird abgespeichert
@@ -135,19 +133,19 @@ public class ExperimentVisualization {
         VBox vBoxArray = this.layoutExperiment.get(indexOfExperiment);
         ObservableList<Node> observableVBoxChildren = vBoxArray.getChildren();
         HBox elements = (HBox) observableVBoxChildren.get(1);
-        FilteredList elementStackpaneFilteredList = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
-                String.valueOf(indexOfExperiment)+"."+String.valueOf(index)));
-        StackPane stackPaneElement = (StackPane) elementStackpaneFilteredList.get(0);
+        FilteredList<Node> elementStackPaneFilteredList = elements.getChildren().
+                filtered(s -> s.getId().equals("stackPane"+ indexOfExperiment +"."+ index));
+        StackPane stackPaneElement = (StackPane) elementStackPaneFilteredList.get(0);
         ObservableList<Node> stackPaneElementChildren = stackPaneElement.getChildren();
         Text textValue = (Text) stackPaneElementChildren.get(1);
         textValue.setText("");
 
-        // iterate over the rest of the element and move all elements one position backwards
+        // iterate over the rest of the elements and move each element one position backwards
         for (int i = index+1; i < this.infoExperiments.get(indexOfExperiment).getSize()+1; i++){
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            FilteredList elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
-                    String.valueOf(indexOfExperiment)+"."+String.valueOf(finalI)));
+            FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
+                    indexOfExperiment +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
             Text textValueNext = (Text) stackPaneChildrenNext.get(1);
@@ -208,10 +206,10 @@ public class ExperimentVisualization {
 
 
     public void generateNode() throws InterruptedException {
-        Node node = new VBox();
+        VBox node = new VBox();
         node.setId("Table");
-        for (int i = 0; i < layoutExperiment.size(); i++){
-            ((VBox) node).getChildren().add(layoutExperiment.get(i));
+        for (VBox vBox : layoutExperiment) {
+            node.getChildren().add(vBox);
         }
         this.executeAlgorithmController.updateVisualization(node);
     }
@@ -222,8 +220,8 @@ public class ExperimentVisualization {
 
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController) {
         this.executeAlgorithmController = executeAlgorithmController;
-        this.layoutExperiment = new ArrayList<VBox>();
-        this.infoExperiments = new ArrayList<InfoExperiment>();
+        this.layoutExperiment = new ArrayList<>();
+        this.infoExperiments = new ArrayList<>();
     }
 
 }
