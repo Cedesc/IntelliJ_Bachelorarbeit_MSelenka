@@ -1,6 +1,8 @@
 package controller;
 
 import javafx.animation.TranslateTransition;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
@@ -26,8 +28,8 @@ public class ExecuteAlgorithmController implements Controller{
 
     @FXML public Button terminateButton;
     @FXML public VBox algorithmVisualization;
-    @FXML public javafx.scene.control.TableView commandListTable;
-    @FXML public javafx.scene.control.TableColumn commandListColumn;
+    @FXML public TableView commandListTable;
+    @FXML public TableColumn commandListColumn;
     @FXML public ScrollPane scrollPaneCommand;
     @FXML public Button stepBackButton;
     @FXML public Button stepForwardButton;
