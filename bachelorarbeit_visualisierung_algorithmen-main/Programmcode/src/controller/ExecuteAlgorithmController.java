@@ -5,12 +5,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import model.ParentViewModel;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -68,8 +69,9 @@ public class ExecuteAlgorithmController implements Controller{
     public void changeAlgorithmButton(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent selectAlgorithmVisualizationView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmView.fxml").openStream());
-        SelectAlgorithmController selectAlgorithmController = (SelectAlgorithmController) fxmlLoader.getController();
+        Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
+                getResource("../views/SelectAlgorithmView.fxml")).openStream());
+        SelectAlgorithmController selectAlgorithmController = fxmlLoader.getController();
         selectAlgorithmController.setParentViewModel(this.parentViewModel);
         Scene nextScene = new Scene(selectAlgorithmVisualizationView);
         double prevWidth = stage.getWidth();
@@ -109,8 +111,9 @@ public class ExecuteAlgorithmController implements Controller{
     public void repeatButton(ActionEvent actionEvent) throws IOException, InterruptedException {
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent selectAlgorithmVisualizationView = fxmlLoader.load(getClass().getResource("../views/ExecuteAlgorithmView.fxml").openStream());
-        ExecuteAlgorithmController executeAlgorithmController = (ExecuteAlgorithmController) fxmlLoader.getController();
+        Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
+                getResource("../views/ExecuteAlgorithmView.fxml")).openStream());
+        ExecuteAlgorithmController executeAlgorithmController = fxmlLoader.getController();
         executeAlgorithmController.setParentViewModel(this.parentViewModel);
         executeAlgorithmController.setCompleteVisualization(this.completeVisualization);
         Scene nextScene = new Scene(selectAlgorithmVisualizationView);
@@ -128,8 +131,9 @@ public class ExecuteAlgorithmController implements Controller{
     public void changeVisualizationButton(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent selectAlgorithmVisualizationView = fxmlLoader.load(getClass().getResource("../views/SelectAlgorithmVisualizationView.fxml").openStream());
-        SelectAlgorithmVisualizationController selectAlgorithmVisualizationController = (SelectAlgorithmVisualizationController) fxmlLoader.getController();
+        Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
+                getResource("../views/SelectAlgorithmVisualizationView.fxml")).openStream());
+        SelectAlgorithmVisualizationController selectAlgorithmVisualizationController = fxmlLoader.getController();
         selectAlgorithmVisualizationController.setParentViewModel(this.parentViewModel);
         Scene nextScene = new Scene(selectAlgorithmVisualizationView);
         double prevWidth = stage.getWidth();
@@ -148,7 +152,7 @@ public class ExecuteAlgorithmController implements Controller{
     }
 
     // sets all commands of the algorithm in the table view
-    public void setCommandListTable(ArrayList<CommandListColumn> commandListTable) throws InterruptedException {
+    public void setCommandListTable(ArrayList<CommandListColumn> commandListTable) {
         this.commandListColumn.setCellValueFactory(new PropertyValueFactory<>("command"));
         this.commandListTable.getItems().addAll(commandListTable);
         this.commandListTable.getSelectionModel().select(0);
@@ -166,9 +170,9 @@ public class ExecuteAlgorithmController implements Controller{
     }
 
     //  updates the VBox visualization of the algorithm
-    public void updateVisualization(Node node) throws InterruptedException {
+    public void updateVisualization(Node node) {
         String newId = node.getId();
-        Boolean edited = false;
+        boolean edited = false;
         for (int i = 0; i < this.algorithmVisualization.getChildren().size(); i++) {
             if (this.algorithmVisualization.getChildren().get(i).getId().equals(newId)) {
                 // executed if the visualization and data structure already exists and only needs to update its node
@@ -186,24 +190,20 @@ public class ExecuteAlgorithmController implements Controller{
         // executed if the visualization type is the complete run
         // should pause the visualization after every command
         // !!!!  DOES NOT WORK  !!!
-        if (completeVisualization){
-            //SequentialTransition seqTransition = new SequentialTransition (new PauseTransition(Duration.millis(1000)));
-            //seqTransition.play();
+        if (completeVisualization) {
             Stage stage = (Stage) terminateButton.getScene().getWindow();
             stage.show();
-            // Diese beiden Zeilen haben nichts gebracht und den Code nur verlangsamt durch unnötiges warten
-//            Thread.sleep(100);
-//            stage.show();
         }
     }
 
     // sets the "step forward" button to invisible, called if the last command of the algorithm is executed
-    public void setStepForwardButtonUnvisible(){
+    public void setStepForwardButtonInvisible(){
         this.stepForwardButton.setVisible(false);
     }
 
-    // sets the "step back" button to invisible, called it the and set if the first command of the algorithm should be executed
-    public void setStepBackButtonUnvisible(){
+    // sets the "step back" button to invisible, called it the and set if the first command of the algorithm should be
+    // executed
+    public void setStepBackButtonInvisible(){
         this.stepBackButton.setVisible(false);
     }
 

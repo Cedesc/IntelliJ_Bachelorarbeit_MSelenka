@@ -75,7 +75,7 @@ public class ParentViewModel extends Application {
             this.executeAlgorithmController.setStepBackButtonVisible();
         }
         if (currentCommandCount == this.algorithm.getCommandOrder().size()-1){
-            this.executeAlgorithmController.setStepForwardButtonUnvisible();
+            this.executeAlgorithmController.setStepForwardButtonInvisible();
         }
         this.currentCommandCount += 1;
     }
@@ -88,7 +88,7 @@ public class ParentViewModel extends Application {
         exeCommand(false);
 
         if (currentCommandCount == 1){
-            this.executeAlgorithmController.setStepBackButtonUnvisible();
+            this.executeAlgorithmController.setStepBackButtonInvisible();
         }
         if (currentCommandCount == this.algorithm.getCommandOrder().size()){
             this.executeAlgorithmController.setStepForwardButtonVisible();
@@ -233,7 +233,7 @@ public class ParentViewModel extends Application {
     // sets the used execute algorithm controller
     // resets also all data structure visualizations if they are set (so the visualization can start over again)
     // called by the execute algorithm controller
-    public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) throws InterruptedException {
+    public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) {
         this.executeAlgorithmController = executeAlgorithmController;
         ArrayList<CommandListColumn> commandArrayList = this.algorithm.getCommandListString();
         this.executeAlgorithmController.setCommandListTable(commandArrayList);
