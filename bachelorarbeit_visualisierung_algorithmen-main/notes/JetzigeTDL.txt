@@ -1,15 +1,49 @@
 
 CHECK! 1. Animationen eingliedern (nur naiver Versuch)
 	
-2. Zoomen besser verstehen können
-3. Zoomen eingliedern? Vereinbar mit Eingliedern der Animationen?
+CHECK! 2. Zoomen besser verstehen können
+CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Animationen
 
-4. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
+4. Zoomen
+	- Zoom korrigieren, derzeit falsch
+	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
+	- Immer nach links oder rechts scrollen können? 
+		- Mit drag and drop? 
+			-Wie? Translation des ZoomablePanes? 
+				- Wenn dann ScrollPane zu normalem Pane machen (da die Leisten dann nur verwirren und bescheurt sind)
 
-5. "Datenstruktur: Baum" Kapitel schreiben
+6. Animationen
+	- was bei zu schnellen Eingaben?
+		- Derzeit: Momentane Position wird genommen -> Führt zu Bullshit
+		- Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
+	- Complete Visualization, aufeinander warten
+	- Beta-Animationen (nur testen ob es grundsätzlich geht)
+		- create, insert
+			- reinfaden
+		- delete
+			- rausfaden
+		- set
+			- alten Wert rausfaden und neuen Wert reinfaden
+		- swap (schwieriger)
+			- Elemente tatsächlich sichtbar tauschen, ABER:
+				- wenn man die Zahlen zu den jeweils anderen Positionen bewegt, dann 
+
+
+7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
+
+8. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
 
 
-8. Animationen -> Was wenn man während Animationen was klickt? Animation bricht ab und Element ist am Ziel? Gibt es eine Funktion dafür, die Animation vorzeitig zu beenden? 
+9. Animationen -> Was wenn man während Animationen was klickt? Animation bricht ab und Element ist am Ziel? Gibt es eine Funktion dafür, die Animation vorzeitig zu beenden? 
 
 10. Refactoring
+
+
+JETZT JETZT TDL:
+	- Im Code alles bereit machen zum committen
+		- kommentieren (auch docs, also mit /**)
+		- auskommentiertes raus
+		- ggf rename
+	- notes überarbeiten und committen
+	- diese "JETZT JETZT TDL" löschen

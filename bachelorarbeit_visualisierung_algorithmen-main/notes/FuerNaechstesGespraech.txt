@@ -1,0 +1,25 @@
+
+
+Ziele:
+	- Zoomen 
+		- funktioniert im Groben
+	- Animationen
+		- funktioniert im Groben
+	- Kapitel über Theorie der Bäume geschrieben
+	- Weiteres:
+		- Animationen nacheinander abspielen können? (Complete Visualization)
+			- Über Timer nachdenken
+
+
+Vorstellung:
+	- Zoomen 
+		- ZoomablePane erstellt
+		- SceneGestures erstellt 
+
+
+Fragen:
+	- Verstehe "View/ExecuteAlgorithmView.fxml" nicht, macht aber anscheinend auch nichts aus
+	- Das Zoomen kommt ursprünglich von stackoverflow
+		- https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer
+		- Im Code notiert
+		- In BA notieren?
