@@ -4,12 +4,13 @@ Teil der Gliederung:
 	2 Datenstruktur: Baum 6 (6)
 		2.1 Terminologie 9 (1)
 		2.2 Definition 6 (1)
-		2.3 Verschiedene Arten von Bäumen 10 (2)
-			2.3.1 Binärbaum
-			2.3.2 ...
-		2.4 Eigenschaften 12 (1)
-			2.4.1 Vorteile
-			2.4.2 Nachteile
+		2.3 Eigenschaften 12 (1)
+			2.3.1 Vorteile
+			2.3.2 Nachteile
+		2.4 Verschiedene Arten von Bäumen 10 (2)
+			2.4.1 Binärbaum
+			2.4.2 Rot-Schwarz-Bäume ? (weil es besonders ist, dass die gefärbt sind)
+			2.4.3 ...
 		2.5 Zusammenfassung 13 (1)
 
 	3 Algorithmen auf Bäumen 14 (4)
@@ -33,7 +34,7 @@ Was ich reinbringen kann:
 Kapitel:
 
 2
-???
+{Üblicherweise von oben, mit der Wurzel am Anfang, nach unten gezeichnet}
 	2.1 Terminologie
 	{Ausgegangen von undirected}
 	{Quelle angeben, bisher https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie und https://en.wikipedia.org/wiki/Tree_(data_structure)#Terminology}
@@ -53,6 +54,7 @@ Kapitel:
 	Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten {https://de.wikipedia.org/wiki/Weg_(Graphentheorie)#L%C3%A4nge_und_Abstand}
 	Tiefe (Knoten) - Abstand zur Wurzel
 	Tiefe (Baum) - Maximaler Abstand von der Wurzel zu einem Blatt
+	Balanciert - Ein Baum ist balanciert, wenn die Differenz der jeweiligen Tiefe zweier beliebiger Blätter 
 	Ebene - Knoten derselben Tiefe
 	Breite (Ebene) - Anzahl Knoten der Ebene
 	Breite (Baum) - Maximale Breite einer Ebene im Baum
@@ -63,9 +65,37 @@ Kapitel:
 	2.2 Definition
 	{Quelle angeben}
 	{Irgendwas tolles offizielles finden, DSEA VL?}
-	{Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?}
+	{Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?} 
 	
 	
-	2.3 Verschiedene Arten von Bäumen
-		2.3.1 Binärbaum
+	2.3 Eigenschaften
+	{Quelle angeben, bisher https://in.indeed.com/career-advice/finding-a-job/what-is-tree-data-structure}
+	Stichpunkte:
+		- Eine nicht-lineare Datenstruktur
+		- Natürlicherweise eine Hierarchie in den Daten
+		- Kann, abhängig vom konkreten Tree, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.
+	
+	
+	2.4 Verschiedene Arten von Bäumen
+		2.4.1 Binärbaum
+		{Quelle angeben}
 		Binärbäume sind Bäume, bei denen jeder Knoten maximal zwei Kinder hat
+
+
+3
+???
+
+	3.1 Atomare Operationen
+	???
+	
+		3.1.1 Einfügen
+		{Zeit, Input, Output}
+		
+		3.1.2 Löschen
+		{Zeit, Input, Output}
+		
+		3.1.3 Rotieren
+		{Zeit, Input, Output}
+	
+	3.2 (spezifische) Algorithmen auf Bäumen
+	{Zeit, Input, Output}
