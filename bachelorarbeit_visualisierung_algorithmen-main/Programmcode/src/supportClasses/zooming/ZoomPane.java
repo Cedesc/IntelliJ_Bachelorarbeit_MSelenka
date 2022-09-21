@@ -13,10 +13,13 @@ import javafx.scene.layout.Pane;
  */
 public class ZoomPane extends Pane {
 
+    /**
+     * Actual scale of the ZoomPane.
+     */
     DoubleProperty myScale = new SimpleDoubleProperty(1.0);
 
     public ZoomPane() {
-        // add scale transform
+        // bind x and y scale of the Pane to the myScale variable => if myScale changes, x and y will change too
         scaleXProperty().bind(myScale);
         scaleYProperty().bind(myScale);
     }
@@ -25,11 +28,15 @@ public class ZoomPane extends Pane {
         return myScale.get();
     }
 
-    public void setScale( double scale) {
+    public void setScale(double scale) {
         myScale.set(scale);
     }
 
-    public void setPivot( double x, double y) {
+    /**
+     * @param x x-coordinate of the new pivot element
+     * @param y y-coordinate of the new pivot element
+     */
+    public void setPivot(double x, double y) {
         setTranslateX(getTranslateX()-x);
         setTranslateY(getTranslateY()-y);
     }
