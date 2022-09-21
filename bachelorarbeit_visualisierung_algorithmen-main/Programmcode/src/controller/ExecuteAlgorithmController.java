@@ -1,8 +1,10 @@
 package controller;
 
 import javafx.animation.TranslateTransition;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
@@ -11,8 +13,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -24,10 +28,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
 
-public class ExecuteAlgorithmController implements Controller{
+public class ExecuteAlgorithmController implements Controller, Initializable {
 
     @FXML public Button terminateButton;
-    @FXML public VBox algorithmVisualization;
+    @FXML public VBox algVisVBox;
     @FXML public TableView commandListTable;
     @FXML public TableColumn commandListColumn;
     @FXML public ScrollPane scrollPaneCommand;
@@ -36,8 +40,19 @@ public class ExecuteAlgorithmController implements Controller{
     @FXML public Button changeVisualizationButton;
     @FXML public Button repeatButton;
 
+    @FXML public ScrollPane algVisScrollPane;
+    @FXML public ZoomablePane algVisZoomPane;
+
+    // TODO: 20.09.2022 see "JetzigeTDL"!!!           TODODODODODODODODODODODOODODODODODODODODODODODODODODODODODODODOD
+
     private ParentViewModel parentViewModel;
     private boolean completeVisualization;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        SceneGestures sceneGestures = new SceneGestures(algVisZoomPane);
+        algVisScrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
+    }
 
     // interaction with the "terminate" button, shuts down the application
     public void terminateButton(ActionEvent actionEvent) {
@@ -54,7 +69,7 @@ public class ExecuteAlgorithmController implements Controller{
                 ((StackPane)
                         ((HBox)
                                 ((VBox)
-                                        ((VBox) algorithmVisualization.getChildren().get(0))
+                                        ((VBox) algVisVBox.getChildren().get(0))
                                                 .getChildren().get(1))
                                         .getChildren().get(1))
                                 .getChildren().get(1))
@@ -175,10 +190,10 @@ public class ExecuteAlgorithmController implements Controller{
     public void updateVisualization(Node node) {
         String newId = node.getId();
         boolean edited = false;
-        for (int i = 0; i < this.algorithmVisualization.getChildren().size(); i++) {
-            if (this.algorithmVisualization.getChildren().get(i).getId().equals(newId)) {
+        for (int i = 0; i < this.algVisVBox.getChildren().size(); i++) {
+            if (this.algVisVBox.getChildren().get(i).getId().equals(newId)) {
                 // executed if the visualization and data structure already exists and only needs to update its node
-                this.algorithmVisualization.getChildren().set(i, node);
+                this.algVisVBox.getChildren().set(i, node);
                 edited = true;
                 break;
             }
@@ -186,7 +201,7 @@ public class ExecuteAlgorithmController implements Controller{
         }
         if (!edited) {
             // executed if a new data structure is added to the visualization
-            this.algorithmVisualization.getChildren().add(node);
+            this.algVisVBox.getChildren().add(node);
         }
 
         // executed if the visualization type is the complete run
@@ -220,4 +235,3 @@ public class ExecuteAlgorithmController implements Controller{
     }
 
 }
-

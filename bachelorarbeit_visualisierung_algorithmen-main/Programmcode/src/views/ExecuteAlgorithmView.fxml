@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import controller.ZoomablePane?>
+
 <BorderPane fx:id="BorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExecuteAlgorithmController">
 
     <top>
@@ -34,9 +36,11 @@
                         </TableView>
                     </ScrollPane>
 
-                        <ScrollPane  minWidth="500">
+                        <ScrollPane  minWidth="500" fx:id="algVisScrollPane">
                             <!-- visualization object for algorithm !-->
-                            <VBox fx:id="algorithmVisualization" spacing="20"/>
+                            <ZoomablePane fx:id="algVisZoomPane">
+                                    <VBox fx:id="algVisVBox"/>
+                            </ZoomablePane>
                         </ScrollPane>
 
                 </HBox>
