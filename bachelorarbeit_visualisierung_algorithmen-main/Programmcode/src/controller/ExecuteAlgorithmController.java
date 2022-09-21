@@ -42,7 +42,13 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     @FXML public Button changeVisualizationButton;
     @FXML public Button repeatButton;
 
+    /**
+     * Pane only containing the ZoomPane algVisZoomPane.
+     */
     @FXML public ScrollPane algVisScrollPane;
+    /**
+     * ZoomPane, only containing the vbox for the visualization, just for enable zooming.
+     */
     @FXML public ZoomPane algVisZoomPane;
 
     private ParentViewModel parentViewModel;
@@ -50,7 +56,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // create sceneGestures to handle the zooming of algVisZoomPane correctly
         SceneGestures sceneGestures = new SceneGestures(algVisZoomPane);
+        // add the sceneGestures to algVisScrollPane to listen to mouse wheel inputs on the algVisScrollPane
         algVisScrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
     }
 

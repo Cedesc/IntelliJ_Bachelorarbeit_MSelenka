@@ -38,10 +38,10 @@
                         </TableView>
                     </ScrollPane>
 
-                    <!-- TODO Change ScrollPane to a pane because scrolling is now obsolete and dysfunctional ? -->
-                    <!-- pane only containing the zoomable pane -->
+                    <!-- TODO Change ScrollPane to a pane because scrolling is now obsolete and not functional ? -->
+                    <!-- pane only containing the ZoomPane -->
                     <ScrollPane  minWidth="500" fx:id="algVisScrollPane">
-                        <!-- zoomable pane, only containing the vbox for the visualization, just for enable zooming -->
+                        <!-- ZoomPane, only containing the vbox for the visualization, just for enable zooming -->
                         <ZoomPane fx:id="algVisZoomPane">
                             <!-- visualization of the algorithm in the vbox -->
                             <VBox fx:id="algVisVBox"/>
