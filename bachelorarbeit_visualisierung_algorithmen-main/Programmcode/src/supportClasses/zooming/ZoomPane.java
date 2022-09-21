@@ -33,8 +33,8 @@ public class ZoomPane extends Pane {
     }
 
     /**
-     * @param x x-coordinate of the new pivot element
-     * @param y y-coordinate of the new pivot element
+     * @param x x-coordinate of the new pivot point
+     * @param y y-coordinate of the new pivot point
      */
     public void setPivot(double x, double y) {
         setTranslateX(getTranslateX()-x);
