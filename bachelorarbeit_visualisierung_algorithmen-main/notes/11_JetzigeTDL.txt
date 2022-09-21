@@ -38,12 +38,3 @@ CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Ani
 9. Animationen -> Was wenn man während Animationen was klickt? Animation bricht ab und Element ist am Ziel? Gibt es eine Funktion dafür, die Animation vorzeitig zu beenden? 
 
 10. Refactoring
-
-
-JETZT JETZT TDL:
-	- Im Code alles bereit machen zum committen
-		- kommentieren (auch docs, also mit /**)
-		- auskommentiertes raus
-		- ggf rename
-	- notes überarbeiten und committen
-	- diese "JETZT JETZT TDL" löschen

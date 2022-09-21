@@ -1,8 +1,0 @@
-
-
-- Anfang: 12.9.  Ende: 12.12.
-- 30-50 Seiten lang
-    - Anhang zählt nicht, eingebrachte Grafiken/Diagramme schon
-- Auf das zurückkommen, was vorher thematisiert wird (Negativbeispiel: Szenarien von Selenka)
-- parallel schon anfangen BA zu schreiben
-- notieren, was ich am Code angepasst hab (und in BA reinschreiben)

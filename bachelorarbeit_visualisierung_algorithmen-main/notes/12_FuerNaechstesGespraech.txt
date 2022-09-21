@@ -2,9 +2,9 @@
 
 Ziele:
 	- Zoomen 
-		- funktioniert im Groben
+		- funktioniert im groben
 	- Animationen
-		- funktioniert im Groben
+		- funktioniert im groben
 	- Kapitel über Theorie der Bäume geschrieben
 	- Weiteres:
 		- Animationen nacheinander abspielen können? (Complete Visualization)
