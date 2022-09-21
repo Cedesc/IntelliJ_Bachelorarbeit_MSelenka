@@ -27,6 +27,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
+import supportClasses.zooming.SceneGestures;
+import supportClasses.zooming.ZoomPane;
 
 public class ExecuteAlgorithmController implements Controller, Initializable {
 
@@ -41,9 +43,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     @FXML public Button repeatButton;
 
     @FXML public ScrollPane algVisScrollPane;
-    @FXML public ZoomablePane algVisZoomPane;
-
-    // TODO: 20.09.2022 see "JetzigeTDL"!!!           TODODODODODODODODODODODOODODODODODODODODODODODODODODODODODODODOD
+    @FXML public ZoomPane algVisZoomPane;
 
     private ParentViewModel parentViewModel;
     private boolean completeVisualization;

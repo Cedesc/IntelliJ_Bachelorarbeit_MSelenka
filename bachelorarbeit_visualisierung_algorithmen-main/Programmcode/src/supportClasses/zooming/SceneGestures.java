@@ -1,7 +1,8 @@
-package controller;
+package supportClasses.zooming;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.ScrollEvent;
+import supportClasses.zooming.ZoomPane;
 
 /**
  * From
@@ -13,9 +14,9 @@ public class SceneGestures {  // TODO: 20.09.2022 rename and handle source
     private static final double MAX_SCALE = 10.0d;
     private static final double MIN_SCALE = .1d;
 
-    ZoomablePane canvas;
+    ZoomPane canvas;
 
-    public SceneGestures(ZoomablePane canvas) {
+    public SceneGestures(ZoomPane canvas) {
         this.canvas = canvas;
     }
 

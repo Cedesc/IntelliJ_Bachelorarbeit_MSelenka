@@ -1,22 +1,21 @@
-package controller;
+package supportClasses.zooming;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.layout.Pane;
 
 /**
+ * Pane which enables zooming.
+ * <p></p>
  * From
  * <a href="https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer">here</a>
  * as "PannableCanvas"
  */
-public class ZoomablePane extends Pane {  // TODO: 20.09.2022 rename and handle source
+public class ZoomPane extends Pane {
 
     DoubleProperty myScale = new SimpleDoubleProperty(1.0);
 
-    public ZoomablePane() {
-//        setPrefSize(400, 400);
-//        setStyle("-fx-background-color: lightgrey; -fx-border-color: blue;");
-
+    public ZoomPane() {
         // add scale transform
         scaleXProperty().bind(myScale);
         scaleYProperty().bind(myScale);
