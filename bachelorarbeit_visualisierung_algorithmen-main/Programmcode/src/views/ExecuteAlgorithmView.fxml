@@ -13,7 +13,8 @@
 
 <?import supportClasses.zooming.ZoomPane?>
 
-<BorderPane fx:id="BorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExecuteAlgorithmController">
+<BorderPane fx:id="BorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ExecuteAlgorithmController">
 
     <top>
         <Label fx:id="headerText" />
@@ -31,7 +32,8 @@
                         <TableView fx:id="commandListTable" minWidth="350">
                             <columns>
                                 <!-- experiment view object for command list of algorithm !-->
-                                <TableColumn fx:id="commandListColumn" minWidth="350" sortable="false" text="Command List"/>
+                                <TableColumn fx:id="commandListColumn" minWidth="350" sortable="false"
+                                             text="Command List"/>
                             </columns>
                         </TableView>
                     </ScrollPane>
@@ -49,16 +51,20 @@
                 </HBox>
                 <HBox alignment="CENTER" spacing="50">
                     <!-- "step back" button invisible at beginning of the visualization !-->
-                    <Button fx:id="stepBackButton" alignment="CENTER" contentDisplay="CENTER" onAction="#stepBackButton" prefWidth="100.0" text="step back" visible="false"/>
+                    <Button fx:id="stepBackButton" alignment="CENTER" contentDisplay="CENTER" onAction="#stepBackButton"
+                            prefWidth="100.0" text="step back" visible="false"/>
                     <!-- "step forward" button !-->
-                    <Button fx:id="stepForwardButton" alignment="CENTER" contentDisplay="CENTER" onAction="#stepForwardButton" prefWidth="100.0" text="step forward"/>
+                    <Button fx:id="stepForwardButton" alignment="CENTER" contentDisplay="CENTER"
+                            onAction="#stepForwardButton" prefWidth="100.0" text="step forward"/>
                 </HBox>
 
                 <HBox alignment="CENTER" spacing="50">
                     <!-- "repeat visualization" button !-->
-                    <Button fx:id="repeatButton" alignment="CENTER" contentDisplay="CENTER" onAction="#repeatButton" text="repeat visualization"/>
+                    <Button fx:id="repeatButton" alignment="CENTER" contentDisplay="CENTER" onAction="#repeatButton"
+                            text="repeat visualization"/>
                     <!-- "change visualization" button !-->
-                    <Button fx:id="changeVisualizationButton" alignment="CENTER" contentDisplay="CENTER" onAction="#changeVisualizationButton" text="change visualization" />
+                    <Button fx:id="changeVisualizationButton" alignment="CENTER" contentDisplay="CENTER"
+                            onAction="#changeVisualizationButton" text="change visualization" />
                 </HBox>
 
             </VBox>
@@ -74,12 +80,14 @@
             <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
             <!-- "change algorithm" button bottom left corner !-->
             <HBox alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
-                <Button fx:id="changeAlgorithm" onAction="#changeAlgorithmButton" text="change Algorithm" GridPane.columnIndex="0" />
+                <Button fx:id="changeAlgorithm" onAction="#changeAlgorithmButton" text="change Algorithm"
+                        GridPane.columnIndex="0" />
             </HBox>
 
             <!-- "terminate" button in bottom right corner !-->
             <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
-                <Button fx:id="terminateButton" onAction="#terminateButton" prefWidth="100.0" text="Terminate" GridPane.columnIndex="2" />
+                <Button fx:id="terminateButton" onAction="#terminateButton" prefWidth="100.0" text="Terminate"
+                        GridPane.columnIndex="2" />
             </HBox>
 
         </HBox>
