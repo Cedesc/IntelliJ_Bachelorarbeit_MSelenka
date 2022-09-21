@@ -21,13 +21,16 @@ public class SceneGestures {
      */
     private static final double MIN_SCALE = .1d;
 
+    public boolean zoomRelativeToMousePosition;
+
     /**
      * Saved ZoomPane to apply changes.
      */
     ZoomPane zoomPane;
 
-    public SceneGestures(ZoomPane zoomPane) {
+    public SceneGestures(ZoomPane zoomPane, boolean zoomRelativeToMousePosition) {
         this.zoomPane = zoomPane;
+        this.zoomRelativeToMousePosition = zoomRelativeToMousePosition;
     }
 
     public EventHandler<ScrollEvent> getOnScrollEventHandler() {
@@ -69,8 +72,10 @@ public class SceneGestures {
             // set the scale to the new value
             zoomPane.setScale(scale);
 
-            // note: pivot point must be untransformed, i.e. without scaling
-            zoomPane.setPivot(f * dx, f * dy);
+            if (zoomRelativeToMousePosition) {
+                // note: pivot point must be untransformed, i.e. without scaling
+                zoomPane.setPivot(f * dx, f * dy);
+            }
 
             event.consume();
         }
