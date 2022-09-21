@@ -4,6 +4,7 @@ import javafx.animation.TranslateTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -27,6 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
+import supportClasses.dragging.NodeGestures;
 import supportClasses.zooming.SceneGestures;
 import supportClasses.zooming.ZoomPane;
 
@@ -57,9 +59,22 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // create sceneGestures to handle the zooming of algVisZoomPane correctly
-        SceneGestures sceneGestures = new SceneGestures(algVisZoomPane);
+        // TODO: 22.09.2022 let the zoomRelativeToMousePosition on false? Or delete it completely?
+        SceneGestures sceneGestures = new SceneGestures(algVisZoomPane, false);
         // add the sceneGestures to algVisScrollPane to listen to mouse wheel inputs on the algVisScrollPane
         algVisScrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
+
+
+
+        // TODO: 22.09.2022 comment and refactor
+
+        NodeGestures nodeGestures = new NodeGestures(algVisScrollPane);
+
+        algVisZoomPane.addEventFilter(MouseEvent.MOUSE_PRESSED, nodeGestures.getOnMousePressedEventHandler());
+        algVisZoomPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, nodeGestures.getOnMouseDraggedEventHandler());
+
+
+
     }
 
     // interaction with the "terminate" button, shuts down the application
