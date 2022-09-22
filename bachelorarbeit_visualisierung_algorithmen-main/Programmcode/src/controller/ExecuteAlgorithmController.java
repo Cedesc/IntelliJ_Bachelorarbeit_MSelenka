@@ -1,14 +1,12 @@
 package controller;
 
-import javafx.animation.TranslateTransition;
+import javafx.animation.Transition;
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
 import model.ParentViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -75,29 +73,8 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "terminate" button, shuts down the application
     public void terminateButton(ActionEvent actionEvent) {
-        // TODO: 16.09.2022 change the method back to its normal work
-//        Platform.exit();
-//        System.exit(0);
-
-        // TODO: 16.09.2022 delete unnecessary comments
-        //  Kann ich in den einzelnen Befehlen (also in ExperimentVisualization, wo auch Rectangles
-        //  erstellt werden) die Formen bzw Textfelder abspeichern und dort bzw in einer anderen Funktion animieren?
-        //  -> JA!!! Siehe createExperiment in ExperimentVisualization
-        TranslateTransition translate = new TranslateTransition();
-        translate.setNode(
-                ((StackPane)
-                        ((HBox)
-                                ((VBox)
-                                        ((VBox) algVisVBox.getChildren().get(0))
-                                                .getChildren().get(1))
-                                        .getChildren().get(1))
-                                .getChildren().get(1))
-                        .getChildren().get(1));
-        translate.setDuration(Duration.millis(500));
-        translate.setCycleCount(4);
-        translate.setByX(100);
-        translate.setAutoReverse(true);
-        translate.play();
+        Platform.exit();
+        System.exit(0);
     }
 
     // interaction with the "change algorithm" button
@@ -181,10 +158,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     }
 
     // sets the parent model
-    public void setParentViewModel(ParentViewModel parentViewModel) throws InterruptedException {
+    public void setParentViewModel(ParentViewModel parentViewModel) {
         this.parentViewModel = parentViewModel;
         this.parentViewModel.setExecuteAlgorithmController(this);
-
     }
 
     // sets all commands of the algorithm in the table view
@@ -206,7 +182,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     }
 
     //  updates the VBox visualization of the algorithm
-    public void updateVisualization(Node node) {
+    public void updateVisualization(Node node, Transition transition) {
         String newId = node.getId();
         boolean edited = false;
         for (int i = 0; i < this.algVisVBox.getChildren().size(); i++) {
@@ -216,20 +192,27 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
                 edited = true;
                 break;
             }
-
         }
+
         if (!edited) {
             // executed if a new data structure is added to the visualization
             this.algVisVBox.getChildren().add(node);
         }
 
-        // executed if the visualization type is the complete run
-        // should pause the visualization after every command
-        // !!!!  DOES NOT WORK  !!!
-        if (completeVisualization) {
-            Stage stage = (Stage) terminateButton.getScene().getWindow();
-            stage.show();
+        // if the step-by-step visualization is selected
+        if (! completeVisualization) {
+            transition.play();
         }
+        // if the complete visualization is selected and the command list is empty
+        else if ("CommandList is empty" == "Platzhalter") {
+            // TODO: 22.09.2022 collect all transitions and play them as TransitionChain or SequentialTransition
+            //  at the end... How to detect the end of the completeVisualization? Check if the commandList is empty?
+        }
+        // if the complete visualization is selected, but the command list isn't empty so far
+        else {
+            // TODO: 22.09.2022 add the current transition to the TransitionChain or SequentialTransition
+        }
+
     }
 
     // sets the "step forward" button to invisible, called if the last command of the algorithm is executed
