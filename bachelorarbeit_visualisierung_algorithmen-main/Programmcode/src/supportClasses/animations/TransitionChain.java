@@ -5,6 +5,8 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
+// TODO: 22.09.2022 obsolete? is this better?
+//  https://docs.oracle.com/javase/8/javafx/api/javafx/animation/SequentialTransition.html
 /**
  * Chain of multiple transitions, so the transitions can be easily managed and played correctly one after the other.
  */
