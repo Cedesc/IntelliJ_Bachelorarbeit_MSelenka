@@ -125,4 +125,18 @@ public class InfoExperiment extends AbstractDatastructure {
         this.experimentVisualization = experimentVisualization;
     }
 
+    // returns the value list of the array
+    public Object[] getValueList(){
+        Object[] values = new Object[getSize()];
+        for (int i = 0; i < getSize(); i++){
+            values[i] = this.experimentContent.get(i);
+        }
+        return values;
+    }
+
+    // returns the type of the array
+    public types getType() {
+        return this.type;
+    }
+
 }

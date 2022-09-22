@@ -1,8 +1,11 @@
 package datastructures;
 
 import abstractAlgorithmus.AbstractAlgorithm;
+import commands.arrayCommands.DeleteArray;
+import commands.arrayCommands.InsertElementArray;
 import commands.arrayCommands.SwapElementsByIndexArray;
 import commands.experimentCommands.CreateExperiment;
+import commands.experimentCommands.DeleteExperiment;
 import commands.experimentCommands.InsertElementExperiment;
 import commands.experimentCommands.SwapElementsByIndexExperiment;
 import supportClasses.types;
@@ -29,6 +32,27 @@ public class Experiment extends AbstractDatastructure {
         InsertElementExperiment insertElementExperiment = new InsertElementExperiment(this.infoExperiment, size, value);
         this.infoExperiment.insertElement(size, value);
         this.algorithm.appendCommandOrder(insertElementExperiment);
+    }
+
+    // for inserting a new element to the array at position 0
+    public void insertElementAtStart(Object value) throws InterruptedException {
+        InsertElementExperiment insertElementExperiment = new InsertElementExperiment(this.infoExperiment, 0, value);
+        this.infoExperiment.insertElement(0, value);
+        this.algorithm.appendCommandOrder(insertElementExperiment);
+    }
+
+    // for inserting a new value into the array by a given index
+    public void insertElement(int index, Object value) throws InterruptedException {
+        InsertElementExperiment insertElementExperiment = new InsertElementExperiment(this.infoExperiment, index, value);
+        this.infoExperiment.insertElement(index, value);
+        this.algorithm.appendCommandOrder(insertElementExperiment);
+    }
+
+    // for deleting the whole array but not the instance of the infoArray
+    public void deleteExperiment() throws InterruptedException {
+        DeleteExperiment deleteExperiment = new DeleteExperiment(this.infoExperiment);
+        this.algorithm.appendCommandOrder(deleteExperiment);
+        infoExperiment.deleteExperiment();
     }
 
     // for swapping 2 elements of the array by their given indices
