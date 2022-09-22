@@ -17,7 +17,9 @@ weiteres:
 	- was bei zu schnellen Eingaben?
 		- Derzeit: Momentane Position wird genommen -> Führt zu Bullshit
 		- Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
+			- => animation.jumpTo("end")
 	- Complete Visualization, aufeinander warten
+		- aufeinander warten => animation.setDelay(Duration.millies(3000))
 	- Beta-Animationen (nur testen ob es grundsätzlich geht)
 		- create, insert
 			- reinfaden
