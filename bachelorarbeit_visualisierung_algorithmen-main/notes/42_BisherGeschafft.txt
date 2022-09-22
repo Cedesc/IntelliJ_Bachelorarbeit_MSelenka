@@ -1,3 +1,5 @@
 
 
 - complete visualization gibt jetzt das richtige Ergebnis zurück
+- complete visualization funktioniert jetzt wie ein Film
+- man kann sich mit der Maus durch das Bild per drag and drop navigieren
