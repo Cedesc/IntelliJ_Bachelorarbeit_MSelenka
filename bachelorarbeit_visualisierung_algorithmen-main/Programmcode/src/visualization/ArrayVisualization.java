@@ -2,6 +2,7 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoArray;
+import javafx.animation.Transition;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Pos;
@@ -13,6 +14,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import supportClasses.animations.NullTransition;
+
 import java.util.ArrayList;
 
 public class ArrayVisualization {
@@ -259,14 +262,20 @@ public class ArrayVisualization {
         generateNode();
     }
 
+
+    // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
+    public void generateNode() {
+        generateNode(new NullTransition());
+    }
+
     // generates a node object to include in the visualization
-    public void generateNode() throws InterruptedException {
+    public void generateNode(Transition transition) {
         VBox node = new VBox();
         node.setId("Array");
         for (VBox vBox : layoutArray) {
             node.getChildren().add(vBox);
         }
-        this.executeAlgorithmController.updateVisualization(node);
+        this.executeAlgorithmController.updateVisualization(node, transition);
 
     }
 

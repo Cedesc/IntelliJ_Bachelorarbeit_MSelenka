@@ -3,6 +3,7 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoList;
 import datastructures.Variable;
+import javafx.animation.Transition;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Group;
@@ -17,6 +18,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import supportClasses.animations.NullTransition;
 
 import java.util.ArrayList;
 
@@ -32,14 +34,19 @@ public class ListVisualization{
         this.executeAlgorithmController = executeAlgorithmController;
     }
 
+    // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
+    public void generateNode() {
+        generateNode(new NullTransition());
+    }
+
     // generates a node object which contains all current used lists
-    public void generateNode() throws InterruptedException {
+    public void generateNode(Transition transition) {
         Node node = new VBox();
         node.setId("List");
         for (int i = 0; i < layoutList.size(); i++){
             ((VBox) node).getChildren().add(layoutList.get(i));
         }
-        this.executeAlgorithmController.updateVisualization(node);
+        this.executeAlgorithmController.updateVisualization(node, transition);
 
     }
 

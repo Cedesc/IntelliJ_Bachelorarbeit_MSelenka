@@ -2,6 +2,7 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoVariable;
+import javafx.animation.Transition;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
@@ -10,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import supportClasses.animations.NullTransition;
 import supportClasses.types;
 import java.util.ArrayList;
 
@@ -25,15 +27,20 @@ public class VariableVisualization{
         this.executeAlgorithmController = executeAlgorithmController;
     }
 
+    // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
+    public void generateNode() {
+        generateNode(new NullTransition());
+    }
+
     // generates an enclosing node object for the visualization
-    public void generateNode() throws InterruptedException {
+    public void generateNode(Transition transition) {
         Node node = new VBox();
         node.setId("Variable");
         ((VBox) node).setSpacing(5);
         for (int i = 0; i < layoutVaraibles.size(); i++){
             ((VBox) node).getChildren().add(layoutVaraibles.get(i));
         }
-        this.executeAlgorithmController.updateVisualization(node);
+        this.executeAlgorithmController.updateVisualization(node, transition);
 
     }
 
