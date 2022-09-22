@@ -58,22 +58,18 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         // create sceneGestures to handle the zooming of algVisZoomPane correctly
-        // TODO: 22.09.2022 let the zoomRelativeToMousePosition on false? Or delete it completely?
         SceneGestures sceneGestures = new SceneGestures(algVisZoomPane, false);
         // add the sceneGestures to algVisScrollPane to listen to mouse wheel inputs on the algVisScrollPane
         algVisScrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
 
-
-
-        // TODO: 22.09.2022 comment and refactor
-
-        NodeGestures nodeGestures = new NodeGestures(algVisScrollPane);
-
-        algVisZoomPane.addEventFilter(MouseEvent.MOUSE_PRESSED, nodeGestures.getOnMousePressedEventHandler());
-        algVisZoomPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, nodeGestures.getOnMouseDraggedEventHandler());
-
-
+        // create nodeGestures on the algVisZoomPane for dragging the algVisZoomPane
+        NodeGestures nodeGestures = new NodeGestures(algVisZoomPane);
+        // add the events to the algVisScrollPane for activating them while aiming in the algVisScrollPane instead of
+        // the algVisZoomPane
+        algVisScrollPane.addEventFilter(MouseEvent.MOUSE_PRESSED, nodeGestures.getOnMousePressedEventHandler());
+        algVisScrollPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, nodeGestures.getOnMouseDraggedEventHandler());
 
     }
 

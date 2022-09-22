@@ -61,18 +61,18 @@ public class SceneGestures {
             // check if the new scale is neither less than MIN_SCALE nor greater than MAX_SCALE
             scale = withinTheLimits(scale, MIN_SCALE, MAX_SCALE);
 
-
-            // calculate the new pivot point
-            double f = (scale / oldScale) - 1;
-            double dx = (event.getSceneX() - (zoomPane.getBoundsInParent().getWidth() / 2
-                    + zoomPane.getBoundsInParent().getMinX()));
-            double dy = (event.getSceneY() - (zoomPane.getBoundsInParent().getHeight() / 2
-                    + zoomPane.getBoundsInParent().getMinY()));
-
             // set the scale to the new value
             zoomPane.setScale(scale);
 
+            // TODO: 22.09.2022 delete?
+            // doesn't work at the moment
             if (zoomRelativeToMousePosition) {
+                // calculate the new pivot point
+                double f = (scale / oldScale) - 1;
+                double dx = (event.getSceneX() - (zoomPane.getBoundsInParent().getWidth() / 2
+                        + zoomPane.getBoundsInParent().getMinX()));
+                double dy = (event.getSceneY() - (zoomPane.getBoundsInParent().getHeight() / 2
+                        + zoomPane.getBoundsInParent().getMinY()));
                 // note: pivot point must be untransformed, i.e. without scaling
                 zoomPane.setPivot(f * dx, f * dy);
             }
