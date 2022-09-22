@@ -14,12 +14,12 @@ weiteres:
 	- Button zum Zurücksetzen der Translation
 
 6. Animationen
+	CHECK! - Complete Visualization, aufeinander warten
+		CHECK!- aufeinander warten => animation.setDelay(Duration.millies(3000))
 	- was bei zu schnellen Eingaben?
 		- Derzeit: Momentane Position wird genommen -> Führt zu Bullshit
 		- Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
 			- => animation.jumpTo("end")
-	- Complete Visualization, aufeinander warten
-		- aufeinander warten => animation.setDelay(Duration.millies(3000))
 	- Beta-Animationen (nur testen ob es grundsätzlich geht)
 		- create, insert
 			- reinfaden
@@ -37,6 +37,8 @@ weiteres:
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
 
 
-9. ScrollPane entfernen und stattdessen anderen Knoten, zb normales Pane, welcher aber nur die feste Größe als Fenster anzeigt
+11. ScrollPane entfernen und stattdessen anderen Knoten, zb normales Pane, welcher aber nur die feste Größe als Fenster anzeigt
 
-10. Refactoring
+12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung (siehe AllgemeineTDL)
+
+21. Refactoring
