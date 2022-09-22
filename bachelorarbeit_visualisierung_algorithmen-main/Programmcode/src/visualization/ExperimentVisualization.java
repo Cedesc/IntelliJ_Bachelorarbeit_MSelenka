@@ -100,11 +100,14 @@ public class ExperimentVisualization {
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
         // save TextValue
-        Text textValue = (Text) stackPaneChildren.get(1);
+        Text newTextValue = (Text) stackPaneChildren.get(1);
         // save the current value for later
-        String memValue = textValue.getText();
+        String memValue = newTextValue.getText();
         // overwrite the shown value
-        textValue.setText(value.toString());
+        newTextValue.setText(value.toString());
+
+        Text textValue;
+        ArrayList<Text> movedValuesForAnimation = new ArrayList<>();
 
         // iterates over the rest of the array and moves all elements one position forward
         for (int i = index+1; i < this.infoExperiments.get(indexOfExperiment).getSize()+1; i++){
@@ -116,6 +119,8 @@ public class ExperimentVisualization {
                     indexOfExperiment +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
+            // save the Text for the animation
+            movedValuesForAnimation.add((Text) stackPaneChildrenNext.get(1));
             // save TextValue
             textValue = (Text) stackPaneChildrenNext.get(1);
             // save the current value for later
@@ -126,14 +131,9 @@ public class ExperimentVisualization {
             memValue = memValueNext;
         }
 
-        // TODO: 22.09.2022 man muss auf stackPaneChildren.get(1) zugreifen statt auf textValue, da textValue
-        //  überschrieben wird
-        //      1. bessere Variante erstellen
-        //      2. den rest der datenstruktur auch bewegen, indem jeder textValue in einer liste abgespeichert wird,
-        //         die dann übergeben wird
 
         // create animation
-        Transition transition = experimentAnimation.forInsertElement((Text) stackPaneChildren.get(1));
+        Transition transition = experimentAnimation.forInsertElement(newTextValue, movedValuesForAnimation);
 
         generateNode(transition);
 

@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 /**
  * Seperated class for creating animations for ExperimentVisualization.
  * <p></p>
@@ -17,7 +19,7 @@ public class ExperimentAnimation {
 
     /**
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
-     * @return a fade-in transition for createExperiment
+     * @return a fade-in translation
      */
     public Transition forCreateExperiment(VBox visualizedArray) {
 
@@ -37,6 +39,10 @@ public class ExperimentAnimation {
         return new ParallelTransition(visualizedArray, translate, fade);
     }
 
+    /**
+     * @param visualizedArray vBox, in which are both the label and the hBox containing the values
+     * @return a fade-out translation
+     */
     public Transition forDeleteExperiment(VBox visualizedArray) {
 
         // TODO: 22.09.2022 doesn't work, maybe because the array is completely removed before the animations are played
@@ -57,22 +63,43 @@ public class ExperimentAnimation {
         return new ParallelTransition(visualizedArray, translate, fade);
     }
 
-    public Transition forInsertElement(Text element) {
+    /**
+     * @param insertedValue new value in the array
+     * @param movedValues values to the right of the inserted value that needs to be moved to the next fields
+     * @return a fade-in translation for the inserted element and a translation to the next field to the
+     * right for each element, that needs to be moved
+     */
+    public Transition forInsertElement(Text insertedValue, ArrayList<Text> movedValues) {
 
-        // create translate transition
-        TranslateTransition translate = new TranslateTransition();
-        translate.setDuration(Duration.millis(300));
-        element.setTranslateY(-25);
-        translate.setByY(25);
+        // create translate transition for the inserted value
+        TranslateTransition translateInserted = new TranslateTransition();
+        translateInserted.setNode(insertedValue);
+        translateInserted.setDuration(Duration.millis(300));
+        insertedValue.setTranslateY(-25);
+        translateInserted.setByY(25);
 
-        // create fade transition
-        FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(500));
-        fade.setFromValue(0);
-        fade.setToValue(1);
+        // create fade transition for the inserted value
+        FadeTransition fadeInserted = new FadeTransition();
+        fadeInserted.setNode(insertedValue);
+        fadeInserted.setDuration(Duration.millis(500));
+        fadeInserted.setFromValue(0);
+        fadeInserted.setToValue(1);
 
-        // create parallel transition with the two preceding transitions
-        return new ParallelTransition(element, translate, fade);
+        ParallelTransition parallel = new ParallelTransition(translateInserted, fadeInserted);
+
+        // for each moved Value, create a translation to the next field to the right
+        for (Text moveValue : movedValues) {
+            // create translate transition
+            TranslateTransition translateMoved = new TranslateTransition();
+            translateMoved.setNode(moveValue);
+            translateMoved.setDuration(Duration.millis(300));
+            moveValue.setTranslateX(-50);
+            translateMoved.setByX(50);
+            // add to the parallelTransition
+            parallel.getChildren().add(translateMoved);
+        }
+
+        return parallel;
     }
 
 }
