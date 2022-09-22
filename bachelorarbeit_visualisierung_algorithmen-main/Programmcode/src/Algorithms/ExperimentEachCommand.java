@@ -17,8 +17,13 @@ public class ExperimentEachCommand extends AbstractAlgorithm {
         experiment1.insertElementAtEnd(12);
 
         experiment1.insertElementAtStart(10);
+        experiment1.insertElementAtStart(9);
 
         experiment1.insertElement(1, 18);
+        experiment1.insertElement(3, 19);
+
+        experiment1.swapElements(0, 2);
+        experiment1.swapElements(2, 1);
 
         experiment1.deleteExperiment();
 
