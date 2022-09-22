@@ -35,7 +35,7 @@ public class ExperimentVisualization {
         this.executeAlgorithmController = executeAlgorithmController;
     }
 
-    public void createExperiment(InfoExperiment infoExperiment, int length) throws InterruptedException {
+    public void createExperiment(InfoExperiment infoExperiment, int length) {
         HBox hBox = new HBox();
         hBox.setId("Elementarray"+ this.infoExperiments.size());
         for (int i = 0; i < length; i++){
@@ -71,61 +71,71 @@ public class ExperimentVisualization {
 
     // deletes the infoArray from the list
     // deletes the related Node-Object from the Array as well
-    public void deleteExperiment(InfoExperiment infoExperiment) throws InterruptedException{
+    public void deleteExperiment(InfoExperiment infoExperiment) {
         int index = this.infoExperiments.indexOf(infoExperiment);
         this.infoExperiments.remove(index);
-        this.layoutExperiment.remove(index);
-        generateNode();
+        VBox deletedVBox = this.layoutExperiment.remove(index);
+
+
+        // create animation
+        Transition transition = experimentAnimation.forDeleteExperiment(deletedVBox);
+
+        generateNode(transition);
     }
 
 
     // visualization of inserting an array element with a given index and value
     public void insertElement(InfoExperiment infoExperiment, int index, Object value) throws InterruptedException{
-        // Bestimmen welcher index das infoExperiment in "infoExperiments" hat und anhand dessen an die zugehörige
-        // vbox gelangen
-        // sets the Box
+        // determine which index the infoExperiment has in "infoExperiments" and use it to get to the corresponding vBox
         int indexOfExperiment = this.infoExperiments.indexOf(infoExperiment);
-        // Auf die Elemente zugreifen, indem man das zweite Element (also Index 1) von der vbox nimmt, da das erste
-        // Element nur das Label ist, während das zweite Element die Elemente des Experiments sind.
+        // Access the elements by taking the second element (i.e. index 1) from the vbox, since the first element is
+        // just the label, while the second element contains the elements of the experiment.
         VBox vBoxExperiment = this.layoutExperiment.get(indexOfExperiment);
         HBox elements = (HBox) vBoxExperiment.getChildren().get(1);
-        // Das eine gesuchte Element an Index "index" finden, indem alle Elemente des Arrays nach der ID gefiltert
-        // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
-        // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
-        // vielleicht sogar per Indexzugriff das Element finden?
-        // get visualization text of index 1
+        // Filter all elements of the array by ID and then accessing the first element (i.e. index 0) of the filtered
+        // list. Maybe unnecessary to use the filter on it instead of just searching for the one element? Or maybe you
+        // can even find the element via index access?
         FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
                 indexOfExperiment +"."+ index));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
-        // Der TextValue wird abgespeichert
+        // save TextValue
         Text textValue = (Text) stackPaneChildren.get(1);
-        // Der momentane, später veraltete Wert, wird für später abgespeichert
+        // save the current value for later
         String memValue = textValue.getText();
-        // Der geschriebene Wert wird überschrieben
+        // overwrite the shown value
         textValue.setText(value.toString());
 
         // iterates over the rest of the array and moves all elements one position forward
         for (int i = index+1; i < this.infoExperiments.get(indexOfExperiment).getSize()+1; i++){
-            // i in Variable speichern, da Parameter für lambda expressions final sein sollten
+            // store i in variable, since parameters for lambda expressions should be final
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
+            // Search for the ID with filtering like before
             FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
                     indexOfExperiment +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
-            // Der TextValue wird abgespeichert
+            // save TextValue
             textValue = (Text) stackPaneChildrenNext.get(1);
-            // Der momentane, später veraltete Wert, wird für später abgespeichert
+            // save the current value for later
             String memValueNext = textValue.getText();
-            // Der geschriebene Wert wird überschrieben
+            // overwrite the shown value
             textValue.setText(memValue);
-            // Der nächste Wert wird abgespeichert
+            // save the next value
             memValue = memValueNext;
         }
 
-        generateNode();
+        // TODO: 22.09.2022 man muss auf stackPaneChildren.get(1) zugreifen statt auf textValue, da textValue
+        //  überschrieben wird
+        //      1. bessere Variante erstellen
+        //      2. den rest der datenstruktur auch bewegen, indem jeder textValue in einer liste abgespeichert wird,
+        //         die dann übergeben wird
+
+        // create animation
+        Transition transition = experimentAnimation.forInsertElement((Text) stackPaneChildren.get(1));
+
+        generateNode(transition);
 
     }
 
@@ -163,20 +173,17 @@ public class ExperimentVisualization {
 
 
     public void swapElements(InfoExperiment infoExperiment, int index1, int index2) throws InterruptedException{
-        // Bestimmen welcher index das infoExperiment in "infoExperiments" hat und anhand dessen an die zugehörige vbox
-        // gelangen
+        // determine which index the infoExperiment has in "infoExperiments" and use it to get to the corresponding vBox
         int indexOfExperiment = this.infoExperiments.indexOf(infoExperiment);
-        // Auf die Elemente zugreifen, indem man das zweite Element (also Index 1) von der vbox nimmt, da das erste
-        // Element nur das Label ist, während das zweite Element die Elemente des Experiments sind.
+        // Access the elements by taking the second element (i.e. index 1) from the vbox, since the first element is
+        // just the label, while the second element contains the elements of the experiment.
         VBox vBoxExperiment = this.layoutExperiment.get(indexOfExperiment);
         ObservableList<Node> vBoxChildren = vBoxExperiment.getChildren();
         HBox elements = (HBox) vBoxChildren.get(1);
 
-        // Das eine gesuchte Element an Index "index" finden, indem alle Elemente des Arrays nach der ID gefiltert
-        // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
-        // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
-        // vielleicht sogar per Indexzugriff das Element finden?
-        // get visualization text of index 1
+        // Filter all elements of the array by ID and then accessing the first element (i.e. index 0) of the filtered
+        // list. Maybe unnecessary to use the filter on it instead of just searching for the one element? Or maybe you
+        // can even find the element via index access?
         FilteredList<Node> element1 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
                 indexOfExperiment +"."+ index1));
         StackPane stackPaneElement1 = (StackPane) element1.get(0);
@@ -187,18 +194,16 @@ public class ExperimentVisualization {
         String memValue1 = textValue.getText();
 
 
-        // Das eine gesuchte Element an Index "index" finden, indem alle Elemente des Arrays nach der ID gefiltert
-        // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
-        // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
-        // vielleicht sogar per Indexzugriff das Element finden?
-        // get visualization text of index 2
+        // Filter all elements of the array by ID and then accessing the first element (i.e. index 0) of the filtered
+        // list. Maybe unnecessary to use the filter on it instead of just searching for the one element? Or maybe you
+        // can even find the element via index access?
         FilteredList<Node> element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
                 indexOfExperiment +"."+ index2));
         StackPane stackPaneElement2 = (StackPane) element2.get(0);
         ObservableList<Node> stackPaneChildren2 = stackPaneElement2.getChildren();
-        // Der TextValue wird abgespeichert
+        // save TextValue
         Text textValue2 = (Text) stackPaneChildren2.get(1);
-        // Der momentane, später veraltete Wert, wird für später abgespeichert
+        // save the current value for later
         String memValue2 = textValue2.getText();
 
 
