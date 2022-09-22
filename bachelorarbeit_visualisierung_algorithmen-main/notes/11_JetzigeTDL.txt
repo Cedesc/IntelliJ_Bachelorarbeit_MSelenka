@@ -4,13 +4,14 @@ CHECK! 1. Animationen eingliedern (nur naiver Versuch)
 CHECK! 2. Zoomen besser verstehen können
 CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Animationen
 
-4. Zoomen
-	- Zoom korrigieren, derzeit falsch
+CHECK! 4. Zoomen
+weiteres: 
 	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
-	- Immer nach links oder rechts scrollen können? 
-		- Mit drag and drop? 
-			-Wie? Translation des ZoomablePanes? 
-				- Wenn dann ScrollPane zu normalem Pane machen (da die Leisten dann nur verwirren und bescheurt sind)
+	- Zoom relativ zur Maus ermöglichen
+	
+CHECK! 5. Dragging
+weiteres:
+	- Button zum Zurücksetzen der Translation
 
 6. Animationen
 	- was bei zu schnellen Eingaben?
@@ -28,13 +29,12 @@ CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Ani
 			- Elemente tatsächlich sichtbar tauschen, ABER:
 				- wenn man die Zahlen zu den jeweils anderen Positionen bewegt, dann 
 
-
 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
 
 8. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
 
 
-9. Animationen -> Was wenn man während Animationen was klickt? Animation bricht ab und Element ist am Ziel? Gibt es eine Funktion dafür, die Animation vorzeitig zu beenden? 
+9. ScrollPane entfernen und stattdessen anderen Knoten, zb normales Pane, welcher aber nur die feste Größe als Fenster anzeigt
 
 10. Refactoring
