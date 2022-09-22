@@ -4,6 +4,9 @@
 Titel: „Erweiterung der Visualisierungs-Software für Datenstrukturen um Animationen am Beispiel von Bäumen“
 
 
+TODO: javafx Theorie einfügen? zb Transitions
+
+
 Gliederung (meine BA):
 
 	1 Einleitung 1 (5)

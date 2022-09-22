@@ -19,6 +19,8 @@ Nützliche Links:
         - https://en.wikipedia.org/wiki/Tree_(data_structure)#Examples_of_trees_and_non-trees
         - https://en.wikipedia.org/wiki/Binary_tree
         - https://en.wikipedia.org/wiki/Tree_rotation
+	- javafx Documentation
+		- https://docs.oracle.com/javase/8/javafx/api/overview-summary.html
     - javafx Animation
         - https://www.youtube.com/watch?v=UdGiuDDi7Rg
         - https://www.youtube.com/watch?v=-WfyzkDodlI&list=PLhs1urmduZ2-4hFJxb2dgfWwcinNqEz0c
