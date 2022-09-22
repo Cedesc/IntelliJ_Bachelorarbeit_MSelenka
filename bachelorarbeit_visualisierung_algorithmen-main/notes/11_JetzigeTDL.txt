@@ -26,17 +26,9 @@ weiteres:
 			Idee 1: statt setTranslate eine Animation mit Zeit 0 erstellen dafür
             Idee 2: die translation als atEnd Event (oder wie auch immer) auf 0 setzen
 				=> Idee 1 klappt anscheinend
-	- Beta-Animationen (nur testen ob es grundsätzlich geht)
+	CHECK! - Beta-Animationen (nur testen ob es grundsätzlich geht)
 		CHECK! - create, insert
-			CHECK! - reinfaden
-		- delete
-			- rausfaden
-		- set
-			- alten Wert rausfaden und neuen Wert reinfaden
-		- swap (schwieriger)
-			- Elemente tatsächlich sichtbar tauschen, ABER:
-				- wenn man die Zahlen zu den jeweils anderen Positionen bewegt, dann wären diese dort falsch
-					- Idee: zunächst die als Werte bereits getauschten Zahlen mit instantTranslate zu den jeweilig anderen Positionen tauschen
+		CHECK! - swap (schwieriger)
 weiteres:
 	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
 		- Lösungsvorschlag:
