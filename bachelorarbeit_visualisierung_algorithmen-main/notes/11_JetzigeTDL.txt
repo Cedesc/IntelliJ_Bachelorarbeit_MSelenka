@@ -14,27 +14,35 @@ weiteres:
 	- Button zum Zurücksetzen der Translation
 
 6. Animationen
-	CHECK! - Complete Visualization, aufeinander warten
-		CHECK!- aufeinander warten => animation.setDelay(Duration.millies(3000))
+	- Complete Visualization, aufeinander warten
+		- aufeinander warten => animation.setDelay(Duration.millies(3000))
+		- ist irgendwie weird
+			- Idee: anfangs auf unsichtbar stellen -> Problem: macht alles nochmal umfangreicher
 	CHECK! - was bei zu schnellen Eingaben?
-		- Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
+		CHECK! - Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
 			- => animation.jumpTo("end")
 				- Idee: bei jedem Befehlsaufruf in ExperimentVisualization
-		- Lösungsvorschläge:
+		CHECK! - Lösungsvorschläge:
 			Idee 1: statt setTranslate eine Animation mit Zeit 0 erstellen dafür
             Idee 2: die translation als atEnd Event (oder wie auch immer) auf 0 setzen
-			=> Idee 1 klappt anscheinend
+				=> Idee 1 klappt anscheinend
 	- Beta-Animationen (nur testen ob es grundsätzlich geht)
-		- create, insert
-			- reinfaden
+		CHECK! - create, insert
+			CHECK! - reinfaden
 		- delete
 			- rausfaden
 		- set
 			- alten Wert rausfaden und neuen Wert reinfaden
 		- swap (schwieriger)
 			- Elemente tatsächlich sichtbar tauschen, ABER:
-				- wenn man die Zahlen zu den jeweils anderen Positionen bewegt, dann 
+				- wenn man die Zahlen zu den jeweils anderen Positionen bewegt, dann wären diese dort falsch
+					- Idee: zunächst die als Werte bereits getauschten Zahlen mit instantTranslate zu den jeweilig anderen Positionen tauschen
 weiteres:
+	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
+		- Lösungsvorschlag:
+			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
+			Idee 2: irgendwie ein Event bauen, das beim Ende der Animation aktiviert wird und dabei das Element löscht
+				- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
 	- Complete Visualization
 		- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
 			- indem die derzeitige Hervorhebung in dem Modus ausgeblendet und eine andere verwendet wird?
