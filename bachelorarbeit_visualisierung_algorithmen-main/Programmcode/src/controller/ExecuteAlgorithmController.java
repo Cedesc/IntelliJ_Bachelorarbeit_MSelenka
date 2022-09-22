@@ -26,6 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
+import supportClasses.animations.TransitionChain;
 import supportClasses.dragging.NodeGestures;
 import supportClasses.zooming.SceneGestures;
 import supportClasses.zooming.ZoomPane;
@@ -53,6 +54,11 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     private ParentViewModel parentViewModel;
     private boolean completeVisualization;
+
+    /**
+     * TransitionChain for managing the animations and playing one after the other.
+     */
+    private final TransitionChain transitionChain = new TransitionChain();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -199,20 +205,20 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
             this.algVisVBox.getChildren().add(node);
         }
 
-        // if the step-by-step visualization is selected
-        if (! completeVisualization) {
+        // if the step-by-step visualization is selected play the animation
+        if (! completeVisualization)
             transition.play();
-        }
-        // if the complete visualization is selected and the command list is empty
-        else if ("CommandList is empty" == "Platzhalter") {
-            // TODO: 22.09.2022 collect all transitions and play them as TransitionChain or SequentialTransition
-            //  at the end... How to detect the end of the completeVisualization? Check if the commandList is empty?
-        }
-        // if the complete visualization is selected, but the command list isn't empty so far
-        else {
-            // TODO: 22.09.2022 add the current transition to the TransitionChain or SequentialTransition
-        }
+        // if the complete visualization is selected add the animation to transitionChain
+        else
+            transitionChain.addTransition(transition);
 
+    }
+
+    /**
+     * Plays the full animation of the complete visualization like it's a movie.
+     */
+    public void playCompleteVisualization() {
+        transitionChain.playOneAfterOne();
     }
 
     // sets the "step forward" button to invisible, called if the last command of the algorithm is executed

@@ -98,7 +98,6 @@ public class ParentViewModel extends Application {
 
     // executes the whole command list in the order
     // called if the complete visualization is selected
-    // DOES NOT WAIT BETWEEN THE COMMAND!!!! ONLY THE END RESULT OF THE ALGORITHM WILL BE SEEN
     public void startVisualization() throws InterruptedException {
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
         for (int i = 0; i < commandOrder.size(); i++){
@@ -109,6 +108,8 @@ public class ParentViewModel extends Application {
             }
             this.currentCommandCount += 1;
         }
+        // plays each animation one after the other
+        this.executeAlgorithmController.playCompleteVisualization();
     }
 
 
