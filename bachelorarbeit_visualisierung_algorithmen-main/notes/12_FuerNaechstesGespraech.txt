@@ -13,6 +13,9 @@ Ziele:
 
 Vorstellung:
 	- Zoomen 
+		- 3D? 
+			- Nein, da es nach zu großen Umstellungen aussah und man das ganze neu aufziehen müsste
+			- Alternative, was ich gefunden habe, sah passender aus
 		- ZoomablePane erstellt
 		- SceneGestures erstellt 
 	- Animationen
