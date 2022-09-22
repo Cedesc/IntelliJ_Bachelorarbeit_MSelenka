@@ -16,8 +16,9 @@ weiteres:
 6. Animationen
 	- Complete Visualization, aufeinander warten
 		- aufeinander warten => animation.setDelay(Duration.millies(3000))
-		- ist irgendwie weird
-			- Idee: anfangs auf unsichtbar stellen -> Problem: macht alles nochmal umfangreicher
+		- Lösungsansätze:
+			Idee1: anfangs auf unsichtbar stellen -> Problem: macht alles nochmal umfangreicher
+			Idee2: was an der Ausführung der complete visualization ändern. Derzeit: anfangs ganz durchgehen, dann schritt für schritt mit den animationen. Vielleicht besser: tatsächlich schritt für schritt. Mit timer? Eher nicht. Mit atEnd Event der Animation den nächsten Schritt auslösen?
 	CHECK! - was bei zu schnellen Eingaben?
 		CHECK! - Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
 			- => animation.jumpTo("end")
