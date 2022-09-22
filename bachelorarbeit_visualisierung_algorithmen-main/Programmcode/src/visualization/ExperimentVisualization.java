@@ -2,7 +2,7 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoExperiment;
-import javafx.animation.TranslateTransition;
+import javafx.animation.Transition;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Pos;
@@ -14,7 +14,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
+import supportClasses.animations.NullTransition;
+import visualization.animationCreation.ExperimentAnimation;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,11 @@ public class ExperimentVisualization {
     private ExecuteAlgorithmController executeAlgorithmController;
     private ArrayList<VBox> layoutExperiment = new ArrayList<>();
     private ArrayList<InfoExperiment> infoExperiments = new ArrayList<>();
+
+    /**
+     * Instance of seperated class for creating the animations.
+     */
+    private final ExperimentAnimation experimentAnimation = new ExperimentAnimation();
 
     // constructor
     public ExperimentVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -54,19 +60,12 @@ public class ExperimentVisualization {
         vBox.getChildren().addAll(label, hBox);
         this.infoExperiments.add(infoExperiment);
         this.layoutExperiment.add(vBox);
-        generateNode();
 
-        // TODO: 16.09.2022 delete unnecessary comments
-        TranslateTransition translate = new TranslateTransition();
-        translate.setNode(label);
-        translate.setDuration(Duration.millis(500));
-        translate.setCycleCount(4);
-        translate.setByX(100);
-        translate.setAutoReverse(true);
-        translate.play();
-        translate.jumpTo(Duration.millis(1000));
-        translate.jumpTo("end");
-        translate.jumpTo("start");
+
+        // create animation
+        Transition transition = experimentAnimation.forCreateExperiment(vBox);
+
+        generateNode(transition);
     }
 
 
@@ -210,13 +209,20 @@ public class ExperimentVisualization {
     }
 
 
-    public void generateNode() throws InterruptedException {
+    /**
+     * If no transition is given, a NullTransition will be created for calling the generateNode()-function
+     */
+    public void generateNode() {
+        generateNode(new NullTransition());
+    }
+
+    public void generateNode(Transition transition) {
         VBox node = new VBox();
         node.setId("Table");
         for (VBox vBox : layoutExperiment) {
             node.getChildren().add(vBox);
         }
-        this.executeAlgorithmController.updateVisualization(node);
+        this.executeAlgorithmController.updateVisualization(node, transition);
     }
 
     public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) {
