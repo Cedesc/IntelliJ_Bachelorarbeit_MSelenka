@@ -26,6 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
+import supportClasses.animations.NullTransition;
 import supportClasses.animations.TransitionChain;
 import supportClasses.dragging.NodeGestures;
 import supportClasses.zooming.SceneGestures;
@@ -59,6 +60,12 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
      * TransitionChain for managing the animations and playing one after the other.
      */
     private final TransitionChain transitionChain = new TransitionChain();
+
+    /**
+     * Storing the last transition (in the step-by-step visualization) to end it prematurely before the following
+     * transition if necessary.
+     */
+    private Transition lastTransition = new NullTransition();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -206,8 +213,14 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
         }
 
         // if the step-by-step visualization is selected play the animation
-        if (! completeVisualization)
+        if (! completeVisualization) {
+            // skip to the end of the previous animation to avoid errors like further translation to a wrong point
+            this.lastTransition.jumpTo("end");
+            // start animation of the step
             transition.play();
+            // save transition for later
+            this.lastTransition = transition;
+        }
         // if the complete visualization is selected add the animation to transitionChain
         else
             transitionChain.addTransition(transition);
