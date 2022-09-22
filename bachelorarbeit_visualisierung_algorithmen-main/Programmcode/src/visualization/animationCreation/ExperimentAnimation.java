@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class ExperimentAnimation {
 
     private final int fieldDistance = 50;
+    private final Duration standardDuration = Duration.millis(300);
 
     /**
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
@@ -32,18 +33,16 @@ public class ExperimentAnimation {
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, 100, 0);
 
         // create translate transition
-        TranslateTransition translate = new TranslateTransition();
-        translate.setDuration(Duration.millis(800));
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(2), visualizedArray);
         translate.setByX(-100);
 
         // create fade transition
-        FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(800));
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(2), visualizedArray);
         fade.setFromValue(0);
         fade.setToValue(1);
 
         // create parallel transition with the two preceding transitions
-        return new ParallelTransition(visualizedArray, instantTranslate, translate, fade);
+        return new ParallelTransition(instantTranslate, translate, fade);
     }
 
     /**
@@ -58,18 +57,16 @@ public class ExperimentAnimation {
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, -100, 0);
 
         // create translate transition
-        TranslateTransition translate = new TranslateTransition();
-        translate.setDuration(Duration.millis(800));
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(2), visualizedArray);
         translate.setByX(100);
 
         // create fade transition
-        FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(800));
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(2), visualizedArray);
         fade.setFromValue(1);
         fade.setToValue(0);
 
         // create parallel transition and add all transitions
-        return new ParallelTransition(visualizedArray, instantTranslate, translate, fade);
+        return new ParallelTransition(instantTranslate, translate, fade);
     }
 
     /**
@@ -84,15 +81,11 @@ public class ExperimentAnimation {
         TranslateTransition instantTranslateInserted = createInstantTranslate(insertedValue, 0, -25);
 
         // create translate transition for the inserted value
-        TranslateTransition translateInserted = new TranslateTransition();
-        translateInserted.setNode(insertedValue);
-        translateInserted.setDuration(Duration.millis(300));
+        TranslateTransition translateInserted = new TranslateTransition(this.standardDuration, insertedValue);
         translateInserted.setByY(25);
 
         // create fade transition for the inserted value
-        FadeTransition fadeInserted = new FadeTransition();
-        fadeInserted.setNode(insertedValue);
-        fadeInserted.setDuration(Duration.millis(500));
+        FadeTransition fadeInserted = new FadeTransition(this.standardDuration.multiply(1.6), insertedValue);
         fadeInserted.setFromValue(0);
         fadeInserted.setToValue(1);
 
@@ -104,10 +97,8 @@ public class ExperimentAnimation {
             TranslateTransition instantTranslateMoved = createInstantTranslate(moveValue, -this.fieldDistance, 0);
 
             // create translate transition
-            TranslateTransition translateMoved = new TranslateTransition();
-            translateMoved.setNode(moveValue);
-            translateMoved.setDuration(Duration.millis(300));
-            translateMoved.setByX(50);
+            TranslateTransition translateMoved = new TranslateTransition(this.standardDuration, moveValue);
+            translateMoved.setByX(this.fieldDistance);
 
             // add them to the parallelTransition
             parallel.getChildren().add(instantTranslateMoved);
@@ -139,44 +130,32 @@ public class ExperimentAnimation {
 
 
         // text1 down
-        TranslateTransition translate11 = new TranslateTransition();
-        translate11.setNode(text1);
+        TranslateTransition translate11 = new TranslateTransition(this.standardDuration, text1);
         translate11.setByY(toY);
-        translate11.setDuration(Duration.millis(300));
 
         // text1 to position of text2
-        TranslateTransition translate12 = new TranslateTransition();
-        translate12.setNode(text1);
+        TranslateTransition translate12 = new TranslateTransition(this.standardDuration, text1);
         translate12.setByX(-deltaX);
-        translate12.setDuration(Duration.millis(300));
 
         // text1 up
-        TranslateTransition translate13 = new TranslateTransition();
-        translate13.setNode(text1);
+        TranslateTransition translate13 = new TranslateTransition(this.standardDuration, text1);
         translate13.setByY(-toY);
-        translate13.setDuration(Duration.millis(300));
 
         // SequentialTransition of text1
         SequentialTransition sequentialTransition1 = new SequentialTransition(translate11, translate12, translate13);
 
 
         // text2 up
-        TranslateTransition translate21 = new TranslateTransition();
-        translate21.setNode(text2);
+        TranslateTransition translate21 = new TranslateTransition(this.standardDuration, text2);
         translate21.setByY(-toY);
-        translate21.setDuration(Duration.millis(300));
 
         // text2 to position of text1
-        TranslateTransition translate22 = new TranslateTransition();
-        translate22.setNode(text2);
+        TranslateTransition translate22 = new TranslateTransition(this.standardDuration, text2);
         translate22.setByX(deltaX);
-        translate22.setDuration(Duration.millis(300));
 
         // text2 down
-        TranslateTransition translate23 = new TranslateTransition();
-        translate23.setNode(text2);
+        TranslateTransition translate23 = new TranslateTransition(this.standardDuration, text2);
         translate23.setByY(toY);
-        translate23.setDuration(Duration.millis(300));
 
         // SequentialTransition of text2
         SequentialTransition sequentialTransition2 = new SequentialTransition(translate21, translate22, translate23);
