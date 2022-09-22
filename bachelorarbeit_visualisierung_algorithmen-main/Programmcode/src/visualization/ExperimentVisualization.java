@@ -210,7 +210,12 @@ public class ExperimentVisualization {
         // set both texts
         textValue.setText(memValue2);
         textValue2.setText(memValue1);
-        generateNode();
+
+
+        // create animation
+        Transition transition = experimentAnimation.forSwapElements(textValue, textValue2, index1, index2);
+
+        generateNode(transition);
     }
 
 
