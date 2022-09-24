@@ -1,6 +1,8 @@
 package supportClasses.animations;
 
 import javafx.animation.Transition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public class TransitionChain {
      * Sets all translations to their endpoint.
      */
     public void endAll() {
+        // TODO: 24.09.2022 can lead to wrong positioning of the values
         for (Transition transition : transitions) {
             transition.jumpTo("end");
         }
@@ -74,6 +77,16 @@ public class TransitionChain {
     public void playOneAfterOne() {
         calculateDelaysForCompleteVisualization();
         startAnimation();
+    }
+
+    /**
+     * Sets all onFinishedEvents to the given event.
+     * @param eventHandler event, that will be executed if the transition is finished
+     */
+    public void allSetOnFinishedEvents(EventHandler<ActionEvent> eventHandler) {
+        for (Transition transition : transitions) {
+            transition.setOnFinished(eventHandler);
+        }
     }
 
 }
