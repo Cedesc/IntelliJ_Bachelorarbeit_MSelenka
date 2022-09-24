@@ -98,16 +98,23 @@ public class ParentViewModel extends Application {
 
     // executes the whole command list in the order
     // called if the complete visualization is selected
-    public void startVisualization() throws InterruptedException {
+    public void startCompleteVisualization() throws InterruptedException {
+        // get all commands of the algorithm
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
-        for (int i = 0; i < commandOrder.size(); i++){
+        // for each command
+        while (currentCommandCount < commandOrder.size()) {
+            // select the current command
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
+            // execute the selected command
             exeCommand(true);
-            if (i == commandOrder.size()-1){
-                this.executeAlgorithmController.terminateVisualization();
-            }
+            // command iterator moves on
             this.currentCommandCount += 1;
         }
+        // end the visualization (sets buttons on visible)
+        // TODO: 24.09.2022 doesn't work correctly (because the code reaches this line before playing the animations
+        //  but is this function call smart (by design)? Shouldn't the user has the option to repeat the visualization
+        //  before the animations end?
+        this.executeAlgorithmController.terminateVisualization();
         // plays each animation one after the other
         this.executeAlgorithmController.playCompleteVisualization();
     }
@@ -227,7 +234,7 @@ public class ParentViewModel extends Application {
     public void setVisualization(boolean completeVisualization) throws InterruptedException {
         this.currentCommandCount = 0;
         if (completeVisualization){
-            startVisualization();
+            startCompleteVisualization();
         }
     }
 
