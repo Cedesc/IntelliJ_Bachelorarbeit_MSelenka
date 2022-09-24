@@ -2,6 +2,7 @@ package controller;
 
 import javafx.animation.Transition;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -234,14 +235,27 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
             // save transition for later
             this.lastTransition = transition;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // TODO: 24.09.2022 pls clean
         // if the complete visualization is selected add the animation to transitionChain
-        else
+        else {
+            transition.setOnFinished(actionEvent -> {
+                try {
+                    this.parentViewModel.executeNextOnCompleteVisualization();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
             transitionChain.addTransition(transition);
+            transition.play();
+        }
+        // TODO: 24.09.2022 pls clean
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
     /**
-     * Plays the full animation of the complete visualization like it's a movie.
+     * Plays the full animation of the complete visualization (like a movie).
      */
     public void playCompleteVisualization() {
         transitionChain.playOneAfterOne();
@@ -268,7 +282,10 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
         this.stepBackButton.setVisible(true);
     }
 
-    // jumps to the end of each animation
+    /**
+     * Jumps to the end of each animation and delete the event on each transition, that would be triggered at the
+     * animations end.
+     */
     public void endAnimationAndDeleteOnFinishedEvents() {
         this.transitionChain.endAll();
         this.transitionChain.allSetOnFinishedEvents(actionEvent -> {});

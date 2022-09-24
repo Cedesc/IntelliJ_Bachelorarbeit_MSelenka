@@ -96,20 +96,32 @@ public class ParentViewModel extends Application {
         this.currentCommandCount -= 1;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // TODO: 24.09.2022 pls clean
     // executes the whole command list in the order
     // called if the complete visualization is selected
     public void startCompleteVisualization() throws InterruptedException {
         // get all commands of the algorithm
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
-        // for each command
-        while (currentCommandCount < commandOrder.size()) {
-            // select the current command in the vbox on the left
-            this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-            // execute the current command
-            exeCommand(true);
-            // command iterator moves on
-            this.currentCommandCount += 1;
-        }
+//        // for each command
+//        while (currentCommandCount < commandOrder.size()) {
+////            // select the current command in the vbox on the left
+////            this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
+////            // execute the current command
+////            exeCommand(true);
+////            // command iterator moves on
+////            this.currentCommandCount += 1;
+//            executeNextOnCompleteVisualization();
+//        }
+        // TODO: 24.09.2022 Klappt nicht! Schlechte Idee, da zu diesem Zeitpunkt noch gar keine Animationen erstellt
+        //  wurden. Die Animationen werden erst beim manipulieren der Datenstruktur erstellt.
+        //  ABER: Das Event ist ja absolut generisch. Also einfach bei jedem Hinzufügen einer Transition direkt das
+        //  Event erstellen? Man kann ja zwischen step by step und complete unterscheiden, sodass man beim hinzufügen
+        //  bei complete eben dies macht, bei step by step aber nicht. In updateVisualization in
+        //  ExecuteAlgorithmController kann man dies sicher gut machen
+        exeCommand(true);
+        this.currentCommandCount += 1;
+
         // end the visualization (sets buttons on visible)
         // TODO: 24.09.2022 doesn't work correctly (because the code reaches this line before playing the animations
         //  but is this function call smart (by design)? Shouldn't the user has the option to repeat the visualization
@@ -118,6 +130,17 @@ public class ParentViewModel extends Application {
         // plays each animation one after the other
         this.executeAlgorithmController.playCompleteVisualization();
     }
+
+    public void executeNextOnCompleteVisualization() throws InterruptedException {
+        // select the current command in the vbox on the left
+        this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
+        // execute the current command
+        exeCommand(true);
+        // command iterator moves on
+        this.currentCommandCount += 1;
+    }
+    // TODO: 24.09.2022 pls clean
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     private void exeCommand(Boolean isNextCommand) throws InterruptedException {
