@@ -103,9 +103,9 @@ public class ParentViewModel extends Application {
         ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
         // for each command
         while (currentCommandCount < commandOrder.size()) {
-            // select the current command
+            // select the current command in the vbox on the left
             this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-            // execute the selected command
+            // execute the current command
             exeCommand(true);
             // command iterator moves on
             this.currentCommandCount += 1;
