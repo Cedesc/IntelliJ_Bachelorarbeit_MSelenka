@@ -86,6 +86,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "terminate" button, shuts down the application
     public void terminateButton(ActionEvent actionEvent) {
+        // resets animation
+        this.endAnimationAndDeleteOnFinishedEvents();
+
         Platform.exit();
         System.exit(0);
     }
@@ -93,6 +96,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     // interaction with the "change algorithm" button
     // next view is the select algorithm view
     public void changeAlgorithmButton(ActionEvent actionEvent) throws IOException {
+        // resets animation
+        this.endAnimationAndDeleteOnFinishedEvents();
+
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
@@ -135,6 +141,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     // interaction with the "repeat visualization" button
     // resets all visualization and repeats it with the same parameter
     public void repeatButton(ActionEvent actionEvent) throws IOException, InterruptedException {
+        // resets animation
+        this.endAnimationAndDeleteOnFinishedEvents();
+
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
@@ -155,6 +164,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     // interaction with the "change visualization" button
     // next view is the select algorithm visualization view
     public void changeVisualizationButton(ActionEvent actionEvent) throws IOException {
+        // resets animation
+        this.endAnimationAndDeleteOnFinishedEvents();
+
         Stage stage = (Stage) terminateButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent selectAlgorithmVisualizationView = fxmlLoader.load(Objects.requireNonNull(getClass().
@@ -169,6 +181,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
         stage.setWidth(prevWidth);
         this.parentViewModel.resetVisualization(this);
     }
+
 
     // sets the parent model
     public void setParentViewModel(ParentViewModel parentViewModel) {
@@ -253,6 +266,12 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     // sets the "step back" button to visible, called if the first command is executed
     public void setStepBackButtonVisible(){
         this.stepBackButton.setVisible(true);
+    }
+
+    // jumps to the end of each animation
+    public void endAnimationAndDeleteOnFinishedEvents() {
+        this.transitionChain.endAll();
+        this.transitionChain.allSetOnFinishedEvents(actionEvent -> {});
     }
 
 }
