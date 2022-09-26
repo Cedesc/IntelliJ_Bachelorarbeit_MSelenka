@@ -53,5 +53,10 @@ weiteres:
 11. ScrollPane entfernen und stattdessen anderen Knoten, zb normales Pane, welcher aber nur die feste Größe als Fenster anzeigt
 
 12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung (siehe AllgemeineTDL)
+	- https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
+	- Variablen:
+		- fieldDistance und standardDuration (AbstractAnimationCreator)
+		- filepaths (zwei Stellen, weiß nicht mehr wo)
+		- Fenstergöße und full window (ParentViewModel)
 
 21. Refactoring
