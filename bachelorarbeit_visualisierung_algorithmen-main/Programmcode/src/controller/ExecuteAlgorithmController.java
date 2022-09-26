@@ -236,9 +236,10 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
             this.lastTransition = transition;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // TODO: 24.09.2022 pls clean
-        // if the complete visualization is selected add the animation to transitionChain
+        // TODO: 24.09.2022 pls clean (like in ParentViewModel)
+        // If the complete visualization is selected:
         else {
+            //  1. Set the onFinished-Event of the transition to the executeNextOnCompleteVisualization function
             transition.setOnFinished(actionEvent -> {
                 try {
                     this.parentViewModel.executeNextOnCompleteVisualization();
@@ -246,10 +247,13 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
                     throw new RuntimeException(e);
                 }
             });
+            //  2. add the transition to the transitionChain
             transitionChain.addTransition(transition);
+            //  3. play the transition (because of the set onFinished-Event, the next command will be automatically executed
+            //     at the end of the animation
             transition.play();
         }
-        // TODO: 24.09.2022 pls clean
+        // TODO: 24.09.2022 pls clean (like in ParentViewModel)
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
