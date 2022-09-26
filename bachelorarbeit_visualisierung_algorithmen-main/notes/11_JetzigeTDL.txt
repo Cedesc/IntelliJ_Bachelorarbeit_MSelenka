@@ -32,6 +32,9 @@ CHECK! 6. Animationen
 		CHECK! - create, insert
 		CHECK! - swap (schwieriger)
 weiteres:
+	- complete visualization auch bei noch nicht implementierten animationen anwenden können
+		- durch Überladung von generateNode() und dabei erstellen von nullTransition
+		- Problem: Get in zb ArrayVisualization klappt noch nicht
 	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
 		- Lösungsvorschlag:
 			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
