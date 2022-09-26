@@ -7,8 +7,8 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 
-// TODO: 22.09.2022 obsolete? is this better?
-//  https://docs.oracle.com/javase/8/javafx/api/javafx/animation/SequentialTransition.html
+// TODO: 26.09.2022 "played correctly one after the other" isn't necessary anymore, since the command executions are
+//  called by the onFinished-Events, so the animations are created one by one
 /**
  * Chain of multiple transitions, so the transitions can be easily managed and played correctly one after the other.
  */
