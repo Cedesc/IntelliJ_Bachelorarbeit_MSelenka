@@ -7,11 +7,11 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 
 /**
- * Seperated class for creating animations for ExperimentVisualization.
+ * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
  * <p>
  * <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/animation/ParallelTransition.html">Documentation</a>
  */
-public class ExperimentAnimation extends AbstractAnimationCreator{
+public class ExperimentAnimation extends AbstractAnimationCreator {
 
     /**
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
