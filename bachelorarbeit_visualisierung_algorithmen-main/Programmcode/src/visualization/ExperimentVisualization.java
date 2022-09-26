@@ -14,7 +14,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import supportClasses.animations.NullTransition;
 import visualization.animationCreation.ExperimentAnimation;
 
 import java.util.ArrayList;
@@ -223,7 +222,7 @@ public class ExperimentVisualization {
      * If no transition is given, a NullTransition will be created for calling the generateNode()-function
      */
     public void generateNode() {
-        generateNode(new NullTransition());
+        generateNode(experimentAnimation.getNullTransition());
     }
 
     public void generateNode(Transition transition) {
