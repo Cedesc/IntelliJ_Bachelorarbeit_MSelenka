@@ -4,12 +4,13 @@ import commands.experimentCommands.ExperimentCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
 import datastructures.InfoExperiment;
+import javafx.animation.Transition;
+import javafx.scene.Node;
 import visualization.ArrayVisualization;
 import visualization.ListVisualization;
 import visualization.ExperimentVisualization;
 import visualization.VariableVisualization;
 import abstractAlgorithmus.AbstractAlgorithm;
-import commands.Command;
 import commands.arrayCommands.ArrayCommand;
 import commands.listCommands.ListCommand;
 import commands.variableCommands.VariableCommand;
@@ -67,7 +68,7 @@ public class ParentViewModel extends Application {
     // gets the next command of the algorithm and executes it and the visualization of it in the background
     // called from the execute algorithm controller
     public void exeNextCommand() throws InterruptedException {
-        this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount+1);
+        this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount + 1);
 
         exeCommand(true);
 
@@ -77,7 +78,7 @@ public class ParentViewModel extends Application {
         if (currentCommandCount == this.algorithm.getCommandOrder().size()-1){
             this.executeAlgorithmController.setStepForwardButtonInvisible();
         }
-        this.currentCommandCount += 1;
+        this.increaseCurrentCommandCount();
     }
 
     // inserts the last command, the command reverts itself and changes the visualization in the background
@@ -96,38 +97,56 @@ public class ParentViewModel extends Application {
         this.currentCommandCount -= 1;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // TODO: 24.09.2022 pls clean (like in ExecuteAlgorithmController)
-    // executes the whole command list in the order
-    // called if the complete visualization is selected
+    /**
+     * Starts the complete visualization.
+     * <p>
+     * Called if the complete visualization is selected.
+     * <p>
+     * Procedure: Executes only the first command. In this function, it doesn't need more, because the next executions
+     * are called from the {@link Transition#onFinished}-Events. These events are set in
+     * {@link ExecuteAlgorithmController#updateVisualization(Node, Transition)}, where the correct code part is called
+     * since {@link ExecuteAlgorithmController#completeVisualization} is true.
+     */
     public void startCompleteVisualization() throws InterruptedException {
-        // get all commands of the algorithm
-        ArrayList<Command> commandOrder = this.algorithm.getCommandOrder();
-        // executes the first command (doesn't need more here, because the next execution calls are called from the
-        // onFinished-Events animation)
+        // executes the (first) command
         exeCommand(true);
-        this.currentCommandCount += 1;
-
-        // end the visualization (sets buttons on visible)
-        // TODO: 24.09.2022 doesn't work correctly, because the code reaches this line before playing the animations
-        //  but is this function call smart (by design)? Shouldn't the user has the option to repeat the visualization
-        //  before the animations end?
-        this.executeAlgorithmController.terminateVisualization();
-        // plays each animation one after the other
-        this.executeAlgorithmController.playCompleteVisualization();
+        // increase the currentCommandCount
+        this.increaseCurrentCommandCount();
     }
 
+    /**
+     * Only used in the complete visualization.
+     * <p>
+     * The function that is called as an {@link Transition#onFinished}-Event of each transition. In case the current
+     * command isn't the last
+     * one:
+     * <p>
+     * 1. The selected string of the (left) vbox of the command strings
+     * ({@link ExecuteAlgorithmController#commandListTable}) will be placed on the current command.
+     * <p>
+     * 2. The current command will be executed with {@link #exeCommand(Boolean)}.
+     * <p>
+     * 3. The {@link #currentCommandCount} will be increased.
+     */
     public void executeNextOnCompleteVisualization() throws InterruptedException {
-        // select the current command in the vbox on the left
-        this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
-        // execute the current command
-        exeCommand(true);
-        // command iterator moves on
-        this.currentCommandCount += 1;
-    }
-    // TODO: 24.09.2022 pls clean (like in ExecuteAlgorithmController)
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        // check if the current command is the last one
+        if (currentCommandCount == this.algorithm.getCommandOrder().size()){
+            // currently, terminateVisualization does nothing noticeable, but if the function will be changed or
+            // extended, this is the place where to call it
+            this.executeAlgorithmController.terminateVisualization();
+        }
+        // if the current command isn't the last one, the next command can be executed
+        else {
+            // select the current command in the vbox on the left
+            this.executeAlgorithmController.commandListTable.getSelectionModel().select(currentCommandCount);
+            // execute the current command
+            exeCommand(true);
+            // command iterator moves on
+            this.increaseCurrentCommandCount();
+        }
+
+    }
 
     private void exeCommand(Boolean isNextCommand) throws InterruptedException {
         int wantedCommandCount;
@@ -275,4 +294,9 @@ public class ParentViewModel extends Application {
             this.experimentVisualization.resetVisualization(executeAlgorithmController);
         }
     }
+
+    private void increaseCurrentCommandCount() {
+        this.currentCommandCount += 1;
+    }
+
 }

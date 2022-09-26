@@ -235,9 +235,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
             // save transition for later
             this.lastTransition = transition;
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // TODO: 24.09.2022 pls clean (like in ParentViewModel)
-        // If the complete visualization is selected:
+        // if the complete visualization is selected:
         else {
             //  1. Set the onFinished-Event of the transition to the executeNextOnCompleteVisualization function
             transition.setOnFinished(actionEvent -> {
@@ -247,22 +245,16 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
                     throw new RuntimeException(e);
                 }
             });
-            //  2. add the transition to the transitionChain
+            //  2. add the transition to the transitionChain (only for managing purposes in case of further inputs)
             transitionChain.addTransition(transition);
-            //  3. play the transition (because of the set onFinished-Event, the next command will be automatically executed
-            //     at the end of the animation
+            //  3. play the transition (because of the set onFinished-Event, the next command will be automatically
+            //     executed at the end of the transition)
             transition.play();
+            //  4. save the transition as lastTransition
+            //  (currently, this doesn't do anything noticeable, but might be useful for future changes)
+            this.lastTransition = transition;
         }
-        // TODO: 24.09.2022 pls clean (like in ParentViewModel)
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    }
-
-    /**
-     * Plays the full animation of the complete visualization (like a movie).
-     */
-    public void playCompleteVisualization() {
-        transitionChain.playOneAfterOne();
     }
 
     // sets the "step forward" button to invisible, called if the last command of the algorithm is executed
