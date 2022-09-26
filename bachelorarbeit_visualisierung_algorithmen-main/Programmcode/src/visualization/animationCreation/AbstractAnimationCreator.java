@@ -24,7 +24,16 @@ public abstract class AbstractAnimationCreator {
      * Standard duration for the transitions. When changed, all runtimes of the animations are changed.
      */
     protected final Duration standardDuration = Duration.millis(300);
+    /**
+     * Default translation. Placeholder for animations that aren't created yet.
+     */
+    protected final TranslateTransition nullTransition =
+            new TranslateTransition(standardDuration.multiply(3.0), new Node() {});
 
+
+    public TranslateTransition getNullTransition() {
+        return nullTransition;
+    }
 
     /**
      * Directly changing the translation of a node with {@link Node#setTranslateX(double)} or
