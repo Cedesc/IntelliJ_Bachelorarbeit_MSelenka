@@ -4,8 +4,6 @@ import controller.ExecuteAlgorithmController;
 import datastructures.InfoList;
 import datastructures.Variable;
 import javafx.animation.Transition;
-import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -17,8 +15,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
-import javafx.scene.text.Text;
-import supportClasses.animations.NullTransition;
+import visualization.animationCreation.ListAnimation;
 
 import java.util.ArrayList;
 
@@ -29,6 +26,12 @@ public class ListVisualization{
     private ArrayList<VBox> layoutList = new ArrayList<VBox>();
     private ArrayList<InfoList> infoLists = new ArrayList<InfoList>();
 
+    /**
+     * Instance of seperated class for creating the animations.
+     */
+    private final ListAnimation listAnimation = new ListAnimation();
+
+
     // constructor
     public ListVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
@@ -36,7 +39,7 @@ public class ListVisualization{
 
     // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
     public void generateNode() {
-        generateNode(new NullTransition());
+        generateNode(listAnimation.getNullTransition());
     }
 
     // generates a node object which contains all current used lists

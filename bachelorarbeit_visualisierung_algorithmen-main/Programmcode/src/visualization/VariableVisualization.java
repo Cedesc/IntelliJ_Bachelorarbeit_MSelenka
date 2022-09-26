@@ -11,8 +11,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import supportClasses.animations.NullTransition;
 import supportClasses.types;
+import visualization.animationCreation.VariableAnimation;
+
 import java.util.ArrayList;
 
 public class VariableVisualization{
@@ -22,6 +23,12 @@ public class VariableVisualization{
     private ArrayList<InfoVariable> infoVariables = new ArrayList<InfoVariable>();
     private ArrayList<VBox> layoutVaraibles = new ArrayList<VBox>();
 
+    /**
+     * Instance of seperated class for creating the animations.
+     */
+    private final VariableAnimation variableAnimation = new VariableAnimation();
+
+
     // constructor
     public VariableVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
@@ -29,7 +36,7 @@ public class VariableVisualization{
 
     // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
     public void generateNode() {
-        generateNode(new NullTransition());
+        generateNode(variableAnimation.getNullTransition());
     }
 
     // generates an enclosing node object for the visualization

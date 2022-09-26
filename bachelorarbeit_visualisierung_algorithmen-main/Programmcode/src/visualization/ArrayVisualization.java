@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import supportClasses.animations.NullTransition;
+import visualization.animationCreation.ArrayAnimation;
 
 import java.util.ArrayList;
 
@@ -25,6 +25,12 @@ public class ArrayVisualization {
     private ExecuteAlgorithmController executeAlgorithmController;
     private ArrayList<VBox> layoutArray = new ArrayList<>();
     private ArrayList<InfoArray> infoArrays = new ArrayList<>();
+
+    /**
+     * Instance of seperated class for creating the animations.
+     */
+    private final ArrayAnimation arrayAnimation = new ArrayAnimation();
+
 
     // constructor
     public ArrayVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -265,7 +271,7 @@ public class ArrayVisualization {
 
     // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
     public void generateNode() {
-        generateNode(new NullTransition());
+        generateNode(arrayAnimation.getNullTransition());
     }
 
     // generates a node object to include in the visualization
