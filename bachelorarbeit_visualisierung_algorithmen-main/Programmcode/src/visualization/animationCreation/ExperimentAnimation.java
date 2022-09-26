@@ -1,27 +1,17 @@
 package visualization.animationCreation;
 
 import javafx.animation.*;
-import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.util.ArrayList;
 
 /**
  * Seperated class for creating animations for ExperimentVisualization.
  * <p>
- *     Note: Directly changing the translation of a node with node.setTranslateX() or
- *     node.setTranslateY() can cause errors if the input is too fast. Instead, create a
- *     TranslateTransition with the duration of zero. You can use the function
- *     {@link #createInstantTranslate(Node, int, int)}.
- * <p>
  * <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/animation/ParallelTransition.html">Documentation</a>
  */
-public class ExperimentAnimation {
-
-    private final int fieldDistance = 50;
-    private final Duration standardDuration = Duration.millis(300);
+public class ExperimentAnimation extends AbstractAnimationCreator{
 
     /**
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
@@ -164,25 +154,6 @@ public class ExperimentAnimation {
         // create parallel transition and add the transitions
         return new ParallelTransition(instantTranslateText1, instantTranslateText2,
                 sequentialTransition1, sequentialTransition2);
-    }
-
-
-    /**
-     * Directly changing the translation of a node with node.setTranslateX() can cause
-     * errors if the input is too fast. Instead, create a TranslateTransition with a
-     * duration of zero.
-     * @param node the node to which the TranslateTransition is to be applied
-     * @param x the amount of the translation in x direction
-     * @param y the amount of the translation in y direction
-     * @return a TranslateTransition with a duration of zero
-     */
-    private TranslateTransition createInstantTranslate(Node node, int x, int y) {
-        TranslateTransition instantTranslate = new TranslateTransition();
-        instantTranslate.setNode(node);
-        instantTranslate.setByX(x);
-        instantTranslate.setByY(y);
-        instantTranslate.setDuration(Duration.ZERO);
-        return instantTranslate;
     }
 
 }
