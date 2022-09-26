@@ -1,8 +1,8 @@
 package controller;
 
 import javafx.animation.Transition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -27,7 +27,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
-import supportClasses.animations.NullTransition;
 import supportClasses.animations.TransitionChain;
 import supportClasses.dragging.NodeGestures;
 import supportClasses.zooming.SceneGestures;
@@ -66,7 +65,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
      * Storing the last transition (in the step-by-step visualization) to end it prematurely before the following
      * transition if necessary.
      */
-    private Transition lastTransition = new NullTransition();
+    private Transition lastTransition = new TranslateTransition();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
