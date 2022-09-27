@@ -97,6 +97,11 @@ public class InfoArray extends AbstractDatastructure {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'getElementByIndex' of an array :\nIndex out of bound.");
         }
+
+        if (this.arrayVisualization != null){
+            this.arrayVisualization.getIndexByValue(this);
+        }
+
         return this.array.get(index);
     }
 
@@ -117,11 +122,19 @@ public class InfoArray extends AbstractDatastructure {
                 }
             }
         }
+
+        if (this.arrayVisualization != null){
+            this.arrayVisualization.getValueByIndex(this);
+        }
+
         return index;
     }
 
     // returns the length of the array
     public int getSize(){
+        if (this.arrayVisualization != null){
+            this.arrayVisualization.getSize(this);
+        }
         return this.array.size();
     }
 

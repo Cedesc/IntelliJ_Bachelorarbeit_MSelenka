@@ -129,6 +129,18 @@ public class ArrayVisualization {
 
     }
 
+    public void getIndexByValue(InfoArray infoArray) {
+        generateNode();
+    }
+
+    public void getValueByIndex(InfoArray infoArray) {
+        generateNode();
+    }
+
+    public void getSize(InfoArray infoArray) {
+        generateNode();
+    }
+
     // swaps the values of both array elements of index1 and index2
     public void swapElements(InfoArray infoArray, int index1, int index2) throws InterruptedException{
         int indexArray = this.infoArrays.indexOf(infoArray);

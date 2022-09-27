@@ -19,10 +19,12 @@ public class GetValueByIndexArray extends ArrayCommand {
 
     // execute command during visualization
     public void exeCommand(){
+        this.infoArray.getElementByIndex(index);
     }
 
     // inverts command during visualization
     public void backCommand(){
+        this.infoArray.getElementByIndex(index);
     }
 
     // returns infoArray

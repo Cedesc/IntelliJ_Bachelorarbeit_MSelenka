@@ -17,10 +17,12 @@ public class GetSizeArray extends ArrayCommand {
 
     // execute command during visualization
     public void exeCommand(){
+        this.infoArray.getSize();
     }
 
     // inverts command during visualization
     public void backCommand(){
+        this.infoArray.getSize();
     }
 
     // returns infoArray
