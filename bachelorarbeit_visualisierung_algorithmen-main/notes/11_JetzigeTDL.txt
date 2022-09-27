@@ -42,8 +42,7 @@ weiteres:
 				- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
 	- animation für "get" funktionen erstellen
 	- Complete Visualization
-		- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
-			- indem die derzeitige Hervorhebung in dem Modus ausgeblendet und eine andere verwendet wird?
+		CHECK! - Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
 		- Button um direkt zum Endergebnis zu springen
 		- Button um Pause zu drücken
 	
