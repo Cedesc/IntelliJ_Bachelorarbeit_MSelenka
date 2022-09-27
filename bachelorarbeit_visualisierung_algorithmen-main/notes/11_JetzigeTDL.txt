@@ -8,6 +8,7 @@ CHECK! 4. Zoomen
 weiteres: 
 	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
 	- Zoom relativ zur Maus ermöglichen
+		- Idee: Anpassung des Pivotpoints darf NICHT die scene oder stage x koordinaten haben, sondern die in dem fenster UND das fenster muss eine feste größe (zb 600x600) haben
 	
 CHECK! 5. Dragging
 weiteres:
