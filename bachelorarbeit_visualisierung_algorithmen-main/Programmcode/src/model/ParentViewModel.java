@@ -6,6 +6,7 @@ import controller.SelectAlgorithmController;
 import datastructures.InfoExperiment;
 import javafx.animation.Transition;
 import javafx.scene.Node;
+import supportClasses.config.TempConfig;
 import visualization.ArrayVisualization;
 import visualization.ListVisualization;
 import visualization.ExperimentVisualization;
@@ -58,8 +59,9 @@ public class ParentViewModel extends Application {
         Parent selectAlgorithmView = fxmlLoader.load(Objects.requireNonNull(getClass().
                         getResource("../views/SelectAlgorithmView.fxml")).openStream());
         SelectAlgorithmController selectAlgorithmController = fxmlLoader.getController();
-        Scene rootScene = new Scene(selectAlgorithmView, 1200, 800);
+        Scene rootScene = new Scene(selectAlgorithmView, TempConfig.WINDOW_WIDTH, TempConfig.WINDOW_HEIGHT);
         primaryStage.setScene(rootScene);
+        primaryStage.setMaximized(TempConfig.MAXIMIZED_WINDOW);
         selectAlgorithmController.setParentViewModel(this);
         primaryStage.show();
 

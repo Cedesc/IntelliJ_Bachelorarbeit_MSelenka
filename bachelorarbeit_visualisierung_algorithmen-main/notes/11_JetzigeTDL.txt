@@ -45,6 +45,7 @@ weiteres:
 		CHECK! - Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
 		- Button um direkt zum Endergebnis zu springen
 		- Button um Pause zu drücken
+	- Animationen schneller oder langsamer zur Laufzeit machen können.
 	
 
 CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
@@ -58,12 +59,12 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 		<ScrollPane  minWidth="500" fx:id="algVisScrollPane"
                      hmax="0" vmax="0" hbarPolicy="NEVER" vbarPolicy="NEVER">
 
-12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung
+CHECK! 12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung
 	- https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
-	- Variablen:
-		- fieldDistance und standardDuration (AbstractAnimationCreator)
-		- filepaths (zwei Stellen, weiß nicht mehr wo)
-		- Fenstergöße und full window (ParentViewModel)
+	CHECK! - Variablen:
+		CHECK! - fieldDistance und standardDuration (AbstractAnimationCreator)
+		CHECK! - filepaths (zwei Stellen, weiß nicht mehr wo)
+		CHECK! - Fenstergöße und full window (ParentViewModel)
 
 21. Refactoring
 	- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion

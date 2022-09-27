@@ -16,6 +16,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import supportClasses.SaveScene;
+import supportClasses.config.TempConfig;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -40,7 +42,7 @@ public class SelectAlgorithmController implements Controller, Initializable {
     public void createList(){
 
 //        File folder = new File("src/Algorithms");
-        File folder = new File("bachelorarbeit_visualisierung_algorithmen-main/Programmcode/src/Algorithms");
+        File folder = new File(TempConfig.PATH_TO_ALGORITHMS);
         File[] javaFiles = folder.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {

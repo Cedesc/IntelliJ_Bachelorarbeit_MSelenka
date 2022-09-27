@@ -28,6 +28,7 @@ Ziele:
 					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
 			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
 			- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
+		- (vorläufige) config datei
 		
 
 

@@ -3,6 +3,7 @@ package visualization.animationCreation;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.util.Duration;
+import supportClasses.config.TempConfig;
 
 /**
  * Abstract class for the seperated classes for creating animations.
@@ -19,11 +20,11 @@ public abstract class AbstractAnimationCreator {
     /**
      * Standard distance of the concrete elements in the gui.
      */
-    protected final int fieldDistance = 50;
+    protected final int fieldDistance = TempConfig.FIELD_DISTANCE;
     /**
      * Standard duration for the transitions. When changed, all runtimes of the animations are changed.
      */
-    protected final Duration standardDuration = Duration.millis(300);
+    protected final Duration standardDuration = TempConfig.STANDARD_DURATION;
     /**
      * Default translation. Placeholder for animations that aren't created yet.
      */
