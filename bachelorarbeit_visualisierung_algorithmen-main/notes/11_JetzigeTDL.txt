@@ -67,3 +67,5 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 
 21. Refactoring
 	- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
+
+31. Work off ToDo's
