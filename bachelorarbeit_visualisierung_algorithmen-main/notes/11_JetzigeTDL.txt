@@ -48,7 +48,7 @@ weiteres:
 		- Button um Pause zu drücken
 	
 
-7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
+CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
 
 8. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
