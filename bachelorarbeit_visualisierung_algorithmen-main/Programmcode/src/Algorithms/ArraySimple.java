@@ -4,7 +4,7 @@ import abstractAlgorithmus.AbstractAlgorithm;
 import datastructures.*;
 import supportClasses.types;
 
-public class SimpleArrayAlgorithm extends AbstractAlgorithm {
+public class ArraySimple extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
