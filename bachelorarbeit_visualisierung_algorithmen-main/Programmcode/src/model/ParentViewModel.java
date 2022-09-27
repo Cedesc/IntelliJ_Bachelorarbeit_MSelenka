@@ -62,6 +62,13 @@ public class ParentViewModel extends Application {
         primaryStage.setScene(rootScene);
         selectAlgorithmController.setParentViewModel(this);
         primaryStage.show();
+
+        // TODO: 27.09.2022 delete afterwards
+        // debugging tool for showing coordinates of clicked point
+//        primaryStage.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
+//            System.out.println("x = " + mouseEvent.getX() + "   y = " + mouseEvent.getY());
+//            System.out.println("");
+//        });
     }
 
 
