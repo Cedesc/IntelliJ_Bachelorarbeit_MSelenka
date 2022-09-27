@@ -70,6 +70,9 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // TODO: 27.09.2022 delete afterwards. Make the ScrollPane visible for better debugging.
+        // algVisScrollPane.setStyle("-fx-background-color: lightgrey; -fx-border-color: blue;");
+
         // create sceneGestures to handle the zooming of algVisZoomPane correctly
         SceneGestures sceneGestures = new SceneGestures(algVisZoomPane, algVisScrollPane);
         // add the sceneGestures to algVisScrollPane to listen to mouse wheel inputs on the algVisScrollPane
