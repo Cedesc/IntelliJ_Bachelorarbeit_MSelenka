@@ -65,10 +65,10 @@ public class ParentViewModel extends Application {
 
         // TODO: 27.09.2022 delete afterwards
         // debugging tool for showing coordinates of clicked point
-//        primaryStage.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
-//            System.out.println("x = " + mouseEvent.getX() + "   y = " + mouseEvent.getY());
-//            System.out.println("");
-//        });
+        // primaryStage.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
+        //   System.out.println("x = " + mouseEvent.getX() + "   y = " + mouseEvent.getY());
+        //   System.out.println("");
+        // });
     }
 
 
