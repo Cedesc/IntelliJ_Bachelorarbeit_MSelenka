@@ -58,7 +58,7 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 		<ScrollPane  minWidth="500" fx:id="algVisScrollPane"
                      hmax="0" vmax="0" hbarPolicy="NEVER" vbarPolicy="NEVER">
 
-12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung (siehe AllgemeineTDL)
+12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung
 	- https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
 	- Variablen:
 		- fieldDistance und standardDuration (AbstractAnimationCreator)

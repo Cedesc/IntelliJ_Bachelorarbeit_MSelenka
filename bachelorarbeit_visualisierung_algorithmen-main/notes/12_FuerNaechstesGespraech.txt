@@ -2,13 +2,33 @@
 
 Ziele:
 	- Zoomen 
-		- funktioniert im groben
+		- funktioniert
+		- zoomt relativ zur Mausposition
 	- Animationen
-		- funktioniert im groben
+		- funktioniert, außer die Deleten Visualisierungen, da das Element zuerst entfernt wird
+		- keine fehler auch bei schnellen Eingaben (springt automatisch zum Ende der jeweiligen Animation)
+		- extra Klassen zur Erstellung der Animationen
+		- Beispiel swap: 
+			- A und B werden im tatsächlichen Wert getauscht
+			- A und B werden in der Visualisierung direkt getauscht durch instant translationen
+			- A und B werden mit Animation an den richtigen Platz geschoben
 	- Kapitel über Theorie der Bäume geschrieben
+		- nein...
 	- Weiteres:
+		- per drag und drop durch das bild bewegen können
 		- Animationen nacheinander abspielen können? (Complete Visualization)
-			- Über Timer nachdenken
+			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
+				- Nachteil: 
+					- klingt komisch 
+					- eine niedrig gestelltere Klasse (ExecuteAlgorithmController) greift auf eine höhere zu (ParentViewModel)
+					(- jeder Befehl muss eine "Animation" haben)
+				- Vorteil: 
+					- Animationen können beliebig lang sein 
+					- es brauchte keine großen Änderungen, daher bin ich recht sicher, dass es auch weiterhin funktioniert wie zuvor
+					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
+			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
+			- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
+		
 
 
 Vorstellung:
@@ -29,5 +49,7 @@ Fragen:
 		- In BA notieren?
 	- Literatur
 		- Ich seh es nicht wirklich, dass ich viel tatsächliche Literatur benutze, sondern mehr Websites und Aufzeichnungen von Vorlesungen
+		- zb Terminologie beim Baum - ich brauch ja schon eine Quelle dafür, oder?
 		- Sollte ich lieber zusätzlich noch Infos explizit aus Paper oder Literatur raussuchen?
 		- Wie ist es wenn ich Infos aus Vorlesungen entnehme?
+	- Ist in ScrollPane, da es bei normalem pane an den rändern nicht aufhört

@@ -15,4 +15,4 @@
     - 'graphvis' (von Fischer genannt)
     - Aus BA rauslesen
 - Wartbarkeit erhöhen indem...
-	- eine config-Datei erstellt wird, in der die zwei nötigen filepaths und Fenstergröße drin stehen
+	- eine config-Datei erstellt wird
