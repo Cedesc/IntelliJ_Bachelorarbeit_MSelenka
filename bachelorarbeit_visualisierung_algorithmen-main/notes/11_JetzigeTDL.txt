@@ -5,10 +5,9 @@ CHECK! 2. Zoomen besser verstehen können
 CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Animationen
 
 CHECK! 4. Zoomen
+	CHECK! - Zoom relativ zur Maus ermöglichen
 weiteres: 
 	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
-	- Zoom relativ zur Maus ermöglichen
-		- Idee: Anpassung des Pivotpoints darf NICHT die scene oder stage x koordinaten haben, sondern die in dem fenster UND das fenster muss eine feste größe (zb 600x600) haben
 	
 CHECK! 5. Dragging
 weiteres:
@@ -65,3 +64,4 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 		- Fenstergöße und full window (ParentViewModel)
 
 21. Refactoring
+	- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
