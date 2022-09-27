@@ -71,7 +71,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         // create sceneGestures to handle the zooming of algVisZoomPane correctly
-        SceneGestures sceneGestures = new SceneGestures(algVisZoomPane, false);
+        SceneGestures sceneGestures = new SceneGestures(algVisZoomPane, algVisScrollPane);
         // add the sceneGestures to algVisScrollPane to listen to mouse wheel inputs on the algVisScrollPane
         algVisScrollPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
 

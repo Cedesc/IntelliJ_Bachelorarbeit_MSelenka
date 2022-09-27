@@ -1,6 +1,8 @@
 package supportClasses.zooming;
 
 import javafx.event.EventHandler;
+import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.input.ScrollEvent;
 
 /**
@@ -21,16 +23,20 @@ public class SceneGestures {
      */
     private static final double MIN_SCALE = .1d;
 
-    public boolean zoomRelativeToMousePosition;
+    /**
+     * The frame in which the {@link ZoomPane} moves. Used for getting {@link Bounds} of the frame to calculate the correct
+     * pivot point.
+     */
+    private final Node frame;
 
     /**
-     * Saved ZoomPane to apply changes.
+     * Saved {@link ZoomPane} to apply changes.
      */
-    ZoomPane zoomPane;
+    private final ZoomPane zoomPane;
 
-    public SceneGestures(ZoomPane zoomPane, boolean zoomRelativeToMousePosition) {
+    public SceneGestures(ZoomPane zoomPane, Node frame) {
         this.zoomPane = zoomPane;
-        this.zoomRelativeToMousePosition = zoomRelativeToMousePosition;
+        this.frame = frame;
     }
 
     public EventHandler<ScrollEvent> getOnScrollEventHandler() {
@@ -63,23 +69,24 @@ public class SceneGestures {
 
             // set the scale to the new value
             zoomPane.setScale(scale);
+            
 
-            // TODO: 22.09.2022 delete?
-            // doesn't work at the moment
-            if (zoomRelativeToMousePosition) {
-                // calculate the new pivot point
-                double f = (scale / oldScale) - 1;
-                double dx = (event.getSceneX() - (zoomPane.getBoundsInParent().getWidth() / 2
-                        + zoomPane.getBoundsInParent().getMinX()));
-                double dy = (event.getSceneY() - (zoomPane.getBoundsInParent().getHeight() / 2
-                        + zoomPane.getBoundsInParent().getMinY()));
-                // note: pivot point must be untransformed, i.e. without scaling
-                zoomPane.setPivot(f * dx, f * dy);
-            }
+            // get the frame bounds
+            Bounds bounds = frame.localToScene(frame.getBoundsInLocal());
+            
+            // calculate the new pivot point
+            double f = (scale / oldScale) - 1;
+            double dx = event.getSceneX() - bounds.getMinX()
+                    - zoomPane.getBoundsInParent().getWidth() / 2 - zoomPane.getBoundsInParent().getMinX();
+            double dy = event.getSceneY() - bounds.getMinY()
+                    - zoomPane.getBoundsInParent().getHeight() / 2 - zoomPane.getBoundsInParent().getMinY();
+
+            // translate the ZoomPane
+            zoomPane.setPivot(f * dx, f * dy);
+
 
             event.consume();
         }
-
     };
 
     /**
