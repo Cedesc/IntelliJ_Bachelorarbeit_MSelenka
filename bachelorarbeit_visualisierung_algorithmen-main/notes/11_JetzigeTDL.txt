@@ -41,6 +41,7 @@ weiteres:
 			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
 			Idee 2: irgendwie ein Event bauen, das beim Ende der Animation aktiviert wird und dabei das Element löscht
 				- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
+	- animation für "get" funktionen erstellen
 	- Complete Visualization
 		- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
 			- indem die derzeitige Hervorhebung in dem Modus ausgeblendet und eine andere verwendet wird?
