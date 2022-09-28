@@ -52,6 +52,16 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 
 8. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
+	- DSEA
+		- Vorlesungen
+			https://lms.uni-mainz.de/moodle/course/view.php?id=54576
+		- Literatur
+			Cormen, T. H.; Leiserson, C. E.; Rivest, R. L. & Stein, C. (Eds.): Algorithmen - eine Einführung, Oldenbourg, 2013 Link/URL Deutschsprachige Version, E-Book.
+				https://lms.uni-mainz.de/moodle/mod/url/view.php?id=847974
+				https://hds.hebis.de/ubmz/Record/HEB400735768
+			Cormen, T. H.; Leiserson, C. E.; Rivest, R. L. & Stein, C. (Eds.): Introduction to algorithms, MIT Press, 2009
+				https://lms.uni-mainz.de/moodle/mod/url/view.php?id=847977
+				https://hds.hebis.de/ubmz/Record/HEB215028937
 
 
 11. ScrollPane entfernen und stattdessen anderen Knoten, zb normales Pane, welcher aber nur die feste Größe als Fenster anzeigt
