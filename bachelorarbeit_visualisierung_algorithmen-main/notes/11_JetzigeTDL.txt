@@ -1,40 +1,5 @@
 
-CHECK! 1. Animationen eingliedern (nur naiver Versuch)
-	
-CHECK! 2. Zoomen besser verstehen können
-CHECK! 3. Zoomen eingliedern (nur naiver Versuch) - funktioniert parallel zu Animationen
-
-CHECK! 4. Zoomen
-	CHECK! - Zoom relativ zur Maus ermöglichen
-weiteres: 
-	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
-	
-CHECK! 5. Dragging
-weiteres:
-	- Button zum Zurücksetzen der Translation
-
-CHECK! 6. Animationen
-	CHECK! - Complete Visualization, aufeinander warten
-		CHECK! - aufeinander warten => animation.setDelay(Duration.millies(3000))
-		CHECK! - Lösungsansätze:
-			Idee1: anfangs auf unsichtbar stellen -> Problem: macht alles nochmal umfangreicher
-			Idee2: was an der Ausführung der complete visualization ändern. Derzeit: anfangs ganz durchgehen, dann schritt für schritt mit den animationen. Vielleicht besser: tatsächlich schritt für schritt. Mit timer? Eher nicht. Mit atEnd Event der Animation den nächsten Schritt auslösen?
-				=> Idee2 mit onFinishedEvents der Animationen klappt gut
-	CHECK! - was bei zu schnellen Eingaben?
-		CHECK! - Gewünscht: Momentane Position wird auf Zielposition gesetzt, also Animation bricht ab 
-			- => animation.jumpTo("end")
-				- Idee: bei jedem Befehlsaufruf in ExperimentVisualization
-		CHECK! - Lösungsvorschläge:
-			Idee 1: statt setTranslate eine Animation mit Zeit 0 erstellen dafür
-            Idee 2: die translation als atEnd Event (oder wie auch immer) auf 0 setzen
-				=> Idee 1 klappt anscheinend
-	CHECK! - Beta-Animationen (nur testen ob es grundsätzlich geht)
-		CHECK! - create, insert
-		CHECK! - swap (schwieriger)
-	CHECK! - complete visualization auch bei noch nicht implementierten animationen anwenden können
-		CHECK! - durch Überladung von generateNode() und dabei erstellen von nullTransition
-		CHECK! - Get in zb ArrayVisualization funktioniert hier auch
-weiteres:
+1. Animationen
 	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
 		- Lösungsvorschlag:
 			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
@@ -42,15 +7,12 @@ weiteres:
 				- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
 	- animation für "get" funktionen erstellen
 	- Complete Visualization
-		CHECK! - Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
 		- Button um direkt zum Endergebnis zu springen
 		- Button um Pause zu drücken
 	- Animationen schneller oder langsamer zur Laufzeit machen können.
 	
 
-CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Visualization
-
-8. "Datenstruktur: Baum" Kapitel schreiben
+2. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
 	- DSEA
 		- Vorlesungen
@@ -68,15 +30,19 @@ CHECK! (obsolet) 7. "Timer"? Animationen nacheinander abspielbar? -> Complete Vi
 	- Lösung: (etwas unschön, da weiterhin ScrollPane)
 		<ScrollPane  minWidth="500" fx:id="algVisScrollPane"
                      hmax="0" vmax="0" hbarPolicy="NEVER" vbarPolicy="NEVER">
+12. Zoomen
+	- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)
+	
+13. Dragging
+	- Button zum Zurücksetzen der Translation
 
-CHECK! 12. Eine "config" Datei erstellen, für bessere Wartbarkeit und individuelle Nutzung
-	- https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
-	CHECK! - Variablen:
-		CHECK! - fieldDistance und standardDuration (AbstractAnimationCreator)
-		CHECK! - filepaths (zwei Stellen, weiß nicht mehr wo)
-		CHECK! - Fenstergöße und full window (ParentViewModel)
 
 21. Refactoring
 	- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
+
+22. Config
+	- richtige Config statt Java Klasse nutzen
+		https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
+		
 
 31. Work off ToDo's
