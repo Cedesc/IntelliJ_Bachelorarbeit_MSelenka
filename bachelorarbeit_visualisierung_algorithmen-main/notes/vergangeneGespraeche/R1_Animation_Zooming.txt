@@ -1,0 +1,80 @@
+18.10.
+*kurzes Treffen um auszumachen, was ich als nächstes machen soll*
+
+
+Ziele:
+	- Zoomen 
+		- funktioniert
+		- zoomt relativ zur Mausposition
+	- Animationen
+		- funktioniert, außer die Delete Visualisierungen, da das Element zuerst entfernt wird
+		- keine fehler auch bei schnellen Eingaben (springt automatisch zum Ende der jeweiligen Animation)
+		- extra Klassen zur Erstellung der Animationen
+		- Beispiel swap: 
+			- A und B werden im tatsächlichen Wert getauscht
+			- A und B werden in der Visualisierung direkt getauscht durch instant translationen
+			- A und B werden mit Animation an den richtigen Platz geschoben
+	- Kapitel über Theorie der Bäume geschrieben
+		- nein...
+		
+
+Vorstellung:
+	- Zoomen
+		- kurz zeigen, dass es geht
+	- Animationen
+		- kurz zeigen, dass es geht
+	- Complete Visualization 
+		- kurz zeigen, dass es geht
+	- Hänge noch an:
+		- Kapitel über Baum
+			- siehe Fragen
+		- schwierigkeit bei delete
+			- schon bei vorhandenem code kommen durch delete sehr leicht fehler zustande
+	- Was ich als nächstes machen würde:
+		- Kapitel über die Datenstruktur Baum weiter schreiben
+		- 2 Möglichkeiten
+			Entweder
+			Anfangen Gedanken zu machen, wie ich Bäume einbringen kann
+				- in welcher Form die Knoten abgespeichert werden sollten ("TYPES.types" genauer anschauen)
+				- wie ich visuell Bäume darstellen kann
+					- großes Problem: je tiefer ein Baum ist, desto breiter sollte er in den oberen Ebenen gezeichnet sein
+						=> ergibt Probleme fürs Zeichnen, aber besonders für Animationen
+			oder
+			Vorhandenen Code weiter kommentieren, Bugs fixen und refactoren
+				- Arrays haben so schon oft zu Fehlern geführt, das obwohl ich es bislang nicht drauf angelegt hab
+					- Grenzfälle checken, was bei zB vollem Array passiert
+				- Falls das: Soll ich auch noch richtige Arrays statt nur Arraylists hinzufügen?
+			Abwägung
+				- Bäume wären mir etwas lieber
+				- Bin mir relativ sicher, dass die Bugs an den Implementierungen der Datentypen selbst liegen, heißt ich könnte die Bäume sauber hinbekommen. Kann aber auch sein, dass ich mich da irre und sich das rächt.
+
+
+Fragen:
+	- Das Zoomen kommt ursprünglich von stackoverflow
+		- https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer
+		- Im Code notiert
+		- In BA notieren?
+	- Literatur
+		- Ich seh es nicht wirklich, dass ich viel tatsächliche Literatur benutze, sondern mehr Websites und Aufzeichnungen von Vorlesungen
+		- zb Terminologie beim Baum - ich brauch ja schon eine Quelle dafür, oder? Steht zb auch nicht im Cormen. 
+		- Sollte ich lieber zusätzlich noch Infos explizit aus Paper oder Literatur raussuchen?
+		- Wie ist es wenn ich Infos aus Vorlesungen entnehme?
+	- Ist in ScrollPane, da es bei normalem pane an den rändern nicht aufhört
+
+
+
+
+Notizen beim Treffen:
+	- 
+
+
+Nächste Ziele bis zum {HIER DATUM VOM NÄCHSTEN TREFFEN REIN}:
+	{BISHER NUR EIGENER VORSCHLAG ALS PLATZHALTER:}
+	In jedem Falls:
+		- Kapitel weiterschreiben
+	Falls an Bäume arbeiten:
+		- Gedanken machen, wie ich das umsetze
+	Falls an bisherigem Code arbeiten:
+		- bei Animationen "delete" hinbekommen
+	Eventuell:
+		- notierte Kleinigkeiten, zb Buttons bei complete Visualization zum pausieren oder überspringen

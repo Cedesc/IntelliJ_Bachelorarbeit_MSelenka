@@ -14,7 +14,7 @@ Ziele:
 			- A und B werden mit Animation an den richtigen Platz geschoben
 	- Kapitel über Theorie der Bäume geschrieben
 		- nein...
-	- Weiteres:
+	- Weiteres, was nicht als Ziel vereinbart war:
 		- per drag und drop durch das bild bewegen können
 		- Animationen nacheinander abspielen können? (Complete Visualization)
 			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
@@ -90,7 +90,7 @@ Vorstellung:
 				- Falls das: Soll ich auch noch richtige Arrays statt nur Arraylists hinzufügen?
 			Abwägung
 				- Bäume wären mir etwas lieber
-				- Bin mir relativ sicher, dass die Bugs an den Implementierungen der Datentypen selbst liegen, heißt ich könnte die Bäume sauber hinbekommen. Kann aber auch sein, dass ich mich da irre und sich das rächt
+				- Bin mir relativ sicher, dass die Bugs an den Implementierungen der Datentypen selbst liegen, heißt ich könnte die Bäume sauber hinbekommen. Kann aber auch sein, dass ich mich da irre und sich das rächt.
 			
 
 
