@@ -61,7 +61,7 @@ public class TempConfig {
      * Used in {@link supportClasses.zooming.SceneGestures}
      */
     public static final double MAX_ZOOM_SCALE =
-            10;
+            5;
 
     /**
      * The minimal possible zoom.
