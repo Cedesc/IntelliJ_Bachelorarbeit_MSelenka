@@ -54,4 +54,21 @@ public class TempConfig {
     public static final Duration STANDARD_DURATION =
             Duration.millis(300);
 
+
+    /**
+     * The maximal possible zoom.
+     * <p>
+     * Used in {@link supportClasses.zooming.SceneGestures}
+     */
+    public static final double MAX_ZOOM_SCALE =
+            5;
+
+    /**
+     * The minimal possible zoom.
+     * <p>
+     * Used in {@link supportClasses.zooming.SceneGestures}
+     */
+    public static final double MIN_ZOOM_SCALE =
+            0.1;
+
 }

@@ -5,7 +5,7 @@ import datastructures.List;
 import datastructures.Variable;
 import supportClasses.types;
 
-public class SimpleListAlgorithm extends AbstractAlgorithm {
+public class ListSimple extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
