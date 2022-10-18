@@ -7,7 +7,7 @@ import supportClasses.types;
 /**
  * Just creates multiple "Experiment"-Arrays for testing the zooming, scrolling and resizing of the window
  */
-public class ExperimentCreate extends AbstractAlgorithm {
+public class ExpCreate extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {

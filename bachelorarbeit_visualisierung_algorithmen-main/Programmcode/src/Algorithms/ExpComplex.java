@@ -5,7 +5,7 @@ import datastructures.Experiment;
 import supportClasses.types;
 
 // OWN TEST STUFF
-public class ExperimentComplex extends AbstractAlgorithm {
+public class ExpComplex extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
