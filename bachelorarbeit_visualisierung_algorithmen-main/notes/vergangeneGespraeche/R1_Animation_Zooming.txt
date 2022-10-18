@@ -65,16 +65,18 @@ Fragen:
 
 
 Notizen beim Treffen:
-	- 
+    - Nächstes Ziel: mit bäumen, atomare funktionalitäten, die man im code verwenden kann
+		- blatt hinzufügen bzw was dazwischen einfügen
+        - Was sind atomare funktionen und wie könnte man die visualisieren
+        - rotieren muss nicht atomar sein, kann auch mit mehreren anderen sachen darstellen
+		- in literatur anschauen um zu schauen was atomare sind
+    - quellen? Ja eine angeben, aber nächste woch mit fischer besprechen
+    - stackoverflow in BA erwähnen -> JA!
 
 
-Nächste Ziele bis zum {HIER DATUM VOM NÄCHSTEN TREFFEN REIN}:
-	{BISHER NUR EIGENER VORSCHLAG ALS PLATZHALTER:}
-	In jedem Falls:
-		- Kapitel weiterschreiben
-	Falls an Bäume arbeiten:
-		- Gedanken machen, wie ich das umsetze
-	Falls an bisherigem Code arbeiten:
-		- bei Animationen "delete" hinbekommen
-	Eventuell:
-		- notierte Kleinigkeiten, zb Buttons bei complete Visualization zum pausieren oder überspringen
+Nächste Ziele bis zum 26.10.:
+	- atomare Funktionalitäten von Bäumen listen
+		- Beispiele: Blatt hinzufügen, inneren Knoten hinzufügen, EVENTUELL rotieren
+		- in Literatur schauen was da in Algorithmen verwendet wird oder wie Funktionen anhand anderer Funktionen dargestellt werden, heißt keine atomaren Funktionen sind
+	- wie würde man diese atomaren Funktionalitäten animieren
+	(- Baumtheorie-Kapitel weiter schreiben)
