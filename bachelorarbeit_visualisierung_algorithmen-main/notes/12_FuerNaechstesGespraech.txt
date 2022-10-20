@@ -1,34 +1,11 @@
 
 
 Ziele:
-	- Zoomen 
-		- funktioniert
-		- zoomt relativ zur Mausposition
-	- Animationen
-		- funktioniert, außer die Delete Visualisierungen, da das Element zuerst entfernt wird
-		- keine fehler auch bei schnellen Eingaben (springt automatisch zum Ende der jeweiligen Animation)
-		- extra Klassen zur Erstellung der Animationen
-		- Beispiel swap: 
-			- A und B werden im tatsächlichen Wert getauscht
-			- A und B werden in der Visualisierung direkt getauscht durch instant translationen
-			- A und B werden mit Animation an den richtigen Platz geschoben
-	- Kapitel über Theorie der Bäume geschrieben
-		- nein...
-	- Weiteres, was nicht als Ziel vereinbart war:
-		- per drag und drop durch das bild bewegen können
-		- Animationen nacheinander abspielen können? (Complete Visualization)
-			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
-				- Nachteil: 
-					- klingt komisch 
-					- eine niedrig gestelltere Klasse (ExecuteAlgorithmController) greift auf eine höhere zu (ParentViewModel)
-					(- jeder Befehl muss eine "Animation" haben)
-				- Vorteil: 
-					- Animationen können beliebig lang sein 
-					- es brauchte keine großen Änderungen, daher bin ich recht sicher, dass es auch weiterhin funktioniert wie zuvor
-					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
-			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
-			- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
-		- (vorläufige) config datei
+	- atomare Funktionalitäten von Bäumen listen
+		- Beispiele: Blatt hinzufügen, inneren Knoten hinzufügen, EVENTUELL rotieren
+		- in Literatur schauen was da in Algorithmen verwendet wird oder wie Funktionen anhand anderer Funktionen dargestellt werden, heißt keine atomaren Funktionen sind
+	- wie würde man diese atomaren Funktionalitäten animieren
+	(- Baumtheorie-Kapitel weiter schreiben)
 		
 
 
@@ -95,14 +72,7 @@ Vorstellung:
 
 
 Fragen:
-	- Verstehe "View/ExecuteAlgorithmView.fxml" nicht, macht aber anscheinend auch nichts aus
-	- Das Zoomen kommt ursprünglich von stackoverflow
-		- https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer
-		- Im Code notiert
-		- In BA notieren?
 	- Literatur
 		- Ich seh es nicht wirklich, dass ich viel tatsächliche Literatur benutze, sondern mehr Websites und Aufzeichnungen von Vorlesungen
 		- zb Terminologie beim Baum - ich brauch ja schon eine Quelle dafür, oder? Steht zb auch nicht im Cormen. 
 		- Sollte ich lieber zusätzlich noch Infos explizit aus Paper oder Literatur raussuchen?
-		- Wie ist es wenn ich Infos aus Vorlesungen entnehme?
-	- Ist in ScrollPane, da es bei normalem pane an den rändern nicht aufhört
