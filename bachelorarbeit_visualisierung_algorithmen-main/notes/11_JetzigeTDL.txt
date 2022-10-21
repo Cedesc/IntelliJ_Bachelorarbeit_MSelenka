@@ -9,6 +9,11 @@
 	- Visualisierung zu den einzelnen Operationen überlegen
 
 
+13. Fehler bei zu schnellen Eingaben
+	- Rausfinden wo da die Grenzen sind
+	- Rausfinden, wie ich es vorzeigen kann, ohne dass es Fehler gibt
+
+
 
 21. "Datenstruktur: Baum" Kapitel schreiben
 	- Zunächst Plan machen, also Unterkapitel was geschrieben muss und in welcher Reihenfolge
