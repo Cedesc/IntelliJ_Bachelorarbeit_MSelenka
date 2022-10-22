@@ -38,8 +38,11 @@
                         </TableView>
                     </ScrollPane>
 
-                    <!-- TODO Change ScrollPane to a pane because scrolling is now obsolete and not functional ? -->
-                    <!-- pane only containing the ZoomPane -->
+                    <!-- ScrollPane only containing the ZoomPane -->
+                    <!-- Why ScrollPane instead of a simple normal Pane?
+                         The scroll bars are deactivated, so there is no difference at first glance. But if you use
+                         a normal Pane and drag the contained (for example) arrays beyond the boundaries of the window,
+                         the arrays will still visible. I haven't found a method of the Pane, that would fix this. -->
                     <ScrollPane  minWidth="500" fx:id="algVisScrollPane">
                         <!-- ZoomPane, only containing the vbox for the visualization, just for enable zooming -->
                         <ZoomPane fx:id="algVisZoomPane">
