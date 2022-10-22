@@ -35,6 +35,7 @@ Kapitel:
 
 2
 {Üblicherweise von oben, mit der Wurzel am Anfang, nach unten gezeichnet}
+{hier eine unausreichende Quelle https://runestone.academy/ns/books/published/pythonds/Trees/VocabularyandDefinitions.html , https://blog.masaischool.com/tree-data-structure-types-operations-applications/ , https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm}
 	2.1 Terminologie
 	{Ausgegangen von undirected}
 	{Quelle angeben, bisher https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie und https://en.wikipedia.org/wiki/Tree_(data_structure)#Terminology}
