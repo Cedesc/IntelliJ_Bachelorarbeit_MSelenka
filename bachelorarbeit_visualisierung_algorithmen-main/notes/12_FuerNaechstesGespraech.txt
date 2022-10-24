@@ -76,3 +76,8 @@ Fragen:
 		- Ich seh es nicht wirklich, dass ich viel tatsächliche Literatur benutze, sondern mehr Websites und Aufzeichnungen von Vorlesungen
 		- zb Terminologie beim Baum - ich brauch ja schon eine Quelle dafür, oder? Steht zb auch nicht im Cormen. 
 		- Sollte ich lieber zusätzlich noch Infos explizit aus Paper oder Literatur raussuchen?
+	- Atomare Operationen
+		- Suchen
+			- gehe ich von Suchbaum aus oder muss ich zwischen Tiefen- und Breitensuche unterscheiden?
+	- Ich soll allgemein Bäume implementieren und nicht nur Binärbäume, oder? Also zuvor unbestimmte Anzahl Kinder? Dann eignet sich ja nur das links Kind rechts Bruder Prinzip
+	- Wo UA abgeben?
