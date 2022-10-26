@@ -100,3 +100,12 @@ Kapitel:
 	
 	3.2 (spezifische) Algorithmen auf Bäumen
 	{Zeit, Input, Output}
+
+
+
+
+Zeug aus Cormen (ab S.1184 [1204])
+	- Ein "freier Baum" ist ein zusammenhängender azyklischer ungerichteter Graph. Nachfolgend wird der Einfachheit halber das Adjektiv "frei" weggelassen. {Abbildung B.4 (a) & (c)}
+	- Theorem B.2 (denke nicht, dass ich davon was nochmal aufgreifen kann)
+	- Ein "gerichteter Baum" ist ein Baum, bei dem ein Knoten ausgezeichnet ist. Dieser Knoten wird "Wurzel" genannt. {Abbildung B.6 (a)}
+	- Terminologie: Vorfahre (echter Vorfahre), Nachfahre (echter Nachfahre), Vater, Kind, Geschwister, Blatt, innerer Knoten, Grad, Tiefe eines Knotens, Ebene, Höhe eines Knotens, Höhe eines Baumes, geordneter Baum, binärer Baum, leerer Baum, vollständiger binärer Baum, k-närer Baum, 
