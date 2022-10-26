@@ -1,0 +1,69 @@
+
+
+
+Ziele:
+    - Zoomen & Animationen
+	- atomare Funktionalitäten von Bäumen listen
+		- Erledigt
+	- wie würde man diese atomaren Funktionalitäten animieren
+	    - Erledigt
+	(- Baumtheorie-Kapitel weiter schreiben)
+
+
+
+Vorstellung:
+	- Zoomen
+		- Implementierung
+			- 3D?
+				- Nein, da es nach zu großen Umstellungen aussah und man das ganze neu aufziehen müsste
+				- Alternative, was ich gefunden habe, sah passender aus
+			- ZoomablePane erstellt
+			- SceneGestures erstellt
+		- Funktionalität
+			- relativ zur Mausposition
+			- während beliebiger Animationen
+	- Animationen
+		- Funktionalität
+			- funktioniert, außer die Delete Visualisierungen, da das Element zuerst entfernt wird
+		- Implementierung
+			- extra Klassen zur Erstellung der Animationen
+			- Beispiel swap:
+				- A und B werden im tatsächlichen Wert getauscht
+				- A und B werden in der Visualisierung direkt getauscht durch instant translationen
+				- A und B werden mit Animation an den richtigen Platz geschoben
+	- Weiteres:
+		- per drag und drop durch das bild bewegen können
+			- auch während beliebiger Animationen
+		- Animationen nacheinander abspielen können? (Complete Visualization)
+			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
+				- Nachteil:
+					- klingt komisch
+					- eine niedrig gestelltere Klasse (ExecuteAlgorithmController) greift auf eine höhere zu (ParentViewModel)
+					(- jeder Befehl muss eine "Animation" haben)
+				- Vorteil:
+					- Animationen können beliebig lang sein
+					- es brauchte keine großen Änderungen, daher bin ich recht sicher, dass es auch weiterhin funktioniert wie zuvor
+					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
+			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
+			- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
+		- (vorläufige) config datei
+	- Liste der atomaren Operationen durchgehen
+
+
+Fragen:
+	- Literatur
+		- Liste an Terminologie
+		    - Ich brauch ja Quelle für die Begriffe, aber was, wenn ich z.B. "Tiefe eines Baums" nicht finde?
+		        - Kann's ja nicht einfach so hinschreiben, brauch ja eine Quelle dafür. Im Zweifel selbst definieren?
+	- Ich soll allgemein Bäume implementieren und nicht nur Binärbäume, oder? Also zuvor unbestimmte Anzahl Kinder?
+	  Dann eignet sich ja nur das links Kind rechts Bruder Prinzip
+	- Wo UA abgeben?
+
+
+
+Notizen beim Treffen:
+
+
+
+Nächste Ziele bis zum PLATZHALTER:
+

@@ -1,17 +1,12 @@
 
 
-11. Beim ScrollPane in der fxml Datei einen Kommentar schreiben der erklärt, warum es ein ScrollPane ist
+CHECK! 11. Beim ScrollPane in der fxml Datei einen Kommentar schreiben der erklärt, warum es ein ScrollPane ist
 
 
-12. Liste an atomaren Operationen von Bäumen erstellen 
+CHECK! 12. Liste an atomaren Operationen von Bäumen erstellen 
 	- Rausfinden was es generell für Operationen gibt
 	- In Literatur schauen, ob da z.B. in Algorithmen vermeintlich atomare Operationen weiter aufgebrochen werden (z.B. das rotieren mit anderen Operationen dargestellt werden kann)
 	- Visualisierung zu den einzelnen Operationen überlegen
-
-
-13. Fehler bei zu schnellen Eingaben
-	- Rausfinden wo da die Grenzen sind
-	- Rausfinden, wie ich es vorzeigen kann, ohne dass es Fehler gibt
 
 
 
