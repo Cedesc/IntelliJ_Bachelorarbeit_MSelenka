@@ -62,8 +62,28 @@ Fragen:
 
 
 Notizen beim Treffen:
+    - highlighten von Knoten (bei get) automatisch
+    - Knoten durchnummerieren
+    - Queue und Variablen sichtbar machen
+
+    - atomare Operationen
+        - Blatt anhängen
+        - Elternpointer umhängen können
+        - Blatt löschen
+        - Wert eines Knotens ändern
+    - linkes Kind rechter Bruder Prinzip (oder einfach Array)
 
 
-
-Nächste Ziele bis zum PLATZHALTER:
-
+Nächste Ziele bis zum 9.11.:
+    - Weiterschreiben!!!
+    - Über Zeichnen Gedanken machen
+        - "drawing trees" suchen, ob es dazu was im internet gibt
+            - Mit Kräfte und Differentialgleichung?
+            - Von unten nach oben?
+    - Animieren wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
+    - Wenn noch Zeit ist:
+        - Atomare Operationen:
+            - Blatt anhängen
+            - Elternpointer umhängen können
+            - Blatt löschen
+            - Wert eines Knotens ändern

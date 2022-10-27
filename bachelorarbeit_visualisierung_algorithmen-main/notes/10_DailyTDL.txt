@@ -1,0 +1,47 @@
+
+
+Erledigt:
+    27.10.
+        - Notizen überarbeiten
+        - TDL erstellen
+
+
+Daily TDL:
+    28.10.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    29.10.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    30.10.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    31.10.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    1.11.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    2.11.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    3.11.
+        11. Schreiben
+            - Einen Punkt abarbeiten
+    4.11.
+        12. Über Zeichnen Gedanken machen
+            - Theoretische Überlegungen, wie man das machen kann
+            - Schauen, wie man den "Knoten" abspeichern könnte
+            - Mit Implementierung anfangen: Eine Datei erstellen
+    5.11.
+        12. Über Zeichnen Gedanken machen
+            - Drei Dateien erstellen
+    6.11.
+        12. Über Zeichnen Gedanken machen
+            - Vier Dateien erstellen
+    7.11.
+        13. Animieren
+    8.11.
+        13. Animieren
+    9.11.
+        - Gespräch

@@ -31,6 +31,17 @@ Nützliche Links:
 		- https://edencoding.com/drag-shapes-javafx/
 
 
+Interessante Stellen aus der Literatur:
+	- Algorithmen und Datenstrukturen für Dummies
+		- Teil 2 Kapitel 5
+	- Cormen
+		- S.247 (267) Abschnitt 10.4
+		- S.1184 (1204) Abschnitt B.5 (Lösungen für Übungsaufgaben)
+		- S.1186 (1208) Abschnitt B.5.2 (Terminologie)
+		- S.292 (312) Abschnitt 12.2 und 12.3 (tatsächliche Operationen)
+		- S.316 (336) Abschnitt 13.2 (Pseudocode für Left Rotate für Rot Schwarz Bäume und danach noch mehr Funktionen-Pseudocode)
+
+
 Infos BA:
     - Anfang: 12.9.  Ende: 12.12.
     - 30-50 Seiten lang

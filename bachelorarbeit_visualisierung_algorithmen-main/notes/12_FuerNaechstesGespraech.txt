@@ -1,83 +1,22 @@
 
 
 Ziele:
-	- atomare Funktionalitäten von Bäumen listen
-		- Beispiele: Blatt hinzufügen, inneren Knoten hinzufügen, EVENTUELL rotieren
-		- in Literatur schauen was da in Algorithmen verwendet wird oder wie Funktionen anhand anderer Funktionen dargestellt werden, heißt keine atomaren Funktionen sind
-	- wie würde man diese atomaren Funktionalitäten animieren
-	(- Baumtheorie-Kapitel weiter schreiben)
-		
+	- Weiterschreiben!!!
+        - Über Zeichnen Gedanken machen
+            - "drawing trees" suchen, ob es dazu was im internet gibt
+                - Mit Kräfte und Differentialgleichung?
+                - Von unten nach oben?
+        - Animieren wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
+        - Wenn noch Zeit ist:
+            - Atomare Operationen:
+                - Blatt anhängen
+                - Elternpointer umhängen können
+                - Blatt löschen
+                - Wert eines Knotens ändern
 
 
 Vorstellung:
-	- Zoomen
-		- Implementierung
-			- 3D? 
-				- Nein, da es nach zu großen Umstellungen aussah und man das ganze neu aufziehen müsste
-				- Alternative, was ich gefunden habe, sah passender aus
-			- ZoomablePane erstellt
-			- SceneGestures erstellt 
-		- Funktionalität
-			- relativ zur Mausposition
-			- während beliebiger Animationen
-	- Animationen
-		- Funktionalität
-			- funktioniert, außer die Delete Visualisierungen, da das Element zuerst entfernt wird
-			- keine fehler auch bei schnellen Eingaben (springt automatisch zum Ende der jeweiligen Animation)
-		- Implementierung
-			- extra Klassen zur Erstellung der Animationen
-			- Beispiel swap: 
-				- A und B werden im tatsächlichen Wert getauscht
-				- A und B werden in der Visualisierung direkt getauscht durch instant translationen
-				- A und B werden mit Animation an den richtigen Platz geschoben
-	- Weiteres:
-		- per drag und drop durch das bild bewegen können
-			- auch während beliebiger Animationen
-		- Animationen nacheinander abspielen können? (Complete Visualization)
-			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
-				- Nachteil: 
-					- klingt komisch 
-					- eine niedrig gestelltere Klasse (ExecuteAlgorithmController) greift auf eine höhere zu (ParentViewModel)
-					(- jeder Befehl muss eine "Animation" haben)
-				- Vorteil: 
-					- Animationen können beliebig lang sein 
-					- es brauchte keine großen Änderungen, daher bin ich recht sicher, dass es auch weiterhin funktioniert wie zuvor
-					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
-			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
-			- Hervorhebung in der Befehlsliste geht von Befehl zu Befehl mit
-		- (vorläufige) config datei
-	- Hänge noch an:
-		- Kapitel über Baum
-			- siehe Fragen
-		- schwierigkeit bei delete
-			- schon bei vorhandenem code kommen durch delete sehr leicht fehler zustande
-	- Was ich als nächstes machen würde:
-		- Kapitel über die Datenstruktur Baum weiter schreiben
-		- 2 Möglichkeiten
-			Entweder
-			Anfangen Gedanken zu machen, wie ich Bäume einbringen kann
-				- in welcher Form die Knoten abgespeichert werden sollten ("TYPES.types" genauer anschauen)
-				- wie ich visuell Bäume darstellen kann
-					- großes Problem: je tiefer ein Baum ist, desto breiter sollte er in den oberen Ebenen gezeichnet sein
-						=> ergibt Probleme fürs Zeichnen, aber besonders für Animationen
-			oder
-			Vorhandenen Code weiter kommentieren, Bugs fixen und refactoren
-				- Arrays haben so schon oft zu Fehlern geführt, das obwohl ich es bislang nicht drauf angelegt hab
-					- Grenzfälle checken, was bei zB vollem Array passiert
-				- Falls das: Soll ich auch noch richtige Arrays statt nur Arraylists hinzufügen?
-			Abwägung
-				- Bäume wären mir etwas lieber
-				- Bin mir relativ sicher, dass die Bugs an den Implementierungen der Datentypen selbst liegen, heißt ich könnte die Bäume sauber hinbekommen. Kann aber auch sein, dass ich mich da irre und sich das rächt.
 			
 
 
 Fragen:
-	- Literatur
-		- Ich seh es nicht wirklich, dass ich viel tatsächliche Literatur benutze, sondern mehr Websites und Aufzeichnungen von Vorlesungen
-		- zb Terminologie beim Baum - ich brauch ja schon eine Quelle dafür, oder? Steht zb auch nicht im Cormen. 
-		- Sollte ich lieber zusätzlich noch Infos explizit aus Paper oder Literatur raussuchen?
-	- Atomare Operationen
-		- Suchen
-			- gehe ich von Suchbaum aus oder muss ich zwischen Tiefen- und Breitensuche unterscheiden?
-	- Ich soll allgemein Bäume implementieren und nicht nur Binärbäume, oder? Also zuvor unbestimmte Anzahl Kinder? Dann eignet sich ja nur das links Kind rechts Bruder Prinzip
-	- Wo UA abgeben?
