@@ -6,3 +6,24 @@
 		    - Auch auf Bugfixes im bestehenden Code eingehen
 		6.3 Herausforderungen und Umsetzung 28 (2)
 		6.4 Zusammenfassung 30 (1)
+
+
+
+Was ich reinbringen kann:
+	- Complete Visualization
+		- Animationen nacheinander abspielen können?
+			- kein timer drin, stattdessen wird ein befehl, der den nächsten Command ausführt, ans Ende der Animation gekoppelt
+				- Nachteil:
+					- klingt komisch
+					- eine niedrig gestelltere Klasse (ExecuteAlgorithmController) greift auf eine höhere zu (ParentViewModel)
+					(- jeder Befehl muss eine "Animation" haben -> kein wirkliches Problem wegen Platzhalter)
+				- Vorteil:
+					- Animationen können beliebig lang sein
+					- es brauchte keine großen Änderungen
+					- in der Umsetzung erstaunlich einfach und es sind nur wenige Zeilen Code
+			- klappt auch bei den Befehlen, bei denen es noch keine Animation gibt
+			- Hervorhebung in der Befehlsliste kann nun von Befehl zu Befehl mitgehen, vorher wurde alle Befehle berechnet und dann wurde eins nach dem anderen sichtbar gemacht
+
+
+Kapitel:
+

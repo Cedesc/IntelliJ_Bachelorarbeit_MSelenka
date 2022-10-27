@@ -29,6 +29,7 @@ Was ich reinbringen kann:
 	- Generell: Auf gesagtes zurückkommen
 	- Generell: Websites speichern wo was her ist
 	- 2. Alles von Wikipedia kurz angeschnitten, was nicht in 2.1-2.5 auftaucht 
+	- linkes kind rechtes kind Prinzip vs linkes kind rechter bruder Prinzip (Quelle Cormen)
 	
 
 Kapitel:

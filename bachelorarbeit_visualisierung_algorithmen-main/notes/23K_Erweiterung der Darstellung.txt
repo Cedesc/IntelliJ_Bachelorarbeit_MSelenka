@@ -5,4 +5,31 @@
 			5.1.1 Variablen
 			5.1.2 Array
 			5.1.3 Liste
-		5.2 Zoomen 24 (1) mehr
+		5.2 Zoomen & Bewegen 24 (1) mehr
+
+
+
+Was ich reinbringen kann:
+	- bei schnellen eingaben, springt das programm zum ende
+	- problem beispiel "swap"
+		- A und B werden im tatsächlichen Wert getauscht
+			- A und B werden in der Visualisierung direkt getauscht durch instant translationen
+			- A und B werden mit Animation an den richtigen Platz geschoben
+	- bei deletions probleme (noch nicht hinschreiben?)
+
+
+Kapitel:
+
+5.1
+	{macht Nutzer einfacher nachzuvollziehen, was passiert}
+	{auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden}
+
+5.1.2
+	{auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschiedene hab}
+
+5.2
+	{Zoomen nötig um übersicht zu halten, wenn die Strukturen sehr groß werden}
+	{Wenn Zoomen möglich ist, sollte man sich auch rumbewegen können}
+	{Zoomen möglich relativ zur Mausposition}
+	{wie Zoomen und rumbewegen umgesetzt wurde - von stackoverflow; erklären was ich geändert hab}
+	{Zoomen und Bewegen haben keinerlei Reibungspunkte mit Animationen, sind komplett unabhängig voneinander, sodass da keine Fehler entstehen, wenn es gleichzeitig ausgeführt wird}
