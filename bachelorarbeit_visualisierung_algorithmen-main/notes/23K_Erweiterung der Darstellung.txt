@@ -1,0 +1,8 @@
+
+
+5 Erweiterung der Darstellung 20 (5)
+		5.1 Animationen an den bestehenden Datenstrukturen 20 (4)
+			5.1.1 Variablen
+			5.1.2 Array
+			5.1.3 Liste
+		5.2 Zoomen 24 (1) mehr
