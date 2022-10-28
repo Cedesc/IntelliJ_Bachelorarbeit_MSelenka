@@ -12,9 +12,9 @@
             [-] 2.4.2 Nachteile
         [-] 2.5 Zusammenfassung (1)
     - "Erweiterung der Darstellung" Kapitel schreiben
-        [ ] 5.1 Animationen an den bestehenden Datenstrukturen (4)
+        [X] 5.1 Animationen an den bestehenden Datenstrukturen (4)
             [-] 5.1.1 Variablen
-            [ ] 5.1.2 Array
+            [X] 5.1.2 Array
             [-] 5.1.3 Liste
         [ ] 5.2 Zoomen & Bewegen (?)
     - "Implementierung" Kapitel schreiben

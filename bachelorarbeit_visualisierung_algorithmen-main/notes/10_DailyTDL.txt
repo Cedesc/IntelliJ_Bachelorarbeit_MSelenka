@@ -4,15 +4,14 @@ Erledigt:
     27.10.
         - Notizen überarbeiten
         - TDL erstellen
+	28.10.
+		- Einen Punkt abarbeiten
+		- Einen Punkt abarbeiten
 
 
 Daily TDL:
-    28.10.
-        11. Schreiben
-            - Einen Punkt abarbeiten
     29.10.
-        11. Schreiben
-            - Einen Punkt abarbeiten
+		- vorgearbeitet
     30.10.
         11. Schreiben
             - Einen Punkt abarbeiten

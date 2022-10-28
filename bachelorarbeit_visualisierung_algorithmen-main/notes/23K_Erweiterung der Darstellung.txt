@@ -9,28 +9,46 @@
 
 
 
+
 Was ich reinbringen kann:
 	- bei deletions probleme (noch nicht hinschreiben?)
+
 
 
 Kapitel:
 
 5.1 Animationen an den bestehenden Datenstrukturen
-	{auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden}
-	{bei schnellen eingaben, springt das programm zum ende}
 	
+	// warum Animation toll sind
 	Animationen sind nicht nur ein nettes Gimmick, sondern sie können ungemein zur Verständlichkeit eines Ablaufs beitragen. Denn im Vergleich zum unmittelbaren Auftauchen oder Verschwinden eines Elements, kann der Nutzer bei bspw. einer kurzen Fade-in oder Fade-out Animation das betroffene Element viel schneller identifizieren, da dieses sich durch seine Bewegung vom Rest der Elemente abhebt. Es gibt auch Operationen, bei denen man ohne eine Animation nur sehr schwierig ausmachen kann, was passiert. So zum Beispiel die "insert" oder "delete" Operation der Arraylists, auf die später näher eingegangen wird. In solchen Fällen haben schon kleine Animationen sehr große Wirkung.
+	
+	// Schwierigkeiten beim Implementieren von Animation
 	Jedoch kann es sehr umständlich sein gut funktionierende Animationen zu implementieren. Wie geht man zum Beispiel mit Nutzereingaben um, wenn bisherige Animationen noch nicht abgeschlossen sind? Und ist es für das Programm notwendig zu wissen, wann eine Animation abgeschlossen ist? Wenn ja, wie setzt man dies um? Das sind beispielsweise Fragen, die man im Kopf behalten sollte, möchte man Animationen implementieren. Macht man sich darüber keine Gedanken, so kann es leicht passieren, dass Elemente an Positionen landen, an denen sie nichts zu suchen haben oder dass Animationen zu unsinnigen Zeitpunkten abgespielt werden.
+	
+	// Eigene Umsetzung
+	In unserem Fall, ist es besonders für die Step-by-Step Visualization durchaus wichtig einen korrekten Umgang mit Eingaben, die während laufender Animationen getätigt werden, einzubauen. Zwar können auch bei der Complete Visualization während Animationen Eingaben getätigt werden, diese Beschränkungen sich jedoch auf das Abbrechen oder das Neustarten des Algorithmus. In beiden Fällen sind die derzeitigen Elemente irrelevant und somit kein besonderer Umgang nötig. Sollten noch Funktionen hinzukommen, bei denen dies wichtiger ist, lässt sich das Programm leicht in der updateVisualization-Methode des ExecuteAlgorithmController anpassen, um es mit der Complete Visualization so zu handhaben wie mit der Step-by-Step Visualization. 
+	Denn bei der Step-by-Step Visualization springt zunächst die letzt ausgeführte Animation zum Ende, dann wird die nächste gestartet und schließlich diese als "lastTransition" gespeichert, damit man wiederum auf diese in der nächsten Iteration zugreifen kann, um sie ggf. vorzeitig zu beenden. Für den Nutzer bedeutet das, dass eine vorzeitige Eingabe zu keinen Fehlern, sondern nur zu einem vorzeitigen Sprung zum Ende der Animation führt.
+	
+	// auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden
+	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, habe ich ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. So wird in 
+	In der zur Datenstruktur zugehörigen Visualisierungs-Klasse wird am Ende von Befehlen, die eine Animation benötigen, wie bspw. das Einfügen eines Elements, zunächst die visuelle Darstellung konstruiert und dann die zugehörige Animation durch eine separate Klasse erstellt. Diese Abkapselung sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden.
+	
+	// Sowohl backward als auch forward geht es
+	Da man in der Anwendung in der Step-by-Step Visualization sowohl einen Schritt nach vorne als auch einen Schritt zurück gehen kann, stellt sich die Frage, wie man Animationen bei einem Schritt zurück ausführen kann und ob dabei Problematiken auftauchen. Der Code ist jedoch durch das Command-Pattern so geschrieben, dass gar keine Anpassungen getroffen werden mussten um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen und das ohne, dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig war.
 	
 
 
 5.1.2 Arraylists
-	{auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab}
-	{Animation ist besonders praktisch beim swap und beim inserten oder deleten mitten im array}
-	{problem beispiel "swap": 
-		1. A und B werden im tatsächlichen Wert getauscht 
-		2. A und B werden in der Visualisierung direkt getauscht durch instant translationen
-		3. A und B werden mit Animation an den richtigen Platz geschoben}
+	{noch mehr Animationen eingebaut? Deletions? Get?}
+
+	// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und auch drauf eingehen, was das für eine Besserung für den Nutzer ist
+	Bei den Arraylists habe ich drei verschiedene Animationen eingebaut. Eine für das Erstellen einer Arraylists, eine für das Einfügen eines Elements und eine für das Tauschen zweier Elemente innerhalb einer Arraylist. 
+	// Erstellen einer Arraylist
+	Beim Erstellen einer Arraylist ist es eine simple Fade-in Animation von rechts nach links. Jedoch war es schon zuvor für den Nutzer nicht schwer die neue Struktur auf dem Bildschirm auszumachen.
+	// Einfügen eines Elements
+	Interessanter ist das Einfügen eines Elements. Während die Animation für das Einfügen am Ende der Arraylist fast genau so simpel wie die Animation für das Erstellen einer Arraylist aussieht und vergleichsweise geringen Mehrwert für den Nutzer hat, so wird der Nutzen deutlich größer, wenn man ein Element zwischen anderen Elementen in einer Arraylist hinzufügt. In diesem Fall werden alle Elemente, die hinter dem neu einzusetzenden Element stehen sollen, während der Fade-in Animation des einzufügenden Elements, einen Platz weiter nach rechts geschoben. Um dies korrekt umzusetzen, habe ich mich eines Tricks bedient, auf den ich näher beim Erklären der Tauschoperation eingehe. Für den Nutzer kann diese Einfügeanimation das Nachvollziehen des Programms deutlich vereinfachen, da dieser direkt sieht, welches Element wo eingefügt wurde.
+	// Tauschen zweier Elemente
+	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der dahinterliegenden tatsächlichen Arraylist zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der dahinterliegenden Arraylist getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
 
 
 5.2 Zoomen & Bewegen
