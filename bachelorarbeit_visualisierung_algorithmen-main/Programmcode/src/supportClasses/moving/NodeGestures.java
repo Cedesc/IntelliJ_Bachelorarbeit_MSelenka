@@ -1,4 +1,4 @@
-package supportClasses.dragging;
+package supportClasses.moving;
 
 import javafx.event.EventHandler;
 import javafx.scene.Node;

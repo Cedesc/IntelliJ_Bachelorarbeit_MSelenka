@@ -1,4 +1,4 @@
-package supportClasses.dragging;
+package supportClasses.moving;
 
 /**
  * Mouse drag context used for scene and nodes.

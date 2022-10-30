@@ -28,7 +28,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import supportClasses.CommandListColumn;
 import supportClasses.animations.TransitionChain;
-import supportClasses.dragging.NodeGestures;
+import supportClasses.moving.NodeGestures;
 import supportClasses.zooming.SceneGestures;
 import supportClasses.zooming.ZoomPane;
 
