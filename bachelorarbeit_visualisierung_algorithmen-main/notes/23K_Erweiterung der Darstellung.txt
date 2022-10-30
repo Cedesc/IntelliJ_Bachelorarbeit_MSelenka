@@ -52,8 +52,10 @@ Kapitel:
 
 
 5.2 Zoomen & Bewegen
-	{Zoomen nötig um übersicht zu halten, wenn die Strukturen sehr groß werden}
-	{Wenn Zoomen möglich ist, sollte man sich auch rumbewegen können}
 	{Zoomen möglich relativ zur Mausposition}
 	{wie Zoomen und rumbewegen umgesetzt wurde - von stackoverflow; erklären was ich geändert hab}
 	{Zoomen und Bewegen haben keinerlei Reibungspunkte mit Animationen, sind komplett unabhängig voneinander, sodass da keine Fehler entstehen, wenn es gleichzeitig ausgeführt wird}
+	
+	// Zoomen und Bewegen nötig um Übersicht zu halten, wenn die Strukturen sehr groß werden
+	Bislang war es nicht möglich die angezeigten Datenstrukturen visuell zu verkleinern oder zu vergrößern. Hatte man nur wenige Elemente in der Datenstruktur war das auch nicht nötig. Jedoch ist auch bei den Arraylists schon ab ein paar dutzend Elementen ein Teil der Datenstruktur nicht zu sehen und man hatte keine Möglichkeit diesen verdeckten Teil ins Sichtfeld zu bringen. Um die Anwendung auch für größere Datensätze gut nutzen zu können, ist es also notwendig dieses Problem zu beheben. 
+	Nun hat man sowohl die Möglichkeit zu Zoomen, als auch die Möglichkeit die Datenstruktur zu bewegen. Um das vorige Problem zu beheben, dass es in einigen Fällen unmöglich ist, Teile der Datenstruktur zu sehen, hätte für sich schon eine der beiden neuen Möglichkeiten ausgereicht, jedoch sorgen beide zusammen für eine deutlich einfachere Nutzung der Anwendung. Das Zoomen sorgt dafür, dass man sich bei größeren Strukturen deutlich einfacher einen Gesamtüberblick verschaffen kann, während mit der Möglichkeit zur Bewegung im Feld eine intuitive und nutzerfreundliche Anwendung der Software einhergeht.
