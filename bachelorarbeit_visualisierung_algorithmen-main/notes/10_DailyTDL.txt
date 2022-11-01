@@ -9,35 +9,34 @@ Erledigt:
 		- Einen Punkt abarbeiten
     30.10.
 		- Einen Punkt abarbeiten
-
-
-Daily TDL:
     31.10.
-        11. Schreiben
-            - Einen Punkt abarbeiten
+        - Einen Punkt abarbeiten
     1.11.
         11. Schreiben
             - Einen Punkt abarbeiten
+
+
+Daily TDL:
     2.11.
         11. Schreiben
             - Einen Punkt abarbeiten
     3.11.
-        11. Schreiben
-            - Einen Punkt abarbeiten
-    4.11.
+        Eigentlich schreiben, aber doch einen Punkt verworfen... Stattdessen:
         12. Über Zeichnen Gedanken machen
             - Theoretische Überlegungen, wie man das machen kann
             - Schauen, wie man den "Knoten" abspeichern könnte
             - Mit Implementierung anfangen: Eine Datei erstellen
-    5.11.
+    4.11.
         12. Über Zeichnen Gedanken machen
             - Drei Dateien erstellen
-    6.11.
+    5.11.
         12. Über Zeichnen Gedanken machen
             - Vier Dateien erstellen
+    6.11.
+        13. Animieren
     7.11.
         13. Animieren
     8.11.
-        13. Animieren
+		Frei
     9.11.
         - Gespräch
