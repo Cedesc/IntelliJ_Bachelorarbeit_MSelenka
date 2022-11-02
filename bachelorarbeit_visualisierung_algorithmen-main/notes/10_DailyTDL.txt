@@ -12,14 +12,12 @@ Erledigt:
     31.10.
         - Einen Punkt abarbeiten
     1.11.
-        11. Schreiben
-            - Einen Punkt abarbeiten
+        - Einen Punkt abarbeiten
+    2.11.
+        - Einen Punkt abarbeiten
 
 
 Daily TDL:
-    2.11.
-        11. Schreiben
-            - Einen Punkt abarbeiten
     3.11.
         Eigentlich schreiben, aber doch einen Punkt verworfen... Stattdessen:
         12. Über Zeichnen Gedanken machen

@@ -30,6 +30,21 @@ Was ich reinbringen kann:
 	- Generell: Websites speichern wo was her ist
 	- 2. Alles von Wikipedia kurz angeschnitten, was nicht in 2.1-2.5 auftaucht 
 	- linkes kind rechtes kind Prinzip vs linkes kind rechter bruder Prinzip (Quelle Cormen)
+	- Wo Bäume verwendet werden? ZB bei Ordnerstrukturen auf PC
+	- Grafik, in der veranschaulicht wird, wie etwas aus der "echten" Welt als Baum dargestellt wird
+		- Güting Dieker S. 92 (106) / 93 (107)
+	- Darstellung von Bäumen:
+		- linkes kind, rechtes Kind, etc
+		- linkes-Kind-, rechter-Bruder-Darstellung (Cormen 248 (268))
+		- andere Darstellungen (auch Cormen ab 248 (268))
+	- Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?
+	- {"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben" Hier rein oder in "Terminologie"?}
+	- Allgemeine Quellen:
+		- Cormen
+		- Güting Dieker S. 92 (106) / 101 (115)
+		- Andere Bücher
+		- https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie
+		- https://en.wikipedia.org/wiki/Tree_(data_structure)
 	
 
 Kapitel:
@@ -68,14 +83,16 @@ Kapitel:
 		Balanciert - Ein Baum ist balanciert, wenn die Differenz der jeweiligen Tiefe zweier beliebiger Blätter maximal eins ist
 		Breite (einer Ebene) - Anzahl Knoten der Ebene
 		Breite (eines Baums) - Maximale Breite einer Ebene im Baum
-		Wald - Nicht miteinander verbundene Bäume
+		Wald - Bäume mit disjunkten Knotenmengen
 	
 	
 2.2 Definition
-	{"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben" Hier rein oder in "Terminologie"?}
-	{Quelle angeben}
-	{Irgendwas tolles offizielles finden, DSEA VL?}
-	{Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?} 
+	{Quelle: Dieker Güting Seite 102 (116)}
+	
+	Eine Definition von Bäumen (nach Dieker Güting) wäre:
+		(i) Ein einzelner Knoten x ist ein Baum.
+		(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
+	Das bedeutet, hat man mehrere Bäume, die nicht miteinander verbunden sind (also einen Wald), kann man durch das Erstellen eines neuen Knotens y, der für sich auch bereits ein Baum ist, und dem Hinzufügen als Kindknoten der Wurzeln der Bäume an y, einen einzelnen Baum mit der Wurzel y kreieren.
 	
 	
 2.3 Eigenschaften
