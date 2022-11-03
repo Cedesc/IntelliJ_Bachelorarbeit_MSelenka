@@ -1,7 +1,7 @@
 
 
-11. Weiterschreiben!!!
-    - "Datenstruktur: Baum" Kapitel schreiben
+CHECK! 11. Weiterschreiben!!!
+    CHECK! - "Datenstruktur: Baum" Kapitel schreiben
         [X] 2.1 Definition (3)
         [X] 2.2 Terminologie (1)
         [-] 2.3 Verschiedene Arten von Bäumen (2)
