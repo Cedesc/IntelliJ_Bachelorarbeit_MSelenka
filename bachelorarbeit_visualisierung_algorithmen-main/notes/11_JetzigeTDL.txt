@@ -2,7 +2,7 @@
 
 11. Weiterschreiben!!!
     - "Datenstruktur: Baum" Kapitel schreiben
-        [ ] 2.1 Definition (3)
+        [X] 2.1 Definition (3)
         [X] 2.2 Terminologie (1)
         [-] 2.3 Verschiedene Arten von Bäumen (2)
             [-] 2.3.1 Binärbaum
