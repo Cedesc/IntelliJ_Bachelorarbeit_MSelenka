@@ -2,7 +2,7 @@
 
 Für später:
     - "OWN TEST TABLE STUFF" entfernen
-        - Table.java, InfoTable.java, TableVisualization.java, TableBuilder.java, CreateTable.java, TableCommand.java, TableAlgorithm.java
+        - Experiment.java, InfoExperiment.java, ExperimentVisualization.java, ExperimentBuilder.java, CreateExperiment.java, ExperimentCommand.java, ExperimentAlgorithm.java
         - Von AbstractAlgorithm.java folgendes:
             - public TableBuilder tableBuilder
             - public Table create_Table(types type, int length)

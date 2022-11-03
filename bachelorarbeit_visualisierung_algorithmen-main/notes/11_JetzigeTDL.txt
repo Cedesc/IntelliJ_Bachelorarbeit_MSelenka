@@ -26,12 +26,29 @@ CHECK! 11. Weiterschreiben!!!
 
 
 12. Über Zeichnen Gedanken machen
+	- Grundlage implementieren
+		- Tree
+			- Attribute
+				- Wurzel
+				- Typ der Knoten (?)
+			- Funktionen
+				- Blatt anhängen
+				- Elternpointer umhängen
+				- Blatt löschen
+				- Wert eines Knotens ändern
+		- Node
+			- Attribute
+				- Index
+				- linkes Kind
+				- rechter Bruder
+				- Koordinaten (?)
     - "drawing trees" suchen, ob es dazu was im internet gibt
         - Mit Kräfte und Differentialgleichung?
         - Von unten nach oben?
     - Meine Ideen:
         - Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
             - Positionen so, als wäre es immer vollständiger Graph
+			- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
 
 
 13. Animieren...
