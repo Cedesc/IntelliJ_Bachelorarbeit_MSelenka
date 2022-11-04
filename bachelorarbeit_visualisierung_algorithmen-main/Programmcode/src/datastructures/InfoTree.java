@@ -1,6 +1,7 @@
 package datastructures;
 
 import abstractAlgorithmus.AbstractAlgorithm;
+import supportClasses.treeClasses.MyNode;
 import supportClasses.treeClasses.MyTree;
 import supportClasses.types;
 
@@ -8,15 +9,22 @@ import visualization.TreeVisualization;
 
 public class InfoTree extends AbstractDatastructure {
 
-    private MyTree content;
+    private MyTree treeContent;
     private types type;
     private TreeVisualization treeVisualization;
     private AbstractAlgorithm algorithm;
 
     public InfoTree(AbstractAlgorithm abstractAlgorithm, types type) {
-        this.content = new MyTree(null);
+        this.treeContent = new MyTree(null);
         this.type = type;
         this.algorithm = abstractAlgorithm;
+    }
+
+    public void createTree(MyNode root) {
+        this.treeContent = new MyTree(root);
+        if (this.treeVisualization != null) {
+            this.treeVisualization.createTree(this, root);
+        }
     }
 
     // tests if the given value is the same as the array type
@@ -39,8 +47,8 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     // returns the number of levels of the tree
-    public int getSize(){
-        return this.content.getNumberOfLevels();
+    public int getNumberOfLevels(){
+        return this.treeContent.getNumberOfLevels();
     }
 
     public TreeVisualization getTreeVisualization() {

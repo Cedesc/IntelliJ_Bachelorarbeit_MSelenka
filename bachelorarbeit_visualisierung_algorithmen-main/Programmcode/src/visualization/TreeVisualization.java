@@ -3,7 +3,15 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
+import javafx.geometry.Pos;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
+import javafx.scene.text.Text;
+import supportClasses.treeClasses.MyNode;
 import visualization.animationCreation.TreeAnimation;
 
 import java.util.ArrayList;
@@ -22,6 +30,36 @@ public class TreeVisualization {
     // constructor
     public TreeVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
+    }
+
+    public void createTree(InfoTree infoTree, MyNode root) {
+
+        // test stuff
+        HBox hBox = new HBox();
+        hBox.setId("Tree" + this.infoTrees.size());
+        Rectangle rec = new Rectangle();
+        rec.setWidth(50);
+        rec.setHeight(50);
+        rec.setStroke(Color.BLACK);
+        rec.setFill(Color.TRANSPARENT);
+        rec.setStrokeType(StrokeType.OUTSIDE);
+        Text text = new Text("HelloWorld");
+        StackPane stackPane = new StackPane(rec, text);
+        stackPane.setAlignment(Pos.BOTTOM_RIGHT);
+        hBox.getChildren().add(stackPane);
+
+        Text label = new Text("Tree " + (this.infoTrees.size() + "." + 1));
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(label, hBox);
+
+        this.infoTrees.add(infoTree);
+        this.layoutTrees.add(vBox);
+
+
+        // TODO: 04.11.2022 create animation
+
+        generateNode();
+
     }
 
     /**
