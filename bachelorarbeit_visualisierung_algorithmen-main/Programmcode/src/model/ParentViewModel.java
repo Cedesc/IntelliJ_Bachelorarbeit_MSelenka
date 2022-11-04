@@ -1,23 +1,18 @@
 package model;
 
 import commands.experimentCommands.ExperimentCommand;
+import commands.treeCommands.TreeCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
-import datastructures.InfoExperiment;
+import datastructures.*;
 import javafx.animation.Transition;
 import javafx.scene.Node;
 import supportClasses.config.TempConfig;
-import visualization.ArrayVisualization;
-import visualization.ListVisualization;
-import visualization.ExperimentVisualization;
-import visualization.VariableVisualization;
+import visualization.*;
 import abstractAlgorithmus.AbstractAlgorithm;
 import commands.arrayCommands.ArrayCommand;
 import commands.listCommands.ListCommand;
 import commands.variableCommands.VariableCommand;
-import datastructures.InfoArray;
-import datastructures.InfoList;
-import datastructures.InfoVariable;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,6 +36,7 @@ public class ParentViewModel extends Application {
     private ListVisualization listVisualization;
     // OWN TEST STUFF
     private ExperimentVisualization experimentVisualization;
+    private TreeVisualization treeVisualization;
     private int currentCommandCount;
 
     // Start of the Program
@@ -194,6 +190,13 @@ public class ParentViewModel extends Application {
                 if (isNextCommand) experimentCommand.exeCommand();
                 else experimentCommand.backCommand();
             }
+            case "TreeCommand" -> {
+                TreeCommand treeCommand = (TreeCommand) this.algorithm.getCommandOrder().
+                        get(wantedCommandCount);
+                exeTreeCommand(treeCommand);
+                if (isNextCommand) treeCommand.exeCommand();
+                else treeCommand.backCommand();
+            }
             default -> System.out.println("Warning! Unknown command type!");
         }
     }
@@ -207,6 +210,18 @@ public class ParentViewModel extends Application {
                 this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
             }
             infoExperiment.setExperimentVisualization(this.experimentVisualization);
+        }
+    }
+
+    private void exeTreeCommand(TreeCommand treeCommand) {
+        InfoTree infoTree = treeCommand.getTree();
+        if (infoTree.getTreeVisualization() == null) {
+            if (this.treeVisualization == null) {
+                this.treeVisualization = new TreeVisualization(executeAlgorithmController);
+            } else {
+                this.treeVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+            }
+            infoTree.setTreeVisualization(this.treeVisualization);
         }
     }
 
@@ -301,6 +316,9 @@ public class ParentViewModel extends Application {
         // OWN TEST STUFF
         if (this.experimentVisualization != null) {
             this.experimentVisualization.resetVisualization(executeAlgorithmController);
+        }
+        if (this.treeVisualization != null) {
+            this.treeVisualization.resetVisualization(executeAlgorithmController);
         }
     }
 
