@@ -32,6 +32,11 @@ public class TreeVisualization {
         this.executeAlgorithmController = executeAlgorithmController;
     }
 
+    /**
+     * Visualization for the "createTree"-Command.
+     * @param infoTree InfoTree that will be created in the visualization
+     * @param root root node of the tree
+     */
     public void createTree(InfoTree infoTree, MyNode root) {
 
         // test stuff
@@ -63,7 +68,7 @@ public class TreeVisualization {
     }
 
     /**
-     * If no transition is given, a NullTransition will be created for calling the generateNode()-function
+     * If no transition is given, a NullTransition will be created for calling the generateNode()-function.
      */
     public void generateNode() {
         generateNode(treeAnimation.getNullTransition());

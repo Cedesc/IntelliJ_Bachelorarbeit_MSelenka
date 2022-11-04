@@ -27,8 +27,11 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    // tests if the given value is the same as the array type
-    // returns true if they are the same, if not it returns false
+    /**
+     * Tests if the given value is the same as the node type.
+     * @param value given value to test
+     * @return True if they are the same, false otherwise.
+     */
     public boolean sameType(Object value){
         String simpleTypeName  = value.getClass().getSimpleName();
         if (type.equals(types.NUMBER)){
@@ -46,7 +49,9 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    // returns the number of levels of the tree
+    /**
+     * @return The number of levels of the tree.
+     */
     public int getNumberOfLevels(){
         return this.treeContent.getNumberOfLevels();
     }
@@ -59,7 +64,9 @@ public class InfoTree extends AbstractDatastructure {
         this.treeVisualization = treeVisualization;
     }
 
-    // returns the type of the nodes in the tree
+    /**
+     * @return The type of the nodes in the tree.
+     */
     public types getType() {
         return this.type;
     }
