@@ -22,14 +22,13 @@ Erledigt:
 		- Vier Dateien erstellen
 			- MyNode, MyTree, TreeAnimation, TreeVisualization
 		- Weitere Dateien erstellt
-			- InfoTree
+			- InfoTree, TreeCommand, CreateTree, Tree
 
 
 Daily TDL:
     5.11.
         12. Über Zeichnen Gedanken machen
             - Vier Dateien erstellen
-				- 
     6.11.
         13. Animieren
     7.11.

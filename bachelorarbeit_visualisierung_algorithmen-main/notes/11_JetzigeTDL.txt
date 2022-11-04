@@ -25,24 +25,11 @@ CHECK! 11. Weiterschreiben!!!
         [-] 6.4 Zusammenfassung (1)
 
 
-12. Über Zeichnen Gedanken machen
+12. Bäume implementieren und über Zeichnen Gedanken machen
 	- Grundlage implementieren
-		- Tree
-			- Attribute
-				- Wurzel
-				- Typ der Knoten (?)
-			- Funktionen
-				- Blatt anhängen
-				- Elternpointer umhängen
-				- Blatt löschen
-				- Wert eines Knotens ändern
-		- Node
-			- Attribute
-				- Index
-				- linkes Kind
-				- rechter Bruder
-				- Elternteil
-				- Koordinaten (?)
+		- Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
+		- Weiteres:
+			- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
     - "drawing trees" suchen, ob es dazu was im internet gibt
         - Mit Kräfte und Differentialgleichung?
         - Von unten nach oben?
