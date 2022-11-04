@@ -41,6 +41,7 @@ CHECK! 11. Weiterschreiben!!!
 				- Index
 				- linkes Kind
 				- rechter Bruder
+				- Elternteil
 				- Koordinaten (?)
     - "drawing trees" suchen, ob es dazu was im internet gibt
         - Mit Kräfte und Differentialgleichung?

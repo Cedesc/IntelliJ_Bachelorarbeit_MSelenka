@@ -17,16 +17,19 @@ Erledigt:
         - Einen Punkt abarbeiten
     3.11.
         - Theoretische Überlegungen, wie man das machen kann
+    4.11.
+		- Schauen, wie man den "Knoten" abspeichern könnte
+		- Vier Dateien erstellen
+			- MyNode, MyTree, TreeAnimation, TreeVisualization
+		- Weitere Dateien erstellt
+			- InfoTree
 
 
 Daily TDL:
-    4.11.
-        12. Über Zeichnen Gedanken machen
-			- Schauen, wie man den "Knoten" abspeichern könnte
-            - Drei Dateien erstellen
     5.11.
         12. Über Zeichnen Gedanken machen
             - Vier Dateien erstellen
+				- 
     6.11.
         13. Animieren
     7.11.
@@ -48,51 +51,7 @@ Daily TDL:
             - Problem: Bei unbegrenztem Grad können Ebenen mittendrin ziemlich fucked sein
         - Nicht direkt von unterster Ebene, sondern einfach von allen Blättern ausgegangen? 
             - Heißt, Anzahl der Blätter bestimmen, dann diese „unten“ passend nebeneinander anordnen und dann den Baum von unten nach oben aufbauen
-            - Siehe [X]
+            - Siehe positioning von MyTree
 
 2. 
     - Versucht nach und nach die Dinger aufzubauen und zu justieren (gesetzte Positionen werden ggf korrigiert)
-
-
-
-
-[X]:
-
-Nötige Methoden:
-	- Baum.getMengeDerBlätter() : Array[Knoten]
-	- Baum.getAnzahlEbenen() : int
-	- Knoten.getEbene() : int   // von oben nach unten gezählt
-	- Knoten.zeichnen() : void
-	- Baum.getKnotenVonEbene(ebene: int) : Array[Knoten]
-	- Knoten.istBlatt() : Boolean
-	- Knoten.getSummeDerXPositionenDerKinder() : int
-	- Knoten.getAnzahlKinder() : int
-
-
-// Positioniere auf der untersten Ebene
-
-- y_Abstand : int = …
-- x_Abstand : int = …
-- blätter = Baum.getMengeDerBlätter()
-- #ebenen = Baum.getAnzahlEbenen()
-- y = #ebenen * y_Abstand
-- x = 0
-- for blatt in blätter:
-    - // Wenn das Blatt auf der untersten Ebene ist, dann zeichne es
-    - if blatt.getEbene() == #ebenen:
-        - blatt.zeichnen(x, y)
-    - x += x_Abstand
-
-
-// Ebenen drüber einzeichnen
-
-// Für jede Ebene, von unten nach oben
-- for ebene in range(#ebenen, 0, -1):
-    - y += y_Abstand
-    - for knoten in Baum.getKnotenVonEbene(ebene):
-        - if knoten.istBlatt():
-            - ???
-        - else:
-            - // Knoten in der Mitte über den Kindern platzieren (besser über dem mittlersten Kind platzieren??)
-            - x = knoten.getSummeDerXPositionenDerKinder() / knoten.getAnzahlKinder
-            - knoten.zeichnen(x, y)
