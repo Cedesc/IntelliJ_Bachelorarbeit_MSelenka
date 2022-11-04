@@ -37,10 +37,6 @@ Daily TDL:
         - Gespräch
 
 
-TDL:
-	- Untenstehenden Text noch schön machen 
-	- eine Datei im Code erstellen
-
 
 Überlegungen zum Visualisieren des Baums
 
