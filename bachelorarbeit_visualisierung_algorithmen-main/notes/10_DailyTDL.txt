@@ -21,20 +21,20 @@ Erledigt:
 		- Schauen, wie man den "Knoten" abspeichern könnte
 		- Vier Dateien erstellen
 			- MyNode, MyTree, TreeAnimation, TreeVisualization
-		- Weitere Dateien erstellt
+    5.11.
+		- Vier Dateien erstellen
 			- InfoTree, TreeCommand, CreateTree, Tree
+		- Weitere
+			- TreeBuilder, TreeSimple
 
 
 Daily TDL:
-    5.11.
-        12. Über Zeichnen Gedanken machen
-            - Vier Dateien erstellen
     6.11.
-        13. Animieren
+        Eigentlich "13. Animieren", stattdessen erstmal überhaupt Tree visualisieren können
     7.11.
-        13. Animieren
+        Eigentlich "13. Animieren", stattdessen erstmal überhaupt Tree visualisieren können
     8.11.
-		Frei
+		Vorbereiten für Gespräch morgen
     9.11.
         - Gespräch
 

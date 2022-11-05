@@ -27,16 +27,19 @@ CHECK! 11. Weiterschreiben!!!
 
 12. Bäume implementieren und über Zeichnen Gedanken machen
 	- Grundlage implementieren
-		- Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
+		Check! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
+		- Visualisieren können
+			- Meine Ideen:
+				- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
+					- Positionen so, als wäre es immer vollständiger Graph
+					- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
+		- mehr Befehle einbringen, mindestens get
 		- Weiteres:
 			- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
-    - "drawing trees" suchen, ob es dazu was im internet gibt
-        - Mit Kräfte und Differentialgleichung?
-        - Von unten nach oben?
-    - Meine Ideen:
-        - Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
-            - Positionen so, als wäre es immer vollständiger Graph
-			- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
+    Weiteres:
+		- "drawing trees" suchen, ob es dazu was im internet gibt
+			- Mit Kräfte und Differentialgleichung?
+			- Von unten nach oben?
 
 
 13. Animieren...
