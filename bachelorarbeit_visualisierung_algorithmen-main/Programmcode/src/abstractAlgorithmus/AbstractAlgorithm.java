@@ -1,11 +1,9 @@
 package abstractAlgorithmus;
 
-import builders.ArrayBuilder;
-import builders.ListBuilder;
-import builders.ExperimentBuilder;
-import builders.VariablenBuilder;
+import builders.*;
 import commands.Command;
 import datastructures.*;
+import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 import supportClasses.CommandListColumn;
 import java.util.ArrayList;
@@ -18,6 +16,7 @@ public abstract class AbstractAlgorithm {
     private ArrayBuilder arrayBuilder;
     // OWN TEST STUFF
     public ExperimentBuilder experimentBuilder;
+    public TreeBuilder treeBuilder;
     protected ArrayList<Command> commandOrder;
     private String errorString;
 
@@ -126,6 +125,14 @@ public abstract class AbstractAlgorithm {
         }
         InfoExperiment infoExperiment = this.experimentBuilder.createInfoExperiment(this, type, length);
         return this.experimentBuilder.createExperiment(this, infoExperiment, type , length);
+    }
+
+    public Tree create_Tree(types type, MyNode root) {
+        if (this.treeBuilder == null){
+            this.treeBuilder = new TreeBuilder();
+        }
+        InfoTree infoTree = this.treeBuilder.createInfoTree(this, type, root);
+        return this.treeBuilder.createTree(this, infoTree, type, root);
     }
 
 }
