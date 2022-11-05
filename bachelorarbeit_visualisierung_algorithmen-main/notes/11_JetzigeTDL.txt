@@ -36,6 +36,7 @@ CHECK! 11. Weiterschreiben!!!
 		- mehr Befehle einbringen, mindestens get
 		- Weiteres:
 			- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
+			- Wurzel darf nicht rightBrother haben
     Weiteres:
 		- "drawing trees" suchen, ob es dazu was im internet gibt
 			- Mit Kräfte und Differentialgleichung?
