@@ -5,6 +5,7 @@ import datastructures.InfoTree;
 import javafx.animation.Transition;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -19,7 +20,13 @@ import java.util.ArrayList;
 public class TreeVisualization {
 
     private ExecuteAlgorithmController executeAlgorithmController;
-    private ArrayList<VBox> layoutTrees = new ArrayList<>();
+    /**
+     * Trees shown in the window.
+     */
+    private ArrayList<VBox> visualizedTrees = new ArrayList<>();
+    /**
+     * Data structure behind the shown trees.
+     */
     private ArrayList<InfoTree> infoTrees = new ArrayList<>();
 
     /**
@@ -58,26 +65,43 @@ public class TreeVisualization {
         vBox.getChildren().addAll(label, hBox);
 
         this.infoTrees.add(infoTree);
-        this.layoutTrees.add(vBox);
+        this.visualizedTrees.add(vBox);
 
 
         // TODO: 04.11.2022 create animation
 
-        generateNode();
+        updateView();
+
+    }
+
+
+    /**
+     * Draws one entire tree with rectangles and lines.
+     * @param root root of the tree
+     * @return Pane including the tree.
+     */
+    public Pane drawTree(MyNode root) {
+
+        // pane that will show the drawn tree
+        Pane pane = new Pane();
+
+
+
+        return pane;
 
     }
 
     /**
      * If no transition is given, a NullTransition will be created for calling the generateNode()-function.
      */
-    public void generateNode() {
-        generateNode(treeAnimation.getNullTransition());
+    public void updateView() {
+        updateView(treeAnimation.getNullTransition());
     }
 
-    public void generateNode(Transition transition) {
+    public void updateView(Transition transition) {
         VBox node = new VBox();
         node.setId("Tree");
-        for (VBox vBox : layoutTrees) {
+        for (VBox vBox : visualizedTrees) {
             node.getChildren().add(vBox);
         }
         this.executeAlgorithmController.updateVisualization(node, transition);
@@ -89,7 +113,7 @@ public class TreeVisualization {
 
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController) {
         this.executeAlgorithmController = executeAlgorithmController;
-        this.layoutTrees = new ArrayList<>();
+        this.visualizedTrees = new ArrayList<>();
         this.infoTrees = new ArrayList<>();
     }
 
