@@ -11,7 +11,8 @@ public class TempConfig {
      */
     public static final String PATH_TO_ALGORITHMS =
             "bachelorarbeit_visualisierung_algorithmen-main/Programmcode/src/Algorithms";
-
+    // TODO: 05.11.2022 doesn't work correctly if the package isn't named "Algorithms" because of the "setSelectedItem"
+    //  method in ParentViewModel
 
     /**
      * The width of the window.
