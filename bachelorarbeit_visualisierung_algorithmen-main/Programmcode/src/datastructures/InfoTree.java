@@ -14,8 +14,8 @@ public class InfoTree extends AbstractDatastructure {
     private TreeVisualization treeVisualization;
     private AbstractAlgorithm algorithm;
 
-    public InfoTree(AbstractAlgorithm abstractAlgorithm, types type) {
-        this.treeContent = new MyTree(null);
+    public InfoTree(AbstractAlgorithm abstractAlgorithm, types type, MyNode root) {
+        this.treeContent = new MyTree(root);
         this.type = type;
         this.algorithm = abstractAlgorithm;
     }
