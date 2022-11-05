@@ -34,11 +34,23 @@ public class MyNode {
      */
     public int yCoordinate;
 
-    /**
-     *
-     */
-    public MyNode() {
-        // TODO: 04.11.2022 Implementation
+//    /**
+//     *
+//     */
+//    public MyNode() {
+//        // TODO: 04.11.2022 Implementation
+//    }
+
+
+    public MyNode(int index, int value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
+                  int yCoordinate) {
+        this.index = index;
+        this.value = value;
+        this.parent = parent;
+        this.rightBrother = rightBrother;
+        this.leftChild = leftChild;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
     }
 
     /**
