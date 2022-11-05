@@ -21,7 +21,13 @@ import java.util.ArrayList;
 public class ExperimentVisualization {
 
     private ExecuteAlgorithmController executeAlgorithmController;
+    /**
+     * Experiments shown in the window.
+     */
     private ArrayList<VBox> layoutExperiment = new ArrayList<>();
+    /**
+     * Data structure behind the shown trees.
+     */
     private ArrayList<InfoExperiment> infoExperiments = new ArrayList<>();
 
     /**
