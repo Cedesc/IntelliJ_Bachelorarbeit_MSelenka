@@ -48,6 +48,13 @@ public class MyNode {
         this.yCoordinate = yCoordinate;
     }
 
+    public MyNode(int index, int value, int xCoordinate, int yCoordinate) {
+        this.index = index;
+        this.value = value;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
     /**
      * @param newChild node to be added
      */
@@ -66,6 +73,16 @@ public class MyNode {
             consideredNode.rightBrother = newChild;
             //... and add this node as the parent node.
             newChild.parent = this;
+        }
+    }
+
+    /**
+     * Using {@link #addChild(MyNode)} with varargs.
+     * @param newChildren nodes to be added
+     */
+    public void addChildren(MyNode... newChildren) {
+        for (MyNode newChild : newChildren) {
+            this.addChild(newChild);
         }
     }
 
@@ -191,6 +208,9 @@ public class MyNode {
         return counter;
     }
 
+    /**
+     * @return All children of the node.
+     */
     public ArrayList<MyNode> getAllChildren() {
         MyNode consideredNode = this;
         ArrayList<MyNode> children = new ArrayList<>();
