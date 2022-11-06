@@ -32,7 +32,9 @@ Erledigt:
 
 Daily TDL:
     7.11.
-        insert leaf als Befehl hinzufügen und positioning von MyTree testen
+        insert leaf als Befehl hinzufügen
+		nötige funktionen für positioning von MyTree implementieren
+		positioning von MyTree testen
     8.11.
 		Vorbereiten für Gespräch morgen
     9.11.
