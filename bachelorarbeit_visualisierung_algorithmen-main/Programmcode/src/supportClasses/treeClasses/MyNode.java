@@ -1,5 +1,7 @@
 package supportClasses.treeClasses;
 
+import java.util.ArrayList;
+
 /**
  * Representation of a node in {@link MyTree}.
  */
@@ -131,22 +133,78 @@ public class MyNode {
      * Needed for {@link MyTree#positioning(int, int)}.
      * @return The sum of all x-Coordinates of the node's children.
      */
-    public int getSumOfChildrenXPositions() {
-        // TODO: 04.11.2022 Implementation
-        return 0;
+    public int getSumOfChildrenXCoordinates() {
+        int result = 0;
+        for (MyNode child : this.getAllChildren()) {
+            result += child.xCoordinate;
+        }
+        return result;
+    }
+
+    /**
+     * Needed for {@link MyTree#positioning(int, int)}.
+     * @return The mean of the x-Coordinates of the node's middle children.
+     */
+    public int getMiddleChildrenXCoordinate() {
+        int numberOfChildren = this.getNumberOfChildren();
+        ArrayList<MyNode> children = this.getAllChildren();
+
+        // if the number of children is odd, return the x-coordinate of the middle children
+        if (numberOfChildren % 2 == 1) {
+            return children.get(numberOfChildren / 2).xCoordinate;
+        }
+        else {
+            // if the number is even, return the mean of the two middle children
+            return (children.get(numberOfChildren / 2).xCoordinate
+                    + children.get(numberOfChildren / 2 + 1).xCoordinate) / 2;
+        }
+
     }
 
     /**
      * @return Number of children.
      */
     public int getNumberOfChildren() {
-        // TODO: 04.11.2022 Implementation
-        return 0;
+        return this.getAllChildren().size();
     }
 
     // TODO: 06.11.2022 write doc
     public String getValueAsString() {
         return String.valueOf(this.value);
+    }
+
+    /**
+     * @return The depth of the node relative to the given root, -1 if the root is no ancestor.
+     */
+    public int getDepth(MyNode root) {
+        MyNode consideredNode = this;
+        int counter = 0;
+
+        while (consideredNode != root) {
+            if (consideredNode == null) {
+                return -1;
+            }
+            consideredNode = consideredNode.parent;
+            counter++;
+        }
+
+        return counter;
+    }
+
+    public ArrayList<MyNode> getAllChildren() {
+        MyNode consideredNode = this;
+        ArrayList<MyNode> children = new ArrayList<>();
+
+        if (! consideredNode.isLeaf()) {
+            consideredNode = consideredNode.leftChild;
+            children.add(consideredNode);
+            while (consideredNode.hasRightBrother()) {
+                consideredNode = consideredNode.rightBrother;
+                children.add(consideredNode);
+            }
+        }
+
+        return children;
     }
 
 }
