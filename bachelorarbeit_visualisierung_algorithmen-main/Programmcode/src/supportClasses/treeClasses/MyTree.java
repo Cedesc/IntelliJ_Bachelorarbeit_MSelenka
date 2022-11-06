@@ -20,10 +20,11 @@ public class MyTree {
     }
 
     /**
+     * @param parent the node to which the new leaf is attached
      * @param newLeaf new node, added as a leaf
      */
-    public void addLeaf(MyNode newLeaf) {
-        // TODO: 04.11.2022 Implementation
+    public void addLeaf(MyNode parent, MyNode newLeaf) {
+        parent.addChild(newLeaf);
     }
 
     /**
