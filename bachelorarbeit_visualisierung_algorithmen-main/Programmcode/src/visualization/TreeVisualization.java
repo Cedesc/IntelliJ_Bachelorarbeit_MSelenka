@@ -48,6 +48,13 @@ public class TreeVisualization {
 
     }
 
+    public void addLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
+
+        // TODO: 06.11.2022 create animation
+
+        updateView();
+    }
+
 
     /**
      * Draws one entire tree with rectangles and lines.

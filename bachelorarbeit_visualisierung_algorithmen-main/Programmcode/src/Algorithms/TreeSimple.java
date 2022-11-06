@@ -26,6 +26,11 @@ public class TreeSimple extends AbstractAlgorithm {
 
         Tree tree2 = create_Tree(types.NUMBER, node0);
 
+        MyNode node5 =
+                new MyNode(5, 555, null, null, null, 100, 400);
+
+        tree2.addLeaf(node3, node5);
+
     }
 
 }

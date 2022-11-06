@@ -1,6 +1,7 @@
 package datastructures;
 
 import abstractAlgorithmus.AbstractAlgorithm;
+import commands.treeCommands.AddLeaf;
 import commands.treeCommands.CreateTree;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
@@ -19,6 +20,12 @@ public class Tree extends AbstractDatastructure {
         this.root = root;
         CreateTree createTree = new CreateTree(this.infoTree, type, root);
         this.algorithm.appendCommandOrder(createTree);
+    }
+
+    public void addLeaf(MyNode parent, MyNode newLeaf) {
+        AddLeaf addLeaf = new AddLeaf(this.infoTree, parent, newLeaf);
+//        this.infoTree.addLeaf(parent, newLeaf);
+        this.algorithm.appendCommandOrder(addLeaf);
     }
 
 }

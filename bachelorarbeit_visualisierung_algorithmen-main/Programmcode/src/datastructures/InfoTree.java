@@ -27,6 +27,26 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    public void addLeaf(MyNode parent, MyNode newLeaf) {
+        // check if parent or newLeaf is null
+        if (parent == null) {
+            this.algorithm.setErrorString("Error function 'addLeaf' of a tree : \nParent is null.");
+            return;
+        }
+        if (newLeaf == null) {
+            this.algorithm.setErrorString("Error function 'addLeaf' of a tree : \nLeaf is null.");
+            return;
+        }
+
+        // add the leaf
+        this.treeContent.addLeaf(parent, newLeaf);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.addLeaf(this, parent, newLeaf);
+        }
+    }
+
     /**
      * Tests if the given value is the same as the node type.
      * @param value given value to test
