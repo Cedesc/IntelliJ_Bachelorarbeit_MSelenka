@@ -51,21 +51,45 @@ public class MyTree {
     }
 
     /**
+     * Using Depth-First-Search.
      * @return Array of all leafs of the tree.
      */
-    public ArrayList<MyNode> getLeafs() {
-        // For the method "positioning" is it mandatory to have the leafs in the right order from left to right.
-        // This is possible with depth first search.
-        // TODO: 04.11.2022 Implementation
-        return null;
+    public ArrayList<MyNode> getLeafsDFS() {
+        return getLeafsDFS(root);
     }
 
     /**
+     * Recursive helper function for {@link #getLeafsDFS()}.
+     * @param consideredNode currently considered node
+     */
+    private ArrayList<MyNode> getLeafsDFS(MyNode consideredNode) {
+
+        ArrayList<MyNode> foundNodes = new ArrayList<>();
+
+        if (consideredNode.isLeaf()) {
+            // if the node is a leaf add it to the result
+            foundNodes.add(consideredNode);
+        }
+        // if the node isn't a leaf, call the function recursively for each of it's children
+        for (MyNode child : consideredNode.getAllChildren()) {
+            foundNodes.addAll(getLeafsDFS(child));
+        }
+
+        return foundNodes;
+    }
+
+    /**
+     * Calculates the maximum depth of the tree.
      * @return Total number of levels of the tree.
      */
     public int getNumberOfLevels() {
-        // TODO: 04.11.2022 Implementation
-        return 0;
+        int maxDepth = -1;
+        for (MyNode leaf : getLeafsDFS()) {
+            int depth = leaf.getDepth(root);
+            if (depth > maxDepth)
+                maxDepth = depth;
+        }
+        return maxDepth;
     }
 
     /**
@@ -73,8 +97,31 @@ public class MyTree {
      * @return Array of all nodes of the considered level.
      */
     public ArrayList<MyNode> getNodesOfLevel(int level) {
-        // TODO: 04.11.2022 Implementation
-        return null;
+        return getNodesOfLevel(level, root);
+    }
+
+    /**
+     * Recursive helper function for {@link #getNodesOfLevel(int)}.
+     * @param level considered level, doesn't change in the recursive calls
+     * @param consideredNode currently considered node
+     */
+    private ArrayList<MyNode> getNodesOfLevel(int level, MyNode consideredNode) {
+
+        ArrayList<MyNode> foundNodes = new ArrayList<>();
+
+        // if the node is higher than the searched depth plus one, the function will be called recursively on each child
+        if (consideredNode.getDepth(root) < level + 1) {
+            for (MyNode child : consideredNode.getAllChildren()) {
+                foundNodes.addAll(getNodesOfLevel(level, child));
+            }
+        }
+        // if the considered node is exactly one level above the given, all of its children are on the correct level,
+        // so they are added to the foundNodes
+        if (consideredNode.getDepth(root) == level + 1) {
+            foundNodes.addAll(consideredNode.getAllChildren());
+        }
+
+        return foundNodes;
     }
 
     /**
@@ -84,7 +131,8 @@ public class MyTree {
      */
     public void positioning(int xDistance, int yDistance) {
 
-        ArrayList<MyNode> leafs = getLeafs();
+        // It's mandatory to have the leafs in the right order from left to right.
+        ArrayList<MyNode> leafs = getLeafsDFS();
         int numberOfLevels = getNumberOfLevels();
         int y = numberOfLevels * yDistance;
         int x = 0;
@@ -106,7 +154,7 @@ public class MyTree {
                 }
                 else {
                     // position the node in the middle over the children (or over the child in the middle?)
-                    x = node.getSumOfChildrenXPositions();
+                    x = node.getSumOfChildrenXCoordinates() / node.getNumberOfChildren();
                     node.setXAndY(x, y);
                 }
             }
