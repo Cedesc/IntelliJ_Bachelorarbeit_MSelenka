@@ -113,4 +113,7 @@ public class MyTree {
 
     }
 
+    public MyNode getRoot() {
+        return root;
+    }
 }
