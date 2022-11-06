@@ -130,4 +130,9 @@ public class MyNode {
         return 0;
     }
 
+    // TODO: 06.11.2022 write doc
+    public String getValueAsString() {
+        return String.valueOf(this.value);
+    }
+
 }
