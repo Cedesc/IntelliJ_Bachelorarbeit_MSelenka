@@ -29,11 +29,15 @@ CHECK! 11. Weiterschreiben!!!
 	- Grundlage implementieren
 		Check! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
 		- Visualisieren können
-			- Meine Ideen:
-				- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
-					- Positionen so, als wäre es immer vollständiger Graph
-					- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
-		- mehr Befehle einbringen, mindestens get
+			Check! - grundlegender draw Befehl
+			- korrekte Koordinaten den Knoten zuweisen
+				- Meine Ideen:
+					- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
+						- Positionen so, als wäre es immer vollständiger Graph
+						- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
+		- mehr Befehle einbringen
+			- insert leaf
+			- get
 		- Weiteres:
 			- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
 			- Wurzel darf nicht rightBrother haben

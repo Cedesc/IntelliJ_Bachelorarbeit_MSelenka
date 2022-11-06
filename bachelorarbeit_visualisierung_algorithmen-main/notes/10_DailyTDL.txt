@@ -26,13 +26,13 @@ Erledigt:
 			- InfoTree, TreeCommand, CreateTree, Tree
 		- Weitere
 			- TreeBuilder, TreeSimple
+	6.11.
+		- Tree grundlegend visualisieren können, heißt mit einem draw Befehl anzeigen lassen können
 
 
 Daily TDL:
-    6.11.
-        Eigentlich "13. Animieren", stattdessen erstmal überhaupt Tree visualisieren können
     7.11.
-        Eigentlich "13. Animieren", stattdessen erstmal überhaupt Tree visualisieren können
+        insert leaf als Befehl hinzufügen und positioning von MyTree testen
     8.11.
 		Vorbereiten für Gespräch morgen
     9.11.
