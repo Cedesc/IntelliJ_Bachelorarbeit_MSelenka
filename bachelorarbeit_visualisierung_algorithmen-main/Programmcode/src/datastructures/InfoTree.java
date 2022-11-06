@@ -71,4 +71,11 @@ public class InfoTree extends AbstractDatastructure {
         return this.type;
     }
 
+    /**
+     * @return The included tree.
+     */
+    public MyTree getTreeContent() {
+        return this.treeContent;
+    }
+
 }
