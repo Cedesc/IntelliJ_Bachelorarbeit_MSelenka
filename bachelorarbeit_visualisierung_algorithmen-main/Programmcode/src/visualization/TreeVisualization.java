@@ -4,16 +4,15 @@ import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
 import javafx.geometry.Pos;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
 import supportClasses.treeClasses.MyNode;
+import supportClasses.treeClasses.MyTree;
 import visualization.animationCreation.TreeAnimation;
 
 import java.util.ArrayList;
@@ -78,35 +77,60 @@ public class TreeVisualization {
 
     /**
      * Draws one entire tree with rectangles and lines.
-     * @param root root of the tree
+     * @param tree given tree to be drawn
      * @return Pane including the tree.
      */
-    public Pane drawTree(MyNode root) {
+    public Pane drawTree(MyTree tree) {
 
         // pane that will show the drawn tree
         Pane pane = new Pane();
+        pane.setStyle("-fx-border-color: blue;");
 
-        drawNode(root, pane);
+        drawNode(tree.getRoot(), null, pane);
 
         return pane;
 
     }
 
-    public void drawNode(MyNode node, Pane pane) {
+    private void drawNode(MyNode node, MyNode parent, Pane pane) {
 
+        int nodeSize = 50;
+
+        // edge from the parent to the new node (except for the root node)
+        if (parent != null) {
+            // used for calculating the center of the node
+            int delta = nodeSize / 2;
+            Line edge = new Line(parent.xCoordinate + delta, parent.yCoordinate + delta,
+                    node.xCoordinate + delta, node.yCoordinate + delta);
+            pane.getChildren().add(edge);
+            edge.toBack();
+        }
+
+        // frame of the node
         Circle circle = new Circle();
-        circle.setCenterX(node.xCoordinate);
-        circle.setCenterY(node.yCoordinate);
-        circle.setRadius(20);
-        circle.setFill(Color.TRANSPARENT);
+        circle.setRadius(nodeSize >> 1);
+        circle.setFill(Color.WHITE);
         circle.setStroke(Color.BLACK);
         circle.setStrokeType(StrokeType.OUTSIDE);
-        pane.getChildren().add(circle);
 
-        // draw children
+        // value of the node
+        Text valueText = new Text(node.getValueAsString());
+
+        // combine frame and value
+        StackPane visualizedNode = new StackPane();
+        visualizedNode.getChildren().addAll(circle, valueText);
+
+        // position the node
+        visualizedNode.relocate(node.xCoordinate, node.yCoordinate);
+
+
+        // add node to the window
+        pane.getChildren().add(visualizedNode);
+
+        // draw all children
         MyNode consideredNode = node.leftChild;
         while (consideredNode != null) {
-                drawNode(consideredNode, pane);
+                drawNode(consideredNode, node, pane);
                 consideredNode = consideredNode.rightBrother;
             }
 
@@ -123,22 +147,11 @@ public class TreeVisualization {
 
         VBox node = new VBox();
         node.setId("Tree");
-        for (VBox vBox : visualizedTrees) {
-            node.getChildren().add(vBox);
-        }
 
-        // test stuff
-        // TODO: 05.11.2022 delete afterwards
-        MyNode node4 =
-                new MyNode(4, 444, null, null, null, 250, 50);
-        MyNode node3 =
-                new MyNode(3, 333, null, null, null, 200, 150);
-        MyNode node2 =
-                new MyNode(2, 222, null, node4, node3, 200, 50);
-        MyNode node1 =
-                new MyNode(1, 111, null, node2, null, 50, 50);
-        node.getChildren().add(drawTree(
-                new MyNode(0, 24, null, null, node1, 80, 30)));
+        // for each real tree in the background, draw it and add it to the node
+        for (InfoTree infoTree : infoTrees) {
+            node.getChildren().add(drawTree(infoTree.getTreeContent()));
+        }
 
 
         this.executeAlgorithmController.updateVisualization(node, transition);
