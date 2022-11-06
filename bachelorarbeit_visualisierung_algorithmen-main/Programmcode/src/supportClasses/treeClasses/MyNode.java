@@ -34,13 +34,6 @@ public class MyNode {
      */
     public int yCoordinate;
 
-//    /**
-//     *
-//     */
-//    public MyNode() {
-//        // TODO: 04.11.2022 Implementation
-//    }
-
 
     public MyNode(int index, int value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
                   int yCoordinate) {
@@ -51,6 +44,27 @@ public class MyNode {
         this.leftChild = leftChild;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
+    }
+
+    /**
+     * @param newChild node to be added
+     */
+    public void addChild(MyNode newChild) {
+        MyNode consideredNode = this.leftChild;
+        // if the node has no children, add the new node as the first one
+        if (consideredNode == null) {
+            this.leftChild = newChild;
+        }
+        else {
+            // Go to the rightmost brother,...
+            while (consideredNode.hasRightBrother()) {
+                consideredNode = consideredNode.rightBrother;
+            }
+            // ... add to it the new node as a right brother...
+            consideredNode.rightBrother = newChild;
+            //... and add this node as the parent node.
+            newChild.parent = this;
+        }
     }
 
     /**
