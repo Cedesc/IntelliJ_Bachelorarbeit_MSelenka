@@ -63,6 +63,14 @@ public class TreeVisualization {
      */
     public Pane drawTree(MyTree tree) {
 
+        tree.positioning(100, 50);
+        // TODO: 06.11.2022 debug tool, delete afterwards
+//        System.out.println("STAAART");
+//        for (MyNode node : tree.getLeafsDFS())
+//            System.out.println(node.index);
+//        System.out.println("ENDEEEE");
+//        System.out.println("");
+
         // pane that will show the drawn tree
         Pane pane = new Pane();
         pane.setStyle("-fx-border-color: blue;");

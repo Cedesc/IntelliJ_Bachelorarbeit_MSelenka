@@ -157,6 +157,9 @@ public class MyTree {
                     x = node.getSumOfChildrenXCoordinates() / node.getNumberOfChildren();
                     node.setXAndY(x, y);
                 }
+                // TODO: 06.11.2022 debug tool, delete afterwards
+                System.out.println("Node with index " + node.index + " has the position \n" +
+                        "x = " + node.xCoordinate + " = " + x + "   y = " + node.yCoordinate + " = " + y);
             }
         }
 
