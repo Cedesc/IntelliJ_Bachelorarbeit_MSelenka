@@ -63,7 +63,7 @@ public class TreeVisualization {
      */
     public Pane drawTree(MyTree tree) {
 
-        tree.positioning(100, 50);
+        tree.positioning(50, 75);
         // TODO: 06.11.2022 debug tool, delete afterwards
 //        System.out.println("STAAART");
 //        for (MyNode node : tree.getLeafsDFS())

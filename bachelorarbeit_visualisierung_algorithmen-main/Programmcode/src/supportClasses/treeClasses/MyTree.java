@@ -79,7 +79,8 @@ public class MyTree {
     }
 
     /**
-     * Calculates the maximum depth of the tree.
+     * Calculates the maximal depth of the tree, since the maximal depth + 1 is the number of tree levels.
+     * For example, a tree consisting of only the root, has one level.
      * @return Total number of levels of the tree.
      */
     public int getNumberOfLevels() {
@@ -89,10 +90,17 @@ public class MyTree {
             if (depth > maxDepth)
                 maxDepth = depth;
         }
-        return maxDepth;
+
+        // if the maximal depth is lower than 0, it's an error, so the depth (-1) is returned here too
+        if (maxDepth < 0)
+            return maxDepth;
+        // if the maximal depth is >= 0, the result is maxDepth + 1, since the number of levels is required
+        else
+            return maxDepth + 1;
     }
 
     /**
+     * The level enumeration starts with 0.
      * @param level considered level
      * @return Array of all nodes of the considered level.
      */
@@ -109,15 +117,21 @@ public class MyTree {
 
         ArrayList<MyNode> foundNodes = new ArrayList<>();
 
+        // the following two cases doesn't take effect if the searched depth is 0, so catch this special case first
+        if (level == 0) {
+            foundNodes.add(root);
+            return foundNodes;
+        }
+
         // if the node is higher than the searched depth plus one, the function will be called recursively on each child
-        if (consideredNode.getDepth(root) < level + 1) {
+        if (consideredNode.getDepth(root) < level - 1) {
             for (MyNode child : consideredNode.getAllChildren()) {
                 foundNodes.addAll(getNodesOfLevel(level, child));
             }
         }
         // if the considered node is exactly one level above the given, all of its children are on the correct level,
         // so they are added to the foundNodes
-        if (consideredNode.getDepth(root) == level + 1) {
+        if (consideredNode.getDepth(root) == level - 1) {
             foundNodes.addAll(consideredNode.getAllChildren());
         }
 
@@ -134,8 +148,10 @@ public class MyTree {
         // It's mandatory to have the leafs in the right order from left to right.
         ArrayList<MyNode> leafs = getLeafsDFS();
         int numberOfLevels = getNumberOfLevels();
+        if (numberOfLevels < 1)
+            System.out.println("Warning! Invalid tree, it has no nodes.");
         int y = numberOfLevels * yDistance;
-        int x = 0;
+        int x = xDistance;
 
         // Set the position of all leafs like there were all on the lowest level.
         // The leafs that aren't on the lowest level will be updated later, but the x coordinate should remain the same.
@@ -145,7 +161,7 @@ public class MyTree {
             x += xDistance;
         }
 
-        for(int level = numberOfLevels ; level > 0 ; level--) {
+        for(int level = numberOfLevels - 1 ; level >= 0 ; level--) {
             y -= yDistance;
 
             for(MyNode node : getNodesOfLevel(level)) {
@@ -157,9 +173,6 @@ public class MyTree {
                     x = node.getSumOfChildrenXCoordinates() / node.getNumberOfChildren();
                     node.setXAndY(x, y);
                 }
-                // TODO: 06.11.2022 debug tool, delete afterwards
-                System.out.println("Node with index " + node.index + " has the position \n" +
-                        "x = " + node.xCoordinate + " = " + x + "   y = " + node.yCoordinate + " = " + y);
             }
         }
 

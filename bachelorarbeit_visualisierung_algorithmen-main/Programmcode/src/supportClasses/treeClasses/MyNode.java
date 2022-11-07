@@ -69,11 +69,11 @@ public class MyNode {
             while (consideredNode.hasRightBrother()) {
                 consideredNode = consideredNode.rightBrother;
             }
-            // ... add to it the new node as a right brother...
+            // ... add to it the new node as a right brother
             consideredNode.rightBrother = newChild;
-            //... and add this node as the parent node.
-            newChild.parent = this;
         }
+        // add this node as the parent node
+        newChild.parent = this;
     }
 
     /**
@@ -227,4 +227,11 @@ public class MyNode {
         return children;
     }
 
+    /**
+     * @return The index of the node.
+     */
+    @Override
+    public String toString() {
+        return "Index: " + this.index;
+    }
 }
