@@ -3,6 +3,7 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
+import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -63,13 +64,7 @@ public class TreeVisualization {
      */
     public Pane drawTree(MyTree tree) {
 
-        tree.positioning(50, 75);
-        // TODO: 06.11.2022 debug tool, delete afterwards
-//        System.out.println("STAAART");
-//        for (MyNode node : tree.getLeafsDFS())
-//            System.out.println(node.index);
-//        System.out.println("ENDEEEE");
-//        System.out.println("");
+        tree.positioning(75, 75);
 
         // pane that will show the drawn tree
         Pane pane = new Pane();
