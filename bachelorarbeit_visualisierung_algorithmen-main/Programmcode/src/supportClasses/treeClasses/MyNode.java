@@ -55,6 +55,20 @@ public class MyNode {
         this.yCoordinate = yCoordinate;
     }
 
+    public MyNode(int index, int value) {
+        this.index = index;
+        this.value = value;
+        this.xCoordinate = 0;
+        this.yCoordinate = 0;
+    }
+
+    public MyNode(int indexAndValue) {
+        this.index = indexAndValue;
+        this.value = indexAndValue;
+        this.xCoordinate = 0;
+        this.yCoordinate = 0;
+    }
+
     /**
      * @param newChild node to be added
      */
