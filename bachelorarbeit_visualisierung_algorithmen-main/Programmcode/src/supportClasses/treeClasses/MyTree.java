@@ -151,7 +151,7 @@ public class MyTree {
         if (numberOfLevels < 1)
             System.out.println("Warning! Invalid tree, it has no nodes.");
         int y = numberOfLevels * yDistance;
-        int x = xDistance;
+        int x = 0;
 
         // Set the position of all leafs like there were all on the lowest level.
         // The leafs that aren't on the lowest level will be updated later, but the x coordinate should remain the same.
