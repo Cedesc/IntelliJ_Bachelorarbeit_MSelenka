@@ -169,8 +169,8 @@ public class MyTree {
                     node.setY(y);
                 }
                 else {
-                    // position the node in the middle over the children (or over the child in the middle?)
-                    x = node.getSumOfChildrenXCoordinates() / node.getNumberOfChildren();
+                    // position the node over the middle child or children
+                    x = node.getMiddleChildrenXCoordinate();
                     node.setXAndY(x, y);
                 }
             }

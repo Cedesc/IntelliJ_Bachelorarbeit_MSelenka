@@ -180,14 +180,19 @@ public class MyNode {
         int numberOfChildren = this.getNumberOfChildren();
         ArrayList<MyNode> children = this.getAllChildren();
 
+        if (isLeaf()) {
+            System.out.println("Warning! Node has no children!");
+            return 0;
+        }
+
         // if the number of children is odd, return the x-coordinate of the middle children
         if (numberOfChildren % 2 == 1) {
             return children.get(numberOfChildren / 2).xCoordinate;
         }
         else {
             // if the number is even, return the mean of the two middle children
-            return (children.get(numberOfChildren / 2).xCoordinate
-                    + children.get(numberOfChildren / 2 + 1).xCoordinate) / 2;
+            return (children.get(numberOfChildren / 2 - 1).xCoordinate
+                    + children.get(numberOfChildren / 2).xCoordinate) / 2;
         }
 
     }
