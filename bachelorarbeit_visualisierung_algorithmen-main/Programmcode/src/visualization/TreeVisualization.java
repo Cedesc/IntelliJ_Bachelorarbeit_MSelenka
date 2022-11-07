@@ -64,6 +64,7 @@ public class TreeVisualization {
      */
     public Pane drawTree(MyTree tree) {
 
+        // set the correct coordinates for all nodes
         tree.positioning(75, 75);
 
         // pane that will show the drawn tree
