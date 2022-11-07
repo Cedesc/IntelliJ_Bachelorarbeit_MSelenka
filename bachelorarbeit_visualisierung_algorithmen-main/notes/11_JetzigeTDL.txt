@@ -25,29 +25,34 @@ CHECK! 11. Weiterschreiben!!!
         [-] 6.4 Zusammenfassung (1)
 
 
-12. Bäume implementieren und über Zeichnen Gedanken machen
-	- Grundlage implementieren
-		Check! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
-		- Visualisieren können
-			Check! - grundlegender draw Befehl
-			- korrekte Koordinaten den Knoten zuweisen
+12. Bäume implementieren und über Zeichnen ermöglichen
+	CHECK! - Grundlage implementieren
+		CHECK! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
+		CHECK! - Visualisieren können
+			CHECK! - grundlegender draw Befehl
+			CHECK! - korrekte Koordinaten den Knoten zuweisen
 				- Meine Ideen:
 					- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
 						- Positionen so, als wäre es immer vollständiger Graph
 						- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
-		- mehr Befehle einbringen
-			- insert leaf
-			- get
-		- Weiteres:
-			- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
-			- Wurzel darf nicht rightBrother haben
+		CHECK! - insert leaf implementieren
     Weiteres:
+		- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
+		- Wurzel darf nicht rightBrother haben
 		- "drawing trees" suchen, ob es dazu was im internet gibt
 			- Mit Kräfte und Differentialgleichung?
 			- Von unten nach oben?
+		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
+			- immer wieder richtig rücken?
+			- liegst am scaling?
+		- lücke zwischen den fenstern, in denen der baum drin ist, schaffen
+		- mit zwei oder mehr bäumen auf einem bildschirm testen
+		- repeat visualization führt zu fehlern
+		- strich zum knoten nicht in die mitte vom kind, sondern an die obere mitte führen?
 
 
 13. Animieren...
+	- get befehle einfügen
     - ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
     - ... interagieren zwischen zwei Instanzen von Datenstrukturen
         - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
