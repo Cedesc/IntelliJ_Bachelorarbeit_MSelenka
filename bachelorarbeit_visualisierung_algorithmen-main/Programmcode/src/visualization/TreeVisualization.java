@@ -69,13 +69,14 @@ public class TreeVisualization {
 
     /**
      * Draws one entire tree with rectangles and lines.
+     * @param treeName name of the tree (usually "Tree i")
      * @param tree given tree to be drawn
      * @param xDistance distance between nodes on the x-axis
      * @param yDistance distance between nodes on the y-axis
      * @param nodeSize visual size of the node
-     * @return Pane including the tree.
+     * @return VBox including the name of the tree and the visualized tree itself.
      */
-    public Pane drawTree(MyTree tree, int xDistance, int yDistance, int nodeSize) {
+    public VBox drawTree(String treeName, MyTree tree, int xDistance, int yDistance, int nodeSize) {
 
         // set the correct coordinates for all nodes
         tree.positioning(xDistance, yDistance);
@@ -84,14 +85,18 @@ public class TreeVisualization {
         Pane pane = new Pane();
         pane.setStyle("-fx-border-color: blue;");
 
+        // draw nodes and edges
         drawTree(tree.getRoot(), null, pane, nodeSize);
 
-        return pane;
+        VBox treeWithName = new VBox(new Text(treeName), pane);
+        treeWithName.setPadding(new Insets(20));
+
+        return treeWithName;
 
     }
 
     /**
-     * Recursive helper function for {@link #drawTree(MyTree, int, int, int)}.
+     * Recursive helper function for {@link #drawTree(String, MyTree, int, int, int)}.
      * @param node currently considered node
      * @param parent parent of the node
      * @param pane pane to which all nodes should be added
@@ -189,16 +194,19 @@ public class TreeVisualization {
      */
     public void updateView(Transition transition) {
 
-        VBox node = new VBox();
-        node.setId("Tree");
+        VBox allTrees = new VBox();
+        allTrees.setId("Tree");
 
         // for each real tree in the background, draw it and add it to the node
-        for (InfoTree infoTree : infoTrees) {
-            node.getChildren().add(drawTree(infoTree.getTreeContent(), this.xDistance, this.yDistance, this.nodeSize));
+        for (int i = 0 ; i < infoTrees.size() ; i++) {
+            // name of the tree
+            String treeName = "Tree " + i;
+            // add the tree with its name to the node
+            allTrees.getChildren().add(
+                    drawTree(treeName, infoTrees.get(i).getTreeContent(), this.xDistance, this.yDistance, this.nodeSize));
         }
 
-
-        this.executeAlgorithmController.updateVisualization(node, transition);
+        this.executeAlgorithmController.updateVisualization(allTrees, transition);
     }
 
     public void setExecuteAlgorithmController(ExecuteAlgorithmController executeAlgorithmController) {
