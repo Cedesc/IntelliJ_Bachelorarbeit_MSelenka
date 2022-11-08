@@ -85,8 +85,9 @@ public class TreeVisualization {
         if (parent != null) {
             // used for calculating the center of the node
             int delta = nodeSize / 2;
+            // edge from the center of the parent to the middle top of the child
             Line edge = new Line(parent.xCoordinate + delta, parent.yCoordinate + delta,
-                    node.xCoordinate + delta, node.yCoordinate + delta);
+                    node.xCoordinate + delta, node.yCoordinate);
             pane.getChildren().add(edge);
             edge.toBack();
         }
