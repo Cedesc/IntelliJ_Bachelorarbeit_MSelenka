@@ -1,7 +1,6 @@
 package supportClasses.config;
 
 import controller.SelectAlgorithmController;
-import javafx.animation.Transition;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
