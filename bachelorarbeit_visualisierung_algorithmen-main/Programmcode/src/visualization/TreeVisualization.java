@@ -83,7 +83,6 @@ public class TreeVisualization {
 
         // pane that will show the drawn tree
         Pane pane = new Pane();
-        pane.setStyle("-fx-border-color: blue;");
 
         // draw nodes and edges
         drawTree(tree.getRoot(), null, pane, nodeSize);
