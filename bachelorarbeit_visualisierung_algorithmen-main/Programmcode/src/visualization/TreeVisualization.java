@@ -182,7 +182,7 @@ public class TreeVisualization {
     }
 
     /**
-     * If no transition is given, a NullTransition will be created for calling the generateNode()-function.
+     * If no transition is given, a NullTransition will be created for calling the updateView()-function.
      */
     public void updateView() {
         updateView(treeAnimation.getNullTransition());
