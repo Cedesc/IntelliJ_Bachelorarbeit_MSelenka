@@ -204,9 +204,12 @@ public class MyNode {
         return this.getAllChildren().size();
     }
 
-    // TODO: 06.11.2022 write doc
     public String getValueAsString() {
         return String.valueOf(this.value);
+    }
+
+    public String getIndexAsString() {
+        return String.valueOf(this.index);
     }
 
     /**
