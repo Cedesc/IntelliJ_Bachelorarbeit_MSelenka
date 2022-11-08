@@ -46,7 +46,8 @@ Nächste Ziele bis zum PLATZHALTER:
 		- [_] Wert eines Knotens ändern
 	- [X] mit get zugriff auf die knoten animieren
 	- [XX] repeat visualization und change visualization fixen
-	- [X] back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen"
+	- [X] back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	- [XX] generell Animationen
 		- man braucht nach dem draw befehl die Koordinaten von zuvor
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen
+		- Schwierigkeit: Kanten

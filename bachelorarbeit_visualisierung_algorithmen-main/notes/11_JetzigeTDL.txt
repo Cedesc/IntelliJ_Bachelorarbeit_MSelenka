@@ -28,28 +28,22 @@ CHECK! 11. Weiterschreiben!!!
 12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - Grundlage implementieren
 		CHECK! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
-		CHECK! - Visualisieren können
-			CHECK! - grundlegender draw Befehl
-			CHECK! - korrekte Koordinaten den Knoten zuweisen
-				- Meine Ideen:
-					- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
-						- Positionen so, als wäre es immer vollständiger Graph
-						- Konkret: Es gibt eine Funktion namens "positioning"
 		CHECK! - insert leaf implementieren
+	CHECK! - Visualisieren können
+		CHECK! - grundlegender draw Befehl
+		CHECK! - korrekte Koordinaten den Knoten zuweisen
+			- Meine Ideen:
+				- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
+					- Positionen so, als wäre es immer vollständiger Graph
+					- Konkret: Es gibt eine Funktion namens "positioning"
+		CHECK! - index jeden Knotens klein in der Ecke anzeigen lassen
     Weiteres:
-		- index jeden Knotens klein in der Ecke anzeigen lassen
 		- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
 		- Wurzel darf nicht rightBrother haben
-		- "drawing trees" suchen, ob es dazu was im internet gibt
-			- Mit Kräfte und Differentialgleichung?
-			- Von unten nach oben?
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
 			- immer wieder richtig rücken?
 			- liegst am scaling?
-		- lücke zwischen den fenstern, in denen der baum drin ist, schaffen
-		- mit zwei oder mehr bäumen auf einem bildschirm testen
 		- repeat visualization führt zu fehlern
-		- strich zum knoten nicht in die mitte vom kind, sondern an die obere mitte führen?
 
 
 13. Animieren...
@@ -60,6 +54,7 @@ CHECK! 11. Weiterschreiben!!!
 	- generell Animationen
 		- man braucht nach dem draw befehl die Koordinaten von zuvor
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
+		- Schwierigkeit: Kanten
 
 
 
