@@ -25,7 +25,7 @@ CHECK! 11. Weiterschreiben!!!
         [-] 6.4 Zusammenfassung (1)
 
 
-12. Bäume implementieren und über Zeichnen ermöglichen
+12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - Grundlage implementieren
 		CHECK! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
 		CHECK! - Visualisieren können
@@ -34,9 +34,10 @@ CHECK! 11. Weiterschreiben!!!
 				- Meine Ideen:
 					- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
 						- Positionen so, als wäre es immer vollständiger Graph
-						- Konkret: Es gibt eine Funktion namens "repositioning", bei der zuerst bestimmt wird 
+						- Konkret: Es gibt eine Funktion namens "positioning"
 		CHECK! - insert leaf implementieren
     Weiteres:
+		- index jeden Knotens klein in der Ecke anzeigen lassen
 		- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
 		- Wurzel darf nicht rightBrother haben
 		- "drawing trees" suchen, ob es dazu was im internet gibt
@@ -56,6 +57,9 @@ CHECK! 11. Weiterschreiben!!!
     - ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
     - ... interagieren zwischen zwei Instanzen von Datenstrukturen
         - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
+	- generell Animationen
+		- man braucht nach dem draw befehl die Koordinaten von zuvor
+			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
 
 
 
@@ -107,6 +111,7 @@ Wenn-zu-viel-Zeit-TDL:
 	23. Complete Visualization
 		- Button um direkt zum Endergebnis zu springen
 		- Button um Pause zu drücken
+		- automatisches Skalieren bei complete visualization (bei Bäumen gut zu beobachten)
 	
 	24. Animationen
 		- Animationen schneller oder langsamer zur Laufzeit machen können.
