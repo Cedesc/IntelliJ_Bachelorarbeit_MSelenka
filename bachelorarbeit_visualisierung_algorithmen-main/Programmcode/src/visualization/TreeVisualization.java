@@ -67,6 +67,9 @@ public class TreeVisualization {
     /**
      * Draws one entire tree with rectangles and lines.
      * @param tree given tree to be drawn
+     * @param xDistance distance between nodes on the x-axis
+     * @param yDistance distance between nodes on the y-axis
+     * @param nodeSize visual size of the node
      * @return Pane including the tree.
      */
     public Pane drawTree(MyTree tree, int xDistance, int yDistance, int nodeSize) {
@@ -84,6 +87,13 @@ public class TreeVisualization {
 
     }
 
+    /**
+     * Recursive helper function for {@link #drawTree(MyTree, int, int, int)}.
+     * @param node currently considered node
+     * @param parent parent of the node
+     * @param pane pane to which all nodes should be added
+     * @param nodeSize visual size of the node
+     */
     private void drawTree(MyNode node, MyNode parent, Pane pane, int nodeSize) {
 
         // edge from the parent to the new node (except for the root node)
@@ -148,6 +158,9 @@ public class TreeVisualization {
         updateView(treeAnimation.getNullTransition());
     }
 
+    /**
+     * @param transition animation to be played
+     */
     public void updateView(Transition transition) {
 
         VBox node = new VBox();
