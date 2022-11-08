@@ -25,7 +25,7 @@ CHECK! 11. Weiterschreiben!!!
         [-] 6.4 Zusammenfassung (1)
 
 
-12. Bäume implementieren und Zeichnen ermöglichen
+CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - Grundlage implementieren
 		CHECK! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
 		CHECK! - insert leaf implementieren
@@ -58,15 +58,14 @@ CHECK! 11. Weiterschreiben!!!
 
 
 
-21. Wenn noch Zeit ist:
-    - Atomare Operationen:
-        - Blatt anhängen
+14. Atomare Operationen:
+        CHECK! - Blatt anhängen
         - Elternpointer umhängen können
         - Blatt löschen
         - Wert eines Knotens ändern
 
 
-22. Animationen
+21. Animationen
 	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
 		- Lösungsvorschlag:
 			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
