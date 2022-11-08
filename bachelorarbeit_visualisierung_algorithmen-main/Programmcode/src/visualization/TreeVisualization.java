@@ -53,7 +53,15 @@ public class TreeVisualization {
 
         this.infoTrees.add(infoTree);
 
+        // create animation
         // TODO: 04.11.2022 create animation
+        //  1. Komplette Vbox mit ALLEN trees erstellen (alles andere kann zu Fehlern führen)
+        //  2. Zugehörige VBox bei forCreateTree() übergeben
+        //  1. Möglichkeit: updateView1() macht alles was update view macht, außer die letzte zeile, gibt aber die große
+        //  vbox zurück ; updateView2() macht die letzte zeile
+        //       wie komm ich in der großen vbox an die richtige zum übergeben?
+//        Transition transition = treeAnimation.forCreateTree(zugehörigeVBox)
+
 
         updateView();
 
