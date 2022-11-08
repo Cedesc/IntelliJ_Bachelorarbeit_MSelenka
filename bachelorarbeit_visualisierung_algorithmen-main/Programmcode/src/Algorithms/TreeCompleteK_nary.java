@@ -13,7 +13,7 @@ public class TreeCompleteK_nary extends AbstractAlgorithm {
     public void executeAlgorithm() throws InterruptedException {
 
         int k = 3;
-        int numberOfNodes = 5000;
+        int numberOfNodes = 1000;
 
         ArrayList<MyNode> nodes = new ArrayList<>(numberOfNodes);
 
