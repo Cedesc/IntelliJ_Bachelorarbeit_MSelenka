@@ -52,6 +52,7 @@ public class TempConfig {
 
     /**
      * The standard duration of animations. Not every animation has this duration, but each is oriented to it.
+     * The value must not be zero.
      * <p>
      * Used in {@link visualization.animationCreation.AbstractAnimationCreator#standardDuration}
      */
