@@ -3,10 +3,12 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import supportClasses.config.TempConfig;
 import supportClasses.treeClasses.MyNode;
@@ -160,10 +162,11 @@ public class TreeVisualization {
 
         // index of the node
         Text indexText = new Text(node.getIndexAsString());
+        indexText.setFont(Font.font(9));
 
         // combine frame with index
         StackPane frameWithIndex = new StackPane(frame, indexText);
-        frameWithIndex.setAlignment(Pos.BOTTOM_RIGHT);
+        frameWithIndex.setAlignment(Pos.BOTTOM_CENTER);
 
         // combine frame and index with value
         StackPane visualizedNode = new StackPane(frameWithIndex, valueText);
