@@ -94,4 +94,10 @@ public class TempConfig {
      */
     public static final int NODE_SIZE = 50;
 
+    /**
+     * For visualization of trees. The nodes are visualized as circles if it's true, otherwise as rectangles.
+     * Used in {@link visualization.TreeVisualization#circlesInsteadOfRectangles}
+     */
+    public static final boolean CIRCLES_INSTEAD_OF_RECTANGLES = true;
+
 }

@@ -3,11 +3,10 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
+import javafx.geometry.Pos;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.StrokeType;
+import javafx.scene.shape.*;
 import javafx.scene.text.Text;
 import supportClasses.config.TempConfig;
 import supportClasses.treeClasses.MyNode;
@@ -35,6 +34,8 @@ public class TreeVisualization {
     private final int yDistance = TempConfig.NODE_Y_DISTANCE;
 
     private final int nodeSize = TempConfig.NODE_SIZE;
+
+    private final boolean circlesInsteadOfRectangles = TempConfig.CIRCLES_INSTEAD_OF_RECTANGLES;
 
     // constructor
     public TreeVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -127,23 +128,45 @@ public class TreeVisualization {
     private StackPane createVisualizedNode(MyNode node, int nodeSize) {
 
         // frame of the node
-        Circle circle = new Circle();
-        circle.setRadius(nodeSize >> 1);
-        circle.setFill(Color.WHITE);
-        circle.setStroke(Color.BLACK);
-        circle.setStrokeType(StrokeType.OUTSIDE);
+        Shape frame;
+
+        if (this.circlesInsteadOfRectangles) {
+            Circle circle = new Circle();
+            // radius is the half of the node size
+            circle.setRadius(nodeSize >> 1);
+            circle.setFill(Color.WHITE);
+            circle.setStroke(Color.BLACK);
+            circle.setStrokeType(StrokeType.OUTSIDE);
+            frame = circle;
+        }
+        else {
+            Rectangle rec = new Rectangle();
+            rec.setWidth(nodeSize);
+            rec.setHeight(nodeSize);
+            rec.setFill(Color.WHITE);
+            rec.setStroke(Color.BLACK);
+            rec.setStrokeType(StrokeType.OUTSIDE);
+            frame = rec;
+        }
+
         // party
-        // double r1 = (double) new Random().nextInt(100) / 100;
-        // double r2 = (double) new Random().nextInt(100) / 100;
-        // double r3 = (double) new Random().nextInt(100) / 100;
-        // circle.setFill(Color.color(r1, r2, r3));
+//         double r1 = (double) new Random().nextInt(100) / 100;
+//         double r2 = (double) new Random().nextInt(100) / 100;
+//         double r3 = (double) new Random().nextInt(100) / 100;
+//         frame.setFill(Color.color(r1, r2, r3));
 
         // value of the node
         Text valueText = new Text(node.getValueAsString());
 
-        // combine frame and Value
-        StackPane visualizedNode = new StackPane();
-        visualizedNode.getChildren().addAll(circle, valueText);
+        // index of the node
+        Text indexText = new Text(node.getIndexAsString());
+
+        // combine frame with index
+        StackPane frameWithIndex = new StackPane(frame, indexText);
+        frameWithIndex.setAlignment(Pos.BOTTOM_RIGHT);
+
+        // combine frame and index with value
+        StackPane visualizedNode = new StackPane(frameWithIndex, valueText);
 
         // position the node
         visualizedNode.relocate(node.xCoordinate, node.yCoordinate);
