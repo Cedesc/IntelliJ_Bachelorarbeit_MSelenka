@@ -26,6 +26,7 @@ Vorstellung:
 			- zuerst wird mit einem Algorithmus die Position jedes Knotens berechnet
 			- dann werden die Knoten mit Kanten mit einem draw Befehl gezeichnet
 			- auf Papier die Funktionsweise von "positioning" erklären
+		- rechtecke statt kreise zeigen
 			
 
 
