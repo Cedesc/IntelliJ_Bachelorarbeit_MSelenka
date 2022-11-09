@@ -1,37 +1,26 @@
 
 
 Ziele:
-	CHECK! - Weiterschreiben!!!
-	CHECK! - Über Zeichnen Gedanken machen
-	- Animieren wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
-	- Wenn noch Zeit ist:
-		- Atomare Operationen:
-			CHECK! - Blatt anhängen
-			- Elternpointer umhängen können
-			- Blatt löschen
-			- Wert eines Knotens ändern
+	- weiterschreiben!!!
+	- Restliche atomare Operationen implementieren
+		- Elternpointer umhängen können
+		- Blatt löschen
+		- Wert eines Knotens ändern
+	- mit get zugriff auf die knoten animieren
+	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+	- repeat visualization und change visualization fixen
+	- generell Animationen
+		- man braucht nach dem draw befehl die Koordinaten von zuvor
+			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen
+		- Schwierigkeit: Kanten
 
 
 Vorstellung:
-	- geschrieben, 7 Seiten
-	- Bäume 
-		- MyTree
-		- MyNode
-			- Knoten werden nicht als "linkes Kind rechtes Kind" abgespeichert, sondern als "linkes kind rechter bruder"
-			- jeder Knoten speichert auch die Koordinaten 
-		- insert leaf 
-	- Zeichnen der Bäume 
-		- erst geschriebene Algorithmen präsentieren, dann daran die Visualisierung zeigen
-		- Visualisierung funktioniert anders, als die anderen Visualisierungsklassen
-			- zuerst wird mit einem Algorithmus die Position jedes Knotens berechnet
-			- dann werden die Knoten mit Kanten mit einem draw Befehl gezeichnet
-			- auf Papier die Funktionsweise von "positioning" erklären
-		- rechtecke statt kreise zeigen
+	
 			
 
 
 Fragen:
-	- Attest nicht eingereicht
 
 
 
@@ -40,15 +29,4 @@ Notizen beim Treffen:
 
 
 Nächste Ziele bis zum PLATZHALTER:
-	{eigene Vorschläge} {[_] = easy , [X] = geht so , [XX] = uff}
-	- Restliche atomare Operationen implementieren
-		- [_] Elternpointer umhängen können
-		- [X] Blatt löschen
-		- [_] Wert eines Knotens ändern
-	- [X] mit get zugriff auf die knoten animieren
-	- [XX] repeat visualization und change visualization fixen
-	- [X] back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
-	- [XX] generell Animationen
-		- man braucht nach dem draw befehl die Koordinaten von zuvor
-			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen
-		- Schwierigkeit: Kanten
+	

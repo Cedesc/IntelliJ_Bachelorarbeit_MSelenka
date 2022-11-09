@@ -1,42 +1,27 @@
 
 
-CHECK! 11. Weiterschreiben!!!
-    CHECK! - "Datenstruktur: Baum" Kapitel schreiben
-        [X] 2.1 Definition (3)
-        [X] 2.2 Terminologie (1)
-        [-] 2.3 Verschiedene Arten von Bäumen (2)
-            [-] 2.3.1 Binärbaum
-            [-] 2.3.2 ...
-        [-] 2.4 Eigenschaften (1)
-            [-] 2.4.1 Vorteile
-            [-] 2.4.2 Nachteile
-        [-] 2.5 Zusammenfassung (1)
-    CHECK! - "Erweiterung der Darstellung" Kapitel schreiben
-        [X] 5.1 Animationen an den bestehenden Datenstrukturen (4)
-            [-] 5.1.1 Variablen
-            [X] 5.1.2 Array
-            [-] 5.1.3 Liste
-        [X] 5.2 Zoomen & Bewegen (?)
-    CHECK! - "Implementierung" Kapitel schreiben
-        [-] 6.1 Ablauf und Organisation (1)
-        [X] 6.2 Änderungen am bestehenden Code (2)
-            - Auch auf Bugfixes im bestehenden Code eingehen
-        [-] 6.3 Herausforderungen und Umsetzung (2)
-        [-] 6.4 Zusammenfassung (1)
+10. TDL machen, wann ich was mache
 
 
-CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
-	CHECK! - Grundlage implementieren
-		CHECK! - Grundlegend Testwerte und TestVisualisierungen zum laufen bringen
-		CHECK! - insert leaf implementieren
-	CHECK! - Visualisieren können
-		CHECK! - grundlegender draw Befehl
-		CHECK! - korrekte Koordinaten den Knoten zuweisen
-			- Meine Ideen:
-				- Schauen wie viel Ebenen es gibt und dementsprechend passende Abstände berechnen
-					- Positionen so, als wäre es immer vollständiger Graph
-					- Konkret: Es gibt eine Funktion namens "positioning"
-		CHECK! - index jeden Knotens klein in der Ecke anzeigen lassen
+11. Weiterschreiben!!!
+	- Was man gut aufschreiben kann
+        - Was sind atomare funktionen?
+        - Baum visualisieren
+            - Kann man wie an der tafel erklären
+        - Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann
+        - Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine klasse hinzufügen kann, die von MyNode erbt,
+        um zB zu ermöglichen Knoten zu markieren
+        - UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der architektur ich was geändert habe
+
+
+12. Bäume implementieren und Zeichnen ermöglichen
+	- Restliche atomare Operationen implementieren
+		- Elternpointer umhängen können
+		- Blatt löschen
+		- Wert eines Knotens ändern
+	- mit get zugriff auf die knoten animieren (siehe 13.)
+	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+	- repeat visualization und change visualization fixen
     Weiteres:
 		- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
 		- Wurzel darf nicht rightBrother haben
@@ -56,13 +41,6 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
 		- Schwierigkeit: Kanten
 
-
-
-14. Atomare Operationen:
-        CHECK! - Blatt anhängen
-        - Elternpointer umhängen können
-        - Blatt löschen
-        - Wert eines Knotens ändern
 
 
 21. Animationen

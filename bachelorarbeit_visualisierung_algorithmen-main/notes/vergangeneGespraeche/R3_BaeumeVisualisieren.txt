@@ -1,0 +1,65 @@
+
+
+Ziele:
+	CHECK! - Weiterschreiben!!!
+	CHECK! - Über Zeichnen Gedanken machen
+	- Animieren wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
+	- Wenn noch Zeit ist:
+		- Atomare Operationen:
+			CHECK! - Blatt anhängen
+			- Elternpointer umhängen können
+			- Blatt löschen
+			- Wert eines Knotens ändern
+
+
+Vorstellung:
+	- geschrieben, 7 Seiten
+	- Bäume
+		- MyTree
+		- MyNode
+			- Knoten werden nicht als "linkes Kind rechtes Kind" abgespeichert, sondern als "linkes kind rechter bruder"
+			- jeder Knoten speichert auch die Koordinaten
+		- insert leaf
+	- Zeichnen der Bäume
+		- erst geschriebene Algorithmen präsentieren, dann daran die Visualisierung zeigen
+		- Visualisierung funktioniert anders, als die anderen Visualisierungsklassen
+			- zuerst wird mit einem Algorithmus die Position jedes Knotens berechnet
+			- dann werden die Knoten mit Kanten mit einem draw Befehl gezeichnet
+			- auf Papier die Funktionsweise von "positioning" erklären
+		- rechtecke statt kreise zeigen
+
+
+
+Fragen:
+	- Attest nicht eingereicht
+
+
+
+Notizen beim Treffen:
+    - Was man gut aufschreiben kann
+        - Was sind atomare funktionen?
+        - Baum visualisieren
+            - Kann man wie an der tafel erklären
+        - Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann
+        - Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine klasse hinzufügen kann, die von MyNode erbt,
+        um zB zu ermöglichen Knoten zu markieren
+        - UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der architektur ich was geändert habe
+    - Attest doch abgeben
+		- https://www.blogs.uni-mainz.de/fb08-studium/files/2016/01/Attestformular.pdf
+
+
+Nächste Ziele bis zum 30.11.:
+	{geordnet nach Wichtigkeit}
+	{[_] = easy , [X] = geht so , [XX] = uff}
+	- weiterschreiben!!!
+	- Restliche atomare Operationen implementieren
+		- [_] Elternpointer umhängen können
+		- [X] Blatt löschen
+		- [_] Wert eines Knotens ändern
+	- [X] mit get zugriff auf die knoten animieren
+	- [X] back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+	- [XX] repeat visualization und change visualization fixen
+	- [XX] generell Animationen
+		- man braucht nach dem draw befehl die Koordinaten von zuvor
+			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen
+		- Schwierigkeit: Kanten
