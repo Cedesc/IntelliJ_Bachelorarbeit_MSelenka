@@ -5,6 +5,8 @@ import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
+import javafx.scene.Node;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -33,39 +35,30 @@ public class TreeAnimation extends AbstractAnimationCreator {
         return new ParallelTransition(instantTranslate, translate, fade);
     }
 
-    public Transition forAddLeaf(VBox visualizedTree) {
-        /*
+    public Transition forAddLeaf(VBox visualizedTree, StackPane addedLeaf) {
+
         // create instant translate transition for the correct start point
-        TranslateTransition instantTranslateInserted = createInstantTranslate(insertedValue, 0, -25);
+        TranslateTransition instantTranslateLeaf = createInstantTranslate(addedLeaf, 0, -25);
 
         // create translate transition for the inserted value
-        TranslateTransition translateInserted = new TranslateTransition(this.standardDuration, insertedValue);
-        translateInserted.setByY(25);
+        TranslateTransition translateLeaf = new TranslateTransition(this.standardDuration, addedLeaf);
+        translateLeaf.setByY(25);
 
         // create fade transition for the inserted value
-        FadeTransition fadeInserted = new FadeTransition(this.standardDuration.multiply(1.6), insertedValue);
-        fadeInserted.setFromValue(0);
-        fadeInserted.setToValue(1);
+        FadeTransition fadeLeaf = new FadeTransition(this.standardDuration.multiply(1.6), addedLeaf);
+        fadeLeaf.setFromValue(0);
+        fadeLeaf.setToValue(1);
 
-        ParallelTransition parallel = new ParallelTransition(instantTranslateInserted, translateInserted, fadeInserted);
-
-        // for each moved Value, create a translation to the next field to the right
-        for (Text moveValue : movedValues) {
-            // create instant translate transition for the correct start point
-            TranslateTransition instantTranslateMoved = createInstantTranslate(moveValue, -this.fieldDistance, 0);
-
-            // create translate transition
-            TranslateTransition translateMoved = new TranslateTransition(this.standardDuration, moveValue);
-            translateMoved.setByX(this.fieldDistance);
-
-            // add them to the parallelTransition
-            parallel.getChildren().add(instantTranslateMoved);
-            parallel.getChildren().add(translateMoved);
-        }
+        ParallelTransition parallel = new ParallelTransition(instantTranslateLeaf, translateLeaf, fadeLeaf);
 
         return parallel;
 
-         */
+    }
+
+    public Transition forMoveNodeToAnotherParent() {
+        // 1. fade out the edge
+        // 2. move the node to the right position
+        // 3. fade in the edge
         return null;
     }
 

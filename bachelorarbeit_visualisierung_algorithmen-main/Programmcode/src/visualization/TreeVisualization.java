@@ -53,6 +53,7 @@ public class TreeVisualization {
 
         this.infoTrees.add(infoTree);
 
+
         // calculate correct index of the created tree in infoTrees
         int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
@@ -61,7 +62,7 @@ public class TreeVisualization {
 
         // get vbox of the correct tree
         VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
-        // create the animation
+        // create the animation with the vBox of the new created tree
         Transition transition = treeAnimation.forCreateTree(vBoxOfCreatedTree);
 
         // update the current view with the drawn trees and the animation
@@ -73,9 +74,24 @@ public class TreeVisualization {
 
         // TODO: 06.11.2022 create animation
 
+
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
+
         // draw all trees
         VBox allTrees = drawAllTrees();
-        // update the current view
+
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
+        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
+        // get the leaf as visualized node by its id
+        StackPane visualizedNode = (StackPane) paneOfCreatedTree.lookup("node " + newLeaf.getIndexAsString());
+        // create the animation with the new added leaf
+        Transition transition = treeAnimation.forAddLeaf(vBoxOfCreatedTree, visualizedNode);
+
+        // update the current view with the drawn trees and the animation
+//        updateView(allTrees, transition);
         updateView(allTrees);
     }
 
@@ -123,12 +139,17 @@ public class TreeVisualization {
             // edge from the center of the parent to the middle top of the child
             Line edge = new Line(parent.xCoordinate + delta, parent.yCoordinate + delta,
                     node.xCoordinate + delta, node.yCoordinate);
+            edge.setId("edge to node " + node.getIndexAsString());
             pane.getChildren().add(edge);
+            // push to the background
             edge.toBack();
         }
 
-        // create node and add it to the window
-        pane.getChildren().add(createVisualizedNode(node, nodeSize));
+        // create node
+        StackPane visualizedNode = createVisualizedNode(node, nodeSize);
+        visualizedNode.setId("node " + node.getIndexAsString());
+        // add the node to the window
+        pane.getChildren().add(visualizedNode);
 
         // draw all children
         MyNode consideredNode = node.leftChild;
@@ -149,6 +170,7 @@ public class TreeVisualization {
         // frame of the node
         Shape frame;
 
+        // TODO: 09.11.2022 delete afterwards?
         if (this.circlesInsteadOfRectangles) {
             Circle circle = new Circle();
             // radius is the half of the node size
@@ -168,6 +190,7 @@ public class TreeVisualization {
             frame = rec;
         }
 
+        // TODO: 09.11.2022 delete afterwards
         if (false) {
             // party
             double r1 = (double) new Random().nextInt(100) / 100;
