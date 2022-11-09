@@ -3,8 +3,10 @@ package visualization;
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
 import javafx.animation.Transition;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
@@ -16,6 +18,7 @@ import supportClasses.treeClasses.MyTree;
 import visualization.animationCreation.TreeAnimation;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 public class TreeVisualization {
@@ -85,14 +88,35 @@ public class TreeVisualization {
         VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
         // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
         Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
+
+        // get the elements (all visualized nodes and edges) of the pane
+        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
+        // determine the id to be searched for
+        String idToBeSearchedFor = "node " + newLeaf.getIndexAsString();
         // get the leaf as visualized node by its id
-        StackPane visualizedNode = (StackPane) paneOfCreatedTree.lookup("node " + newLeaf.getIndexAsString());
+        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
+
         // create the animation with the new added leaf
         Transition transition = treeAnimation.forAddLeaf(vBoxOfCreatedTree, visualizedNode);
 
         // update the current view with the drawn trees and the animation
-//        updateView(allTrees, transition);
-        updateView(allTrees);
+        updateView(allTrees, transition);
+    }
+
+
+    /**
+     * @param list list to be searched
+     * @param id id to be searched for
+     * @return The found node if any, null otherwise.
+     */
+    private Node getByID(ObservableList<Node> list, String id) {
+        for (Node node : list) {
+            if (Objects.equals(node.getId(), id)) {
+                return node;
+            }
+        }
+        System.out.println("Warning! No node found!");
+        return null;
     }
 
 
