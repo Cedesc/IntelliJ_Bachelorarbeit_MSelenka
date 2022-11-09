@@ -53,17 +53,19 @@ public class TreeVisualization {
 
         this.infoTrees.add(infoTree);
 
-        // create animation
-        // TODO: 04.11.2022 create animation
-        //  1. Komplette Vbox mit ALLEN trees erstellen (alles andere kann zu Fehlern führen)
-        //  2. Zugehörige VBox bei forCreateTree() übergeben
-        //  1. Möglichkeit: updateView1() macht alles was update view macht, außer die letzte zeile, gibt aber die große
-        //  vbox zurück ; updateView2() macht die letzte zeile
-        //       wie komm ich in der großen vbox an die richtige zum übergeben?
-//        Transition transition = treeAnimation.forCreateTree(zugehörigeVBox)
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
+        // draw all trees
+        VBox allTrees = drawAllTrees();
 
-        updateView();
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // create the animation
+        Transition transition = treeAnimation.forCreateTree(vBoxOfCreatedTree);
+
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
 
     }
 
@@ -71,7 +73,10 @@ public class TreeVisualization {
 
         // TODO: 06.11.2022 create animation
 
-        updateView();
+        // draw all trees
+        VBox allTrees = drawAllTrees();
+        // update the current view
+        updateView(allTrees);
     }
 
 
@@ -84,7 +89,7 @@ public class TreeVisualization {
      * @param nodeSize visual size of the node
      * @return VBox including the name of the tree and the visualized tree itself.
      */
-    public VBox drawTree(String treeName, MyTree tree, int xDistance, int yDistance, int nodeSize) {
+    private VBox drawTree(String treeName, MyTree tree, int xDistance, int yDistance, int nodeSize) {
 
         // set the correct coordinates for all nodes
         tree.positioning(xDistance, yDistance);
@@ -163,11 +168,13 @@ public class TreeVisualization {
             frame = rec;
         }
 
-        // party
-//         double r1 = (double) new Random().nextInt(100) / 100;
-//         double r2 = (double) new Random().nextInt(100) / 100;
-//         double r3 = (double) new Random().nextInt(100) / 100;
-//         frame.setFill(Color.color(r1, r2, r3));
+        if (false) {
+            // party
+            double r1 = (double) new Random().nextInt(100) / 100;
+            double r2 = (double) new Random().nextInt(100) / 100;
+            double r3 = (double) new Random().nextInt(100) / 100;
+            frame.setFill(Color.color(r1, r2, r3));
+        }
 
         // value of the node
         Text valueText = new Text(node.getValueAsString());
@@ -190,17 +197,9 @@ public class TreeVisualization {
     }
 
     /**
-     * If no transition is given, a NullTransition will be created for calling the updateView()-function.
+     * @return VBox including all trees of infoTrees visualized.
      */
-    public void updateView() {
-        updateView(treeAnimation.getNullTransition());
-    }
-
-    /**
-     * @param transition animation to be played
-     */
-    public void updateView(Transition transition) {
-
+    private VBox drawAllTrees() {
         VBox allTrees = new VBox();
         allTrees.setId("Tree");
 
@@ -213,6 +212,21 @@ public class TreeVisualization {
                     drawTree(treeName, infoTrees.get(i).getTreeContent(), this.xDistance, this.yDistance, this.nodeSize));
         }
 
+        return allTrees;
+    }
+
+    /**
+     * If no transition is given, a NullTransition will be created for calling the updateView()-function.
+     */
+    private void updateView(VBox allTrees) {
+        updateView(allTrees, treeAnimation.getNullTransition());
+    }
+
+    /**
+     * @param allTrees VBox of all visualized trees
+     * @param transition animation to be played
+     */
+    private void updateView(VBox allTrees, Transition transition) {
         this.executeAlgorithmController.updateVisualization(allTrees, transition);
     }
 
