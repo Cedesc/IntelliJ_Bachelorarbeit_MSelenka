@@ -3,30 +3,68 @@
 Erledigt:
 	9.11.
 		- Gespräch
+	10.11.
+		- TDL erstellen
 
 
 Daily TDL:
 	10.11.
-		- TDL erstellen
 		- restliches Orga Zeug machen
 	11.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (1.)
 	12.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (2.)
 	13.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (3.)
 	14.11.
+		frei
 	15.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (4.)
 	16.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (5.)
 	17.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (6.)
 	18.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (7.)
 	19.11.
+		11. Weiterschreiben
+			- einen Punkt abarbeiten (8.)
 	20.11.
+		11. Weiterschreiben
+			- über Gliederung Gedanken machen und umstrukturieren ODER Grafiken oä erstellen
 	21.11.
+		frei
 	22.11.
+		12. Bäume implementieren und Zeichnen ermöglichen
+			- Restliche atomare Operationen implementieren
 	23.11.
+		12. Bäume implementieren und Zeichnen ermöglichen
+			- mit get zugriff auf die knoten animieren (siehe 13.)
 	24.11.
+		12. Bäume implementieren und Zeichnen ermöglichen
+			- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	25.11.
+		12. Bäume implementieren und Zeichnen ermöglichen
+			- repeat visualization und change visualization fixen
 	26.11.
+		13. Animieren...
+			- ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
 	27.11.
+		13. Animieren...
+			- ... interagieren zwischen zwei Instanzen von Datenstrukturen
+				- Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
 	28.11.
+		13. Animieren...
+			- generell Animationen für die Operationen
 	29.11.
+		- Sachen für nächstes Gespräch vorbereiten
 	30.11.
 		- Gespräch mit Endler und Fischer
+

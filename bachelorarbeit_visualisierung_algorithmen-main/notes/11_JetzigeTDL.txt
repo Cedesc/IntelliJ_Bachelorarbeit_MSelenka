@@ -1,17 +1,29 @@
 
 
-10. TDL machen, wann ich was mache
-
-
 11. Weiterschreiben!!!
-	- Was man gut aufschreiben kann
-        - Was sind atomare funktionen?
-        - Baum visualisieren
-            - Kann man wie an der tafel erklären
-        - Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann
-        - Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine klasse hinzufügen kann, die von MyNode erbt,
-        um zB zu ermöglichen Knoten zu markieren
-        - UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der architektur ich was geändert habe
+
+	- Was sind atomare funktionen? 
+		- {"Datenstruktur: Baum"}
+			[ ] die atomaren Funktionen nennen und warum die ausreichen
+		- {"Darstellung Baum im Programm"}
+			[ ] Animationen der atomaren Funktionen
+	- Baum visualisieren 
+		- {"Darstellung Baum im Programm"}
+		[ ] Kann man wie an der tafel erklären
+			- vorangesetzt sowas schreiben wie "die struktur dieser visualisierungsklasse ist grundlegend anders. Anstatt dass je nach Befehl die betroffenen Elemente als javafx Knoten erstellt, geändert oder entfernt werden, wird in der visualisierungsklasse für die bäume grundlegend jedes mal der gleiche draw befehl genutzt"
+		[ ] Selbst Grafiken anfertigen
+	- Erweiterbarkeit um weitere Datenstruktur
+		- {"Implementierung"}
+		[ ] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 
+	- Erweiterbarkeit der Bäume für zB Rot Schwarz Baum
+		- {"Darstellung Baum im Programm"}
+		[ ] Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine Klasse hinzufügen kann, die von MyNode erbt, um zB zu ermöglichen Knoten zu markieren 
+	- Änderungen der Architektur
+		- {"Erweiterung der Darstellung"}
+		[ ] UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe
+	- Erstellte "Algorithmen"
+		- {"Darstellung Baum im Programm"}
+		[ ] Algorithmen für Zeichnen der Bäume zu Testzwecken kurz erwähnen
 
 
 12. Bäume implementieren und Zeichnen ermöglichen
@@ -32,14 +44,14 @@
 
 
 13. Animieren...
-	- get befehle einfügen
     - ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
     - ... interagieren zwischen zwei Instanzen von Datenstrukturen
         - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
-	- generell Animationen
+	- generell Animationen für die Operationen
 		- man braucht nach dem draw befehl die Koordinaten von zuvor
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
 		- Schwierigkeit: Kanten
+			- verschwindet, dann werden Knoten bewegt und taucht an der richtigen Stelle wieder auf
 
 
 
