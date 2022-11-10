@@ -27,16 +27,10 @@ Was ich reinbringen kann:
 	- 3.1 / 3.2 Laufzeiten gewisser Operationen / Algorithmen
 	- Generell: Grafiken
 	- Generell: Auf gesagtes zurückkommen
-	- Generell: Websites speichern wo was her ist
 	- 2. Alles von Wikipedia kurz angeschnitten, was nicht in 2.1-2.5 auftaucht 
-	- linkes kind rechtes kind Prinzip vs linkes kind rechter bruder Prinzip (Quelle Cormen)
 	- Wo Bäume verwendet werden? ZB bei Ordnerstrukturen auf PC
 	- Grafik, in der veranschaulicht wird, wie etwas aus der "echten" Welt als Baum dargestellt wird
 		- Güting Dieker S. 92 (106) / 93 (107)
-	- Darstellung von Bäumen:
-		- linkes kind, rechtes Kind, etc
-		- linkes-Kind-, rechter-Bruder-Darstellung (Cormen 248 (268))
-		- andere Darstellungen (auch Cormen ab 248 (268))
 	- Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?
 	- {"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben" Hier rein oder in "Terminologie"?}
 	- Allgemeine Quellen:
@@ -45,7 +39,9 @@ Was ich reinbringen kann:
 		- Andere Bücher
 		- https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie
 		- https://en.wikipedia.org/wiki/Tree_(data_structure)
+	- kurz erklären was ein "Binärbaum" bzw ein k-närer Baum ist
 	
+
 
 Kapitel:
 
@@ -109,4 +105,40 @@ Zeug aus Cormen (ab S.1184 [1204])
 	- Ein "freier Baum" ist ein zusammenhängender azyklischer ungerichteter Graph. Nachfolgend wird der Einfachheit halber das Adjektiv "frei" weggelassen. {Abbildung B.4 (a) & (c)}
 	- Theorem B.2 (denke nicht, dass ich davon was nochmal aufgreifen kann)
 	- Ein "gerichteter Baum" ist ein Baum, bei dem ein Knoten ausgezeichnet ist. Dieser Knoten wird "Wurzel" genannt. {Abbildung B.6 (a)}
-	- Terminologie: Vorfahre (echter Vorfahre), Nachfahre (echter Nachfahre), Vater, Kind, Geschwister, Blatt, innerer Knoten, Grad, Tiefe eines Knotens, Ebene, Höhe eines Knotens, Höhe eines Baumes, geordneter Baum, binärer Baum, leerer Baum, vollständiger binärer Baum, k-närer Baum, 
+	- Terminologie: Vorfahre (echter Vorfahre), Nachfahre (echter Nachfahre), Vater, Kind, Geschwister, Blatt, innerer Knoten, Grad, Tiefe eines Knotens, Ebene, Höhe eines Knotens, Höhe eines Baumes, geordneter Baum, binärer Baum, leerer Baum, vollständiger binärer Baum, k-närer Baum
+
+
+
+
+
+
+
+
+3 Algorithmen auf Bäumen
+	{atomaren Funktionen nennen und warum die ausreichen}
+		
+3.? Verschiedene Speicherungsweisen von Bäumen
+	{kurz erwähnen, dass es noch weitere gibt: fib heap als liste oder wie auch immer? muss ich noch recherchieren}
+	{- Darstellung von Bäumen: 
+		- linkes kind rechtes Kind, 
+		- linkes-Kind-, rechter-Bruder-Darstellung (Cormen 248 (268)) (einfach gelinkte Liste)
+		- andere Darstellungen (auch Cormen ab 248 (268))}
+	
+	// Arten Bäume abzuspeichern
+	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten allerdings auch seinen "rechten Bruder", also der Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein.
+	
+	[1] Cormen Seite 246-248
+	[2] Cormen Seite 248
+	
+
+3.1 Atomare Operationen
+	
+	
+
+3 Algorithmen auf Bäumen 14 (4)
+		3.1 Atomare Operationen 14 (3)
+			3.1.1 Einfügen
+			3.1.2 Löschen
+			3.1.3 Rotieren
+			3.1.4 ...
+		3.2 (spezifische) Algorithmen auf Bäumen 17 (1)

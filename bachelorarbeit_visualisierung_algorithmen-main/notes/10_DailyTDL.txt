@@ -5,11 +5,10 @@ Erledigt:
 		- Gespräch
 	10.11.
 		- TDL erstellen
+		- restliches Orga Zeug machen
 
 
 Daily TDL:
-	10.11.
-		- restliches Orga Zeug machen
 	11.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (1.)
