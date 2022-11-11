@@ -58,28 +58,29 @@ Kapitel:
 	
 	Die genutzten Begriffe sind von Quelle zu Quelle oft leicht unterschiedlich, können aber auch stark von anderen abweichen. Es werden die folgenden Begriffe mit zugehöriger Bedeutung wie folgt verwendet:
 	
-	Liste:
-		Knoten - Element im Baum
-		Kanten - Verbindung zwischen zwei Knoten
-		Wurzelknoten - Festgelegter Startknoten
-		Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
-		Tiefe (eines Knotens) - Abstand zur Wurzel
-		Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
-		Ebene - Alle Knoten einer Tiefe
-		Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
-		Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
+	Liste:  {x = wird genutzt}
+		x Knoten - Element im Baum
+		x Kanten - Verbindung zwischen zwei Knoten
+		x Wurzelknoten - Festgelegter Startknoten
+		x Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
+		x Tiefe (eines Knotens) - Abstand zur Wurzel
+		x Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
+		x Ebene - Alle Knoten einer Tiefe
+		x Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
+		x Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
 		Vorfahre (von betrachtetem Knoten) - Knoten, der auf dem Pfad zwischen der Wurzel und dem betrachteten Knoten ist, wobei die Wurzel mit eingeschlossen, der betrachtete Knoten jedoch ausgeschlossen ist
 		Nachfahre (von betrachtetem Knoten) - Knoten, bei dem der betrachtete Knoten ein Vorfahre ist
-		Blattknoten - Knoten ohne Kindknoten
-		Innerer Knoten - Knoten, der kein Blattknoten ist
-		Geschwister - Zwei Knoten, die den selben Elternknoten haben
+		x Blattknoten - Knoten ohne Kindknoten
+		x Innerer Knoten - Knoten, der kein Blattknoten ist
+		x Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
 		Teilbaum - Eine Teilmenge des Baums, wobei jeder Knoten als Wurzel des Teilbaums betrachtet werden kann und dieser mit seinen Nachfahren den benannten Teilbaum bildet
-		Grad (eines Knotens) - Anzahl der Kinder
-		Grad (eines Baums) - Höchster Grad eines Knotens im Baum
+		x Grad (eines Knotens) - Anzahl der Kinder
+		x Grad (eines Baums) - Höchster Grad eines Knotens im Baum
 		Balanciert - Ein Baum ist balanciert, wenn die Differenz der jeweiligen Tiefe zweier beliebiger Blätter maximal eins ist
 		Breite (einer Ebene) - Anzahl Knoten der Ebene
 		Breite (eines Baums) - Maximale Breite einer Ebene im Baum
-		Wald - Bäume mit disjunkten Knotenmengen
+		x Wald - Bäume mit disjunkten Knotenmengen
+		vollständiger Baum - 
 	
 	
 2.2 Definition
@@ -118,17 +119,14 @@ Zeug aus Cormen (ab S.1184 [1204])
 	{atomaren Funktionen nennen und warum die ausreichen}
 		
 3.? Verschiedene Speicherungsweisen von Bäumen
-	{kurz erwähnen, dass es noch weitere gibt: fib heap als liste oder wie auch immer? muss ich noch recherchieren}
-	{- Darstellung von Bäumen: 
-		- linkes kind rechtes Kind, 
-		- linkes-Kind-, rechter-Bruder-Darstellung (Cormen 248 (268)) (einfach gelinkte Liste)
-		- andere Darstellungen (auch Cormen ab 248 (268))}
 	
 	// Arten Bäume abzuspeichern
-	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten allerdings auch seinen "rechten Bruder", also der Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein.
+	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder innere Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten auch seinen "rechten Bruder", also seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein Kind an eine Wurzel mit mehreren Kindern angehangen werden, so nimmt man den Kindknoten, dessen "rechter Bruder" den Wert "null" hat, somit den Kindknoten, der am weitestens rechts liegt, und setzt "rechter Bruder" auf den angehangenen Knoten. 
+	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. So kann man bspw. wie in [3] veranschaulicht einen (fast) vollständigen binären Baum als ein Array abspeichern.
 	
 	[1] Cormen Seite 246-248
 	[2] Cormen Seite 248
+	[3] Cormen Seite 153 / 154
 	
 
 3.1 Atomare Operationen
