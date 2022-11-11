@@ -19,5 +19,12 @@ Kapitel:
 
 
 4.? Animationen der atomaren Funktionen
+
+
+4.? "Algorithmen" zum testen
+	
+	// TreeCompleteK_nary und TreeRandom
+	{TODO Die Namen und Bezeichnung (Klasse, Funktion, whatever) anpassen, je nach dem wie es jetzt heißt oder was es nun ist}
+	Um Bäume mit beliebiger Anzahl Knoten leicht zu erzeugen, welche sich besonders für das Austesten des Programms oder geschriebener Algorithmen eignen, wurden zwei Algorithmen hinzugefügt. Der erste ist "TreeCompleteK_nary" mit dem es ermöglicht wird einen k-nären Baum, heißt ein Baum mit Grad k, mit n Knoten zu erzeugen. Dabei kann k, so wie die Anzahl Knoten n, beliebig bestimmt werden. "TreeRandom" ist der zweite Algorithmus. Dieser erstellt einen zufälligen Baum mit n Knoten.
 	
 	

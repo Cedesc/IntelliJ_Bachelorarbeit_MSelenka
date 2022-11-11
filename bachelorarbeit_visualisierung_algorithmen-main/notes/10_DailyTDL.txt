@@ -6,15 +6,16 @@ Erledigt:
 	10.11.
 		- TDL erstellen
 		- restliches Orga Zeug machen
-
-
-Daily TDL:
 	11.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (1.)
+		vorgearbeitet:
+			11. Weiterschreiben
+				- einen Punkt abarbeiten (2.)
+
+
+Daily TDL:
 	12.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (2.)
 	13.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (3.)

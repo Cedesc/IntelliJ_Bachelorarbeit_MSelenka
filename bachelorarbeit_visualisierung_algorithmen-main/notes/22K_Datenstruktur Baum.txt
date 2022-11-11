@@ -131,12 +131,18 @@ Zeug aus Cormen (ab S.1184 [1204])
 
 3.1 Atomare Operationen
 	
+	// Auflistung atomarer Funktionen
+	Die zunächst eingebauten atomaren Funktionen sind 
+		1. Das Hinzufügen eines Blatts
+		2. Das Löschen eines Blatts
+		3. Den Elternknoten eines Knotens ändern
+		4. Den Wert eines Knotens ändern
+	Die erste Funktion kann schlichtweg ein Blatt an einen Knoten hinzufügen. Hier ist, falls vorhanden, der maximal zulässige Grad im Baum zu beachten. 
+	Die zweite Funktion löscht ein Blatt aus dem Baum. Dabei ist die Einschränkung, dass nur ein Blatt gelöscht werden kann sehr wichtig, da sich das Löschen eines inneren Knotens aus einem Baum als sehr umständlich rausstellen kann. Beim Löschen eines inneren Knotens muss geregelt sein wie mit den Kindknoten verfahren werden soll, da es hier sonst zu Verletzungen etwaiger Eigenschaften des Baums, wie das Überschreiten eines festgelegten maximalen Grads des Baums, kommen kann. Der Spezialfall des Löschens eines Blattknotens ist im Vergleich simpel. In Kombination mit den anderen hier genannten atomaren Operationen ist es dennoch möglich, einen inneren Knoten zu löschen, worauf ich später weiter eingehen werde.
+	Die dritte Funktion ändert den im Knoten gespeicherten Elternknoten. Damit ist nicht gemeint, dass der Elternknoten selbst in jeglicher Weise geändert wird, sondern die im Knoten hinterlegte Variable, die auf den Elternknoten zeigt, auf einen übergebenen Knoten zeigen soll. Damit nimmt man effektiv den Kindknoten, hängt ihn vom ursprünglichen Elterknoten ab und hängt ihn stattdessen an den übergebenen Knoten als Kindknoten an. 
+	Die vierte und letzte der gelisteten atomaren Funktionen beschreibt das Ändern des Werts des Knotens. 
 	
+	// Damit können alle Operationen konstruiert werden 
+	{Brauch ich ne Quelle?}
+	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
 
-3 Algorithmen auf Bäumen 14 (4)
-		3.1 Atomare Operationen 14 (3)
-			3.1.1 Einfügen
-			3.1.2 Löschen
-			3.1.3 Rotieren
-			3.1.4 ...
-		3.2 (spezifische) Algorithmen auf Bäumen 17 (1)

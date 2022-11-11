@@ -37,3 +37,22 @@ Kapitel:
 
 	// "Config"
 	Da es gewisse Parameter im Code gibt, die je nach Zweck angepasst werden sollten, wurde eine "Config"-Datei hinzugefügt, die dafür sorgt, dass man die wichtigsten Parameter auf einen Blick sieht und auch leicht anpassen kann. So ist nun der Ordnerpfad zu den Algorithmen in der Datei abgespeichert, sodass man diesen nicht beschwerlich raussuchen muss, möchte man die Anwendung von einem anderen Gerät starten. Weiterhin sind die Startwerte für die Fensterbreite, Fensterhöhe und die Option für Vollbild des Fensters hierin abgespeichert. Auch der Referenzwert für die Länge aller Animationen und sowohl die maximale als auch die minimale mögliche Skalierung für den Zoom kann hier geändert werden.
+
+
+
+6.? Erweiterbarkeit um weitere Datenstruktur
+	{Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann}
+	{Erst packages, in denen das untenstehende jeweils drin ist, raussuchen, um das vernünftig geordnet aufzuschreiben}
+	{Hinzuzufügende Dateien: 
+			datastructures.XY.java, 
+			datastructures.InfoXY.java, 
+			builders.XYBuilder.java,
+			commands.XYCommands.XYCommand.java, 
+			visualization.XYVisualization.java,
+			visualization.animationCreation.XYAnimation,
+			Algorithms.XYAlgorithm.java}
+	{Außerdem: Alle Commands als einzelne Klassen (wie zb CreateXY.java) in [hier Ordnerpfad einfügen] und für mehrere Algorithmen, mehrere Klassen in [hier Ordnerpfad einfügen] erstellen}
+	{Zu erweiternde Dateien: 
+			abstractAlgorithm.AbstractAlgorithm.java (var XYBuilder, fun create_XY),
+			model.ParentViewModel.java (...)}
+
