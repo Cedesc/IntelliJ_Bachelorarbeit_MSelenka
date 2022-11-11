@@ -1,4 +1,4 @@
-package abstractAlgorithmus;
+package abstractAlgorithm;
 
 import builders.*;
 import commands.Command;

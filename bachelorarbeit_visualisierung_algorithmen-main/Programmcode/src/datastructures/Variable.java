@@ -1,6 +1,6 @@
 package datastructures;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import commands.variableCommands.CreateVariable;
 import commands.variableCommands.DeleteVariable;
 import commands.variableCommands.GetValueVariable;

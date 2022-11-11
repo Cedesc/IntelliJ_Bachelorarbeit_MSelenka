@@ -1,7 +1,7 @@
 package datastructures;
 
 import visualization.ArrayVisualization;
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import supportClasses.types;
 import java.util.ArrayList;
 import java.util.Arrays;

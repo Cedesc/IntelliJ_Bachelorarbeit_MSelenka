@@ -1,9 +1,6 @@
 package datastructures;
 
-import abstractAlgorithmus.AbstractAlgorithm;
-import commands.arrayCommands.DeleteArray;
-import commands.arrayCommands.InsertElementArray;
-import commands.arrayCommands.SwapElementsByIndexArray;
+import abstractAlgorithm.AbstractAlgorithm;
 import commands.experimentCommands.CreateExperiment;
 import commands.experimentCommands.DeleteExperiment;
 import commands.experimentCommands.InsertElementExperiment;

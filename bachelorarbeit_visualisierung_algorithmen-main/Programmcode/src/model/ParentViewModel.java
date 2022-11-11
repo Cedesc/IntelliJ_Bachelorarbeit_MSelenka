@@ -9,7 +9,7 @@ import javafx.animation.Transition;
 import javafx.scene.Node;
 import supportClasses.config.TempConfig;
 import visualization.*;
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import commands.arrayCommands.ArrayCommand;
 import commands.listCommands.ListCommand;
 import commands.variableCommands.VariableCommand;

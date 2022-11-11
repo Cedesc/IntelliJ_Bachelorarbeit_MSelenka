@@ -1,6 +1,6 @@
 package builders;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.InfoTree;
 import datastructures.Tree;
 import supportClasses.treeClasses.MyNode;

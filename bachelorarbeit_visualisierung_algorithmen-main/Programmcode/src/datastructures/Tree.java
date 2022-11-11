@@ -1,6 +1,6 @@
 package datastructures;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import commands.treeCommands.AddLeaf;
 import commands.treeCommands.CreateTree;
 import supportClasses.treeClasses.MyNode;

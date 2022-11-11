@@ -1,6 +1,6 @@
 package Algorithms.oldAlgorithms;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import supportClasses.types;
 
 // OWN TEST STUFF

@@ -1,7 +1,7 @@
 package datastructures;
 
 import visualization.ListVisualization;
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import java.util.ArrayList;
 
 public class InfoList extends AbstractDatastructure {

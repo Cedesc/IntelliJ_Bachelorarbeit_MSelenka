@@ -1,6 +1,6 @@
 package datastructures;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import commands.arrayCommands.*;
 import supportClasses.types;
 

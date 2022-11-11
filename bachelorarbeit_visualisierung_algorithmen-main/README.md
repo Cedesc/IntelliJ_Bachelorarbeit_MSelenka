@@ -24,7 +24,7 @@ REQUIREMENTS FOR THE ALGORITHM FILE:
               Copy and past the following to the header of the file:
 
                 package Algorithms;
-                import abstractAlgorithmus.AbstractAlgorithm;
+                import abstractAlgorithm.AbstractAlgorithm;
                 import datastructures.*;
                 import supportClasses.types;
 

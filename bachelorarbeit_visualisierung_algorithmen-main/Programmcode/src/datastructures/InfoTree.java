@@ -1,6 +1,6 @@
 package datastructures;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.treeClasses.MyTree;
 import supportClasses.types;

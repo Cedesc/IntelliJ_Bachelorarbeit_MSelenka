@@ -1,6 +1,6 @@
 package builders;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Array;
 import datastructures.InfoArray;
 import supportClasses.types;

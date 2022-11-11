@@ -1,6 +1,6 @@
 package Algorithms.oldAlgorithms;
 
-import abstractAlgorithmus.AbstractAlgorithm;
+import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Variable;
 import supportClasses.types;
 
