@@ -15,7 +15,7 @@
 		[ ] Selbst Grafiken anfertigen
 	- Erweiterbarkeit um weitere Datenstruktur
 		- {"Implementierung"}
-		[ ] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 
+		[X] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 
 	- Erweiterbarkeit der Bäume für zB Rot Schwarz Baum
 		- {"Darstellung Baum im Programm"}
 		[ ] Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine Klasse hinzufügen kann, die von MyNode erbt, um zB zu ermöglichen Knoten zu markieren 

@@ -41,18 +41,24 @@ Kapitel:
 
 
 6.? Erweiterbarkeit um weitere Datenstruktur
-	{Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann}
-	{Erst packages, in denen das untenstehende jeweils drin ist, raussuchen, um das vernünftig geordnet aufzuschreiben}
-	{Hinzuzufügende Dateien: 
+	{Beim Teil der abzuändernden Dateien auch noch Beispielcode aus den beiden Dateien einfügen? Wär nicht viel im Vergleich zum Beispielcode einer ganzen Datenstruktur...}
+	
+	// Hinzuzufügende Dateien
+	Um aufzuzeigen, wie eine weitere Datenstruktur grundsätzlich hinzuzufügen ist, wird nachfolgend erläutert, welche Dateien man hinzufügen sollte und welche Dateien angepasst werden müssen. Angenommen man fügt eine Datenstruktur mit dem Namen "XY" hinzu und hält die vorhandenen Namenskonventionen für die Dateien bei, so müsste man folgende Dateien hinzufügen:
 			datastructures.XY.java, 
 			datastructures.InfoXY.java, 
 			builders.XYBuilder.java,
 			commands.XYCommands.XYCommand.java, 
 			visualization.XYVisualization.java,
 			visualization.animationCreation.XYAnimation,
-			Algorithms.XYAlgorithm.java}
-	{Außerdem: Alle Commands als einzelne Klassen (wie zb CreateXY.java) in [hier Ordnerpfad einfügen] und für mehrere Algorithmen, mehrere Klassen in [hier Ordnerpfad einfügen] erstellen}
-	{Zu erweiternde Dateien: 
-			abstractAlgorithm.AbstractAlgorithm.java (var XYBuilder, fun create_XY),
-			model.ParentViewModel.java (...)}
+			Algorithms.XYAlgorithm.java
+	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "XYCommand.java" erbt, im Ordner "commands" erstellt werden muss. So könnte noch, analog zu den bereits vorhandenen Datenstrukturen, bspw. "commands.CreateXY.java" oder "commands.InsertElementXY.java" hinzugefügt werden. 
+	Sollen mehrere Algorithmen zur Klasse auswählbar und vorführbar sein, so ist auch hier für jeden dieser eine Klasse in "Algorithms" hinzuzufügen. Neben der bereits gelisteten Datei "Algorithms.XYAlgorithm.java", wären Beispiele hierfür "Algorithms.SortXYAlgorithm.java" oder "Algorithms.SearchXYAlgorithm.java".
+	
+	// Abzuändernde Dateien
+	Was der Wartbarkeit des Programms sehr zugute kommt ist, dass beim Hinzufügen einer Datenstruktur nur zwei bereits existierende Dateien tatsächlich abgeändert werden müssen und das auch nur in geringem Maße. Diese beiden Dateien sind:
+		abstractAlgorithm.AbstractAlgorithm.java
+		model.ParentViewModel.java
+	So ist in "AbstractAlgorithm.java" ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, den man bereits als "builders.XYBuilder.java" erstellt hat. Dieses Attribut wird in der hinzuzufügenden Methode "create_XY" verwendet, welche dann wiederum in den von "AbstractAlgorithm.java" erbenden Algorithmen-Klassen genutzt werden kann. Soll die Datenstruktur mehr als eine Möglichkeit haben eine neue Instanz in den Algorithmen erzeugen zu können, so müssen gegebenenfalls weitere Methoden erstellt werden. 
+	In "ParentViewModel.java" muss ein Attribut hinzugefügt und zwei Methoden erweitert werden. Hinzugefügt werden muss die in "visualization.XYVisualization.java" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sollten auch nur wenige Zeilen erforderlich sein. So muss "exeCommand" zusätzlich den Fall "XYCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für XY zurücksetzen.
 
