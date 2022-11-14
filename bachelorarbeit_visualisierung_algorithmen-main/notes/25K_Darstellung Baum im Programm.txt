@@ -26,5 +26,22 @@ Kapitel:
 	// TreeCompleteK_nary und TreeRandom
 	{TODO Die Namen und Bezeichnung (Klasse, Funktion, whatever) anpassen, je nach dem wie es jetzt heißt oder was es nun ist}
 	Um Bäume mit beliebiger Anzahl Knoten leicht zu erzeugen, welche sich besonders für das Austesten des Programms oder geschriebener Algorithmen eignen, wurden zwei Algorithmen hinzugefügt. Der erste ist "TreeCompleteK_nary" mit dem es ermöglicht wird einen k-nären Baum, heißt ein Baum mit Grad k, mit n Knoten zu erzeugen. Dabei kann k, so wie die Anzahl Knoten n, beliebig bestimmt werden. "TreeRandom" ist der zweite Algorithmus. Dieser erstellt einen zufälligen Baum mit n Knoten.
+
+
+4.? Algorithmus zum Baum visualisieren 
+	{Weitere (Beta-) Grafiken für Zwischenschritte erstellen}
+	{An Grafiken erklärt: Siehe "tree positioning demo drawn.jpg", "tree positioning demo application.jpg" und "TreeDemo.java"}
+	{1. Abzubildender Baum aus "TreeDemo.java" , 2. erklären an den weiteren Grafiken in den einzelnen Schritten}
 	
+	// Anders als bei den anderen Visualisierungsklassen
+	Die Art der Visualisierung der Bäume ist struktuell anders implementiert als die für die anderen bisherigen Datenstrukturen. Bei den anderen Datenstrukturen werden je nach Befehl die betroffenen Elemente als javafx Knoten erstellt, geändert oder gelöscht und dies in einer Liste von javafx Elementen gespeichert, welche letztlich zusammen gezeichnet werden. Stattdessen gibt es nun einen Befehl um die Koordinaten jedes Knotens zu bestimmen und einen weiteren Befehl, der den vorhandenen Baum mit abgespeicherten Koordinaten in den Knoten, zeichnen kann. Diese Umstellung war nötig, um einen übersichtlichen Baum zu erhalten, da sich die räumliche Anordnung der Knoten des Baums deutlich häufiger als bei den bestehenden Datenstrukturen wie Arrays der Fall ist. 
+	
+	// Wie die Positionen der Knoten bestimmt werden
+	Die Funktion zur Berechnung der Positionen der Knoten geht folgendermaßen vor:
+		1. Alle Blätter des Baums auf unterster Ebene mit vorgegebenem Abstand platzieren.
+		2. Alle Knoten der nächsthöheren Ebene betrachten und wie folgt verfahren:
+			2a. Ist der Knoten ein Blatt, so setze seine y-Koordinate auf die y-Koordinate der derzeitigen Ebene. Die x-Koordinate stimmt bereits, da das Blatt zunächst auf unterster Ebene platziert wurde.
+			2b. Ist der Knoten kein Blatt, so bestimme sein mittleres Kind und setze seine x-Koordinate auf die des mittleren Kinds. Hat der Knoten eine gerade Anzahl an Kindern, so gibt es zwei mittlere Kinder und stattdessen wird das Mittel der x-Koordinaten der beiden genommen.
+		3. Wiederhole Schritt 2 bis alle Ebenen abgearbeitet wurden.
+	Hiermit ist nicht die für den Nutzer sichtbare Visualisierung gemeint, sondern das Berechnen der Positionen der Knoten, welches vor jedem zeichnen des Baums ausgeführt wird.
 	

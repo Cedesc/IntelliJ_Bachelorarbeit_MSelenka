@@ -11,8 +11,8 @@
 	- Baum visualisieren 
 		- {"Darstellung Baum im Programm"}
 		[ ] Kann man wie an der tafel erklären
-			- vorangesetzt sowas schreiben wie "die struktur dieser visualisierungsklasse ist grundlegend anders. Anstatt dass je nach Befehl die betroffenen Elemente als javafx Knoten erstellt, geändert oder entfernt werden, wird in der visualisierungsklasse für die bäume grundlegend jedes mal der gleiche draw befehl genutzt"
-		[ ] Selbst Grafiken anfertigen
+		[X] Selbst Grafiken anfertigen
+			- nur beta versionen der grafiken, letztendliche in hübsch, kann ich später machen (zb mit lucidchart)
 	- Erweiterbarkeit um weitere Datenstruktur
 		- {"Implementierung"}
 		[X] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 

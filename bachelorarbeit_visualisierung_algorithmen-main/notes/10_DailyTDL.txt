@@ -16,17 +16,21 @@ Erledigt:
 	13.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (3.)
+	14.11.
+		vorgearbeitet:
+			11. Weiterschreiben
+				- einen Punkt abarbeiten (4.)
+			
 
 
 Daily TDL:
-	14.11.
-		frei
 	15.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (4.)
 	16.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (5.)
+				- Baum visualisieren 
+					- {"Darstellung Baum im Programm"}
+						[ ] Anhand der Grafiken erklären
 	17.11.
 		11. Weiterschreiben
 			- einen Punkt abarbeiten (6.)
