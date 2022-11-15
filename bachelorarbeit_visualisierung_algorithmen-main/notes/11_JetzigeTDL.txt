@@ -10,7 +10,7 @@
 				- außerdem: linkes kind, rechter bruder
 	- Baum visualisieren 
 		- {"Darstellung Baum im Programm"}
-		[ ] Kann man wie an der tafel erklären
+		[X] Kann man wie an der tafel erklären
 		[X] Selbst Grafiken anfertigen
 			- nur beta versionen der grafiken, letztendliche in hübsch, kann ich später machen (zb mit lucidchart)
 	- Erweiterbarkeit um weitere Datenstruktur
