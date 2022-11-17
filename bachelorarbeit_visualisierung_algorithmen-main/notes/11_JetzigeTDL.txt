@@ -18,14 +18,16 @@
 		[X] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 
 	- Erweiterbarkeit der Bäume für zB Rot Schwarz Baum
 		- {"Darstellung Baum im Programm"}
-		[ ] Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine Klasse hinzufügen kann, die von MyNode erbt, um zB zu ermöglichen Knoten zu markieren 
-			- Quelle für rot schwarz bäume, in der gesagt wird, dass die knoten markiert werden
+		[X] Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine Klasse hinzufügen kann, die von MyNode erbt, um zB zu ermöglichen Knoten zu markieren 
 	- Änderungen der Architektur
 		- {"Erweiterung der Darstellung"}
-		[ ] UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe
+		[X] UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe
 	- Erstellte "Algorithmen"
 		- {"Darstellung Baum im Programm"}
 		[X] Algorithmen für Zeichnen der Bäume zu Testzwecken kurz erwähnen
+
+	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
+	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 
 
 12. Bäume implementieren und Zeichnen ermöglichen

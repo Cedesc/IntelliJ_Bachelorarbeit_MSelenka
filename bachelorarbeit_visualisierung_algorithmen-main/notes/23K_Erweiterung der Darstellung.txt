@@ -71,3 +71,20 @@ Kapitel:
 	
 	// Weitere Ideen
 	Neben der Möglichkeit nur ausgewählte Elemente des Fensters zu bewegen, gibt es noch weitere Funktionalitäten, die in diesem Kontext gut umsetzbar wären. Sehr leicht einzubringen wäre die Möglichkeit auf einen Click den Zoom oder auch die Translation auf den Standard zurückzusetzen. Das wäre jeweils durch eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, möglich. Bei der Bewegung könnte sich da als Schwierigkeit herausstellen, dass auch die Animationen von den Translationen gebrauch machen, jedoch müsste man, um diesen Konflikt zu umgehen, schlichtweg die durch die Maus getätigten Bewegungen abspeichern und diesen Wert letztlich zurücksetzen anstatt der kompletten Translation des Elements.
+
+
+5.? Neue Struktur der Architektur
+	{UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe}
+	{Sequenzdiagramm für Visualisierung wegen Animationen? Und wegen complete visualization}
+	{Richtige UML-Diagramme aus Demo-Diagrammen machen. Dabei ggf alt und neu in eins packen, wobei das alte durchgestrichen und rot ist und das neue in grün}
+	{Sequenz:
+		XYVisualization
+			=> wie die animation aufgerufen wird
+		controller.ExecuteAlgorithmController
+			=> initialize (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen)
+			   updateVisualization
+		ParentViewModel
+			=> startCompleteVisualization
+	}
+	{Was zum UML Diagramm schreiben}
+
