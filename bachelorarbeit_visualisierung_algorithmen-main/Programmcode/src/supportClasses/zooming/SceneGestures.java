@@ -18,11 +18,11 @@ public class SceneGestures {
     /**
      * Set maximum value of the scale.
      */
-    private static final double max_scale = TempConfig.MAX_ZOOM_SCALE;
+    private static final double maxScale = TempConfig.MAX_ZOOM_SCALE;
     /**
      * Set minimum value of the scale.
      */
-    private static final double min_scale = TempConfig.MIN_ZOOM_SCALE;
+    private static final double minScale = TempConfig.MIN_ZOOM_SCALE;
 
     /**
      * The frame in which the {@link ZoomPane} moves. Used for getting {@link Bounds} of the frame to calculate the correct
@@ -66,7 +66,7 @@ public class SceneGestures {
                 scale *= scrollSpeed;
 
             // check if the new scale is neither less than MIN_SCALE nor greater than MAX_SCALE
-            scale = withinTheLimits(scale, min_scale, max_scale);
+            scale = withinTheLimits(scale, minScale, maxScale);
 
             // set the scale to the new value
             zoomPane.setScale(scale);
