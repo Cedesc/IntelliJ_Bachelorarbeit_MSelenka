@@ -287,7 +287,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
      */
     public void endAnimationAndDeleteOnFinishedEvents() {
         this.transitionChain.endAll();
-        this.transitionChain.allSetOnFinishedEvents(actionEvent -> {});
+        this.transitionChain.setAllSetOnFinishedEvents(actionEvent -> {});
     }
 
 }

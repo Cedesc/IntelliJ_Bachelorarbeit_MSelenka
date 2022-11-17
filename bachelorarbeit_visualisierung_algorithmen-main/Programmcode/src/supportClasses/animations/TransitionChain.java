@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 // TODO: 26.09.2022 "played correctly one after the other" isn't necessary anymore, since the command executions are
 //  called by the onFinished-Events, so the animations are created one by one
+//  => write this as docstring
 /**
  * Chain of multiple transitions, so the transitions can be easily managed and played correctly one after the other.
  */
@@ -42,7 +43,6 @@ public class TransitionChain {
      * Sets all translations to their endpoint.
      */
     public void endAll() {
-        // TODO: 24.09.2022 can lead to wrong positioning of the values
         for (Transition transition : transitions) {
             transition.jumpTo("end");
         }
@@ -74,7 +74,7 @@ public class TransitionChain {
     /**
      * Calculates and sets the delay of each transition and starts the full animation chain.
      */
-    public void playOneAfterOne() {
+    public void playOneByOne() {
         calculateDelaysForCompleteVisualization();
         startAnimation();
     }
@@ -83,7 +83,7 @@ public class TransitionChain {
      * Sets all onFinishedEvents to the given event.
      * @param eventHandler event, that will be executed if the transition is finished
      */
-    public void allSetOnFinishedEvents(EventHandler<ActionEvent> eventHandler) {
+    public void setAllSetOnFinishedEvents(EventHandler<ActionEvent> eventHandler) {
         for (Transition transition : transitions) {
             transition.setOnFinished(eventHandler);
         }
