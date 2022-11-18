@@ -6,7 +6,7 @@
 			[X] die atomaren Funktionen nennen und warum die ausreichen
 				- außerdem: linkes kind, rechter bruder
 		- {"Darstellung Baum im Programm"}
-			[ ] Animationen der atomaren Funktionen
+			[X] Animationen der atomaren Funktionen
 				- außerdem: linkes kind, rechter bruder
 	- Baum visualisieren 
 		- {"Darstellung Baum im Programm"}

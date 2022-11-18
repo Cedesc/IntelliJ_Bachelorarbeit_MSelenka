@@ -86,5 +86,6 @@ Kapitel:
 		ParentViewModel
 			=> startCompleteVisualization
 	}
+	{Sequenz-Diagramm in der BA von MS ist auf Seite 36-39}
 	{Was zum UML Diagramm schreiben}
 
