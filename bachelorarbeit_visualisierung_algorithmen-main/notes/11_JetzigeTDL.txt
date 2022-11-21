@@ -1,33 +1,6 @@
 
 
-11. Weiterschreiben!!!
-	- Was sind atomare funktionen? 
-		- {"Datenstruktur: Baum"}
-			[X] die atomaren Funktionen nennen und warum die ausreichen
-				- außerdem: linkes kind, rechter bruder
-		- {"Darstellung Baum im Programm"}
-			[X] Animationen der atomaren Funktionen
-				- außerdem: linkes kind, rechter bruder
-	- Baum visualisieren 
-		- {"Darstellung Baum im Programm"}
-		[X] Kann man wie an der tafel erklären
-		[X] Selbst Grafiken anfertigen
-			- nur beta versionen der grafiken, letztendliche in hübsch, kann ich später machen (zb mit lucidchart)
-	- Erweiterbarkeit um weitere Datenstruktur
-		- {"Implementierung"}
-		[X] Generell erklären wie jemand anderes, der das später sieht, da eine weitere datenstruktur hinzufügen kann 
-	- Erweiterbarkeit der Bäume für zB Rot Schwarz Baum
-		- {"Darstellung Baum im Programm"}
-		[X] Was Bäume angeht gut erweiterbar, da man bei Knoten einfach eine Klasse hinzufügen kann, die von MyNode erbt, um zB zu ermöglichen Knoten zu markieren 
-	- Änderungen der Architektur
-		- {"Erweiterung der Darstellung"}
-		[X] UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe
-	- Erstellte "Algorithmen"
-		- {"Darstellung Baum im Programm"}
-		[X] Algorithmen für Zeichnen der Bäume zu Testzwecken kurz erwähnen
-
-	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
-	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
+CHECK! 11. Weiterschreiben!!!
 
 
 12. Bäume implementieren und Zeichnen ermöglichen
@@ -59,13 +32,9 @@
 
 
 
-21. Animationen
-	- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
-		- Lösungsvorschlag:
-			Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
-			Idee 2: irgendwie ein Event bauen, das beim Ende der Animation aktiviert wird und dabei das Element löscht
-				- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
-	- animation für "get" funktionen erstellen
+20. Weiterschreiben
+	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
+	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 
 
 
@@ -85,10 +54,25 @@
 
 
 
+
+
+
+
+
+
+
 Wenn-zu-viel-Zeit-TDL:
 
 	11. Refactoring
-	- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
+		- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
+
+	12. Animationen
+		- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
+			- Lösungsvorschlag:
+				Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
+				Idee 2: irgendwie ein Event bauen, das beim Ende der Animation aktiviert wird und dabei das Element löscht
+					- Problem bei beiden: könnte leicht bei zu schnellen Eingaben zu Fehlern kommen. Vielleicht kann ich es wirklich rein visuell halten?
+		- animation für "get" funktionen erstellen
 	
 	21. Zoomen
 		- Button zum Zurücksetzen des Zooms (erst mit dem "TerminateButton" testen)

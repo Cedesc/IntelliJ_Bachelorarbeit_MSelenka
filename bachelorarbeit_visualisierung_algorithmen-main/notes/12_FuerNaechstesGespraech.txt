@@ -1,7 +1,7 @@
 
 
 Ziele:
-	- weiterschreiben!!!
+	CHECK! - weiterschreiben!!!
 	- Restliche atomare Operationen implementieren
 		- Elternpointer umhängen können
 		- Blatt löschen
