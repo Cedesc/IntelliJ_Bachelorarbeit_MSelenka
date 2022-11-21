@@ -10,9 +10,9 @@ import visualization.TreeVisualization;
 public class InfoTree extends AbstractDatastructure {
 
     private MyTree treeContent;
-    private types type;
+    private final types type;
     private TreeVisualization treeVisualization;
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
 
     public InfoTree(AbstractAlgorithm abstractAlgorithm, types type, MyNode root) {
         this.treeContent = new MyTree(root);
@@ -46,6 +46,26 @@ public class InfoTree extends AbstractDatastructure {
             this.treeVisualization.addLeaf(this, parent, newLeaf);
         }
     }
+
+    public void changeValue(MyNode node, int newValue) {
+        // check if the node is null
+        if (node == null) {
+            this.algorithm.setErrorString("Error function 'changeValue' of a tree : \nNode is null.");
+            return;
+        }
+
+        // save the old value
+        int oldValue = node.getValue();
+
+        // change the value
+        this.treeContent.changeValue(node, newValue);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.changeValue(this, node, oldValue, newValue);
+        }
+    }
+
 
     /**
      * Tests if the given value is the same as the node type.

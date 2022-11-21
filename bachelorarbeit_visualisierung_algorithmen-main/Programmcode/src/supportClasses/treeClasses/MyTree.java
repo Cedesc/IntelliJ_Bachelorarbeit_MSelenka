@@ -47,7 +47,7 @@ public class MyTree {
      * @param newValue new value of the node
      */
     public void changeValue(MyNode node, int newValue) {
-        // TODO: 04.11.2022 Implementation
+        node.changeValue(newValue);
     }
 
     /**

@@ -204,8 +204,16 @@ public class MyNode {
         return this.getAllChildren().size();
     }
 
+    public int getValue() {
+        return value;
+    }
+
     public String getValueAsString() {
         return String.valueOf(this.value);
+    }
+
+    public int getIndex() {
+        return index;
     }
 
     public String getIndexAsString() {

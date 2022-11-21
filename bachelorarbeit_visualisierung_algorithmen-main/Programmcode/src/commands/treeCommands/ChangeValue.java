@@ -3,25 +3,25 @@ package commands.treeCommands;
 import datastructures.InfoTree;
 import supportClasses.treeClasses.MyNode;
 
-public class AddLeaf extends TreeCommand {
+public class ChangeValue extends TreeCommand {
 
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
-    private final MyNode parent;
-    private final MyNode newLeaf;
+    private final MyNode node;
+    private final int newValue;
 
     // constructor
-    public AddLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
+    public ChangeValue(InfoTree infoTree, MyNode node, int newValue) {
         this.infoTree = infoTree;
-        this.parent = parent;
-        this.newLeaf = newLeaf;
-        setCommandString("Add leaf:  parent index = " + parent.index + "  leaf index = " + newLeaf.index);
+        this.node = node;
+        this.newValue = newValue;
+        setCommandString("Change value:  node index = " + this.node.index + "  new value = " + this.newValue);
     }
 
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.addLeaf(parent, newLeaf);
+        this.infoTree.changeValue(node, newValue);
     }
 
     // inverts command during visualization

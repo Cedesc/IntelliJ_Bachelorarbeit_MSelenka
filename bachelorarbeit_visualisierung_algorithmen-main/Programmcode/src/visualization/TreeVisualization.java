@@ -75,9 +75,6 @@ public class TreeVisualization {
 
     public void addLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
 
-        // TODO: 06.11.2022 create animation
-
-
         // calculate correct index of the created tree in infoTrees
         int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
@@ -101,6 +98,15 @@ public class TreeVisualization {
 
         // update the current view with the drawn trees and the animation
         updateView(allTrees, transition);
+
+        // TODO: 06.11.2022 animate the edge & generalize the search after the visual elements
+    }
+
+    public void changeValue(InfoTree infoTree, MyNode node, int oldValue, int newValue) {
+        // TODO: 21.11.2022 create animation
+
+        // update the current view with the drawn trees and the animation
+        updateView();
     }
 
 
@@ -263,7 +269,16 @@ public class TreeVisualization {
     }
 
     /**
+     * If neither a transition nor the trees are passed, all trees will be drawn and a NullTransition will be created
+     * for calling the updateView()-function.
+     */
+    private void updateView() {
+        updateView(drawAllTrees(), treeAnimation.getNullTransition());
+    }
+
+    /**
      * If no transition is given, a NullTransition will be created for calling the updateView()-function.
+     * @param allTrees VBox of all visualized trees
      */
     private void updateView(VBox allTrees) {
         updateView(allTrees, treeAnimation.getNullTransition());

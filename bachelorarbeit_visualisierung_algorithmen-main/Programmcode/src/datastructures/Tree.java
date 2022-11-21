@@ -2,13 +2,14 @@ package datastructures;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import commands.treeCommands.AddLeaf;
+import commands.treeCommands.ChangeValue;
 import commands.treeCommands.CreateTree;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 
 public class Tree extends AbstractDatastructure {
 
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
     public InfoTree infoTree;
     private types type;
     private MyNode root;
@@ -24,8 +25,14 @@ public class Tree extends AbstractDatastructure {
 
     public void addLeaf(MyNode parent, MyNode newLeaf) {
         AddLeaf addLeaf = new AddLeaf(this.infoTree, parent, newLeaf);
+        // TODO: 21.11.2022 delete afterwards
 //        this.infoTree.addLeaf(parent, newLeaf);
         this.algorithm.appendCommandOrder(addLeaf);
+    }
+
+    public void changeValue(MyNode node, int newValue) {
+        ChangeValue changeValue = new ChangeValue(this.infoTree, node, newValue);
+        this.algorithm.appendCommandOrder(changeValue);
     }
 
 }

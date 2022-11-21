@@ -56,7 +56,7 @@ public class TempConfig {
      * Used in {@link visualization.animationCreation.AbstractAnimationCreator#standardDuration}
      */
     public static final Duration STANDARD_DURATION =
-            Duration.millis(100);
+            Duration.millis(300);
 
 
     /**
