@@ -62,7 +62,7 @@ public class TempConfig {
     /**
      * The maximal possible zoom.
      * <p>
-     * Used in {@link supportClasses.zooming.SceneGestures#MAX_SCALE}
+     * Used in {@link supportClasses.zooming.SceneGestures#maxScale}
      */
     public static final double MAX_ZOOM_SCALE =
             5;
@@ -70,7 +70,7 @@ public class TempConfig {
     /**
      * The minimal possible zoom.
      * <p>
-     * Used in {@link supportClasses.zooming.SceneGestures#MIN_SCALE}
+     * Used in {@link supportClasses.zooming.SceneGestures#minScale}
      */
     public static final double MIN_ZOOM_SCALE =
             0.1;
