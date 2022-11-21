@@ -7,7 +7,7 @@ CHECK! 11. Weiterschreiben!!!
 	- Restliche atomare Operationen implementieren
 		- Elternpointer umhängen können
 		- Blatt löschen
-		- Wert eines Knotens ändern
+		CHECK! - Wert eines Knotens ändern
 	- mit get zugriff auf die knoten animieren (siehe 13.)
 	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	- repeat visualization und change visualization fixen
