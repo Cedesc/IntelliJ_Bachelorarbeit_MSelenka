@@ -1,6 +1,7 @@
 
 
-4 Darstellung Baum im Programm 18 (2)
+Teil der Gliederung:
+	4 Darstellung Baum im Programm 18 (2)
 		4.1 Problematik 18 (1)
 		4.2 balanciert vs unbalanciert 19 (1)
 
@@ -13,10 +14,6 @@ Was ich reinbringen kann:
 Kapitel:
 
 4 Darstellung Baum im Programm
-
-
-4.? Art der Abspeicherung
-	{linkes kind rechter bruder wird verwendet}
 
 
 4.? Animationen der atomaren Funktionen
@@ -58,7 +55,7 @@ Kapitel:
 	[2] Ottmann Seite 350 (369)
 
 
-4.? Atomaren Funktionen und ihre Animationen + linkes-Kind-, rechter-Bruder-Darstellung
+4.? Atomaren Funktionen und ihre Animationen + Art der Abspeicherung (linkes-Kind-, rechter-Bruder-Darstellung)
 	
 	// Atomaren Funktionen
 	Die in {TODO richtiges Kapitel} Kapitel 3.2 aufgezählten vier atomaren Funktionen (Hinzufügen eines Blatts, Löschen eines Blatts, Elternknoten eines Knotens ändern, Wert eines Knotens ändern) wurden als Methoden implementiert. Diese Methoden können alle hier relevanten Funktionsweisen nachbilden. Genauer aufgezeigt ist dies im zuvor bereits genannten Kapitel {TODO richtiges Kapitel} 3.2. In der Anwendung selbst müssen zwar das Erstellen eines Baums und das Löschen eines Baums eigene Methoden der Klasse mit eigenen Animationen sein, in der Theorie würden sich diese aber auch durch das Hinzufügen und Löschen eines Blatts darstellen lassen können.

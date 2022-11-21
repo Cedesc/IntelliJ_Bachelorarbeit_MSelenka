@@ -1,6 +1,7 @@
 
 
-6 Implementierung 25 (6) (mehr)
+Teil der Gliederung:
+	6 Implementierung 25 (6) (mehr)
 		6.1 Ablauf und Organisation 25 (1)
 		6.2 Änderungen am bestehenden Code 26 (2)
 		    - Auch auf Bugfixes im bestehenden Code eingehen
