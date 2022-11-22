@@ -6,12 +6,13 @@ CHECK! 11. Weiterschreiben!!!
 12. Bäume implementieren und Zeichnen ermöglichen
 	- Restliche atomare Operationen implementieren
 		- Elternpointer umhängen können
-		- Blatt löschen
+		CHECK! - Blatt löschen
 		CHECK! - Wert eines Knotens ändern
 	- mit get zugriff auf die knoten animieren (siehe 13.)
 	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	- repeat visualization und change visualization fixen
     Weiteres:
+		- Animation für die atomaren Operationen
 		- MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
 		- Wurzel darf nicht rightBrother haben
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links

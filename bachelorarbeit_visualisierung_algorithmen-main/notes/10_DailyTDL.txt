@@ -38,11 +38,11 @@ Erledigt:
 			- Schauen wie viel Seiten bislang vorhanden sind (14)
 	20.11.
 	21.11.
+	22.11.
 
 
 
 Daily TDL:
-	22.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
 			- Restliche atomare Operationen implementieren
 	23.11.
