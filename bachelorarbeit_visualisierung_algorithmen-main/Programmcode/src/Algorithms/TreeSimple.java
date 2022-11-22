@@ -39,6 +39,19 @@ public class TreeSimple extends AbstractAlgorithm {
         // change value
         tree.changeValue(node00, 100);
 
+        // get indices by values
+        int a = tree.getIndexByValue(100);
+        int b = tree.getIndexByValue(0);
+        int c = tree.getIndexByValue(3);
+        int d = tree.getIndexByValue(5);
+        int e = tree.getIndexByValue(1);
+        System.out.println(
+                "a = 0 = " + a + "\n" +
+                "b = -1 = " + b + "\n" +
+                "c = 3 = " + c + "\n" +
+                "d = -1 = " + d + "\n" +
+                "e = 1 = " + e + "\n");
+
         // add leaf to tree on level 2
         tree.addLeaf(node01, node05);
         tree.addLeaf(node01, node06);

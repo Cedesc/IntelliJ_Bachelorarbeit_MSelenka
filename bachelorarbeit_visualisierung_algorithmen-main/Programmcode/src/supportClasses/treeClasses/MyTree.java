@@ -69,6 +69,41 @@ public class MyTree {
     }
 
     /**
+     * @param value searched value
+     * @return Index with the given value. If there is no node with the given value, it returns -1.
+     */
+    public int getIndexByValue(int value) {
+        return getIndexByValue(value, root);
+    }
+
+    /**
+     * Recursive helper function for {@link #getIndexByValue(int)}
+     * @param value searched value
+     * @param consideredNode currently considered node
+     * @return Index with the given value. If there is no node with the given value, it returns -1.
+     */
+    private int getIndexByValue(int value, MyNode consideredNode) {
+
+        // if the considered node has the searched value, return its index
+        if (consideredNode.getValue() == value) {
+            return consideredNode.getIndex();
+        }
+        else {
+            // call the method recursively on each child
+            ArrayList<MyNode> children = consideredNode.getAllChildren();
+            int returnedIndex;
+            for (MyNode child : children) {
+                returnedIndex = getIndexByValue(value, child);
+                if (returnedIndex >= 0) {
+                    return returnedIndex;
+                }
+            }
+        }
+        // if the considered node is a leaf and hasn't the searched value, return -1
+        return -1;
+    }
+
+    /**
      * Using Depth-First-Search.
      * @return Array of all leafs of the tree.
      */
