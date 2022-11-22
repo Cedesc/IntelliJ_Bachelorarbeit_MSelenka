@@ -39,12 +39,12 @@ Erledigt:
 	20.11.
 	21.11.
 	22.11.
+		12. Bäume implementieren und Zeichnen ermöglichen
+			- Restliche atomare Operationen implementieren
 
 
 
 Daily TDL:
-		12. Bäume implementieren und Zeichnen ermöglichen
-			- Restliche atomare Operationen implementieren
 	23.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
 			- mit get zugriff auf die knoten animieren (siehe 13.)

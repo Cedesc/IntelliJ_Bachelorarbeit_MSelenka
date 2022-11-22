@@ -4,8 +4,8 @@ CHECK! 11. Weiterschreiben!!!
 
 
 12. Bäume implementieren und Zeichnen ermöglichen
-	- Restliche atomare Operationen implementieren
-		- Elternpointer umhängen können
+	CHECK! - Restliche atomare Operationen implementieren
+		CHECK! - Elternpointer umhängen können
 		CHECK! - Blatt löschen
 		CHECK! - Wert eines Knotens ändern
 	- mit get zugriff auf die knoten animieren (siehe 13.)
@@ -19,6 +19,7 @@ CHECK! 11. Weiterschreiben!!!
 			- immer wieder richtig rücken?
 			- liegst am scaling?
 		- repeat visualization führt zu fehlern
+		- indizes unique machen
 
 
 13. Animieren...
