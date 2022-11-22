@@ -44,32 +44,8 @@ public class MyTree {
             return;
         }
 
-        // first consider the parent node
-        MyNode firstNode = leaf.getParent();
-
-        // if the leaf is the leftChild of the parent
-        if (firstNode.getLeftChild() == leaf) {
-            // delete the leaf
-            firstNode.setLeftChild(leaf.getRightBrother());
-            leaf.setParent(null);
-        }
-
-        // if the leaf isn't the left child, search after the immediate left sibling of the leaf
-        else {
-
-            // get left child of the parent (can't be null or the given leaf)
-            MyNode secondNode = firstNode.getLeftChild();
-
-            // search the immediate left sibling of the leaf
-            while (secondNode != leaf) {
-                firstNode = secondNode;
-                secondNode = firstNode.getRightBrother();
-            }
-
-            // delete the leaf
-            firstNode.setRightBrother(leaf.getRightBrother());
-            leaf.setParent(null);
-        }
+        // cut the connection between the child and its parent
+        leaf.cutFromParent();
     }
 
     /**

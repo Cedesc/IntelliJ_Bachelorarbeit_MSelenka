@@ -101,6 +101,50 @@ public class MyNode {
     }
 
     /**
+     * Cut the connection between this node and the given childToBeCut. If childToBeCut is no child of the node, the
+     * method will be terminated and a warning will be printed.
+     * @param childToBeCut child that has to be cut
+     */
+    public void cutChild(MyNode childToBeCut) {
+        // if the leaf is the leftChild of the parent
+        if (this.getLeftChild() == childToBeCut) {
+            // cut the leaf
+            this.setLeftChild(childToBeCut.getRightBrother());
+            childToBeCut.setParent(null);
+        }
+
+        // if the leaf isn't the left child, search after the immediate left sibling of the leaf
+        else {
+            // get left child of the parent (can't be null or the given leaf)
+            MyNode firstNode = this.getLeftChild();
+            // get second child, the right brother of the left child (can't be null)
+            MyNode secondNode = firstNode.getRightBrother();
+
+            // search the immediate left sibling of the leaf
+            while (secondNode != childToBeCut) {
+                firstNode = secondNode;
+                secondNode = secondNode.getRightBrother();
+                if (secondNode == null) {
+                    // if childToBeCut is no child of the node, the method will be terminated
+                    System.out.println("Warning! The given node isn't a child of the node.");
+                    return;
+                }
+            }
+
+            // cut the leaf
+            firstNode.setRightBrother(childToBeCut.getRightBrother());
+            childToBeCut.setParent(null);
+        }
+    }
+
+    /**
+     * Cut the connection between this node and its parent.
+     */
+    public void cutFromParent() {
+        this.getParent().cutChild(this);
+    }
+
+    /**
      * Changing the payload of the node.
      * @param newValue the new value for the node
      */
