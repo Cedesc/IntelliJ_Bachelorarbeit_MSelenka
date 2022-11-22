@@ -108,11 +108,9 @@ public class MyNode {
     public void cutChild(MyNode childToBeCut) {
         // if the leaf is the leftChild of the parent
         if (this.getLeftChild() == childToBeCut) {
-            // cut the leaf
+            // cut the connection from the parent to the node
             this.setLeftChild(childToBeCut.getRightBrother());
-            childToBeCut.setParent(null);
         }
-
         // if the leaf isn't the left child, search after the immediate left sibling of the leaf
         else {
             // get left child of the parent (can't be null or the given leaf)
@@ -131,10 +129,12 @@ public class MyNode {
                 }
             }
 
-            // cut the leaf
+            // cut the connection from the left sibling to the node
             firstNode.setRightBrother(childToBeCut.getRightBrother());
-            childToBeCut.setParent(null);
         }
+        // cut the connection to the parent and the right brother
+        childToBeCut.setParent(null);
+        childToBeCut.setRightBrother(null);
     }
 
     /**
