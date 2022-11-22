@@ -58,7 +58,7 @@ public class MyTree {
         else {
 
             // get left child of the parent (can't be null or the given leaf)
-            MyNode secondNode = leaf.getLeftChild();
+            MyNode secondNode = firstNode.getLeftChild();
 
             // search the immediate left sibling of the leaf
             while (secondNode != leaf) {
@@ -70,7 +70,7 @@ public class MyTree {
             firstNode.setRightBrother(leaf.getRightBrother());
             leaf.setParent(null);
         }
-    } // TODO: 22.11.2022 error because parent is null at some place. Use debugger 
+    }
 
     /**
      * @param node node whose value is changed

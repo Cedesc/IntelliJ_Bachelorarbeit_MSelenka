@@ -60,6 +60,12 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.addLeaf(node08, node12);
         tree.addLeaf(node09, node13);
 
+        // delete leafs
+        tree.deleteLeaf(node11);
+        tree.deleteLeaf(node06);
+        tree.deleteLeaf(node05);
+        tree.deleteLeaf(node01);
+
     }
 
 }
