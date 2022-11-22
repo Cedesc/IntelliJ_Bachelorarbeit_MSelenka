@@ -32,7 +32,19 @@ public class MyTree {
      * @param newParent the new parent of the childNode
      */
     public void changeParent(MyNode childNode, MyNode newParent) {
-        // TODO: 04.11.2022 Implementation
+
+        // if the given childNode is the root, it has no parent
+        if (childNode.getParent() == null) {
+            // change the root
+            this.setRoot(childNode.findHighestAncestor());
+        }
+        else {
+            // cut the connection between the child node and its old parent node
+            childNode.cutFromParent();
+        }
+
+        // add the child node to the new parent
+        newParent.addChild(childNode);
     }
 
     /**
@@ -186,5 +198,9 @@ public class MyTree {
 
     public MyNode getRoot() {
         return root;
+    }
+
+    public void setRoot(MyNode newRoot) {
+        root = newRoot;
     }
 }
