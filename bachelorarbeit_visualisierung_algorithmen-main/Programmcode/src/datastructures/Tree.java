@@ -1,10 +1,7 @@
 package datastructures;
 
 import abstractAlgorithm.AbstractAlgorithm;
-import commands.treeCommands.AddLeaf;
-import commands.treeCommands.ChangeValue;
-import commands.treeCommands.CreateTree;
-import commands.treeCommands.DeleteLeaf;
+import commands.treeCommands.*;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 
@@ -39,6 +36,11 @@ public class Tree extends AbstractDatastructure {
     public void deleteLeaf(MyNode leaf) {
         DeleteLeaf deleteLeaf = new DeleteLeaf(this.infoTree, leaf);
         this.algorithm.appendCommandOrder(deleteLeaf);
+    }
+
+    public void changeParent(MyNode childNode, MyNode newParent) {
+        ChangeParent changeParent = new ChangeParent(this.infoTree, childNode, newParent);
+        this.algorithm.appendCommandOrder(changeParent);
     }
 
 }

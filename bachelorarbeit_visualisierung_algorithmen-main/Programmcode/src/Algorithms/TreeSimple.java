@@ -47,12 +47,15 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.addLeaf(node02, node09);
         tree.addLeaf(node03, node10);
 
+        // change parent
+        tree.changeParent(node07, node00);
+        tree.changeParent(node05, node07);
+
         // change values
         tree.changeValue(node07, 107);
         tree.changeValue(node05, 105);
 
         // delete leafs
-        tree.deleteLeaf(node07);
         tree.deleteLeaf(node10);
 
         // add leaf to tree on level 3
@@ -64,6 +67,7 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.deleteLeaf(node11);
         tree.deleteLeaf(node06);
         tree.deleteLeaf(node05);
+        tree.deleteLeaf(node07);
         tree.deleteLeaf(node01);
 
     }

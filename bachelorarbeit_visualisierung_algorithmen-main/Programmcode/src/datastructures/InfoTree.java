@@ -88,6 +88,26 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    public void changeParent(MyNode childNode, MyNode newParent) {
+        // check if the childNode or the new parent is null
+        if (childNode == null) {
+            this.algorithm.setErrorString("Error function 'changeParent' of a tree : \nChild is null.");
+            return;
+        }
+        if (newParent == null) {
+            this.algorithm.setErrorString("Error function 'changeParent' of a tree : \nParent is null.");
+            return;
+        }
+
+        // change the parent
+        this.treeContent.changeParent(childNode, newParent);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.changeParent(this, childNode, newParent);
+        }
+    }
+
 
     /**
      * Tests if the given value is the same as the node type.
