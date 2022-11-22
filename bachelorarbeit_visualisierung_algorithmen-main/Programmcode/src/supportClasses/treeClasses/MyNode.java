@@ -238,6 +238,30 @@ public class MyNode {
         return counter;
     }
 
+    public MyNode getLeftChild() {
+        return this.leftChild;
+    }
+
+    public MyNode getRightBrother() {
+        return this.rightBrother;
+    }
+
+    public MyNode getParent() {
+        return this.parent;
+    }
+
+    public void setLeftChild(MyNode leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public void setRightBrother(MyNode rightBrother) {
+        this.rightBrother = rightBrother;
+    }
+
+    public void setParent(MyNode parent) {
+        this.parent = parent;
+    }
+
     /**
      * @return All children of the node.
      */
@@ -264,4 +288,5 @@ public class MyNode {
     public String toString() {
         return "Index: " + this.index;
     }
+
 }

@@ -4,6 +4,7 @@ import abstractAlgorithm.AbstractAlgorithm;
 import commands.treeCommands.AddLeaf;
 import commands.treeCommands.ChangeValue;
 import commands.treeCommands.CreateTree;
+import commands.treeCommands.DeleteLeaf;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 
@@ -33,6 +34,11 @@ public class Tree extends AbstractDatastructure {
     public void changeValue(MyNode node, int newValue) {
         ChangeValue changeValue = new ChangeValue(this.infoTree, node, newValue);
         this.algorithm.appendCommandOrder(changeValue);
+    }
+
+    public void deleteLeaf(MyNode leaf) {
+        DeleteLeaf deleteLeaf = new DeleteLeaf(this.infoTree, leaf);
+        this.algorithm.appendCommandOrder(deleteLeaf);
     }
 
 }

@@ -66,6 +66,28 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    public void deleteLeaf(MyNode leaf) {
+        // check if the node is null
+        if (leaf == null) {
+            this.algorithm.setErrorString("Error function 'deleteLeaf' of a tree : \nLeaf is null.");
+            return;
+        }
+
+        // check if the node is a leaf
+        if (! leaf.isLeaf()) {
+            this.algorithm.setErrorString("Error function 'deleteLeaf' of a tree : \nNode is not a leaf.");
+            return;
+        }
+
+        // delete the leaf
+        this.treeContent.deleteLeaf(leaf);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.deleteLeaf(this, leaf);
+        }
+    }
+
 
     /**
      * Tests if the given value is the same as the node type.
