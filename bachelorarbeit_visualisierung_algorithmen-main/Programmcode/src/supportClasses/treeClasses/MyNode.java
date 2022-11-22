@@ -153,6 +153,19 @@ public class MyNode {
     }
 
     /**
+     * @return The highest ancestor of the node.
+     */
+    public MyNode findHighestAncestor() {
+        MyNode consideredNode = this;
+
+        while(consideredNode.hasParent()) {
+            consideredNode = consideredNode.getParent();
+        }
+
+        return consideredNode;
+    }
+
+    /**
      * @return Whether the node has a right brother or not.
      */
     public Boolean hasRightBrother() {
