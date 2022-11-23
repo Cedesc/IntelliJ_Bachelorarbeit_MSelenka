@@ -123,6 +123,18 @@ public class InfoTree extends AbstractDatastructure {
         return index;
     }
 
+    public MyNode getNodeByIndex(int index) {
+        // get node
+        MyNode searchedNode = this.treeContent.getNodeByIndex(index);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.getNodeByIndex(this, index, searchedNode);
+        }
+
+        return searchedNode;
+    }
+
 
     /**
      * Tests if the given value is the same as the node type.

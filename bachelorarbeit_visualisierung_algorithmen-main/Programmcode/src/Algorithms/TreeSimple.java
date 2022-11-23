@@ -56,7 +56,7 @@ public class TreeSimple extends AbstractAlgorithm {
 
         // add leaf to tree on level 2
         tree.addLeaf(node01, node05);
-        tree.addLeaf(node01, node06);
+        tree.addLeaf(tree.getNodeByIndex(1), node06);
         tree.addLeaf(node01, node07);
         tree.addLeaf(node02, node08);
         tree.addLeaf(node02, node09);

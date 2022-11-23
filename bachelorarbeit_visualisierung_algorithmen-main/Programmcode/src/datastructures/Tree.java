@@ -54,7 +54,10 @@ public class Tree extends AbstractDatastructure {
     }
 
     public MyNode getNodeByIndex(int index) {
-        return null;
+        MyNode searchedNode = infoTree.getNodeByIndex(index);
+        GetNodeByIndex getNodeByIndex = new GetNodeByIndex(this.infoTree, searchedNode, index);
+        this.algorithm.appendCommandOrder(getNodeByIndex);
+        return searchedNode;
     }
 
 }

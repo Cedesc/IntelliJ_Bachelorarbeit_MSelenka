@@ -257,4 +257,29 @@ public class MyTree {
         currentNode.clear();
     }
 
+    public MyNode getNodeByIndex(int index) {
+        return getNodeByIndex(root, index);
+    }
+
+    private MyNode getNodeByIndex(MyNode consideredNode, int index) {
+
+        // if the considered node has the searched value, return its index
+        if (consideredNode.getIndex() == index) {
+            return consideredNode;
+        }
+        else {
+            // call the method recursively on each child
+            ArrayList<MyNode> children = consideredNode.getAllChildren();
+            MyNode returnedNode;
+            for (MyNode child : children) {
+                returnedNode = getNodeByIndex(child, index);
+                if (returnedNode != null) {
+                    return returnedNode;
+                }
+            }
+        }
+        // if no node with the given index exists, return null
+        return null;
+    }
+
 }
