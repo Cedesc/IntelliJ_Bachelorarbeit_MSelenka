@@ -30,18 +30,18 @@ public class TreeTwice extends AbstractAlgorithm {
         Tree tree2 = create_Tree(types.NUMBER, node20);
 
         // add leafs to tree2
-        tree2.addLeaf(node20, node21);
-        tree2.addLeaf(node20, node22);
-        tree2.addLeaf(node20, node24);
-        tree2.addLeaf(node22, node23);
+        tree2.addLeaf(0, node21);
+        tree2.addLeaf(0, node22);
+        tree2.addLeaf(0, node24);
+        tree2.addLeaf(2, node23);
 
 
         // add leaf to tree1
-        tree1.addLeaf(node10, node11);
+        tree1.addLeaf(0, node11);
 
 
         // add leaf to tree2
-        tree2.addLeaf(node23, node25);
+        tree2.addLeaf(3, node25);
 
 
 

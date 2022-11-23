@@ -26,7 +26,7 @@ public class TreeHorizontalBigOne extends AbstractAlgorithm {
 
         // add nodes as children
         for (int i = 1 ; i <= numberOfNodes ; i++) {
-            tree.addLeaf(nodes.get(0), nodes.get(i));
+            tree.addLeaf(i, nodes.get(i));
         }
 
     }

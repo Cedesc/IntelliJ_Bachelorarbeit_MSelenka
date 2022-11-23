@@ -27,7 +27,7 @@ public class TreeCompleteK_nary extends AbstractAlgorithm {
 
         // add nodes as children
         for (int i = 0 ; i < numberOfNodes ; i++) {
-            tree.addLeaf(nodes.get(i / k), nodes.get(i + 1));
+            tree.addLeaf(i / k, nodes.get(i + 1));
         }
 
     }

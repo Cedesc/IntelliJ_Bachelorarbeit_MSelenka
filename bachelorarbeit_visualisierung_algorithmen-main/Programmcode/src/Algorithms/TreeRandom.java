@@ -28,7 +28,7 @@ public class TreeRandom extends AbstractAlgorithm {
 
         for (int i = 1 ; i < numberOfNodes ; i++) {
             int randomInt = new Random().nextInt(i);
-            tree.addLeaf(nodes.get(randomInt), nodes.get(i));
+            tree.addLeaf(randomInt, nodes.get(i));
         }
 
 

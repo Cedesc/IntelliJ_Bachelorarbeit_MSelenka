@@ -31,23 +31,23 @@ public class TreeDemo extends AbstractAlgorithm {
         Tree tree = create_Tree(types.NUMBER, node00);
 
         // add leafs to tree on level 1
-        tree.addLeaf(node00, node01);
-        tree.addLeaf(node00, node02);
-        tree.addLeaf(node00, node03);
-        tree.addLeaf(node00, node04);
+        tree.addLeaf(0, node01);
+        tree.addLeaf(0, node02);
+        tree.addLeaf(0, node03);
+        tree.addLeaf(0, node04);
 
         // add leaf to tree on level 2
-        tree.addLeaf(node01, node05);
-        tree.addLeaf(node01, node06);
-        tree.addLeaf(node01, node07);
-        tree.addLeaf(node02, node08);
-        tree.addLeaf(node02, node09);
-        tree.addLeaf(node03, node10);
+        tree.addLeaf(1, node05);
+        tree.addLeaf(1, node06);
+        tree.addLeaf(1, node07);
+        tree.addLeaf(2, node08);
+        tree.addLeaf(2, node09);
+        tree.addLeaf(3, node10);
 
         // add leaf to tree on level 3
-        tree.addLeaf(node06, node11);
-        tree.addLeaf(node08, node12);
-        tree.addLeaf(node09, node13);
+        tree.addLeaf(6, node11);
+        tree.addLeaf(8, node12);
+        tree.addLeaf(9, node13);
 
     }
 

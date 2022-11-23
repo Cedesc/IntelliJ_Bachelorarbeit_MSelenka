@@ -19,11 +19,11 @@ public class TreeDegreeOne extends AbstractAlgorithm {
 
         Tree tree = create_Tree(types.NUMBER, node0);
 
-        tree.addLeaf(node0, node1);
-        tree.addLeaf(node1, node2);
-        tree.addLeaf(node2, node3);
-        tree.addLeaf(node3, node4);
-        tree.addLeaf(node4, node5);
+        tree.addLeaf(0, node1);
+        tree.addLeaf(1, node2);
+        tree.addLeaf(2, node3);
+        tree.addLeaf(3, node4);
+        tree.addLeaf(4, node5);
 
     }
 
