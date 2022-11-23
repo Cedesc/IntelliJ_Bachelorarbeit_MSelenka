@@ -149,7 +149,7 @@ public class TreeVisualization {
                 return node;
             }
         }
-        System.out.println("Warning! No node found!");
+        System.out.println("TreeVisualization.getByID : Warning! No node found!");
         return null;
     }
 
