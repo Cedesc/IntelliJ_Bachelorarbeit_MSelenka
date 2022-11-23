@@ -30,6 +30,13 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    public void deleteTree() {
+        treeContent.clearTree();
+        if (this.treeVisualization != null) {
+            this.treeVisualization.deleteTree(this);
+        }
+    }
+
     public void addLeaf(int parentIndex, Object leafValue) {
         MyNode parent = getNodeByIndex(parentIndex);
 

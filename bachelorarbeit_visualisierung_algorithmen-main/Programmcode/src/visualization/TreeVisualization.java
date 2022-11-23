@@ -73,6 +73,16 @@ public class TreeVisualization {
 
     }
 
+    public void deleteTree(InfoTree infoTree) {
+        // remove the tree
+        infoTrees.remove(infoTree);
+
+        // TODO: 23.11.2022 create animation
+
+        // update the current view with the drawn trees and the animation
+        updateView();
+    }
+
     public void addLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
 
         // calculate correct index of the created tree in infoTrees

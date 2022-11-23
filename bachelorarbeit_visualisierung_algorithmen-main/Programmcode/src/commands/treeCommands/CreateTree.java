@@ -6,12 +6,12 @@ import supportClasses.types;
 
 public class CreateTree extends TreeCommand {
 
-    private InfoTree createdTree;
-    private types type;
-    private MyNode root;
+    private final InfoTree infoTree;
+    private final types type;
+    private final MyNode root;
 
     public CreateTree(InfoTree infoTree, types type, MyNode root){
-        this.createdTree = infoTree;
+        this.infoTree = infoTree;
         this.type = type;
         this.root = root;
         setCommandString("Create tree");
@@ -19,16 +19,16 @@ public class CreateTree extends TreeCommand {
 
     @Override
     public void exeCommand() throws InterruptedException {
-        this.createdTree.createTree(root);
+        infoTree.createTree(root);
     }
 
     @Override
     public void backCommand() throws InterruptedException {
-        // TODO: 04.11.2022 Implementation
+        infoTree.deleteTree();
     }
 
     @Override
     public InfoTree getTree() {
-        return this.createdTree;
+        return this.infoTree;
     }
 }
