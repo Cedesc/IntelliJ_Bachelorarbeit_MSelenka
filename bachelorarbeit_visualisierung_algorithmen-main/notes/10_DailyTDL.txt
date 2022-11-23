@@ -41,19 +41,21 @@ Erledigt:
 	22.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
 			- Restliche atomare Operationen implementieren
+	23.11.
+		vorgearbeitet:
+			12. Bäume implementieren und Zeichnen ermöglichen
+				- repeat visualization und change visualization fixen
 
 
 
 Daily TDL:
-	23.11.
-		12. Bäume implementieren und Zeichnen ermöglichen
-			- mit get zugriff auf die knoten animieren (siehe 13.)
+		- addLeaf knoten direkt erstellen lassen
 	24.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
-			- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+			- mit get zugriff auf die knoten animieren (siehe 13.)
 	25.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
-			- repeat visualization und change visualization fixen
+			- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	26.11.
 		13. Animieren...
 			- ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
