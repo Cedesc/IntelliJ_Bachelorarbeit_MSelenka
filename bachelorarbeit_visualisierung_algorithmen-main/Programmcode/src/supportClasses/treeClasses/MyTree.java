@@ -72,12 +72,12 @@ public class MyTree {
      * @param value searched value
      * @return Index with the given value. If there is no node with the given value, it returns -1.
      */
-    public int getIndexByValue(int value) {
+    public int getIndexByValue(Object value) {
         return getIndexByValue(value, root);
     }
 
     /**
-     * Recursive helper function for {@link #getIndexByValue(int)}
+     * Recursive helper function for {@link #getIndexByValue(Object)}
      * @param value searched value
      * @param consideredNode currently considered node
      * @return Index with the given value. If there is no node with the given value, it returns -1.

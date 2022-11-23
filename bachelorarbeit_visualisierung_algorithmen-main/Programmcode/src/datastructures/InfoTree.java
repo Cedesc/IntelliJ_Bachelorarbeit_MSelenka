@@ -111,7 +111,7 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public int getIndexByValue(int value) {
+    public int getIndexByValue(Object value) {
         // get index
         int index = this.treeContent.getIndexByValue(value);
 

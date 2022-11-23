@@ -123,7 +123,7 @@ public class TreeVisualization {
         updateView();
     }
 
-    public void getIndexByValue(InfoTree infoTree, int value, int index) {
+    public void getIndexByValue(InfoTree infoTree, Object value, int index) {
         // TODO: 21.11.2022 create animation
 
         // update the current view with the drawn trees and the animation
