@@ -42,6 +42,7 @@ public class TreeVisualization {
 
     private final boolean circlesInsteadOfRectangles = TempConfig.CIRCLES_INSTEAD_OF_RECTANGLES;
 
+
     // constructor
     public TreeVisualization(ExecuteAlgorithmController executeAlgorithmController){
         this.executeAlgorithmController = executeAlgorithmController;
@@ -55,7 +56,6 @@ public class TreeVisualization {
     public void createTree(InfoTree infoTree, MyNode root) {
 
         this.infoTrees.add(infoTree);
-
 
         // calculate correct index of the created tree in infoTrees
         int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
@@ -75,7 +75,7 @@ public class TreeVisualization {
 
     public void deleteTree(InfoTree infoTree) {
         // remove the tree
-        infoTrees.remove(infoTree);
+        this.infoTrees.remove(infoTree);
 
         // TODO: 23.11.2022 create animation
 
@@ -205,8 +205,8 @@ public class TreeVisualization {
             // used for calculating the center of the node
             int delta = nodeSize / 2;
             // edge from the center of the parent to the middle top of the child
-            Line edge = new Line(parent.xCoordinate + delta, parent.yCoordinate + delta,
-                    node.xCoordinate + delta, node.yCoordinate);
+            Line edge = new Line(parent.getX() + delta, parent.getY() + delta,
+                    node.getX() + delta, node.getY());
             edge.setId("edge to node " + node.getIndexAsString());
             pane.getChildren().add(edge);
             // push to the background
@@ -220,10 +220,10 @@ public class TreeVisualization {
         pane.getChildren().add(visualizedNode);
 
         // draw all children
-        MyNode consideredNode = node.leftChild;
+        MyNode consideredNode = node.getLeftChild();
         while (consideredNode != null) {
                 drawTree(consideredNode, node, pane, nodeSize);
-                consideredNode = consideredNode.rightBrother;
+                consideredNode = consideredNode.getRightBrother();
             }
 
     }
@@ -282,7 +282,7 @@ public class TreeVisualization {
         StackPane visualizedNode = new StackPane(frameWithIndex, valueText);
 
         // position the node
-        visualizedNode.relocate(node.xCoordinate, node.yCoordinate);
+        visualizedNode.relocate(node.getX(), node.getY());
 
         return visualizedNode;
     }

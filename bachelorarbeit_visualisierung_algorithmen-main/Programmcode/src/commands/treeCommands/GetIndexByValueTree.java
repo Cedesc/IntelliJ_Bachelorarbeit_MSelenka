@@ -6,13 +6,11 @@ public class GetIndexByValueTree extends TreeCommand {
 
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
-    private final int index;
     private final Object value;
 
     // constructor
     public GetIndexByValueTree(InfoTree infoTree, int index, Object value) {
         this.infoTree = infoTree;
-        this.index = index;
         this.value = value;
         setCommandString("Get index by value:  index = " + index + "  value = " + value);
     }

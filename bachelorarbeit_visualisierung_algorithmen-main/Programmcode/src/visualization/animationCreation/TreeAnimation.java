@@ -1,14 +1,11 @@
 package visualization.animationCreation;
 
-
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
-import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 /**
  * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.

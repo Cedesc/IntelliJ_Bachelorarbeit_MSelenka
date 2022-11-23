@@ -10,31 +10,31 @@ public class MyNode {
     /**
      * Unique index for each node.
      */
-    public int index;
+    private final int index;
     /**
      * Payload of the node.
      */
-    public Object value;
+    private Object value;
     /**
      * Parent of the node.
      */
-    public MyNode parent;
+    private MyNode parent;
     /**
      * The node, that has the same parent and is on the right of this node.
      */
-    public MyNode rightBrother;
+    private MyNode rightBrother;
     /**
      * The child that is most left.
      */
-    public MyNode leftChild;
+    private MyNode leftChild;
     /**
      * The x-Coordinate for the visualization of the node.
      */
-    public int xCoordinate;
+    private int xCoordinate;
     /**
      * The y-Coordinate for the visualization of the node.
      */
-    public int yCoordinate;
+    private int yCoordinate;
 
 
 
@@ -324,9 +324,17 @@ public class MyNode {
         return children;
     }
 
+    public int getX() {
+        return xCoordinate;
+    }
+
+    public int getY() {
+        return yCoordinate;
+    }
 
 
-    // Has- and Is-Methods
+
+    // Has- and Is- Methods
 
     public Boolean hasRightBrother() {
         return rightBrother != null;

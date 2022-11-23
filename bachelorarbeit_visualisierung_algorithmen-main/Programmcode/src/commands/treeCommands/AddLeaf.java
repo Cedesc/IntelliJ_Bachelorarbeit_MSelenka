@@ -15,7 +15,7 @@ public class AddLeaf extends TreeCommand {
         this.infoTree = infoTree;
         this.parentIndex = parentIndex;
         this.newLeaf = newLeaf;
-        setCommandString("Add leaf:  parent index = " + parentIndex + "  leaf index = " + newLeaf.index);
+        setCommandString("Add leaf:  parent index = " + parentIndex + "  leaf index = " + newLeaf.getIndexAsString());
     }
 
     // execute command during visualization

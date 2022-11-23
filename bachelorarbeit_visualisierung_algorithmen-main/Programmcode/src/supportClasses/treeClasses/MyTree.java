@@ -12,11 +12,14 @@ public class MyTree {
      */
     private MyNode root;
 
+    /**
+     * Integer that count with the number of nodes, for giving each node a unique index.
+     */
     private int nextIndex;
 
-    /**
-     * @param root root node of the tree
-     */
+
+
+    // Constructors
     public MyTree(MyNode root) {
         this.root = root;
         this.nextIndex = 1;
@@ -31,6 +34,10 @@ public class MyTree {
         this.nextIndex = 0;
         this.root = new MyNode(getNextIndex(), rootValue);
     }
+
+
+
+    // Methods
 
     /**
      * @param parent the node to which the new leaf is attached
@@ -56,29 +63,10 @@ public class MyTree {
     }
 
     /**
-     * @param childNode node whose parent is changed
-     * @param newParent the new parent of the childNode
-     */
-    public void changeParent(MyNode childNode, MyNode newParent) {
-
-        // if the given childNode is the root, it has no parent
-        if (childNode.getParent() == null) {
-            // change the root
-            this.setRoot(childNode.findHighestAncestor());
-        }
-        else {
-            // cut the connection between the child node and its old parent node
-            childNode.cutFromParent();
-        }
-
-        // add the child node to the new parent
-        newParent.addChild(childNode);
-    }
-
-    /**
      * @param leaf node to be deleted
      */
     public void deleteLeaf(MyNode leaf) {
+        // check if the given node is a true leaf
         if (! leaf.isLeaf()) {
             System.out.println("Warning! Tried to delete an inner node!");
             return;
@@ -102,6 +90,26 @@ public class MyTree {
     }
 
     /**
+     * @param childNode node whose parent is changed
+     * @param newParent the new parent of the childNode
+     */
+    public void changeParent(MyNode childNode, MyNode newParent) {
+
+        // if the given childNode is the root, it has no parent
+        if (childNode.getParent() == null) {
+            // change the root
+            this.setRoot(childNode.findHighestAncestor());
+        }
+        else {
+            // cut the connection between the child node and its old parent node
+            childNode.cutFromParent();
+        }
+
+        // add the child node to the new parent
+        newParent.addChild(childNode);
+    }
+
+    /**
      * @param node node whose value is changed
      * @param newValue new value of the node
      */
@@ -114,7 +122,7 @@ public class MyTree {
      * @return Index with the given value. If there is no node with the given value, it returns -1.
      */
     public int getIndexByValue(Object value) {
-        return getIndexByValue(value, root);
+        return getIndexByValue_R(value, root);
     }
 
     /**
@@ -123,7 +131,7 @@ public class MyTree {
      * @param consideredNode currently considered node
      * @return Index with the given value. If there is no node with the given value, it returns -1.
      */
-    private int getIndexByValue(Object value, MyNode consideredNode) {
+    private int getIndexByValue_R(Object value, MyNode consideredNode) {
 
         // if the considered node has the searched value, return its index
         if (consideredNode.getValue() == value) {
@@ -134,7 +142,7 @@ public class MyTree {
             ArrayList<MyNode> children = consideredNode.getAllChildren();
             int returnedIndex;
             for (MyNode child : children) {
-                returnedIndex = getIndexByValue(value, child);
+                returnedIndex = getIndexByValue_R(value, child);
                 if (returnedIndex >= 0) {
                     return returnedIndex;
                 }
@@ -145,18 +153,54 @@ public class MyTree {
     }
 
     /**
+     *
+     * @param index searched index
+     * @return Node with the given index. If no node has the index, the method returns null.
+     */
+    public MyNode getNodeByIndex(int index) {
+        return getNodeByIndex_R(root, index);
+    }
+
+    /**
+     * Recursive helper function for {@link #getNodeByIndex(int)}
+     * @param consideredNode current node
+     * @param index searched index
+     * @return Node with the given index. If no node has the index, the method returns null.
+     */
+    private MyNode getNodeByIndex_R(MyNode consideredNode, int index) {
+
+        // if the considered node has the searched value, return its index
+        if (consideredNode.getIndex() == index) {
+            return consideredNode;
+        }
+        else {
+            // call the method recursively on each child
+            ArrayList<MyNode> children = consideredNode.getAllChildren();
+            MyNode returnedNode;
+            for (MyNode child : children) {
+                returnedNode = getNodeByIndex_R(child, index);
+                if (returnedNode != null) {
+                    return returnedNode;
+                }
+            }
+        }
+        // if no node with the given index exists, return null
+        return null;
+    }
+
+    /**
      * Using Depth-First-Search.
      * @return Array of all leafs of the tree.
      */
     public ArrayList<MyNode> getLeafsDFS() {
-        return getLeafsDFS(root);
+        return getLeafsDFS_R(root);
     }
 
     /**
      * Recursive helper function for {@link #getLeafsDFS()}.
      * @param consideredNode currently considered node
      */
-    private ArrayList<MyNode> getLeafsDFS(MyNode consideredNode) {
+    private ArrayList<MyNode> getLeafsDFS_R(MyNode consideredNode) {
 
         ArrayList<MyNode> foundNodes = new ArrayList<>();
 
@@ -166,7 +210,7 @@ public class MyTree {
         }
         // if the node isn't a leaf, call the function recursively for each of it's children
         for (MyNode child : consideredNode.getAllChildren()) {
-            foundNodes.addAll(getLeafsDFS(child));
+            foundNodes.addAll(getLeafsDFS_R(child));
         }
 
         return foundNodes;
@@ -199,7 +243,7 @@ public class MyTree {
      * @return Array of all nodes of the considered level.
      */
     public ArrayList<MyNode> getNodesOfLevel(int level) {
-        return getNodesOfLevel(level, root);
+        return getNodesOfLevel_R(level, root);
     }
 
     /**
@@ -207,7 +251,7 @@ public class MyTree {
      * @param level considered level, doesn't change in the recursive calls
      * @param consideredNode currently considered node
      */
-    private ArrayList<MyNode> getNodesOfLevel(int level, MyNode consideredNode) {
+    private ArrayList<MyNode> getNodesOfLevel_R(int level, MyNode consideredNode) {
 
         ArrayList<MyNode> foundNodes = new ArrayList<>();
 
@@ -220,7 +264,7 @@ public class MyTree {
         // if the node is higher than the searched depth plus one, the function will be called recursively on each child
         if (consideredNode.getDepth(root) < level - 1) {
             for (MyNode child : consideredNode.getAllChildren()) {
-                foundNodes.addAll(getNodesOfLevel(level, child));
+                foundNodes.addAll(getNodesOfLevel_R(level, child));
             }
         }
         // if the considered node is exactly one level above the given, all of its children are on the correct level,
@@ -272,67 +316,49 @@ public class MyTree {
 
     }
 
-    public MyNode getRoot() {
-        return root;
-    }
-
-    public void setRoot(MyNode newRoot) {
-        root = newRoot;
-    }
-
     /**
      * Removes all attributes from all nodes.
      */
     public void clearTree() {
-        clearTree(this.root);
+        clearTree_R(this.root);
     }
 
     /**
      * Recursive helper function for {@link #clearTree()}.
      * @param currentNode currently considered node
      */
-    private void clearTree(MyNode currentNode) {
+    private void clearTree_R(MyNode currentNode) {
         for (MyNode node : currentNode.getAllChildren()) {
-            clearTree(node);
+            clearTree_R(node);
         }
         currentNode.clear();
     }
 
-    public MyNode getNodeByIndex(int index) {
-        return getNodeByIndex(root, index);
-    }
-
-    private MyNode getNodeByIndex(MyNode consideredNode, int index) {
-
-        // if the considered node has the searched value, return its index
-        if (consideredNode.getIndex() == index) {
-            return consideredNode;
-        }
-        else {
-            // call the method recursively on each child
-            ArrayList<MyNode> children = consideredNode.getAllChildren();
-            MyNode returnedNode;
-            for (MyNode child : children) {
-                returnedNode = getNodeByIndex(child, index);
-                if (returnedNode != null) {
-                    return returnedNode;
-                }
-            }
-        }
-        // if no node with the given index exists, return null
-        return null;
-    }
-
-    private int getNextIndex() {
-        return nextIndex++;
-    }
-
-    public MyNode createNewNode() {
-        return createNewNode(null);
-    }
-
     public MyNode createNewNode(Object nodeValue) {
         return new MyNode(getNextIndex(), nodeValue);
+    }
+
+
+
+    // Setter
+
+    public void setRoot(MyNode newRoot) {
+        root = newRoot;
+    }
+
+
+
+    // Getter
+
+    public MyNode getRoot() {
+        return root;
+    }
+
+    /**
+     * @return Current value of {@link #nextIndex} and increment it afterwards.
+     */
+    private int getNextIndex() {
+        return nextIndex++;
     }
 
 }

@@ -7,7 +7,7 @@ import supportClasses.types;
 public class CreateTree extends TreeCommand {
 
     private final InfoTree infoTree;
-    private final types type;
+    private final types type; // TODO: 23.11.2022 remove?
     private final MyNode root;
 
     public CreateTree(InfoTree infoTree, types type, MyNode root){
