@@ -12,32 +12,52 @@ public class TreeSimple extends AbstractAlgorithm {
 
         // nodes for the tree
         MyNode node00 = new MyNode(0);
-        MyNode node01 = new MyNode(1);
-        MyNode node02 = new MyNode(2);
-        MyNode node03 = new MyNode(3);
-        MyNode node04 = new MyNode(4);
-        MyNode node05 = new MyNode(5);
-        MyNode node06 = new MyNode(6);
-        MyNode node07 = new MyNode(7);
-        MyNode node08 = new MyNode(8);
-        MyNode node09 = new MyNode(9);
-        MyNode node10 = new MyNode(10);
-        MyNode node11 = new MyNode(11);
-        MyNode node12 = new MyNode(12);
-        MyNode node13 = new MyNode(13);
-
 
         // create tree
         Tree tree = create_Tree(types.NUMBER, node00);
 
+        MyNode rootNode = tree.getNodeByIndex(0);
+
         // add leafs to tree on level 1
-        tree.addLeaf(node00, node01);
-        tree.addLeaf(node00, node02);
-        tree.addLeaf(node00, node03);
-        tree.addLeaf(node00, node04);
+        tree.addLeaf(rootNode, 1);
+        tree.addLeaf(rootNode, 2);
+        tree.addLeaf(rootNode);
+        tree.addLeaf(rootNode);
 
         // change value
-        tree.changeValue(node00, 100);
+        tree.changeValue(rootNode, 100);
+
+
+        // add leaf to tree on level 2
+        tree.addLeaf(tree.getNodeByIndex(1), 5);
+        tree.addLeaf(tree.getNodeByIndex(1), 6);
+        tree.addLeaf(tree.getNodeByIndex(1), 7);
+        tree.addLeaf(tree.getNodeByIndex(2), 8);
+        tree.addLeaf(tree.getNodeByIndex(2), 9);
+        tree.addLeaf(tree.getNodeByIndex(3), 10);
+
+        // change parent
+//        tree.changeParent(tree.getNodeByIndex(7), tree.getNodeByIndex(0));
+//        tree.changeParent(tree.getNodeByIndex(5), tree.getNodeByIndex(7));
+
+        // change values
+//        tree.changeValue(tree.getNodeByIndex(7), 107);
+//        tree.changeValue(tree.getNodeByIndex(5), 105);
+
+        // delete leafs
+//        tree.deleteLeaf(tree.getNodeByIndex(10));
+
+        // add leaf to tree on level 3
+        tree.addLeaf(tree.getNodeByIndex(6), 11);
+        tree.addLeaf(tree.getNodeByIndex(8), 12);
+        tree.addLeaf(tree.getNodeByIndex(9), 13);
+
+        // delete leafs
+//        tree.deleteLeaf(tree.getNodeByIndex(11));
+//        tree.deleteLeaf(tree.getNodeByIndex(6));
+//        tree.deleteLeaf(tree.getNodeByIndex(5));
+//        tree.deleteLeaf(tree.getNodeByIndex(7));
+//        tree.deleteLeaf(tree.getNodeByIndex(1));
 
         // get indices by values
         int a = tree.getIndexByValue(100);
@@ -45,45 +65,14 @@ public class TreeSimple extends AbstractAlgorithm {
         int c = tree.getIndexByValue(3);
         int d = tree.getIndexByValue(5);
         int e = tree.getIndexByValue(1);
-        if (a != 0 || b != -1 || c != 3 || d != -1 || e != 1) {
+        if (a != 0 || b != -1 || c != -1 || d != 5 || e != 1) {
             System.out.println(
                     "a = 0 = " + a + "\n" +
-                            "b = -1 = " + b + "\n" +
-                            "c = 3 = " + c + "\n" +
-                            "d = -1 = " + d + "\n" +
-                            "e = 1 = " + e + "\n");
+                    "b = -1 = " + b + "\n" +
+                    "c = -1 = " + c + "\n" +
+                    "d = 5 = " + d + "\n" +
+                    "e = 1 = " + e + "\n");
         }
-
-        // add leaf to tree on level 2
-        tree.addLeaf(node01, node05);
-        tree.addLeaf(tree.getNodeByIndex(1), node06);
-        tree.addLeaf(node01, node07);
-        tree.addLeaf(node02, node08);
-        tree.addLeaf(node02, node09);
-        tree.addLeaf(node03, node10);
-
-        // change parent
-        tree.changeParent(node07, node00);
-        tree.changeParent(node05, node07);
-
-        // change values
-        tree.changeValue(node07, 107);
-        tree.changeValue(node05, 105);
-
-        // delete leafs
-        tree.deleteLeaf(node10);
-
-        // add leaf to tree on level 3
-        tree.addLeaf(node06, node11);
-        tree.addLeaf(node08, node12);
-        tree.addLeaf(node09, node13);
-
-        // delete leafs
-        tree.deleteLeaf(node11);
-        tree.deleteLeaf(node06);
-        tree.deleteLeaf(node05);
-        tree.deleteLeaf(node07);
-        tree.deleteLeaf(node01);
 
     }
 
