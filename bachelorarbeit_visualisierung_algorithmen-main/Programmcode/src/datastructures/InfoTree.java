@@ -156,6 +156,24 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    /**
+     * {@link #addLeaf(int, Object)} cannot be used, because the index count would raise.
+     * @param oldIndex index the deleted node had
+     * @param oldParentIndex index of the parent of the deleted node
+     * @param oldNodeValue value of the deleted node
+     */
+    public void undoDeleteLeaf(int oldIndex, int oldParentIndex, Object oldNodeValue) {
+        MyNode parent = getNodeByIndex(oldParentIndex);
+
+        // add the leaf
+        MyNode newLeaf = this.treeContent.undoDeleteLeaf(oldIndex, parent, oldNodeValue);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.addLeaf(this, parent, newLeaf);
+        }
+    }
+
 
     /**
      * Tests if the given value is the same as the node type.

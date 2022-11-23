@@ -89,6 +89,19 @@ public class MyTree {
     }
 
     /**
+     * {@link #addLeaf(MyNode, Object)} isn't enough for undoing {@link #deleteLeaf(MyNode)}, because the index count
+     * would raise.
+     * @param oldIndex index the deleted node had
+     * @param oldParent parent the deleted node had
+     * @param oldNodeValue value of the deleted node
+     */
+    public MyNode undoDeleteLeaf(int oldIndex, MyNode oldParent, Object oldNodeValue) {
+        MyNode leafToBeAdded = new MyNode(oldIndex, oldNodeValue);
+        oldParent.addChild(leafToBeAdded);
+        return leafToBeAdded;
+    }
+
+    /**
      * @param node node whose value is changed
      * @param newValue new value of the node
      */
