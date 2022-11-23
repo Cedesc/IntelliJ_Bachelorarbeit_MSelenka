@@ -37,6 +37,9 @@ public class MyNode {
     public int yCoordinate;
 
 
+
+    // Constructors
+
     public MyNode(int index, Object value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
                   int yCoordinate) {
         this.index = index;
@@ -67,6 +70,10 @@ public class MyNode {
         this.xCoordinate = 0;
         this.yCoordinate = 0;
     }
+
+
+
+    // Methods
 
     /**
      * @param newChild node to be added
@@ -165,68 +172,60 @@ public class MyNode {
     }
 
     /**
-     * @return Whether the node has a right brother or not.
+     * Removes all attributes.
      */
-    public Boolean hasRightBrother() {
-        return rightBrother != null;
+    public void clear() {
+        setValue(null);
+        setParent(null);
+        setRightBrother(null);
+        setLeftChild(null);
+        setXAndY(0, 0);
     }
 
     /**
-     * @return Whether the node has a parent or not.
+     * @return The index of the node.
      */
-    public Boolean hasParent() {
-        return parent != null;
+    @Override
+    public String toString() {
+        return "Index: " + this.index;
     }
 
-    /**
-     * @return Whether the node is a leaf or not.
-     */
-    public Boolean isLeaf() {
-        return leftChild == null;
+
+
+    // Setter
+
+    public void setLeftChild(MyNode leftChild) {
+        this.leftChild = leftChild;
     }
 
-    /**
-     * @return The level on which this node is located in the tree.
-     */
-    public int getLevel() {
-        // TODO: 04.11.2022 Implementation
-        return 0;
+    public void setRightBrother(MyNode rightBrother) {
+        this.rightBrother = rightBrother;
     }
 
-    /**
-     * @param x new x-Coordinate
-     */
+    public void setParent(MyNode parent) {
+        this.parent = parent;
+    }
+
+    public void setValue(Object value) {
+        this.value = value;
+    }
+
     public void setX(int x) {
         xCoordinate = x;
     }
 
-    /**
-     * @param y new y-Coordinate
-     */
     public void setY(int y) {
         yCoordinate = y;
     }
 
-    /**
-     * @param x new x-Coordinate
-     * @param y new y-Coordinate
-     */
     public void setXAndY(int x, int y) {
         setX(x);
         setY(y);
     }
 
-    /**
-     * Needed for {@link MyTree#positioning(int, int)}.
-     * @return The sum of all x-Coordinates of the node's children.
-     */
-    public int getSumOfChildrenXCoordinates() {
-        int result = 0;
-        for (MyNode child : this.getAllChildren()) {
-            result += child.xCoordinate;
-        }
-        return result;
-    }
+
+
+    // Getter
 
     /**
      * Needed for {@link MyTree#positioning(int, int)}.
@@ -253,9 +252,6 @@ public class MyNode {
 
     }
 
-    /**
-     * @return Number of children.
-     */
     public int getNumberOfChildren() {
         return this.getAllChildren().size();
     }
@@ -309,22 +305,6 @@ public class MyNode {
         return this.parent;
     }
 
-    public void setLeftChild(MyNode leftChild) {
-        this.leftChild = leftChild;
-    }
-
-    public void setRightBrother(MyNode rightBrother) {
-        this.rightBrother = rightBrother;
-    }
-
-    public void setParent(MyNode parent) {
-        this.parent = parent;
-    }
-
-    public void setValue(Object value) {
-        this.value = value;
-    }
-
     /**
      * @return All children of the node.
      */
@@ -344,23 +324,23 @@ public class MyNode {
         return children;
     }
 
-    /**
-     * @return The index of the node.
-     */
-    @Override
-    public String toString() {
-        return "Index: " + this.index;
+
+
+    // Has- and Is-Methods
+
+    public Boolean hasRightBrother() {
+        return rightBrother != null;
+    }
+
+    public Boolean hasParent() {
+        return parent != null;
     }
 
     /**
-     * Removes all attributes.
+     * @return Whether the node has a left child, so it's a leaf, or not.
      */
-    public void clear() {
-        setValue(null);
-        setParent(null);
-        setRightBrother(null);
-        setLeftChild(null);
-        setXAndY(0, 0);
+    public Boolean isLeaf() {
+        return leftChild == null;
     }
 
 }
