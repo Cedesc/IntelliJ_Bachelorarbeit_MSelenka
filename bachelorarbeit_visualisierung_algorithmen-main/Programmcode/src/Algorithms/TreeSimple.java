@@ -51,18 +51,6 @@ public class TreeSimple extends AbstractAlgorithm {
                 "c = 3 = " + c + "\n" +
                 "d = -1 = " + d + "\n" +
                 "e = 1 = " + e + "\n");
-        // TODO: 22.11.2022 Derzeit: Index wird zweimal berechnet, einmal wenn dieser Befehl gelesen wird und dann wenn der
-        //  GetIndexByValueTree-Command ausgeführt wird. Jedoch ist zum ersten Zeitpunkt der Baum noch nicht aufgebaut.
-        //  Der könnte nur aufgebaut sein, wenn alle Befehle dieses Prinzip von zweimal ausführen verfolgen würden.
-        //      Lösungsvorschläge:
-        //          1. Bei den Befehlen, die getIndexByValue nutzen, nicht den bereits berechneten absoluten Wert übergeben,
-        //          sondern sozusagen einen Pointer, der erst abgefragt wird, wenn der Befehl aufgerufen wird.
-        //          2. Eingebaute Datenstruktur "Variablen" nutzen
-        //          3. Das genannte Prinzip, dass man die Befehle zweimal ausführt, auch hier so umsetzen
-        //      Tendenz zu 3., da ich mich so möglichst nah am Original halte.
-        //      Ist das große Problem, dass MyNode mutable ist? Würde es helfen, wenn man MyNode nicht mehr hierin,
-        //      sondern auch mit einem "Tree" Befehl (oder "Variable" oder eigene Datenstruktur) erstellt? Am ehesten
-        //      "Tree" Befehl, der aus einer "Variable" das macht?
 
         // add leaf to tree on level 2
         tree.addLeaf(node01, node05);

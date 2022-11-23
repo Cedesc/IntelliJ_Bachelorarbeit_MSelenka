@@ -238,4 +238,23 @@ public class MyTree {
     public void setRoot(MyNode newRoot) {
         root = newRoot;
     }
+
+    /**
+     * Removes all attributes from all nodes.
+     */
+    public void clearTree() {
+        clearTree(this.root);
+    }
+
+    /**
+     * Recursive helper function for {@link #clearTree()}.
+     * @param currentNode currently considered node
+     */
+    private void clearTree(MyNode currentNode) {
+        for (MyNode node : currentNode.getAllChildren()) {
+            clearTree(node);
+        }
+        currentNode.clear();
+    }
+
 }

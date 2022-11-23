@@ -21,6 +21,9 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     public void createTree(MyNode root) {
+        // since MyNode is mutable, the created nodes has to be cleared (remove all set attributes)
+        treeContent.clearTree();
+
         this.treeContent = new MyTree(root);
         if (this.treeVisualization != null) {
             this.treeVisualization.createTree(this, root);

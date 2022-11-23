@@ -319,6 +319,10 @@ public class MyNode {
         this.parent = parent;
     }
 
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     /**
      * @return All children of the node.
      */
@@ -344,6 +348,17 @@ public class MyNode {
     @Override
     public String toString() {
         return "Index: " + this.index;
+    }
+
+    /**
+     * Removes all attributes.
+     */
+    public void clear() {
+        setValue(-1);
+        setParent(null);
+        setRightBrother(null);
+        setLeftChild(null);
+        setXAndY(0, 0);
     }
 
 }
