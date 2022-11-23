@@ -33,7 +33,7 @@ public class Tree extends AbstractDatastructure {
         addLeaf(parentIndex, null);
     }
 
-    public void changeValue(int nodeIndex, int newValue) {
+    public void changeValue(int nodeIndex, Object newValue) {
         ChangeValue changeValue = new ChangeValue(this.infoTree, nodeIndex, newValue);
         this.infoTree.changeValue(nodeIndex, newValue);
         this.algorithm.appendCommandOrder(changeValue);

@@ -7,10 +7,10 @@ public class ChangeValue extends TreeCommand {
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
     private final int nodeIndex;
-    private final int newValue;
+    private final Object newValue;
 
     // constructor
-    public ChangeValue(InfoTree infoTree, int nodeIndex, int newValue) {
+    public ChangeValue(InfoTree infoTree, int nodeIndex, Object newValue) {
         this.infoTree = infoTree;
         this.nodeIndex = nodeIndex;
         this.newValue = newValue;
@@ -20,7 +20,7 @@ public class ChangeValue extends TreeCommand {
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.changeValue(nodeIndex, newValue);
+        infoTree.changeValue(nodeIndex, newValue);
     }
 
     // inverts command during visualization

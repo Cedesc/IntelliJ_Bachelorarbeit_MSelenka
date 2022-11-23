@@ -48,7 +48,7 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public void changeValue(int nodeIndex, int newValue) {
+    public void changeValue(int nodeIndex, Object newValue) {
         MyNode node = getNodeByIndex(nodeIndex);
 
         // check if the node is null

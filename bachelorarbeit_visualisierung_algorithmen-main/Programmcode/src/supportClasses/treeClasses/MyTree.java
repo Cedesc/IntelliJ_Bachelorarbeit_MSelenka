@@ -92,7 +92,7 @@ public class MyTree {
      * @param node node whose value is changed
      * @param newValue new value of the node
      */
-    public void changeValue(MyNode node, int newValue) {
+    public void changeValue(MyNode node, Object newValue) {
         node.changeValue(newValue);
     }
 
