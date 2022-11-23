@@ -12,19 +12,34 @@ public class MyTree {
      */
     private MyNode root;
 
+    private int nextIndex;
+
     /**
      * @param root root node of the tree
      */
     public MyTree(MyNode root) {
         this.root = root;
+        this.nextIndex = 1;
+    }
+
+    public MyTree() {
+        this.nextIndex = 0;
+        this.root = new MyNode(getNextIndex());
+    }
+
+    public MyTree(Object rootValue) {
+        this.nextIndex = 0;
+        this.root = new MyNode(getNextIndex(), rootValue);
     }
 
     /**
      * @param parent the node to which the new leaf is attached
-     * @param newLeaf new node, added as a leaf
+     * @param leafValue value of the new leaf
      */
-    public void addLeaf(MyNode parent, MyNode newLeaf) {
-        parent.addChild(newLeaf);
+    public MyNode addLeaf(MyNode parent, Object leafValue) {
+        MyNode leafToBeAdded = new MyNode(getNextIndex(), leafValue);
+        parent.addChild(leafToBeAdded);
+        return leafToBeAdded;
     }
 
     /**
@@ -280,6 +295,18 @@ public class MyTree {
         }
         // if no node with the given index exists, return null
         return null;
+    }
+
+    private int getNextIndex() {
+        return nextIndex++;
+    }
+
+    public MyNode createNewNode() {
+        return createNewNode(null);
+    }
+
+    public MyNode createNewNode(Object nodeValue) {
+        return new MyNode(getNextIndex(), nodeValue);
     }
 
 }

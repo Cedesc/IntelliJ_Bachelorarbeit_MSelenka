@@ -22,10 +22,15 @@ public class Tree extends AbstractDatastructure {
         this.algorithm.appendCommandOrder(createTree);
     }
 
-    public void addLeaf(MyNode parent, MyNode newLeaf) {
-        AddLeaf addLeaf = new AddLeaf(this.infoTree, parent, newLeaf);
-        this.infoTree.addLeaf(parent, newLeaf);
+    public void addLeaf(MyNode parent, Object leafValue) {
+        MyNode leafToBeAdded = tree.createNewNode(leafValue);
+        AddLeaf addLeaf = new AddLeaf(this.infoTree, parent, leafToBeAdded);
+        this.infoTree.addLeaf(parent, leafValue);
         this.algorithm.appendCommandOrder(addLeaf);
+    }
+
+    public void addLeaf(MyNode parent) {
+        addLeaf(parent, null);
     }
 
     public void changeValue(MyNode node, int newValue) {

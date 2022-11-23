@@ -21,7 +21,7 @@ public class AddLeaf extends TreeCommand {
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.addLeaf(parent, newLeaf);
+        this.infoTree.addLeaf(parent, newLeaf.getValue());
     }
 
     // inverts command during visualization

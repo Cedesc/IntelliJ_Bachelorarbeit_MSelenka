@@ -30,23 +30,23 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public void addLeaf(MyNode parent, MyNode newLeaf) {
-        // check if parent or newLeaf is null
+    public void addLeaf(MyNode parent, Object leafValue) {
+        // check if parent is null
         if (parent == null) {
             this.algorithm.setErrorString("Error function 'addLeaf' of a tree : \nParent is null.");
             return;
         }
-        if (newLeaf == null) {
-            this.algorithm.setErrorString("Error function 'addLeaf' of a tree : \nLeaf is null.");
-            return;
-        }
+
+        // TODO: 23.11.2022 ugly...
+        int parentIndex = parent.getIndex();
+        MyNode newCalculatedParent = getNodeByIndex(parentIndex);
 
         // add the leaf
-        this.treeContent.addLeaf(parent, newLeaf);
+        MyNode newLeaf = this.treeContent.addLeaf(newCalculatedParent, leafValue);
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.addLeaf(this, parent, newLeaf);
+            this.treeVisualization.addLeaf(this, newCalculatedParent, newLeaf);
         }
     }
 

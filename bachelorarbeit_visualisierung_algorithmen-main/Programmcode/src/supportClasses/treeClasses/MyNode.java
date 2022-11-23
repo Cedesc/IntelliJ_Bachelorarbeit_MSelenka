@@ -62,9 +62,8 @@ public class MyNode {
         this.yCoordinate = 0;
     }
 
-    public MyNode(int indexAndValue) {
-        this.index = indexAndValue;
-        this.value = indexAndValue;
+    public MyNode(int index) {
+        this.index = index;
         this.xCoordinate = 0;
         this.yCoordinate = 0;
     }
