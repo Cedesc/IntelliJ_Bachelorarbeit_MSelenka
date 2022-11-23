@@ -8,12 +8,15 @@ public class ChangeValue extends TreeCommand {
     private final InfoTree infoTree;
     private final int nodeIndex;
     private final Object newValue;
+    private final Object oldValue;
 
     // constructor
     public ChangeValue(InfoTree infoTree, int nodeIndex, Object newValue) {
         this.infoTree = infoTree;
         this.nodeIndex = nodeIndex;
         this.newValue = newValue;
+        // calculate the current node value
+        this.oldValue = infoTree.getNodeByIndex(nodeIndex).getValue();
         setCommandString("Change value:  node index = " + nodeIndex + "  new value = " + newValue);
     }
 
@@ -26,7 +29,7 @@ public class ChangeValue extends TreeCommand {
     // inverts command during visualization
     @Override
     public void backCommand() throws InterruptedException {
-        // TODO: 06.11.2022 Implementation
+        infoTree.changeValue(nodeIndex, oldValue);
     }
 
     // returns infoTree
