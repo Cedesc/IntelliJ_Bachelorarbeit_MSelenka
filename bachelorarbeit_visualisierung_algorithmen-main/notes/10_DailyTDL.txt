@@ -47,18 +47,16 @@ Erledigt:
 		vorgearbeitet:
 			12. Bäume implementieren und Zeichnen ermöglichen
 				- repeat visualization und change visualization fixen
+			12. Bäume implementieren und Zeichnen ermöglichen
+				- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 
 
 
 Daily TDL:
 	24.11.
-		12. Bäume implementieren und Zeichnen ermöglichen
-			- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
-				- fertig: AddLeaf, ChangeParent, ChangeValue, DeleteLeaf, GetIndexByValueTree, GetNodeByIndex
-				- (bislang) ausstehend: CreateTree
-	25.11.
 		13. Animieren...
 			- ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
+	25.11.
 	26.11.
 	27.11.
 		13. Animieren...

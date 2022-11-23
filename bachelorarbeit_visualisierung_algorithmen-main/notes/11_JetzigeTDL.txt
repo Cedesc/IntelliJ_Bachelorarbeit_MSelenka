@@ -3,15 +3,15 @@
 CHECK! 11. Weiterschreiben!!!
 
 
-12. Bäume implementieren und Zeichnen ermöglichen
+CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - Restliche atomare Operationen implementieren
 		CHECK! - Elternpointer umhängen können
 		CHECK! - Blatt löschen
 		CHECK! - Wert eines Knotens ändern
-	- mit get zugriff auf die knoten animieren (siehe 13.)
-	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+	CHECK! - get Commands hinzufügen
+	CHECK! - back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	CHECK! - repeat visualization und change visualization fixen
-	CHECK! - MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
+	CHECK! - MyNode "value" von int zu allgemeinen Typ machen
 	CHECK! - indizes unique machen
     Weiteres:
 		- Animation für die atomaren Operationen
@@ -33,7 +33,9 @@ CHECK! 11. Weiterschreiben!!!
 
 
 
-20. Weiterschreiben
+20. MyTree und MyNode ordnen
+
+21. Weiterschreiben
 	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
 	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 
