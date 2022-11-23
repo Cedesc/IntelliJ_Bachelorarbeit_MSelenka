@@ -39,7 +39,7 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.changeValue(5, 105);
 
         // delete leafs
-//        tree.deleteLeaf(tree.getNodeByIndex(10));
+        tree.deleteLeaf(10);
 
         // add leaf to tree on level 3
         tree.addLeaf(6, 11);
