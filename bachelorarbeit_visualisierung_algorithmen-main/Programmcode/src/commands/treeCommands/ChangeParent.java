@@ -8,25 +8,28 @@ public class ChangeParent extends TreeCommand {
     private final InfoTree infoTree;
     private final int childIndex;
     private final int newParentIndex;
+    private final int oldParentIndex;
 
     // constructor
     public ChangeParent(InfoTree infoTree, int childIndex, int newParentIndex) {
         this.infoTree = infoTree;
         this.childIndex = childIndex;
         this.newParentIndex = newParentIndex;
+        // calculate the current parent index
+        this.oldParentIndex = infoTree.getNodeByIndex(childIndex).getParent().getIndex();
         setCommandString("Change parent:  child index = " + childIndex + "  new parent index = " + newParentIndex);
     }
 
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.changeParent(childIndex, newParentIndex);
+        infoTree.changeParent(childIndex, newParentIndex);
     }
 
     // inverts command during visualization
     @Override
     public void backCommand() throws InterruptedException {
-        // TODO: 06.11.2022 Implementation
+        infoTree.changeParent(childIndex, oldParentIndex);
     }
 
     // returns infoTree
