@@ -82,7 +82,7 @@ public class MyTree {
      * @param consideredNode currently considered node
      * @return Index with the given value. If there is no node with the given value, it returns -1.
      */
-    private int getIndexByValue(int value, MyNode consideredNode) {
+    private int getIndexByValue(Object value, MyNode consideredNode) {
 
         // if the considered node has the searched value, return its index
         if (consideredNode.getValue() == value) {

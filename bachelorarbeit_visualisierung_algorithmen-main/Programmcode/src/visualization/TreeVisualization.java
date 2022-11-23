@@ -102,7 +102,7 @@ public class TreeVisualization {
         // TODO: 06.11.2022 animate the edge & generalize the search after the visual elements
     }
 
-    public void changeValue(InfoTree infoTree, MyNode node, int oldValue, int newValue) {
+    public void changeValue(InfoTree infoTree, MyNode node, Object oldValue, Object newValue) {
         // TODO: 21.11.2022 create animation
 
         // update the current view with the drawn trees and the animation

@@ -58,7 +58,7 @@ public class InfoTree extends AbstractDatastructure {
         }
 
         // save the old value
-        int oldValue = node.getValue();
+        Object oldValue = node.getValue();
 
         // change the value
         this.treeContent.changeValue(node, newValue);

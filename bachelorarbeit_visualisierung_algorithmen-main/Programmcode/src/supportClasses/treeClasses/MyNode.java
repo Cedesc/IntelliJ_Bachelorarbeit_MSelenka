@@ -14,7 +14,7 @@ public class MyNode {
     /**
      * Payload of the node.
      */
-    public int value;
+    public Object value;
     /**
      * Parent of the node.
      */
@@ -37,7 +37,7 @@ public class MyNode {
     public int yCoordinate;
 
 
-    public MyNode(int index, int value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
+    public MyNode(int index, Object value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
                   int yCoordinate) {
         this.index = index;
         this.value = value;
@@ -48,14 +48,14 @@ public class MyNode {
         this.yCoordinate = yCoordinate;
     }
 
-    public MyNode(int index, int value, int xCoordinate, int yCoordinate) {
+    public MyNode(int index, Object value, int xCoordinate, int yCoordinate) {
         this.index = index;
         this.value = value;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
     }
 
-    public MyNode(int index, int value) {
+    public MyNode(int index, Object value) {
         this.index = index;
         this.value = value;
         this.xCoordinate = 0;
@@ -148,8 +148,8 @@ public class MyNode {
      * Changing the payload of the node.
      * @param newValue the new value for the node
      */
-    public void changeValue(int newValue) {
-        value = newValue;
+    public void changeValue(Object newValue) {
+        setValue(newValue);
     }
 
     /**
@@ -261,11 +261,14 @@ public class MyNode {
         return this.getAllChildren().size();
     }
 
-    public int getValue() {
+    public Object getValue() {
         return value;
     }
 
     public String getValueAsString() {
+        if (value == null) {
+            return "Nil";
+        }
         return String.valueOf(this.value);
     }
 
@@ -319,7 +322,7 @@ public class MyNode {
         this.parent = parent;
     }
 
-    public void setValue(int value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 
@@ -354,7 +357,7 @@ public class MyNode {
      * Removes all attributes.
      */
     public void clear() {
-        setValue(-1);
+        setValue(null);
         setParent(null);
         setRightBrother(null);
         setLeftChild(null);
