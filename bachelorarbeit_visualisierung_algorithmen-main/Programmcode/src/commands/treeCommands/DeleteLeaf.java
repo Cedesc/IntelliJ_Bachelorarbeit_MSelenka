@@ -1,25 +1,24 @@
 package commands.treeCommands;
 
 import datastructures.InfoTree;
-import supportClasses.treeClasses.MyNode;
 
 public class DeleteLeaf extends TreeCommand {
 
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
-    private final MyNode leaf;
+    private final int leafIndex;
 
     // constructor
-    public DeleteLeaf(InfoTree infoTree, MyNode leaf) {
+    public DeleteLeaf(InfoTree infoTree, int leafIndex) {
         this.infoTree = infoTree;
-        this.leaf = leaf;
-        setCommandString("Delete leaf:  index = " + leaf.index);
+        this.leafIndex = leafIndex;
+        setCommandString("Delete leaf:  index = " + leafIndex);
     }
 
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.deleteLeaf(leaf);
+        this.infoTree.deleteLeaf(leafIndex);
     }
 
     // inverts command during visualization

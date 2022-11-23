@@ -22,32 +22,32 @@ public class Tree extends AbstractDatastructure {
         this.algorithm.appendCommandOrder(createTree);
     }
 
-    public void addLeaf(MyNode parent, Object leafValue) {
+    public void addLeaf(int parentIndex, Object leafValue) {
         MyNode leafToBeAdded = tree.createNewNode(leafValue);
-        AddLeaf addLeaf = new AddLeaf(this.infoTree, parent, leafToBeAdded);
-        this.infoTree.addLeaf(parent, leafValue);
+        AddLeaf addLeaf = new AddLeaf(this.infoTree, parentIndex, leafToBeAdded);
+        this.infoTree.addLeaf(parentIndex, leafValue);
         this.algorithm.appendCommandOrder(addLeaf);
     }
 
-    public void addLeaf(MyNode parent) {
-        addLeaf(parent, null);
+    public void addLeaf(int parentIndex) {
+        addLeaf(parentIndex, null);
     }
 
-    public void changeValue(MyNode node, int newValue) {
-        ChangeValue changeValue = new ChangeValue(this.infoTree, node, newValue);
-        this.infoTree.changeValue(node, newValue);
+    public void changeValue(int nodeIndex, int newValue) {
+        ChangeValue changeValue = new ChangeValue(this.infoTree, nodeIndex, newValue);
+        this.infoTree.changeValue(nodeIndex, newValue);
         this.algorithm.appendCommandOrder(changeValue);
     }
 
-    public void deleteLeaf(MyNode leaf) {
-        DeleteLeaf deleteLeaf = new DeleteLeaf(this.infoTree, leaf);
-        this.infoTree.deleteLeaf(leaf);
+    public void deleteLeaf(int leafIndex) {
+        DeleteLeaf deleteLeaf = new DeleteLeaf(this.infoTree, leafIndex);
+        this.infoTree.deleteLeaf(leafIndex);
         this.algorithm.appendCommandOrder(deleteLeaf);
     }
 
-    public void changeParent(MyNode childNode, MyNode newParent) {
-        ChangeParent changeParent = new ChangeParent(this.infoTree, childNode, newParent);
-        this.infoTree.changeParent(childNode, newParent);
+    public void changeParent(int childIndex, int newParentIndex) {
+        ChangeParent changeParent = new ChangeParent(this.infoTree, childIndex, newParentIndex);
+        this.infoTree.changeParent(childIndex, newParentIndex);
         this.algorithm.appendCommandOrder(changeParent);
     }
 

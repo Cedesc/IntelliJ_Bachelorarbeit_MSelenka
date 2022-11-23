@@ -1,28 +1,26 @@
 package commands.treeCommands;
 
 import datastructures.InfoTree;
-import supportClasses.treeClasses.MyNode;
 
 public class ChangeParent extends TreeCommand {
 
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
-    private final MyNode childNode;
-    private final MyNode newParent;
+    private final int childIndex;
+    private final int newParentIndex;
 
     // constructor
-    public ChangeParent(InfoTree infoTree, MyNode childNode, MyNode newParent) {
+    public ChangeParent(InfoTree infoTree, int childIndex, int newParentIndex) {
         this.infoTree = infoTree;
-        this.childNode = childNode;
-        this.newParent = newParent;
-        setCommandString("Change parent:  child index = " + childNode.getIndex() + "  new parent index = " +
-                newParent.getIndex());
+        this.childIndex = childIndex;
+        this.newParentIndex = newParentIndex;
+        setCommandString("Change parent:  child index = " + childIndex + "  new parent index = " + newParentIndex);
     }
 
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.changeParent(childNode, newParent);
+        this.infoTree.changeParent(childIndex, newParentIndex);
     }
 
     // inverts command during visualization

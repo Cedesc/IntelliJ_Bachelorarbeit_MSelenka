@@ -30,27 +30,27 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public void addLeaf(MyNode parent, Object leafValue) {
+    public void addLeaf(int parentIndex, Object leafValue) {
+        MyNode parent = getNodeByIndex(parentIndex);
+
         // check if parent is null
         if (parent == null) {
             this.algorithm.setErrorString("Error function 'addLeaf' of a tree : \nParent is null.");
             return;
         }
 
-        // TODO: 23.11.2022 ugly...
-        int parentIndex = parent.getIndex();
-        MyNode newCalculatedParent = getNodeByIndex(parentIndex);
-
         // add the leaf
-        MyNode newLeaf = this.treeContent.addLeaf(newCalculatedParent, leafValue);
+        MyNode newLeaf = this.treeContent.addLeaf(parent, leafValue);
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.addLeaf(this, newCalculatedParent, newLeaf);
+            this.treeVisualization.addLeaf(this, parent, newLeaf);
         }
     }
 
-    public void changeValue(MyNode node, int newValue) {
+    public void changeValue(int nodeIndex, int newValue) {
+        MyNode node = getNodeByIndex(nodeIndex);
+
         // check if the node is null
         if (node == null) {
             this.algorithm.setErrorString("Error function 'changeValue' of a tree : \nNode is null.");
@@ -69,13 +69,14 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public void deleteLeaf(MyNode leaf) {
+    public void deleteLeaf(int leafIndex) {
+        MyNode leaf = getNodeByIndex(leafIndex);
+
         // check if the node is null
         if (leaf == null) {
             this.algorithm.setErrorString("Error function 'deleteLeaf' of a tree : \nLeaf is null.");
             return;
         }
-
         // check if the node is a leaf
         if (! leaf.isLeaf()) {
             this.algorithm.setErrorString("Error function 'deleteLeaf' of a tree : \nNode is not a leaf.");
@@ -91,23 +92,26 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-    public void changeParent(MyNode childNode, MyNode newParent) {
+    public void changeParent(int childIndex, int newParentIndex) {
+        MyNode child = getNodeByIndex(childIndex);
+        MyNode parent = getNodeByIndex(newParentIndex);
+
         // check if the childNode or the new parent is null
-        if (childNode == null) {
+        if (child == null) {
             this.algorithm.setErrorString("Error function 'changeParent' of a tree : \nChild is null.");
             return;
         }
-        if (newParent == null) {
+        if (parent == null) {
             this.algorithm.setErrorString("Error function 'changeParent' of a tree : \nParent is null.");
             return;
         }
 
         // change the parent
-        this.treeContent.changeParent(childNode, newParent);
+        this.treeContent.changeParent(child, parent);
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.changeParent(this, childNode, newParent);
+            this.treeVisualization.changeParent(this, child, parent);
         }
     }
 

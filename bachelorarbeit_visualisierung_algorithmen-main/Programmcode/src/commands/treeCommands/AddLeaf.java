@@ -7,21 +7,21 @@ public class AddLeaf extends TreeCommand {
 
     // saves all relevant data of the command by initialization
     private final InfoTree infoTree;
-    private final MyNode parent;
+    private final int parentIndex;
     private final MyNode newLeaf;
 
     // constructor
-    public AddLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
+    public AddLeaf(InfoTree infoTree, int parentIndex, MyNode newLeaf) {
         this.infoTree = infoTree;
-        this.parent = parent;
+        this.parentIndex = parentIndex;
         this.newLeaf = newLeaf;
-        setCommandString("Add leaf:  parent index = " + parent.index + "  leaf index = " + newLeaf.index);
+        setCommandString("Add leaf:  parent index = " + parentIndex + "  leaf index = " + newLeaf.index);
     }
 
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.addLeaf(parent, newLeaf.getValue());
+        this.infoTree.addLeaf(parentIndex, newLeaf.getValue());
     }
 
     // inverts command during visualization

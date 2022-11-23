@@ -127,12 +127,17 @@ public abstract class AbstractAlgorithm {
         return this.experimentBuilder.createExperiment(this, infoExperiment, type , length);
     }
 
-    public Tree create_Tree(types type, MyNode root) {
+    public Tree create_Tree(types type, Object rootValue) {
         if (this.treeBuilder == null){
             this.treeBuilder = new TreeBuilder();
         }
+        MyNode root = new MyNode(0, rootValue);
         InfoTree infoTree = this.treeBuilder.createInfoTree(this, type, root);
         return this.treeBuilder.createTree(this, infoTree, type, root);
+    }
+
+    public Tree create_Tree(types type) {
+        return create_Tree(type, null);
     }
 
 }
