@@ -49,7 +49,6 @@ Erledigt:
 
 
 Daily TDL:
-		- addLeaf knoten direkt erstellen lassen
 	24.11.
 		12. Bäume implementieren und Zeichnen ermöglichen
 			- mit get zugriff auf die knoten animieren (siehe 13.)

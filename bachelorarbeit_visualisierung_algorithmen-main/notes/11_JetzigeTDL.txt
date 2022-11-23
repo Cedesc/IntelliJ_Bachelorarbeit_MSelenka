@@ -12,14 +12,13 @@ CHECK! 11. Weiterschreiben!!!
 	- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
 	CHECK! - repeat visualization und change visualization fixen
 	CHECK! - MyNode "value" von int zu allgemeinen Typ machen, damit auch zB Strings abgespeichert werden können
+	CHECK! - indizes unique machen
     Weiteres:
 		- Animation für die atomaren Operationen
 		- Wurzel darf nicht rightBrother haben
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
 			- immer wieder richtig rücken?
-			- liegst am scaling?
-		- repeat visualization führt zu fehlern
-		- indizes unique machen
+			- liegts am scaling?
 
 
 13. Animieren...
