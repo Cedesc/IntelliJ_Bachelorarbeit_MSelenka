@@ -141,6 +141,23 @@ public class InfoTree extends AbstractDatastructure {
 
 
     /**
+     * {@link #deleteLeaf(int)} cannot be used, because the index count wouldn't go down.
+     * @param leafIndex index of the previously added leaf
+     */
+    public void undoAddLeaf(int leafIndex) {
+        MyNode leaf = getNodeByIndex(leafIndex);
+
+        // delete the leaf
+        this.treeContent.undoAddLeaf(leaf);
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.deleteLeaf(this, leaf);
+        }
+    }
+
+
+    /**
      * Tests if the given value is the same as the node type.
      * @param value given value to test
      * @return True if they are the same, false otherwise.

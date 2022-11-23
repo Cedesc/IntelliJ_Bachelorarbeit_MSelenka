@@ -21,13 +21,13 @@ public class AddLeaf extends TreeCommand {
     // execute command during visualization
     @Override
     public void exeCommand() throws InterruptedException {
-        this.infoTree.addLeaf(parentIndex, newLeaf.getValue());
+        infoTree.addLeaf(parentIndex, newLeaf.getValue());
     }
 
     // inverts command during visualization
     @Override
     public void backCommand() throws InterruptedException {
-        // TODO: 06.11.2022 Implementation
+        infoTree.undoAddLeaf(newLeaf.getIndex());
     }
 
     // returns infoTree

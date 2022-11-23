@@ -43,6 +43,19 @@ public class MyTree {
     }
 
     /**
+     * {@link #deleteLeaf(MyNode)} isn't enough for undoing {@link #addLeaf(MyNode, Object)}, because the index count
+     * doesn't go down.
+     * @param leaf previously added leaf
+     */
+    public void undoAddLeaf(MyNode leaf) {
+        // delete the leaf
+        deleteLeaf(leaf);
+
+        // decrement the index counter
+        nextIndex--;
+    }
+
+    /**
      * @param childNode node whose parent is changed
      * @param newParent the new parent of the childNode
      */
