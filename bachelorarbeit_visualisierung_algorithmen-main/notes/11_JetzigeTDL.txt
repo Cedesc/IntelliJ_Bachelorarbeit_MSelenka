@@ -33,8 +33,6 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 
 
 
-20. MyTree und MyNode ordnen
-
 21. Weiterschreiben
 	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
 	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)

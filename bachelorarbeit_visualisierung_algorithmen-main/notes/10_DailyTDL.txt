@@ -49,11 +49,11 @@ Erledigt:
 				- repeat visualization und change visualization fixen
 			12. Bäume implementieren und Zeichnen ermöglichen
 				- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
+	24.11.
 
 
 
 Daily TDL:
-	24.11.
 		13. Animieren...
 			- ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
 	25.11.
