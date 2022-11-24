@@ -3,6 +3,7 @@ package visualization.animationCreation;
 import javafx.animation.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 /**
@@ -18,11 +19,11 @@ public class TreeAnimation extends AbstractAnimationCreator {
         TranslateTransition instantTranslate = createInstantTranslate(visualizedTree, 100, 0);
 
         // create translate transition
-        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(2), visualizedTree);
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(1.2), visualizedTree);
         translate.setByX(-100);
 
         // create fade transition
-        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(2), visualizedTree);
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(1.2), visualizedTree);
         fade.setFromValue(0);
         fade.setToValue(1);
 
@@ -30,7 +31,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
         return new ParallelTransition(instantTranslate, translate, fade);
     }
 
-    public Transition forAddLeaf(StackPane addedLeaf) {
+    public Transition forAddLeaf(StackPane addedLeaf, Line addedEdge) {
 
         // create instant translate transition for the correct start point
         TranslateTransition instantTranslateLeaf = createInstantTranslate(addedLeaf, 0, -25);
@@ -44,9 +45,14 @@ public class TreeAnimation extends AbstractAnimationCreator {
         fadeLeaf.setFromValue(0);
         fadeLeaf.setToValue(1);
 
-        ParallelTransition parallel = new ParallelTransition(instantTranslateLeaf, translateLeaf, fadeLeaf);
+        ParallelTransition addLeaf = new ParallelTransition(instantTranslateLeaf, translateLeaf, fadeLeaf);
 
-        return parallel;
+        // create fade-in transition for the created edge
+        FadeTransition fadeEdge = new FadeTransition(this.standardDuration.multiply(0.35), addedEdge);
+        fadeEdge.setFromValue(0);
+        fadeEdge.setToValue(1);
+
+        return new SequentialTransition(addLeaf, fadeEdge);
 
     }
 

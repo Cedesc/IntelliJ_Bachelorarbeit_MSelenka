@@ -91,8 +91,11 @@ public class TreeVisualization {
         // find visualized node in the drawn trees
         StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, newLeaf.getIndex());
 
+        // find visualized edge to the new node in the drawn trees
+        Line visualizedEdge = findVisualizedEdge(infoTree, allTrees, parent.getIndex(), newLeaf.getIndex());
+
         // create the animation
-        Transition transition = treeAnimation.forAddLeaf(visualizedNode);
+        Transition transition = treeAnimation.forAddLeaf(visualizedNode, visualizedEdge);
 
         // update the current view with the drawn trees and the animation
         updateView(allTrees, transition);
@@ -198,6 +201,26 @@ public class TreeVisualization {
         return visualizedNode;
     }
 
+    private Line findVisualizedEdge(InfoTree infoTree, VBox allTrees, int parentNodeIndex, int childNodeIndex) {
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
+
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
+        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
+
+        // get the elements (all visualized nodes and edges) of the pane
+        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
+        // determine the id to be searched for
+        String idToBeSearchedFor = "edge from node " + parentNodeIndex + " to node " + childNodeIndex;
+        // get the leaf as visualized node by its id
+        Line visualizedEdge = (Line) getByID(visualizedElements, idToBeSearchedFor);
+        assert visualizedEdge != null;
+
+        return visualizedEdge;
+    }
+
 
     /**
      * @param list list to be searched
@@ -258,7 +281,7 @@ public class TreeVisualization {
             // edge from the center of the parent to the middle top of the child
             Line edge = new Line(parent.getX() + delta, parent.getY() + delta,
                     node.getX() + delta, node.getY());
-            edge.setId("edge to node " + node.getIndexAsString());
+            edge.setId("edge from node " + parent.getIndexAsString() + " to node " + node.getIndexAsString());
             pane.getChildren().add(edge);
             // push to the background
             edge.toBack();
