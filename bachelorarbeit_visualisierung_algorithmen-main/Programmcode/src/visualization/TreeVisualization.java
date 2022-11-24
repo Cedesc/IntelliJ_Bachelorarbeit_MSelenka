@@ -162,14 +162,48 @@ public class TreeVisualization {
     }
 
     public void getIndexByValue(InfoTree infoTree, Object value, int index) {
-        // TODO: 21.11.2022 create animation
+
+        // if no node has the passed value, no animation is shown
+        if (index == -1) {
+            updateView();
+            return;
+        }
+
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
+
+        // draw all trees
+        VBox allTrees = drawAllTrees();
+
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
+        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
+
+        // get the elements (all visualized nodes and edges) of the pane
+        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
+        // determine the id to be searched for
+        String idToBeSearchedFor = "node " + index;
+        // get the leaf as visualized node by its id
+        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
+        assert visualizedNode != null;
+
+
+        // create the animation
+        Transition transition = treeAnimation.forGetIndexByValue(visualizedNode);
 
         // update the current view with the drawn trees and the animation
-        updateView();
+        updateView(allTrees, transition);
+
     }
 
     public void getNodeByIndex(InfoTree infoTree, int index, MyNode searchedNode) {
-        // TODO: 21.11.2022 create animation
+
+        // if no node has the passed index, no animation is shown
+        if (searchedNode == null) {
+            updateView();
+            return;
+        }
 
         // calculate correct index of the created tree in infoTrees
         int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);

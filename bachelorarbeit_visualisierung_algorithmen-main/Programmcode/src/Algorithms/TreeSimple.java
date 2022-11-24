@@ -20,6 +20,7 @@ public class TreeSimple extends AbstractAlgorithm {
 
         // get nodes by index (for no reason)
         tree.getNodeByIndex(3);
+        tree.getNodeByIndex(7);
         tree.getNodeByIndex(0);
 
         // change value
@@ -60,15 +61,15 @@ public class TreeSimple extends AbstractAlgorithm {
         // get indices by values
         int a = tree.getIndexByValue(100);
         int b = tree.getIndexByValue(0);
-        int c = tree.getIndexByValue(3);
-        int d = tree.getIndexByValue(5);
+        int c = tree.getIndexByValue(2);
+        int d = tree.getIndexByValue(13);
         int e = tree.getIndexByValue(1);
-        if (a != 0 || b != -1 || c != -1 || d != -1 || e != -1) {
+        if (a != 0 || b != -1 || c != 2 || d != 13 || e != -1) {
             System.out.println(
                     "a = 0 = " + a + "\n" +
-                    "b = -1 = " + b + "\n" +
-                    "c = -1 = " + c + "\n" +
-                    "d = -1 = " + d + "\n" +
+                    "b = 0 = " + b + "\n" +
+                    "c = 2 = " + c + "\n" +
+                    "d = 13 = " + d + "\n" +
                     "e = -1 = " + e + "\n");
         }
 

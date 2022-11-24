@@ -13,7 +13,12 @@ public class GetNodeByIndex extends TreeCommand {
     public GetNodeByIndex(InfoTree infoTree, MyNode searchedNode, int index) {
         this.infoTree = infoTree;
         this.index = index;
-        setCommandString("Get node by index:  index = " + index + "  node value = " + searchedNode.getValueAsString());
+        String nodeValue;
+        if (searchedNode == null)
+            nodeValue = "(no node found)";
+        else
+            nodeValue = searchedNode.getValueAsString();
+        setCommandString("Get node by index:  index = " + index + "  node value = " + nodeValue);
     }
 
     // execute command during visualization
