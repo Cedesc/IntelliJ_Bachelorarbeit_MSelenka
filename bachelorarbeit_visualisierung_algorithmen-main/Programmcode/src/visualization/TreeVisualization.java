@@ -102,8 +102,10 @@ public class TreeVisualization {
         String idToBeSearchedFor = "node " + newLeaf.getIndexAsString();
         // get the leaf as visualized node by its id
         StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
+        assert visualizedNode != null;
 
-        // create the animation with the new added leaf
+
+        // create the animation
         Transition transition = treeAnimation.forAddLeaf(vBoxOfCreatedTree, visualizedNode);
 
         // update the current view with the drawn trees and the animation
@@ -115,8 +117,35 @@ public class TreeVisualization {
     public void changeValue(InfoTree infoTree, MyNode node, Object oldValue, Object newValue) {
         // TODO: 21.11.2022 create animation
 
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
+
+        // draw all trees
+        VBox allTrees = drawAllTrees();
+
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
+        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
+
+        // get the elements (all visualized nodes and edges) of the pane
+        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
+        // determine the id to be searched for
+        String idToBeSearchedFor = "node " + node.getIndexAsString();
+        // get the leaf as visualized node by its id
+        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
+        assert visualizedNode != null;
+
+        // get the value text of the node
+        Text valueText = (Text) visualizedNode.getChildren().get(1);
+
+
+        // create the animation
+        Transition transition = treeAnimation.forChangeValue(visualizedNode, valueText, oldValue);
+
         // update the current view with the drawn trees and the animation
-        updateView();
+        updateView(allTrees, transition);
+
     }
 
     public void deleteLeaf(InfoTree infoTree, MyNode leaf) {

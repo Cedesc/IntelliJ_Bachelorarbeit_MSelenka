@@ -1,11 +1,9 @@
 package visualization.animationCreation;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ParallelTransition;
-import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
@@ -49,6 +47,33 @@ public class TreeAnimation extends AbstractAnimationCreator {
         ParallelTransition parallel = new ParallelTransition(instantTranslateLeaf, translateLeaf, fadeLeaf);
 
         return parallel;
+
+    }
+
+    public Transition forChangeValue(StackPane visualizedNode, Text valueText, Object oldValue) {
+
+        // create new Text for showing the old value
+        String oldValueString;
+        if (oldValue == null)
+            oldValueString = "Nil";
+        else
+            oldValueString = oldValue.toString();
+        Text oldValueText = new Text(oldValueString);
+        visualizedNode.getChildren().add(oldValueText);
+
+        // create fade-out transition for the old value
+        FadeTransition fadeOut = new FadeTransition(this.standardDuration.multiply(0.8), oldValueText);
+        fadeOut.setFromValue(1);
+        fadeOut.setToValue(0);
+        // remove the new created Text node
+        fadeOut.setOnFinished(actionEvent -> visualizedNode.getChildren().remove(oldValueText));
+
+        // create fade-in transition for the new value
+        FadeTransition fadeIn = new FadeTransition(this.standardDuration.multiply(0.8), valueText);
+        fadeIn.setFromValue(0);
+        fadeIn.setToValue(1);
+
+        return new SequentialTransition(fadeOut, fadeIn);
 
     }
 
