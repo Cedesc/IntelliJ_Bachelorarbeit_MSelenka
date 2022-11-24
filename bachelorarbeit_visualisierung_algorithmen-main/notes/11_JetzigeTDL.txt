@@ -22,7 +22,7 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 
 
 13. Animieren...
-    - ... wie man auf die Sachen zugreift (get animationen, die automatisch in gewissen Operationen passieren)
+    CHECK! - ... wie man auf die Sachen zugreift
     - ... interagieren zwischen zwei Instanzen von Datenstrukturen
         - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
 	- generell Animationen für die Operationen
@@ -30,6 +30,8 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
 		- Schwierigkeit: Kanten
 			- verschwindet, dann werden Knoten bewegt und taucht an der richtigen Stelle wieder auf
+	Weiteres:
+		- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
 
 
 
