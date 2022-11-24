@@ -85,28 +85,14 @@ public class TreeVisualization {
 
     public void addLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
 
-        // calculate correct index of the created tree in infoTrees
-        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
-
         // draw all trees
         VBox allTrees = drawAllTrees();
 
-        // get vbox of the correct tree
-        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
-        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
-        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
-
-        // get the elements (all visualized nodes and edges) of the pane
-        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
-        // determine the id to be searched for
-        String idToBeSearchedFor = "node " + newLeaf.getIndexAsString();
-        // get the leaf as visualized node by its id
-        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
-        assert visualizedNode != null;
-
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, newLeaf.getIndex());
 
         // create the animation
-        Transition transition = treeAnimation.forAddLeaf(vBoxOfCreatedTree, visualizedNode);
+        Transition transition = treeAnimation.forAddLeaf(visualizedNode);
 
         // update the current view with the drawn trees and the animation
         updateView(allTrees, transition);
@@ -116,28 +102,14 @@ public class TreeVisualization {
 
     public void changeValue(InfoTree infoTree, MyNode node, Object oldValue, Object newValue) {
 
-        // calculate correct index of the created tree in infoTrees
-        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
-
         // draw all trees
         VBox allTrees = drawAllTrees();
 
-        // get vbox of the correct tree
-        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
-        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
-        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
-
-        // get the elements (all visualized nodes and edges) of the pane
-        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
-        // determine the id to be searched for
-        String idToBeSearchedFor = "node " + node.getIndexAsString();
-        // get the leaf as visualized node by its id
-        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
-        assert visualizedNode != null;
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, node.getIndex());
 
         // get the value text of the node
         Text valueText = (Text) visualizedNode.getChildren().get(1);
-
 
         // create the animation
         Transition transition = treeAnimation.forChangeValue(visualizedNode, valueText, oldValue);
@@ -169,25 +141,11 @@ public class TreeVisualization {
             return;
         }
 
-        // calculate correct index of the created tree in infoTrees
-        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
-
         // draw all trees
         VBox allTrees = drawAllTrees();
 
-        // get vbox of the correct tree
-        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
-        // get the pane ; each VBox has the tree name as the 0. element and the pane with the tree as the 1. element
-        Pane paneOfCreatedTree = (Pane) vBoxOfCreatedTree.getChildren().get(1);
-
-        // get the elements (all visualized nodes and edges) of the pane
-        ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
-        // determine the id to be searched for
-        String idToBeSearchedFor = "node " + index;
-        // get the leaf as visualized node by its id
-        StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
-        assert visualizedNode != null;
-
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, index);
 
         // create the animation
         Transition transition = treeAnimation.forGetIndexByValue(visualizedNode);
@@ -205,11 +163,24 @@ public class TreeVisualization {
             return;
         }
 
-        // calculate correct index of the created tree in infoTrees
-        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
-
         // draw all trees
         VBox allTrees = drawAllTrees();
+
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, searchedNode.getIndex());
+
+        // create the animation
+        Transition transition = treeAnimation.forGetNodeByIndex(visualizedNode);
+
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
+
+    }
+
+
+    private StackPane findVisualizedNode(InfoTree infoTree, VBox allTrees, int nodeIndex) {
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
         // get vbox of the correct tree
         VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
@@ -219,18 +190,12 @@ public class TreeVisualization {
         // get the elements (all visualized nodes and edges) of the pane
         ObservableList<Node> visualizedElements = paneOfCreatedTree.getChildren();
         // determine the id to be searched for
-        String idToBeSearchedFor = "node " + searchedNode.getIndexAsString();
+        String idToBeSearchedFor = "node " + nodeIndex;
         // get the leaf as visualized node by its id
         StackPane visualizedNode = (StackPane) getByID(visualizedElements, idToBeSearchedFor);
         assert visualizedNode != null;
 
-
-        // create the animation
-        Transition transition = treeAnimation.forGetNodeByIndex(visualizedNode);
-
-        // update the current view with the drawn trees and the animation
-        updateView(allTrees, transition);
-
+        return visualizedNode;
     }
 
 

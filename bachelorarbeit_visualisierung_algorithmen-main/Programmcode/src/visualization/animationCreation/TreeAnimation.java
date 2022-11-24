@@ -30,7 +30,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
         return new ParallelTransition(instantTranslate, translate, fade);
     }
 
-    public Transition forAddLeaf(VBox visualizedTree, StackPane addedLeaf) {
+    public Transition forAddLeaf(StackPane addedLeaf) {
 
         // create instant translate transition for the correct start point
         TranslateTransition instantTranslateLeaf = createInstantTranslate(addedLeaf, 0, -25);
