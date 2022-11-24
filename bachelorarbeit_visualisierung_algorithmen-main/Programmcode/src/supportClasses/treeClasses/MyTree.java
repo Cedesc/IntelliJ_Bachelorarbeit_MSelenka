@@ -153,7 +153,6 @@ public class MyTree {
     }
 
     /**
-     *
      * @param index searched index
      * @return Node with the given index. If no node has the index, the method returns null.
      */
