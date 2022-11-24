@@ -18,6 +18,10 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.addLeaf(0);
         tree.addLeaf(0);
 
+        // get nodes by index (for no reason)
+        tree.getNodeByIndex(3);
+        tree.getNodeByIndex(0);
+
         // change value
         tree.changeValue(0, 100);
 

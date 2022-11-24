@@ -84,4 +84,24 @@ public class TreeAnimation extends AbstractAnimationCreator {
         return null;
     }
 
+    public Transition forGetNodeByIndex(StackPane visualizedNode) {
+
+        // create scale transition
+        ScaleTransition scale = new ScaleTransition(this.standardDuration.multiply(1.), visualizedNode);
+        scale.setByX(0.3);
+        scale.setByY(0.3);
+        scale.setCycleCount(2);
+        scale.setAutoReverse(true);
+
+        // create fade transition
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(1.), visualizedNode);
+        fade.setFromValue(1);
+        fade.setToValue(0.5);
+        fade.setCycleCount(2);
+        fade.setAutoReverse(true);
+
+        return new ParallelTransition(scale);
+
+    }
+
 }
