@@ -34,11 +34,14 @@ public class TreeAnimation extends AbstractAnimationCreator {
     public Transition forAddLeaf(StackPane addedLeaf, Line addedEdge) {
 
         // create instant translate transition for the correct start point
-        TranslateTransition instantTranslateLeaf = createInstantTranslate(addedLeaf, 0, -25);
+        TranslateTransition instantTranslateLeaf = createInstantTranslate(addedLeaf, 0, 25);
 
         // create translate transition for the inserted value
-        TranslateTransition translateLeaf = new TranslateTransition(this.standardDuration, addedLeaf);
-        translateLeaf.setByY(25);
+        TranslateTransition translateLeaf = new TranslateTransition(this.standardDuration.multiply(1.6), addedLeaf);
+        translateLeaf.setByY(-25);
+
+        // make the node invisible for a correct fade-in
+        addedLeaf.setOpacity(0);
 
         // create fade transition for the inserted value
         FadeTransition fadeLeaf = new FadeTransition(this.standardDuration.multiply(1.6), addedLeaf);
