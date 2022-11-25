@@ -42,12 +42,6 @@ public class TreeVisualization {
 
     private final boolean circlesInsteadOfRectangles = TempConfig.CIRCLES_INSTEAD_OF_RECTANGLES;
 
-    private final boolean createTreeBool = true;
-    private final boolean addLeafBool = true;
-    private final boolean changeValueBool = false;
-    private final boolean getIndexBool = true;
-    private final boolean getNodeBool = false;
-
 
     // constructor
     public TreeVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -63,24 +57,20 @@ public class TreeVisualization {
 
         this.infoTrees.add(infoTree);
 
-        if (createTreeBool) {
-            // calculate correct index of the created tree in infoTrees
-            int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
-            // draw all trees
-            VBox allTrees = drawAllTrees();
+        // calculate correct index of the created tree in infoTrees
+        int indexOfTreeInInfoTrees = this.infoTrees.indexOf(infoTree);
 
-            // get vbox of the correct tree
-            VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
-            // create the animation with the vBox of the new created tree
-            Transition transition = treeAnimation.forCreateTree(vBoxOfCreatedTree);
+        // draw all trees
+        VBox allTrees = drawAllTrees();
 
-            // update the current view with the drawn trees and the animation
-            updateView(allTrees, transition);
-        }
+        // get vbox of the correct tree
+        VBox vBoxOfCreatedTree = (VBox) allTrees.getChildren().get(indexOfTreeInInfoTrees);
+        // create the animation with the vBox of the new created tree
+        Transition transition = treeAnimation.forCreateTree(vBoxOfCreatedTree);
 
-        else
-            updateView();
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
 
     }
 
@@ -96,60 +86,49 @@ public class TreeVisualization {
 
     public void addLeaf(InfoTree infoTree, MyNode parent, MyNode newLeaf) {
 
-        if (addLeafBool) {
-            // draw all trees
-            VBox allTrees = drawAllTrees();
+        // draw all trees
+        VBox allTrees = drawAllTrees();
 
-            // find visualized node in the drawn trees
-            StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, newLeaf.getIndex());
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, newLeaf.getIndex());
 
-            // find visualized edge to the new node in the drawn trees
-            Line visualizedEdge = findVisualizedEdge(infoTree, allTrees, parent.getIndex(), newLeaf.getIndex());
+        // find visualized edge to the new node in the drawn trees
+        Line visualizedEdge = findVisualizedEdge(infoTree, allTrees, parent.getIndex(), newLeaf.getIndex());
 
-            // create the animation
-            Transition transition = treeAnimation.forAddLeaf(visualizedNode, visualizedEdge);
+        // create the animation
+        Transition transition = treeAnimation.forAddLeaf(visualizedNode, visualizedEdge);
 
-            // update the current view with the drawn trees and the animation
-            updateView(allTrees, transition);
-        }
-
-        else
-            updateView();
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
 
     }
 
     public void changeValue(InfoTree infoTree, MyNode node, Object oldValue, Object newValue) {
 
-        if (changeValueBool) {
-            // draw all trees
-            VBox allTrees = drawAllTrees();
+        // draw all trees
+        VBox allTrees = drawAllTrees();
 
-            // find visualized node in the drawn trees
-            StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, node.getIndex());
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, node.getIndex());
 
-            // get the value text of the node
-            Text valueText = (Text) visualizedNode.getChildren().get(1);
+        // get the value text of the node
+        Text valueText = (Text) visualizedNode.getChildren().get(1);
 
-            // create the animation
-            Transition transition = treeAnimation.forChangeValue(visualizedNode, valueText, oldValue);
+        // create the animation
+        Transition transition = treeAnimation.forChangeValue(visualizedNode, valueText, oldValue);
 
-            // update the current view with the drawn trees and the animation
-            updateView(allTrees, transition);
-        }
-        else
-            updateView();
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
 
     }
 
     public void getIndexByValue(InfoTree infoTree, Object value, int index) {
 
-        if (getIndexBool) {
-            // if no node has the passed value, no animation is shown
-            if (index == -1) {
-                updateView();
-                return;
-            }
-
+        // if no node has the passed value, no animation is shown
+        if (index == -1) {
+            updateView();
+        }
+        else {
             // draw all trees
             VBox allTrees = drawAllTrees();
 
@@ -163,20 +142,15 @@ public class TreeVisualization {
             updateView(allTrees, transition);
         }
 
-        else
-            updateView();
-
     }
 
     public void getNodeByIndex(InfoTree infoTree, int index, MyNode searchedNode) {
 
-        if (getNodeBool) {
-            // if no node has the passed index, no animation is shown
-            if (searchedNode == null) {
-                updateView();
-                return;
-            }
-
+        // if no node has the passed index, no animation is shown
+        if (searchedNode == null) {
+            updateView();
+        }
+        else {
             // draw all trees
             VBox allTrees = drawAllTrees();
 
@@ -189,9 +163,6 @@ public class TreeVisualization {
             // update the current view with the drawn trees and the animation
             updateView(allTrees, transition);
         }
-
-        else
-            updateView();
 
     }
 
