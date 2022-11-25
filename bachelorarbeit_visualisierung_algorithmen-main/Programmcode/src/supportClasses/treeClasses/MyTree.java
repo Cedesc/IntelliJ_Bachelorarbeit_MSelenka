@@ -134,7 +134,7 @@ public class MyTree {
     private int getIndexByValue_R(Object value, MyNode consideredNode) {
 
         // if the considered node has the searched value, return its index
-        if (consideredNode.getValue() == value) {
+        if (consideredNode.getValue().equals(value)) {
             return consideredNode.getIndex();
         }
         else {
