@@ -40,33 +40,16 @@ public class MyNode {
 
     // Constructors
 
-    public MyNode(int index, Object value, MyNode parent, MyNode rightBrother, MyNode leftChild, int xCoordinate,
-                  int yCoordinate) {
-        this.index = index;
-        this.value = value;
-        this.parent = parent;
-        this.rightBrother = rightBrother;
-        this.leftChild = leftChild;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
-    }
-
-    public MyNode(int index, Object value, int xCoordinate, int yCoordinate) {
-        this.index = index;
-        this.value = value;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
-    }
-
     public MyNode(int index, Object value) {
         this.index = index;
-        this.value = value;
+        setValue(value);
         this.xCoordinate = 0;
         this.yCoordinate = 0;
     }
 
     public MyNode(int index) {
         this.index = index;
+        setValue(null);
         this.xCoordinate = 0;
         this.yCoordinate = 0;
     }
@@ -207,7 +190,10 @@ public class MyNode {
     }
 
     public void setValue(Object value) {
-        this.value = value;
+        if (value == null)
+            this.value = new ValueNullObject();
+        else
+            this.value = value;
     }
 
     public void setX(int x) {
@@ -261,9 +247,6 @@ public class MyNode {
     }
 
     public String getValueAsString() {
-        if (value == null) {
-            return "Nil";
-        }
         return String.valueOf(this.value);
     }
 
