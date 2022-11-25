@@ -13,6 +13,7 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - repeat visualization und change visualization fixen
 	CHECK! - MyNode "value" von int zu allgemeinen Typ machen
 	CHECK! - indizes unique machen
+	CHECK! - NullObject erstellt für Umgang mit null als Wert
     Weiteres:
 		- Animation für die atomaren Operationen
 		- Wurzel darf nicht rightBrother haben
