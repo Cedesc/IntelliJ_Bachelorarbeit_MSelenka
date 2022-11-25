@@ -41,7 +41,7 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     public void addLeaf(int parentIndex, Object leafValue) {
-        MyNode parent = getNodeByIndexWithoutVisualization(parentIndex);
+        MyNode parent = this.treeContent.getNodeByIndex(parentIndex);
 
         // check if parent is null
         if (parent == null) {
@@ -59,7 +59,7 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     public void changeValue(int nodeIndex, Object newValue) {
-        MyNode node = getNodeByIndexWithoutVisualization(nodeIndex);
+        MyNode node = this.treeContent.getNodeByIndex(nodeIndex);
 
         // check if the node is null
         if (node == null) {
@@ -80,7 +80,7 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     public void deleteLeaf(int leafIndex) {
-        MyNode leaf = getNodeByIndexWithoutVisualization(leafIndex);
+        MyNode leaf = this.treeContent.getNodeByIndex(leafIndex);
 
         // check if the node is null
         if (leaf == null) {
@@ -103,8 +103,8 @@ public class InfoTree extends AbstractDatastructure {
     }
 
     public void changeParent(int childIndex, int newParentIndex) {
-        MyNode child = getNodeByIndexWithoutVisualization(childIndex);
-        MyNode parent = getNodeByIndexWithoutVisualization(newParentIndex);
+        MyNode child = this.treeContent.getNodeByIndex(childIndex);
+        MyNode parent = this.treeContent.getNodeByIndex(newParentIndex);
 
         // check if the childNode or the new parent is null
         if (child == null) {
@@ -149,21 +149,12 @@ public class InfoTree extends AbstractDatastructure {
         return searchedNode;
     }
 
-    // TODO: 25.11.2022 rename and restructure
-    private MyNode getNodeByIndexWithoutVisualization(int index) {
-        // get node
-        MyNode searchedNode = this.treeContent.getNodeByIndex(index);
-
-        return searchedNode;
-    }
-
-
     /**
      * {@link #deleteLeaf(int)} cannot be used, because the index count wouldn't go down.
      * @param leafIndex index of the previously added leaf
      */
     public void undoAddLeaf(int leafIndex) {
-        MyNode leaf = getNodeByIndexWithoutVisualization(leafIndex);
+        MyNode leaf = this.treeContent.getNodeByIndex(leafIndex);
 
         // delete the leaf
         this.treeContent.undoAddLeaf(leaf);
@@ -181,7 +172,7 @@ public class InfoTree extends AbstractDatastructure {
      * @param oldNodeValue value of the deleted node
      */
     public void undoDeleteLeaf(int oldIndex, int oldParentIndex, Object oldNodeValue) {
-        MyNode parent = getNodeByIndexWithoutVisualization(oldParentIndex);
+        MyNode parent = this.treeContent.getNodeByIndex(oldParentIndex);
 
         // add the leaf
         MyNode newLeaf = this.treeContent.undoDeleteLeaf(oldIndex, parent, oldNodeValue);
