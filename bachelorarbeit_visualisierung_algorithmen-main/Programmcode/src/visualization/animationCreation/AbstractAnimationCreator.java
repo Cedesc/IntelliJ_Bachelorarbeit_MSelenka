@@ -46,7 +46,7 @@ public abstract class AbstractAnimationCreator {
      * @param y the amount of the translation in y direction
      * @return a TranslateTransition with a duration of zero
      */
-    protected TranslateTransition createInstantTranslate(Node node, int x, int y) {
+    protected TranslateTransition createInstantTranslate(Node node, double x, double y) {
         TranslateTransition instantTranslate = new TranslateTransition();
         instantTranslate.setNode(node);
         instantTranslate.setByX(x);
