@@ -66,6 +66,7 @@ Daily TDL:
 	28.11.
 		13. Animieren...
 			- generell Animationen für die Operationen
+				- Wichtiger: umpositionierung des baums ermöglichen
 				- noch zu erledigen:
 					deleteTree, deleteLeaf, changeParent
 	29.11.
