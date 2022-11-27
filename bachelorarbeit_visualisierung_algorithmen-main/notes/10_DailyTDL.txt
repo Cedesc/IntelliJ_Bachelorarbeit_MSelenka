@@ -53,22 +53,23 @@ Erledigt:
 		13. Animieren...
 			- ... wie man auf die Sachen zugreift
 	25.11.
+	26.11.
+	27.11.
+		13. Animieren...
+			- ... interagieren zwischen zwei Instanzen von Datenstrukturen
+				- Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
+		=> nicht geschafft
 
 
 
 Daily TDL:
-	26.11.
-	27.11.
-		- standard duration anpassen, dass standard nicht mehr *3 ist
-		- skip in getNodeByIndex ist sus. Nur bei node not found? Oder nur bei mehreren aufrufen der funktion?
-		13. Animieren...
-			- ... interagieren zwischen zwei Instanzen von Datenstrukturen
-				- Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
 	28.11.
 		13. Animieren...
 			- generell Animationen für die Operationen
+				- noch zu erledigen:
+					deleteTree, deleteLeaf, changeParent
 	29.11.
+		- standard duration anpassen, dass standard nicht mehr *3 ist
 		- Sachen für nächstes Gespräch vorbereiten
 	30.11.
 		- Gespräch mit Endler und Fischer
-

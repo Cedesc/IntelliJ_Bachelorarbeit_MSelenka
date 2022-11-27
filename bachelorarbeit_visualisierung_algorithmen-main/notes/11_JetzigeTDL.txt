@@ -20,17 +20,29 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
 			- immer wieder richtig rücken?
 			- liegts am scaling?
+		- skip in getNodeByIndex ist sus
+			- Scheinbar nur bei node not found
+			- bei mehreren node not found wird nur erster geskippt, scheinbar auch wenn zwischen denen node not found noch andere befehle liegen
+			- (fast) nur wenn das programm einmal komplett durchgelaufen ist und dann auf repeat visualization
+			- kommt scheinbar auch bei anderen null transitions vor (create variable)
+				- kommt scheinbar bei ALLEN befehlen ohne animation vor
 
 
 13. Animieren...
     CHECK! - ... wie man auf die Sachen zugreift
     - ... interagieren zwischen zwei Instanzen von Datenstrukturen
         - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
+			- Versucht mit Baum und Variable, was aber nicht geklappt hat, da ich nicht die korrekten Koordinaten gefunden habe
 	- generell Animationen für die Operationen
 		- man braucht nach dem draw befehl die Koordinaten von zuvor
 			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
 		- Schwierigkeit: Kanten
 			- verschwindet, dann werden Knoten bewegt und taucht an der richtigen Stelle wieder auf
+		- Fortschritt:
+			- fertig:
+				createTree, addLeaf, changeValue, getIndexByValue, getNodeByIndex
+			- noch zu erledigen:
+				deleteTree, deleteLeaf, changeParent
 	Weiteres:
 		- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
 
