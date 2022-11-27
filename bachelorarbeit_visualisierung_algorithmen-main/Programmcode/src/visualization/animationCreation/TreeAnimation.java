@@ -3,8 +3,12 @@ package visualization.animationCreation;
 import javafx.animation.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import supportClasses.config.TempConfig;
 
 /**
  * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
@@ -62,11 +66,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
     public Transition forChangeValue(StackPane visualizedNode, Text valueText, Object oldValue) {
 
         // create new Text for showing the old value
-        String oldValueString;
-        if (oldValue == null)
-            oldValueString = "Nil";
-        else
-            oldValueString = oldValue.toString();
+        String oldValueString = oldValue.toString();
         Text oldValueText = new Text(oldValueString);
         visualizedNode.getChildren().add(oldValueText);
 
