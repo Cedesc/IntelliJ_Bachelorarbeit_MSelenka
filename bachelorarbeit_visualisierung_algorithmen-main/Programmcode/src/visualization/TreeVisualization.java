@@ -2,6 +2,7 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoTree;
+import datastructures.InfoVariable;
 import javafx.animation.Transition;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -116,6 +117,29 @@ public class TreeVisualization {
 
         // create the animation
         Transition transition = treeAnimation.forChangeValue(visualizedNode, valueText, oldValue);
+
+        // update the current view with the drawn trees and the animation
+        updateView(allTrees, transition);
+
+    }
+
+    public void changeValueToVariableValue(InfoTree infoTree, MyNode node, Object oldValue, InfoVariable infoVariable) {
+
+        // draw all trees
+        VBox allTrees = drawAllTrees();
+
+        // find visualized node in the drawn trees
+        StackPane visualizedNode = findVisualizedNode(infoTree, allTrees, node.getIndex());
+
+        // get the value text of the node
+        Text valueText = (Text) visualizedNode.getChildren().get(1);
+
+        // get the visualized variable
+        StackPane visualizedVariable = infoVariable.getVariableVisualization().findVisualizedValue(infoVariable);
+
+        // create the animation
+        Transition transition = treeAnimation.forChangeValueToVariableValue(visualizedNode, valueText,
+                visualizedVariable, oldValue);
 
         // update the current view with the drawn trees and the animation
         updateView(allTrees, transition);

@@ -79,6 +79,32 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
+    public void changeValueToVariableValue(int nodeIndex, InfoVariable infoVariable) {
+        MyNode node = this.treeContent.getNodeByIndex(nodeIndex);
+
+        // check if the node is null
+        if (node == null) {
+            this.algorithm.setErrorString("Error function 'changeValueToVariableValue' of a tree : \nNode is null.");
+            return;
+        }
+        // check if the variable is null
+        if (infoVariable == null) {
+            this.algorithm.setErrorString("Error function 'changeValueToVariableValue' of a tree : \nVariable is null.");
+            return;
+        }
+
+        // save the old value
+        Object oldValue = node.getValue();
+
+        // change the value
+        this.treeContent.changeValue(node, infoVariable.getValue());
+
+        // visualize the command
+        if (this.treeVisualization != null) {
+            this.treeVisualization.changeValueToVariableValue(this, node, oldValue, infoVariable);
+        }
+    }
+
     public void deleteLeaf(int leafIndex) {
         MyNode leaf = this.treeContent.getNodeByIndex(leafIndex);
 

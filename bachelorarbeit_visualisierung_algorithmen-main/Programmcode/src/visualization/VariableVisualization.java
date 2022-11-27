@@ -2,9 +2,12 @@ package visualization;
 
 import controller.ExecuteAlgorithmController;
 import datastructures.InfoVariable;
+import datastructures.Variable;
 import javafx.animation.Transition;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -20,8 +23,8 @@ public class VariableVisualization{
 
     // saves all current visualization objects and all infoVariables in an array, as well as the used execute algorithm controller
     private ExecuteAlgorithmController executeAlgorithmController;
-    private ArrayList<InfoVariable> infoVariables = new ArrayList<InfoVariable>();
-    private ArrayList<VBox> layoutVaraibles = new ArrayList<VBox>();
+    private ArrayList<InfoVariable> infoVariables = new ArrayList<>();
+    private ArrayList<VBox> layoutVariables = new ArrayList<>();
 
     /**
      * Instance of seperated class for creating the animations.
@@ -44,8 +47,8 @@ public class VariableVisualization{
         Node node = new VBox();
         node.setId("Variable");
         ((VBox) node).setSpacing(5);
-        for (int i = 0; i < layoutVaraibles.size(); i++){
-            ((VBox) node).getChildren().add(layoutVaraibles.get(i));
+        for (int i = 0; i < layoutVariables.size(); i++){
+            ((VBox) node).getChildren().add(layoutVariables.get(i));
         }
         this.executeAlgorithmController.updateVisualization(node, transition);
 
@@ -57,7 +60,7 @@ public class VariableVisualization{
     }
 
     // creates a visualization for instancing a variable
-    public void createVariable(InfoVariable infoVariable, types type) throws InterruptedException {
+    public void createVariable(InfoVariable infoVariable, types type) {
         //Label label = new Label("Variable "+(this.infoVariables.size()+1) + " type: "+type.toString());
         Rectangle rectangle = new Rectangle();
         rectangle.setWidth(50);
@@ -68,21 +71,21 @@ public class VariableVisualization{
         StackPane stackPane = new StackPane();
         Text text = new Text("");
         stackPane.getChildren().addAll(rectangle,text);
-        Label label = new Label("Variable "+(this.infoVariables.size()+1) + " type: "+type.toString());
+        Label label = new Label("Variable " + (this.infoVariables.size()+1) + " type: "+type.toString());
         VBox vBox = new VBox();
         vBox.setSpacing(5);
         vBox.getChildren().addAll(label, stackPane);
-        this.layoutVaraibles.add(vBox);
+        this.layoutVariables.add(vBox);
         this.infoVariables.add(infoVariable);
         generateNode();
     }
 
     // visualization of deleting a variable
-    public void deleteVariable(InfoVariable infoVariable) throws InterruptedException {
+    public void deleteVariable(InfoVariable infoVariable) {
         // deletes the variable and the corresponding visualization object from the arrays
         for(int i = 0; i < infoVariables.size(); i++){
             if (infoVariable == infoVariables.get(i)){
-                this.layoutVaraibles.remove(i);
+                this.layoutVariables.remove(i);
                 this.infoVariables.remove(i);
             }
         }
@@ -90,7 +93,7 @@ public class VariableVisualization{
     }
 
     // visualization of setting a new value of a variable
-    public void setVariable(InfoVariable infoVariable, Object value) throws InterruptedException {
+    public void setVariable(InfoVariable infoVariable, Object value) {
         if (this.infoVariables.contains(infoVariable)){
             for(int i = 0; i < infoVariables.size(); i++){
                 if (infoVariable == infoVariables.get(i)){
@@ -108,7 +111,7 @@ public class VariableVisualization{
                     VBox vBox = new VBox();
                     vBox.setSpacing(5);
                     vBox.getChildren().addAll(label, stackPane);
-                    this.layoutVaraibles.set(i, vBox);
+                    this.layoutVariables.set(i, vBox);
                 }
             }
         }
@@ -118,10 +121,29 @@ public class VariableVisualization{
         generateNode();
     }
 
+    public void getValue(InfoVariable infoVariable, Object value) {
+        generateNode();
+    }
+
+    public StackPane findVisualizedValue(InfoVariable infoVariable) {
+        // calculate correct index of the variable in infoVariables
+        int indexOfVariableInInfoVariables = this.infoVariables.indexOf(infoVariable);
+
+        // get vbox of the correct variable
+        VBox vBoxOfVisualizedVariable = (VBox) layoutVariables.get(indexOfVariableInInfoVariables);
+        // get the stackPane ; each VBox has the variable name as the 0. element and the stackPane with the variable as
+        // the 1. element
+        StackPane visualizedVariable = (StackPane) vBoxOfVisualizedVariable.getChildren().get(1);
+
+        assert visualizedVariable != null;
+
+        return visualizedVariable;
+    }
+
     // rests the visualization by deleting all instances
     public void resetVisualization(ExecuteAlgorithmController executeAlgorithmController) {
-        this.infoVariables = new ArrayList<InfoVariable>();
-        this.layoutVaraibles = new ArrayList<VBox>();
+        this.infoVariables = new ArrayList<>();
+        this.layoutVariables = new ArrayList<>();
         this.executeAlgorithmController = executeAlgorithmController;
     }
 }

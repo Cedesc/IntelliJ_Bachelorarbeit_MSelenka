@@ -21,6 +21,7 @@ public class GetValueVariable extends VariableCommand {
     }
 
     public void exeCommand() {
+        this.variable.getValue();
     }
 
     public void backCommand(){

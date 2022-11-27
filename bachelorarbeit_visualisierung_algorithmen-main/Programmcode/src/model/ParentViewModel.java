@@ -7,6 +7,7 @@ import controller.SelectAlgorithmController;
 import datastructures.*;
 import javafx.animation.Transition;
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 import supportClasses.config.TempConfig;
 import visualization.*;
 import abstractAlgorithm.AbstractAlgorithm;
@@ -63,10 +64,10 @@ public class ParentViewModel extends Application {
 
         // TODO: 27.09.2022 delete afterwards
         // debugging tool for showing coordinates of clicked point
-        // primaryStage.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
-        //   System.out.println("x = " + mouseEvent.getX() + "   y = " + mouseEvent.getY());
-        //   System.out.println("");
-        // });
+        primaryStage.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
+            System.out.println("x = " + mouseEvent.getX() + "   y = " + mouseEvent.getY());
+            System.out.println("");
+        });
     }
 
 

@@ -39,6 +39,13 @@ public class Tree extends AbstractDatastructure {
         this.algorithm.appendCommandOrder(changeValue);
     }
 
+    public void changeValueToVariableValue(int nodeIndex, Variable variable) {
+        ChangeValueToVariableValue changeValue =
+                new ChangeValueToVariableValue(this.infoTree, nodeIndex, variable.getInfoVariable());
+        this.infoTree.changeValue(nodeIndex, variable);
+        this.algorithm.appendCommandOrder(changeValue);
+    }
+
     public void deleteLeaf(int leafIndex) {
         DeleteLeaf deleteLeaf = new DeleteLeaf(this.infoTree, leafIndex);
         this.infoTree.deleteLeaf(leafIndex);

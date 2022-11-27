@@ -58,7 +58,17 @@ public class InfoVariable extends AbstractDatastructure {
 
     // returns the variable value
     public Object getValue() {
-        return this.value;
+
+        // visualize the command
+        if (this.variableVisualization != null) {
+            this.variableVisualization.getValue(this, this.value);
+        }
+
+        return value;
+    }
+
+    public Object getValueWithoutVisualization() {
+        return value;
     }
 
     // returns the variable typ

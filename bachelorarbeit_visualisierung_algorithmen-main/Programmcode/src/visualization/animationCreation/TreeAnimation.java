@@ -1,6 +1,8 @@
 package visualization.animationCreation;
 
 import javafx.animation.*;
+import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
@@ -83,6 +85,70 @@ public class TreeAnimation extends AbstractAnimationCreator {
         fadeIn.setToValue(1);
 
         return new SequentialTransition(fadeOut, fadeIn);
+
+    }
+
+    public Transition forChangeValueToVariableValue(StackPane visualizedNode, Text valueText,
+                                                    StackPane visualizedVariable, Object oldValue) {
+
+        // create new Text for showing the old value
+        String oldValueString;
+        oldValueString = oldValue.toString();
+        Text oldValueText = new Text(oldValueString);
+        visualizedNode.getChildren().add(oldValueText);
+
+        // create fade-out transition for the old value
+        FadeTransition fadeOut = new FadeTransition(this.standardDuration.multiply(0.8), oldValueText);
+        fadeOut.setFromValue(1);
+        fadeOut.setToValue(0);
+        // remove the new created Text node
+        fadeOut.setOnFinished(actionEvent -> visualizedNode.getChildren().remove(oldValueText));
+
+
+        // calculate coordinates of the visualizedNode
+        Bounds nodeBounds = visualizedNode.localToScene(visualizedNode.getBoundsInLocal());
+        Point2D aa1 = visualizedNode.getChildren().get(1).localToScene(0, 0);
+//        Bounds nodeBounds = visualizedNode.localToParent(visualizedNode.getBoundsInParent());
+        Bounds a1 = visualizedNode.getBoundsInLocal();
+        Bounds a2 = visualizedNode.getBoundsInParent();
+        double xNode = nodeBounds.getMinX();
+        double yNode = nodeBounds.getMinY();
+//        double xNode = visualizedNode.getLayoutX();
+//        double yNode = visualizedNode.getLayoutY();
+        System.out.println("xNode: " + xNode + "   yNode: " + xNode);
+
+        // calculate coordinates of the visualizedVariable
+//        Bounds variableBounds = visualizedVariable.localToScene(visualizedVariable.getBoundsInLocal());
+        Bounds variableBounds = visualizedVariable.localToParent(visualizedVariable.getBoundsInParent());
+        Point2D bb1 = visualizedVariable.getChildren().get(1).localToScene(0, 0);
+        Bounds b1 = visualizedVariable.getBoundsInLocal();
+        Bounds b2 = visualizedVariable.getBoundsInParent();
+        double xVar = variableBounds.getMinX();
+        double yVar = variableBounds.getMinY();
+//        double xVar = visualizedVariable.getLayoutX();
+//        double yVar = visualizedVariable.getLayoutY();
+        System.out.println("xVar: " + xVar + "   yVar: " + yVar);
+
+        // calculate the difference of the coordinates
+        double xDelta = xNode - xVar;
+        double yDelta = yNode - yVar;
+        System.out.println("xDelta: " + xDelta + "   yDelta: " + yDelta);
+
+        //x = 674.0   y = 381.0   => x = 120  y = 280
+        //
+        //x = 683.0   y = 218.0   => x = 130  y = 120
+
+        // x = 552.0   y = 100.0
+
+        // place the current value over the visualizedVariable
+        TranslateTransition instantTranslate = createInstantTranslate(valueText, - xDelta, - yDelta);
+
+        // move the current value to the correct place
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(1.8), valueText);
+        translate.setByX(xDelta);
+        translate.setByY(yDelta);
+
+        return new SequentialTransition(instantTranslate, fadeOut, translate);
 
     }
 

@@ -14,14 +14,14 @@ public class Variable extends AbstractDatastructure {
     // saves all relevant information
     private InfoVariable infoVariable;
     private AbstractAlgorithm algorithm;
-    private types variableTyp;
+    private types variableType;
 
     // constructor
     public Variable(InfoVariable infoVariable, AbstractAlgorithm algorithm, types typ) {
         super();
         this.infoVariable = infoVariable;
         this.algorithm = algorithm;
-        this.variableTyp = typ;
+        this.variableType = typ;
         CreateVariable newVariable = new CreateVariable(this.infoVariable, typ, this.infoVariable.getValue());
         this.algorithm.appendCommandOrder(newVariable);
     }
@@ -52,7 +52,10 @@ public class Variable extends AbstractDatastructure {
 
     // returns the variable type (from enum "types" in "supportClasses"
     public types getVariableType(){
-        return this.variableTyp;
+        return this.variableType;
     }
 
+    public InfoVariable getInfoVariable() {
+        return infoVariable;
+    }
 }
