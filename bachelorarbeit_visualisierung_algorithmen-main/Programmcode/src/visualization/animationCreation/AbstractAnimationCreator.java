@@ -11,7 +11,7 @@ import supportClasses.config.TempConfig;
  *     Note: Directly changing the translation of a node with {@link Node#setTranslateX(double)} or
  *     {@link Node#setTranslateY(double)} can cause errors if the input is too fast. Instead, create a
  *     TranslateTransition with the duration of zero. You can use the function
- *     {@link #createInstantTranslate(Node, int, int)}.
+ *     {@link #createInstantTranslate(Node, double, double)}.
  * <p>
  * <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/animation/ParallelTransition.html">Documentation</a>
  */
