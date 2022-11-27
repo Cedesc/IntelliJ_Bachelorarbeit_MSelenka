@@ -4,7 +4,7 @@ import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Tree;
 import supportClasses.types;
 
-public class TreeReallySimple  extends AbstractAlgorithm {
+public class TreeReallySimple extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
