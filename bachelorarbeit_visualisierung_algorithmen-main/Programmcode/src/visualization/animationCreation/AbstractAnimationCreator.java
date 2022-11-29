@@ -29,7 +29,7 @@ public abstract class AbstractAnimationCreator {
      * Default translation. Placeholder for animations that aren't created yet.
      */
     protected final TranslateTransition nullTransition =
-            new TranslateTransition(standardDuration.multiply(3.0), new Node() {});
+            new TranslateTransition(standardDuration.multiply(1.), new Node() {});
 
 
     public TranslateTransition getNullTransition() {

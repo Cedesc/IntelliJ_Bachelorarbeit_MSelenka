@@ -3,6 +3,7 @@ package visualization.animationCreation;
 import javafx.animation.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 
@@ -23,11 +24,11 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, 100, 0);
 
         // create translate transition
-        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(2), visualizedArray);
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(1.), visualizedArray);
         translate.setByX(-100);
 
         // create fade transition
-        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(2), visualizedArray);
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(1.), visualizedArray);
         fade.setFromValue(0);
         fade.setToValue(1);
 
@@ -47,11 +48,11 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, -100, 0);
 
         // create translate transition
-        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(2), visualizedArray);
+        TranslateTransition translate = new TranslateTransition(this.standardDuration.multiply(1.), visualizedArray);
         translate.setByX(100);
 
         // create fade transition
-        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(2), visualizedArray);
+        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(1.), visualizedArray);
         fade.setFromValue(1);
         fade.setToValue(0);
 
@@ -71,11 +72,12 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
         TranslateTransition instantTranslateInserted = createInstantTranslate(insertedValue, 0, -25);
 
         // create translate transition for the inserted value
-        TranslateTransition translateInserted = new TranslateTransition(this.standardDuration, insertedValue);
+        TranslateTransition translateInserted =
+                new TranslateTransition(this.standardDuration.multiply(1.), insertedValue);
         translateInserted.setByY(25);
 
         // create fade transition for the inserted value
-        FadeTransition fadeInserted = new FadeTransition(this.standardDuration.multiply(1.6), insertedValue);
+        FadeTransition fadeInserted = new FadeTransition(this.standardDuration.multiply(1.), insertedValue);
         fadeInserted.setFromValue(0);
         fadeInserted.setToValue(1);
 
@@ -87,7 +89,8 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
             TranslateTransition instantTranslateMoved = createInstantTranslate(moveValue, -this.fieldDistance, 0);
 
             // create translate transition
-            TranslateTransition translateMoved = new TranslateTransition(this.standardDuration, moveValue);
+            TranslateTransition translateMoved =
+                    new TranslateTransition(this.standardDuration.multiply(1.), moveValue);
             translateMoved.setByX(this.fieldDistance);
 
             // add them to the parallelTransition
@@ -118,17 +121,20 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
         TranslateTransition instantTranslateText1 = createInstantTranslate(text1, deltaX, 0);
         TranslateTransition instantTranslateText2 = createInstantTranslate(text2, -deltaX, 0);
 
+        // set duration
+        Duration duration = standardDuration.multiply(0.3);
+
 
         // text1 down
-        TranslateTransition translate11 = new TranslateTransition(this.standardDuration, text1);
+        TranslateTransition translate11 = new TranslateTransition(duration, text1);
         translate11.setByY(toY);
 
         // text1 to position of text2
-        TranslateTransition translate12 = new TranslateTransition(this.standardDuration, text1);
+        TranslateTransition translate12 = new TranslateTransition(duration, text1);
         translate12.setByX(-deltaX);
 
         // text1 up
-        TranslateTransition translate13 = new TranslateTransition(this.standardDuration, text1);
+        TranslateTransition translate13 = new TranslateTransition(duration, text1);
         translate13.setByY(-toY);
 
         // SequentialTransition of text1
@@ -136,15 +142,15 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
 
 
         // text2 up
-        TranslateTransition translate21 = new TranslateTransition(this.standardDuration, text2);
+        TranslateTransition translate21 = new TranslateTransition(duration, text2);
         translate21.setByY(-toY);
 
         // text2 to position of text1
-        TranslateTransition translate22 = new TranslateTransition(this.standardDuration, text2);
+        TranslateTransition translate22 = new TranslateTransition(duration, text2);
         translate22.setByX(deltaX);
 
         // text2 down
-        TranslateTransition translate23 = new TranslateTransition(this.standardDuration, text2);
+        TranslateTransition translate23 = new TranslateTransition(duration, text2);
         translate23.setByY(toY);
 
         // SequentialTransition of text2

@@ -20,7 +20,6 @@ public class TreeSimple extends AbstractAlgorithm {
 
         // get nodes by index (for no reason)
         tree.getNodeByIndex(3);
-        tree.getNodeByIndex(7);
         tree.getNodeByIndex(0);
 
         // change value
