@@ -15,7 +15,6 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 	CHECK! - indizes unique machen
 	CHECK! - NullObject erstellt für Umgang mit null als Wert
     Weiteres:
-		- Animation für die atomaren Operationen
 		- Wurzel darf nicht rightBrother haben
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
 			- immer wieder richtig rücken?
@@ -43,6 +42,8 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 				createTree, addLeaf, changeValue, getIndexByValue, getNodeByIndex
 			- noch zu erledigen:
 				deleteTree, deleteLeaf, changeParent
+		- automatisches justieren des Baums (?)
+			- lieber reihenfolge von updateView ändern (im onFinished event oder vor befehlen zeichnen)
 	Weiteres:
 		- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
 

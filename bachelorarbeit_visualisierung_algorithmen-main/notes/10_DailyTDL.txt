@@ -59,18 +59,20 @@ Erledigt:
 			- ... interagieren zwischen zwei Instanzen von Datenstrukturen
 				- Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
 		=> nicht geschafft
+	28.11.
+	29.11.
+		- Sachen für nächstes Gespräch vorbereiten
 
 
 
 Daily TDL:
-	28.11.
-		13. Animieren...
-			- generell Animationen für die Operationen
-				- Wichtiger: umpositionierung des baums ermöglichen
-				- noch zu erledigen:
-					deleteTree, deleteLeaf, changeParent
-	29.11.
-		- standard duration anpassen, dass standard nicht mehr *3 ist
-		- Sachen für nächstes Gespräch vorbereiten
+		- text in latex einsetzen?
+		- Eigentlich noch von gestern, aber fuck it:
+			13. Animieren...
+				- generell Animationen für die Operationen
+					- Wichtiger: umpositionierung des baums ermöglichen
+					- noch zu erledigen:
+						deleteTree, deleteLeaf, changeParent
 	30.11.
+		- gute Vorführdatei erstellen
 		- Gespräch mit Endler und Fischer
