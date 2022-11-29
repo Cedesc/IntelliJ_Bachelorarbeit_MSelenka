@@ -20,7 +20,7 @@ Kapitel:
 
 5.1 Animationen an den bestehenden Datenstrukturen
 	
-	// warum Animation toll sind
+	// warum Animationen toll sind
 	Animationen sind nicht nur ein nettes Gimmick, sondern sie können ungemein zur Verständlichkeit eines Ablaufs beitragen. Denn im Vergleich zum unmittelbaren Auftauchen oder Verschwinden eines Elements, kann der Nutzer bei bspw. einer kurzen Fade-in oder Fade-out Animation das betroffene Element viel schneller identifizieren, da dieses sich durch seine Bewegung vom Rest der Elemente abhebt. Es gibt auch Operationen, bei denen man ohne eine Animation nur sehr schwierig ausmachen kann, was passiert. So zum Beispiel die "insert" oder "delete" Operation der Arraylists, auf die später näher eingegangen wird. In solchen Fällen haben schon kleine Animationen sehr große Wirkung.
 	
 	// Schwierigkeiten beim Implementieren von Animation

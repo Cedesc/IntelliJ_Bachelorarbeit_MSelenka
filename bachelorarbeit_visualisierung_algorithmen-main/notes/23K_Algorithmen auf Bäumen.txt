@@ -34,7 +34,6 @@ Was ich reinbringen kann (Mit 22K abgleichen, da vermischt):
 
 
 3 Algorithmen auf Bäumen
-	{atomaren Funktionen nennen und warum die ausreichen}
 		
 3.? Verschiedene Speicherungsweisen von Bäumen
 	

@@ -61,31 +61,27 @@ Kapitel:
 			  Cormen Seite 1186 / 1187 bzw 1206 / 1027}
 	{Cormen erwähnen?}
 	
-	Die genutzten Begriffe sind von Quelle zu Quelle oft leicht unterschiedlich, können aber auch stark von anderen abweichen. Es werden die folgenden Begriffe mit zugehöriger Bedeutung wie folgt verwendet:
+	Die genutzten Begriffe sind von Quelle zu Quelle oft leicht unterschiedlich. Es werden die folgenden Begriffe mit zugehöriger Bedeutung wie folgt verwendet:
 	
-	Liste:  {x = wird genutzt}
-		x Knoten - Element im Baum
-		x Kanten - Verbindung zwischen zwei Knoten
-		x Wurzelknoten - Festgelegter Startknoten
-		x Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
-		x Tiefe (eines Knotens) - Abstand zur Wurzel
-		x Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
-		x Ebene - Alle Knoten einer Tiefe
-		x Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
-		x Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
+	Liste:
+		Knoten - Element im Baum
+		Kanten - Verbindung zwischen zwei Knoten
+		Wurzelknoten - Festgelegter Startknoten
+		Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
+		Tiefe (eines Knotens) - Abstand zur Wurzel
+		Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
+		Ebene - Alle Knoten einer Tiefe
+		Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
+		Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
 		Vorfahre (von betrachtetem Knoten) - Knoten, der auf dem Pfad zwischen der Wurzel und dem betrachteten Knoten ist, wobei die Wurzel mit eingeschlossen, der betrachtete Knoten jedoch ausgeschlossen ist
 		Nachfahre (von betrachtetem Knoten) - Knoten, bei dem der betrachtete Knoten ein Vorfahre ist
-		x Blattknoten - Knoten ohne Kindknoten
-		x Innerer Knoten - Knoten, der kein Blattknoten ist
-		x Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
+		Blattknoten - Knoten ohne Kindknoten
+		Innerer Knoten - Knoten, der kein Blattknoten ist
+		Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
 		Teilbaum - Eine Teilmenge des Baums, wobei jeder Knoten als Wurzel des Teilbaums betrachtet werden kann und dieser mit seinen Nachfahren den benannten Teilbaum bildet
-		x Grad (eines Knotens) - Anzahl der Kinder
-		x Grad (eines Baums) - Höchster Grad eines Knotens im Baum
-		Balanciert - Ein Baum ist balanciert, wenn die Differenz der jeweiligen Tiefe zweier beliebiger Blätter maximal eins ist
-		Breite (einer Ebene) - Anzahl Knoten der Ebene
-		Breite (eines Baums) - Maximale Breite einer Ebene im Baum
-		x Wald - Bäume mit disjunkten Knotenmengen
-		vollständiger Baum - 
+		Grad (eines Knotens) - Anzahl der Kinder
+		Grad (eines Baums) - Höchster Grad eines Knotens im Baum
+		Wald - Bäume mit disjunkten Knotenmengen
 	
 	
 2.2 Definition
