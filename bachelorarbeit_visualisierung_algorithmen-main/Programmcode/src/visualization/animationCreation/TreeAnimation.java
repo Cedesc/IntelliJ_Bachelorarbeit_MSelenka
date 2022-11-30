@@ -3,12 +3,8 @@ package visualization.animationCreation;
 import javafx.animation.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import supportClasses.config.TempConfig;
 
 /**
  * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
@@ -82,7 +78,16 @@ public class TreeAnimation extends AbstractAnimationCreator {
         fadeIn.setFromValue(0);
         fadeIn.setToValue(1);
 
-        return new SequentialTransition(fadeOut, fadeIn);
+        SequentialTransition fadeOutAndIn = new SequentialTransition(fadeOut, fadeIn);
+
+        // create scale transition for the node
+        ScaleTransition scale = new ScaleTransition(this.standardDuration.multiply(0.5), visualizedNode);
+        scale.setByX(0.5);
+        scale.setByY(0.5);
+        scale.setCycleCount(2);
+        scale.setAutoReverse(true);
+
+        return new ParallelTransition(fadeOutAndIn, scale);
 
     }
 
@@ -102,14 +107,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
         scale.setCycleCount(2);
         scale.setAutoReverse(true);
 
-        // create fade transition
-        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(0.5), visualizedNode);
-        fade.setFromValue(1);
-        fade.setToValue(0.5);
-        fade.setCycleCount(2);
-        fade.setAutoReverse(true);
-
-        return new ParallelTransition(scale);
+        return scale;
 
     }
 
@@ -122,14 +120,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
         scale.setCycleCount(2);
         scale.setAutoReverse(true);
 
-        // create fade transition
-        FadeTransition fade = new FadeTransition(this.standardDuration.multiply(0.5), visualizedNode);
-        fade.setFromValue(1);
-        fade.setToValue(0.5);
-        fade.setCycleCount(2);
-        fade.setAutoReverse(true);
-
-        return new ParallelTransition(scale);
+        return scale;
 
     }
 
