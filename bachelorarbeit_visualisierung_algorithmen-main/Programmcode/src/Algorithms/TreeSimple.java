@@ -36,7 +36,7 @@ public class TreeSimple extends AbstractAlgorithm {
 
         // change parent
         tree.changeParent(7, 0);
-        tree.changeParent(5, 7);
+        tree.changeParent(1, 7);
 
         // change values
         tree.changeValue(7, 107);
@@ -54,8 +54,8 @@ public class TreeSimple extends AbstractAlgorithm {
         tree.deleteLeaf(11);
         tree.deleteLeaf(6);
         tree.deleteLeaf(5);
-        tree.deleteLeaf(7);
         tree.deleteLeaf(1);
+        tree.deleteLeaf(7);
 
         // get indices by values
         int a = tree.getIndexByValue(100);
