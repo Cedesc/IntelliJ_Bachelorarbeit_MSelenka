@@ -62,17 +62,12 @@ Erledigt:
 	28.11.
 	29.11.
 		- Sachen für nächstes Gespräch vorbereiten
+		- text in latex einsetzen?
+	30.11.
+		- gute Vorführdatei erstellen
 
 
 
 Daily TDL:
-		- text in latex einsetzen?
-		- Eigentlich noch von gestern, aber fuck it:
-			13. Animieren...
-				- generell Animationen für die Operationen
-					- Wichtiger: umpositionierung des baums ermöglichen
-					- noch zu erledigen:
-						deleteTree, deleteLeaf, changeParent
-	30.11.
-		- gute Vorführdatei erstellen
 		- Gespräch mit Endler und Fischer
+		- TDL für Zeit bis nächstes Meeting machen
