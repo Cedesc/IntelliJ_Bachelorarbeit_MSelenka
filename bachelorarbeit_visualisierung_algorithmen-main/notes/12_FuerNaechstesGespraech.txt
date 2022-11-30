@@ -1,47 +1,20 @@
 
 
 Ziele:
-	CHECK! - weiterschreiben!!!
-	CHECK! - Restliche atomare Operationen implementieren
-		CHECK! - Elternpointer umhängen können
-		CHECK! - Blatt löschen
-		CHECK! - Wert eines Knotens ändern
-	CHECK! - back command 
-	CHECK! - repeat visualization und change visualization fixen
-	- generell Animationen
-		CHECK! - createTree, addLeaf, changeValue, getIndexByValue, getNodeByIndex
-		- deleteLeaf, deleteTree, changeParent
-		- automatisches justieren des Baums
-	- mit get zugriff auf die knoten automatisch animieren
+	- auf gitlab laden
+	- weiterschreiben und richtig ordnen
+	(- restliche Animationen (zuerst animation, dann draw))
+	(- automatisches justieren des ganzen baums (?) - wäre „wichtig“ für changeParent)
 
 
 Vorstellung:
-	- Hauptsächlich Sachen im Hintergrund gemacht
-		- letztes mal war einiges sehr rudimentär, zB musste man beim erstellen von knoten den index angeben
-	- Operationen hinzugefügt
-		- createTree, addLeaf, deleteLeaf, changeParent, changeValue, getIndexByValue, getNodeByIndex
-	- back Command
-	- repeat und change visualization
-	- Animationen für alle außer deleteLeaf, deleteTree, changeParent
-
-	- (animieren zwischen verschiedenen datenstrukturen klappt nicht, weil ich die koordinaten nicht rausbekommen konnte)
-	
-	- btw: Abgabe ist jetzt 22.12.
 	
 			
-
-
 Fragen:
-
 
 
 Notizen beim Treffen:
 
 
-
 Nächste Ziele bis zum PLATZHALTER:
-	{Bislang nur Vorschlag meinerseits:}
-	- [3/5] restliche Animationen
-	- [5/5] automatisches justieren des ganzen baums (?)
-	- [...] weiterschreiben, richtig ordnen und in latex überführen
 	

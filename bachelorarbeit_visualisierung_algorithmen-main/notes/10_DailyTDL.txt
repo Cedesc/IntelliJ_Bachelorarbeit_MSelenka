@@ -1,73 +1,36 @@
 
 
 Erledigt:
-	9.11.
-		- Gespräch
-	10.11.
-		- TDL erstellen
-		- restliches Orga Zeug machen
-	11.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (1.)
-		vorgearbeitet:
-			11. Weiterschreiben
-				- einen Punkt abarbeiten (2.)
-	12.11.
-	13.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (3.)
-	14.11.
-		vorgearbeitet:
-			11. Weiterschreiben
-				- einen Punkt abarbeiten (4.)
-	15.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (5.)
-	16.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (6.)
-	17.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (7.)
-	18.11.
-		11. Weiterschreiben
-			- einen Punkt abarbeiten (8.)
-	19.11.
-		11. Weiterschreiben
-			- umstrukturieren
-			- Schauen wie viel Seiten bislang vorhanden sind (14)
-	20.11.
-	21.11.
-	22.11.
-		12. Bäume implementieren und Zeichnen ermöglichen
-			- Restliche atomare Operationen implementieren
-	23.11.
-		12. Bäume implementieren und Zeichnen ermöglichen
-			- get Befehle implementieren
-		vorgearbeitet:
-			12. Bäume implementieren und Zeichnen ermöglichen
-				- repeat visualization und change visualization fixen
-			12. Bäume implementieren und Zeichnen ermöglichen
-				- back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
-	24.11.
-		13. Animieren...
-			- ... wie man auf die Sachen zugreift
-	25.11.
-	26.11.
-	27.11.
-		13. Animieren...
-			- ... interagieren zwischen zwei Instanzen von Datenstrukturen
-				- Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
-		=> nicht geschafft
-	28.11.
-	29.11.
-		- Sachen für nächstes Gespräch vorbereiten
-		- text in latex einsetzen?
-	30.11.
-		- gute Vorführdatei erstellen
 
 
 
 Daily TDL:
-		- Gespräch mit Endler und Fischer
-		- TDL für Zeit bis nächstes Meeting machen
+	1.12.
+		- Auf Gitlab hochladen
+	2.12.
+		- Überblick verschaffen über das, was noch geschrieben werden muss
+		- TDL für nächsten Tage machen
+	3.12.
+		- 
+	4.12.
+		- 
+	5.12.
+		- 
+	6.12.
+		- 
+	7.12.
+		- 
+	8.12.
+		- 
+	9.12.
+		- 
+	10.12.
+		- 
+	11.12.
+		- 
+	12.12.
+		- 
+	13.12.
+		- 
+	14.12.
+		Gespräch mit Endler und Fischer

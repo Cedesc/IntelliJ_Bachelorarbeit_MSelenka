@@ -1,19 +1,36 @@
 
 
-CHECK! 11. Weiterschreiben!!!
+11. Auf Gitlab laden
 
 
-CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
-	CHECK! - Restliche atomare Operationen implementieren
-		CHECK! - Elternpointer umhängen können
-		CHECK! - Blatt löschen
-		CHECK! - Wert eines Knotens ändern
-	CHECK! - get Commands hinzufügen
-	CHECK! - back command (sollte genau so schwer sein wie "Blatt löschen" oder "Baum löschen")
-	CHECK! - repeat visualization und change visualization fixen
-	CHECK! - MyNode "value" von int zu allgemeinen Typ machen
-	CHECK! - indizes unique machen
-	CHECK! - NullObject erstellt für Umgang mit null als Wert
+12. Weiterschreiben
+	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
+	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
+
+
+13. Animationen 
+	- Reihenfolge optional ändern
+		- zuerst Animation, dann draw
+		- beides möglich machen
+	- Schwierigkeit: Kanten
+		- verschwindet, dann werden Knoten bewegt und taucht an der richtigen Stelle wieder auf
+	- Fortschritt:
+		- fertig:
+			createTree, addLeaf, changeValue, getIndexByValue, getNodeByIndex
+		- noch zu erledigen:
+			deleteTree, deleteLeaf, changeParent
+	- automatisches justieren des Baums (?)
+		- lieber reihenfolge von updateView ändern (im onFinished event oder vor befehlen zeichnen)
+	- man braucht nach dem draw befehl die Koordinaten von zuvor
+		- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
+	- interagieren zwischen zwei Instanzen von Datenstrukturen
+        - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
+			- Versucht mit Baum und Variable, was aber nicht geklappt hat, da ich nicht die korrekten Koordinaten gefunden habe
+	- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
+	
+
+
+21. Bäume verbessern
     Weiteres:
 		- Wurzel darf nicht rightBrother haben
 		- beim visualisieren bewegt sich der scheiß automatisch nach rechts bzw links
@@ -25,33 +42,6 @@ CHECK! 12. Bäume implementieren und Zeichnen ermöglichen
 			- (fast) nur wenn das programm einmal komplett durchgelaufen ist und dann auf repeat visualization
 			- kommt scheinbar auch bei anderen null transitions vor (create variable)
 				- kommt scheinbar bei ALLEN befehlen ohne animation vor
-
-
-13. Animieren...
-    CHECK! - ... wie man auf die Sachen zugreift
-    - ... interagieren zwischen zwei Instanzen von Datenstrukturen
-        - Beispiel: Ein Element wird von einem Array in ein freies Feld eines anderen Arrays geschoben
-			- Versucht mit Baum und Variable, was aber nicht geklappt hat, da ich nicht die korrekten Koordinaten gefunden habe
-	- generell Animationen für die Operationen
-		- man braucht nach dem draw befehl die Koordinaten von zuvor
-			- deepCopy vom Baum erstellen um die Positionen der Knoten zu haben und das nutzt man als Referenz für die Animationen???
-		- Schwierigkeit: Kanten
-			- verschwindet, dann werden Knoten bewegt und taucht an der richtigen Stelle wieder auf
-		- Fortschritt:
-			- fertig:
-				createTree, addLeaf, changeValue, getIndexByValue, getNodeByIndex
-			- noch zu erledigen:
-				deleteTree, deleteLeaf, changeParent
-		- automatisches justieren des Baums (?)
-			- lieber reihenfolge von updateView ändern (im onFinished event oder vor befehlen zeichnen)
-	Weiteres:
-		- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
-
-
-
-21. Weiterschreiben
-	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
-	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 
 
 
