@@ -78,16 +78,7 @@ public class TreeAnimation extends AbstractAnimationCreator {
         fadeIn.setFromValue(0);
         fadeIn.setToValue(1);
 
-        SequentialTransition fadeOutAndIn = new SequentialTransition(fadeOut, fadeIn);
-
-        // create scale transition for the node
-        ScaleTransition scale = new ScaleTransition(this.standardDuration.multiply(0.5), visualizedNode);
-        scale.setByX(0.5);
-        scale.setByY(0.5);
-        scale.setCycleCount(2);
-        scale.setAutoReverse(true);
-
-        return new ParallelTransition(fadeOutAndIn, scale);
+        return new SequentialTransition(fadeOut, fadeIn);
 
     }
 
