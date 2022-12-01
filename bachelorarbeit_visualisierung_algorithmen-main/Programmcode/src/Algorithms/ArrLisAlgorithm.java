@@ -4,7 +4,7 @@ import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.ArrayList;
 import supportClasses.types;
 
-public class ArrLisComplex extends AbstractAlgorithm {
+public class ArrLisAlgorithm extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
