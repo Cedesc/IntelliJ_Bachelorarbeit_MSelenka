@@ -26,8 +26,7 @@ public class DeleteArrayList extends ArrayListCommand {
 
     // invert command during visualization
     public void backCommand() throws InterruptedException {
-        // TODO: 22.09.2022 isn't correct, should create the structure with the values, but at this time it doesn't
-        //  restore the values
+        // isn't correct, should create the structure with the values, but at this time it doesn't restore the values
         infoArrayList.createArrayList(this.length);
     }
 

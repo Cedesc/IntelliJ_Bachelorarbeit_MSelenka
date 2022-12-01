@@ -248,7 +248,6 @@ public class ArrayVisualization {
     }
 
 
-    // TODO: 22.09.2022 temporary while not having animations for each function? delete afterwards
     public void generateNode() {
         generateNode(arrayAnimation.getNullTransition());
     }

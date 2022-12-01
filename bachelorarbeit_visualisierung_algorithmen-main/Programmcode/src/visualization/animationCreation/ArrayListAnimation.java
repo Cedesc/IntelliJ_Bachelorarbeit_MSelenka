@@ -43,7 +43,7 @@ public class ArrayListAnimation extends AbstractAnimationCreator {
      */
     public Transition forDeleteArrayList(VBox visualizedArray) {
 
-        // TODO: 22.09.2022 doesn't work, maybe because the array is completely removed before the animations are played
+        // doesn't work because the array is completely removed before the animations are played
 
         // create instant translate transition for the correct start point
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, -100, 0);

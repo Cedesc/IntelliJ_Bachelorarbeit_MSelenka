@@ -75,8 +75,6 @@ public class TreeVisualization {
         // remove the tree
         this.infoTrees.remove(infoTree);
 
-        // TODO: 23.11.2022 create animation
-
         // update the current view with the drawn trees and the animation
         updateView();
     }
@@ -164,15 +162,11 @@ public class TreeVisualization {
     }
 
     public void deleteLeaf() {
-        // TODO: 21.11.2022 create animation
-
         // update the current view with the drawn trees and the animation
         updateView();
     }
 
     public void changeParent() {
-        // TODO: 21.11.2022 create animation
-
         // update the current view with the drawn trees and the animation
         updateView();
     }
