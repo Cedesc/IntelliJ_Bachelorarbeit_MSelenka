@@ -34,7 +34,6 @@ public class ParentViewModel extends Application {
     private VariableVisualization variableVisualization;
     private ArrayVisualization arrayVisualization;
     private ListVisualization listVisualization;
-    // OWN TEST STUFF
     private ArrayListVisualization arrayListVisualization;
     private TreeVisualization treeVisualization;
     private int currentCommandCount;
@@ -175,7 +174,6 @@ public class ParentViewModel extends Application {
                 if (isNextCommand) arrayCommand.exeCommand();
                 else arrayCommand.backCommand();
             }
-            // OWN TEST STUFF
             case "ArrayListCommand" -> {
                 ArrayListCommand arrayListCommand = (ArrayListCommand) this.algorithm.getCommandOrder().
                         get(wantedCommandCount);
@@ -306,7 +304,6 @@ public class ParentViewModel extends Application {
         if (this.arrayVisualization != null){
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
         }
-        // OWN TEST STUFF
         if (this.arrayListVisualization != null) {
             this.arrayListVisualization.resetVisualization(executeAlgorithmController);
         }

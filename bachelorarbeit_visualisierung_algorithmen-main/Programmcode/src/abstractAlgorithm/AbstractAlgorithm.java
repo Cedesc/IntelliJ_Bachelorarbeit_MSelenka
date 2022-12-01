@@ -105,14 +105,6 @@ public abstract class AbstractAlgorithm {
         return this.arrayBuilder.createArray(this, infoArray, type , length, values);
     }
 
-    public abstract void executeAlgorithm() throws InterruptedException;
-
-
-
-
-
-    // OWN TEST STUFF
-
     public ArrayList create_ArrayList(types type, int length) {
         if (length <= 0){
             this.errorString = "Error create Array: length <= 0.\nlength should be positive and greater 0.";
@@ -137,5 +129,8 @@ public abstract class AbstractAlgorithm {
     public Tree create_Tree(types type) {
         return create_Tree(type, null);
     }
+
+
+    public abstract void executeAlgorithm() throws InterruptedException;
 
 }

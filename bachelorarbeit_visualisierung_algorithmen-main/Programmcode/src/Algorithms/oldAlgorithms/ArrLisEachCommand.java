@@ -4,7 +4,6 @@ import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.ArrayList;
 import supportClasses.types;
 
-// OWN TEST STUFF
 public class ArrLisEachCommand extends AbstractAlgorithm {
 
     @Override
