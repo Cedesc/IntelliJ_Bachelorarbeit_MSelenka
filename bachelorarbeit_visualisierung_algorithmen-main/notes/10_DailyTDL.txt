@@ -1,15 +1,17 @@
 
 
 Erledigt:
+	1.12.
 
 
 
 Daily TDL:
-	1.12.
+		- Bereit zum hochladen machen
 		- Auf Gitlab hochladen
 	2.12.
 		- Überblick verschaffen über das, was noch geschrieben werden muss
 		- TDL für nächsten Tage machen
+		- Latex ding runterladen
 	3.12.
 		- 
 	4.12.
@@ -31,6 +33,6 @@ Daily TDL:
 	12.12.
 		- 
 	13.12.
-		- 
+		- Auf Gespräch morgen vorbereiten (alle ToDo's sammeln)
 	14.12.
-		Gespräch mit Endler und Fischer
+		- Gespräch mit Endler und Fischer
