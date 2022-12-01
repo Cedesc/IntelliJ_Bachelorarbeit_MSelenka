@@ -2,12 +2,12 @@
 
 Erledigt:
 	1.12.
+		- Bereit zum hochladen machen
+		- Auf Gitlab hochladen
 
 
 
 Daily TDL:
-		- Bereit zum hochladen machen
-		- Auf Gitlab hochladen
 	2.12.
 		- Überblick verschaffen über das, was noch geschrieben werden muss
 		- TDL für nächsten Tage machen

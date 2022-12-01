@@ -1,6 +1,6 @@
 
 
-11. Auf Gitlab laden
+CHECK! 11. Auf Gitlab laden
 	CHECK! - auf Hochladen vorbereiten
 		CHECK! - "Experiment" zu "ArrayList" umändern
 			CHECK! - Anmerken, dass "ArrayList" von mir selbst aufgebaut ist
@@ -11,7 +11,7 @@
 		CHECK! - Algorithmen umbenennen oder löschen
 		CHECK! - Tree Erstellungsalgorithmen löschen? outsourcen?
 		CHECK! - richtige config datei?
-	- tatsächlich hochladen
+	CHECK! - tatsächlich hochladen
 
 
 12. Weiterschreiben
@@ -40,6 +40,12 @@
 			- Versucht mit Baum und Variable, was aber nicht geklappt hat, da ich nicht die korrekten Koordinaten gefunden habe
 	- automatisch ausgeführte get Animationen bei gewissen Befehlen einfügen (?)
 	
+
+
+20. README mit meinem Zeug erweitern
+	- Bäume hinzufügen
+	- ArrayList hinzufügen
+	- bei gitlab hochladen
 
 
 21. Bäume verbessern
