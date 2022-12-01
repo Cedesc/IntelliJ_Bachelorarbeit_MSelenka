@@ -7,6 +7,10 @@ import commands.arrayListCommands.InsertElementArrayList;
 import commands.arrayListCommands.SwapElementsByIndexArrayList;
 import supportClasses.types;
 
+/**
+ * Provides less functionality than the previously existing data structure "Array", but includes animations and leads
+ * to errors less often.
+ */
 public class ArrayList extends AbstractDatastructure {
 
     private AbstractAlgorithm algorithm;
