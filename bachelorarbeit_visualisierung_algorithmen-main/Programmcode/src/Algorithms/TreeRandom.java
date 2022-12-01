@@ -1,4 +1,4 @@
-package Algorithms.otherTreeAlgorithms;
+package Algorithms;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Tree;
@@ -10,25 +10,21 @@ import java.util.Random;
 
 public class TreeRandom extends AbstractAlgorithm {
 
+    /**
+     * Number of nodes, the final tree should have.
+     */
+    final int numberOfNodes = 50;
+
     @Override
     public void executeAlgorithm() throws InterruptedException {
 
-        int numberOfNodes = 50;
-
-        ArrayList<MyNode> nodes = new ArrayList<>(numberOfNodes);
-
-        // create nodes
-        for (int i = 0 ; i <= numberOfNodes ; i++) {
-            nodes.add(new MyNode(i));
-        }
-
         // create tree
-        Tree tree = create_Tree(types.NUMBER, nodes.get(0));
+        Tree tree = create_Tree(types.NUMBER, 0);
 
-
+        // fill tree with nodes
         for (int i = 1 ; i < numberOfNodes ; i++) {
             int randomInt = new Random().nextInt(i);
-            tree.addLeaf(randomInt, nodes.get(i));
+            tree.addLeaf(randomInt, i);
         }
 
 

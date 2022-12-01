@@ -1,4 +1,4 @@
-package Algorithms.otherTreeAlgorithms;
+package Algorithms;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Tree;
