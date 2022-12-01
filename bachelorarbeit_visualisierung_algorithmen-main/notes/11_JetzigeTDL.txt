@@ -1,11 +1,23 @@
 
 
 11. Auf Gitlab laden
+	CHECK! - auf Hochladen vorbereiten
+		CHECK! - "Experiment" zu "ArrayList" umändern
+			CHECK! - Anmerken, dass "ArrayList" von mir selbst aufgebaut ist
+		CHECK! - ToDo's entfernen
+		CHECK! - "OWN TEST STUFF" entfernen
+		CHECK! - Warnings entfernen (zb auch TYPE aus den Bäumen)
+		CHECK! - deutsches entfernen
+		CHECK! - Algorithmen umbenennen oder löschen
+		CHECK! - Tree Erstellungsalgorithmen löschen? outsourcen?
+		CHECK! - richtige config datei?
+	- tatsächlich hochladen
 
 
 12. Weiterschreiben
 	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
 	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
+	- Ausblick auf das, was noch nicht klappt?
 
 
 13. Animationen 
@@ -45,7 +57,7 @@
 
 
 
-31. Config
+CHECK! 31. Config
 	- richtige Config statt Java Klasse nutzen
 		https://stackoverflow.com/questions/16273174/how-to-read-a-configuration-file-in-java
 		
@@ -74,7 +86,7 @@ Wenn-zu-viel-Zeit-TDL:
 		- wiederholtes "if visualization != null..." in den visualization klassen (?) zu einer funktion
 
 	12. Animationen
-		- deleteExperiment klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
+		- deleteArrayList klappt nicht (wahrscheinlich auch deleteElement nicht), da die Sachen zuerst gelöscht werden, bevor die Animationen durchlaufen können
 			- Lösungsvorschlag:
 				Idee 1: das tatsächliche Löschen als atEnd Event (oder wie auch immer) der Animation aufrufen
 				Idee 2: irgendwie ein Event bauen, das beim Ende der Animation aktiviert wird und dabei das Element löscht

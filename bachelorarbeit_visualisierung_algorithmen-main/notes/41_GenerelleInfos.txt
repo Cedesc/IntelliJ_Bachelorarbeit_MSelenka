@@ -1,19 +1,5 @@
 
 
-Für später:
-    - "OWN TEST TABLE STUFF" entfernen
-        - Experiment.java, InfoExperiment.java, ExperimentVisualization.java, ExperimentBuilder.java, CreateExperiment.java, ExperimentCommand.java, ExperimentAlgorithm.java
-        - Von AbstractAlgorithm.java folgendes:
-            - public TableBuilder tableBuilder
-            - public Table create_Table(types type, int length)
-        - Von ParentViewModel.java jede Zeile, über der "OWN TEST TABLE STUFF" steht
-    - SimpleListAlgorithm.java entfernen
-    - SimpleArrayAlgortihm.java entfernen
-    - "ownTestStuff"-package löschen
-    - Kommentare auf englisch übersetzen
-    - TODOs durchgehen
-
-
 Nützliche Links:
     - Baum Theorie
         - https://en.wikipedia.org/wiki/Tree_(data_structure)#Examples_of_trees_and_non-trees
@@ -43,7 +29,7 @@ Interessante Stellen aus der Literatur:
 
 
 Infos BA:
-    - Anfang: 12.9.  Ende: 12.12.
+    - Anfang: 12.9.  Ende: 22.12. (vorher war es 12.12)
     - 30-50 Seiten lang
         - Anhang zählt nicht, eingebrachte Grafiken/Diagramme schon
     - Auf das zurückkommen, was vorher thematisiert wird (Negativbeispiel: Szenarien von Selenka)
