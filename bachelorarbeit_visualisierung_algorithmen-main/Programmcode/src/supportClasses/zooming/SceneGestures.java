@@ -4,7 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.input.ScrollEvent;
-import supportClasses.config.TempConfig;
+import supportClasses.config.ConfigReader;
 
 /**
  * Handles the parameters and the event for zooming.
@@ -18,11 +18,11 @@ public class SceneGestures {
     /**
      * Set maximum value of the scale.
      */
-    private static final double maxScale = TempConfig.MAX_ZOOM_SCALE;
+    private static final double maxScale = ConfigReader.getMaxZoomScale();
     /**
      * Set minimum value of the scale.
      */
-    private static final double minScale = TempConfig.MIN_ZOOM_SCALE;
+    private static final double minScale = ConfigReader.getMinZoomScale();
 
     /**
      * The frame in which the {@link ZoomPane} moves. Used for getting {@link Bounds} of the frame to calculate the correct

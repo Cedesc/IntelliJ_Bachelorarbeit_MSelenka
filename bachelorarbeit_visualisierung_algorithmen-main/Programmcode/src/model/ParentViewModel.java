@@ -7,7 +7,7 @@ import controller.SelectAlgorithmController;
 import datastructures.*;
 import javafx.animation.Transition;
 import javafx.scene.Node;
-import supportClasses.config.TempConfig;
+import supportClasses.config.ConfigReader;
 import visualization.*;
 import abstractAlgorithm.AbstractAlgorithm;
 import commands.arrayCommands.ArrayCommand;
@@ -38,6 +38,10 @@ public class ParentViewModel extends Application {
     private TreeVisualization treeVisualization;
     private int currentCommandCount;
 
+    private final double windowWidth = ConfigReader.getWindowWidth();
+    private final double windowHeight = ConfigReader.getWindowHeight();
+    private final boolean maximizedWindow = ConfigReader.isMaximizedWindow();
+
     // Start of the Program
     public static void main(String[] args) {
         launch(args);
@@ -54,9 +58,9 @@ public class ParentViewModel extends Application {
         Parent selectAlgorithmView = fxmlLoader.load(Objects.requireNonNull(getClass().
                         getResource("../views/SelectAlgorithmView.fxml")).openStream());
         SelectAlgorithmController selectAlgorithmController = fxmlLoader.getController();
-        Scene rootScene = new Scene(selectAlgorithmView, TempConfig.WINDOW_WIDTH, TempConfig.WINDOW_HEIGHT);
+        Scene rootScene = new Scene(selectAlgorithmView, windowWidth, windowHeight);
         primaryStage.setScene(rootScene);
-        primaryStage.setMaximized(TempConfig.MAXIMIZED_WINDOW);
+        primaryStage.setMaximized(maximizedWindow);
         selectAlgorithmController.setParentViewModel(this);
         primaryStage.show();
     }

@@ -3,7 +3,7 @@ package visualization.animationCreation;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.util.Duration;
-import supportClasses.config.TempConfig;
+import supportClasses.config.ConfigReader;
 
 /**
  * Abstract class for the seperated classes for creating animations.
@@ -24,7 +24,7 @@ public abstract class AbstractAnimationCreator {
     /**
      * Standard duration for the transitions. When changed, all runtimes of the animations are changed.
      */
-    protected final Duration standardDuration = TempConfig.STANDARD_DURATION;
+    protected final Duration standardDuration = ConfigReader.getStandardDuration();
     /**
      * Default translation. Placeholder for animations that aren't created yet.
      */

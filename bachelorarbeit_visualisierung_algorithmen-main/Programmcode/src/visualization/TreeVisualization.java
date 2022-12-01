@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import supportClasses.config.TempConfig;
+import supportClasses.config.ConfigReader;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.treeClasses.MyTree;
 import visualization.animationCreation.TreeAnimation;
@@ -34,11 +34,11 @@ public class TreeVisualization {
      */
     private final TreeAnimation treeAnimation = new TreeAnimation();
 
-    private final int xDistance = TempConfig.NODE_X_DISTANCE;
+    private final int xDistance = ConfigReader.getNodeXDistance();
 
-    private final int yDistance = TempConfig.NODE_Y_DISTANCE;
+    private final int yDistance = ConfigReader.getNodeYDistance();
 
-    private final int nodeSize = TempConfig.NODE_SIZE;
+    private final int nodeSize = ConfigReader.getNodeSize();
 
 
     // constructor

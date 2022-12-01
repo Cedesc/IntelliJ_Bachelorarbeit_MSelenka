@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import supportClasses.SaveScene;
-import supportClasses.config.TempConfig;
+import supportClasses.config.ConfigReader;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -37,12 +37,14 @@ public class SelectAlgorithmController implements Controller, Initializable {
     private ParentViewModel parentViewModel;
     private Object selectedItem;
 
+    private final String pathToAlgorithm = ConfigReader.getPathToAlgorithms();
+
 
     // creates the table list of all files of the "Algorithms" folder
     public void createList(){
 
 //        File folder = new File("src/Algorithms");
-        File folder = new File(TempConfig.PATH_TO_ALGORITHMS);
+        File folder = new File(pathToAlgorithm);
         File[] javaFiles = folder.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
