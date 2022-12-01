@@ -6,7 +6,6 @@ import datastructures.*;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 import supportClasses.CommandListColumn;
-import java.util.ArrayList;
 
 public abstract class AbstractAlgorithm {
 
@@ -14,15 +13,14 @@ public abstract class AbstractAlgorithm {
     private VariablenBuilder variablenBuilder;
     private ListBuilder listBuilder;
     private ArrayBuilder arrayBuilder;
-    // OWN TEST STUFF
-    public ExperimentBuilder experimentBuilder;
+    public ArrayListBuilder arrayListBuilder;
     public TreeBuilder treeBuilder;
-    protected ArrayList<Command> commandOrder;
+    protected java.util.ArrayList<Command> commandOrder;
     private String errorString;
 
     // constructor
     public AbstractAlgorithm(){
-        this.commandOrder = new ArrayList<Command>();
+        this.commandOrder = new java.util.ArrayList<Command>();
         this.errorString = "";
     }
 
@@ -43,8 +41,8 @@ public abstract class AbstractAlgorithm {
 
 
     // return command list in shape for visualization
-    public ArrayList<CommandListColumn> getCommandListString(){
-        ArrayList<CommandListColumn> commandStringList = new ArrayList<CommandListColumn>();
+    public java.util.ArrayList<CommandListColumn> getCommandListString(){
+        java.util.ArrayList<CommandListColumn> commandStringList = new java.util.ArrayList<CommandListColumn>();
         for (int i = 0; i < commandOrder.size(); i++){
             commandStringList.add(new CommandListColumn(commandOrder.get(i).getCommandString()));
         }
@@ -52,7 +50,7 @@ public abstract class AbstractAlgorithm {
     }
 
     // returns command list
-    public ArrayList<Command> getCommandOrder() {
+    public java.util.ArrayList<Command> getCommandOrder() {
         return commandOrder;
     }
 
@@ -115,16 +113,16 @@ public abstract class AbstractAlgorithm {
 
     // OWN TEST STUFF
 
-    public Experiment create_Experiment(types type, int length) {
+    public ArrayList create_ArrayList(types type, int length) {
         if (length <= 0){
             this.errorString = "Error create Array: length <= 0.\nlength should be positive and greater 0.";
             return null;
         }
-        if (this.experimentBuilder == null){
-            this.experimentBuilder = new ExperimentBuilder();
+        if (this.arrayListBuilder == null){
+            this.arrayListBuilder = new ArrayListBuilder();
         }
-        InfoExperiment infoExperiment = this.experimentBuilder.createInfoExperiment(this, type, length);
-        return this.experimentBuilder.createExperiment(this, infoExperiment, type , length);
+        InfoArrayList infoArrayList = this.arrayListBuilder.createInfoArrayList(this, type, length);
+        return this.arrayListBuilder.createArrayList(this, infoArrayList, type , length);
     }
 
     public Tree create_Tree(types type, Object rootValue) {

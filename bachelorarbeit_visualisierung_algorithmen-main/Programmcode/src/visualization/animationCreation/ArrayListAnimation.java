@@ -4,21 +4,22 @@ import javafx.animation.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import visualization.ArrayListVisualization;
 
 import java.util.ArrayList;
 
 /**
- * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
+ * Seperated class for creating animations for {@link ArrayListVisualization}.
  * <p>
  * <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/animation/ParallelTransition.html">Documentation</a>
  */
-public class ExperimentAnimation extends AbstractAnimationCreator {
+public class ArrayListAnimation extends AbstractAnimationCreator {
 
     /**
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
      * @return a fade-in translation
      */
-    public Transition forCreateExperiment(VBox visualizedArray) {
+    public Transition forCreateArrayList(VBox visualizedArray) {
 
         // create instant translate transition for the correct start point
         TranslateTransition instantTranslate = createInstantTranslate(visualizedArray, 100, 0);
@@ -40,7 +41,7 @@ public class ExperimentAnimation extends AbstractAnimationCreator {
      * @param visualizedArray vBox, in which are both the label and the hBox containing the values
      * @return a fade-out translation
      */
-    public Transition forDeleteExperiment(VBox visualizedArray) {
+    public Transition forDeleteArrayList(VBox visualizedArray) {
 
         // TODO: 22.09.2022 doesn't work, maybe because the array is completely removed before the animations are played
 

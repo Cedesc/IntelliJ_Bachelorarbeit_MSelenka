@@ -1,6 +1,6 @@
 package model;
 
-import commands.experimentCommands.ExperimentCommand;
+import commands.arrayListCommands.ArrayListCommand;
 import commands.treeCommands.TreeCommand;
 import controller.ExecuteAlgorithmController;
 import controller.SelectAlgorithmController;
@@ -35,7 +35,7 @@ public class ParentViewModel extends Application {
     private ArrayVisualization arrayVisualization;
     private ListVisualization listVisualization;
     // OWN TEST STUFF
-    private ExperimentVisualization experimentVisualization;
+    private ArrayListVisualization arrayListVisualization;
     private TreeVisualization treeVisualization;
     private int currentCommandCount;
 
@@ -183,12 +183,12 @@ public class ParentViewModel extends Application {
                 else arrayCommand.backCommand();
             }
             // OWN TEST STUFF
-            case "ExperimentCommand" -> {
-                ExperimentCommand experimentCommand = (ExperimentCommand) this.algorithm.getCommandOrder().
+            case "ArrayListCommand" -> {
+                ArrayListCommand arrayListCommand = (ArrayListCommand) this.algorithm.getCommandOrder().
                         get(wantedCommandCount);
-                exeExperimentCommand(experimentCommand);
-                if (isNextCommand) experimentCommand.exeCommand();
-                else experimentCommand.backCommand();
+                exeArrayListCommand(arrayListCommand);
+                if (isNextCommand) arrayListCommand.exeCommand();
+                else arrayListCommand.backCommand();
             }
             case "TreeCommand" -> {
                 TreeCommand treeCommand = (TreeCommand) this.algorithm.getCommandOrder().
@@ -201,15 +201,15 @@ public class ParentViewModel extends Application {
         }
     }
 
-    private void exeExperimentCommand(ExperimentCommand experimentCommand) {
-        InfoExperiment infoExperiment = experimentCommand.getExperiment();
-        if (infoExperiment.getExperimentVisualization() == null) {
-            if (this.experimentVisualization == null) {
-                this.experimentVisualization = new ExperimentVisualization(executeAlgorithmController);
+    private void exeArrayListCommand(ArrayListCommand arrayListCommand) {
+        InfoArrayList infoArrayList = arrayListCommand.getArrayList();
+        if (infoArrayList.getArrayListVisualization() == null) {
+            if (this.arrayListVisualization == null) {
+                this.arrayListVisualization = new ArrayListVisualization(executeAlgorithmController);
             } else {
-                this.experimentVisualization.setExecuteAlgorithmController(executeAlgorithmController);
+                this.arrayListVisualization.setExecuteAlgorithmController(executeAlgorithmController);
             }
-            infoExperiment.setExperimentVisualization(this.experimentVisualization);
+            infoArrayList.setArrayListVisualization(this.arrayListVisualization);
         }
     }
 
@@ -314,8 +314,8 @@ public class ParentViewModel extends Application {
             this.arrayVisualization.resetVisualization(executeAlgorithmController);
         }
         // OWN TEST STUFF
-        if (this.experimentVisualization != null) {
-            this.experimentVisualization.resetVisualization(executeAlgorithmController);
+        if (this.arrayListVisualization != null) {
+            this.arrayListVisualization.resetVisualization(executeAlgorithmController);
         }
         if (this.treeVisualization != null) {
             this.treeVisualization.resetVisualization(executeAlgorithmController);

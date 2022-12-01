@@ -3,61 +3,61 @@ package datastructures;
 import abstractAlgorithm.AbstractAlgorithm;
 import supportClasses.types;
 
-import visualization.ExperimentVisualization;
+import visualization.ArrayListVisualization;
 
 import java.util.ArrayList;
 
-public class InfoExperiment extends AbstractDatastructure {
+public class InfoArrayList extends AbstractDatastructure {
 
-    private ArrayList<Object> experimentContent;
+    private ArrayList<Object> arrayListContent;
     private types type;
     private int length;
-    private ExperimentVisualization experimentVisualization;
+    private ArrayListVisualization arrayListVisualization;
     private AbstractAlgorithm algorithm;
 
-    public InfoExperiment(AbstractAlgorithm abstractAlgorithm, types type, int length) {
-        this.experimentContent = new ArrayList<Object>();
+    public InfoArrayList(AbstractAlgorithm abstractAlgorithm, types type, int length) {
+        this.arrayListContent = new ArrayList<Object>();
         this.type = type;
         this.length = length;
         this.algorithm = abstractAlgorithm;
     }
 
-    public void createExperiment(int length) throws InterruptedException {
+    public void createArrayList(int length) throws InterruptedException {
         if (length < 1 && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'createArray' :\nParameter length < 1.");
         }
         this.length = length;
-        this.experimentContent = new ArrayList<Object>();
-        if (this.experimentVisualization != null){
-            this.experimentVisualization.createExperiment(this, length);
+        this.arrayListContent = new ArrayList<Object>();
+        if (this.arrayListVisualization != null){
+            this.arrayListVisualization.createArrayList(this, length);
         }
     }
 
     // deletes the array list, but not the instance of the class
-    public void deleteExperiment() throws InterruptedException {
-        this.experimentContent = null;
-        if (this.experimentVisualization != null){
-            this.experimentVisualization.deleteExperiment(this);
+    public void deleteArrayList() throws InterruptedException {
+        this.arrayListContent = null;
+        if (this.arrayListVisualization != null){
+            this.arrayListVisualization.deleteArrayList(this);
         }
     }
 
     // returns the value of the array by a given index
     public Object getElementByIndex(int index) {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'getElementByIndex' of an experiment :\nIndex out of bound.");
+            this.algorithm.setErrorString("Error function 'getElementByIndex' of an ArrayList :\nIndex out of bound.");
         }
-        return this.experimentContent.get(index);
+        return this.arrayListContent.get(index);
     }
 
     // inserts a new value with a given index to the array
     public void insertElement(int index, Object value) throws InterruptedException {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'insertElement' of an experiment :\nIndex out of bound.");
+            this.algorithm.setErrorString("Error function 'insertElement' of an ArrayList :\nIndex out of bound.");
         }
         if (sameType(value)){
-            this.experimentContent.add(index, value);
-            if (this.experimentVisualization != null){
-                this.experimentVisualization.insertElement(this, index, value);
+            this.arrayListContent.add(index, value);
+            if (this.arrayListVisualization != null){
+                this.arrayListVisualization.insertElement(this, index, value);
             }
         }
         else {
@@ -71,25 +71,25 @@ public class InfoExperiment extends AbstractDatastructure {
     // deletes the element of the array by a given index
     public void deleteElementByIndex(int index) throws InterruptedException {
         if ((index < 0 || index >= this.length) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'deleteElementByIndex' of an experiment :\nIndex out of bound.");
+            this.algorithm.setErrorString("Error function 'deleteElementByIndex' of an ArrayList :\nIndex out of bound.");
         }
-        this.experimentContent.remove(index);
-        if (this.experimentVisualization != null){
-            this.experimentVisualization.deleteElement(this, index);
+        this.arrayListContent.remove(index);
+        if (this.arrayListVisualization != null){
+            this.arrayListVisualization.deleteElement(this, index);
         }
     }
 
     public void swapElementsByIndex(int index1, int index2, Object value1, Object value2) throws InterruptedException {
         if ((index1 < 0 || index1 >= this.length)  && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'swapElementsByIndex' of an experiment :\nIndex1 out of bound.");
+            this.algorithm.setErrorString("Error function 'swapElementsByIndex' of an ArrayList :\nIndex1 out of bound.");
         }
         if ((index2 < 0 || index2 >= this.length) && this.algorithm.getErrorString().equals("")){
-            this.algorithm.setErrorString("Error function 'swapElementsByIndex' of an experiment :\nIndex2 out of bound.");
+            this.algorithm.setErrorString("Error function 'swapElementsByIndex' of an ArrayList :\nIndex2 out of bound.");
         }
-        this.experimentContent.set(index1, value2);
-        this.experimentContent.set(index2, value1);
-        if (this.experimentVisualization != null){
-            this.experimentVisualization.swapElements(this, index1, index2);
+        this.arrayListContent.set(index1, value2);
+        this.arrayListContent.set(index2, value1);
+        if (this.arrayListVisualization != null){
+            this.arrayListVisualization.swapElements(this, index1, index2);
         }
     }
 
@@ -114,22 +114,22 @@ public class InfoExperiment extends AbstractDatastructure {
 
     // returns the length of the array
     public int getSize(){
-        return this.experimentContent.size();
+        return this.arrayListContent.size();
     }
 
-    public ExperimentVisualization getExperimentVisualization() {
-        return this.experimentVisualization;
+    public ArrayListVisualization getArrayListVisualization() {
+        return this.arrayListVisualization;
     }
 
-    public void setExperimentVisualization(ExperimentVisualization experimentVisualization) {
-        this.experimentVisualization = experimentVisualization;
+    public void setArrayListVisualization(ArrayListVisualization arrayListVisualization) {
+        this.arrayListVisualization = arrayListVisualization;
     }
 
     // returns the value list of the array
     public Object[] getValueList(){
         Object[] values = new Object[getSize()];
         for (int i = 0; i < getSize(); i++){
-            values[i] = this.experimentContent.get(i);
+            values[i] = this.arrayListContent.get(i);
         }
         return values;
     }

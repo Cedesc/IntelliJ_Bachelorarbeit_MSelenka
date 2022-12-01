@@ -5,9 +5,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import visualization.ArrayListVisualization;
 
 /**
- * Seperated class for creating animations for {@link visualization.ExperimentVisualization}.
+ * Seperated class for creating animations for {@link ArrayListVisualization}.
  * <p>
  * <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/animation/ParallelTransition.html">Documentation</a>
  */
