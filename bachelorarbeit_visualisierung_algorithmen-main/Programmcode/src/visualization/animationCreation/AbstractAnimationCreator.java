@@ -20,7 +20,7 @@ public abstract class AbstractAnimationCreator {
     /**
      * Standard distance of the concrete elements in the gui.
      */
-    protected final int fieldDistance = TempConfig.FIELD_DISTANCE;
+    protected final int fieldDistance = 50;
     /**
      * Standard duration for the transitions. When changed, all runtimes of the animations are changed.
      */

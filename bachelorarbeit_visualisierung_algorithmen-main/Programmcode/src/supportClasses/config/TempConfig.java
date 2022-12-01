@@ -42,14 +42,6 @@ public class TempConfig {
 
 
     /**
-     * The distance between the elements.
-     * <p>
-     * Used in {@link visualization.animationCreation.AbstractAnimationCreator#fieldDistance}
-     */
-    public static final int FIELD_DISTANCE =
-            50;
-
-    /**
      * The standard duration of animations. Not every animation has this duration, but each is oriented to it.
      * The value must not be zero.
      * <p>
@@ -93,11 +85,5 @@ public class TempConfig {
      * Used in {@link visualization.TreeVisualization#nodeSize}
      */
     public static final int NODE_SIZE = 50;
-
-    /**
-     * For visualization of trees. The nodes are visualized as circles if it's true, otherwise as rectangles.
-     * Used in {@link visualization.TreeVisualization#circlesInsteadOfRectangles}
-     */
-    public static final boolean CIRCLES_INSTEAD_OF_RECTANGLES = true;
 
 }
