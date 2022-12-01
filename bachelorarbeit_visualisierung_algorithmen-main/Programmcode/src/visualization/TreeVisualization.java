@@ -40,8 +40,6 @@ public class TreeVisualization {
 
     private final int nodeSize = TempConfig.NODE_SIZE;
 
-    private final boolean circlesInsteadOfRectangles = TempConfig.CIRCLES_INSTEAD_OF_RECTANGLES;
-
 
     // constructor
     public TreeVisualization(ExecuteAlgorithmController executeAlgorithmController){
@@ -51,9 +49,8 @@ public class TreeVisualization {
     /**
      * Visualization for the "createTree"-Command.
      * @param infoTree InfoTree that will be created in the visualization
-     * @param root root node of the tree
      */
-    public void createTree(InfoTree infoTree, MyNode root) {
+    public void createTree(InfoTree infoTree) {
 
         this.infoTrees.add(infoTree);
 
@@ -103,7 +100,7 @@ public class TreeVisualization {
 
     }
 
-    public void changeValue(InfoTree infoTree, MyNode node, Object oldValue, Object newValue) {
+    public void changeValue(InfoTree infoTree, MyNode node, Object oldValue) {
 
         // draw all trees
         VBox allTrees = drawAllTrees();
@@ -122,7 +119,7 @@ public class TreeVisualization {
 
     }
 
-    public void getIndexByValue(InfoTree infoTree, Object value, int index) {
+    public void getIndexByValue(InfoTree infoTree, int index) {
 
         // if no node has the passed value, no animation is shown
         if (index == -1) {
@@ -144,7 +141,7 @@ public class TreeVisualization {
 
     }
 
-    public void getNodeByIndex(InfoTree infoTree, int index, MyNode searchedNode) {
+    public void getNodeByIndex(InfoTree infoTree, MyNode searchedNode) {
 
         // if no node has the passed index, no animation is shown
         if (searchedNode == null) {
@@ -166,14 +163,14 @@ public class TreeVisualization {
 
     }
 
-    public void deleteLeaf(InfoTree infoTree, MyNode leaf) {
+    public void deleteLeaf() {
         // TODO: 21.11.2022 create animation
 
         // update the current view with the drawn trees and the animation
         updateView();
     }
 
-    public void changeParent(InfoTree infoTree, MyNode childNode, MyNode newParent) {
+    public void changeParent() {
         // TODO: 21.11.2022 create animation
 
         // update the current view with the drawn trees and the animation
@@ -315,27 +312,14 @@ public class TreeVisualization {
         // frame of the node
         Shape frame;
 
-        // TODO: 09.11.2022 delete afterwards?
-        if (this.circlesInsteadOfRectangles) {
-            Circle circle = new Circle();
-            // radius is the half of the node size
-            circle.setRadius(nodeSize >> 1);
-            circle.setFill(Color.WHITE);
-            circle.setStroke(Color.BLACK);
-            circle.setStrokeType(StrokeType.OUTSIDE);
-            frame = circle;
-        }
-        else {
-            Rectangle rec = new Rectangle();
-            rec.setWidth(nodeSize);
-            rec.setHeight(nodeSize);
-            rec.setFill(Color.WHITE);
-            rec.setStroke(Color.BLACK);
-            rec.setStrokeType(StrokeType.OUTSIDE);
-            frame = rec;
-        }
+        Circle circle = new Circle();
+        // radius is the half of the node size
+        circle.setRadius(nodeSize >> 1);
+        circle.setFill(Color.WHITE);
+        circle.setStroke(Color.BLACK);
+        circle.setStrokeType(StrokeType.OUTSIDE);
+        frame = circle;
 
-        // TODO: 09.11.2022 delete afterwards
         if (false) {
             // party
             double r1 = (double) new Random().nextInt(100) / 100;
@@ -389,14 +373,6 @@ public class TreeVisualization {
      */
     private void updateView() {
         updateView(drawAllTrees(), treeAnimation.getNullTransition());
-    }
-
-    /**
-     * If no transition is given, a NullTransition will be created for calling the updateView()-function.
-     * @param allTrees VBox of all visualized trees
-     */
-    private void updateView(VBox allTrees) {
-        updateView(allTrees, treeAnimation.getNullTransition());
     }
 
     /**

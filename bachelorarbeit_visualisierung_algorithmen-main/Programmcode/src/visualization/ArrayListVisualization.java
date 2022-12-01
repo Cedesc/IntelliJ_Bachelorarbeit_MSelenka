@@ -193,9 +193,9 @@ public class ArrayListVisualization {
                 indexOfArrayList +"."+ index1));
         StackPane stackPaneElement1 = (StackPane) element1.get(0);
         ObservableList<Node> stackPaneChildren1 = stackPaneElement1.getChildren();
-        // Der TextValue wird abgespeichert
+        // save textValue
         Text textValue = (Text) stackPaneChildren1.get(1);
-        // Der momentane, später veraltete Wert, wird für später abgespeichert
+        // save current value for later
         String memValue1 = textValue.getText();
 
 

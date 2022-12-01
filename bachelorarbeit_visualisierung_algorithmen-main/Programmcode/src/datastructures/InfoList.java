@@ -4,7 +4,7 @@ import visualization.ListVisualization;
 import abstractAlgorithm.AbstractAlgorithm;
 import java.util.ArrayList;
 
-public class InfoList extends AbstractDatastructure {
+public class InfoList extends AbstractDataStructure {
     // actual list with alle elements
     // if an error occur by the user: all functions are able to set the error string of the abstract algorithm class if the string is not set yet
     // all functions will cast the corresponding list visualization function if the list visualization is set
@@ -12,11 +12,11 @@ public class InfoList extends AbstractDatastructure {
     // saves alle relevant information
     private ArrayList<Variable> list;
     private ListVisualization listVisualization;
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
 
     // constructor
     public InfoList(AbstractAlgorithm abstractAlgorithm){
-        this.list = new ArrayList<Variable>();
+        this.list = new ArrayList<>();
         this.algorithm = abstractAlgorithm;
     }
 
@@ -30,10 +30,10 @@ public class InfoList extends AbstractDatastructure {
 
     // recreates the list with all given values
     // called from the "deleteList" command in the visualization process if the command is inverted
-    public void createListWithValues(ArrayList<Variable> values) throws InterruptedException {
+    public void createListWithValues(ArrayList<Variable> values) {
         this.list = values;
         if (this.listVisualization != null){
-            this.listVisualization.createListWithValues(this, this.list);
+            this.listVisualization.createListWithValues();
         }
     }
 
@@ -43,7 +43,7 @@ public class InfoList extends AbstractDatastructure {
         if (position >= 0 && position < this.list.size()){
             this.list.get(position).setValue(value);
             if (this.listVisualization != null){
-                this.listVisualization.setElement(this, variable, value);
+                this.listVisualization.setElement();
             }
         }
         else {
@@ -105,7 +105,7 @@ public class InfoList extends AbstractDatastructure {
             this.algorithm.setErrorString("Error function 'insertElement' of a list :\nIndex is out of bound.");
         }
         if (this.listVisualization != null){
-            this.listVisualization.insertElement(this, variable, index);
+            this.listVisualization.insertElement(this);
         }
         list.add(index, variable);
     }
@@ -113,9 +113,8 @@ public class InfoList extends AbstractDatastructure {
     // returns the variable of a given value
     // returns null if not contained
     public Variable searchElement(Object value){
-        for (int i = 0; i < list.size(); i++){
-            Variable memVar = list.get(i);
-            if (memVar.getValue().equals(value)){
+        for (Variable memVar : list) {
+            if (memVar.getValue().equals(value)) {
                 return memVar;
             }
         }

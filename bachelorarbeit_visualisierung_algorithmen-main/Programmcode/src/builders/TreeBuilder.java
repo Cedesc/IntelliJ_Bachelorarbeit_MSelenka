@@ -8,8 +8,8 @@ import supportClasses.types;
 
 public class TreeBuilder {
 
-    public Tree createTree(AbstractAlgorithm abstractAlgorithm, InfoTree infoTree, types type, MyNode root){
-        return new Tree(abstractAlgorithm, infoTree, type, root);
+    public Tree createTree(AbstractAlgorithm abstractAlgorithm, InfoTree infoTree, MyNode root){
+        return new Tree(abstractAlgorithm, infoTree, root);
     }
 
     public InfoTree createInfoTree(AbstractAlgorithm abstractAlgorithm, types type, MyNode root){

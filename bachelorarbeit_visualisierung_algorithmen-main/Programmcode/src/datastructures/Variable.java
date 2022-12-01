@@ -7,7 +7,7 @@ import commands.variableCommands.GetValueVariable;
 import commands.variableCommands.SetValueVariable;
 import supportClasses.types;
 
-public class Variable extends AbstractDatastructure {
+public class Variable extends AbstractDataStructure {
     // class for the user to access
     // creates commands and organizes the access to the actual variable
 

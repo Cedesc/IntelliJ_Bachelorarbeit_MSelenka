@@ -3,13 +3,13 @@ package datastructures;
 import abstractAlgorithm.AbstractAlgorithm;
 import commands.listCommands.*;
 
-public class List extends AbstractDatastructure {
+public class List extends AbstractDataStructure {
     // class for the user to access
     // creates commands and organizes the access to the actual list
 
     // saves all relevant information
     public InfoList infoList;
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
 
     // constructor
     public List(AbstractAlgorithm AbstractAlgorithm, InfoList infoList){
@@ -92,7 +92,7 @@ public class List extends AbstractDatastructure {
     public Variable getElementByValue(Object value){
         int index = infoList.searchIndex(value);
         Variable var = this.infoList.searchElement(value);
-        GetElementByValueList GetElementByValueList = new GetElementByValueList(this.infoList, var, value, index);
+        GetElementByValueList GetElementByValueList = new GetElementByValueList(this.infoList, value, index);
         this.algorithm.appendCommandOrder(GetElementByValueList);
         return var;
     }
@@ -101,7 +101,7 @@ public class List extends AbstractDatastructure {
     // creates "getIndexByElement" command
     public int getIndexByElement(Variable variable){
         int index = infoList.getIndex(variable);
-        GetIndexByElementList GetIndexByElementList = new GetIndexByElementList(this.infoList, variable, infoList.getElementIndex(index), index);
+        GetIndexByElementList GetIndexByElementList = new GetIndexByElementList(this.infoList, infoList.getElementIndex(index), index);
         this.algorithm.appendCommandOrder(GetIndexByElementList);
         return index;
     }
@@ -110,7 +110,7 @@ public class List extends AbstractDatastructure {
     // creates "getElementByIndex" command
     public Variable getElementByIndex(int index){
         Variable memVar = this.infoList.getElement(index);
-        GetElementByIndexList GetElementByIndexList = new GetElementByIndexList(this.infoList, memVar, infoList.getElementIndex(index), index);
+        GetElementByIndexList GetElementByIndexList = new GetElementByIndexList(this.infoList, infoList.getElementIndex(index), index);
         this.algorithm.appendCommandOrder(GetElementByIndexList);
         return memVar;
     }

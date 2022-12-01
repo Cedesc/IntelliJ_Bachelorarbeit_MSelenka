@@ -1,4 +1,4 @@
-package Algorithms.oldAlgorithms;
+package Algorithms;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.List;

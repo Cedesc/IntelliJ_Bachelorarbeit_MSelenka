@@ -9,26 +9,22 @@ public class ArrayBuilder{
 
     // creates Array
     public Array createArray(AbstractAlgorithm AbstractAlgorithm, InfoArray infoArray, types typ, int length){
-        Array array = new Array(AbstractAlgorithm, infoArray, typ, length);
-        return array;
+        return new Array(AbstractAlgorithm, infoArray, typ, length);
     }
 
     // creates InfoArray
     public InfoArray createInfoArray(AbstractAlgorithm abstractAlgorithm, types type, int length){
-        InfoArray infoArray = new InfoArray(abstractAlgorithm, type, length);
-        return infoArray;
+        return new InfoArray(abstractAlgorithm, type, length);
     }
 
     // creates Array with values
     public Array createArray(AbstractAlgorithm AbstractAlgorithm, InfoArray infoArray, types typ, int length, Object[] values) throws InterruptedException {
-        Array array = new Array(AbstractAlgorithm, infoArray, typ, length, values);
-        return array;
+        return new Array(AbstractAlgorithm, infoArray, typ, length, values);
     }
 
     // creates InfoArray with values
     public InfoArray createInfoArray(AbstractAlgorithm abstractAlgorithm, types type, int length, Object[] values){
-        InfoArray infoArray = new InfoArray(abstractAlgorithm, type, length, values);
-        return infoArray;
+        return new InfoArray(abstractAlgorithm, type, length, values);
     }
 
 }

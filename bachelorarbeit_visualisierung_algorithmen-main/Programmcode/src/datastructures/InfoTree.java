@@ -7,7 +7,7 @@ import supportClasses.types;
 
 import visualization.TreeVisualization;
 
-public class InfoTree extends AbstractDatastructure {
+public class InfoTree extends AbstractDataStructure {
 
     private MyTree treeContent;
     private final types type;
@@ -29,7 +29,7 @@ public class InfoTree extends AbstractDatastructure {
 
         this.treeContent = new MyTree(root);
         if (this.treeVisualization != null) {
-            this.treeVisualization.createTree(this, root);
+            this.treeVisualization.createTree(this);
         }
     }
 
@@ -75,7 +75,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.changeValue(this, node, oldValue, newValue);
+            this.treeVisualization.changeValue(this, node, oldValue);
         }
     }
 
@@ -98,7 +98,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.deleteLeaf(this, leaf);
+            this.treeVisualization.deleteLeaf();
         }
     }
 
@@ -121,7 +121,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.changeParent(this, child, parent);
+            this.treeVisualization.changeParent();
         }
     }
 
@@ -131,7 +131,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.getIndexByValue(this, value, index);
+            this.treeVisualization.getIndexByValue(this, index);
         }
 
         return index;
@@ -143,7 +143,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.getNodeByIndex(this, index, searchedNode);
+            this.treeVisualization.getNodeByIndex(this, searchedNode);
         }
 
         return searchedNode;
@@ -161,7 +161,7 @@ public class InfoTree extends AbstractDatastructure {
 
         // visualize the command
         if (this.treeVisualization != null) {
-            this.treeVisualization.deleteLeaf(this, leaf);
+            this.treeVisualization.deleteLeaf();
         }
     }
 
@@ -183,35 +183,6 @@ public class InfoTree extends AbstractDatastructure {
         }
     }
 
-
-    /**
-     * Tests if the given value is the same as the node type.
-     * @param value given value to test
-     * @return True if they are the same, false otherwise.
-     */
-    public boolean sameType(Object value){
-        String simpleTypeName  = value.getClass().getSimpleName();
-        if (type.equals(types.NUMBER)){
-            return simpleTypeName.equals("Integer") || simpleTypeName.equals("Double") || simpleTypeName.equals("Float");
-        }
-        else if (type.equals(types.STRING)){
-            return simpleTypeName.equals("String") || simpleTypeName.equals("Character");
-        }
-        else if (type.equals(types.BOOLEAN)){
-            return simpleTypeName.equals("Boolean");
-        }
-        else {
-            System.out.println("Warning! Unknown Type!");
-            return false;
-        }
-    }
-
-    /**
-     * @return The number of levels of the tree.
-     */
-    public int getNumberOfLevels(){
-        return this.treeContent.getNumberOfLevels();
-    }
 
     public TreeVisualization getTreeVisualization() {
         return this.treeVisualization;

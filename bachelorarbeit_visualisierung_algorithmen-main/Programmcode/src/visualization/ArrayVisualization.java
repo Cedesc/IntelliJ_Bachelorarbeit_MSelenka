@@ -38,53 +38,42 @@ public class ArrayVisualization {
     }
 
     // creates an empty array with a given length
-    public void createArray(InfoArray infoArray,int length) throws InterruptedException{
-        // HBox für Darstellung des Arrays
+    public void createArray(InfoArray infoArray,int length) {
         HBox hBox = new HBox();
         hBox.setId("Elementarray"+ this.infoArrays.size());
 
         for (int i = 0; i < length; i++){
-            // Rechteck (für einzelnen Wert) erstellen
             Rectangle rectangleValue = new Rectangle();
             rectangleValue.setWidth(50);
             rectangleValue.setHeight(50);
             rectangleValue.setStroke(Color.BLACK);
             rectangleValue.setFill(Color.TRANSPARENT);
             rectangleValue.setStrokeType(StrokeType.OUTSIDE);
-            // Index als kleine Zahl rechts unten ins Rechteck schreiben
             Text indexText = new Text(i +" ");
             indexText.setId("textIndex"+this.infoArrays.size()+"."+ i);
-            // StackPane aus Rechteck (für einzelnen Wert) und Index erstellen
             StackPane stackPane = new StackPane(rectangleValue, indexText);
             stackPane.setAlignment(Pos.BOTTOM_RIGHT);
-            // Wert als Text erstellen
             Text value = new Text("");
             value.setId("textValue"+this.infoArrays.size()+"."+ i);
-            // StackPane aus Rechteck-StackPane und Wert erstellen
             StackPane stackPane2 = new StackPane(stackPane, value);
             stackPane2.setId("stackPane"+this.infoArrays.size()+"."+ i);
-            // Das zuvor erstellte Element zur HBox, also der Darstellung des Arrays, hinzufügen
             hBox.getChildren().add(stackPane2);
         }
 
-        // Label für Array erstellen
         Text label = new Text("Array "+(this.infoArrays.size()+1));
 
-        // Eine vbox mit der zuvor erstellten HBox für das Array erstellen.
-        // Diese vbox enthält zwei Elemente: das Label und das Array.
         VBox vBox = new VBox();
         vBox.getChildren().addAll(label, hBox);
 
         this.infoArrays.add(infoArray);
 
-        // Die letztendliche vbox zum layoutArray hinzufügen
         this.layoutArray.add(vBox);
 
         generateNode();
     }
 
     // visualization of creating an array with given values and length
-    public void createArrayWithValues(InfoArray infoArray, int length, Object[] values) throws InterruptedException{
+    public void createArrayWithValues(InfoArray infoArray, int length, Object[] values) {
         HBox hBox = new HBox();
         hBox.setId("Elementarray"+ this.infoArrays.size());
         for (int i = 0; i < length; i++){
@@ -129,15 +118,15 @@ public class ArrayVisualization {
 
     }
 
-    public void getIndexByValue(InfoArray infoArray) {
+    public void getIndexByValue() {
         generateNode();
     }
 
-    public void getValueByIndex(InfoArray infoArray) {
+    public void getValueByIndex() {
         generateNode();
     }
 
-    public void getSize(InfoArray infoArray) {
+    public void getSize() {
         generateNode();
     }
 
@@ -156,9 +145,6 @@ public class ArrayVisualization {
         Text textValue = (Text) stackPaneChildren1.get(1);
         String memValue1 = textValue.getText();
 
-        // new
-
-
         // get visualization text of index 2
         FilteredList<Node> element2 = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
                 indexArray +"."+ index2));
@@ -166,9 +152,6 @@ public class ArrayVisualization {
         ObservableList<Node> stackPaneChildren2 = stackPaneElement2.getChildren();
         Text textValue2 = (Text) stackPaneChildren2.get(1);
         String memValue2 = textValue2.getText();
-
-        // new
-
 
         // set both texts
         textValue.setText(memValue2);
@@ -218,45 +201,29 @@ public class ArrayVisualization {
 
     // visualization of inserting an array element with a given index and value
     public void insertElement(InfoArray infoArray, int index, Object value) throws InterruptedException{
-        // Bestimmen welcher index das infoArray in den infoArrays hat und anhand dessen an die zugehörige vbox gelangen
         // sets the Box
         int indexArray = this.infoArrays.indexOf(infoArray);
-        // Auf die Elemente zugreifen, indem man das zweite Element (also Index 1) von der vbox nimmt, da das erste
-        // Element nur das Label ist, während das zweite Element die Elemente des Arrays sind.
         VBox vBoxArray = this.layoutArray.get(indexArray);
         HBox elements = (HBox) vBoxArray.getChildren().get(1);
-        // Das eine gesuchte Element an Index "index" finden, indem alle Elemente des Arrays nach der ID gefiltert
-        // werden und dann auf das erste Element (also Index 0) der gefilterten Liste zugegriffen wird. Irgendwie
-        // unnötig direkt den Filter darauf zu nutzen, statt nur nach dem einen Element zu suchen? Oder kann man
-        // vielleicht sogar per Indexzugriff das Element finden?
         FilteredList<Node> element = elements.getChildren().filtered(s -> s.getId().equals("stackPane"+
                 indexArray +"."+ index));
         StackPane stackPaneElement = (StackPane) element.get(0);
         ObservableList<Node> stackPaneChildren = stackPaneElement.getChildren();
-        // Der TextValue wird abgespeichert
         Text textValue = (Text) stackPaneChildren.get(1);
-        // Der momentane, später veraltete Wert, wird für später abgespeichert
         String memValue = textValue.getText();
-        // Der geschriebene Wert wird überschrieben
         textValue.setText(value.toString());
 
         // iterates over the rest of the array and moves all elements one position forward
         for (int i = index+1; i < this.infoArrays.get(indexArray).getSize()+1; i++){
-            // i in Variable speichern, da Parameter für lambda expressions final sein sollten
             int finalI = i;
             ObservableList<Node> elementsHBoxChildren = elements.getChildren();
-            // Wie weiter oben wieder nach der ID mithilfe einer FilteredList suchen
             FilteredList<Node> elementNext = elementsHBoxChildren.filtered(s -> s.getId().equals("stackPane"+
                     indexArray +"."+ finalI));
             StackPane stackPaneElementNext = (StackPane) elementNext.get(0);
             ObservableList<Node> stackPaneChildrenNext = stackPaneElementNext.getChildren();
-            // Der TextValue wird abgespeichert
             textValue = (Text) stackPaneChildrenNext.get(1);
-            // Der momentane, später veraltete Wert, wird für später abgespeichert
             String memValueNext = textValue.getText();
-            // Der geschriebene Wert wird überschrieben
             textValue.setText(memValue);
-            // Der nächste Wert wird abgespeichert
             memValue = memValueNext;
         }
 

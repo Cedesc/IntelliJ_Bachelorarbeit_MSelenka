@@ -5,9 +5,9 @@ import datastructures.InfoArray;
 public class DeleteElementByIndexArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray infoArray;
-    private int index;
-    private Object value;
+    private final InfoArray infoArray;
+    private final int index;
+    private final Object value;
 
     // constructor
     public DeleteElementByIndexArray(InfoArray infoArray, int index, Object value){

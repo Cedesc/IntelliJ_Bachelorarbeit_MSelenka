@@ -1,19 +1,16 @@
 package commands.arrayCommands;
 
 import datastructures.InfoArray;
-import supportClasses.types;
 
 public class CreateArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray createdArray;
-    private types type;
-    private int length;
+    private final InfoArray createdArray;
+    private final int length;
 
     // constructor
-    public CreateArray(InfoArray infoArray, types type, int length){
+    public CreateArray(InfoArray infoArray, int length){
         this.createdArray = infoArray;
-        this.type = type;
         this.length = length;
         setCommandString("Create array");
     }

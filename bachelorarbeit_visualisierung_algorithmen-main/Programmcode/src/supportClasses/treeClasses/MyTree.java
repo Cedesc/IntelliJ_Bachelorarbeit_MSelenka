@@ -189,7 +189,7 @@ public class MyTree {
 
     /**
      * Using Depth-First-Search.
-     * @return Array of all leafs of the tree.
+     * @return ArrayList of all leafs of the tree.
      */
     public ArrayList<MyNode> getLeafsDFS() {
         return getLeafsDFS_R(root);
@@ -239,7 +239,7 @@ public class MyTree {
     /**
      * The level enumeration starts with 0.
      * @param level considered level
-     * @return Array of all nodes of the considered level.
+     * @return ArrayList of all nodes of the considered level.
      */
     public ArrayList<MyNode> getNodesOfLevel(int level) {
         return getNodesOfLevel_R(level, root);

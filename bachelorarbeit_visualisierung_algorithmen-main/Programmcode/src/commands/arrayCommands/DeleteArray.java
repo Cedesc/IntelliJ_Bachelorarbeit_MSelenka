@@ -6,10 +6,10 @@ import supportClasses.types;
 public class DeleteArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray infoArray;
-    private int length;
+    private final InfoArray infoArray;
+    private final int length;
     private Object[] values;
-    private types type;
+    private final types type;
 
     // constructor
     public DeleteArray(InfoArray infoArray) throws InterruptedException {

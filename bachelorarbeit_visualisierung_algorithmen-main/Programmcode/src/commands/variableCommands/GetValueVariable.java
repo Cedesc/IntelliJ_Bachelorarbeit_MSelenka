@@ -6,7 +6,6 @@ public class GetValueVariable extends VariableCommand {
 
     // saves all relevant data of the command by initialization
     private InfoVariable variable;
-    private Object value;
 
     // constructor
     public GetValueVariable(InfoVariable var){
@@ -15,7 +14,6 @@ public class GetValueVariable extends VariableCommand {
         }
         else {
             this.variable = var;
-            this.value = var.getValue();
             setCommandString("Get Variable value : "+var.getValue());
         }
     }

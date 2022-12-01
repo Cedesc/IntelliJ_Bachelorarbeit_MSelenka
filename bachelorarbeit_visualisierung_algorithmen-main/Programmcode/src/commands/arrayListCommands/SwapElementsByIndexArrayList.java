@@ -5,11 +5,11 @@ import datastructures.InfoArrayList;
 public class SwapElementsByIndexArrayList extends ArrayListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArrayList infoArrayList;
-    private int index1;
-    private int index2;
-    private Object value1;
-    private Object value2;
+    private final InfoArrayList infoArrayList;
+    private final int index1;
+    private final int index2;
+    private final Object value1;
+    private final Object value2;
 
     // constructor
     public SwapElementsByIndexArrayList(InfoArrayList infoArrayList, int index1, int index2, Object value1, Object value2){

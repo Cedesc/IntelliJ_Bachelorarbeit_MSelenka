@@ -10,7 +10,7 @@ import supportClasses.CommandListColumn;
 public abstract class AbstractAlgorithm {
 
     // saves alle builder, command list and error string
-    private VariablenBuilder variablenBuilder;
+    private VariableBuilder variableBuilder;
     private ListBuilder listBuilder;
     private ArrayBuilder arrayBuilder;
     public ArrayListBuilder arrayListBuilder;
@@ -20,7 +20,7 @@ public abstract class AbstractAlgorithm {
 
     // constructor
     public AbstractAlgorithm(){
-        this.commandOrder = new java.util.ArrayList<Command>();
+        this.commandOrder = new java.util.ArrayList<>();
         this.errorString = "";
     }
 
@@ -42,9 +42,9 @@ public abstract class AbstractAlgorithm {
 
     // return command list in shape for visualization
     public java.util.ArrayList<CommandListColumn> getCommandListString(){
-        java.util.ArrayList<CommandListColumn> commandStringList = new java.util.ArrayList<CommandListColumn>();
-        for (int i = 0; i < commandOrder.size(); i++){
-            commandStringList.add(new CommandListColumn(commandOrder.get(i).getCommandString()));
+        java.util.ArrayList<CommandListColumn> commandStringList = new java.util.ArrayList<>();
+        for (Command command : commandOrder) {
+            commandStringList.add(new CommandListColumn(command.getCommandString()));
         }
         return commandStringList;
     }
@@ -57,11 +57,11 @@ public abstract class AbstractAlgorithm {
 
     // create Variable Method
     public Variable create_Variable(types type){
-        if (this.variablenBuilder == null){
-            this.variablenBuilder = new VariablenBuilder();
+        if (this.variableBuilder == null){
+            this.variableBuilder = new VariableBuilder();
         }
-        InfoVariable infoVariable = this.variablenBuilder.createInfoVariable(this, type);
-        return this.variablenBuilder.createVariable(this, infoVariable, type);
+        InfoVariable infoVariable = this.variableBuilder.createInfoVariable(this, type);
+        return this.variableBuilder.createVariable(this, infoVariable, type);
     }
 
 
@@ -122,7 +122,7 @@ public abstract class AbstractAlgorithm {
             this.arrayListBuilder = new ArrayListBuilder();
         }
         InfoArrayList infoArrayList = this.arrayListBuilder.createInfoArrayList(this, type, length);
-        return this.arrayListBuilder.createArrayList(this, infoArrayList, type , length);
+        return this.arrayListBuilder.createArrayList(this, infoArrayList, length);
     }
 
     public Tree create_Tree(types type, Object rootValue) {
@@ -131,7 +131,7 @@ public abstract class AbstractAlgorithm {
         }
         MyNode root = new MyNode(0, rootValue);
         InfoTree infoTree = this.treeBuilder.createInfoTree(this, type, root);
-        return this.treeBuilder.createTree(this, infoTree, type, root);
+        return this.treeBuilder.createTree(this, infoTree, root);
     }
 
     public Tree create_Tree(types type) {

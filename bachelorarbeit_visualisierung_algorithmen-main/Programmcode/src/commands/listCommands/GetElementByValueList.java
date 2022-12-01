@@ -6,17 +6,11 @@ import datastructures.Variable;
 public class GetElementByValueList extends ListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoList infoList;
-    private Variable variable;
-    private Object value;
-    private int index;
+    private final InfoList infoList;
 
     // constructor
-    public GetElementByValueList(InfoList infoList, Variable variable, Object value, int index){
+    public GetElementByValueList(InfoList infoList, Object value, int index){
         this.infoList = infoList;
-        this.variable = variable;
-        this.value = value;
-        this.index = index;
         setCommandString("Delete list element by value:  value = "+value+"  index = "+index);
     }
 

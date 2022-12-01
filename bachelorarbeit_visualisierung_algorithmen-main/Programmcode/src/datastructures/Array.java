@@ -4,23 +4,19 @@ import abstractAlgorithm.AbstractAlgorithm;
 import commands.arrayCommands.*;
 import supportClasses.types;
 
-public class Array extends AbstractDatastructure {
+public class Array extends AbstractDataStructure {
     // class for the user to access
     // creates commands and organizes the access to the actual array
 
     // saves all relevant information
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
     public InfoArray infoArray;
-    private types typ;
-    private int length;
 
     // constructor without initial values
     public Array(AbstractAlgorithm AbstractAlgorithm, InfoArray infoArray, types typ, int length){
         this.algorithm = AbstractAlgorithm;
         this.infoArray = infoArray;
-        this.typ = typ;
-        this.length = length;
-        CreateArray CreateArray = new CreateArray(this.infoArray, typ, length);
+        CreateArray CreateArray = new CreateArray(this.infoArray, length);
         this.algorithm.appendCommandOrder(CreateArray);
     }
 
@@ -28,8 +24,6 @@ public class Array extends AbstractDatastructure {
     public Array(AbstractAlgorithm AbstractAlgorithm, InfoArray infoArray, types typ, int length, Object[] values) throws InterruptedException {
         this.algorithm = AbstractAlgorithm;
         this.infoArray = infoArray;
-        this.typ = typ;
-        this.length = length;
         CreateArrayWithValues CreateArrayWithValues = new CreateArrayWithValues(this.infoArray, typ, length, values);
         this.infoArray.createArrayWithValues(typ, length, values);
         this.algorithm.appendCommandOrder(CreateArrayWithValues);

@@ -1,4 +1,4 @@
-package Algorithms;
+package Algorithms.otherTreeAlgorithms;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Tree;
@@ -11,8 +11,6 @@ public class TreeReallySimple extends AbstractAlgorithm {
 
         // create tree
         Tree tree = create_Tree(types.NUMBER, 10);
-
-//        Tree tree2 = create_Tree(types.NUMBER, 20);
 
         // add leafs to tree on level 1
         tree.addLeaf(0, 1);

@@ -5,13 +5,11 @@ import datastructures.InfoArray;
 public class GetSizeArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray infoArray;
-    private int size;
+    private final InfoArray infoArray;
 
     // constructor
     public GetSizeArray(InfoArray infoArray, int size){
         this.infoArray = infoArray;
-        this.size = size;
         setCommandString("Get array size:  size = "+size);
     }
 

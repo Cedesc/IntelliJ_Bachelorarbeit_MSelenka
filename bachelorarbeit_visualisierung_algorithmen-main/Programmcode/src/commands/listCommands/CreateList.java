@@ -5,8 +5,8 @@ import datastructures.InfoList;
 public class CreateList extends ListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoList oldList;
-    private InfoList newList;
+    private final InfoList oldList;
+    private final InfoList newList;
 
     // constructor
     public CreateList(InfoList list){

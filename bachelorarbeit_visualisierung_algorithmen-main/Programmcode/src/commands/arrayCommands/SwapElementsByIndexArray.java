@@ -5,11 +5,11 @@ import datastructures.InfoArray;
 public class SwapElementsByIndexArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray infoArray;
-    private int index1;
-    private int index2;
-    private Object value1;
-    private Object value2;
+    private final InfoArray infoArray;
+    private final int index1;
+    private final int index2;
+    private final Object value1;
+    private final Object value2;
 
     // constructor
     public SwapElementsByIndexArray(InfoArray infoArray, int index1, int index2, Object value1, Object value2){

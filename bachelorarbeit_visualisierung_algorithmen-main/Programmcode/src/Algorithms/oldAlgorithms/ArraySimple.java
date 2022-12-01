@@ -8,7 +8,6 @@ public class ArraySimple extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
-        // funktioniert komplett, sowohl forwards als auch backwards
         Array array1 = create_Array(types.NUMBER, 15);
 
         array1.insertElementAtStart(1);

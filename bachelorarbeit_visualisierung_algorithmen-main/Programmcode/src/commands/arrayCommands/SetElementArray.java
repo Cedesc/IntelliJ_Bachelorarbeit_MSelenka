@@ -5,10 +5,10 @@ import datastructures.InfoArray;
 public class SetElementArray extends ArrayCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArray infoArray;
-    private int index;
-    private Object newValue;
-    private Object oldValue;
+    private final InfoArray infoArray;
+    private final int index;
+    private final Object newValue;
+    private final Object oldValue;
 
     // constructor
     public SetElementArray(InfoArray infoArray, int index, Object value){
@@ -19,7 +19,7 @@ public class SetElementArray extends ArrayCommand {
         setCommandString("Set array element by index:  index = "+index+"  old value = "+oldValue+"  new value = "+newValue);
     }
 
-    // execute command during visualzation
+    // execute command during visualization
     public void exeCommand() throws InterruptedException {
         this.infoArray.setElement(index, newValue);
     }

@@ -6,17 +6,15 @@ import supportClasses.types;
 public class DeleteArrayList extends ArrayListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArrayList infoArrayList;
-    private int length;
+    private final InfoArrayList infoArrayList;
+    private final int length;
     private Object[] values;
-    private types type;
 
     // constructor
     public DeleteArrayList(InfoArrayList infoArrayList) throws InterruptedException {
         this.length = infoArrayList.getSize();
         infoArrayList.deleteArrayList();
         this.infoArrayList = infoArrayList;
-        this.type = infoArrayList.getType();
         setCommandString("Delete array");
     }
 

@@ -4,15 +4,15 @@ import visualization.VariableVisualization;
 import abstractAlgorithm.AbstractAlgorithm;
 import supportClasses.types;
 
-public class InfoVariable extends AbstractDatastructure {
+public class InfoVariable extends AbstractDataStructure {
     // actual variable with the value and type
     // if an error occur by the user: all functions are able to set the error string of the abstract algorithm class if the string is not set yet
     // all functions will cast the corresponding variable visualization function if the variable visualization is set
 
     // saves all relevant information
-    private types variableTyp;
+    private final types variableTyp;
     private Object value;
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
     private VariableVisualization variableVisualization;
 
     // constructor

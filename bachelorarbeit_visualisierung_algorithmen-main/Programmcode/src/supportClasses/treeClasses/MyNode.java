@@ -1,6 +1,7 @@
 package supportClasses.treeClasses;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Representation of a node in {@link MyTree}.
@@ -190,10 +191,7 @@ public class MyNode {
     }
 
     public void setValue(Object value) {
-        if (value == null)
-            this.value = new ValueNullObject();
-        else
-            this.value = value;
+        this.value = Objects.requireNonNullElseGet(value, ValueNullObject::new);
     }
 
     public void setX(int x) {

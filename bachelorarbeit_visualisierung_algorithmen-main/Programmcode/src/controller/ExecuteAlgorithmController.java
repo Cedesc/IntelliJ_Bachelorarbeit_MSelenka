@@ -89,7 +89,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
     }
 
     // interaction with the "terminate" button, shuts down the application
-    public void terminateButton(ActionEvent actionEvent) {
+    public void terminateButton() {
         // resets animation
         this.endAnimationAndDeleteOnFinishedEvents();
 
@@ -99,7 +99,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "change algorithm" button
     // next view is the select algorithm view
-    public void changeAlgorithmButton(ActionEvent actionEvent) throws IOException {
+    public void changeAlgorithmButton() throws IOException {
         // resets animation
         this.endAnimationAndDeleteOnFinishedEvents();
 
@@ -119,13 +119,13 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "step back" button
     // calls the parent to invert the last command of the algorithm
-    public void stepBackButton(ActionEvent actionEvent) throws InterruptedException {
+    public void stepBackButton() throws InterruptedException {
         this.parentViewModel.exePreviousCommand();
     }
 
     // interaction with the "step forward" button
     // calls the parent to execute the next command of the algorithm
-    public void stepForwardButton(ActionEvent actionEvent) throws InterruptedException {
+    public void stepForwardButton() throws InterruptedException {
         this.parentViewModel.exeNextCommand();
     }
 
@@ -144,7 +144,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "repeat visualization" button
     // resets all visualization and repeats it with the same parameter
-    public void repeatButton(ActionEvent actionEvent) throws IOException, InterruptedException {
+    public void repeatButton() throws IOException, InterruptedException {
         // resets animation
         this.endAnimationAndDeleteOnFinishedEvents();
 
@@ -167,7 +167,7 @@ public class ExecuteAlgorithmController implements Controller, Initializable {
 
     // interaction with the "change visualization" button
     // next view is the select algorithm visualization view
-    public void changeVisualizationButton(ActionEvent actionEvent) throws IOException {
+    public void changeVisualizationButton() throws IOException {
         // resets animation
         this.endAnimationAndDeleteOnFinishedEvents();
 

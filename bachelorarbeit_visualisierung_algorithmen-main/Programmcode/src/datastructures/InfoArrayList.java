@@ -7,34 +7,34 @@ import visualization.ArrayListVisualization;
 
 import java.util.ArrayList;
 
-public class InfoArrayList extends AbstractDatastructure {
+public class InfoArrayList extends AbstractDataStructure {
 
     private ArrayList<Object> arrayListContent;
-    private types type;
+    private final types type;
     private int length;
     private ArrayListVisualization arrayListVisualization;
-    private AbstractAlgorithm algorithm;
+    private final AbstractAlgorithm algorithm;
 
     public InfoArrayList(AbstractAlgorithm abstractAlgorithm, types type, int length) {
-        this.arrayListContent = new ArrayList<Object>();
+        this.arrayListContent = new ArrayList<>();
         this.type = type;
         this.length = length;
         this.algorithm = abstractAlgorithm;
     }
 
-    public void createArrayList(int length) throws InterruptedException {
+    public void createArrayList(int length) {
         if (length < 1 && this.algorithm.getErrorString().equals("")){
             this.algorithm.setErrorString("Error function 'createArray' :\nParameter length < 1.");
         }
         this.length = length;
-        this.arrayListContent = new ArrayList<Object>();
+        this.arrayListContent = new ArrayList<>();
         if (this.arrayListVisualization != null){
             this.arrayListVisualization.createArrayList(this, length);
         }
     }
 
     // deletes the array list, but not the instance of the class
-    public void deleteArrayList() throws InterruptedException {
+    public void deleteArrayList() {
         this.arrayListContent = null;
         if (this.arrayListVisualization != null){
             this.arrayListVisualization.deleteArrayList(this);

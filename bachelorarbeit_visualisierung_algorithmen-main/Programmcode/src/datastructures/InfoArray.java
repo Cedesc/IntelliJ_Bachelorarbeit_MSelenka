@@ -6,7 +6,7 @@ import supportClasses.types;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class InfoArray extends AbstractDatastructure {
+public class InfoArray extends AbstractDataStructure {
     // actual array with alle elements
     // if an error occur by the user: all functions are able to set the error string of the abstract algorithm class if the string is not set yet
     // all functions will cast the corresponding array visualization function if the array visualization is set
@@ -99,7 +99,7 @@ public class InfoArray extends AbstractDatastructure {
         }
 
         if (this.arrayVisualization != null){
-            this.arrayVisualization.getIndexByValue(this);
+            this.arrayVisualization.getIndexByValue();
         }
 
         return this.array.get(index);
@@ -124,7 +124,7 @@ public class InfoArray extends AbstractDatastructure {
         }
 
         if (this.arrayVisualization != null){
-            this.arrayVisualization.getValueByIndex(this);
+            this.arrayVisualization.getValueByIndex();
         }
 
         return index;
@@ -133,7 +133,7 @@ public class InfoArray extends AbstractDatastructure {
     // returns the length of the array
     public int getSize(){
         if (this.arrayVisualization != null){
-            this.arrayVisualization.getSize(this);
+            this.arrayVisualization.getSize();
         }
         return this.array.size();
     }

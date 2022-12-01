@@ -1,4 +1,4 @@
-package Algorithms;
+package Algorithms.otherTreeAlgorithms;
 
 import abstractAlgorithm.AbstractAlgorithm;
 import datastructures.Tree;
@@ -6,14 +6,14 @@ import supportClasses.treeClasses.MyNode;
 import supportClasses.types;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class TreeRandom extends AbstractAlgorithm {
+public class TreeCompleteK_nary extends AbstractAlgorithm {
 
     @Override
     public void executeAlgorithm() throws InterruptedException {
 
-        int numberOfNodes = 50;
+        int k = 5;
+        int numberOfNodes = 500;
 
         ArrayList<MyNode> nodes = new ArrayList<>(numberOfNodes);
 
@@ -25,12 +25,10 @@ public class TreeRandom extends AbstractAlgorithm {
         // create tree
         Tree tree = create_Tree(types.NUMBER, nodes.get(0));
 
-
-        for (int i = 1 ; i < numberOfNodes ; i++) {
-            int randomInt = new Random().nextInt(i);
-            tree.addLeaf(randomInt, nodes.get(i));
+        // add nodes as children
+        for (int i = 0 ; i < numberOfNodes ; i++) {
+            tree.addLeaf(i / k, nodes.get(i + 1));
         }
-
 
     }
 }

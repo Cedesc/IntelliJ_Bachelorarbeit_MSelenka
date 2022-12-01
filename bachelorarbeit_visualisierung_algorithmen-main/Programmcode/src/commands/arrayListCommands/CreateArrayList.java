@@ -1,17 +1,14 @@
 package commands.arrayListCommands;
 
 import datastructures.InfoArrayList;
-import supportClasses.types;
 
 public class CreateArrayList extends ArrayListCommand {
 
-    private InfoArrayList createdArrayList;
-    private types type;
-    private int length;
+    private final InfoArrayList createdArrayList;
+    private final int length;
 
-    public CreateArrayList(InfoArrayList infoArrayList, types type, int length){
+    public CreateArrayList(InfoArrayList infoArrayList, int length){
         this.createdArrayList = infoArrayList;
-        this.type = type;
         this.length = length;
         setCommandString("Create ArrayList");
     }

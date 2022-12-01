@@ -83,13 +83,6 @@ public class TreeAnimation extends AbstractAnimationCreator {
 
     }
 
-    public Transition forMoveNodeToAnotherParent() {
-        // 1. fade out the edge
-        // 2. move the node to the right position
-        // 3. fade in the edge
-        return null;
-    }
-
     public Transition forGetNodeByIndex(StackPane visualizedNode) {
 
         // create scale transition

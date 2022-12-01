@@ -6,16 +6,14 @@ import supportClasses.types;
 public class CreateVariable extends VariableCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoVariable variable;
-    private Object initialValue;
-    private types typ;
+    private final InfoVariable variable;
+    private final Object initialValue;
 
     // constructor
     public CreateVariable(InfoVariable variable, types typ, Object value){
         this.variable = variable;
-        this.typ = typ;
         this.initialValue = value;
-        setCommandString("Create variable:  value = "+value+"  type = "+this.typ);
+        setCommandString("Create variable:  value = "+value+"  type = "+ typ);
     }
 
     public void exeCommand() throws InterruptedException {

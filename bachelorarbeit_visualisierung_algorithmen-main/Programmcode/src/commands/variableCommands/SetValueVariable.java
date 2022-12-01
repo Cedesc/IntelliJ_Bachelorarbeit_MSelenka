@@ -5,9 +5,9 @@ import datastructures.InfoVariable;
 public class SetValueVariable extends VariableCommand {
 
     // saves all relevant data of the command by initialization
-    private Object newValue;
-    private Object oldValue;
-    private InfoVariable variable;
+    private final Object newValue;
+    private final Object oldValue;
+    private final InfoVariable variable;
 
     //constructor
     public SetValueVariable(InfoVariable var, Object newValue, Object oldValue){

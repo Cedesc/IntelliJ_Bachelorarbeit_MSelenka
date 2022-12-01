@@ -7,14 +7,12 @@ import supportClasses.types;
 
 public class ArrayListBuilder {
 
-    public ArrayList createArrayList(AbstractAlgorithm AbstractAlgorithm, InfoArrayList infoArrayList, types typ, int length){
-        ArrayList arrayList = new ArrayList(AbstractAlgorithm, infoArrayList, typ, length);
-        return arrayList;
+    public ArrayList createArrayList(AbstractAlgorithm AbstractAlgorithm, InfoArrayList infoArrayList, int length){
+        return new ArrayList(AbstractAlgorithm, infoArrayList, length);
     }
 
     public InfoArrayList createInfoArrayList(AbstractAlgorithm abstractAlgorithm, types type, int length){
-        InfoArrayList infoArrayList = new InfoArrayList(abstractAlgorithm, type, length);
-        return infoArrayList;
+        return new InfoArrayList(abstractAlgorithm, type, length);
     }
 
 }

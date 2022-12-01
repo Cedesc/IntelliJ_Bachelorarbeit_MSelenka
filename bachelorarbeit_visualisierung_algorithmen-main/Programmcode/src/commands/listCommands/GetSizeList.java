@@ -5,14 +5,12 @@ import datastructures.InfoList;
 public class GetSizeList extends ListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoList infoList;
-    private int size;
+    private final InfoList infoList;
 
     // constructor
     public GetSizeList(InfoList infoList, int size){
         this.infoList = infoList;
-        this.size = size;
-        setCommandString("Get list size: "+this.size);
+        setCommandString("Get list size: "+ size);
     }
 
     // executes command during visualization

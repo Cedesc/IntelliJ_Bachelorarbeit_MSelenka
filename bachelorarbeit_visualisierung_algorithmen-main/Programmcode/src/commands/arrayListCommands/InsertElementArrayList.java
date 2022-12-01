@@ -5,9 +5,9 @@ import datastructures.InfoArrayList;
 public class InsertElementArrayList extends ArrayListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoArrayList infoArrayList;
-    private int index;
-    private Object value;
+    private final InfoArrayList infoArrayList;
+    private final int index;
+    private final Object value;
 
     // constructor
     public InsertElementArrayList(InfoArrayList infoArrayList, int index, Object value){

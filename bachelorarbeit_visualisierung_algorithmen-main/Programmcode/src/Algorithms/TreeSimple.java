@@ -63,14 +63,6 @@ public class TreeSimple extends AbstractAlgorithm {
         int c = tree.getIndexByValue(2);
         int d = tree.getIndexByValue(13);
         int e = tree.getIndexByValue(1);
-        if (a != 0 || b != -1 || c != 2 || d != 13 || e != -1) {
-            System.out.println(
-                    "a = 0 = " + a + "\n" +
-                    "b = 0 = " + b + "\n" +
-                    "c = 2 = " + c + "\n" +
-                    "d = 13 = " + d + "\n" +
-                    "e = -1 = " + e + "\n");
-        }
 
     }
 

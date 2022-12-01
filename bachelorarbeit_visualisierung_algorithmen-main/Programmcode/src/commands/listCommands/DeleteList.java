@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class DeleteList extends ListCommand {
 
     // saves all relevant data of the command by initialization
-    private InfoList list;
-    private ArrayList<Variable> values = new ArrayList<Variable>();
+    private final InfoList list;
+    private final ArrayList<Variable> values;
 
     // constructor
     public DeleteList(InfoList list){

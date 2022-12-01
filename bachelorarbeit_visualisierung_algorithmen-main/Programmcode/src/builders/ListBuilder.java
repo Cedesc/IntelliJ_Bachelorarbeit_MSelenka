@@ -8,8 +8,7 @@ public class ListBuilder {
 
     // creates List
     public List createList(AbstractAlgorithm AbstractAlgorithm, InfoList infoList){
-        List list = new List(AbstractAlgorithm, infoList);
-        return list;
+        return new List(AbstractAlgorithm, infoList);
     }
 
     // creates InfoList

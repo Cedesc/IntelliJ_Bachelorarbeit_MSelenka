@@ -4,21 +4,18 @@ import abstractAlgorithm.AbstractAlgorithm;
 import commands.treeCommands.*;
 import supportClasses.treeClasses.MyNode;
 import supportClasses.treeClasses.MyTree;
-import supportClasses.types;
 
-public class Tree extends AbstractDatastructure {
+public class Tree extends AbstractDataStructure {
 
     private final AbstractAlgorithm algorithm;
     public InfoTree infoTree;
-    private types type;
-    private MyTree tree;
+    private final MyTree tree;
 
-    public Tree(AbstractAlgorithm abstractAlgorithm, InfoTree infoTree, types type, MyNode root){
+    public Tree(AbstractAlgorithm abstractAlgorithm, InfoTree infoTree, MyNode root){
         this.algorithm = abstractAlgorithm;
         this.infoTree = infoTree;
-        this.type = type;
         this.tree = new MyTree(root);
-        CreateTree createTree = new CreateTree(this.infoTree, type, root);
+        CreateTree createTree = new CreateTree(this.infoTree, root);
         this.algorithm.appendCommandOrder(createTree);
     }
 
