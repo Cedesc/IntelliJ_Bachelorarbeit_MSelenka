@@ -3,10 +3,6 @@
 Teil der Gliederung:
 	3 Algorithmen auf Bäumen 14 (4)
 		3.1 Atomare Operationen 14 (3)
-			3.1.1 Einfügen
-			3.1.2 Löschen
-			3.1.3 Rotieren
-			3.1.4 ...
 		3.2 (spezifische) Algorithmen auf Bäumen 17 (1)
 
 
@@ -33,18 +29,7 @@ Was ich reinbringen kann (Mit 22K abgleichen, da vermischt):
 
 
 
-3 Algorithmen auf Bäumen
-		
-3.? Verschiedene Speicherungsweisen von Bäumen
-	
-	// Arten Bäume abzuspeichern
-	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder innere Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten auch seinen "rechten Bruder", also seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein Kind an eine Wurzel mit mehreren Kindern angehangen werden, so nimmt man den Kindknoten, dessen "rechter Bruder" den Wert "null" hat, somit den Kindknoten, der am weitestens rechts liegt, und setzt "rechter Bruder" auf den angehangenen Knoten. 
-	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. So kann man bspw. wie in [3] veranschaulicht einen (fast) vollständigen binären Baum als ein Array abspeichern.
-	
-	[1] Cormen Seite 246-248
-	[2] Cormen Seite 248
-	[3] Cormen Seite 153 / 154
-	
+Kapitel:
 
 3.1 Atomare Operationen
 	
@@ -63,3 +48,13 @@ Was ich reinbringen kann (Mit 22K abgleichen, da vermischt):
 	{Brauch ich ne Quelle?}
 	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
 
+
+3.? Verschiedene Speicherungsweisen von Bäumen
+	
+	// Arten Bäume abzuspeichern
+	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder innere Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten auch seinen "rechten Bruder", also seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein Kind an eine Wurzel mit mehreren Kindern angehangen werden, so nimmt man den Kindknoten, dessen "rechter Bruder" den Wert "null" hat, somit den Kindknoten, der am weitestens rechts liegt, und setzt "rechter Bruder" auf den angehangenen Knoten. 
+	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. So kann man bspw. wie in [3] veranschaulicht einen (fast) vollständigen binären Baum als ein Array abspeichern.
+	
+	[1] Cormen Seite 246-248
+	[2] Cormen Seite 248
+	[3] Cormen Seite 153 / 154

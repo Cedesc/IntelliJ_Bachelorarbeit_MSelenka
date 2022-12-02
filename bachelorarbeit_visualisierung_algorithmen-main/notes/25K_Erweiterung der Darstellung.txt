@@ -3,9 +3,7 @@
 Teil der Gliederung:
 	5 Erweiterung der Darstellung 20 (5)
 		5.1 Animationen an den bestehenden Datenstrukturen 20 (4)
-			5.1.1 Variablen
-			5.1.2 Array
-			5.1.3 Liste
+			5.1.1 ArrayList
 		5.2 Zoomen & Bewegen 24 (1) mehr
 
 
@@ -39,8 +37,10 @@ Kapitel:
 	
 
 
-5.1.2 Arraylists
+5.1.1 ArrayList
 	{noch mehr Animationen eingebaut? Deletions? Get?}
+	{erklären warum jetzt arraylist zusätzlich zu array (abgespecktere variante)}
+	{deletions macht probleme und get ist noch nicht drin}
 
 	// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und auch drauf eingehen, was das für eine Besserung für den Nutzer ist
 	Bei den Arraylists habe ich drei verschiedene Animationen eingebaut. Eine für das Erstellen einer Arraylists, eine für das Einfügen eines Elements und eine für das Tauschen zweier Elemente innerhalb einer Arraylist. 

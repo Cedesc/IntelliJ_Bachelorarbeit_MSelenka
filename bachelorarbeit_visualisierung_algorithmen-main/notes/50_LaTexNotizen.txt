@@ -34,4 +34,21 @@ Figure:
 
 Anführungszeichen:
 	\glqq Das hier\grqq{} ist ein Satz
+	
+
+Zitieren:
+	\cite{Jurgens:2000,Jurgens:1995,Miede:2011,Kohm:2011,Apple:keynote:2010,Apple:numbers:2010,Apple:pages:2010}
+
+
+Tabelle:
+	\begin{table}[h]
+		\begin{tabularx}{\textwidth}{X | X | X}
+			%\hline
+			Alpha		& Beta			& Gamma			\\ \hline
+			0			& 1				& 2				\\ \hline
+			3			& 4				& 5				\\ %\hline
+		\end{tabularx}
+		\label{tab:table1}
+		\caption{This is a caption text.}
+	\end{table}
 

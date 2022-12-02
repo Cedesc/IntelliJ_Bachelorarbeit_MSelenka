@@ -13,12 +13,6 @@ Was ich reinbringen kann:
 
 Kapitel:
 
-4 Darstellung Baum im Programm
-
-
-4.? Animationen der atomaren Funktionen
-
-
 4.? "Algorithmen" zum testen
 	
 	// TreeCompleteK_nary und TreeRandom
