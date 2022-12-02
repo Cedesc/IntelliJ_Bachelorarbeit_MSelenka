@@ -7,11 +7,11 @@ Erledigt:
 	2.12.
 		- Latex ding runterladen
 		- Überblick verschaffen über das, was noch geschrieben werden muss
+		- TDL für nächsten Tage machen
 
 
 
 Daily TDL:
-		- TDL für nächsten Tage machen
 	3.12.
 		- einen Punkt abarbeiten (1.)
 	4.12.
