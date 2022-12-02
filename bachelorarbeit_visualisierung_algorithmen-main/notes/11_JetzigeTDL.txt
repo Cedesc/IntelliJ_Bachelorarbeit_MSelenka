@@ -1,73 +1,28 @@
 
 
 12. Weiterschreiben
-	- richtige Ordnung reinbringen
-		- Kapitel
-			! 1 Einleitung
-				!_ 1.1 Motivation 
-					- Animationen machen dem Nutzer die Sachen leichter verständlich
-					- Bäume sind voll wichtig und so
-				~_ 1.2 Vergleich von bestehenden ähnlichen Programmen 
-				~_ 1.3 Zielsetzung 
-				!_ 1.4 Strukturierung des Inhalts der Arbeit 
-			! 2 Datenstruktur: Baum 
-				!X 2.1 Terminologie 
-				!X 2.2 Definition 
-				~_ 2.3 Eigenschaften 
-					~_ 2.3.1 Vorteile
-					~_ 2.3.2 Nachteile
-				~_ 2.4 Verschiedene Arten von Bäumen 
-					~_ 2.4.1 Binärbaum
-					~_ 2.4.2 Rot-Schwarz-Bäume ? (weil es besonders ist, dass die gefärbt sind)
-					~_ 2.4.3 ...
-				!_ 2.5 Zusammenfassung 
-			~ 3 Algorithmen auf Bäumen 
-				~X 3.1 Verschiedene Speicherungsweisen von Bäumen
-				!X 3.2 Atomare Operationen 
-				~_ 3.3 (spezifische) Algorithmen auf Bäumen
-			! 4 Darstellung Baum im Programm 
-				!_ 4.1 Problematik 
-				~_ 4.2 balanciert vs unbalanciert 
-				~X 4.? "Algorithmen" zum testen
-				!X 4.? Algorithmus zum Baum Visualisieren
-				!X 4.? Erweiterbarkeit der Bäume
-				!X 4.? Atomare Funktionen und ihre Animationen + Art der Abspeicherung
-			! 5 Erweiterung der Darstellung 
-				!X 5.1 Animationen an den bestehenden Datenstrukturen 
-					!X 5.1.1 ArrayList
-				!X 5.2 Zoomen & Bewegen 
-				!_ 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
-			! 6 Implementierung 
-				~_ 6.1 Ablauf und Organisation
-				!X 6.2 Änderungen am bestehenden Code
-					~_ - Auch auf Bugfixes im bestehenden Code eingehen
-				~_ 6.3 Herausforderungen und Umsetzung 
-				!_ 6.4 Zusammenfassung 
-				!X 6.? Erweiterbarkeit um weitere Datenstruktur
-			! 7 Zusammenfassung
-				!_ 7.1 Fazit
-				!_ 7.2 Ausblick
-		X : bereits geschriebenes
-		_ : noch nicht geschriebenes
-		~ : unsichere sachen
-		! : sichere sachen
 	- noch sicher reinbringen
 		[ ] 1.1 Motivation 
 		[ ] 4.1 Problematik 
 		[ ] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[ ] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
+		[ ] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
 		[ ] Ausblick auf das, was noch nicht klappt (siehe 7.2)
 		[ ] generell das ganze ordnen und in Form bringen 
 		[ ] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 	- noch vielleicht reinbringen
 		[ ] UML Diagramm für Bäume ?
+			- zu beachten: man muss auch was dazu schreiben
 		[ ] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
+			- wohin?
+			- zu beachten: man muss auch was dazu schreiben
 		[ ] In Einleitung "Ergebnisse" ?
 	- geschriebenes überarbeiten
 	- Gedanken zu Kapitel...
 		... 1: Nochmal bei anderen BAs schauen, was da so steht
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam
 		... 3: In anderem Kapitel eingliedern? Eventuell in 2, damit das in der Mitte noch mehr gefüllt ist? Oder ganz streichen?
+		... 7: Nochmal bei anderen BAs schauen, was da so steht
 
 
 
