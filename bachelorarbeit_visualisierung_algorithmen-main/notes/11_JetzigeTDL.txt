@@ -2,7 +2,7 @@
 
 12. Weiterschreiben
 	- noch sicher reinbringen
-		[ ] 1.1 Motivation 
+		[X] 1.1 Motivation 
 		[ ] 4.1 Problematik 
 		[ ] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[ ] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
@@ -11,6 +11,9 @@
 		[ ] generell das ganze ordnen und in Form bringen 
 		[ ] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 	- noch vielleicht reinbringen
+		- "Animationen für zukünftige Datenstrukturen" schon drin? oder noch schreiben?
+		- "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
+		[ ] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
 		[ ] UML Diagramm für Bäume ?
 			- zu beachten: man muss auch was dazu schreiben
 		[ ] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
@@ -18,6 +21,8 @@
 			- zu beachten: man muss auch was dazu schreiben
 		[ ] In Einleitung "Ergebnisse" ?
 	- geschriebenes überarbeiten
+	- ToDos: 
+		- Gendern (zB Nutzer*in) ? Wenn ja, wie?
 	- Gedanken zu Kapitel...
 		... 1: Nochmal bei anderen BAs schauen, was da so steht
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam

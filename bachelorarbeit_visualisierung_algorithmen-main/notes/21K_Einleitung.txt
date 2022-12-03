@@ -15,5 +15,32 @@ Was ich reinbringen kann:
 Kapitel:
 
 1.1 Motivation
-	{- Animationen machen dem Nutzer die Sachen leichter verständlich}
-	{- Bäume sind voll wichtig und so}
+	{dieses "vorige" Version streichen, lieber "bisheriger?", weils in dem Zeitpunkt von vor der arbeit geschrieben wurde?}
+
+	// Was bisher geschah
+	In der vorigen Version bot die Anwendung die Möglichkeit Arrays, Listen und Variablen zu visualisieren. Jedoch existieren noch einige weitere Datenstrukturen, für die eine Visualisierung interessant wäre. 
+	
+	// Bäume sind voll toll
+	Eine dieser ist die Datenstruktur Baum. Dank mehrerer nützlicher Eigenschaften, werden Bäume sehr häufig angewandt, wie zB beim Verwalten von Daten oder für effizientes Suchen eines Elements. Mit zahlreichen Unterarten, wie B-Bäumen oder Rot-Schwarz-Bäumen, gehören Bäume zu den wichtigsten Datenstrukturen in der Informatik. 
+	
+	// Bäume visualisieren ist toll
+	Allerdings können sich komplexere Operationen auf Bäumen für Programmieranfänger als schwierig nachzuvollziehen herausstellen, da sich durch die, im Vergleich zu Arrays und Listen, komplexere Struktur mehr zu beachtende Eigenschaften ergeben. Durch die Wichtigkeit von Bäumen, bietet es sich an die Anwendung um diese zu erweitern. Eine Visualisierung von Bäumen und darauf ausgeführten Algorithmen kann die Verständlichkeit enorm erhöhen.
+	
+	// Was ohne Animationen Kacke ist
+	Allerdings würde ein Schwachpunkt der Anwendnung durch das Visualisieren von Bäumen sehr offensichtlich. Dieser Schwachpunkt ist das in manchen Fällen schwierige Nachvollziehen einer getätigten Operation in der gezeigten Datenstruktur. Durch die Zwangsläufige visuelle Neujustierung des Baums bei fast allen Operationen, kann es sich z.B. schnell als schwer herausstellen in der visualisierten Datenstruktur zu erkennen welcher Knoten an welchen anderen Knoten angehangen wurde. Dieses Problem war bereits in der vorherigen Version vorhanden, wenn ein Element mitten in einem Array hinzugefügt oder gelöscht wird, allerdings wird es durch die strukturell komplexeren Bäume deutlich größer. 
+	
+	// Animationen yey
+	Eine Lösung hierfür schaffen Animationen. Ein gut nachvollziehbarer visueller Übergang zwischen der Ausgangslage und dem Endbild kann die komplette Verständlichkeit deutlich erhöhen. Bereits bei einfachen Operationen kann der Nutzer die gezeigte Änderung deutlich einfacher und angenehmer aufnehmen. 
+	
+	// Was ohne Zoomen und Bewegen Kacke ist
+	Eine weitere Problematik ist, dass bei zahlreichen oder größeren Instanzen der Datenstrukturen, die Datenstrukturen über das gezeigte Fenster hinausragen. Dabei ist es in der vorigen Version nicht möglich die Datenstrukturen, die teilweise oder komplett außerhalb des gezeigten Fensters liegen, anzeigen zu lassen. Besonders mit dem Hinzufügen von Bäumen, die schon bei wenigen Elementen beträchtlichen Platz einnehmen müssen, kommt dieses Problem häufiger vor. 
+	
+	// Zoomen und Bewegen yey
+	Die Möglichkeit das Bild zu zoomen und die gezeigten Datenstrukturen zu bewegen löst dieses Problem. Damit ist es sowohl möglich Gesamtlage oder einzelne genaue Bereiche im Auge zu behalten. 
+
+
+	// Wad mach isch denn doa
+	Nachfolgend wird die Erweiterung der Anwendung um Bäume, Animationen und dem Zoomen und Bewegen im Fenster behandelt. 
+	
+	// Ziele
+	Das Zoomen und Bewegen sollen parallel und ohne gegenseitige Beeinflussung mit den Animationen möglich sein, sodass der Nutzer auch während laufender Animationen frei durch das Bild navigieren kann ohne dabei Fehler hervorzurufen. Animationen sollten für den Nutzer leicht nachvollziehbar gestaltet sein. Weiterhin sollten Animationen für zukünftig hinzugefügte Datenstrukturen implementierbar sein, ohne dass andere, von der Datenstruktur unabhängige, Dateien dafür verändert werden müssen. Bei den Bäumen ist zu beachten, dass diese eine allgemeine Variante darstellen sollen. Das bedeutet, dass es zukünftig möglich sein soll spezielle Bäume hinzuzufügen, die auf diesen Bäumen aufbauen. Das bedeutet konkret, dass spezielle Bäume von dem allgemeinen Baum erben können sollen um so das Hinzufügen zu erleichtern und die Bäume einheitlich zu halten.
