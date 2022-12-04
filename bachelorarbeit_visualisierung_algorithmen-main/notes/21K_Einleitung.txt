@@ -14,6 +14,9 @@ Was ich reinbringen kann:
 
 Kapitel:
 
+1 Einleitung
+	{"Dabei wurde versucht möglichst am Vorgänger anzuknüpfen, sodass der Code kohärent erscheint" (was bei Visualisierung, siehe "4.? Algorithmus zum Baum visualisieren" nicht geklappt hat, wird aber auch dort erklärt warum). Außerdem möglichst Kapselung, wie das zoomen, bewegen und die animationen, sodass die außerhalb der visualisierungsklassen stehen (zwar braucht jetzt wegen der complete visualization alles eine animation, in fällen von noch-keiner-vorhanden wird aber eine "leere animation" erzeugt.) - Das alles hier rein oder woanders? Steht es schon woanders?}
+
 1.1 Motivation
 	{dieses "vorige" Version streichen, lieber "bisheriger?", weils in dem Zeitpunkt von vor der arbeit geschrieben wurde?}
 

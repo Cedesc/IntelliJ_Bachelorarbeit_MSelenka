@@ -20,11 +20,24 @@ Kapitel:
 	Um Bäume mit beliebiger Anzahl Knoten leicht zu erzeugen, welche sich besonders für das Austesten des Programms oder geschriebener Algorithmen eignen, wurden zwei Algorithmen hinzugefügt. Der erste ist "TreeCompleteK_nary" mit dem es ermöglicht wird einen k-nären Baum, heißt ein Baum mit Grad k, mit n Knoten zu erzeugen. Dabei kann k, so wie die Anzahl Knoten n, beliebig bestimmt werden. "TreeRandom" ist der zweite Algorithmus. Dieser erstellt einen zufälligen Baum mit n Knoten.
 
 
+4.1 Problematik
+	{"4.? Algorithmus zum Baum visualisieren" direkt hiernach dranklatschen}
+	{Code zeigen??}
+	{sequenzdiagramme zum erklären der alten und der neuen methode?}
+
+	// Wie es bisher gemacht wurde
+	In den Klassen zur Visualisierung der Datenstrukturen Array, Liste und Variable wird mit "layoutXY", wobei XY hier für eine der vorhandenen Datenstrukturen steht, die derzeit gezeigten visuellen Darstellungen der Instanzen einer Datenstruktur abgespeichert. Soll nun bspw. ein Element hinzugefügt werden, muss dies zweimal passieren: Zunächst wird es in der dahinterliegenden Datenstruktur hinzugefügt und danach wird der zugehörige Index in "layoutXY", heißt der visuellen Darstellung, gesucht, das Element dort eingefügt und nachfolgende Elemente ggf. um einen Index nach hinten verschoben. Eine Alternative zu diesem Vorgehen wäre eine Methode, die mit einem einheitlichen Vorgehen eine visuelle Darstellung einer Datenstruktur von Grund auf neu erstellt. Der Vorteil der erstgennanten Methode gegenüber dieser Alternative ist, dass nur die visualisierten Teile, die sich tatsächlich ändern, betrachtet werden. Was man als großen Nachteil allerdings ausmachen kann ist die deutlich erhöhte Menge an Code, der für die individuellen Befehle zum korrekten Visualisieren benötigt wird. Dies ist nötig, da jeder Befehl, wie bereits zuvor erklärt, auch jedes mal auf "layoutXY" angewandt werden muss. Je mehr individueller Code je Befehl geschrieben werden muss, desto wahrscheinlicher können Fehler auftreten und desto schlechter ist die Erweiterbarkeit der Klasse. 
+	
+	// Warum das bei Bäumen kacke ist
+	Bei den nun hinzugefügten Bäumen ist dieser Nachteil deutlich schwerwiegender. Werden einzelne Elemente hinzugefügt oder gelöscht, muss oft ein großer Teil, wenn nicht sogar der komplette Baum, etwas verschoben werden, damit die visuelle Darstellung weiterhin einheitlich und natürlich aussieht und es nicht zu grafischen Fehlern wie Überlappungen der Elemente kommen kann. Auf der anderen Seite ist der genannte Vorteil nur noch kaum spürbar, da, wie beschrieben, bei den meisten Operationen ein großer Teil vom Baum betroffen ist. Insgesamt führt dies dazu, dass eine Methode, die mit einheitlichem Vorgehen den kompletten Baum als visuelle Darstellung neu erstellt, deutlich sinnvoller erscheint. Auch wenn die Methode selbst nicht wenig Codezeilen benötigt, reduziert sich hier so im gesamten die Anzahl der Zeilen erheblich, da die meisten individuellen Visualisierungsbefehle nur aus dieser einheitlichen Methode bestehen. Insbesondere die Erweiterbarkeit des Programmcodes profitiert davon.
+	
+	// Und jetzt gehts um den Algorithmus zum erstellen der visuellen Darstellung eines Baums
+	Allerdings bleibt die Aufgabe solch ein einheitliches Vorgehen zu entwerfen. Während die visuelle Darstellung eines Arrays sehr intuitiv umgesetzt werden, da die Elemente schlichtweg auf einer Ebene mit festen Abständen zueinander gelegen sein können, ist dies bei einem Baum nicht so offensichtlich. Intuitive Ansätze wären einen Baum schlicht von oben oder von unten zu zeichnen. Würde, ohne die anderen Knoten zunächst zu betrachten, bei der Wurzel angesetzt werden, gäbe es keinerlei Anhaltspunkte wo diese auf der horizontalen Achse gelegen sein sollte. Sollen zuerst alle Knoten der untersten Ebene gesetzt werden, so wäre dies eine gute Methode, wenn alle oder beinahe alle Blätter auf der untersten Ebene lägen, ansonsten besteht jedoch ein ähnliches Problem. Da wir für allgemeine Bäume nicht von einem solchen Spezialfall ausgehen können, muss ein anderes Vorgehen entworfen werden. Das letztlich entworfene und verwendete Vorgehen wird in folgendem Kapitel behandelt. 
+
+
 4.? Algorithmus zum Baum visualisieren 
 	{Ebenen und Knotennamen in die Grafiken zeichnen?}
-	
-	// Anders als bei den anderen Visualisierungsklassen
-	Die Art der Visualisierung der Bäume ist strukturell anders implementiert als die für die anderen bisherigen Datenstrukturen. Bei den anderen Datenstrukturen werden je nach Befehl die betroffenen Elemente als javafx Knoten erstellt, geändert oder gelöscht und dies in einer Liste von javafx Elementen gespeichert, welche letztlich zusammen gezeichnet werden. Stattdessen gibt es nun einen Befehl um die Koordinaten jedes Knotens zu bestimmen und einen weiteren Befehl, der den vorhandenen Baum mit abgespeicherten Koordinaten in den Knoten, zeichnen kann. Diese Umstellung war nötig, um einen übersichtlichen Baum zu erhalten, da sich die räumliche Anordnung der Knoten des Baums deutlich häufiger als bei den bestehenden Datenstrukturen wie Arrays der Fall ist. 
+	{code einfügen?? denk eher nicht}
 	
 	// Wie die Positionen der Knoten bestimmt werden
 	Die Funktion zur Berechnung der Positionen der Knoten geht folgendermaßen vor:

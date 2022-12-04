@@ -3,7 +3,7 @@
 12. Weiterschreiben
 	- noch sicher reinbringen
 		[X] 1.1 Motivation 
-		[ ] 4.1 Problematik 
+		[X] 4.1 Problematik 
 		[ ] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[ ] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 		[ ] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
@@ -13,14 +13,17 @@
 	- noch vielleicht reinbringen
 		- "Animationen für zukünftige Datenstrukturen" schon drin? oder noch schreiben?
 		- "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
+		- meine offene todo list an punkten, die man im code ändern könnte als "Aussicht"? Also das automatische justieren mit animationen und das delete problem (heißt reihenfolge der visualisierungsaufrufe)
 		[ ] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
 		[ ] UML Diagramm für Bäume ?
 			- zu beachten: man muss auch was dazu schreiben
 		[ ] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
-			- wohin?
+			- wohin? (4.1?)
 			- zu beachten: man muss auch was dazu schreiben
 		[ ] In Einleitung "Ergebnisse" ?
 	- geschriebenes überarbeiten
+	- verlinkungen zu nutzungen der terminologie begriffe
+	- überall "man" mit "wir" ersetzen
 	- ToDos: 
 		- Gendern (zB Nutzer*in) ? Wenn ja, wie?
 	- Gedanken zu Kapitel...
@@ -28,6 +31,8 @@
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam
 		... 3: In anderem Kapitel eingliedern? Eventuell in 2, damit das in der Mitte noch mehr gefüllt ist? Oder ganz streichen?
 		... 7: Nochmal bei anderen BAs schauen, was da so steht
+	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
+		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
 
 
 
