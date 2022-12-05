@@ -255,3 +255,104 @@ LIST :
                 Parameter :
                 Return : length of the list as an positive integer as type int.
                 Description : Returns the size/length of the list as an positive integer.
+
+
+ARRAYLIST :
+
+            - create _ArrayList(types type, int length) :
+                    Parameter :
+                            type : types-type (see datastructures)
+                            length : positive integer, which represent the length of the arraylist
+                    Return : ArrayList-Object
+                    Description : Created with the direct function call in your algorithm class: 
+                                  ArrayList arrayList = create_ArrayList(type, length);
+                                  It will return an Object of the ArrayList type. Therefor save it in an corresponding 
+                                  named object.
+
+            - insertElement(int index, Object value) :
+                    Parameter :
+                            index : positive integer, which represents the index position of the accessed arrayList element
+                            value : value of type Object, which will be inserted to the arrayList
+                    Return :
+                    Description : Inserts the new 'value' to the arrayList at position 'index'.
+
+            - insertElementAtStart(Object value) :
+                    Parameter :
+                            value : value of type Object, which will be inserted into the arraylist
+                    Return :
+                    Description : Inserts the new 'value' Object at the beginning of the arraylist.
+
+            - insertElementAtEnd(Object value) :
+                    Parameter :
+                            value : value of type Object, which will be inserted into the arraylist
+                    Return :
+                    Description : Inserts the new 'value' Object at the end of the arraylist.
+
+            - deleteArrayList() :
+                    Parameter :
+                    Return :
+                    Description : Deletes all Elements of the arraylist and the arraylist itself.
+
+            - swapElements(int index1, int index2) :
+                    Parameter :
+                            index1 : positive integer, which represents the index position of the first accessed array element
+                            index2 : positive integer, which represents the index position of the second accessed array element
+                    Return :
+                    Description : Changes the values of the array elements with index 'index1' and 'index2'.
+
+
+TREE :
+
+            - create _Tree(types type, Object rootValue) :
+                    Parameter :
+                            type : types-type (see datastructures)
+                            rootValue : value of type Object, which will be the value of the new root
+                    Return : Tree-Object
+                    Description : Created with the direct function call in your algorithm class: 
+                                  Tree tree = create_Tree(type, Object);
+
+            - addLeaf(int parentIndex, Object leafValue) :
+                Parameter :
+                            parentIndex : positive integer, which will be the index of the parent node of the new child node
+                            leafValue : Object, that will be the value of the new created leaf node
+                Return :
+                Description : Add a new leaf with the value 'leafValue' as a child to the node with index 'parentIndex'.
+            
+            - addLeaf(int parentIndex) :
+                Parameter :
+                            parentIndex : positive integer, which will be the index of the parent node of the new child node
+                Return :
+                Description : Add a new leaf without a value as a child to the node with index 'parentIndex'.
+
+            - changeValue(int nodeIndex, Object newValue) :
+                Parameter :
+                            nodeIndex : positive integer, which is the index of the node, whose value will be changed
+                            newValue : Object, that will be the new value of the selected node
+                Return :
+                Description : Change the value of the node with index 'nodeIndex' to the value 'newValue'.
+
+            - deleteLeaf(int leafIndex) :
+                Parameter :
+                            leafIndex : positive integer, which is the index of the node, that will be deleted
+                Return :
+                Description : Delete the leaf with the value 'leafIndex'.
+
+            - changeParent(int childIndex, int newParentIndex) :
+                Parameter :
+                            childIndex : positive integer, which is the index of the node assigned to another parent
+                            newParentIndex : positive integer, which is the new parent node index
+                Return :
+                Description : Change the parent of the node with index 'childIndex' to the node with index 'newParentIndex'.
+
+            - getIndexByValue(Object value) :
+                Parameter :
+                            value : Object, that will be searched for
+                Return : index of a node with the searched value
+                Description : Returns the index of a node with value 'value'. If two or more nodes has the value 'value', 
+                              only the first node that is found will be returned. The function uses depth-first-search. 
+
+            - getNodeByIndex(int index) :
+                Parameter :
+                            index : positive integer, which is the index, that will be searched for
+                Return : node with the searched index
+                Description : Returns the node with the index 'index'. The function uses depth-first-search.
