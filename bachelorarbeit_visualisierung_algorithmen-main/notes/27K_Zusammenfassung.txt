@@ -13,3 +13,21 @@ Was ich reinbringen kann:
 Kapitel:
 
 7.2 Ausblick
+	{Animationen für weitere Datenstrukturen}
+	{Spezielle Bäume hinzufügen}
+	{
+	Probleme:
+	(Oder in ein neues Kapitel namens "Bestehende Probleme" in zb der "Implementierung"?)
+		- Animationen von Delete Operationen
+			- Erklärung: 
+				Derzeit "erst visuelle Elemente erzeugen und platzieren, dann animation abpsielen" was problematisch für delete operations ist, da man nichts animieren kann, was nicht mehr da ist. Einfach diese Reihenfolge umdrehen würde zwar bei delete das problem lösen, bei insert Operationen aber ein analoges Problem hervorrufen. Ein erster Gedanke wäre, dass man individuell aussuchen könnte, welche reihenfolge verwendet wird. Allerdings könnte es so bei möglichen zukünftigen komplexeren operationen zu schwierigkeiten kommen, die bestenfalls sowohl vorm anpassen der visuellen elemente, als auch danach eine animation hätten. 
+			- Lösungsvorschlag: 
+				Beides möglich machen, also dass zb zwei Animationen übergeben werden können, eine für vor der visualisierung, eine für danach. 
+		- automatisches justieren des Baums
+			- Erklärung:
+				Momentan wird, wenn zb ein Knoten zum Baum hinzugefügt wird, der Knoten animiert hinzugefügt, der Rest des Baums aber auf einen Schlag positioniert. Das ist ziemlich unschön... Besser wäre, wenn sich alles zurecht schiebt. 
+			- Lösungsvorschlag:
+				Man könnte alle Koordinaten der Knoten übergeben und dann für jeden Knoten translations animationen von vorherigem Punkt zum jetzigen Punkt erstellen. 
+					Side fact: Könnte man dann auch mit vorherig genannten "Reihenfolge Visualisierung Und Animation" verbinden. Bedeutet erste Animation ist das zurechtschieben und zweite Animation ist das hinzufügen des elements.
+				Problem dabei blieben allerdings die Kanten. Man könnte diese zwar zuvor ausblenden und nach dem bewegen wieder einblenden, allerdings könnte das schlecht aussehen
+	}

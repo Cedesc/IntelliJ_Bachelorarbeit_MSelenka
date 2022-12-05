@@ -71,22 +71,47 @@ Kapitel:
 	Die Grundidee von der konkreten Implementierung dieser Funktionalitäten stammt von hier {https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer}. Für das Programm passend abgeändert und teils erweitert, findet man den Code in vier Klassen aufgeteilt unter "supportClasses.zooming" und "supportClasses.moving". Beim Zoomen wird durch eine Bindung von den Scale-Properties des Fensters der komplette Inhalt vergrößert oder auch verkleinert. Beim Bewegen kann man sogar einzelne Inhalte des Fenster auswählen, welche bewegt werden sollen. Bislang entspricht dieser ausgewählte Inhalt allerdings immer dem kompletten Inhalt des Fensters. Die Möglichkeit nur einzelne Elemente des Fensters zu bewegen, könnte allerdings eventuell für spätere Funktionalitäten genutzt werden. 
 	
 	// Weitere Ideen
-	Neben der Möglichkeit nur ausgewählte Elemente des Fensters zu bewegen, gibt es noch weitere Funktionalitäten, die in diesem Kontext gut umsetzbar wären. Sehr leicht einzubringen wäre die Möglichkeit auf einen Click den Zoom oder auch die Translation auf den Standard zurückzusetzen. Das wäre jeweils durch eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, möglich. Bei der Bewegung könnte sich da als Schwierigkeit herausstellen, dass auch die Animationen von den Translationen gebrauch machen, jedoch müsste man, um diesen Konflikt zu umgehen, schlichtweg die durch die Maus getätigten Bewegungen abspeichern und diesen Wert letztlich zurücksetzen anstatt der kompletten Translation des Elements.
+	Neben der Möglichkeit nur ausgewählte Elemente des Fensters zu bewegen, gibt es noch weitere Funktionalitäten, die in diesem Kontext gut umsetzbar wären. Sehr leicht einzubringen wäre die Möglichkeit auf einen Click den Zoom oder auch die Translation auf den Standard zurückzusetzen. Das wäre jeweils durch eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, möglich. Bei der Bewegung könnte sich da als Schwierigkeit herausstellen, da auch die Animationen von den Translationen gebrauch machen, jedoch müsste man, um diesen Konflikt zu umgehen, schlichtweg die durch die Maus getätigten Bewegungen abspeichern und diesen Wert letztlich zurücksetzen anstatt der kompletten Translation des Elements.
 
 
 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
-	{UML Diagramm im Vergleich zu zuvor erstellen um zu sehen, wo in der Architektur ich was geändert habe}
-	{Sequenzdiagramm für Visualisierung wegen Animationen? Und wegen complete visualization}
-	{Richtige UML-Diagramme aus Demo-Diagrammen machen. Dabei ggf alt und neu in eins packen, wobei das alte durchgestrichen und rot ist und das neue in grün}
-	{Sequenz:
-		XYVisualization
-			=> wie die animation aufgerufen wird
-		controller.ExecuteAlgorithmController
-			=> initialize (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen)
-			   updateVisualization
-		ParentViewModel
-			=> startCompleteVisualization
+	{
+		UML Diagramm überarbeiten. 
+		1. Richtige Abhängigkeiten setzen, also die Pfeile, die sind bislang nur provisorisch gleich gesetzt
+		2. "ArrayVisualization", "ArrayAnimation", "-arrayAnimation", etc. in "ArrayList..." umbenennen
+		3. Ggf altes durchgestrichen rot und das neue grün machen
+		4. Verbindung von SceneGestures und NodeGestures zu ExecuteAlgorithmController? Also eine einfache Relation im Sinne von "hat damit zu tun"
+		5. fieldDistance von AbstractAnimationCreator löschen
+		6. playOneByOne aus TransitionChain löschen (und auch calculateDelaysForCompleteVisualization und startAnimation?)
+		7. ZoomPane myScale privat machen?
+		8. generell prüfen ob alles so noch up to date ist und keine funktionen zb umbenannt wurden
+		9. neu platzieren, sodass man schöne farbige rechtecke machen kann um die einzelnen features bewegung, zoomen und animation abzugrenzen?
 	}
-	{Sequenz-Diagramm in der BA von MS ist auf Seite 36-39}
-	{Was zum UML Diagramm schreiben}
+	{
+		Sequenzdiagramm für Visualisierung wegen Animationen? Und wegen complete visualization?
+		Sequenz:
+			XYVisualization
+				=> wie die animation aufgerufen wird
+			controller.ExecuteAlgorithmController
+				=> initialize (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen)
+				   updateVisualization
+			ParentViewModel
+				=> startCompleteVisualization
+		Sequenz-Diagramm in der BA von MS ist auf Seite 36-39
+	}
 
+	{Richtige Abbildungsbezeichnungen reinpacken}
+	{Richtiger Kapitelverweis reinpacken und auch verlinken (zu dem wie man eine Datenstruktur hinzufügt}
+	// Generelles
+	Um die strukturellen Erweiterungen und Änderungen der Anwendungsarchitektur übersichtlich aufzuzeigen, liegt mit {Abbildung 1?} ein UML-Diagramm vor. Dieses stellt nicht das komplette Programm dar, sondern nur die neu erstellten Klassen im Bereich der Animationen, Zoomen und Bewegung. Dabei ist alles, was neu hinzugefügt wurde grün markiert und alles, was bereits zuvor vorhanden war, in schwarz. Damit einzelne Klassen nicht durch zu viele, für diese Darstellung unwichtiger, Attribute und Methoden unübersichtlich werden, wurden einige dieser ausgelassen. Dies ist in den Klassen ParentViewModel, ExecuteAlgorithmController und der JavaFX-Klasse Pane der Fall. Abgesehen von der hinzugefügten Datenstruktur Baum und einer Klasse um die Config-Datei einzulesen, hat der Rest der Anwendung ein, im Vergleich zur vorigen Version, unverändertes UML-Diagramm. Auf die genannten Ausnahmen wird später eingegangen.
+
+	{ab erster Erwähnung von "initialize" Code davon zeigen ums schöner zu haben? Oder Sequenzdiagramm?}
+	// Bewegen
+	Für das Feature der Bewegung innerhalb des Anzeigefensters wurden die Klassen DragContext und NodeGestures hinzugefügt. Dabei ist DragContext nur dafür da um für den Prozess wichtige Werte abzuspeichern, während NodeGestures für das korrekte Ausführen der Bewegung verantwortlich ist. Dafür wird lediglich in initialize() von ExecuteAlgorithmController eine Instanz von NodeGestures erstellt und zum zugehörigen Anzeigefenster als Events hinzugefügt. 
+	// Zoomen
+	Das Zoomen wird von ZoomPane und SceneGestures ermöglicht. ZoomPane dient dafür als sichtbares Fenster, weshalb es auch von der JavaFX-Klasse Pane erbt. Der tatsächliche Vorgang wird allerdings von der Klasse SceneGestures übernommen. Von SceneGestures wird, ähnlich wie bei NodeGestures, in der initialize-Methode von ExecuteAlgorithmController eine Instanz erstellt und zum Fenster, in dem das ZoomPane liegt, als Event hinzugefügt. 
+	// Animation
+	Etwas aufwendigere Änderungen waren für die hinzuzufügenden Animationen notwendig. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Außerdem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen, u.a. das zuweisen einer "leeren Animation", die schlichtweg wartet, bis die Animationszeit vorüber ist. Insgesamt sorgt Abkapselung der Animationen von der Visualisierung für eine besser Lesbarkeit und Wartbarkeit des Programmcodes. Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain, welche für leichtere Verwaltung mehrerer Animationen sorgt. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain vorzeitig zum Animationsende springen.
+
+	// Klassen, die nicht vom UML Diagramm gezeigt werden
+	Es wurden noch weitere Klassen zum Programmcode hinzugefügt, die nicht in {Abbildung 1?} vorzufinden sind. Zum einen ConfigReader, welche allerdings einzig das Auslesen der zusätzlich hinzugefügten Config-Datei übernimmt. Zudem wurden mehrere Dateien zu Bäumen hinzugefügt, wobei es sich hier, zumindest bezüglich der Softwarearchitektur, einfach um eine weitere Datenstruktur handelt. Wie im Allgemeinen eine neue Datenstruktur hinzugefügt werden kann, wie auch die Bäume hinzugefügt wurden, wird in {Kapitel XY} erklärt.	

@@ -4,16 +4,20 @@
 	- noch sicher reinbringen
 		[X] 1.1 Motivation 
 		[X] 4.1 Problematik 
-		[ ] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
+		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[ ] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
 		[ ] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
 		[ ] Ausblick auf das, was noch nicht klappt (siehe 7.2)
 		[ ] generell das ganze ordnen und in Form bringen 
 		[ ] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 	- noch vielleicht reinbringen
+		- UML Diagramm für "Wie man eine Datenstruktur hinzufügt" erstellen?
+		- erwähn ich irgendwo die config datei inklusive configReader? (außer als randnotiz bei "5.9 Neue Struktur der Architektur")
+		- In "5.? Neue Struktur der Architektur" erwähnen, dass das von stackoverflow kommt? Oder steht das schon woanders? Zb vorher in Kapitel 5?
+		- Auf "leere Animationen" in kleinem Unterkapitel eingehen? Und überall, wo das Wort vorkommt, auf dieses Kapitel verweisen / verlinken?
+		- dieses ".java" aus "5.9 Neue Struktur der Architektur" entfernen?
 		- "Animationen für zukünftige Datenstrukturen" schon drin? oder noch schreiben?
 		- "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
-		- meine offene todo list an punkten, die man im code ändern könnte als "Aussicht"? Also das automatische justieren mit animationen und das delete problem (heißt reihenfolge der visualisierungsaufrufe)
 		[ ] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
 		[ ] UML Diagramm für Bäume ?
 			- zu beachten: man muss auch was dazu schreiben

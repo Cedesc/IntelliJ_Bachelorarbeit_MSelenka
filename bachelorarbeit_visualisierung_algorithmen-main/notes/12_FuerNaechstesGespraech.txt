@@ -1,7 +1,7 @@
 
 
 Ziele:
-	- auf gitlab laden
+	CHECK! - auf gitlab laden
 	- weiterschreiben und richtig ordnen
 	(- restliche Animationen (zuerst animation, dann draw))
 	(- automatisches justieren des ganzen baums (?) - wäre „wichtig“ für changeParent)
