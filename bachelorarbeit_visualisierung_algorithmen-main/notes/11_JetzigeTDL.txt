@@ -37,7 +37,10 @@
 		... 7: Nochmal bei anderen BAs schauen, was da so steht
 	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
 		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
-	- readme datei erweitern um bäume und arraylists
+	CHECK! - readme datei erweitern um bäume und arraylists
+	- neuere version bei gitlab hochladen (gibt für meine "Punktzählung" einen halben punkt)
+		- readme datei 
+		- TreeDemo
 
 
 
