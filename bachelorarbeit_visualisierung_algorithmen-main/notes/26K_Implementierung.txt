@@ -46,20 +46,38 @@ Kapitel:
 	
 	// Hinzuzufügende Dateien
 	Um aufzuzeigen, wie eine weitere Datenstruktur grundsätzlich hinzuzufügen ist, wird nachfolgend erläutert, welche Dateien man hinzufügen sollte und welche Dateien angepasst werden müssen. Angenommen man fügt eine Datenstruktur mit dem Namen "XY" hinzu und hält die vorhandenen Namenskonventionen für die Dateien bei, so müsste man folgende Dateien hinzufügen:
-			datastructures.XY.java, 
-			datastructures.InfoXY.java, 
-			builders.XYBuilder.java,
-			commands.XYCommands.XYCommand.java, 
-			visualization.XYVisualization.java,
+			datastructures.XY, 
+			datastructures.InfoXY, 
+			builders.XYBuilder,
+			commands.XYCommands.XYCommand, 
+			visualization.XYVisualization,
 			visualization.animationCreation.XYAnimation,
-			Algorithms.XYAlgorithm.java
-	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "XYCommand.java" erbt, im Ordner "commands" erstellt werden muss. So könnte noch, analog zu den bereits vorhandenen Datenstrukturen, bspw. "commands.CreateXY.java" oder "commands.InsertElementXY.java" hinzugefügt werden. 
-	Sollen mehrere Algorithmen zur Klasse auswählbar und vorführbar sein, so ist auch hier für jeden dieser eine Klasse in "Algorithms" hinzuzufügen. Neben der bereits gelisteten Datei "Algorithms.XYAlgorithm.java", wären Beispiele hierfür "Algorithms.SortXYAlgorithm.java" oder "Algorithms.SearchXYAlgorithm.java".
+			Algorithms.XYAlgorithm
+	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "XYCommand" erbt, im Ordner "commands" erstellt werden muss. So könnte noch, analog zu den bereits vorhandenen Datenstrukturen, bspw. "commands.CreateXY" oder "commands.InsertElementXY" hinzugefügt werden. 
+	Sollen mehrere Algorithmen zur Klasse auswählbar und vorführbar sein, so ist auch hier für jeden dieser eine Klasse in "Algorithms" hinzuzufügen. Neben der bereits gelisteten Datei "Algorithms.XYAlgorithm", wären Beispiele hierfür "Algorithms.SortXYAlgorithm" oder "Algorithms.SearchXYAlgorithm".
 	
 	// Abzuändernde Dateien
 	Was der Wartbarkeit des Programms sehr zugute kommt ist, dass beim Hinzufügen einer Datenstruktur nur zwei bereits existierende Dateien tatsächlich abgeändert werden müssen und das auch nur in geringem Maße. Diese beiden Dateien sind:
-		abstractAlgorithm.AbstractAlgorithm.java
-		model.ParentViewModel.java
-	So ist in "AbstractAlgorithm.java" ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, den man bereits als "builders.XYBuilder.java" erstellt hat. Dieses Attribut wird in der hinzuzufügenden Methode "create_XY" verwendet, welche dann wiederum in den von "AbstractAlgorithm.java" erbenden Algorithmen-Klassen genutzt werden kann. Soll die Datenstruktur mehr als eine Möglichkeit haben eine neue Instanz in den Algorithmen erzeugen zu können, so müssen gegebenenfalls weitere Methoden erstellt werden. 
-	In "ParentViewModel.java" muss ein Attribut hinzugefügt und zwei Methoden erweitert werden. Hinzugefügt werden muss die in "visualization.XYVisualization.java" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sollten auch nur wenige Zeilen erforderlich sein. So muss "exeCommand" zusätzlich den Fall "XYCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für XY zurücksetzen.
+		abstractAlgorithm.AbstractAlgorithm
+		model.ParentViewModel
+	So ist in "AbstractAlgorithm" ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, den man bereits als "builders.XYBuilder" erstellt hat. Dieses Attribut wird in der hinzuzufügenden Methode "create_XY" verwendet, welche dann wiederum in den von "AbstractAlgorithm" erbenden Algorithmen-Klassen genutzt werden kann. Soll die Datenstruktur mehr als eine Möglichkeit haben eine neue Instanz in den Algorithmen erzeugen zu können, so müssen gegebenenfalls weitere Methoden erstellt werden. 
+	In "ParentViewModel" muss ein Attribut hinzugefügt und zwei Methoden erweitert werden. Hinzugefügt werden muss die in "visualization.XYVisualization" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sollten auch nur wenige Zeilen erforderlich sein. So muss "exeCommand" zusätzlich den Fall "XYCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für XY zurücksetzen.
 
+
+6.? Bestehende Probleme
+	{
+	Probleme:
+	(Oder in ein neues Kapitel namens "Bestehende Probleme" in zb der "Implementierung"?)
+		- Animationen von Delete Operationen
+			- Erklärung: 
+				Derzeit "erst visuelle Elemente erzeugen und platzieren, dann animation abpsielen" was problematisch für delete operations ist, da man nichts animieren kann, was nicht mehr da ist. Einfach diese Reihenfolge umdrehen würde zwar bei delete das problem lösen, bei insert Operationen aber ein analoges Problem hervorrufen. Ein erster Gedanke wäre, dass man individuell aussuchen könnte, welche reihenfolge verwendet wird. Allerdings könnte es so bei möglichen zukünftigen komplexeren operationen zu schwierigkeiten kommen, die bestenfalls sowohl vorm anpassen der visuellen elemente, als auch danach eine animation hätten. 
+			- Lösungsvorschlag: 
+				Beides möglich machen, also dass zb zwei Animationen übergeben werden können, eine für vor der visualisierung, eine für danach. 
+		- automatisches justieren des Baums
+			- Erklärung:
+				Momentan wird, wenn zb ein Knoten zum Baum hinzugefügt wird, der Knoten animiert hinzugefügt, der Rest des Baums aber auf einen Schlag positioniert. Das ist ziemlich unschön... Besser wäre, wenn sich alles zurecht schiebt. 
+			- Lösungsvorschlag:
+				Man könnte alle Koordinaten der Knoten übergeben und dann für jeden Knoten translations animationen von vorherigem Punkt zum jetzigen Punkt erstellen. 
+					Side fact: Könnte man dann auch mit vorherig genannten "Reihenfolge Visualisierung Und Animation" verbinden. Bedeutet erste Animation ist das zurechtschieben und zweite Animation ist das hinzufügen des elements.
+				Problem dabei blieben allerdings die Kanten. Man könnte diese zwar zuvor ausblenden und nach dem bewegen wieder einblenden, allerdings könnte das schlecht aussehen
+	}

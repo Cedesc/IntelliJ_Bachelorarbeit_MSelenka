@@ -5,26 +5,30 @@
 		[X] 1.1 Motivation 
 		[X] 4.1 Problematik 
 		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
-		[ ] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
-		[ ] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
-		[ ] Ausblick auf das, was noch nicht klappt (siehe 7.2)
-		[ ] generell das ganze ordnen und in Form bringen 
-		[ ] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
+		[.] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
+		[.] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
+		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
+		[.] "6.? Bestehende Probleme" schreiben 
+		[.] generell das ganze ordnen und in Form bringen 
+		[.] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 	- noch vielleicht reinbringen
-		- UML Diagramm für "Wie man eine Datenstruktur hinzufügt" erstellen?
-		- erwähn ich irgendwo die config datei inklusive configReader? (außer als randnotiz bei "5.9 Neue Struktur der Architektur")
-		- In "5.? Neue Struktur der Architektur" erwähnen, dass das von stackoverflow kommt? Oder steht das schon woanders? Zb vorher in Kapitel 5?
-		- Auf "leere Animationen" in kleinem Unterkapitel eingehen? Und überall, wo das Wort vorkommt, auf dieses Kapitel verweisen / verlinken?
-		- dieses ".java" aus "5.9 Neue Struktur der Architektur" entfernen?
-		- "Animationen für zukünftige Datenstrukturen" schon drin? oder noch schreiben?
-		- "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
-		[ ] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
-		[ ] UML Diagramm für Bäume ?
+		[-] In "5.? Neue Struktur der Architektur" erwähnen, dass das von stackoverflow kommt? Oder steht das schon woanders? Zb vorher in Kapitel 5?
+			=> steht schon in "5.2 Zoomen & Bewegen"
+		[-] dieses ".java" aus "6.? Erweiterbarkeit um weitere Datenstruktur" entfernen?
+		[,] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
+		[.] Irgendwo, zb in Einleitung, erwähnen was alles hinzugefügt wurde? Besonders nochmal wegen Config und ConfigReader. Ggf vorhandene thematisierung von Config dort rein schieben
+			=> Wird in "6.2 Änderungen am bestehenden Code" und als Randnotiz in "5.9 Neue Struktur der Architektur" erwähnt
+		[,] Auf "leere Animationen" in kleinem Unterkapitel eingehen? 
+			[,] Und überall, wo das Wort vorkommt, auf dieses Kapitel verweisen / verlinken?
+		[,] "Animationen für zukünftige Datenstrukturen (wie man die hinzufügt)" noch schreiben?
+		[,] "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
+		[.] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
+		[.] UML Diagramm für Bäume ?
 			- zu beachten: man muss auch was dazu schreiben
-		[ ] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
+		[.] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
 			- wohin? (4.1?)
 			- zu beachten: man muss auch was dazu schreiben
-		[ ] In Einleitung "Ergebnisse" ?
+		[.] In Einleitung "Ergebnisse" ?
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen
@@ -38,9 +42,10 @@
 	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
 		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
 	CHECK! - readme datei erweitern um bäume und arraylists
-	- neuere version bei gitlab hochladen (gibt für meine "Punktzählung" einen halben punkt)
-		- readme datei 
-		- TreeDemo
+Anderes:
+	[/] - neuere version bei gitlab hochladen
+		CHECK! - readme datei 
+		CHECK! - TreeDemo
 
 
 

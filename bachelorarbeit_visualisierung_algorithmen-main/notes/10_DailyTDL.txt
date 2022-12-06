@@ -10,16 +10,21 @@ Erledigt:
 		- TDL für nächsten Tage machen
 	3.12.
 		- einen Punkt abarbeiten (1.)
+			[X] 1.1 Motivation 
 	4.12.
 		- einen Punkt abarbeiten (2.)
+			[X] 4.1 Problematik 
 	5.12.
 		- einen Punkt abarbeiten (3.)
+			[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
+	6.12.
+		- einen Punkt abarbeiten (4.)
+			[/] Readme erweitert
+			[/] TDL aufgeräumt und kleinere Punkte abgearbeitet
 
 
 
 Daily TDL:
-	6.12.
-		- einen Punkt abarbeiten (4.)
 	7.12.
 		- einen Punkt abarbeiten (5.)
 	8.12.
