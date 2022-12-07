@@ -5,12 +5,12 @@
 		[X] 1.1 Motivation 
 		[X] 4.1 Problematik 
 		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
-		[.] Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
-		[.] Was zu Sequenz-Diagramm (siehe Punkt oben) schreiben
+		[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
 		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
 		[.] "6.? Bestehende Probleme" schreiben 
 		[.] generell das ganze ordnen und in Form bringen 
 		[.] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
+		[,] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
 	- noch vielleicht reinbringen
 		[-] In "5.? Neue Struktur der Architektur" erwähnen, dass das von stackoverflow kommt? Oder steht das schon woanders? Zb vorher in Kapitel 5?
 			=> steht schon in "5.2 Zoomen & Bewegen"
@@ -29,6 +29,7 @@
 			- wohin? (4.1?)
 			- zu beachten: man muss auch was dazu schreiben
 		[.] In Einleitung "Ergebnisse" ?
+		[,] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen

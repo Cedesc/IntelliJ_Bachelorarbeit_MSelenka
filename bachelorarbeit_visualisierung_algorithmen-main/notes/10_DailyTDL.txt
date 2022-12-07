@@ -21,12 +21,13 @@ Erledigt:
 		- einen Punkt abarbeiten (4.)
 			[/] Readme erweitert
 			[/] TDL aufgeräumt und kleinere Punkte abgearbeitet
+	7.12.
+		- einen Punkt abarbeiten (5.)
+			[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
 
 
 
 Daily TDL:
-	7.12.
-		- einen Punkt abarbeiten (5.)
 	8.12.
 		- frei
 	9.12.

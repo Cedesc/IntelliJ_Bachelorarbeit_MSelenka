@@ -28,9 +28,11 @@ Kapitel:
 	In unserem Fall, ist es besonders für die Step-by-Step Visualization durchaus wichtig einen korrekten Umgang mit Eingaben, die während laufender Animationen getätigt werden, einzubauen. Zwar können auch bei der Complete Visualization während Animationen Eingaben getätigt werden, diese Beschränkungen sich jedoch auf das Abbrechen oder das Neustarten des Algorithmus. In beiden Fällen sind die derzeitigen Elemente irrelevant und somit kein besonderer Umgang nötig. Sollten noch Funktionen hinzukommen, bei denen dies wichtiger ist, lässt sich das Programm leicht in der updateVisualization-Methode des ExecuteAlgorithmController anpassen, um es mit der Complete Visualization so zu handhaben wie mit der Step-by-Step Visualization. 
 	Denn bei der Step-by-Step Visualization springt zunächst die letzt ausgeführte Animation zum Ende, dann wird die nächste gestartet und schließlich diese als "lastTransition" gespeichert, damit man wiederum auf diese in der nächsten Iteration zugreifen kann, um sie ggf. vorzeitig zu beenden. Für den Nutzer bedeutet das, dass eine vorzeitige Eingabe zu keinen Fehlern, sondern nur zu einem vorzeitigen Sprung zum Ende der Animation führt.
 	
+	\todo{korrekt auf sequenzdiagramm verweisen}
+	\todo{bei InfoTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
+	\todo{bei MyTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
 	// auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden
-	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, habe ich ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. So wird in 
-	In der zur Datenstruktur zugehörigen Visualisierungs-Klasse wird am Ende von Befehlen, die eine Animation benötigen, wie bspw. das Einfügen eines Elements, zunächst die visuelle Darstellung konstruiert und dann die zugehörige Animation durch eine separate Klasse erstellt. Diese Abkapselung sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden.
+	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, wurde hier ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. Der Vorgang ist in ____\todo{Abbildung 1} anhand eines UML-Sequenzdiagramms am Beispiel des "addLeaf"-Befehls der Bäume verdeutlich. Wird der Befehl in InfoTree aufgerufen, so wird zunächst durch einen Aufruf der addLeaf-Methode der zugrundeliegenden Datenstruktur MyTree, die Änderung der Daten ausgeführt. Konkret bedeutet dies in dem Fall das Hinzufügen des Blatts, das als newLeaf abgespeichert wird. Nach der Manipulierung der Daten wird die Visualisierungsklasse, hier TreeVisualization, aufgerufen. Dabei werden zunächst visuelle Elemente hinzugefügt, gelöscht oder geändert und daraufhin die passende Animation dazu erstellt. Im Beispiel bedeutet das erst einen Aufruf von drawAllTrees, wodurch anhand der Daten der Bäume, all diese neu erstellt werden und danach die Erstellung der Animation mithilfe der forAddLeaf-Methode. Diese Trennung zwischen Visualisierung und Erstellung der Animationen sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden können.
 	
 	// Sowohl backward als auch forward geht es
 	Da man in der Anwendung in der Step-by-Step Visualization sowohl einen Schritt nach vorne als auch einen Schritt zurück gehen kann, stellt sich die Frage, wie man Animationen bei einem Schritt zurück ausführen kann und ob dabei Problematiken auftauchen. Der Code ist jedoch durch das Command-Pattern so geschrieben, dass gar keine Anpassungen getroffen werden mussten um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen und das ohne, dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig war.
@@ -85,19 +87,8 @@ Kapitel:
 		6. playOneByOne aus TransitionChain löschen (und auch calculateDelaysForCompleteVisualization und startAnimation?)
 		7. ZoomPane myScale privat machen?
 		8. generell prüfen ob alles so noch up to date ist und keine funktionen zb umbenannt wurden
-		9. neu platzieren, sodass man schöne farbige rechtecke machen kann um die einzelnen features bewegung, zoomen und animation abzugrenzen?
-	}
-	{
-		Sequenzdiagramm für Visualisierung wegen Animationen? Und wegen complete visualization?
-		Sequenz:
-			XYVisualization
-				=> wie die animation aufgerufen wird
-			controller.ExecuteAlgorithmController
-				=> initialize (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen)
-				   updateVisualization
-			ParentViewModel
-				=> startCompleteVisualization
-		Sequenz-Diagramm in der BA von MS ist auf Seite 36-39
+		9. neu platzieren, sodass man schöne farbige rechtecke machen kann um die einzelnen features bewegung, zoomen und animation abzugrenzen? (siehe auch Punkt 10)
+		10. Lieber dreiteilen für die einzelnen Bereiche und das ganze Ding nur als Anhang?
 	}
 
 	{Richtige Abbildungsbezeichnungen reinpacken}
