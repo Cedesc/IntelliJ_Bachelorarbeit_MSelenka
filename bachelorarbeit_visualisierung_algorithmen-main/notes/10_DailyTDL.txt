@@ -24,14 +24,14 @@ Erledigt:
 	7.12.
 		- einen Punkt abarbeiten (5.)
 			[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
+	8.12.
+		- einen Punkt abarbeiten (6.)	
+			[X] "6.? Bestehende Probleme" schreiben 
 
 
 
 Daily TDL:
-	8.12.
-		- frei
 	9.12.
-		- einen Punkt abarbeiten (6.)	
 	10.12.
 		- einen Punkt abarbeiten (7.)
 	11.12.

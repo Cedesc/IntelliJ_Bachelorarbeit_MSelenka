@@ -7,7 +7,7 @@
 		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
 		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
-		[.] "6.? Bestehende Probleme" schreiben 
+		[X] "6.? Bestehende Probleme" schreiben 
 		[.] generell das ganze ordnen und in Form bringen 
 		[.] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 		[,] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
@@ -30,11 +30,15 @@
 			- zu beachten: man muss auch was dazu schreiben
 		[.] In Einleitung "Ergebnisse" ?
 		[,] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
+		[,] kurzes Kapitel dazu warum "ArrayList" jetzt drin ist??
+		[-] erklären was "Info-Datenstrukturen" sind??
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen
 	- ToDos: 
 		- Gendern (zB Nutzer*in) ? Wenn ja, wie?
+		- "Event" uä auf deutsch übersetzen?? Wenn nicht, kurz erklären??
+		- z.B., u.a. und weiteres ausschreiben oder abgekürzt lassen?
 	- Gedanken zu Kapitel...
 		... 1: Nochmal bei anderen BAs schauen, was da so steht
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam

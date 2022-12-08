@@ -66,19 +66,71 @@ Kapitel:
 
 
 6.? Bestehende Probleme
-	{
-	Probleme:
-	(Oder in ein neues Kapitel namens "Bestehende Probleme" in zb der "Implementierung"?)
-		- Animationen von Delete Operationen
-			- Erklärung: 
-				Derzeit "erst visuelle Elemente erzeugen und platzieren, dann animation abpsielen" was problematisch für delete operations ist, da man nichts animieren kann, was nicht mehr da ist. Einfach diese Reihenfolge umdrehen würde zwar bei delete das problem lösen, bei insert Operationen aber ein analoges Problem hervorrufen. Ein erster Gedanke wäre, dass man individuell aussuchen könnte, welche reihenfolge verwendet wird. Allerdings könnte es so bei möglichen zukünftigen komplexeren operationen zu schwierigkeiten kommen, die bestenfalls sowohl vorm anpassen der visuellen elemente, als auch danach eine animation hätten. 
-			- Lösungsvorschlag: 
-				Beides möglich machen, also dass zb zwei Animationen übergeben werden können, eine für vor der visualisierung, eine für danach. 
-		- automatisches justieren des Baums
-			- Erklärung:
-				Momentan wird, wenn zb ein Knoten zum Baum hinzugefügt wird, der Knoten animiert hinzugefügt, der Rest des Baums aber auf einen Schlag positioniert. Das ist ziemlich unschön... Besser wäre, wenn sich alles zurecht schiebt. 
-			- Lösungsvorschlag:
-				Man könnte alle Koordinaten der Knoten übergeben und dann für jeden Knoten translations animationen von vorherigem Punkt zum jetzigen Punkt erstellen. 
-					Side fact: Könnte man dann auch mit vorherig genannten "Reihenfolge Visualisierung Und Animation" verbinden. Bedeutet erste Animation ist das zurechtschieben und zweite Animation ist das hinzufügen des elements.
-				Problem dabei blieben allerdings die Kanten. Man könnte diese zwar zuvor ausblenden und nach dem bewegen wieder einblenden, allerdings könnte das schlecht aussehen
+	
+	// Allgemein
+	Wie bereits gezeigt, wurde die Anwendung um einige Funktionalitäten erweitert. Jedoch bleiben zwei größere, bislang ungelöste Probleme bestehen. Diese wollen wir in diesem Unterkapitel aufzeigen und dazu mögliche Lösungsansätze präsentieren. 
+	
+	// Animationen für gelöschte Elemente
+	Das erste Problem wurde durch das Hinzufügen der Animationen ersichtlich. Dabei handelt es sich um die Animationen jeglicher Löschoperationen. Die Problematik besteht darin, dass zum momentanen Stand zuerst die im tatsächliche Instanz der Datenstruktur geändert wird und daraufhin die visuellen Elemente erzeugt und die Animation erstellt wird. Soll nun eine Animation für eine Operation, die mindestens ein Element aus der Datenstruktur löscht, erstellt werden, ist es nicht möglich die originale Visualisierung des gelöschten Elements zu nutzen, da dieses Element zuvor gelöscht wurde. 
+	// naiv umdrehen - verschiebt das Problem nur
+	Zwar ist es möglich die Reihenfolge umzudrehen, bedeutet es würde zuerst visualisiert und animiert und daraufhin die im Hintergrund liegende Datenstruktur geändert werden, jedoch besteht dann ein analoges Problem bezüglich aller Operationen, die Elemente hinzufügen. 
+	// immer neue visuelle Elemente erzeugen
+	Ein erster tatsächlicher Lösungsansatz ist das gelöschte Element visuell neu zu erzeugen. Das heißt, das gelöschte Element wird im Hintergrund abgespeichert und übergeben, sodass von diesem eine visuelle Darstellung erzeugt werden kann. Dieser Ansatz stellt sich allerdings als umständlich und fehleranfällig heraus, da visuelle Abbilder etlicher Elemente erzeugt, richtig platziert und auch wieder richtig gelöscht werden müssen. Dennoch könnte diese Idee mit geschickter Umsetzung das Problem beheben ohne zu starke Nachteile aufzuweisen. 
+	// sowohl vor als auch nach visualisierung animation zulassen
+	Ein eventuell besserer Lösungsansatz wäre, dass nicht, wie oben beschrieben vor der Manipulierung der Datenstruktur die Visualisierung ansetzt, sondern diese sowohl davor als auch danach aufgerufen werden kann. Dies kann von Operation zu Operation einzeln entschieden werden, indem die Reihenfolge der Funktionsaufrufe in der Info-Datenstruktur getauscht wird. In {Abbildung 1} \todo{auf richtige Abbildung verweisen} ist dies anhand der fiktiven Datenstruktur "XY" verdeutlicht. Während in "addElement" zuerst das Element hinzugefügt und daraufhin erst die Visualisierung ausgeführt wird, so wie es im vorhandenen Programmcode derzeit bei allen Operationen der Fall ist, wird dies bei "deleteElement" durch einfach vertauschen der Zeilen andersrum ausgeführt. Für zukünftige potenziell komplexere Operationen könnte dies noch nicht ausreichend sein, da Operation vorstellbar sind, die bestenfalls sowohl vor als auch nach der tatsächlichen Änderung eine Visualisierung benötigen. In dem Fall wäre es möglich die Funktion wie in {Abbildung 2} \todo{auf richtige Abbildung verweisen} gezeigt zu schreiben. Hier sind zwei Visualisierungsfunktionen vorhanden, eine zum Ausführen vor der Änderungen, eine für nach der Änderung. Zu bemerken ist dabei, dass auf die tatsächliche Abfolge der Befehle in Kombination mit den Animationen zu achten ist, da die Befehle in der kompletten Visualisierung, wie in {Kapitel XY} \todo{auf richtiges Kapitel verweisen} beschrieben, durch Events der Animationen ausgelöst werden. Sind dementsprechende Änderungen allerdings vorgenommen worden, wäre nicht nur das Problem der Animationen für Löschoperationen gelöst, sondern zudem eine gute Grundlage für die Visualisierung zukünftig hinzugefügter Operationen geschaffen.
+	
+	// Justierung des Baums
+	Das zweite Problem bezieht sich auf die Visualisierung der implementierten Bäume. Derzeit wird noch, wenn z.B. ein Knoten zum Baum hinzugefügt wird, der Knoten animiert hinzugefügt, der Rest des Baums allerdings auf einen Schlag positioniert. Dies verfehlt das eigentliche Ziel der Implementierung von Animationen. Zwar sind die einzelnen Schritte deutlich nachvollziehbarer, allerdings kann die Verständlichkeit vorallem bei größeren Neupositionierungen stark darunter leiden. Besser wäre es, würden diese Neupositionierungen der Knoten nicht in einem Schritt, sondern durch Bewegungsanimationen von Start- zum Zielpunkt ausgeführt werden.
+	// Neupositionierung umsetzen
+	Dies gut umzusetzen, kann sich als schwierig herausstellen. Ein erster Ansatz wäre es mithilfe der vorherigen und letztendlichen Koordinaten aller Knoten für jeden einzelnen Knoten eine Translationsanimation zu erstellen. Um alle diese Koordinaten zu speichern, ist es möglich vor der Ausführung der Operation zuerst alle Koordinaten abzuspeichern, dann die Operation auszuführen, die Koordinaten der Knoten neu zu berechnen und diese, vor dem Erstellen der Visualisierung, zusätzlich abspeichern. Die Erstellung der einzelnen Animationen ist hierbei nicht mehr schwierig. Allerdings darf die Änderung durch die getätigte Operation, wie bspw. ein geändertes Element, zum Start der Visualisierung noch nicht sichtbar sein. Entweder es wird hierfür eine generelle Lösung oder die Visualisierung muss umständlich bei jedem Befehl individuell manipuliert werden. Eine naive generelle Lösung wäre die Operation zunächst rückgängig machen und daraufhin nochmal aufrufen. Dies erscheint jedoch als umständlich und sollte, wenn möglich, vermieden werden. Abseits dessen bleiben die Kanten des Baums weiterhin ein Problem, da sie trotz unterschiedlich weiten Bewegungen von Elternknoten und Kindknoten passend mitbewegt werden sollten. 
+	// Mit vorherig beschriebenen "Reihenfolge Manipulierung Visualisierung" verbinden
+	Wurde eine Umsetzung für das Justieren des Baums gefunden und die Aufrufe der "Info-Datenstruktur" wie zuvor beschrieben angepasst, sodass sowohl vor als auch nach der Änderung der Datenstruktur eine Visualisierung aufrufbar ist, so wäre es möglich den Baum mit der ersten Animation zunächst passend zu justieren und danach mit einer zweiten Animation die Operation, wie das Hinzufügen eines Blatts, zu visualisieren.
+
+
+
+
+\todo{write caption and label}
+\begin{lstlisting}[language=Java, caption={}\label{Abbildung 1}]
+	public class InfoXY {
+		...
+		public void addElement() {
+			...
+			// add the element
+			this.xyContent.addElement();
+			// visualize the command
+			if (this.xyVisualization != null) {
+				this.xyVisualization.addElementVisualization(this);
+			}
+		}
+		public void deleteElement() {
+			...
+			// visualize the command
+			if (this.xyVisualization != null) {
+				this.xyVisualization.deleteElementVisualization();
+			}
+			// delete the element
+			this.xyContent.deleteElement();
+		}
+		...
 	}
+\end{lstlisting}
+
+\todo{write caption and label}
+\begin{lstlisting}[language=Java, caption={}\label{Abbildung 2}]
+	public class InfoXY {
+		...
+		public void complexOperation() {
+			// visualize the command
+			if (this.xyVisualization != null) {
+				this.xyVisualization.complexVisualizationBefore();
+			}
+			// execute the command
+			this.xyContent.complex();
+			// visualize the command
+			if (this.xyVisualization != null) {
+				this.xyVisualization.complexVisualizationAfter();
+			}
+		}
+		...
+	}
+\end{lstlisting}
