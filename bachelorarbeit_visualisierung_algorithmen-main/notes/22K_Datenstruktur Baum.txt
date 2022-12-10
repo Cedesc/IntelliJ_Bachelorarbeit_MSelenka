@@ -91,3 +91,6 @@ Kapitel:
 	{Natürlicherweise eine Hierarchie in den Daten}
 	{Kann, abhängig vom konkreten Baum, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.}
 
+
+2.? "Bäume im Alltag"
+	{Ordnerstruktur auf Betriebssystemen}

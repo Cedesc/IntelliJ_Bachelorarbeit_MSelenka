@@ -17,6 +17,7 @@ Kapitel:
 
 6.2 Änderungen am bestehenden Code
 	{Sequenzdiagramm einfügen?}
+	{"Config" überarbeiten? Auch auf ConfigReader eingehen oder das so lassen? Sollte ich irgendwo in der Arbeit ConfigReader erwähnen, sollte ich das hier aufgreifen}
 
 	// Refactoring und Kommentare
 	Fast alle Dateien wurden geringfügig geändert. Das kommt daher, dass viele Rechtschreibfehler korrigiert, teilweise Kommentare hinzugefügt oder auch Dateien oder Funktionen umbenannt wurden. So wurde zum Beispiel zur besseren Verständlichkeit die Methode "startVisualization" der Klasse "ParentViewModel" zu "startCompleteVisualization" umbenannt, da die Methode an sich die komplette Visualisierung statt der Schritt-für-Schritt Visualisierung startet, es mit dem vorherigen Namen aber auch wie eine allgemeinere, für die Schritt-für-Schritt Visualisierung wichtige, Funktionalität wirken konnte.
@@ -70,7 +71,7 @@ Kapitel:
 	// Allgemein
 	Wie bereits gezeigt, wurde die Anwendung um einige Funktionalitäten erweitert. Jedoch bleiben zwei größere, bislang ungelöste Probleme bestehen. Diese wollen wir in diesem Unterkapitel aufzeigen und dazu mögliche Lösungsansätze präsentieren. 
 	
-	// Animationen für gelöschte Elemente
+	// Animationen für Löschoperationen
 	Das erste Problem wurde durch das Hinzufügen der Animationen ersichtlich. Dabei handelt es sich um die Animationen jeglicher Löschoperationen. Die Problematik besteht darin, dass zum momentanen Stand zuerst die im tatsächliche Instanz der Datenstruktur geändert wird und daraufhin die visuellen Elemente erzeugt und die Animation erstellt wird. Soll nun eine Animation für eine Operation, die mindestens ein Element aus der Datenstruktur löscht, erstellt werden, ist es nicht möglich die originale Visualisierung des gelöschten Elements zu nutzen, da dieses Element zuvor gelöscht wurde. 
 	// naiv umdrehen - verschiebt das Problem nur
 	Zwar ist es möglich die Reihenfolge umzudrehen, bedeutet es würde zuerst visualisiert und animiert und daraufhin die im Hintergrund liegende Datenstruktur geändert werden, jedoch besteht dann ein analoges Problem bezüglich aller Operationen, die Elemente hinzufügen. 
@@ -92,9 +93,9 @@ Kapitel:
 \todo{write caption and label}
 \begin{lstlisting}[language=Java, caption={}\label{Abbildung 1}]
 	public class InfoXY {
-		...
+		// ...
 		public void addElement() {
-			...
+			// ...
 			// add the element
 			this.xyContent.addElement();
 			// visualize the command
@@ -103,7 +104,7 @@ Kapitel:
 			}
 		}
 		public void deleteElement() {
-			...
+			// ...
 			// visualize the command
 			if (this.xyVisualization != null) {
 				this.xyVisualization.deleteElementVisualization();
@@ -111,14 +112,14 @@ Kapitel:
 			// delete the element
 			this.xyContent.deleteElement();
 		}
-		...
+		// ...
 	}
 \end{lstlisting}
 
 \todo{write caption and label}
 \begin{lstlisting}[language=Java, caption={}\label{Abbildung 2}]
 	public class InfoXY {
-		...
+		// ...
 		public void complexOperation() {
 			// visualize the command
 			if (this.xyVisualization != null) {
@@ -131,6 +132,6 @@ Kapitel:
 				this.xyVisualization.complexVisualizationAfter();
 			}
 		}
-		...
+		// ...
 	}
 \end{lstlisting}

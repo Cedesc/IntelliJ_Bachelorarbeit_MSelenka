@@ -6,9 +6,9 @@
 		[X] 4.1 Problematik 
 		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
-		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
 		[X] "6.? Bestehende Probleme" schreiben 
-		[.] generell das ganze ordnen und in Form bringen 
+		[X] generell das ganze ordnen und in Form bringen 
+		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
 		[.] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
 		[,] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
 	- noch vielleicht reinbringen
@@ -29,16 +29,25 @@
 			- wohin? (4.1?)
 			- zu beachten: man muss auch was dazu schreiben
 		[.] In Einleitung "Ergebnisse" ?
+		[.] kurz auf vorherige BA verweisen, weil ich ja nicht die Anwendung selbst erkläre, da das bereits dort getan wurde (am besten in Einleitung denk ich, im Sinne von "Diese Arbeit konzentriert sich auf die Erweiterung der Anwendung. Die Anwendung selbst wird nicht stark beleuchtet / erklärt / erläutert, da dies bereits in Arbeit xy getan wurde" 
+			- auch als Quelle in Literaturverzeichnis! Noch mehr in Rest von meiner Arbeit erwähnen?
+			- als related work drauf eingehen (in einleitung oder so) ?
 		[,] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
 		[,] kurzes Kapitel dazu warum "ArrayList" jetzt drin ist??
-		[-] erklären was "Info-Datenstrukturen" sind??
+		[,] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ??
+		[,] in "3.2 Arraylists" auf Arrays von alter BA verweisen
+		[,] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
+		[_] erklären was "Info-Datenstrukturen" sind??
+		[_] werden irgendwo die animationen der implementierten bäume erklärt / gezeigt?
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen
 	- ToDos: 
-		- Gendern (zB Nutzer*in) ? Wenn ja, wie?
+		- Gendern (zB Nutzer*in) bzw den Satz, dass man drauf verzichtet? Wenn gendern, wie?
 		- "Event" uä auf deutsch übersetzen?? Wenn nicht, kurz erklären??
 		- z.B., u.a. und weiteres ausschreiben oder abgekürzt lassen?
+		- Gliederung, so wie ich sie jetzt hab, ok?
+		- Klasse in Text erwähnen mit dieser Schriftart aus der anderen BA
 	- Gedanken zu Kapitel...
 		... 1: Nochmal bei anderen BAs schauen, was da so steht
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam

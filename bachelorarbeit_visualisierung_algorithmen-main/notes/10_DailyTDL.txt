@@ -27,13 +27,14 @@ Erledigt:
 	8.12.
 		- einen Punkt abarbeiten (6.)	
 			[X] "6.? Bestehende Probleme" schreiben 
+	9.12.
+		- einen Punkt abarbeiten (7.)
+			[X] generell das ganze ordnen und in Form bringen 
+	10.12.
 
 
 
 Daily TDL:
-	9.12.
-	10.12.
-		- einen Punkt abarbeiten (7.)
 	11.12.
 		- einen Punkt abarbeiten (8.)
 	12.12.

@@ -13,6 +13,7 @@ Was ich reinbringen kann:
 Kapitel:
 
 7.2 Ausblick
-	{Animationen für weitere Datenstrukturen}
-	{Spezielle Bäume hinzufügen}
+	{Animationen für weitere Datenstrukturen <= steht quasi schon woanders, aber ich kann ja zB spezifisches nennen}
+	{Spezielle Bäume hinzufügen <= steht quasi schon woanders, aber ich kann ja zB spezifisches nennen}
+	{- wo man jetzt ansetzen könnte: deletion animationen, komplexere atomare befehle beinhaltende befehle einbauen, andere art von bäumen oder generell neue datenstruktur einbauen, automatische get animation, ...}
 	{Bestehende Probleme, siehe "5.? Bestehende Probleme", fixen}
