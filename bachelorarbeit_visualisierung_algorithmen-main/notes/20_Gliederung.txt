@@ -1,13 +1,70 @@
 
 
-
 Titel: „Erweiterung der Visualisierungs-Software für Datenstrukturen um Animationen am Beispiel von Bäumen“
 
 
-TODO: 
-	- UML Diagramm für Bäume? Und Sequenzdiagramm für visualisierung mit drawBefehl für Bäume?
-	- Sequenz-Diagramme (siehe 23K_Erweiterung der Darstellung)
-	- javafx Theorie einfügen? zb Transitions => eher nicht i guess
+
+Gliederung (neu neu neu):
+						X : bereits geschriebenes
+						_ : noch nicht geschriebenes
+						~ : unsichere sachen
+						! : sichere sachen
+	! 1 Einleitung
+				- grundlegende Einleitung
+		!X 1.1 Motivation 
+		~_ 1.2 Vergleich von bestehenden ähnlichen Programmen 
+		~_ 1.3 Zielsetzung 
+		!_ 1.4 Strukturierung des Inhalts der Arbeit 
+	! 2 Datenstruktur Baum 
+				- theoretische Grundlagen und Nutzung von Bäumen
+		!X 2.1 Terminologie 
+		!X 2.2 Definition 
+		~_ 2.3 Eigenschaften 
+			~_ 2.3.1 Vorteile
+			~_ 2.3.2 Nachteile
+		!_ 2.5 Zusammenfassung 
+		~X 2.? Verschiedene Speicherungsweisen von Bäumen
+		!X 2.? Atomare Operationen 
+		~_ 2.? Anwendung von Bäumen
+			~_ 2.? Bäume im Alltag / Anwendung
+			~_ 2.? (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
+			~_ 2.? (spezifische) Baumunterarten / meistgenutzte Baumunterarten
+				- Binärbaum
+				- Rot-Schwarz-Baum
+	! 3 Änderungen am bestehenden Code
+				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
+		!X 3.1 Refactoring & Kommentare
+		!_ 3.2 ArrayList hinzugefügt
+		!X 3.3 Komplette Visualisierung gefixt
+		!X 3.4 Config Datei
+	! 4 Darstellung Baum im Programm 
+				- Umsetzung der Bäume
+		!_ 4.1 Problematik 
+		~_ 4.2 balanciert vs unbalanciert 
+		~X 4.? "Algorithmen" zum testen
+		!X 4.? Algorithmus zum Baum Visualisieren
+		!X 4.? Atomare Funktionen + Art der Abspeicherung
+	! 5 Erweiterung um visuelle Features
+				- Umsetzung der Animationen, Zoomen und Bewegen
+		!X 5.1 Animationen 
+			!X 5.1.1 Animationen in ArrayList
+			!X 5.1.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
+		!X 5.2 Zoomen & Bewegen 
+		!X 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
+	! 6 Zukünftiger Code
+				- Woran man ansetzen kann
+		~_ 6.? Erweiterbarkeit
+			!X 6.? Erweiterbarkeit um weitere Datenstruktur
+			!X 6.? Erweiterbarkeit um Baumunterarten = "4.? Erweiterbarkeit der Bäume"?
+			~_ 6.? Erweiterbarkeit um weitere Animationen
+		!X 6.? Bestehende Probleme
+	! 7 Zusammenfassung
+				- grundlegende Zusammenfassung
+		!_ 7.1 Fazit
+		!_ 7.2 Ausblick
+
+
+
 
 
 Gliederung (neu neu):
@@ -22,7 +79,7 @@ Gliederung (neu neu):
 		~_ 1.2 Vergleich von bestehenden ähnlichen Programmen 
 		~_ 1.3 Zielsetzung 
 		!_ 1.4 Strukturierung des Inhalts der Arbeit 
-	! 2 Datenstruktur: Baum 
+	! 2 Datenstruktur Baum 
 		!X 2.1 Terminologie 
 		!X 2.2 Definition 
 		~_ 2.3 Eigenschaften 
@@ -33,6 +90,7 @@ Gliederung (neu neu):
 			~_ 2.4.2 Rot-Schwarz-Bäume ? (weil es besonders ist, dass die gefärbt sind)
 			~_ 2.4.3 ...
 		!_ 2.5 Zusammenfassung 
+		~_ 2.? Bäume im Alltag
 	~ 3 Algorithmen auf Bäumen 
 		~X 3.1 Verschiedene Speicherungsweisen von Bäumen
 		!X 3.2 Atomare Operationen 
