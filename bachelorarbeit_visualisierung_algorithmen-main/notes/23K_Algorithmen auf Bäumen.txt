@@ -1,60 +1,44 @@
 
 
-Teil der Gliederung:
-	3 Algorithmen auf Bäumen 14 (4)
-		3.1 Atomare Operationen 14 (3)
-		3.2 (spezifische) Algorithmen auf Bäumen 17 (1)
+
+3 Änderungen am bestehenden Code
+			- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
+	!X 3.1 Refactoring & Kommentare
+	!_ 3.2 ArrayList hinzugefügt
+	!X 3.3 Komplette Visualisierung gefixt
+	!X 3.4 Config Datei
+	!_ 3.5 Zusammenfassung
 
 
 
-Was ich reinbringen kann (Mit 22K abgleichen, da vermischt):
-	- 3.1 / 3.2 Laufzeiten gewisser Operationen / Algorithmen
-	- Generell: Grafiken
-	- Generell: Auf gesagtes zurückkommen
-	- 2. Alles von Wikipedia kurz angeschnitten, was nicht in 2.1-2.5 auftaucht 
-	- Wo Bäume verwendet werden? ZB bei Ordnerstrukturen auf PC
-	- Grafik, in der veranschaulicht wird, wie etwas aus der "echten" Welt als Baum dargestellt wird
-		- Güting Dieker S. 92 (106) / 93 (107)
-	- Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?
-	- {"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben" Hier rein oder in "Terminologie"?}
-	- Allgemeine Quellen:
-		- Cormen
-		- Güting Dieker S. 92 (106) / 101 (115)
-		- Andere Bücher
-		- https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie
-		- https://en.wikipedia.org/wiki/Tree_(data_structure)
-	- kurz erklären was ein "Binärbaum" bzw ein k-närer Baum ist
-
-
+Was ich reinbringen kann:
+	{Sequenzdiagramm einfügen?}
+	{"Config" überarbeiten? Auch auf ConfigReader eingehen oder das so lassen? Sollte ich irgendwo in der Arbeit ConfigReader erwähnen, sollte ich das hier aufgreifen}
 
 
 
 Kapitel:
 
-3.1 Atomare Operationen
+3.1 Refactoring & Kommentare
+	Fast alle Dateien wurden geringfügig geändert. Das kommt daher, dass viele Rechtschreibfehler korrigiert, teilweise Kommentare hinzugefügt oder auch Dateien oder Funktionen umbenannt wurden. So wurde zum Beispiel zur besseren Verständlichkeit die Methode "startVisualization" der Klasse "ParentViewModel" zu "startCompleteVisualization" umbenannt, da die Methode an sich die komplette Visualisierung statt der Schritt-für-Schritt Visualisierung startet, es mit dem vorherigen Namen aber auch wie eine allgemeinere, für die Schritt-für-Schritt Visualisierung wichtige, Funktionalität wirken konnte.
+	Auch wurden an sehr vielen Stellen Kleinigkeiten geändert, die zuvor in der Entwicklungsumgebung Warnungen hervorgerufen haben. So wurden unter anderem rohe Verwendungen parametrisierter Klassen korrigiert oder auch ungenutzte Auflistungen von Fehlern in der "throws list" der jeweiligen Methode entfernt.
+	Da in der Klasse "ParentViewModel" ein großer Teil des Codes für die Methoden "exeNextCommand", "exePreviousCommand" und "startCompleteVisualization" sehr ähnlich war, wurde dieser als eigene Methode mit dem Namen "exeCommand" ausgelagert. Innerhalb der drei genannten Methoden hat sich so die Anzahl der Zeilen von jeweils 60 auf jeweils maximal 10 geändert. Somit ist der Bereich des Codes nun deutlich übersichtlicher. Weiterhin auch besser anpassbar, da durch das Auslagern der Methode nur an einer Stelle eventuelle Änderungen getätigt werden müssen, statt wie zuvor darauf achten zu müssen, dass man an allen drei Stellen den Code umschreibt.
 	
-	// Auflistung atomarer Funktionen
-	Die zunächst eingebauten atomaren Funktionen sind 
-		1. Das Hinzufügen eines Blatts
-		2. Das Löschen eines Blatts
-		3. Den Elternknoten eines Knotens ändern
-		4. Den Wert eines Knotens ändern
-	Die erste Funktion kann schlichtweg ein Blatt an einen Knoten hinzufügen. Hier ist, falls vorhanden, der maximal zulässige Grad im Baum zu beachten. 
-	Die zweite Funktion löscht ein Blatt aus dem Baum. Dabei ist die Einschränkung, dass nur ein Blatt gelöscht werden kann sehr wichtig, da sich das Löschen eines inneren Knotens aus einem Baum als sehr umständlich rausstellen kann. Beim Löschen eines inneren Knotens muss geregelt sein wie mit den Kindknoten verfahren werden soll, da es hier sonst zu Verletzungen etwaiger Eigenschaften des Baums, wie das Überschreiten eines festgelegten maximalen Grads des Baums, kommen kann. Der Spezialfall des Löschens eines Blattknotens ist im Vergleich simpel. In Kombination mit den anderen hier genannten atomaren Operationen ist es dennoch möglich, einen inneren Knoten zu löschen, worauf ich später weiter eingehen werde.
-	Die dritte Funktion ändert den im Knoten gespeicherten Elternknoten. Damit ist nicht gemeint, dass der Elternknoten selbst in jeglicher Weise geändert wird, sondern die im Knoten hinterlegte Variable, die auf den Elternknoten zeigt, auf einen übergebenen Knoten zeigen soll. Damit nimmt man effektiv den Kindknoten, hängt ihn vom ursprünglichen Elterknoten ab und hängt ihn stattdessen an den übergebenen Knoten als Kindknoten an. 
-	Die vierte und letzte der gelisteten atomaren Funktionen beschreibt das Ändern des Werts des Knotens. 
-	
-	// Damit können alle Operationen konstruiert werden 
-	{Brauch ich ne Quelle?}
-	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
+
+3.3 Komplette Visualisierung
+	Der Code und auch das Konzept für die komplette Visualisierung wurde stark überarbeitet. Zuvor war es nicht möglich in der kompletten Visualisierung die einzelnen Schritte nachzuverfolgen, stattdessen sollte nach gewisser Wartezeit direkt das Endergebnis angezeigt werden. Durch einen Fehler konnte es aber zu falschen Ergebnissen kommen, da statt allen Befehlen nur einer wiederholt abgespielt wurde. Nun kann die Anwendung nach dem Auswählen der kompletten Visualisierung die Befehle zeitversetzt oder auch mit ihren Animationen nacheinander abspielen, sodass der Algorithmus selbständig nach und nach ausgeführt wird und es für den Nutzer wie eine Aufzeichnung wirkt.
+	Um dies zu erreichen wurden zunächst Animationen (und auch "leere Animationen", in denen sich nichts bewegt, sondern einfach nur abgewartet wird) hinzugefügt. Alle Animationen wollten dabei allerdings zeitgleich starten. Mit dem Hintergrund, dass die Animationen korrekt zeitgleich starten sollten, wurden daraufhin die Animationen stattdessen gespeichert, statt sofort abspielen zu lassen und daraufhin nach und nach abgespielt. Dadurch wurden zwar die Animationen korrekt nacheinander abgespielt, jedoch gab es ein anderes Problem: Zum Start der ersten Animation wurden bereits alle Elemente erstellt, sodass schon zum Start direkt alle Elemente, oft an unsinnigen Positionen, sichtbar waren. 
+	Eine Möglichkeit, um das zu beheben, wäre alle Elemente, die derzeit nicht angezeigt werden, unsichtbar zu stellen. Geht man diesen Lösungspfad, kann die zukünftige Erstellung von Animationen jedoch verkompliziert werden. Zudem kommt es schnell zu Schwierigkeiten, da die unsichtbaren Elemente dennoch vorhanden sind. Beispiel dafür wäre das korrekte Einfügen an eine bestimmte Position in einer Arraylist. Hat man hier unsichtbare Elemente, muss man genau schauen, wo das tatsächliche Element landen wird.
+	Ein anderer betrachteter Lösungsansatz war, dass zwischen den einzelnen Befehlsausführungen das Programm die entsprechende Zeit wartet, bis es fortfährt. Hier müsste man allerdings zuerst eine gute Methode finden, die zwar das Programm warten lässt, gleichzeitig aber weitere Nutzereingaben, wie das Abbrechen der Visualisierung erlaubt. Außerdem könnte es unhandlich werden die tatsächlichen Wartezeiten einzubauen und es wäre gegebenenfalls auch vom Gerät abhängig, wie schnell dieses die Berechnungen durchführen kann und ob sich in der Praxis nicht vielleicht die Wartezeit von der Zeit der Animation unterscheidet.
+	Die letztlich implementierte Lösung geht wie folgt vor: 
+		1. Der momentane Befehl wird ausgeführt, wodurch auch die Animation dazu erstellt, aber noch nicht gestartet, wird.
+		2. Die Funktion zum Starten des nächsten Befehls wird als "onFinishedEvent" zu der Animation hinzugefügt, welches bewirkt, dass der hinzugefügte Befehl dann gestartet wird, wenn die Animation fertig ist.
+		3. Die momentane Animation wird gestartet.
+		4. Nach der Animation wird durch das Event der nächste Befehl ausgeführt und die Schritte wiederholen sich.
+		\todo{Hier Sequenzdiagramm?}
+	Nachteile dieser Herangehensweise sind, dass es unintuitiv erscheint und dass gewisse Klassen dabei mehr ineinander verzahnt sind. So wird in der derzeitigen Implementierung vom "ExecuteAlgorithmController" auf das "ParentViewModel" zugegriffen, obwohl letzteres an sich höher gestellt sein sollte. Dies kann die Verständlichkeit des Codes beeinträchtigen, weshalb eine ausführliche Dokumentierung dazu angestrebt wurde. Man könnte auch sagen, ein Nachteil wäre, dass jeder Befehl eine Animation braucht, da ansonsten natürlich nicht der nächste Befehl ausgeführt werden könnte. Allerdings lässt sich das einfach mit einem Platzhalter beheben. Dies ist auch so umgesetzt, durch eine Überladung der Methode "generateNode" in den Visualisierungsklassen. Wird keine Animation übergeben, so wird eine "leere Animation" erstellt. 
+	Auf der Seite der Vorteile wäre zunächst, dass der Nutzer ohne Probleme Eingaben während den Animationen tätigen kann. Weiterhin ist man von keinem anderen Timer abhängig, wodurch möglicherweise unterschiedliche Zeiten vermieden werden. Die Funktionalität hängt auch nicht von der Länge der Animationen ab, sodass sie beliebig lang und natürlich auch unterschiedlich lang sein können. Mit dieser Lösung bewegt sich nun die Hervorhebung des ausgewählten Befehls in der Befehlsliste mit Befehl zu Befehl mit, was mit der Lösung durch das unsichtbar stellen nicht so einfach möglich gewesen wäre. Trotz des etwas befremdlichen Ansatzes, mussten für die Umsetzung nur kleine Änderungen an bestehendem Code getätigt werden. Nachdem die Idee und das Konzept für diese Art der kompletten Visualisierung aufkam, gab es in der letztlichen Implementierung keine größeren Schwierigkeiten und es brauchte, im Vergleich zu anderen Überlegungen zur Lösung des Problems, deutlich weniger Zeilen im Code.
 
 
-3.? Verschiedene Speicherungsweisen von Bäumen
-	
-	// Arten Bäume abzuspeichern
-	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder innere Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten auch seinen "rechten Bruder", also seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein Kind an eine Wurzel mit mehreren Kindern angehangen werden, so nimmt man den Kindknoten, dessen "rechter Bruder" den Wert "null" hat, somit den Kindknoten, der am weitestens rechts liegt, und setzt "rechter Bruder" auf den angehangenen Knoten. 
-	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. So kann man bspw. wie in [3] veranschaulicht einen (fast) vollständigen binären Baum als ein Array abspeichern.
-	
-	[1] Cormen Seite 246-248
-	[2] Cormen Seite 248
-	[3] Cormen Seite 153 / 154
+3.4 Config
+	Da es gewisse Parameter im Code gibt, die je nach Zweck angepasst werden sollten, wurde eine "Config"-Datei hinzugefügt, die dafür sorgt, dass man die wichtigsten Parameter auf einen Blick sieht und auch leicht anpassen kann. So ist nun der Ordnerpfad zu den Algorithmen in der Datei abgespeichert, sodass man diesen nicht beschwerlich raussuchen muss, möchte man die Anwendung von einem anderen Gerät starten. Weiterhin sind die Startwerte für die Fensterbreite, Fensterhöhe und die Option für Vollbild des Fensters hierin abgespeichert. Auch der Referenzwert für die Länge aller Animationen und sowohl die maximale als auch die minimale mögliche Skalierung für den Zoom kann hier geändert werden.

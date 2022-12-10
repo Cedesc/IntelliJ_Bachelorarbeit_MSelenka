@@ -1,9 +1,9 @@
 
 
-Teil der Gliederung:
-	7 Zusammenfassung
-		7.1 Fazit
-		7.2 Ausblick
+7 Zusammenfassung
+			- grundlegende Zusammenfassung
+	7.1 Fazit
+	7.2 Ausblick
 
 
 

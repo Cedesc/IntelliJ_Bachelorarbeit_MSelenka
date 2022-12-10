@@ -1,17 +1,18 @@
 
 
-Teil der Gliederung:
-	2 Datenstruktur: Baum 6 (6)
-		2.1 Terminologie 9 (1)
-		2.2 Definition 6 (1)
-		2.3 Eigenschaften 12 (1)
-			2.3.1 Vorteile
-			2.3.2 Nachteile
-		2.4 Verschiedene Arten von Bäumen 10 (2)
-			2.4.1 Binärbaum
-			2.4.2 Rot-Schwarz-Bäume ? (weil es besonders ist, dass die gefärbt sind)
-			2.4.3 ...
-		2.5 Zusammenfassung 13 (1)
+2 Datenstruktur Baum 
+			- theoretische Grundlagen und Nutzung von Bäumen
+	2.1 Terminologie 
+	2.2 Definition 
+	2.3 Verschiedene Speicherungsweisen von Bäumen
+	2.4 Atomare Operationen 
+	2.5 Anwendung von Bäumen
+		2.5.1 Bäume im Alltag / Anwendung
+		2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
+		2.5.3 (spezifische) Baumunterarten / meistgenutzte Baumunterarten
+			- Binärbaum
+			- Rot-Schwarz-Baum
+	2.5 Zusammenfassung 
 
 
 
@@ -37,6 +38,27 @@ Was ich reinbringen kann (Mit 23K abgleichen, da vermischt):
 		- Theorem B.2 (denke nicht, dass ich davon was nochmal aufgreifen kann)
 		- Ein "gerichteter Baum" ist ein Baum, bei dem ein Knoten ausgezeichnet ist. Dieser Knoten wird "Wurzel" genannt. {Abbildung B.6 (a)}
 		- Terminologie: Vorfahre (echter Vorfahre), Nachfahre (echter Nachfahre), Vater, Kind, Geschwister, Blatt, innerer Knoten, Grad, Tiefe eines Knotens, Ebene, Höhe eines Knotens, Höhe eines Baumes, geordneter Baum, binärer Baum, leerer Baum, vollständiger binärer Baum, k-närer Baum
+	- {Quelle bisher https://in.indeed.com/career-advice/finding-a-job/what-is-tree-data-structure}
+	- {Eine nicht-lineare Datenstruktur}
+	- {Natürlicherweise eine Hierarchie in den Daten}
+	- {Kann, abhängig vom konkreten Baum, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.}
+Außerdem:
+	- 3.1 / 3.2 Laufzeiten gewisser Operationen / Algorithmen
+	- Generell: Grafiken
+	- Generell: Auf gesagtes zurückkommen
+	- 2. Alles von Wikipedia kurz angeschnitten, was nicht in 2.1-2.5 auftaucht 
+	- Wo Bäume verwendet werden? ZB bei Ordnerstrukturen auf PC
+	- Grafik, in der veranschaulicht wird, wie etwas aus der "echten" Welt als Baum dargestellt wird
+		- Güting Dieker S. 92 (106) / 93 (107)
+	- Selbstgemachte Grafik a la "was ist ein Baum, was nicht"?
+	- {"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben" Hier rein oder in "Terminologie"?}
+	- Allgemeine Quellen:
+		- Cormen
+		- Güting Dieker S. 92 (106) / 101 (115)
+		- Andere Bücher
+		- https://de.wikipedia.org/wiki/Baum_(Datenstruktur)#Terminologie
+		- https://en.wikipedia.org/wiki/Tree_(data_structure)
+	- kurz erklären was ein "Binärbaum" bzw ein k-närer Baum ist
 	
 
 
@@ -83,14 +105,36 @@ Kapitel:
 		(i) Ein einzelner Knoten x ist ein Baum.
 		(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
 	Das bedeutet, hat man mehrere Bäume, die nicht miteinander verbunden sind (also einen Wald), kann man durch das Erstellen eines neuen Knotens y, der für sich auch bereits ein Baum ist, und dem Hinzufügen als Kindknoten der Wurzeln der Bäume an y, einen einzelnen Baum mit der Wurzel y kreieren.
-	
-	
-2.3 Eigenschaften
-	{Quelle bisher https://in.indeed.com/career-advice/finding-a-job/what-is-tree-data-structure}
-	{Eine nicht-lineare Datenstruktur}
-	{Natürlicherweise eine Hierarchie in den Daten}
-	{Kann, abhängig vom konkreten Baum, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.}
 
 
-2.? "Bäume im Alltag"
+2.3 Verschiedene Speicherungsweisen von Bäumen
+	
+	// Arten Bäume abzuspeichern
+	Möchte man Bäume als Datenstruktur implementieren, stellt sich die Frage, auf welcher Weise man diese, insbesondere die Kindknoten der Knoten, abspeichert. Geht man bspw. nur mit Binärbäumen um, wäre ein einfacher Ansatz, dass jeder Knoten ein Element "linker Kindknoten" und ein Element "rechter Kindknoten" speichert. Damit wäre zudem auch direkt gewährleistet, dass jeder Knoten maximal zwei Kindknoten hat [1]. Bäume mit beschränktem, aber festen Grad, wie Trinärbäume, können analog umgesetzt werden. Doch ist dies bei höherem Grad wegen fehlender Übersichtlichkeit nicht zu empfehlen und es ist keine Lösung für Bäume mit beliebigem Grad. Eine effiziente Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2]. Hierbei speichert jeder innere Knoten nur eins seiner Kindknoten ab, und zwar das, was am weitestens links steht. Dies ist das "linke Kind". Dazu kann jeder Knoten auch seinen "rechten Bruder", also seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt, abspeichern. Bei der Wurzel muss dieser "rechte Bruder" natürlich in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein Kind an eine Wurzel mit mehreren Kindern angehangen werden, so nimmt man den Kindknoten, dessen "rechter Bruder" den Wert "null" hat, somit den Kindknoten, der am weitestens rechts liegt, und setzt "rechter Bruder" auf den angehangenen Knoten. 
+	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. So kann man bspw. wie in [3] veranschaulicht einen (fast) vollständigen binären Baum als ein Array abspeichern.
+	
+	[1] Cormen Seite 246-248
+	[2] Cormen Seite 248
+	[3] Cormen Seite 153 / 154
+
+
+2.4 Atomare Operationen
+	
+	// Auflistung atomarer Funktionen
+	Die zunächst eingebauten atomaren Funktionen sind 
+		1. Das Hinzufügen eines Blatts
+		2. Das Löschen eines Blatts
+		3. Den Elternknoten eines Knotens ändern
+		4. Den Wert eines Knotens ändern
+	Die erste Funktion kann schlichtweg ein Blatt an einen Knoten hinzufügen. Hier ist, falls vorhanden, der maximal zulässige Grad im Baum zu beachten. 
+	Die zweite Funktion löscht ein Blatt aus dem Baum. Dabei ist die Einschränkung, dass nur ein Blatt gelöscht werden kann sehr wichtig, da sich das Löschen eines inneren Knotens aus einem Baum als sehr umständlich rausstellen kann. Beim Löschen eines inneren Knotens muss geregelt sein wie mit den Kindknoten verfahren werden soll, da es hier sonst zu Verletzungen etwaiger Eigenschaften des Baums, wie das Überschreiten eines festgelegten maximalen Grads des Baums, kommen kann. Der Spezialfall des Löschens eines Blattknotens ist im Vergleich simpel. In Kombination mit den anderen hier genannten atomaren Operationen ist es dennoch möglich, einen inneren Knoten zu löschen, worauf ich später weiter eingehen werde.
+	Die dritte Funktion ändert den im Knoten gespeicherten Elternknoten. Damit ist nicht gemeint, dass der Elternknoten selbst in jeglicher Weise geändert wird, sondern die im Knoten hinterlegte Variable, die auf den Elternknoten zeigt, auf einen übergebenen Knoten zeigen soll. Damit nimmt man effektiv den Kindknoten, hängt ihn vom ursprünglichen Elterknoten ab und hängt ihn stattdessen an den übergebenen Knoten als Kindknoten an. 
+	Die vierte und letzte der gelisteten atomaren Funktionen beschreibt das Ändern des Werts des Knotens. 
+	
+	// Damit können alle Operationen konstruiert werden 
+	{Brauch ich ne Quelle?}
+	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
+
+
+2.5.1 "Bäume im Alltag"
 	{Ordnerstruktur auf Betriebssystemen}

@@ -1,10 +1,13 @@
 
 
-Teil der Gliederung:
-	5 Erweiterung der Darstellung 20 (5)
-		5.1 Animationen an den bestehenden Datenstrukturen 20 (4)
-			5.1.1 ArrayList
-		5.2 Zoomen & Bewegen 24 (1) mehr
+Erweiterung um visuelle Features
+			- Umsetzung der Animationen, Zoomen und Bewegen
+	5.1 Animationen 
+		5.1.1 Animationen in ArrayList
+		5.1.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
+	5.2 Zoomen & Bewegen 
+	5.3 Neue Struktur der Architektur (UML & Sequenz Diagramm)
+	5.4 Zusammenfassung
 
 
 
@@ -56,6 +59,10 @@ Kapitel:
 	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der dahinterliegenden tatsächlichen Arraylist zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der dahinterliegenden Arraylist getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
 
 
+5.1.2 Animationen in Bäumen
+	(aus "4.4 Atomare Funktionen + Art der Abspeicherung" rausziehen)
+
+
 5.2 Zoomen & Bewegen
 	
 	// Zoomen und Bewegen nötig um Übersicht zu halten, wenn die Strukturen sehr groß werden
@@ -78,7 +85,7 @@ Kapitel:
 	Neben der Möglichkeit nur ausgewählte Elemente des Fensters zu bewegen, gibt es noch weitere Funktionalitäten, die in diesem Kontext gut umsetzbar wären. Sehr leicht einzubringen wäre die Möglichkeit auf einen Click den Zoom oder auch die Translation auf den Standard zurückzusetzen. Das wäre jeweils durch eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, möglich. Bei der Bewegung könnte sich da als Schwierigkeit herausstellen, da auch die Animationen von den Translationen gebrauch machen, jedoch müsste man, um diesen Konflikt zu umgehen, schlichtweg die durch die Maus getätigten Bewegungen abspeichern und diesen Wert letztlich zurücksetzen anstatt der kompletten Translation des Elements.
 
 
-5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
+5.3 Neue Struktur der Architektur (UML & Sequenz Diagramm)
 	{
 		UML Diagramm überarbeiten. 
 		1. Richtige Abhängigkeiten setzen, also die Pfeile, die sind bislang nur provisorisch gleich gesetzt

@@ -19,45 +19,45 @@ Gliederung (neu neu neu):
 				- theoretische Grundlagen und Nutzung von Bäumen
 		!X 2.1 Terminologie 
 		!X 2.2 Definition 
-		~_ 2.3 Eigenschaften 
-			~_ 2.3.1 Vorteile
-			~_ 2.3.2 Nachteile
-		!_ 2.5 Zusammenfassung 
-		~X 2.? Verschiedene Speicherungsweisen von Bäumen
-		!X 2.? Atomare Operationen 
-		~_ 2.? Anwendung von Bäumen
-			~_ 2.? Bäume im Alltag / Anwendung
-			~_ 2.? (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-			~_ 2.? (spezifische) Baumunterarten / meistgenutzte Baumunterarten
+		~X 2.3 Verschiedene Speicherungsweisen von Bäumen
+		!X 2.4 Atomare Operationen 
+		~_ 2.5 Anwendung von Bäumen
+			~_ 2.5.1 Bäume im Alltag / Anwendung
+			~_ 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
+			~_ 2.5.3 (spezifische) Baumunterarten / meistgenutzte Baumunterarten
 				- Binärbaum
 				- Rot-Schwarz-Baum
+		!_ 2.5 Zusammenfassung 
 	! 3 Änderungen am bestehenden Code
 				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
 		!X 3.1 Refactoring & Kommentare
 		!_ 3.2 ArrayList hinzugefügt
 		!X 3.3 Komplette Visualisierung gefixt
 		!X 3.4 Config Datei
+		!_ 3.5 Zusammenfassung
 	! 4 Darstellung Baum im Programm 
 				- Umsetzung der Bäume
-		!_ 4.1 Problematik 
-		~_ 4.2 balanciert vs unbalanciert 
-		~X 4.? "Algorithmen" zum testen
-		!X 4.? Algorithmus zum Baum Visualisieren
-		!X 4.? Atomare Funktionen + Art der Abspeicherung
+		!X 4.1 Problematik 
+		~X 4.2 "Algorithmen" zum testen
+		!X 4.3 Algorithmus zum Baum Visualisieren
+		!X 4.4 Atomare Funktionen + Art der Abspeicherung
+		!_ 4.5 Zusammenfassung
 	! 5 Erweiterung um visuelle Features
 				- Umsetzung der Animationen, Zoomen und Bewegen
 		!X 5.1 Animationen 
 			!X 5.1.1 Animationen in ArrayList
 			!X 5.1.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
 		!X 5.2 Zoomen & Bewegen 
-		!X 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
+		!X 5.3 Neue Struktur der Architektur (UML & Sequenz Diagramm)
+		!_ 5.4 Zusammenfassung
 	! 6 Zukünftiger Code
 				- Woran man ansetzen kann
-		~_ 6.? Erweiterbarkeit
-			!X 6.? Erweiterbarkeit um weitere Datenstruktur
-			!X 6.? Erweiterbarkeit um Baumunterarten = "4.? Erweiterbarkeit der Bäume"?
-			~_ 6.? Erweiterbarkeit um weitere Animationen
-		!X 6.? Bestehende Probleme
+		~_ 6.1 Erweiterbarkeit
+			!X 6.1.1 Erweiterbarkeit um weitere Datenstruktur
+			!X 6.1.2 Erweiterbarkeit um Baumunterarten = "4.? Erweiterbarkeit der Bäume"?
+			~_ 6.1.3 Erweiterbarkeit um weitere Animationen
+		!X 6.2 Bestehende Probleme
+		!_ 6.3 Zusammenfassung
 	! 7 Zusammenfassung
 				- grundlegende Zusammenfassung
 		!_ 7.1 Fazit

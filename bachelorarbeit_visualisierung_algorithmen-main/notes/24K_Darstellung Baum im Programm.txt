@@ -1,9 +1,12 @@
 
 
-Teil der Gliederung:
-	4 Darstellung Baum im Programm 18 (2)
-		4.1 Problematik 18 (1)
-		4.2 balanciert vs unbalanciert 19 (1)
+4 Darstellung Baum im Programm 
+			- Umsetzung der Bäume
+	4.1 Problematik 
+	4.2 "Algorithmen" zum testen
+	4.3 Algorithmus zum Baum Visualisieren
+	4.4 Atomare Funktionen + Art der Abspeicherung
+	4.5 Zusammenfassung
 
 
 
@@ -11,13 +14,9 @@ Was ich reinbringen kann:
 
 
 
-Kapitel:
 
-4.? "Algorithmen" zum testen
-	
-	// TreeCompleteK_nary und TreeRandom
-	{TODO Die Namen und Bezeichnung (Klasse, Funktion, whatever) anpassen, je nach dem wie es jetzt heißt oder was es nun ist}
-	Um Bäume mit beliebiger Anzahl Knoten leicht zu erzeugen, welche sich besonders für das Austesten des Programms oder geschriebener Algorithmen eignen, wurden zwei Algorithmen hinzugefügt. Der erste ist "TreeCompleteK_nary" mit dem es ermöglicht wird einen k-nären Baum, heißt ein Baum mit Grad k, mit n Knoten zu erzeugen. Dabei kann k, so wie die Anzahl Knoten n, beliebig bestimmt werden. "TreeRandom" ist der zweite Algorithmus. Dieser erstellt einen zufälligen Baum mit n Knoten.
+
+Kapitel:
 
 
 4.1 Problematik
@@ -34,8 +33,13 @@ Kapitel:
 	// Und jetzt gehts um den Algorithmus zum erstellen der visuellen Darstellung eines Baums
 	Allerdings bleibt die Aufgabe solch ein einheitliches Vorgehen zu entwerfen. Während die visuelle Darstellung eines Arrays sehr intuitiv umgesetzt werden, da die Elemente schlichtweg auf einer Ebene mit festen Abständen zueinander gelegen sein können, ist dies bei einem Baum nicht so offensichtlich. Intuitive Ansätze wären einen Baum schlicht von oben oder von unten zu zeichnen. Würde, ohne die anderen Knoten zunächst zu betrachten, bei der Wurzel angesetzt werden, gäbe es keinerlei Anhaltspunkte wo diese auf der horizontalen Achse gelegen sein sollte. Sollen zuerst alle Knoten der untersten Ebene gesetzt werden, so wäre dies eine gute Methode, wenn alle oder beinahe alle Blätter auf der untersten Ebene lägen, ansonsten besteht jedoch ein ähnliches Problem. Da wir für allgemeine Bäume nicht von einem solchen Spezialfall ausgehen können, muss ein anderes Vorgehen entworfen werden. Das letztlich entworfene und verwendete Vorgehen wird in folgendem Kapitel behandelt. 
 
+4.2 "Algorithmen" zum testen
+	
+	// TreeCompleteK_nary und TreeRandom
+	{TODO Die Namen und Bezeichnung (Klasse, Funktion, whatever) anpassen, je nach dem wie es jetzt heißt oder was es nun ist}
+	Um Bäume mit beliebiger Anzahl Knoten leicht zu erzeugen, welche sich besonders für das Austesten des Programms oder geschriebener Algorithmen eignen, wurden zwei Algorithmen hinzugefügt. Der erste ist "TreeCompleteK_nary" mit dem es ermöglicht wird einen k-nären Baum, heißt ein Baum mit Grad k, mit n Knoten zu erzeugen. Dabei kann k, so wie die Anzahl Knoten n, beliebig bestimmt werden. "TreeRandom" ist der zweite Algorithmus. Dieser erstellt einen zufälligen Baum mit n Knoten.
 
-4.? Algorithmus zum Baum visualisieren 
+4.3 Algorithmus zum Baum visualisieren 
 	{Ebenen und Knotennamen in die Grafiken zeichnen?}
 	{code einfügen?? denk eher nicht}
 	
@@ -53,16 +57,7 @@ Kapitel:
 	Unter "TreeDemo.java" ist in der Anwendung ein Baum zu finden, welcher nun als Beispiel betrachtet wird um den vorangegangenen Algorithmus veranschaulichen zu können. Angenommen es liege nun dieser Baum {TODO Abbildung 1 "4 tree positioning drawn"} im Programm vor und die Knoten hätten noch keine Koordinaten zugewiesen um den Baum vernünftig visualisieren zu können. Wenn nun der Algorithmus zum Positionieren der Knoten aufgerufen wird, wäre nach dem oben beschriebenen ersten Schritt das Zwischenergebnis {TODO Abbildung 2 "4 tree positioning drawn"}, vorausgesetzt man visualisierte die Knoten an dieser Stelle. Alle Blätter des Baums wurden auf der untersten Ebene platziert. Wird daraufhin der zweite Schritt ausgeführt, werden, wie in {TODO Abbildung 3 "4 tree positioning drawn"} erkennbar, die Positionen der Blätter 5, 7 und 10 aktualisiert und die Knoten 6, 8 und 9 genau über ihrem jeweils einzigen Kind platziert. Als nächstes wiederholt sich Schritt zwei, wodurch nun die zweite Ebene betrachtet wird und somit auch die Position von Blatt 4 aktualisiert wird. Weiterhin werden Knoten 1, 2 und 3 eingefügt. Während Knoten 3 nur ein Kind hat und deswegen genau über eben diesem platziert wird, ist das bei Knoten 1 und 2 anders. Knoten 1 wird genau über dem mittleren Kind, also Knoten 6 platziert. Die Positionen der Knoten 5 und 7 werden nicht in die Berechnung mit einbezogen. Knoten 2 hat zwei mittlere Kinder, wodurch die x-Koordinate von Knoten 2 genau zwischen diesen platziert wird. Im dritten und damit auch letzten Aufruf von Schritt zwei wird die erste Ebene betrachtet und der Wurzelknoten hinzugefügt ({TODO Abbildung 4 "4 tree positioning drawn"}). Da dieser eine gerade Anzahl an Kindknoten hat, werden nur die mittleren beiden, Knoten 2 und 3, betrachtet um die x-Koordinate der Wurzel zu berechnen. 
 
 
-4.? Erweiterbarkeit der Bäume
-	
-	\todo{welches Kapitel zeigt auf wie man eine Datenstruktur hinzufügen kann?}
-	Es existieren viele verschiedene Arten von Bäumen mit verschiedenen Anforderungen und Eigenschaften. Beispielweise gibt es die sogenannten Rot-Schwarz-Bäume, bei denen, je nach Autor, jeder Knoten [1] oder jede Kante [2] entweder rot oder schwarz gefärbt ist. Um dies mit der Anwendung darzustellen, wäre es derzeit noch nötig entweder das vorhandene abzuändern oder eine neue Datenstruktur dafür einzufügen. Entscheidet man sich für letzteres, so müsste man zwar einige Dateien abändern und hinzufügen, so wie in Kapitel 6.? beschrieben, wobei das meiste von den bereits vorhandenen Bäumen adaptierbar ist. Um leicht Knoten zu erstellen, die rot oder schwarz einfärbbar sind, kann man eine neu erstellte Klasse für eben diese von den bestehenden Knoten erben lassen und noch das Attribut Farbe hinzufügen. Dabei ist es nicht wichtig, ob die Kanten oder die Knoten gefärbt werden sollen, denn die Kanten zu färben würde auf das gleiche Hinauskommen. Durch die Eigenschaften, dass jeder Kindknoten genau ein Elternteil hat, der Baum verbunden sein muss und keine doppelten Verbindungen bestehen, hat jeder Knoten, außer der Wurzel, genau eine Kante hat, die auf den Elternknoten verweist. Da jede Kante immer einen Eltern- mit einem Kindknoten verbindet, sind alle Kanten abgedeckt, wenn man das zu speichernde Attribut für die Kante schlichtweg im verbundenen Kindknoten speichert. Eine Ausnahme, die beachtet werden muss, bildet dabei die Wurzel. Durch diese Eigenschaften kann man den bestehenden Code durch Vererbung gut für weitere Bäume erweitern.
-	
-	[1] Cormen Seite 311 (331) Kapitel 13
-	[2] Ottmann Seite 350 (369)
-
-
-4.? Atomare Funktionen und ihre Animationen + Art der Abspeicherung (linkes-Kind-, rechter-Bruder-Darstellung)
+4.4 Atomare Funktionen und ihre Animationen + Art der Abspeicherung (linkes-Kind-, rechter-Bruder-Darstellung)
 	
 	// Atomare Funktionen
 	Die in {TODO richtiges Kapitel} Kapitel 3.2 aufgezählten vier atomaren Funktionen (Hinzufügen eines Blatts, Löschen eines Blatts, Elternknoten eines Knotens ändern, Wert eines Knotens ändern) wurden als Methoden implementiert. Diese Methoden können alle hier relevanten Funktionsweisen nachbilden. Genauer aufgezeigt ist dies im zuvor bereits genannten Kapitel {TODO richtiges Kapitel} 3.2. In der Anwendung selbst müssen zwar das Erstellen eines Baums und das Löschen eines Baums eigene Methoden der Klasse mit eigenen Animationen sein, in der Theorie würden sich diese aber auch durch das Hinzufügen und Löschen eines Blatts darstellen lassen können.
