@@ -12,7 +12,7 @@
 		2.5.3 (spezifische) Baumunterarten / meistgenutzte Baumunterarten
 			- Binärbaum
 			- Rot-Schwarz-Baum
-	2.5 Zusammenfassung 
+	2.6 Zusammenfassung 
 
 
 
@@ -138,3 +138,4 @@ Kapitel:
 
 2.5.1 "Bäume im Alltag"
 	{Ordnerstruktur auf Betriebssystemen}
+	{https://en.wikipedia.org/wiki/Tree_(data_structure)}

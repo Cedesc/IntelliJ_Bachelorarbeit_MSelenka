@@ -24,10 +24,10 @@ Gliederung (neu neu neu):
 		~_ 2.5 Anwendung von Bäumen
 			~_ 2.5.1 Bäume im Alltag / Anwendung
 			~_ 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-			~_ 2.5.3 (spezifische) Baumunterarten / meistgenutzte Baumunterarten
+			~_ 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
 				- Binärbaum
 				- Rot-Schwarz-Baum
-		!_ 2.5 Zusammenfassung 
+		!_ 2.6 Zusammenfassung 
 	! 3 Änderungen am bestehenden Code
 				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
 		!X 3.1 Refactoring & Kommentare
@@ -54,7 +54,7 @@ Gliederung (neu neu neu):
 				- Woran man ansetzen kann
 		~_ 6.1 Erweiterbarkeit
 			!X 6.1.1 Erweiterbarkeit um weitere Datenstruktur
-			!X 6.1.2 Erweiterbarkeit um Baumunterarten = "4.? Erweiterbarkeit der Bäume"?
+			!X 6.1.2 Erweiterbarkeit um Baumunterarten
 			~_ 6.1.3 Erweiterbarkeit um weitere Animationen
 		!X 6.2 Bestehende Probleme
 		!_ 6.3 Zusammenfassung

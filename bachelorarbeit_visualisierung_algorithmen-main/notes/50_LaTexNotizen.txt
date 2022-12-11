@@ -52,3 +52,38 @@ Tabelle:
 		\caption{This is a caption text.}
 	\end{table}
 
+
+Vlt praktisch:
+	\paragraph{Strategy 1}
+	\todo{schreiben}
+	Inhalt oder so
+
+
+möglicher Aufbau für "Struktur der Arbeit":
+	\textbf{Chapter \ref{sec:related}} \\[0.2em]
+	\todo{schreiben}
+	Inhalt oder so
+
+	\textbf{Chapter \ref{sec:system}} \\[0.2em]
+	\todo{schreiben}
+	Inhalt oder so
+
+	\textbf{Chapter \ref{sec:concepts}} \\[0.2em]
+	\todo{schreiben}
+	Inhalt oder so
+
+	\textbf{Chapter \ref{sec:concepts}} \\[0.2em]
+	\todo{schreiben}
+	Inhalt oder so
+
+	\textbf{Chapter \ref{sec:conclusion}} \\[0.2em]
+	\todo{schreiben}
+	Inhalt oder so
+
+
+Liste:
+	\begin{itemize}	
+		\item Knoten - Element im Baum
+		\item Kanten - Verbindung zwischen zwei Knoten
+		\item Wurzelknoten - Festgelegter Startknoten
+	\end{itemize}

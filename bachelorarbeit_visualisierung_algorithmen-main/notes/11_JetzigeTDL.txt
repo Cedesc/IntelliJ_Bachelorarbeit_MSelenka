@@ -2,27 +2,35 @@
 
 12. Weiterschreiben
 	- noch sicher reinbringen
-		[X] 1.1 Motivation 
-		[X] 4.1 Problematik 
-		[X] 5.? Neue Struktur der Architektur (UML & Sequenz Diagramm)
-		[X] Sequenz-Diagramme zur Animationserstellung erstellt und was dazu geschrieben
-		[X] "6.? Bestehende Probleme" schreiben 
-		[X] generell das ganze ordnen und in Form bringen 
-		[,] Ausblick auf das, wo man ansetzen könnte (siehe 7.2)
-		[.] grob jeweilige Seitenanzahl bestimmen & bei alter BA nochmal schauen um ggf Sachen zu übernehmen
-		[,] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
+		[_4] 2.5.1 Bäume im Alltag / Anwendung
+		[_4] 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
+		[_4] 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
+		[_3] 2.5 Anwendung von Bäumen
+		[_3] 3.2 ArrayList hinzugefügt
+		[_2] 6.1.3 Erweiterbarkeit um weitere Animationen
+		[_2] 6.1 Erweiterbarkeit
+		[_3] 7.1 Fazit
+		[_2] 7.2 Ausblick
+		[_2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
+		[_5] ALLE Einleitungstexte
+		[_5] ALLE Zusammenfassungstexte
+		[_3] Abstract
+		([_4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
+		([_2] 1.3 Zielsetzung)
+		([_2] 1.4 Strukturierung des Inhalts der Arbeit)
+		[_20] Sachen aus "noch vielleicht einbringen"
+		[_30] Texte überarbeiten
+		[_2] kapitel umbenennen
+		[_5] um ganzen kleinen ToDos kümmern
+		[_8] in latex einbringen
+			- zb die listen und mathematische umgebungen richtig machen
+			- grafiken einfügen
 	- noch vielleicht reinbringen
-		[-] In "5.? Neue Struktur der Architektur" erwähnen, dass das von stackoverflow kommt? Oder steht das schon woanders? Zb vorher in Kapitel 5?
-			=> steht schon in "5.2 Zoomen & Bewegen"
-		[-] dieses ".java" aus "6.? Erweiterbarkeit um weitere Datenstruktur" entfernen?
 		[,] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
 		[.] Irgendwo, zb in Einleitung, erwähnen was alles hinzugefügt wurde? Besonders nochmal wegen Config und ConfigReader. Ggf vorhandene thematisierung von Config dort rein schieben
 			=> Wird in "6.2 Änderungen am bestehenden Code" und als Randnotiz in "5.9 Neue Struktur der Architektur" erwähnt
 		[,] Auf "leere Animationen" in kleinem Unterkapitel eingehen? 
 			[,] Und überall, wo das Wort vorkommt, auf dieses Kapitel verweisen / verlinken?
-		[,] "Animationen für zukünftige Datenstrukturen (wie man die hinzufügt)" noch schreiben?
-		[,] "Spezielle Bäume hinzufügen (erben lassen)" schon drin? oder noch schreiben?
-		[.] 1.? Bäume im Alltag (lol) (https://en.wikipedia.org/wiki/Tree_(data_structure))
 		[.] UML Diagramm für Bäume ?
 			- zu beachten: man muss auch was dazu schreiben
 		[.] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
@@ -33,12 +41,10 @@
 			- auch als Quelle in Literaturverzeichnis! Noch mehr in Rest von meiner Arbeit erwähnen?
 			- als related work drauf eingehen (in einleitung oder so) ?
 		[,] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
-		[,] kurzes Kapitel dazu warum "ArrayList" jetzt drin ist??
 		[,] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ??
 		[,] in "3.2 Arraylists" auf Arrays von alter BA verweisen
 		[,] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
-		[_] erklären was "Info-Datenstrukturen" sind??
-		[_] werden irgendwo die animationen der implementierten bäume erklärt / gezeigt?
+		[,] erklären was "Info-Datenstrukturen" sind??
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen
@@ -55,11 +61,6 @@
 		... 7: Nochmal bei anderen BAs schauen, was da so steht
 	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
 		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
-	CHECK! - readme datei erweitern um bäume und arraylists
-Anderes:
-	[/] - neuere version bei gitlab hochladen
-		CHECK! - readme datei 
-		CHECK! - TreeDemo
 
 
 
