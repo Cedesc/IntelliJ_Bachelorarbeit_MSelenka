@@ -2,11 +2,12 @@
 
 12. Weiterschreiben
 	- noch sicher reinbringen
-		[_4] 2.5.1 Bäume im Alltag / Anwendung
-		[_4] 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-		[_4] 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
-		[_3] 2.5 Anwendung von Bäumen
-		[_3] 3.2 ArrayList hinzugefügt
+		[X4] 2.5.1 Bäume im Alltag / Anwendung
+		[X4] 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
+		[X4] 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
+		[X3] 2.5 Anwendung von Bäumen
+		
+		[X3] 3.2 ArrayList hinzugefügt
 		[_2] 6.1.3 Erweiterbarkeit um weitere Animationen
 		[_2] 6.1 Erweiterbarkeit
 		[_3] 7.1 Fazit
@@ -14,6 +15,7 @@
 		[_2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
 		[_5] ALLE Einleitungstexte
 		[_5] ALLE Zusammenfassungstexte
+		
 		[_3] Abstract
 		([_4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
 		([_2] 1.3 Zielsetzung)
@@ -25,6 +27,8 @@
 		[_8] in latex einbringen
 			- zb die listen und mathematische umgebungen richtig machen
 			- grafiken einfügen
+			- bibliography richtig machen, also alle verweise vernünftig
+			- verlinkungen richtig setzen
 	- noch vielleicht reinbringen
 		[,] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
 		[.] Irgendwo, zb in Einleitung, erwähnen was alles hinzugefügt wurde? Besonders nochmal wegen Config und ConfigReader. Ggf vorhandene thematisierung von Config dort rein schieben
@@ -54,6 +58,7 @@
 		- z.B., u.a. und weiteres ausschreiben oder abgekürzt lassen?
 		- Gliederung, so wie ich sie jetzt hab, ok?
 		- Klasse in Text erwähnen mit dieser Schriftart aus der anderen BA
+		- Bei Quellen auch letzter Zugriff angeben? Nur bei Websites?
 	- Gedanken zu Kapitel...
 		... 1: Nochmal bei anderen BAs schauen, was da so steht
 		... 2: Zwischen 2.2 und Zusammenfassung muss noch min eine Sache sein, sonst wärs hart seltsam

@@ -10,6 +10,8 @@
 
 
 Was ich reinbringen kann:
+	- Im Allgemeinen bieten besonders Baume die M ¨ oglichkeit, den internen Aufbau der Datenstruktur in unterschiedlichster Weise zu ¨gestalten. Dies erlaubt sehr effiziente Zugriffsmechanismen. [Hubwieser 245 (261) Kapitel 21 Bäume]
+	- Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]
 
 
 Kapitel:

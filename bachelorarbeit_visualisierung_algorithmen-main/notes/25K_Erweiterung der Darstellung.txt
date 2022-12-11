@@ -45,11 +45,9 @@ Kapitel:
 
 
 5.1.1 Animationen in ArrayList
-	{noch mehr Animationen eingebaut? Deletions? Get?}
-	{erklären warum jetzt arraylist zusätzlich zu array (abgespecktere variante)}
-	{deletions macht probleme und get ist noch nicht drin}
+	{deletions macht probleme (auf kapitel mit "bestehende probleme" verweisen) und get ist schlichtweg noch nicht drin}
 
-	// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und auch drauf eingehen, was das für eine Besserung für den Nutzer ist
+	// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und warums besser für den Nutzer ist
 	Bei den Arraylists wurden drei verschiedene Animationen eingebaut. Eine für das Erstellen einer Arraylists, eine für das Einfügen eines Elements und eine für das Tauschen zweier Elemente innerhalb einer Arraylist. 
 	// Erstellen einer Arraylist
 	Beim Erstellen einer Arraylist ist es eine simple Fade-in Animation von rechts nach links. Jedoch war es schon zuvor für den Nutzer nicht schwer die neue Struktur auf dem Bildschirm auszumachen.

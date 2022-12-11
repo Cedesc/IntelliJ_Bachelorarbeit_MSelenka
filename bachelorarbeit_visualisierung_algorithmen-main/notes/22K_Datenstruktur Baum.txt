@@ -7,11 +7,6 @@
 	2.3 Verschiedene Speicherungsweisen von Bäumen
 	2.4 Atomare Operationen 
 	2.5 Anwendung von Bäumen
-		2.5.1 Bäume im Alltag / Anwendung
-		2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-		2.5.3 (spezifische) Baumunterarten / meistgenutzte Baumunterarten
-			- Binärbaum
-			- Rot-Schwarz-Baum
 	2.6 Zusammenfassung 
 
 
@@ -92,6 +87,7 @@ Kapitel:
 		Blattknoten - Knoten ohne Kindknoten
 		Innerer Knoten - Knoten, der kein Blattknoten ist
 		Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
+		Ausgeglichener Baum - Die Differenz der Tiefen zweier beliebige Blätter ist höchstens eins 
 		Teilbaum - Eine Teilmenge des Baums, wobei jeder Knoten als Wurzel des Teilbaums betrachtet werden kann und dieser mit seinen Nachfahren den benannten Teilbaum bildet
 		Grad (eines Knotens) - Anzahl der Kinder
 		Grad (eines Baums) - Höchster Grad eines Knotens im Baum
@@ -119,6 +115,7 @@ Kapitel:
 
 
 2.4 Atomare Operationen
+	{- Die drei wichtigsten Operationen sind das Suchen, Einfügen und Entfernen. Man nennt diese drei Operationen auch die Wörterbuchoperationen [Ottmann 262 (281) Kapitel 5 Bäume]}
 	
 	// Auflistung atomarer Funktionen
 	Die zunächst eingebauten atomaren Funktionen sind 
@@ -136,6 +133,26 @@ Kapitel:
 	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
 
 
-2.5.1 "Bäume im Alltag"
-	{Ordnerstruktur auf Betriebssystemen}
-	{https://en.wikipedia.org/wiki/Tree_(data_structure)}
+
+
+2.5 Anwendung von Bäumen
+	{später in "Erweiterbarkeit um Baumunterarten" auf die hier gelisteten zurückkommen}
+	
+	// Bäume in der "Realität"
+	Durch Bäume ist es möglich hierarchische Beziehungen zwischen Objekten darzustellen. Auch im Alltag begegnet man dem Konzept der Bäume. Besonders offensichtlich ist dies im Ordnersystem eines PCs oder Handys der Fall. Dabei ist klassischerweise ein Ordner, welcher weitere Dateien beinhaltet, ein innerer Knoten und Dateien, wie Bild- oder Textdateien, die Blätter. Ein leerer Ordner kann auch als Blatt aufgefasst werden. Aber auch in Bereichen fernab von Computern, wie in Ahnentafeln, ein Diagramm, welches die Vorfahren einer Person zeigt. Ein klassischer Stammbaum würde nur in dem Fall, dass alle vorkommenden Personen Einzelkinder sind, einen korrekten Baum darstellen. 
+	
+	// Welche Bäume in der Informatik genutzt werden 
+	Wie bereits in PLATZHALTER \todo{auf Kapitel 1.? verweisen} aufgezeigt, gehören Bäume zu den wichtigsten und meistgenutzten Datenstrukturen der Informatik. Daher ist es nicht verwunderlich, dass viele verschiedene Unterarten und Spezialfälle von Bäumen genutzt werden. Zunächst sei zu erwähnen, dass diese Unterarten von Bäumen nicht disjunkt sind. So kann der nachfolgend beschriebene Suchbaum ein binärer Baum sein oder ein Binärbaum ein Suchbaum sein, während ein AVL-Baum allerdings per Definition ein Binärbaum ist, Binärbäume jedoch weitaus mehr als nur AVL-Bäume umfassen.
+	// Binärbäume
+	Die wohl am häufigsten genutzte Art sind, die bereits erwähnten, Binärbäume, die sich dadurch auszeichnen, dass jeder Knoten maximal zwei Kinder hat. 
+	// Suchbäume
+	Suchbäume bieten eine bessere Laufzeit bei Suchoperationen, da die gesetzten Schlüssel des linken Teilbaums eines Knoten alle kleiner und die Schlüssel des rechten Teilbaums alle größer sind als der Schlüssel des betrachteten Knotens [PLATZHALTER \todo{Verweis auf Ottmann 263 (282) Kapitel 5 Bäume}].
+	// AVL-Bäume
+	Wird ein zuverlässig ausgeglichener Baum benötigt, können AVL-Bäume aushelfen. Durch ein für jeden Knoten zusätzlich hinzugefügtes Attribut [PLATZHALTER \todo{Verweis auf Solymosi 154 (169) Kapitel 6.4 ausgeglichene Bäume}], sorgen diese für einen stetig ausgeglichenen Baum. 
+	// Rot-Schwarz-Bäume
+	Als Alternative zu AVL-Bäumen können auch Rot-Schwarz-Bäume verwendet werden um die Ausgeglichenheit des Baums zu wahren. Bei diesen werden die Kanten entweder schwarz oder rot gefärbt [PLATZHALTER \todo{Verweis auf Solymosi 165 (180) Kapitel 6.6 Rot-Schwarz-Bäume}]. 
+	// (a, b)-Bäume
+	Um ein letztes Beispiel noch aufzuzeigen existieren noch (a, b)-Bäume, die sogenannte externe Suchbäume sind, was bedeutet, dass ihre inneren Knoten nur Verwaltungsinformationen bereithalten, während die Daten von den Blättern gespeichert werden [PLATZHALTER \todo{Verweis auf Hubwieser 264 (280) Kapitel 21.6 Bäume}]. B-Bäume, ein Spezialfall der (a, b)-Bäume, sind "eine bedeutende Speicherlösung für Sekundärspeicher (z.B. Festplatten)" [PLATZHALTER \todo{direktes Zitat von Hubwieser 245 (261) Kapitel 21 Bäume}].
+	
+	// wo das hier aufgezeigte nochmal genutzt wird
+	In PLATZHALTER \todo{auf Kapitel "6.? Erweiterbarkeit zu Bäumen" verweisen} werden die hier genannten Beispiele in Bezug auf die Umsetzbarkeit im Programm beleuchtet.

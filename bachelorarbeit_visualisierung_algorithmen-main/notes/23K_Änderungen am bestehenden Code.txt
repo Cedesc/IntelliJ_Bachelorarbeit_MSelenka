@@ -20,12 +20,19 @@ Was ich reinbringen kann:
 Kapitel:
 
 3.1 Refactoring & Kommentare
+
 	Fast alle Dateien wurden geringfügig geändert. Das kommt daher, dass viele Rechtschreibfehler korrigiert, teilweise Kommentare hinzugefügt oder auch Dateien oder Funktionen umbenannt wurden. So wurde zum Beispiel zur besseren Verständlichkeit die Methode "startVisualization" der Klasse "ParentViewModel" zu "startCompleteVisualization" umbenannt, da die Methode an sich die komplette Visualisierung statt der Schritt-für-Schritt Visualisierung startet, es mit dem vorherigen Namen aber auch wie eine allgemeinere, für die Schritt-für-Schritt Visualisierung wichtige, Funktionalität wirken konnte.
 	Auch wurden an sehr vielen Stellen Kleinigkeiten geändert, die zuvor in der Entwicklungsumgebung Warnungen hervorgerufen haben. So wurden unter anderem rohe Verwendungen parametrisierter Klassen korrigiert oder auch ungenutzte Auflistungen von Fehlern in der "throws list" der jeweiligen Methode entfernt.
 	Da in der Klasse "ParentViewModel" ein großer Teil des Codes für die Methoden "exeNextCommand", "exePreviousCommand" und "startCompleteVisualization" sehr ähnlich war, wurde dieser als eigene Methode mit dem Namen "exeCommand" ausgelagert. Innerhalb der drei genannten Methoden hat sich so die Anzahl der Zeilen von jeweils 60 auf jeweils maximal 10 geändert. Somit ist der Bereich des Codes nun deutlich übersichtlicher. Weiterhin auch besser anpassbar, da durch das Auslagern der Methode nur an einer Stelle eventuelle Änderungen getätigt werden müssen, statt wie zuvor darauf achten zu müssen, dass man an allen drei Stellen den Code umschreibt.
+
+
+3.2 ArrayList hinzugefügt
+
+	Wie in PLATZHALTER \todo{Verweis auf BA von MS} beschrieben, wurde die Datenstruktur "Array" der Anwendung bereits hinzugefügt. Diese führt bei Nutzung allerdings noch häufig zu unerwartetem Verhalten oder auch Fehlern. Um an einer möglichst stabilen und simplen Datenstruktur Animationen erstellen zu können, wurde die Datenstruktur "ArrayList" hinzugefügt. Dabei wurden einige Operationen von "Array" übernommen. Zwar produziert "ArrayList" seltener Fehler, bietet bislang allerdings auch deutlich weniger Funktionalitäten. In PLATZHALTER \todo{Verweis auf 5.1.1 Animationen in ArrayList} werden die für "ArrayList" hinzugefügten Animationen genauer betrachtet. 
 	
 
 3.3 Komplette Visualisierung
+
 	Der Code und auch das Konzept für die komplette Visualisierung wurde stark überarbeitet. Zuvor war es nicht möglich in der kompletten Visualisierung die einzelnen Schritte nachzuverfolgen, stattdessen sollte nach gewisser Wartezeit direkt das Endergebnis angezeigt werden. Durch einen Fehler konnte es aber zu falschen Ergebnissen kommen, da statt allen Befehlen nur einer wiederholt abgespielt wurde. Nun kann die Anwendung nach dem Auswählen der kompletten Visualisierung die Befehle zeitversetzt oder auch mit ihren Animationen nacheinander abspielen, sodass der Algorithmus selbständig nach und nach ausgeführt wird und es für den Nutzer wie eine Aufzeichnung wirkt.
 	Um dies zu erreichen wurden zunächst Animationen (und auch "leere Animationen", in denen sich nichts bewegt, sondern einfach nur abgewartet wird) hinzugefügt. Alle Animationen wollten dabei allerdings zeitgleich starten. Mit dem Hintergrund, dass die Animationen korrekt zeitgleich starten sollten, wurden daraufhin die Animationen stattdessen gespeichert, statt sofort abspielen zu lassen und daraufhin nach und nach abgespielt. Dadurch wurden zwar die Animationen korrekt nacheinander abgespielt, jedoch gab es ein anderes Problem: Zum Start der ersten Animation wurden bereits alle Elemente erstellt, sodass schon zum Start direkt alle Elemente, oft an unsinnigen Positionen, sichtbar waren. 
 	Eine Möglichkeit, um das zu beheben, wäre alle Elemente, die derzeit nicht angezeigt werden, unsichtbar zu stellen. Geht man diesen Lösungspfad, kann die zukünftige Erstellung von Animationen jedoch verkompliziert werden. Zudem kommt es schnell zu Schwierigkeiten, da die unsichtbaren Elemente dennoch vorhanden sind. Beispiel dafür wäre das korrekte Einfügen an eine bestimmte Position in einer Arraylist. Hat man hier unsichtbare Elemente, muss man genau schauen, wo das tatsächliche Element landen wird.
@@ -41,4 +48,5 @@ Kapitel:
 
 
 3.4 Config
+
 	Da es gewisse Parameter im Code gibt, die je nach Zweck angepasst werden sollten, wurde eine "Config"-Datei hinzugefügt, die dafür sorgt, dass man die wichtigsten Parameter auf einen Blick sieht und auch leicht anpassen kann. So ist nun der Ordnerpfad zu den Algorithmen in der Datei abgespeichert, sodass man diesen nicht beschwerlich raussuchen muss, möchte man die Anwendung von einem anderen Gerät starten. Weiterhin sind die Startwerte für die Fensterbreite, Fensterhöhe und die Option für Vollbild des Fensters hierin abgespeichert. Auch der Referenzwert für die Länge aller Animationen und sowohl die maximale als auch die minimale mögliche Skalierung für den Zoom kann hier geändert werden.

@@ -21,12 +21,7 @@ Gliederung (neu neu neu):
 		!X 2.2 Definition 
 		~X 2.3 Verschiedene Speicherungsweisen von Bäumen
 		!X 2.4 Atomare Operationen 
-		~_ 2.5 Anwendung von Bäumen
-			~_ 2.5.1 Bäume im Alltag / Anwendung
-			~_ 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-			~_ 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
-				- Binärbaum
-				- Rot-Schwarz-Baum
+		!X 2.5 Anwendung von Bäumen
 		!_ 2.6 Zusammenfassung 
 	! 3 Änderungen am bestehenden Code
 				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
