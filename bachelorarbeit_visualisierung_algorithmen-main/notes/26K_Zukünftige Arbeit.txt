@@ -4,7 +4,7 @@
 			- Woran man ansetzen kann
 	6.1 Erweiterbarkeit
 		6.1.1 Erweiterbarkeit um weitere Datenstruktur
-		6.1.2 Erweiterbarkeit um Baumunterarten = "4.? Erweiterbarkeit der Bäume"?
+		6.1.2 Erweiterbarkeit um Baum-Unterarten
 		6.1.3 Erweiterbarkeit um weitere Animationen
 	6.2 Bestehende Probleme
 	6.3 Zusammenfassung
@@ -42,7 +42,7 @@ Kapitel:
 	In "ParentViewModel" muss ein Attribut hinzugefügt und zwei Methoden erweitert werden. Hinzugefügt werden muss die in "visualization.XYVisualization" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sollten auch nur wenige Zeilen erforderlich sein. So muss "exeCommand" zusätzlich den Fall "XYCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für XY zurücksetzen.
 
 
-6.1.2 Erweiterbarkeit der Bäume
+6.1.2 Erweiterbarkeit um Baum-Unterarten
 	{auf die in 2.5 gelisteten Unterarten drauf zurückkommenhier gelisteten zurückkommen}
 	
 	\todo{welches Kapitel zeigt auf wie man eine Datenstruktur hinzufügen kann?}

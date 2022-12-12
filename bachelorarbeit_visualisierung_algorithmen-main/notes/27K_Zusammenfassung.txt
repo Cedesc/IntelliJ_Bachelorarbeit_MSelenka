@@ -37,7 +37,16 @@ Kapitel:
 
 
 7.2 Ausblick
-	{Animationen für weitere Datenstrukturen <= steht quasi schon woanders, aber ich kann ja zB spezifisches nennen}
-	{Spezielle Bäume hinzufügen <= steht quasi schon woanders, aber ich kann ja zB spezifisches nennen}
-	{- wo man jetzt ansetzen könnte: deletion animationen, komplexere atomare befehle beinhaltende befehle einbauen, andere art von bäumen oder generell neue datenstruktur einbauen, automatische get animation, ...}
-	{Bestehende Probleme, siehe "5.? Bestehende Probleme", fixen}
+	{automatische get animation ??}
+	
+	// Schöner Einleitungssatz
+	...
+	
+	// Aus "Erweiterbarkeit"
+	Ein erster Punkt, an dem es möglich ist zukünftig anzusetzen, wäre weitere Animationen für die implementierten Datenstrukturen zu entwerfen und hinzuzufügen. So bietet es sich an die restlichen Befehle der vorhandenen Datenstrukturen zu animieren. Auch neue Datenstrukuren, besonders Baum-Unterarten, wie Rot-Schwarz-Bäume, können nachfolgend implementiert werden. Wie die Anwendung in diesen Bereichen zu erweitern ist, wird in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} erklärt.
+	
+	// Aus "Bestehende Probleme"
+	Eine andere Herausforderung stellen die geschilderten Probleme aus PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} dar. Dabei handelt es sich um Animationen für Löschoperationen und dem automatischen visuellen Justieren des Baums. Um diese Probleme zu überwinden können eventuell die im selben Kapitel aufgezeigten Vorschläge erste Lösungsansätze liefern.
+	
+	// Weiteres
+	Auch die implementierten allgemeinen Bäume können erweitert werden. So können komplexere Befehle, hinzugefügt werden, wie bspw. Rotationen. Diese können, wenn gewünscht, einzig und allein mit einer Kombination aus den bereits vorhandenen atomaren Operationen umgesetzt werden.
