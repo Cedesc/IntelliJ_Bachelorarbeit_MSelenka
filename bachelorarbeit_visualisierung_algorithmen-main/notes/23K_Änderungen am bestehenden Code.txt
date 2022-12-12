@@ -3,11 +3,11 @@
 
 3 Änderungen am bestehenden Code
 			- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
-	!X 3.1 Refactoring & Kommentare
-	!_ 3.2 ArrayList hinzugefügt
-	!X 3.3 Komplette Visualisierung gefixt
-	!X 3.4 Config Datei
-	!_ 3.5 Zusammenfassung
+	3.1 Refactoring & Kommentare
+	3.2 ArrayList hinzugefügt
+	3.3 Komplette Visualisierung gefixt
+	3.4 Config Datei
+	3.5 Zusammenfassung
 
 
 

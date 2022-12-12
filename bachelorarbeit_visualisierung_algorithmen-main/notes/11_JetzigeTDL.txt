@@ -6,19 +6,22 @@
 		[X4] 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
 		[X4] 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
 		[X3] 2.5 Anwendung von Bäumen
-		
 		[X3] 3.2 ArrayList hinzugefügt
-		[_2] 6.1.3 Erweiterbarkeit um weitere Animationen
-		[_2] 6.1 Erweiterbarkeit
-		[_3] 7.1 Fazit
+		[X2] 6.1.3 Erweiterbarkeit um weitere Animationen
+		[X2] 6.1 Erweiterbarkeit
+		[X3] 7.1 Fazit
+		([X4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
+		
+		- in latex einbringen? (also grundlegend, damit ich mir von mateusz zeug erklären lassen kann)
+		- kapitel umbenennen?
+		
 		[_2] 7.2 Ausblick
 		[_2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
 		[_5] ALLE Einleitungstexte
 		[_5] ALLE Zusammenfassungstexte
 		
 		[_3] Abstract
-		([_4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
-		([_2] 1.3 Zielsetzung)
+		[_2] 1.3 Zielsetzung
 		([_2] 1.4 Strukturierung des Inhalts der Arbeit)
 		[_20] Sachen aus "noch vielleicht einbringen"
 		[_30] Texte überarbeiten
@@ -49,6 +52,8 @@
 		[,] in "3.2 Arraylists" auf Arrays von alter BA verweisen
 		[,] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
 		[,] erklären was "Info-Datenstrukturen" sind??
+		[,] "6.1 Erweiterbarkeit" schreiben?? Denke nicht
+		[,] "1.2 Vergleich von bestehenden ähnlichen Programmen" schreiben??? safe nicht
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen

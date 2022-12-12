@@ -26,14 +26,14 @@ Gliederung (neu neu neu):
 	! 3 Änderungen am bestehenden Code
 				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
 		!X 3.1 Refactoring & Kommentare
-		!_ 3.2 ArrayList hinzugefügt
+		!X 3.2 ArrayList hinzugefügt
 		!X 3.3 Komplette Visualisierung gefixt
 		!X 3.4 Config Datei
 		!_ 3.5 Zusammenfassung
 	! 4 Darstellung Baum im Programm 
 				- Umsetzung der Bäume
 		!X 4.1 Problematik 
-		~X 4.2 "Algorithmen" zum testen
+		~~~X 4.2 "Algorithmen" zum testen
 		!X 4.3 Algorithmus zum Baum Visualisieren
 		!X 4.4 Atomare Funktionen + Art der Abspeicherung
 		!_ 4.5 Zusammenfassung
@@ -47,10 +47,10 @@ Gliederung (neu neu neu):
 		!_ 5.4 Zusammenfassung
 	! 6 Zukünftiger Code
 				- Woran man ansetzen kann
-		~_ 6.1 Erweiterbarkeit
+		!_ 6.1 Erweiterbarkeit
 			!X 6.1.1 Erweiterbarkeit um weitere Datenstruktur
 			!X 6.1.2 Erweiterbarkeit um Baumunterarten
-			~_ 6.1.3 Erweiterbarkeit um weitere Animationen
+			!X 6.1.3 Erweiterbarkeit um weitere Animationen
 		!X 6.2 Bestehende Probleme
 		!_ 6.3 Zusammenfassung
 	! 7 Zusammenfassung

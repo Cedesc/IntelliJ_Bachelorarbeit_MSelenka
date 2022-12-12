@@ -17,6 +17,8 @@ Was ich reinbringen kann:
 
 Kapitel:
 
+6.1 Erweiterbarkeit
+
 6.1.1 Erweiterbarkeit um weitere Datenstruktur
 	{Beim Teil der abzuändernden Dateien auch noch Beispielcode aus den beiden Dateien einfügen? Wär nicht viel im Vergleich zum Beispielcode einer ganzen Datenstruktur...}
 	
@@ -48,6 +50,23 @@ Kapitel:
 	
 	[1] Cormen Seite 311 (331) Kapitel 13
 	[2] Ottmann Seite 350 (369)
+
+
+6.1.3 Erweiterbarkeit um weitere Animationen
+	
+	// Allgemein nochmal kurz Gegebenheiten erklären
+	In PLATZHALTER \todo{Verweis auf "5.1 Animationen"} wird beschrieben wie eine Animation vom Programm erstellt und abgespielt wird. Die Animationen liegen in einer, von der Klasse, die sich um die Visualisierung kümmert, abgekapselten Klasse. Die Animation für einen spezifischen Befehl wird in der Regel von je einer Funktion dieser Animationsklasse erzeugt und zurückgegeben. In der Visualisierungsklasse sind in den jeweiligen Befehlsvisualisierungen nur die Funktionsaufrufe vorzufinden. 
+	
+	// Wo platzieren
+	Um neue Animationen hinzufügen, sollte geprüft werden, ob bereits eine Klasse zur Erstellung der Animationen vorliegt. Ist dies nicht der Fall, ist eine solche zu erstellen. Dabei sollte sie von der abstrakten Klasse "AbstractAnimationCreator" erben und als Attribut zur passenden Visualisierungsklasse hinzugefügt werden. Im anderen Fall, dass noch keine Animationsklasse existiert, muss lediglich eine Funktion hinzugefügt werden, die eine zu dem Befehl passende Animation erstellt und zurückgibt. Diese muss nur noch in der Visualisierungsklasse von der korrekten Methode zur Visualisierung des Befehls aufgerufen werden.
+	
+	// Konkrete Animation erstellen
+	Die konkrete Animation kann letztlich eine beliebige Instanz der "Transition"-Klasse von JavaFX sein. Zu beachten ist dabei nur, dass die Dauer der zurückgegebenen "Transition" nicht Null sein sollte und die Dauer nicht mit einer festen Zahl, sondern durch multiplizieren oder dividieren des geerbten Attributs "standardDuration" bestimmt werden sollte. Dadurch kann mit einfachem Ändern der Config-Datei die Länge aller Animationen angepasst werden. 
+	
+	// Beachte: Zusammenspiel mit Visualisierungsklasse
+	Zu beachten ist, dass trotz der Abkapselung von der jeweiligen Visualisierungsklasse, selbstverständlich ein gewisse Abhängigkeit nötig sind. So sollte jedes visuelle Element, das in der Animation bewegt werden soll, von der Visualisierungsklasse nicht nur erzeugt, sondern auch als Parameter beim Aufruf der jeweiligen Methode zur Erstellung der Animation übergeben werden. Natürlich kann sich dies durch zukünftige Änderungen am Programmcode ändern, insbesondere wenn, wie in PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} beschrieben, eine komplette automatische Justierung stattfinden kann. 
+	
+	Ändert sich nichts an der grundlegenden Struktur der Anwendung und werden all diese Punkte beachtet, ist es möglich sowohl Befehle der derzeitig vorhandenen Datenstrukturen, als auch zukünftig hinzugefügte Befehle und Befehle zukünftiger Datenstrukturen zu animieren. 
 
 
 6.2 Bestehende Probleme
