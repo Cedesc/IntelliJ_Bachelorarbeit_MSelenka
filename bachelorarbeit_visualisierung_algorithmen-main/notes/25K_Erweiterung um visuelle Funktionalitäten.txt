@@ -1,6 +1,6 @@
 
 
-Erweiterung um visuelle Features
+Erweiterung um visuelle Funktionalitäten
 			- Umsetzung der Animationen, Zoomen und Bewegen
 	5.1 Animationen 
 		5.1.1 Animationen in ArrayList

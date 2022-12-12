@@ -1,6 +1,6 @@
 
 
-6 Zukünftiger Code
+6 Zukünftige Arbeit
 			- Woran man ansetzen kann
 	6.1 Erweiterbarkeit
 		6.1.1 Erweiterbarkeit um weitere Datenstruktur

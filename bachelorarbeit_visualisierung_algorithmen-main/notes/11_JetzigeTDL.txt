@@ -11,9 +11,8 @@
 		[X2] 6.1 Erweiterbarkeit
 		[X3] 7.1 Fazit
 		([X4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
-		
-		- in latex einbringen? (also grundlegend, damit ich mir von mateusz zeug erklären lassen kann)
-		- kapitel umbenennen?
+		[X3] Wie man was macht für latex rausfinden
+		[X2] kapitel umbenennen
 		
 		[_2] 7.2 Ausblick
 		[_2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
@@ -25,13 +24,8 @@
 		([_2] 1.4 Strukturierung des Inhalts der Arbeit)
 		[_20] Sachen aus "noch vielleicht einbringen"
 		[_30] Texte überarbeiten
-		[_2] kapitel umbenennen
 		[_5] um ganzen kleinen ToDos kümmern
-		[_8] in latex einbringen
-			- zb die listen und mathematische umgebungen richtig machen
-			- grafiken einfügen
-			- bibliography richtig machen, also alle verweise vernünftig
-			- verlinkungen richtig setzen
+		[_5] in latex einbringen
 	- noch vielleicht reinbringen
 		[,] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
 		[.] Irgendwo, zb in Einleitung, erwähnen was alles hinzugefügt wurde? Besonders nochmal wegen Config und ConfigReader. Ggf vorhandene thematisierung von Config dort rein schieben
@@ -54,6 +48,7 @@
 		[,] erklären was "Info-Datenstrukturen" sind??
 		[,] "6.1 Erweiterbarkeit" schreiben?? Denke nicht
 		[,] "1.2 Vergleich von bestehenden ähnlichen Programmen" schreiben??? safe nicht
+		[,] Anhang wie?
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "man" mit "wir" ersetzen

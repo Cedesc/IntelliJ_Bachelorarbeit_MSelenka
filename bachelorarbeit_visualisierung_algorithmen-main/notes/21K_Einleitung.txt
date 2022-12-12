@@ -3,9 +3,8 @@
 1 Einleitung
 			- grundlegende Einleitung
 	1.1 Motivation 
-	1.2 Vergleich von bestehenden ähnlichen Programmen 
-	1.3 Zielsetzung 
-	1.4 Strukturierung des Inhalts der Arbeit 
+	1.2 Zielsetzung 
+	1.3 Strukturierung des Inhalts der Arbeit 
 
 
 
@@ -51,9 +50,5 @@ Kapitel:
 	Das Zoomen und Bewegen sollen parallel und ohne gegenseitige Beeinflussung mit den Animationen möglich sein, sodass der Nutzer auch während laufender Animationen frei durch das Bild navigieren kann ohne dabei Fehler hervorzurufen. Animationen sollten für den Nutzer leicht nachvollziehbar gestaltet sein. Weiterhin sollten Animationen für zukünftig hinzugefügte Datenstrukturen implementierbar sein, ohne dass andere, von der Datenstruktur unabhängige, Dateien dafür verändert werden müssen. Bei den Bäumen ist zu beachten, dass diese eine allgemeine Variante darstellen sollen. Das bedeutet, dass es zukünftig möglich sein soll spezielle Bäume hinzuzufügen, die von dem allgemeinen Baum erben können sollen, um so das Hinzufügen zu erleichtern und die Bäume einheitlich zu halten.
 
 
-1.2 Vergleich von bestehenden ähnlichen Programmen
-	- ne
-
-
-1.3 Zielsetzung
+1.2 Zielsetzung
 	{Das was unter "Ziele" in 1.1 bereits steht?}

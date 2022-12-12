@@ -1,11 +1,11 @@
 
 
 
-3 Änderungen am bestehenden Code
+3 Überarbeitungen am bestehenden Code
 			- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
-	3.1 Refactoring & Kommentare
-	3.2 ArrayList hinzugefügt
-	3.3 Komplette Visualisierung gefixt
+	3.1 Refaktorierung & Kommentare
+	3.2 ArrayList
+	3.3 Komplette Visualisierung
 	3.4 Config Datei
 	3.5 Zusammenfassung
 
@@ -19,14 +19,14 @@ Was ich reinbringen kann:
 
 Kapitel:
 
-3.1 Refactoring & Kommentare
+3.1 Refaktorierung & Kommentare
 
 	Fast alle Dateien wurden geringfügig geändert. Das kommt daher, dass viele Rechtschreibfehler korrigiert, teilweise Kommentare hinzugefügt oder auch Dateien oder Funktionen umbenannt wurden. So wurde zum Beispiel zur besseren Verständlichkeit die Methode "startVisualization" der Klasse "ParentViewModel" zu "startCompleteVisualization" umbenannt, da die Methode an sich die komplette Visualisierung statt der Schritt-für-Schritt Visualisierung startet, es mit dem vorherigen Namen aber auch wie eine allgemeinere, für die Schritt-für-Schritt Visualisierung wichtige, Funktionalität wirken konnte.
 	Auch wurden an sehr vielen Stellen Kleinigkeiten geändert, die zuvor in der Entwicklungsumgebung Warnungen hervorgerufen haben. So wurden unter anderem rohe Verwendungen parametrisierter Klassen korrigiert oder auch ungenutzte Auflistungen von Fehlern in der "throws list" der jeweiligen Methode entfernt.
 	Da in der Klasse "ParentViewModel" ein großer Teil des Codes für die Methoden "exeNextCommand", "exePreviousCommand" und "startCompleteVisualization" sehr ähnlich war, wurde dieser als eigene Methode mit dem Namen "exeCommand" ausgelagert. Innerhalb der drei genannten Methoden hat sich so die Anzahl der Zeilen von jeweils 60 auf jeweils maximal 10 geändert. Somit ist der Bereich des Codes nun deutlich übersichtlicher. Weiterhin auch besser anpassbar, da durch das Auslagern der Methode nur an einer Stelle eventuelle Änderungen getätigt werden müssen, statt wie zuvor darauf achten zu müssen, dass man an allen drei Stellen den Code umschreibt.
 
 
-3.2 ArrayList hinzugefügt
+3.2 ArrayList
 
 	Wie in PLATZHALTER \todo{Verweis auf BA von MS} beschrieben, wurde die Datenstruktur "Array" der Anwendung bereits hinzugefügt. Diese führt bei Nutzung allerdings noch häufig zu unerwartetem Verhalten oder auch Fehlern. Um an einer möglichst stabilen und simplen Datenstruktur Animationen erstellen zu können, wurde die Datenstruktur "ArrayList" hinzugefügt. Dabei wurden einige Operationen von "Array" übernommen. Zwar produziert "ArrayList" seltener Fehler, bietet bislang allerdings auch deutlich weniger Funktionalitäten. In PLATZHALTER \todo{Verweis auf 5.1.1 Animationen in ArrayList} werden die für "ArrayList" hinzugefügten Animationen genauer betrachtet. 
 	

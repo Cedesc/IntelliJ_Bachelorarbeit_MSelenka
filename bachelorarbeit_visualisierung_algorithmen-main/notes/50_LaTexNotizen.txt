@@ -6,6 +6,41 @@ Einsteigerkurs:
 
 
 
+- Auf Quellen verweisen:
+	\cite{Apple:keynote:2010}
+
+
+- Auf andere Kapitel verweisen:
+	\ref{sec:baumumsetzung:sec4}
+
+
+- Grafiken einfügen:
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.3]{gfx/UML Class Diagram.pdf}
+		\caption{Caption}
+		\label{fig:uml}
+	\end{figure}
+
+
+- Durchnummerierte Liste statt mit Punkten am Anfang:
+	\begin{itemize}
+		\item[1.] Alle Blätter des Baums auf unterster Ebene mit vorgegebenem Abstand platzieren.
+		\item[2.] Alle Knoten der nächsthöheren Ebene betrachten und wie folgt verfahren:
+		\begin{itemize}
+			\item[2a.] Ist der Knoten ein Blatt, so setze seine y-Koordinate auf die y-Koordinate der derzeitigen Ebene. Die x-Koordinate stimmt bereits, da das Blatt zunächst auf unterster Ebene platziert wurde.
+			\item[2b.] Ist der Knoten kein Blatt, so bestimme sein mittleres Kind und setze seine x-Koordinate auf die des mittleren Kinds. Hat der Knoten eine gerade Anzahl an Kindern, so gibt es zwei mittlere Kinder und stattdessen wird das Mittel der x-Koordinaten der beiden genommen.
+		\end{itemize}
+		\item[3.] Wiederhole Schritt 2 bis alle Ebenen abgearbeitet wurden.
+	\end{itemize}
+
+
+- Definition (auch so wie Liste):
+	\begin{itemize}
+		\item[(i)] Ein einzelner Knoten $x$ ist ein Baum.
+		\item[(ii)] Wenn $x$ ein Knoten ist und $T_1,..., T_k$ Bäume sind, dann ist auch das $(k+1)$-Tupel $(x, T_1,..., T_k)$ ein Baum.
+	\end{itemize}
+
 
 Code im Text:
 	\begin{lstlisting}[language=Java, caption={A simple Hellow World example in Java.}\label{lst:javahelloworld}]
