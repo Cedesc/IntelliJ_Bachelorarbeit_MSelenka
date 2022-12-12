@@ -9,14 +9,14 @@
 
 
 Was ich reinbringen kann:
-	- Im Allgemeinen bieten besonders Baume die M ¨ oglichkeit, den internen Aufbau der Datenstruktur in unterschiedlichster Weise zu ¨gestalten. Dies erlaubt sehr effiziente Zugriffsmechanismen. [Hubwieser 245 (261) Kapitel 21 Bäume]
-	- Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]
 
 
 Kapitel:
 
 1 Einleitung
 	{"Dabei wurde versucht möglichst am Vorgänger anzuknüpfen, sodass der Code kohärent erscheint" (was bei Visualisierung, siehe "4.? Algorithmus zum Baum visualisieren" nicht geklappt hat, wird aber auch dort erklärt warum). Außerdem möglichst Kapselung, wie das zoomen, bewegen und die animationen, sodass die außerhalb der visualisierungsklassen stehen (zwar braucht jetzt wegen der complete visualization alles eine animation, in fällen von noch-keiner-vorhanden wird aber eine "leere animation" erzeugt.) - Das alles hier rein oder woanders? Steht es schon woanders?}
+	{- Im Allgemeinen bieten besonders Baume die M ¨ oglichkeit, den internen Aufbau der Datenstruktur in unterschiedlichster Weise zu ¨gestalten. Dies erlaubt sehr effiziente Zugriffsmechanismen. [Hubwieser 245 (261) Kapitel 21 Bäume]}
+	{- Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]}
 
 1.1 Motivation
 	{dieses "vorige" Version streichen, lieber "bisheriger?", weils in dem Zeitpunkt von vor der arbeit geschrieben wurde?}
@@ -51,4 +51,21 @@ Kapitel:
 
 
 1.2 Zielsetzung
-	{Das was unter "Ziele" in 1.1 bereits steht?}
+	{
+		// Bäume
+		Allgemeine Bäume wurden als weitere Datenstruktur zur Anwendung hinzugefügt. Die in PLATZHALTER \todo{Verweis auf "2.? Atomare Funktionen"} beschriebenen atomaren Funktionen und Zugriffsoperationen wurden hinzugefügt. Es wurde ein Weg gefunden Bäume zuverlässig einheitlich zu visualisieren, ohne dass unnatürliche Abstände oder unübersichtliche Anordnungen entstehen. Bäume können durch die Operationen und die besagte Visualisierung bereits vollumfänglich genutzt werden. 
+		// Animationen
+		Für das Erstellen erster simpler Animationen wurde die Datenstruktur "ArrayList" hinzugefügt, welche zwar kompakt ist, dafür allerdings stabil läuft. Für "ArrayList" wurden jeweils für die Befehle des Erstellens einer Instanz von "ArrayList", des Einsetzens eines Element und des Tauschens zweier Elemente Animationen hinzugefügt. Bei den Bäumen wurden Animationen für das Erstellen einer Instanz, das Hinzufügen eines Blatts, das Ändern eines Werts und Zugriffsoperationen hinzugefügt. Was an dieser Stelle bislang noch nicht funktioniert sind generell Animationen für Löschoperationen. Außerdem haben Bäume noch nicht die Möglichkeit sich automatisch zu justieren. Insgesamt konnte durch das Hinzufügen von Animationen eine bessere Nachvollziehbarkeit des Programms erreicht werden.
+		// Zoomen & Bewegen
+		Es wurde die Möglichkeit implementiert die dargestellte Datenstruktur zu vergrößern oder auch zu verkleinern. Dieses Zooming wird mit dem Mausrad ausgeführt und zoomt relativ zur Mausposition. Der maximale und minimale Grad des Zooms kann in der Config-Datei angepasst werden. Außerdem kann sich mit der Maus durch das Bild bewegt werden. Die Bewegung durch das Bild und Zoomen zum oder aus dem Bild kann gleichzeitig mit abgespielten Animationen genutzt werden. 
+	}
+
+
+
+
+Abstrakt:
+	{
+	Die vorliegende Arbeit befasst sich mit der Erstellung eines Programmes zur Visualisierung von Datenstrukturen. Diese Anwendung mit dem Namen Älgorithm Visual Studioërmöglicht die Erstellung von benutzerdefinierten Algorithmen auf klassischen Datenstrukturen wie Variablen, Arrays und verketteten Listen. Der Benutzer bindet eigene Algorithmen dynamisch in das Programm ein. Durch eine ausgearbeitete Struktur kann die Operationsliste und zugehörige Visualisierung eingesehen werden. Dabei werden vorgefertigte Methoden benutzt, die im Hintergrund die Darstellung und Manipulation der Daten übernehmen.
+	Um die zuvor genannten Aspekte in einer Software zu verwirklichen, wurden zunächst das Anforderungsdokument und eine allgemeine graphische Oberfläche in Form von Mockups erstellt. Aus diesen beiden bildete sich eine detaillierte Strukturierung und ein Aufbau der Software durch UML-Diagramme. Zusammen mit den theoretischen Grundlagen der verwendeten Datenstrukturen dienten alle Komponenten als Vorlage und Hilfsmittel für die nachfolgende Implementierung. 
+	Das Programm ist durch seine Struktur darauf ausgelegt, zukünftige Erweiterungen und neue Datenstrukturen aufzunehmen. Die erfolgreiche Umsetzung des erarbeiteten Konzepts wird in den kommenden Kapiteln beschrieben.
+	}

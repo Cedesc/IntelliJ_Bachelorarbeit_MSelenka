@@ -13,7 +13,6 @@ Erweiterung um visuelle Funktionalitäten
 
 
 Was ich reinbringen kann:
-	- bei deletions probleme (noch nicht hinschreiben?)
 
 
 
