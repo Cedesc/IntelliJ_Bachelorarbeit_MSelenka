@@ -14,11 +14,10 @@
 		[X3] Wie man was macht für latex rausfinden
 		[X2] kapitel umbenennen
 		[X2] 7.2 Ausblick
+		[X3] Abstract
+		[X2] 1.2 Zielsetzung
 		
-		[_3] Abstract
-		[_2] 1.2 Zielsetzung
 		[_2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
-		
 		([_2] 1.3 Strukturierung des Inhalts der Arbeit)
 		[_5] ALLE Einleitungstexte (?)
 			- 2 Datenstruktur Baum
@@ -32,6 +31,7 @@
 			- 4 Umsetzung Baum im Programm
 			- 5 Erweiterung um visuelle Funktionalitäten
 			- 6 Zukünftige Arbeit
+
 		[_20] Sachen aus "noch vielleicht einbringen"
 		[_30] Texte überarbeiten
 		[_5] um ganzen kleinen ToDos kümmern
