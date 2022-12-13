@@ -4,7 +4,7 @@
 			- Umsetzung der Bäume
 	4.1 Problematik 
 	4.2 Visualisierungsalgorithmus
-	4.3Implementierung
+	4.3 Implementierung
 	4.4 Zusammenfassung
 
 
@@ -18,13 +18,17 @@ Was ich reinbringen kann:
 Kapitel:
 
 
+4
+	{"Auch hier wurde, so wie im vorigen Abschnitt versucht möglichst am Vorgänger anzuknüpfen, sodass der Code kohärent erscheint, allerdings hat dies bei der visualisierungs so nicht geklappt...}
+
+
 4.1 Problematik
 	{"4.? Algorithmus zum Baum visualisieren" direkt hiernach dranklatschen}
 	{Code zeigen??}
 	{sequenzdiagramme zum erklären der alten und der neuen methode?}
 
 	// Wie es bisher gemacht wurde
-	In den Klassen zur Visualisierung der Datenstrukturen Array, Liste und Variable wird mit "layoutXY", wobei XY hier für eine der vorhandenen Datenstrukturen steht, die derzeit gezeigten visuellen Darstellungen der Instanzen einer Datenstruktur abgespeichert. Soll nun bspw. ein Element hinzugefügt werden, muss dies zweimal passieren: Zunächst wird es in der dahinterliegenden Datenstruktur hinzugefügt und danach wird der zugehörige Index in "layoutXY", heißt der visuellen Darstellung, gesucht, das Element dort eingefügt und nachfolgende Elemente ggf. um einen Index nach hinten verschoben. Eine Alternative zu diesem Vorgehen wäre eine Methode, die mit einem einheitlichen Vorgehen eine visuelle Darstellung einer Datenstruktur von Grund auf neu erstellt. Der Vorteil der erstgennanten Methode gegenüber dieser Alternative ist, dass nur die visualisierten Teile, die sich tatsächlich ändern, betrachtet werden. Was man als großen Nachteil allerdings ausmachen kann ist die deutlich erhöhte Menge an Code, der für die individuellen Befehle zum korrekten Visualisieren benötigt wird. Dies ist nötig, da jeder Befehl, wie bereits zuvor erklärt, auch jedes mal auf "layoutXY" angewandt werden muss. Je mehr individueller Code je Befehl geschrieben werden muss, desto wahrscheinlicher können Fehler auftreten und desto schlechter ist die Erweiterbarkeit der Klasse. 
+	In den Klassen zur Visualisierung der Datenstrukturen Array, Liste und Variable wird mit "layoutXY", wobei XY hier für eine der vorhandenen Datenstrukturen steht, die derzeit gezeigten visuellen Darstellungen der Instanzen einer Datenstruktur abgespeichert. Soll nun bspw. ein Element hinzugefügt werden, muss dies zweimal passieren: Zunächst wird es in der Info-Datenstruktur \todo{Auf Definition verweisen} hinzugefügt und danach wird der zugehörige Index in "layoutXY", heißt der visuellen Darstellung, gesucht, das Element dort eingefügt und nachfolgende Elemente ggf. um einen Index nach hinten verschoben. Eine Alternative zu diesem Vorgehen wäre eine Methode, die mit einem einheitlichen Vorgehen eine visuelle Darstellung einer Datenstruktur von Grund auf neu erstellt. Der Vorteil der erstgennanten Methode gegenüber dieser Alternative ist, dass nur die visualisierten Teile, die sich tatsächlich ändern, betrachtet werden. Was man als großen Nachteil allerdings ausmachen kann ist die deutlich erhöhte Menge an Code, der für die individuellen Befehle zum korrekten Visualisieren benötigt wird. Dies ist nötig, da jeder Befehl, wie bereits zuvor erklärt, auch jedes mal auf "layoutXY" angewandt werden muss. Je mehr individueller Code je Befehl geschrieben werden muss, desto wahrscheinlicher können Fehler auftreten und desto schlechter ist die Erweiterbarkeit der Klasse. 
 	
 	// Warum das bei Bäumen kacke ist
 	Bei den nun hinzugefügten Bäumen ist dieser Nachteil deutlich schwerwiegender. Werden einzelne Elemente hinzugefügt oder gelöscht, muss oft ein großer Teil, wenn nicht sogar der komplette Baum, etwas verschoben werden, damit die visuelle Darstellung weiterhin einheitlich und natürlich aussieht und es nicht zu grafischen Fehlern wie Überlappungen der Elemente kommen kann. Auf der anderen Seite ist der genannte Vorteil nur noch kaum spürbar, da, wie beschrieben, bei den meisten Operationen ein großer Teil vom Baum betroffen ist. Insgesamt führt dies dazu, dass eine Methode, die mit einheitlichem Vorgehen den kompletten Baum als visuelle Darstellung neu erstellt, deutlich sinnvoller erscheint. Auch wenn die Methode selbst nicht wenig Codezeilen benötigt, reduziert sich hier so im gesamten die Anzahl der Zeilen erheblich, da die meisten individuellen Visualisierungsbefehle nur aus dieser einheitlichen Methode bestehen. Insbesondere die Erweiterbarkeit des Programmcodes profitiert davon.

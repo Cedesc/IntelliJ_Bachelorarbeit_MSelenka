@@ -26,12 +26,16 @@ Was ich reinbringen kann:
 
 Kapitel:
 
+
 2
-{Eine nicht-lineare Datenstruktur}
-{Natürlicherweise eine Hierarchie in den Daten}
-{Kann, abhängig vom konkreten Baum, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.}
-{"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben"}
-{hier eine unausreichende Quelle https://runestone.academy/ns/books/published/pythonds/Trees/VocabularyandDefinitions.html , https://blog.masaischool.com/tree-data-structure-types-operations-applications/ , https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm}
+	{Eine nicht-lineare Datenstruktur}
+	{Natürlicherweise eine Hierarchie in den Daten}
+	{Kann, abhängig vom konkreten Baum, bessere Laufzeiten in gewissen Operationen, vorrangig dem Suchen, haben, als bei linearen Datenstrukturen. Dies kann erreicht werden, da bei großen Mengen an Daten zB Suchoperationen bei verketteten Listen oder Arrays immer langsamer werden, während die Suche in einem Baum durch geschickte höhere Platzierung bedeutenderer Knoten, die Suchzeit verbessert werden kann.}
+	{"Bäume werden üblicherweise von oben nach unten, mit dem Wurzelknoten an oberster Stelle, gezeichnet. Dabei hat jeder Knoten, außer der Wurzelknoten, genau ein Elternknoten und kann mehrere Kindknoten haben"}
+	{hier eine unausreichende Quelle https://runestone.academy/ns/books/published/pythonds/Trees/VocabularyandDefinitions.html , https://blog.masaischool.com/tree-data-structure-types-operations-applications/ , https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm}
+	{- Im Allgemeinen bieten besonders Baume die M ¨ oglichkeit, den internen Aufbau der Datenstruktur in unterschiedlichster Weise zu ¨gestalten. Dies erlaubt sehr effiziente Zugriffsmechanismen. [Hubwieser 245 (261) Kapitel 21 Bäume]}
+	{- Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]}
+
 
 2.1 Terminologie
 	{Selbstgemachte Grafik, in der an einem Baum die ganzen Sachen beschriftet ist?}
@@ -101,8 +105,6 @@ Kapitel:
 	// Damit können alle Operationen konstruiert werden 
 	{Brauch ich ne Quelle?}
 	Lässt man Bäume mit weiteren Eigenschaften, wie gefärbte Knoten, außer Acht, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann man durch geschicktes Umändern der Elternknoten einen neu hinzugefügten Blattknoten zu einen, an einer beliebigen Position stehenden, inneren Knoten werden lassen. Andersrum ist es, wie bereits erwähnt möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
-
-
 
 
 2.5 Anwendung von Bäumen

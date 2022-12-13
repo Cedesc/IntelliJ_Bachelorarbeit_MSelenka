@@ -13,7 +13,7 @@ Gliederung (neu neu neu):
 				- grundlegende Einleitung
 		!X 1.1 Motivation 
 		!X 1.2 Zielsetzung 
-		!_ 1.3 Strukturierung des Inhalts der Arbeit 
+		!X 1.3 Strukturierung des Inhalts der Arbeit 
 	! 2 Datenstruktur Baum 
 				- theoretische Grundlagen und Nutzung von Bäumen
 		!X 2.1 Terminologie 
@@ -39,7 +39,7 @@ Gliederung (neu neu neu):
 				- Umsetzung der Animationen, Zoomen und Bewegen
 		!X 5.1 Animationen 
 			!X 5.1.1 Animationen in ArrayList
-			!X 5.1.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
+			!X 5.1.2 Animationen in Bäumen 
 		!X 5.2 Zoomen & Bewegen 
 		!X 5.3 Neue Struktur der Architektur (UML & Sequenz Diagramm)
 		!_ 5.4 Zusammenfassung
@@ -119,8 +119,6 @@ Gliederung (neu): (UNVOLLSTÄNDIG! siehe oben)
 
 	1 Einleitung (5)
 		1.1 Motivation (2)
-			- Animationen machen dem Nutzer die Sachen leichter verständlich
-			- Bäume sind voll wichtig und so
 		1.2 Vergleich von bestehenden ähnlichen Programmen (1)
 		1.3 Zielsetzung (1)
 		1.4 Strukturierung des Inhalts der Arbeit (1)

@@ -18,6 +18,11 @@ Was ich reinbringen kann:
 
 Kapitel:
 
+
+5
+	{"Möglichst versucht Animationen, Zoomen und Bewegung voneinander abgekapselt zu haben"}
+
+
 5.1 Animationen
 	{War zuvor ein Unterkapitel mit dem Namen "Animationen an den bestehenden Datenstrukturen" => Text überprüfen ob nicht gewisse Sachen raus müssen}
 	{mit "arraylist" aufpassen, da das jetzt was anderes als "arrays" ist}
@@ -36,7 +41,7 @@ Kapitel:
 	\todo{bei InfoTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
 	\todo{bei MyTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
 	// auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden
-	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, wurde hier ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. Der Vorgang ist in PLATZHALTER \todo{Abbildung 1} anhand eines UML-Sequenzdiagramms am Beispiel des "addLeaf"-Befehls der Bäume verdeutlich. Wird der Befehl in InfoTree aufgerufen, so wird zunächst durch einen Aufruf der addLeaf-Methode der zugrundeliegenden Datenstruktur MyTree, die Änderung der Daten ausgeführt. Konkret bedeutet dies in dem Fall das Hinzufügen des Blatts, das als newLeaf abgespeichert wird. Nach der Manipulierung der Daten wird die Visualisierungsklasse, hier TreeVisualization, aufgerufen. Dabei werden zunächst visuelle Elemente hinzugefügt, gelöscht oder geändert und daraufhin die passende Animation dazu erstellt. Im Beispiel bedeutet das erst einen Aufruf von drawAllTrees, wodurch anhand der Daten der Bäume, all diese neu erstellt werden und danach die Erstellung der Animation mithilfe der forAddLeaf-Methode. Diese Trennung zwischen Visualisierung und Erstellung der Animationen sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden können.
+	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, wurde hier ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. Der Vorgang ist in PLATZHALTER \todo{Abbildung 1} anhand eines UML-Sequenzdiagramms am Beispiel des "addLeaf"-Befehls der Bäume verdeutlich. Wird der Befehl in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} InfoTree aufgerufen, so wird zunächst durch einen Aufruf der addLeaf-Methode des von InfoTree gespeicherten "MyTree"s, die Änderung der Daten ausgeführt. Konkret bedeutet dies in dem Fall das Hinzufügen des Blatts, das als newLeaf abgespeichert wird. Nach der Manipulierung der Daten wird die Visualisierungsklasse, hier TreeVisualization, aufgerufen. Dabei werden zunächst visuelle Elemente hinzugefügt, gelöscht oder geändert und daraufhin die passende Animation dazu erstellt. Im Beispiel bedeutet das erst einen Aufruf von drawAllTrees, wodurch anhand der Daten der Bäume, all diese neu erstellt werden und danach die Erstellung der Animation mithilfe der forAddLeaf-Methode. Diese Trennung zwischen Visualisierung und Erstellung der Animationen sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden können.
 	
 	// Sowohl backward als auch forward geht es
 	Da man in der Anwendung in der Step-by-Step Visualization sowohl einen Schritt nach vorne als auch einen Schritt zurück gehen kann, stellt sich die Frage, wie man Animationen bei einem Schritt zurück ausführen kann und ob dabei Problematiken auftauchen. Der Code ist jedoch durch das Command-Pattern so geschrieben, dass gar keine Anpassungen getroffen werden mussten um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen und das ohne, dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig war.
@@ -53,7 +58,7 @@ Kapitel:
 	// Einfügen eines Elements
 	Interessanter ist das Einfügen eines Elements. Während die Animation für das Einfügen am Ende der Arraylist fast genau so simpel wie die Animation für das Erstellen einer Arraylist aussieht und vergleichsweise geringen Mehrwert für den Nutzer hat, so wird der Nutzen deutlich größer, wenn man ein Element zwischen anderen Elementen in einer Arraylist hinzufügt. In diesem Fall werden alle Elemente, die hinter dem neu einzusetzenden Element stehen sollen, während der Fade-in Animation des einzufügenden Elements, einen Platz weiter nach rechts geschoben. Um dies korrekt umzusetzen, habe ich mich eines Tricks bedient, auf den ich näher beim Erklären der Tauschoperation eingehe. Für den Nutzer kann diese Einfügeanimation das Nachvollziehen des Programms deutlich vereinfachen, da dieser direkt sieht, welches Element wo eingefügt wurde.
 	// Tauschen zweier Elemente
-	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der dahinterliegenden tatsächlichen Arraylist zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der dahinterliegenden Arraylist getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
+	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} von ArrayList zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} ArrayListInfo getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
 
 
 5.1.2 Animationen in Bäumen
@@ -87,19 +92,19 @@ Kapitel:
 	Neben der Möglichkeit nur ausgewählte Elemente des Fensters zu bewegen, gibt es noch weitere Funktionalitäten, die in diesem Kontext gut umsetzbar wären. Sehr leicht einzubringen wäre die Möglichkeit auf einen Click den Zoom oder auch die Translation auf den Standard zurückzusetzen. Das wäre jeweils durch eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, möglich. Bei der Bewegung könnte sich da als Schwierigkeit herausstellen, da auch die Animationen von den Translationen gebrauch machen, jedoch müsste man, um diesen Konflikt zu umgehen, schlichtweg die durch die Maus getätigten Bewegungen abspeichern und diesen Wert letztlich zurücksetzen anstatt der kompletten Translation des Elements.
 
 
-5.3 Neue Struktur der Architektur (UML & Sequenz Diagramm)
+5.3 Neue Struktur der Architektur
 	{
 		UML Diagramm überarbeiten. 
-		1. Richtige Abhängigkeiten setzen, also die Pfeile, die sind bislang nur provisorisch gleich gesetzt
-		2. "ArrayVisualization", "ArrayAnimation", "-arrayAnimation", etc. in "ArrayList..." umbenennen
-		3. Ggf altes durchgestrichen rot und das neue grün machen
-		4. Verbindung von SceneGestures und NodeGestures zu ExecuteAlgorithmController? Also eine einfache Relation im Sinne von "hat damit zu tun"
-		5. fieldDistance von AbstractAnimationCreator löschen
-		6. playOneByOne aus TransitionChain löschen (und auch calculateDelaysForCompleteVisualization und startAnimation?)
-		7. ZoomPane myScale privat machen?
-		8. generell prüfen ob alles so noch up to date ist und keine funktionen zb umbenannt wurden
-		9. neu platzieren, sodass man schöne farbige rechtecke machen kann um die einzelnen features bewegung, zoomen und animation abzugrenzen? (siehe auch Punkt 10)
-		10. Lieber dreiteilen für die einzelnen Bereiche und das ganze Ding nur als Anhang?
+		CHECK! 1. Richtige Abhängigkeiten setzen, also die Pfeile, die sind bislang nur provisorisch gleich gesetzt
+		CHECK! 2. "ArrayVisualization", "ArrayAnimation", "-arrayAnimation", etc. in "ArrayList..." umbenennen
+		CHECK! 3. Ggf altes durchgestrichen rot und das neue grün machen
+		CHECK! 4. Verbindung von SceneGestures und NodeGestures zu ExecuteAlgorithmController? Also eine einfache Relation im Sinne von "hat damit zu tun"
+		CHECK! 5. fieldDistance von AbstractAnimationCreator löschen
+		CHECK! 6. playOneByOne aus TransitionChain löschen (und auch calculateDelaysForCompleteVisualization und startAnimation?)
+		CHECK! 7. ZoomPane myScale privat machen?
+		CHECK! 8. generell prüfen ob alles so noch up to date ist und keine funktionen zb umbenannt wurden
+		CHECK! 9. neu platzieren, sodass man schöne farbige rechtecke machen kann um die einzelnen features bewegung, zoomen und animation abzugrenzen? (siehe auch Punkt 10)
+		CHECK! 10. Lieber dreiteilen für die einzelnen Bereiche und das ganze Ding nur als Anhang?
 	}
 
 	{Richtige Abbildungsbezeichnungen reinpacken}
@@ -113,7 +118,7 @@ Kapitel:
 	// Zoomen
 	Das Zoomen wird von ZoomPane und SceneGestures ermöglicht. ZoomPane dient dafür als sichtbares Fenster, weshalb es auch von der JavaFX-Klasse Pane erbt. Der tatsächliche Vorgang wird allerdings von der Klasse SceneGestures übernommen. Von SceneGestures wird, ähnlich wie bei NodeGestures, in der initialize-Methode von ExecuteAlgorithmController eine Instanz erstellt und zum Fenster, in dem das ZoomPane liegt, als Event hinzugefügt. 
 	// Animation
-	Etwas aufwendigere Änderungen waren für die hinzuzufügenden Animationen notwendig. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Außerdem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen, u.a. das zuweisen einer "leeren Animation", die schlichtweg wartet, bis die Animationszeit vorüber ist. Insgesamt sorgt Abkapselung der Animationen von der Visualisierung für eine besser Lesbarkeit und Wartbarkeit des Programmcodes. Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain, welche für leichtere Verwaltung mehrerer Animationen sorgt. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain vorzeitig zum Animationsende springen.
+	Etwas aufwendigere Änderungen waren für die hinzuzufügenden Animationen notwendig. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Außerdem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen. Insgesamt sorgt Abkapselung der Animationen von der Visualisierung für eine besser Lesbarkeit und Wartbarkeit des Programmcodes. Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain, welche für leichtere Verwaltung mehrerer Animationen sorgt. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain vorzeitig zum Animationsende springen.
 
 	// Klassen, die nicht vom UML Diagramm gezeigt werden
 	Es wurden noch weitere Klassen zum Programmcode hinzugefügt, die nicht in {Abbildung 1?} vorzufinden sind. Zum einen ConfigReader, welche allerdings einzig das Auslesen der zusätzlich hinzugefügten Config-Datei übernimmt. Zudem wurden mehrere Dateien zu Bäumen hinzugefügt, wobei es sich hier, zumindest bezüglich der Softwarearchitektur, einfach um eine weitere Datenstruktur handelt. Wie im Allgemeinen eine neue Datenstruktur hinzugefügt werden kann, wie auch die Bäume hinzugefügt wurden, wird in {Kapitel XY} erklärt.	

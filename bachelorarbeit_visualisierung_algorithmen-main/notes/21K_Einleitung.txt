@@ -13,47 +13,51 @@ Was ich reinbringen kann:
 
 Kapitel:
 
+
 1 Einleitung
-	{"Dabei wurde versucht möglichst am Vorgänger anzuknüpfen, sodass der Code kohärent erscheint" (was bei Visualisierung, siehe "4.? Algorithmus zum Baum visualisieren" nicht geklappt hat, wird aber auch dort erklärt warum). Außerdem möglichst Kapselung, wie das zoomen, bewegen und die animationen, sodass die außerhalb der visualisierungsklassen stehen (zwar braucht jetzt wegen der complete visualization alles eine animation, in fällen von noch-keiner-vorhanden wird aber eine "leere animation" erzeugt.) - Das alles hier rein oder woanders? Steht es schon woanders?}
-	{- Im Allgemeinen bieten besonders Baume die M ¨ oglichkeit, den internen Aufbau der Datenstruktur in unterschiedlichster Weise zu ¨gestalten. Dies erlaubt sehr effiziente Zugriffsmechanismen. [Hubwieser 245 (261) Kapitel 21 Bäume]}
-	{- Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]}
+
 
 1.1 Motivation
 	{dieses "vorige" Version streichen, lieber "bisheriger?", weils in dem Zeitpunkt von vor der arbeit geschrieben wurde?}
 
 	// Was bisher geschah
-	In der vorigen Version bot die Anwendung die Möglichkeit Arrays, Listen und Variablen zu visualisieren. Jedoch existieren noch einige weitere Datenstrukturen, für die eine Visualisierung interessant wäre. 
+	In der vorigen Version bot "Algorithm Visual Studio" die Möglichkeit Arrays, Listen und Variablen zu visualisieren PLATZHALTER \todo{Quellenverweis auf die BA?}. Jedoch existieren noch viele weitere Datenstrukturen, für die eine Visualisierung interessant hilfreich sein kann. 
 	
 	// Bäume sind voll toll
 	Eine dieser ist die Datenstruktur Baum. Dank mehrerer nützlicher Eigenschaften, werden Bäume sehr häufig angewandt, wie zB beim Verwalten von Daten oder für effizientes Suchen eines Elements. Mit zahlreichen Unterarten, wie B-Bäumen oder Rot-Schwarz-Bäumen, gehören Bäume zu den wichtigsten Datenstrukturen in der Informatik. 
 	
 	// Bäume visualisieren ist toll
-	Allerdings können sich komplexere Operationen auf Bäumen für Programmieranfänger als schwierig nachzuvollziehen herausstellen, da sich durch die, im Vergleich zu Arrays und Listen, komplexere Struktur mehr zu beachtende Eigenschaften ergeben. Durch die Wichtigkeit von Bäumen, bietet es sich an die Anwendung um diese zu erweitern. Eine Visualisierung von Bäumen und darauf ausgeführten Algorithmen kann die Verständlichkeit enorm erhöhen.
+	Allerdings können sich komplexere Operationen auf Bäumen für Programmieranfänger als schwierig nachzuvollziehen herausstellen, da sich durch die, im Vergleich zu Arrays und Listen, komplexere Struktur mehr zu beachtende Eigenschaften ergeben. Durch die Wichtigkeit von Bäumen, bietet es sich an die Anwendung um diese zu erweitern. Eine Visualisierung von Bäumen und den darauf ausgeführten Algorithmen kann die Verständlichkeit enorm erhöhen.
 	
 	// Was ohne Animationen Kacke ist
-	Durch das Visualisieren von Bäumen würde jedoch ein Schwachpunkt der Anwendung sehr offensichtlich. Dieser Schwachpunkt ist das in manchen Fällen schwierige Nachvollziehen einer getätigten Operation in der gezeigten Datenstruktur. Durch die Zwangsläufige visuelle Neujustierung des Baums bei fast allen Operationen, kann es sich z.B. schnell als schwer herausstellen in der visualisierten Datenstruktur zu erkennen welcher Knoten an welchen anderen Knoten angehangen wurde. Dieses Problem war bereits in der vorherigen Version vorhanden, wenn ein Element mitten in einem Array hinzugefügt oder gelöscht wird, allerdings wird es durch die strukturell komplexeren Bäume deutlich größer. 
+	Durch das Visualisieren von Bäumen würde jedoch ein Schwachpunkt der Anwendung offensichtlich. Dieser Schwachpunkt ist das teilweise schwierige Nachvollziehen einer getätigten Operation in der gezeigten Datenstruktur. Durch die Zwangsläufige visuelle Neujustierung des Baums bei fast allen Operationen, kann es sich als schwer herausstellen in der visualisierten Datenstruktur z.B. zu erkennen welcher Knoten an welchen anderen Knoten angehangen wurde. Das war bereits in der vorherigen Version der Fall, wenn ein Element mitten in einem Array hinzugefügt oder gelöscht wurde, allerdings wird das Problem durch die strukturell komplexeren Bäume deutlich größer. 
 	
 	// Animationen yey
-	Eine Lösung hierfür schaffen Animationen. Ein gut nachvollziehbarer visueller Übergang zwischen der Ausgangslage und dem Endbild kann die komplette Verständlichkeit deutlich erhöhen. Bereits bei einfachen Operationen kann der Nutzer die gezeigte Änderung deutlich einfacher und angenehmer aufnehmen. 
+	Eine Lösung hierfür schaffen Animationen. Ein gut nachvollziehbarer visueller Übergang zwischen der Ausgangslage und dem Endbild kann die komplette Verständlichkeit deutlich erhöhen. Bereits bei einfachen Operationen kann der Nutzer die gezeigte Änderung erheblich einfacher und angenehmer aufnehmen. 
 	
 	// Was ohne Zoomen und Bewegen Kacke ist
-	Eine weitere Problematik ist, dass bei zahlreichen oder größeren Instanzen der Datenstrukturen, die Datenstrukturen über das gezeigte Fenster hinausragen. Dabei ist es in der vorigen Version nicht möglich die Datenstrukturen, die teilweise oder komplett außerhalb des gezeigten Fensters liegen, anzeigen zu lassen. Besonders mit dem Hinzufügen von Bäumen, die schon bei wenigen Elementen beträchtlichen Platz einnehmen müssen, kommt dieses Problem häufiger vor. 
+	Eine weitere Problematik ist, dass bei zahlreichen oder größeren Instanzen der Datenstrukturen, diese über das gezeigte Fenster hinausragen. Dabei ist es in der vorigen Version nicht möglich die Datenstrukturen, die teilweise oder komplett außerhalb des gezeigten Fensters liegen, anzeigen zu lassen. Besonders mit dem Hinzufügen von Bäumen, die schon bei wenigen Elementen beträchtlichen Platz einnehmen müssen, kommt dieses Problem häufiger vor. 
 	
 	// Zoomen und Bewegen yey
-	Die Möglichkeit das Bild zu zoomen und die gezeigten Datenstrukturen zu bewegen löst dieses Problem. Damit ist es sowohl möglich Gesamtlage oder einzelne genaue Bereiche im Auge zu behalten. 
+	Die Möglichkeit das Bild zu zoomen und die gezeigten Datenstrukturen zu bewegen löst dieses Problem. Damit ist es sowohl möglich die Gesamtlage oder einzelne genaue Bereiche im Auge zu behalten. 
 
 
-	// Wad mach isch denn doa
+	// Schlusssatz
 	Nachfolgend wird die Erweiterung der Anwendung um Bäume, Animationen und dem Zoomen und Bewegen im Fenster behandelt. 
 
 
 1.2 Zielsetzung
 	
 	// Einleitungssatz
-	Im zuvorigen Abschnitt wurden die einzelnen großen Elemente, um die das Programm erweitert werden soll, kurz angerissen. In diesem Abschnitt sollen die spezifisch gesetzten Ziele zu diesen Erweiterungen genannt werden.
+	Im vorigen Abschnitt wurden die einzelnen großen Elemente, um die das Programm erweitert werden soll, kurz angerissen. In diesem Abschnitt sollen die spezifisch gesetzten Ziele zu diesen Erweiterungen genannt werden.
 	
 	// Ziele
-	Das Zoomen und Bewegen sollen parallel und ohne gegenseitige Beeinflussung mit den Animationen möglich sein, sodass der Nutzer auch während laufender Animationen frei durch das Bild navigieren kann ohne dabei Fehler hervorzurufen. Animationen sollten für den Nutzer leicht nachvollziehbar gestaltet sein. Weiterhin sollten Animationen für zukünftig hinzugefügte Datenstrukturen implementierbar sein, ohne dass andere, von der Datenstruktur unabhängige, Dateien dafür verändert werden müssen. Zu den Bäumen sollen atomare Funktionalitäten implementiert werden. Diese Funktionalitäten sollen zum Befehl passende Animation haben, um so die Nachvollziehbarkeit dieser zu verbessern. Es soll ein Weg gefunden werden die Bäume möglichst übersichtlich zu visualisieren. Alle Funktionalitäten der anderen Datenstrukturen, wie das rückgängig machen eines Befehls, sollen enthalten sein. Zudem ist zu beachten, dass die Bäume eine allgemeine Variante darstellen sollen. Das bedeutet, dass es zukünftig möglich sein soll spezielle Bäume hinzuzufügen, die von dem allgemeinen Baum erben, um so das Hinzufügen von Baum-Unterarten zu erleichtern und die Bäume einheitlich zu halten. Letztlich sollen die vorhandenen Datenstrukturen durch die eingesetzten Erweiterungen nicht an ihren Funktionalitäten verlieren.
+	Das Zoomen und Bewegen sollen parallel und ohne Beeinflussung durch Animationen möglich sein, sodass der Nutzer auch während laufender Animationen frei durch das Bild navigieren kann, ohne dass dabei Fehler entstehen. Animationen sollen für den Nutzer leicht nachvollziehbar gestaltet sein. Weiterhin sollen Animationen für zukünftig hinzugefügte Datenstrukturen implementierbar sein, ohne dass andere, von der Datenstruktur unabhängige, Dateien dafür verändert werden müssen. Zu den Bäumen sollen atomare Funktionalitäten implementiert werden. Diese Funktionalitäten sollen zum Befehl passende Animation haben, um so die Nachvollziehbarkeit beim Darstellen der Befehle zu verbessern. Es soll ein Weg gefunden werden die Bäume möglichst übersichtlich zu visualisieren. Alle Funktionalitäten der anderen Datenstrukturen, wie das rückgängig machen eines Befehls, sollen auch mit den implementierten Bäumen möglich sein. Zudem ist zu beachten, dass die Bäume eine allgemeine Variante darstellen sollen. Das bedeutet, dass es zukünftig möglich sein soll spezielle Bäume hinzuzufügen, die von dem allgemeinen Baum erben, um so das Hinzufügen von Baum-Unterarten zu erleichtern und die Bäume einheitlich zu halten. Letztlich sollen die vorhandenen Datenstrukturen durch die eingesetzten Erweiterungen nicht an ihren Funktionalitäten verlieren.
+
+
+1.3 Strukturierung des Inhalts der Arbeit 
+	
+	In der nachfolgenden Arbeit wird zunächst in "Datenstruktur Baum" \todo{Verweis auf richtiges Kapitel} auf die Datenstruktur im Allgemeinen eingegangen, wobei einerseits theoretische Hintergründe und andererseits die Anwendung und Nutzung von Bäumen beleuchtet werden. Bevor die eingebauten großen Erweiterungen, die das Hauptziel der Arbeit ausmachen, behandelt werden, werden in Kapitel 3 \todo{Verweis auf richtiges Kapitel} Änderungen und Überarbeitungen des Programmcodes vorgestellt, um aufzuzeigen welche Teile des Programmcodes abseits der Erweiterungen bearbeitet wurden. In Kapitel 4 \todo{Verweis auf richtiges Kapitel} wird daraufhin auf die Umsetzung der Bäume eingegangen. Dabei werden zwar auch die Funktionen und die Art, auf welche die Bäume implementiert wurden, gezeigt, der Fokus dieses Abschnitts liegt allerdings auf dem Problem der Visualisierung. Das darauffolgende Kapitel \todo{Verweis auf richtiges Kapitel} beschreibt wie Animationen, Zoomen und Bewegen implementiert wurden. Auch die konkreten hinzugefügten Animationen werden dabei behandelt. Im vorletzten Kapitel \todo{Verweis auf richtiges Kapitel} wird noch einmal genauer die Erweiterbarkeit und noch vorhandenen Probleme dargestellt, um aufzuzeigen wie an diese Arbeit nachfolgend angesetzt werden könnte. Die Zusammenfassung \todo{Verweis auf richtiges Kapitel} beinhaltet schließlich noch das Fazit, in dem die anfänglich definierten Ziele erneut betrachtet und mit dem erreichten Stand verglichen werden, und den Ausblick, in dem konkrete ansetzbare Punkte genannt werden.
 
 
 
@@ -61,8 +65,8 @@ Kapitel:
 Abstrakt:
 	
 	%// Worum geht es?
-	Das Ziel der vorliegenden Bachelorarbeit war es, die Anwendung "Algorithm Visual Studio" PLATZHALTER \todo{Quellenverweis auf die vorherige BA} um Animationen und eine weitere Datenstruktur, die Bäume, zu erweitern. Zudem sollte mit der Option des Zoomens eine Möglichkeit geschaffen werden auch größere abgebildete Datenstrukturen anschaulich darstellen zu können. 
+	Ziel der nachfolgenden Arbeit ist es, die Anwendung "Algorithm Visual Studio" PLATZHALTER \todo{Quellenverweis auf die vorherige BA} um Animationen und eine weitere Datenstruktur, die Bäume, zu erweitern. Außerdem soll mit der Option des Zoomens eine Möglichkeit geschaffen werden auch größere abgebildete Datenstrukturen darstellen zu können. 
 	%// Wie vorgegangen?
-	Zunächst wurde eine simple und möglichst fehlerfreie Datenstruktur "ArrayList" hinzugefügt, um erste Animationen zu erstellen und zu testen. Nach den ersten Animationen wurde die Möglichkeit die gezeigte Datenstruktur zu zoomen, aber auch zudem sich durch die gezeigte Darstellung bewegen zu können, implementiert. Zum Schluss wurde die komplett neue Datenstruktur Baum eingebaut, womit eine Methode zur Visualisierung dieser entworfen wurde. 
+	Zunächst wurde eine simple und möglichst fehlerfreie Datenstruktur "ArrayList" hinzugefügt, um erste Animationen zu erstellen und zu testen. Nach den ersten Animationen wurde die Möglichkeit die gezeigte Datenstruktur zu zoomen und bewegen zu können, implementiert. Zum Schluss wurde die komplett neue Datenstruktur Baum eingebaut. Dabei wurde eine Methode zur Visualisierung dieser entworfen. 
 	%// Was sind die Ergebnisse?
 	Alle gewünschten Erweiterungen wurden erfolgreich eingebaut, ohne dass zuvor bereits existente Funktionen in ihrer Funktionalität eingeschränkt wurden. Die Anwendung ist sowohl weiterhin gut erweiterbar als auch in nun neu aufgekommenen Bereichen gut erweiterungsfähig. 

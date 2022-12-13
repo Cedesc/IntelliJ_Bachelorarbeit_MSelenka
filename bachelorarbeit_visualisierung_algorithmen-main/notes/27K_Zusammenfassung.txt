@@ -13,40 +13,43 @@ Was ich reinbringen kann:
 Kapitel:
 
 
+7.
+
+
 7.1 Fazit
 	
 	// Schöner Einleitungssatz
-	...
+	Um ein Fazit dieser Arbeit zu fassen, werden im nachfolgenden Abschnitt die am Anfang in PLATZHALTER \todo{Verweis auf 1.3 Zielsetzung} definierten Ziele mit der resultierenden Anwendung verglichen.
 	
 	// Welche Hauptziele wurden erfüllt, welche nicht erfüllt?
 	// Bäume
-	Allgemeine Bäume wurden als weitere Datenstruktur zur Anwendung hinzugefügt. Die in PLATZHALTER \todo{Verweis auf "2.? Atomare Funktionen"} beschriebenen atomaren Funktionen und Zugriffsoperationen wurden hinzugefügt. Es wurde ein Weg gefunden Bäume zuverlässig einheitlich zu visualisieren, ohne dass unnatürliche Abstände oder unübersichtliche Anordnungen entstehen. Bäume können durch die Operationen und die besagte Visualisierung bereits vollumfänglich genutzt werden. 
+	Die Anwendung wurde um allgemeine Bäume erweitert. Die in PLATZHALTER \todo{Verweis auf "2.? Atomare Funktionen"} beschriebenen atomaren Funktionen und Zugriffsoperationen wurden zu den Bäumen hinzugefügt. Es wurde ein Weg gefunden Bäume zuverlässig einheitlich zu visualisieren, ohne dass unnatürliche Abstände oder unübersichtliche Anordnungen entstehen. Bäume können durch die Operationen und die besagte Visualisierung bereits vollumfänglich genutzt werden. 
 	// Animationen
-	Für das Erstellen erster simpler Animationen wurde die Datenstruktur "ArrayList" hinzugefügt, welche zwar kompakt ist, dafür allerdings stabil läuft. Für "ArrayList" wurden jeweils für die Befehle des Erstellens einer Instanz von "ArrayList", des Einsetzens eines Element und des Tauschens zweier Elemente Animationen hinzugefügt. Bei den Bäumen wurden Animationen für das Erstellen einer Instanz, das Hinzufügen eines Blatts, das Ändern eines Werts und Zugriffsoperationen hinzugefügt. Was an dieser Stelle bislang noch nicht funktioniert sind generell Animationen für Löschoperationen. Außerdem haben Bäume noch nicht die Möglichkeit sich automatisch zu justieren. Insgesamt konnte durch das Hinzufügen von Animationen eine bessere Nachvollziehbarkeit des Programms erreicht werden.
+	Für das Erstellen erster simpler Animationen wurde die Datenstruktur "ArrayList" hinzugefügt, welche zwar wenige Funktionalitäten aufweist, dafür allerdings stabil läuft. Für "ArrayList" wurden jeweils für die Befehle des Erzeugens einer Instanz von "ArrayList", des Einsetzens eines Elements und des Tauschens zweier Elemente Animationen erstellt. Bei den Bäumen wurden Animationen für das Erzeugen einer Instanz, das Hinzufügen eines Blatts, das Ändern eines Werts und Zugriffsoperationen erstellt. Was an dieser Stelle bislang noch nicht funktioniert sind Animationen für Löschoperationen. Zudem ist es bislang nicht möglich Bäume automatisch zu justieren. Insgesamt konnte durch das Hinzufügen von Animationen eine bessere Nachvollziehbarkeit des Programms erreicht werden.
 	// Zoomen & Bewegen
-	Es wurde die Möglichkeit implementiert die dargestellte Datenstruktur zu vergrößern oder auch zu verkleinern. Dieses Zooming wird mit dem Mausrad ausgeführt und zoomt relativ zur Mausposition. Der maximale und minimale Grad des Zooms kann in der Config-Datei angepasst werden. Außerdem kann sich mit der Maus durch das Bild bewegt werden. Die Bewegung durch das Bild und Zoomen zum oder aus dem Bild kann gleichzeitig mit abgespielten Animationen genutzt werden. 
+	Es wurde die Möglichkeit implementiert die dargestellte Datenstruktur zu vergrößern oder auch zu verkleinern. Dieses Zooming wird mit dem Mausrad ausgeführt und skaliert relativ zur Mausposition. Der maximale und minimale Grad des Zooms kann in der Config-Datei angepasst werden. Außerdem kann sich mit der Maus durch das Bild bewegt werden. Die Bewegung durch das Bild und Zoomen zum oder aus dem Bild heraus kann gleichzeitig mit abgespielten Animationen genutzt werden. 
 	
 	// Erweiterbarkeit
-	Die generelle Erweiterbarkeit wurde beim Implementieren der Funktionen berücksichtigt, was näher in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} beschrieben wird. So wurde aufgezeigt wie weitere Datenstrukturen in der Zukunft hinzuzufügen sind und wie jeweilige Animationen für die Befehle dieser erstellt werden können. Außerdem können zahlreiche Unterarten von Bäumen durch Erben von den hinzugefügten allgemeinen Bäumen deutlich einfacher implementiert werden. 
+	Die generelle Erweiterbarkeit wurde beim Implementieren der Funktionen berücksichtigt, was näher in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} beschrieben wird. So wurde aufgezeigt wie weitere Datenstrukturen in der Zukunft hinzuzufügen sind und wie jeweilige Animationen für die Befehle dieser erstellt werden können. Zahlreiche Unterarten von Bäumen künnen durch Erben von den hinzugefügten allgemeinen Bäumen deutlich einfacher implementiert werden. 
 	
 	// Weiteres
-	Abseits der formulierten großen Ziele wurde noch weiteres geändert oder verbessert. Es wurden sehr viele Codeabschnitte überarbeitet und zahlreiche Kommentare hinzugefügt um die generelle Wartbarkeit des Programmcodes zu erhöhen. Weiterhin wurde auf Dokumentation des neu hinzugefügten Programmcodes geachtet. Die nicht funktionierende Umsetzung der "kompletten Visualisierung" wurde durch einen anderen Ansatz ersetzt und somit ermöglicht. Eine Config-Datei wurde hinzugefügt um gewisse Einstellungen, wie die Länge der Animationen oder die Größe des Fensters, in einer Datei versammelt zu haben und leichter umändern zu können.
+	Abseits der formulierten großen Ziele wurde noch weiteres geändert oder verbessert. Es wurden sehr viele Codeabschnitte überarbeitet und zahlreiche Kommentare hinzugefügt um die generelle Wartbarkeit des Programmcodes zu erhöhen. Weiterhin wurde auf Dokumentation des neu hinzugefügten Programmcodes geachtet. Die nicht funktionierende Umsetzung der "kompletten Visualisierung" wurde durch einen anderen Ansatz ersetzt und somit ermöglicht. Eine Config-Datei wurde hinzugefügt um gewisse Einstellungen, wie die Länge der Animationen oder die Größe des Fensters, in einer Datei zu sammeln und leichter umändern zu können.
 	
 	// Zusammenfassend
-	Somit wurden beinahe alle gesetzten Ziele erreicht. Die beiden größten Problemstellen bilden dabei das automatische Justieren des Baums und Animationen für Löschoperationen. Diese beiden Probleme werden in PLATZHALTER \todo{Verweis auf "6.? Bestehende Probleme"} genauer beleuchtet und mögliche erste Lösungsansätze aufgezeigt. 
+	Somit wurden beinahe alle gesetzten Ziele erreicht. Die beiden größten Problemstellen bilden dabei das automatische Justieren des Baums und die Animationen für Löschoperationen. Diese beiden Probleme werden in PLATZHALTER \todo{Verweis auf "6.? Bestehende Probleme"} genauer beleuchtet und erste mögliche Lösungsansätze aufgezeigt. 
 
 
 7.2 Ausblick
-	{automatische get animation ??}
 	
 	// Schöner Einleitungssatz
 	...
+	Schlussendlich sollen an dieser Stelle noch konkrete Möglichkeiten dargestellt werden, an denen nachfolgende Arbeiten ansetzen können.
 	
 	// Aus "Erweiterbarkeit"
-	Ein erster Punkt, an dem es möglich ist zukünftig anzusetzen, wäre weitere Animationen für die implementierten Datenstrukturen zu entwerfen und hinzuzufügen. So bietet es sich an die restlichen Befehle der vorhandenen Datenstrukturen zu animieren. Auch neue Datenstrukuren, besonders Baum-Unterarten, wie Rot-Schwarz-Bäume, können nachfolgend implementiert werden. Wie die Anwendung in diesen Bereichen zu erweitern ist, wird in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} erklärt.
+	Ein erster Punkt, an dem es möglich ist zukünftig anzusetzen, ist, weitere Animationen für die implementierten Datenstrukturen zu entwerfen und hinzuzufügen. So bietet es sich an die restlichen Befehle der vorhandenen Datenstrukturen zu animieren. Auch neue Datenstrukuren, besonders Baum-Unterarten, wie Rot-Schwarz-Bäume, können nachfolgend implementiert werden. Wie die Anwendung in diesen Bereichen zu erweitern ist, wird in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} erklärt.
 	
 	// Aus "Bestehende Probleme"
-	Eine andere Herausforderung stellen die geschilderten Probleme aus PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} dar. Dabei handelt es sich um Animationen für Löschoperationen und dem automatischen visuellen Justieren des Baums. Um diese Probleme zu überwinden können eventuell die im selben Kapitel aufgezeigten Vorschläge erste Lösungsansätze liefern.
+	Eine andere Herausforderung stellen die geschilderten Probleme aus PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} dar. Dabei handelt es sich um Animationen für Löschoperationen und dem automatischen visuellen Justieren des Baums. Um diese Probleme zu überwinden, können eventuell die im selben Kapitel aufgezeigten Vorschläge erste Lösungsansätze liefern.
 	
 	// Weiteres
-	Auch die implementierten allgemeinen Bäume können erweitert werden. So können komplexere Befehle, hinzugefügt werden, wie bspw. Rotationen. Diese können, wenn gewünscht, einzig und allein mit einer Kombination aus den bereits vorhandenen atomaren Operationen umgesetzt werden.
+	Auch die implementierten allgemeinen Bäume können erweitert werden. So können komplexere Befehle hinzugefügt werden, wie bspw. Rotationen. Diese können, wenn gewünscht, einzig und allein mit einer Kombination aus den bereits vorhandenen atomaren Operationen umgesetzt werden.
