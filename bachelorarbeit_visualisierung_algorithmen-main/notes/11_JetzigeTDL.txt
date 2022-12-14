@@ -97,6 +97,12 @@
 		[_?] Texte an Gliederung anpassen
 		[_?] Verweise umändern, fixen wegen neuer Gliederung
 		[_?] Bei Zusammenfassung "Fazit" Überschrift rauslöschen, sodass nur noch Zusammenfassung als Kapitel ohne Unterkapitel steht
+		[_0] Leute Korrekturlesen lassen
+			- einmal für Rechtschreibung
+				- Dinah ?
+				- Selina ?
+			- einmal für Inhaltliches
+				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
 		
 	- noch vielleicht reinbringen
 		[X1] In Einleitung "Ergebnisse" ?
@@ -123,22 +129,12 @@
 			- Bewegen -> kann man machen... ähnlich wie bei zoomen... Vorschlag: Bild 1 normal, Bild 2 gezoomt, Bild 3 bewegt... naja muss man nicht
 		[_1] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
 		[_1] Anhang wie?
-		[_0] Leute Korrekturlesen lassen
-			- einmal für Rechtschreibung
-				- Dinah ?
-				- Selina ?
-			- einmal für Inhaltliches
-				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
 		
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
-	- überall "man" mit "wir" ersetzen
-	- ToDos: 
-		- Gendern (zB Nutzer*in) bzw den Satz, dass man drauf verzichtet? Wenn gendern, wie?
-		- Gliederung, so wie ich sie jetzt hab, ok? Namen der Überschriften ok? Besonders 2 und 6 passend?
-		- Klasse in Text erwähnen mit dieser Schriftart aus der anderen BA
-		- Bei Quellen auch letzter Zugriff angeben? Nur bei Websites?
-		- ist es ratsam bei jedem Kapitel so ein kurzes Schluss-Unterkapitel zu schreiben, das das in dem Kapitel behandelte zusammenfasst?
+	- überall "ich" mit "wir" und "man" mit passivem ersetzen
+	- Bei Websites auch letzter Zugriff angeben
+	- Klassen in Text erwähnen mit dieser Schriftart aus der anderen BA
 	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
 		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
 
