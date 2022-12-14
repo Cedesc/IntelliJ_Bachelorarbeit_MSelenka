@@ -20,14 +20,14 @@
 		[X2] 1.3 Strukturierung des Inhalts der Arbeit
 		[X2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
 		
-		[_4, X1] ALLE Einleitungstexte schreiben (?)
+		[_4, X1] ALLE Einleitungstexte schreiben (zwingend, aber nur 1-2 Sätze was davor gemacht wurde und was jetzt gemacht wird)
 			- [_1] 2 Datenstruktur Baum
 			- [X1] 3 Überarbeitungen am bestehenden Code
 			- [_1] 4 Umsetzung Baum im Programm
 			- [_1] 5 Erweiterung um visuelle Funktionalitäten
 			- [_0.5] 6 Zukünftige Arbeit
 			- [_0.5] 7 Zusammenfassung
-		[_5, X0] ALLE Zusammenfassungstexte schreiben (?)
+		[_5, X0] ALLE Zusammenfassungstexte schreiben (nicht zwingend, nur wenn es sich anbietet)
 			- [_1] 2 Datenstruktur Baum
 			- [_1] 3 Überarbeitungen am bestehenden Code
 			- [_1] 4 Umsetzung Baum im Programm
@@ -35,6 +35,7 @@
 			- [_1] 6 Zukünftige Arbeit
 
 		[_24 , X6] Texte überarbeiten (39 Texte)
+		!!!!!!! Abstract, 1.1 Motivation, 1.2 Zielsetzung, 1.3 Strukturierung des Inhalts der Arbeit, 2.1 Terminologie, 2.2 Definition, 6.1.1 Erweiterbarkeit um weitere Datenstruktur, 7.1 Fazit, 7.2 Ausblick nochmal neu durchschauen
 			- [X0.5] Abstract
 			- 1 Einleitung
 				- [_0.5] Anfang
@@ -85,6 +86,17 @@
 		[_9 , X12] Sachen aus "noch vielleicht einbringen"
 		[_5] um ganzen kleinen ToDos kümmern (die nicht bzgl latex)
 		[_5] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
+		[_0] kurzen Satz, dass aufs Gendern verzichtet wird (wie in anderer BA)
+		[_?] "1.2 Vergleich von bestehenden Algorithmen"
+			- exemplarisch welche aufzeigen
+			- schon mögliche downsides: 
+				- zb läuft es nur auf festen algorithmen
+				- fehlende animationen
+				- nur bestimmte bäume (zb kanten rot färben können für rot-schwarz bäume)
+		[_?] "Erweiterbarkeit um Baum-Unterarten" 
+		[_?] Texte an Gliederung anpassen
+		[_?] Verweise umändern, fixen wegen neuer Gliederung
+		[_?] Bei Zusammenfassung "Fazit" Überschrift rauslöschen, sodass nur noch Zusammenfassung als Kapitel ohne Unterkapitel steht
 		
 	- noch vielleicht reinbringen
 		[X1] In Einleitung "Ergebnisse" ?
@@ -111,6 +123,12 @@
 			- Bewegen -> kann man machen... ähnlich wie bei zoomen... Vorschlag: Bild 1 normal, Bild 2 gezoomt, Bild 3 bewegt... naja muss man nicht
 		[_1] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
 		[_1] Anhang wie?
+		[_0] Leute Korrekturlesen lassen
+			- einmal für Rechtschreibung
+				- Dinah ?
+				- Selina ?
+			- einmal für Inhaltliches
+				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
 		
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
