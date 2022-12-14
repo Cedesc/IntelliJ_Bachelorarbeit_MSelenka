@@ -34,7 +34,7 @@
 			- [_1] 5 Erweiterung um visuelle Funktionalitäten
 			- [_1] 6 Zukünftige Arbeit
 
-		[_25 , X5] Texte überarbeiten (39 Texte)
+		[_24 , X6] Texte überarbeiten (39 Texte)
 			- [X0.5] Abstract
 			- 1 Einleitung
 				- [_0.5] Anfang
@@ -43,8 +43,8 @@
 				- [X0.5] 1.3 Strukturierung des Inhalts der Arbeit
 			- 2 Datenstruktur Baum
 				- [_0.5] Anfang
-				- [_0.5] 2.1 Terminologie
-				- [_0.5] 2.2 Definition
+				- [X0.5] 2.1 Terminologie
+				- [X0.5] 2.2 Definition
 				- [_0.5] 2.3 Speicherung von Bäumen
 				- [_0.5] 2.4 Atomare Operationen
 				- [_0.5] 2.5 Anwendung von Bäumen

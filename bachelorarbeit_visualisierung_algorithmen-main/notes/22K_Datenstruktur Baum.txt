@@ -44,9 +44,8 @@ Kapitel:
 			  Cormen Seite 1186 / 1187 bzw 1206 / 1027}
 	{Cormen erwähnen?}
 	
-	Die genutzten Begriffe sind von Quelle zu Quelle oft leicht unterschiedlich. Es werden die folgenden Begriffe mit zugehöriger Bedeutung wie folgt verwendet:
+	Die genutzten Begriffe zu Bäumen sind von Quelle zu Quelle leicht unterschiedlich. In dieser Arbeit werden die folgenden Begriffe mit nebenstehender Bedeutung wie folgt verwendet:
 	
-	Liste:
 		Knoten - Element im Baum
 		Kanten - Verbindung zwischen zwei Knoten
 		Wurzelknoten - Festgelegter Startknoten
@@ -71,10 +70,12 @@ Kapitel:
 2.2 Definition
 	{Quelle: Dieker Güting Seite 102 (116)}
 	
-	Eine Definition von Bäumen (nach Dieker Güting) wäre:
+	Eine Definition von Bäumen (nach Dieker Güting) ist:
+	
 		(i) Ein einzelner Knoten x ist ein Baum.
 		(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
-	Das bedeutet, hat man mehrere Bäume, die nicht miteinander verbunden sind (also einen Wald), kann man durch das Erstellen eines neuen Knotens y, der für sich auch bereits ein Baum ist, und dem Hinzufügen als Kindknoten der Wurzeln der Bäume an y, einen einzelnen Baum mit der Wurzel y kreieren.
+		
+	Das bedeutet, liegt ein Wald, also mehrere nicht verbundene Bäume, vor, kann daraus ein einzelner Baum kreiert werden. Dies funktioniert u.a. indem ein neuer Knoten y erstellt wird, der für sich allein nach der vorliegenden Definition durch Fall (i) bereits ein Baum ist, und die Wurzeln der Bäume des Walds als Kindknoten zu y hinzugefügt werden. Dadurch entsteht ein Baum mit Wurzel y, der die Bäume des erwähnten Walds als Teilbäume beinhaltet.
 
 
 2.3 Speicherung von Bäumen
