@@ -3,12 +3,10 @@
 1 Einleitung
 			- grundlegende Einleitung
 	1.1 Motivation 
-	1.2 Zielsetzung 
-	1.3 Strukturierung des Inhalts der Arbeit 
+	1.2 Vergleich von bestehenden ähnlichen Programmen
+	1.3 Zielsetzung 
+	1.4 Strukturierung des Inhalts der Arbeit
 
-
-
-Was ich reinbringen kann:
 
 
 Kapitel:
@@ -16,46 +14,100 @@ Kapitel:
 
 1 Einleitung
 
+	In der nachfolgenden Arbeit wurde zur besseren Lesbarkeit auf das Gendern verzichtet.
+
 
 1.1 Motivation
 	{dieses "vorige" Version streichen, lieber "bisheriger?", weils in dem Zeitpunkt von vor der arbeit geschrieben wurde?}
 
-	// Was bisher geschah
+	%// Was bisher geschah
 	In der vorigen Version bot "Algorithm Visual Studio" die Möglichkeit Arrays, Listen und Variablen zu visualisieren PLATZHALTER \todo{Quellenverweis auf die BA?}. Jedoch existieren noch viele weitere Datenstrukturen, für die eine Visualisierung interessant hilfreich sein kann. 
 	
-	// Bäume sind voll toll
+	%// Bäume sind voll toll
 	Eine dieser ist die Datenstruktur Baum. Dank mehrerer nützlicher Eigenschaften, werden Bäume sehr häufig angewandt, wie zB beim Verwalten von Daten oder für effizientes Suchen eines Elements. Mit zahlreichen Unterarten, wie B-Bäumen oder Rot-Schwarz-Bäumen, gehören Bäume zu den wichtigsten Datenstrukturen in der Informatik. 
 	
-	// Bäume visualisieren ist toll
+	%// Bäume visualisieren ist toll
 	Allerdings können sich komplexere Operationen auf Bäumen für Programmieranfänger als schwierig nachzuvollziehen herausstellen, da sich durch die, im Vergleich zu Arrays und Listen, komplexere Struktur mehr zu beachtende Eigenschaften ergeben. Durch die Wichtigkeit von Bäumen, bietet es sich an die Anwendung um diese zu erweitern. Eine Visualisierung von Bäumen und den darauf ausgeführten Algorithmen kann die Verständlichkeit enorm erhöhen.
 	
-	// Was ohne Animationen Kacke ist
+	%// Was ohne Animationen Kacke ist
 	Durch das Visualisieren von Bäumen würde jedoch ein Schwachpunkt der Anwendung offensichtlich. Dieser Schwachpunkt ist das teilweise schwierige Nachvollziehen einer getätigten Operation in der gezeigten Datenstruktur. Durch die Zwangsläufige visuelle Neujustierung des Baums bei fast allen Operationen, kann es sich als schwer herausstellen in der visualisierten Datenstruktur z.B. zu erkennen welcher Knoten an welchen anderen Knoten angehangen wurde. Das war bereits in der vorherigen Version der Fall, wenn ein Element mitten in einem Array hinzugefügt oder gelöscht wurde, allerdings wird das Problem durch die strukturell komplexeren Bäume deutlich größer. 
 	
-	// Animationen yey
+	%// Animationen yey
 	Eine Lösung hierfür schaffen Animationen. Ein gut nachvollziehbarer visueller Übergang zwischen der Ausgangslage und dem Endbild kann die komplette Verständlichkeit deutlich erhöhen. Bereits bei einfachen Operationen kann der Nutzer die gezeigte Änderung erheblich einfacher und angenehmer aufnehmen. 
 	
-	// Was ohne Zoomen und Bewegen Kacke ist
+	%// Was ohne Zoomen und Bewegen Kacke ist
 	Eine weitere Problematik ist, dass bei zahlreichen oder größeren Instanzen der Datenstrukturen, diese über das gezeigte Fenster hinausragen. Dabei ist es in der vorigen Version nicht möglich die Datenstrukturen, die teilweise oder komplett außerhalb des gezeigten Fensters liegen, anzeigen zu lassen. Besonders mit dem Hinzufügen von Bäumen, die schon bei wenigen Elementen beträchtlichen Platz einnehmen müssen, kommt dieses Problem häufiger vor. 
 	
-	// Zoomen und Bewegen yey
+	%// Zoomen und Bewegen yey
 	Die Möglichkeit das Bild zu zoomen und die gezeigten Datenstrukturen zu bewegen löst dieses Problem. Damit ist es sowohl möglich die Gesamtlage oder einzelne genaue Bereiche im Auge zu behalten. 
 
-
-	// Schlusssatz
+	%// Schlusssatz
 	Nachfolgend wird die Erweiterung der Anwendung um Bäume, Animationen und dem Zoomen und Bewegen im Fenster behandelt. 
 
 
-1.2 Zielsetzung
+1.2 Vergleich von bestehenden Algorithmen
+	{
+	kriterien:
+		1. allgemeine bäume, keine unterarten
+		2. zoomen und bewegen oder zumindest auch bei großen übersichtlich
+		3. animationen oder zumindest gut nachvollziehbar
+		4. zahlreiche befehle vorhanden
+		5. Funktionen von der anwendung generell sollen drin sein
+			5a. überhaupt verschiedene strukturen, auch gleichzeitig angezeigt, möglich sind
+			5b. step back
+			5c. man kann algorithmus (als script) schreiben, der dann komplett ausgeführt wird
+	}
+	{
+	zu vergleichende Websites:
+		aus vorheriger BA:
+			- visualgo.net - https://visualgo.net/en
+				1. geringe auswahl, auch keine allgemeinen bäume
+				2. bäume haben limitationen, wie maximale tiefe 9 und es können maximal 100 knoten abgebildet sein und es kommt dennoch zu grafischen überlappungen
+				4. es ist eine große auswahl an befehlen vorhanden, aber umhängen ist hier auch nicht drin, da insert automatisch ist
+				3. sind drin!
+				5. ne
+			- David Galles - https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+				1. Breite auswahl, aber keine allgemeinen bäume 
+				2. zoomen und bewegen ist nicht direkt möglich, dadurch werden große datenstrukturen nicht ganz abgebildet. diese können dennoch sichtbar werden, wenn man auf der seite manuell die größe des fensters ändert und dann im browser scrollt. Hat aber auch gar nicht so hohen höchstwert
+				4. inserten ist automatisch, wodurch zb umhängen nicht geht
+				3. keine animationen, aber kleinteilige schritte, sodass es sehr verständlich ist
+				5. ne
+				
+		dazu noch:
+			- tree-visualizer - https://tree-visualizer.netlify.app/
+				1. nur binärbäume
+				2. ja, zoomen und bewegen ist drin
+				4. nur möglich knoten hinzuzufügen oder zu löschen 
+				3. kein animationen, ist in dem abgespeckten rahmen aber auch nicht nötig
+				5. ne
+	}
 	
-	// Einleitungssatz
-	Im vorigen Abschnitt wurden die einzelnen großen Elemente, um die das Programm erweitert werden soll, kurz angerissen. In diesem Abschnitt sollen die spezifisch gesetzten Ziele zu diesen Erweiterungen genannt werden.
+	%// Schöner Einleitungssatz
+	...
 	
-	// Ziele
+	%// visualgo.net - https://visualgo.net/en
+	PLATZHALTER hat nur eine geringe Auswahl an Bäumen. Es fehlen auch Bäume mit unbeschränktem Grad. Die Darstellung bleibt insgesamt zwar übersichtlich, allerdings kommt das davon, dass die Bäume limitationen haben, wie maximale tiefe 9 und es können maximal 100 knoten abgebildet sein. Leider kommt es dennoch zu grafischen überlappungen von knoten. Es gibt viele Befehle, aber diese sind zum großen Teil automatisiert, das bedeutet, dass man nicht selbst bestimmen kann, wo ein neues blatt platziert wird. Das liegt auch daran, dass nur bestimmte unterarten von bäumen, wie binärer suchbaum, vorhanden sind. Die ausgeführten Befehle sind sehr gut übersichtlich, da animationen drin sind und die befehle kleinteilig ausgeführt werden. 
+	
+	%// David Galles - https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+	PLATZHALTER hat breitere auswahl an bäumen, so können selbst rot-schwarz-bäume angezeigt werden. Dennoch keine allgemeinen bäume mit unbeschränktem grad vorhanden. Bei zu großen Datenstrukturen sind diese nicht mehr ganz abgebildet. Man hat dennoch, auf etwas unpraktischem weg, die möglichkeit diese sichtbar zu machen. Und zwar muss dafür auf der seite manuell die größe oder breite des fensters geändert werden und dann im browser gescrollt werden. Geht aber auch nur bis gewissen grad. An Befehlen gibt es bei den meisten bäumen insert, delete und find. Insert läuft dabei auch automatisch ab, sodass der nutzer nicht selbst bestimmen kann, wo welches blatt angefügt wird. Animationen gibt es zwar keine, dennoch sind die abläufe sehr gut verständlich, da diese sehr kleinteilig dargestellt werden.
+	
+	%// tree-visualizer - https://tree-visualizer.netlify.app/
+	PLATZHALTER hat nur binärbäume. Zoomen und Bewegen durch die Darstellung ist drin, weshalb es selbst bei sehr vielen Elementen übersichtlich bleibt. Es ist einzig und allein möglich Knoten hinzuzufügen oder zu löschen. Dabei muss selbst der knoten per mausklick ausgewählt werden um an diesen einen hinzuzufügen oder zu löschen. Animationen sind keine drin, ist aber in diesem sehr beschränkten rahmen auch nicht nötig. 
+	
+	%// Das reicht uns nicht!!
+	Für unsere Zwecke reicht das nicht, da keine der vorgestellten visualisierungen ein geschriebenes skript auf eine sehr großen Instanz nachvollziehbar ablaufen lassen kann und dabei die dargestellte datenstruktur übersichtlich bleibt. Zudem sind elementare Funktionalitäten der anwendung nicht in den verglichenen drin. Step-Back, verschiedene strukturen gleichzeitig anzeigen lassen und einen algorithmus als script zu schreiben, der dann komplett ausgeführt wird (statt jeden befehl immer einzeln auszuführen) sind nicht vorhanden. 
+
+
+1.3 Zielsetzung
+	
+	%// Einleitungssatz
+	Die weiteren Elemente, die in "Algorithm Visual Studio" eingebaut werden sollen, wurden in Abschnitt 1.1 \todo{Auf Abschnitt verweisen} kurz angerissen. In Abschnitt 1.2 \todo{Auf Abschnitt verweisen} wurden andere Visualisierungsprogramme betrachtet, um zu prüfen ob eins dieser die Anforderungen erfüllt. Anhand der zuvor betrachteten anderen Visualisierungsprogramme sollen nachfolgend in diesem Abschnitt die spezifischen Ziele zu den Erweiterungen formuliert werden.
+	
+	%// Ziele
 	Das Zoomen und Bewegen sollen parallel und ohne Beeinflussung durch Animationen möglich sein, sodass der Nutzer auch während laufender Animationen frei durch das Bild navigieren kann, ohne dass dabei Fehler entstehen. Animationen sollen für den Nutzer leicht nachvollziehbar gestaltet sein. Weiterhin sollen Animationen für zukünftig hinzugefügte Datenstrukturen implementierbar sein, ohne dass andere, von der Datenstruktur unabhängige, Dateien dafür verändert werden müssen. Zu den Bäumen sollen atomare Funktionalitäten implementiert werden. Diese Funktionalitäten sollen zum Befehl passende Animation haben, um so die Nachvollziehbarkeit beim Darstellen der Befehle zu verbessern. Es soll ein Weg gefunden werden die Bäume möglichst übersichtlich zu visualisieren. Alle Funktionalitäten der anderen Datenstrukturen, wie das rückgängig machen eines Befehls, sollen auch mit den implementierten Bäumen möglich sein. Zudem ist zu beachten, dass die Bäume eine allgemeine Variante darstellen sollen. Das bedeutet, dass es zukünftig möglich sein soll spezielle Bäume hinzuzufügen, die von dem allgemeinen Baum erben, um so das Hinzufügen von Baum-Unterarten zu erleichtern und die Bäume einheitlich zu halten. Letztlich sollen die vorhandenen Datenstrukturen durch die eingesetzten Erweiterungen nicht an ihren Funktionalitäten verlieren.
 
 
-1.3 Strukturierung des Inhalts der Arbeit 
+1.4 Strukturierung des Inhalts der Arbeit 
 	
 	In der nachfolgenden Arbeit wird zunächst in "Datenstruktur Baum" \todo{Verweis auf richtiges Kapitel} auf die Datenstruktur im Allgemeinen eingegangen, wobei einerseits theoretische Hintergründe und andererseits die Anwendung und Nutzung von Bäumen beleuchtet werden. Bevor die eingebauten großen Erweiterungen, die das Hauptziel der Arbeit ausmachen, behandelt werden, werden in Kapitel 3 \todo{Verweis auf richtiges Kapitel} Änderungen und Überarbeitungen des Programmcodes vorgestellt, um aufzuzeigen welche Teile des Programmcodes abseits der Erweiterungen bearbeitet wurden. In Kapitel 4 \todo{Verweis auf richtiges Kapitel} wird daraufhin auf die Umsetzung der Bäume eingegangen. Dabei werden zwar auch die Funktionen und die Art, auf welche die Bäume implementiert wurden, gezeigt, der Fokus dieses Abschnitts liegt allerdings auf dem Problem der Visualisierung. Das darauffolgende Kapitel \todo{Verweis auf richtiges Kapitel} beschreibt wie Animationen, Zoomen und Bewegen implementiert wurden. Auch die konkreten hinzugefügten Animationen werden dabei behandelt. Im vorletzten Kapitel \todo{Verweis auf richtiges Kapitel} wird noch einmal genauer die Erweiterbarkeit und noch vorhandenen Probleme dargestellt, um aufzuzeigen wie an diese Arbeit nachfolgend angesetzt werden könnte. Die Zusammenfassung \todo{Verweis auf richtiges Kapitel} beinhaltet schließlich noch das Fazit, in dem die anfänglich definierten Ziele erneut betrachtet und mit dem erreichten Stand verglichen werden, und den Ausblick, in dem konkrete ansetzbare Punkte genannt werden.
 

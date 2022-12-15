@@ -2,8 +2,6 @@
 
 7 Zusammenfassung
 			- grundlegende Zusammenfassung
-	7.1 Fazit
-	7.2 Ausblick
 
 
 
@@ -13,11 +11,7 @@ Was ich reinbringen kann:
 Kapitel:
 
 
-7.
-
-
-7.1 Fazit
-	
+7
 	// Schöner Einleitungssatz
 	Um ein Fazit dieser Arbeit zu fassen, werden im nachfolgenden Abschnitt die am Anfang in PLATZHALTER \todo{Verweis auf 1.3 Zielsetzung} definierten Ziele mit der resultierenden Anwendung verglichen.
 	
@@ -37,19 +31,3 @@ Kapitel:
 	
 	// Zusammenfassend
 	Somit wurden beinahe alle gesetzten Ziele erreicht. Die beiden größten Problemstellen bilden dabei das automatische Justieren des Baums und die Animationen für Löschoperationen. Diese beiden Probleme werden in PLATZHALTER \todo{Verweis auf "6.? Bestehende Probleme"} genauer beleuchtet und erste mögliche Lösungsansätze aufgezeigt. 
-
-
-7.2 Ausblick
-	
-	// Schöner Einleitungssatz
-	...
-	Schlussendlich sollen an dieser Stelle noch konkrete Möglichkeiten dargestellt werden, an denen nachfolgende Arbeiten ansetzen können.
-	
-	// Aus "Erweiterbarkeit"
-	Ein erster Punkt, an dem es möglich ist zukünftig anzusetzen, ist, weitere Animationen für die implementierten Datenstrukturen zu entwerfen und hinzuzufügen. So bietet es sich an die restlichen Befehle der vorhandenen Datenstrukturen zu animieren. Auch neue Datenstrukuren, besonders Baum-Unterarten, wie Rot-Schwarz-Bäume, können nachfolgend implementiert werden. Wie die Anwendung in diesen Bereichen zu erweitern ist, wird in PLATZHALTER \todo{Verweis auf "6.1 Erweiterbarkeit"} erklärt.
-	
-	// Aus "Bestehende Probleme"
-	Eine andere Herausforderung stellen die geschilderten Probleme aus PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} dar. Dabei handelt es sich um Animationen für Löschoperationen und dem automatischen visuellen Justieren des Baums. Um diese Probleme zu überwinden, können eventuell die im selben Kapitel aufgezeigten Vorschläge erste Lösungsansätze liefern.
-	
-	// Weiteres
-	Auch die implementierten allgemeinen Bäume können erweitert werden. So können komplexere Befehle hinzugefügt werden, wie bspw. Rotationen. Diese können, wenn gewünscht, einzig und allein mit einer Kombination aus den bereits vorhandenen atomaren Operationen umgesetzt werden.

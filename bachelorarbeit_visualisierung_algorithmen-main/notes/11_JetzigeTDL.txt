@@ -3,100 +3,83 @@
 12. Weiterschreiben
 
 	- noch sicher reinbringen
-		[X4] 2.5.1 Bäume im Alltag / Anwendung
-		[X4] 2.5.2 (spezifische) Algorithmen auf Bäumen / meistgenutzte Algorithmen
-		[X4] 2.5.3 (spezifische) Unterarten von Bäumen / meistgenutzte Arten
-		[X3] 2.5 Anwendung von Bäumen
-		[X3] 3.2 ArrayList hinzugefügt
-		[X2] 6.1.3 Erweiterbarkeit um weitere Animationen
-		[X2] 6.1 Erweiterbarkeit
-		[X3] 7.1 Fazit
-		([X4] 1.2 Vergleich von bestehenden ähnlichen Programmen)
-		[X3] Wie man was macht für latex rausfinden
-		[X2] kapitel umbenennen
-		[X2] 7.2 Ausblick
-		[X3] Abstract
-		[X2] 1.2 Zielsetzung
-		[X2] 1.3 Strukturierung des Inhalts der Arbeit
-		[X2] UML Klassendiagramm wie beschrieben in "5.? Neue Struktur der Architektur" überarbeiten
-		
-		[_4, X1] ALLE Einleitungstexte schreiben (zwingend, aber nur 1-2 Sätze was davor gemacht wurde und was jetzt gemacht wird)
-			- [_1] 2 Datenstruktur Baum
-			- [X1] 3 Überarbeitungen am bestehenden Code
-			- [_1] 4 Umsetzung Baum im Programm
-			- [_1] 5 Erweiterung um visuelle Funktionalitäten
-			- [_0.5] 6 Zukünftige Arbeit
-			- [_0.5] 7 Zusammenfassung
-		[_5, X0] ALLE Zusammenfassungstexte schreiben (nicht zwingend, nur wenn es sich anbietet)
-			- [_1] 2 Datenstruktur Baum
-			- [_1] 3 Überarbeitungen am bestehenden Code
-			- [_1] 4 Umsetzung Baum im Programm
-			- [_1] 5 Erweiterung um visuelle Funktionalitäten
-			- [_1] 6 Zukünftige Arbeit
+		[X10] "1.2 Vergleich von bestehenden Algorithmen" schreiben
 
-		[_24 , X6] Texte überarbeiten (39 Texte)
-		!!!!!!! Abstract, 1.1 Motivation, 1.2 Zielsetzung, 1.3 Strukturierung des Inhalts der Arbeit, 2.1 Terminologie, 2.2 Definition, 6.1.1 Erweiterbarkeit um weitere Datenstruktur, 7.1 Fazit, 7.2 Ausblick nochmal neu durchschauen
-			- [X0.5] Abstract
+
+		[_7] "2.1 Vorherige Arbeit" schreiben
+		[_8] "2.3 Zusammenfassung" schreiben (und anderen Namen geben?)
+		[_6] "5.4 Erweiterbarkeit um Baum-Unterarten" anpassen, da anders verstanden
+		
+		[_6, X0] ALLE Einleitungstexte schreiben (zwingend, aber nur 1-2 Sätze was davor gemacht wurde und was jetzt gemacht wird)
+			- [_1] 2 Architektur
+			- [_1] 3 Überarbeitungen am bestehenden Code
+			- [_1] 4 Datenstruktur Baum
+			- [_1] 5 Umsetzung Baum im Programm
+			- [_1] 6 Erweiterung um visuelle Funktionalitäten
+			- [_1] 7 Zukünftige Arbeit
+		[_18, X0] ALLE Zusammenfassungstexte schreiben (nicht zwingend, nur wenn es sich anbietet)
+			- [_3] 2 Architektur
+			- [_3] 3 Überarbeitungen am bestehenden Code
+			- [_3] 4 Datenstruktur Baum
+			- [_3] 5 Umsetzung Baum im Programm
+			- [_3] 6 Erweiterung um visuelle Funktionalitäten
+			- [_3] 7 Zukünftige Arbeit
+
+		[_41 , X0] Texte überarbeiten (41 Texte)
+			- [_1] Abstract
 			- 1 Einleitung
-				- [_0.5] Anfang
-				- [X0.5] 1.1 Motivation
-				- [X0.5] 1.2 Zielsetzung
-				- [X0.5] 1.3 Strukturierung des Inhalts der Arbeit
-			- 2 Datenstruktur Baum
-				- [_0.5] Anfang
-				- [X0.5] 2.1 Terminologie
-				- [X0.5] 2.2 Definition
-				- [_0.5] 2.3 Speicherung von Bäumen
-				- [_0.5] 2.4 Atomare Operationen
-				- [_0.5] 2.5 Anwendung von Bäumen
-				- [_0.5] 2.6 Zusammenfassung
+				- [_1] Anfang
+				- [_1] 1.1 Motivation
+				- [_1] 1.2 Vergleich von ähnlichen Programmen
+				- [_1] 1.3 Zielsetzung
+				- [_1] 1.4 Strukturierung des Inhalts der Arbeit
+			- 2 Architektur
+				- [_1] 2.1 Vorherige Arbeit
+				- [_1] 2.2 Erweiterbarkeit um weitere Datenstruktur (am Beispiel von Bäumen)
+				- [_1] 2.3 Zusammenfassung
 			- 3 Überarbeitung des bestehenden Codes
-				- [_0.5] Anfang
-				- [_0.5] 3.1 Refaktorierung und Kommentare
-				- [_0.5] 3.2 ArrayList
-				- [_0.5] 3.3 Komplette Darstellung
-				- [_0.5] 3.4 Config Datei
-				- [_0.5] 3.5 Zusammenfassung
-			- 4 Umsetzung Baum im Programm
 				- [_1] Anfang
-				- [_1] 4.1 Problematik
-				- [_1] 4.2 Visualisierungsalgorithmus
-				- [_1] 4.3 Implementierung
-				- [_1] 4.4 Zusammenfassung
-			- 5 Erweiterung um visuelle Funktionalitäten
+				- [_1] 3.1 Refaktorierung und Kommentare
+				- [_1] 3.2 ArrayList
+				- [_1] 3.3 Komplette Darstellung
+				- [_1] 3.4 Config Datei
+				- [_1] 3.5 Zusammenfassung
+			- 4 Datenstruktur Baum
 				- [_1] Anfang
-				- [_1] 5.1 Animationen
-					- [_1] 5.1.1 Animationen in ArrayList
-					- [_1] 5.1.2 Animationen in Bäumen
-				- [_1] 5.2 Zoomen und Bewegen
-				- [_1] 5.3 Neue Struktur der Architektur 
-				- [_1] 5.4 Zusammenfassung
-			- 6 Zukünftige Arbeit
+				- [_1] 4.1 Terminologie
+				- [_1] 4.2 Definition
+				- [_1] 4.3 Speicherung von Bäumen
+				- [_1] 4.4 Atomare Operationen
+				- [_1] 4.5 Anwendung von Bäumen
+				- [_1] 4.6 Zusammenfassung
+			- 5 Umsetzung Baum im Programm
 				- [_1] Anfang
-				- 6.1 Erweiterbarkeit
-					- [X1] 6.1.1 Erweiterbarkeit um weitere Datenstruktur
-					- [_1] 6.1.2 Erweiterbarkeit um Baum-Unterarten
-					- [_1] 6.1.3 Erweiterbarkeit um weitere Animationen
-				- [_1] 6.2 Bestehende Probleme
-				- [_1] 6.3 Zusammenfassung
-			- 7 Zusammenfassung
+				- [_1] 5.1 Problematik
+				- [_1] 5.2 Visualisierungsalgorithmus
+				- [_1] 5.3 Implementierung
+				- [_1] 5.4 Erweiterbarkeit um Baum-Unterarten
+				- [_1] 5.5 Zusammenfassung
+			- 6 Erweiterung um visuelle Funktionalitäten
 				- [_1] Anfang
-				- [X1] 7.1 Fazit
-				- [X1] 7.2 Ausblick
-		[_9 , X12] Sachen aus "noch vielleicht einbringen"
-		[_5] um ganzen kleinen ToDos kümmern (die nicht bzgl latex)
-		[_5] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
-		[_0] kurzen Satz, dass aufs Gendern verzichtet wird (wie in anderer BA)
-		[_?] "1.2 Vergleich von bestehenden Algorithmen"
-			- exemplarisch welche aufzeigen
-			- schon mögliche downsides: 
-				- zb läuft es nur auf festen algorithmen
-				- fehlende animationen
-				- nur bestimmte bäume (zb kanten rot färben können für rot-schwarz bäume)
-		[_?] "Erweiterbarkeit um Baum-Unterarten" 
-		[_?] Texte an Gliederung anpassen
-		[_?] Verweise umändern, fixen wegen neuer Gliederung
-		[_?] Bei Zusammenfassung "Fazit" Überschrift rauslöschen, sodass nur noch Zusammenfassung als Kapitel ohne Unterkapitel steht
+				- [_1] 6.1 Neue Struktur der Architektur 
+				- [_1] 6.2 Animationen
+				- [_1] 6.3 Erweiterbarkeit um weitere Animationen
+				- 6.4 Konkrete Animationen
+					- [_1] 6.4.1 Animationen in ArrayList
+					- [_1] 6.4.2 Animationen in Bäumen
+				- [_1] 6.5 Zoomen und Bewegen
+				- [_1] 6.6 Zusammenfassung
+			- 7 Zukünftige Arbeit
+				- [_1] Anfang
+				- [_1] 7.1 Bestehende Probleme
+				- [_1] 7.2 Ausblick
+				- [_1] 7.3 Zusammenfassung
+			- 8 Zusammenfassung
+				- [_1] Inhalt
+		
+		[_24 , X0] Sachen aus "noch vielleicht einbringen"
+		[_10] um ganzen kleinen ToDos kümmern (die nicht bzgl latex)
+		[_10] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
 		[_0] Leute Korrekturlesen lassen
 			- einmal für Rechtschreibung
 				- Dinah ?
@@ -105,36 +88,32 @@
 				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
 		
 	- noch vielleicht reinbringen
-		[X1] In Einleitung "Ergebnisse" ?
-		[X1] in "3.2 Arraylists" auf Arrays von alter BA verweisen
-		[X1] "6.1 Erweiterbarkeit" schreiben?? Denke nicht
-		[X1] "1.2 Vergleich von bestehenden ähnlichen Programmen" schreiben??? safe nicht
-		[X2] Irgendwo, zb in Einleitung, erwähnen was alles hinzugefügt wurde? Besonders nochmal wegen Config und ConfigReader. Ggf vorhandene thematisierung von Config dort rein schieben
-			=> Wird in "6.2 Änderungen am bestehenden Code" und als Randnotiz in "5.9 Neue Struktur der Architektur" erwähnt
-		[X1] Auf "leere Animationen" in kleinem Unterkapitel eingehen? 
-			[X1] Und überall, wo das Wort vorkommt, auf dieses Kapitel verweisen / verlinken? (Wie Definition und auf Definition verweisen?)
-		[X1] erklären was "Info-Datenstrukturen" sind??
-		[X2] kurz auf vorherige BA verweisen, weil ich ja nicht die Anwendung selbst erkläre, da das bereits dort getan wurde (am besten in Einleitung denk ich, im Sinne von "Diese Arbeit konzentriert sich auf die Erweiterung der Anwendung. Die Anwendung selbst wird nicht stark beleuchtet / erklärt / erläutert, da dies bereits in Arbeit xy getan wurde" oder auch am Anfang von "3 Überarbeitung des bestehenden Code")
 		- UML Klassendiagramm:
-			[_2] UML Diagramm für Bäume ?
+			[_4] UML Diagramm für Bäume ?
 				- zu beachten: man muss auch was dazu schreiben
-			[_1] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
+			[_2] UML Diagramm für "6.? Erweiterbarkeit um weitere Datenstruktur" erstellen?
 		- UML Sequenzdiagramm:
-			[_2] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
+			[_4] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
 				- wohin? (4.1?)
 				- zu beachten: man muss auch was dazu schreiben
-			[_1] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
-		[_1] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ??
+			[_2] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
+		[_2] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ??
 			- Zoomen -> yeah, baby! Einfach einmal klein und einmal groß gezoomt
 			- Bewegen -> kann man machen... ähnlich wie bei zoomen... Vorschlag: Bild 1 normal, Bild 2 gezoomt, Bild 3 bewegt... naja muss man nicht
-		[_1] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
-		[_1] Anhang wie?
+		[_2] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
+		[_2] Anhang wie?
+		[_2] Alle Wörter, die abkürzbar sind, einheitlich abkürzen oder nicht abkürzen: ggf., bspw., z.B., u.a.,...
+		[_4] Einleitungssätze auch für (alle) Unterkapitel??
 		
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
 	- überall "ich" mit "wir" und "man" mit passivem ersetzen
 	- Bei Websites auch letzter Zugriff angeben
 	- Klassen in Text erwähnen mit dieser Schriftart aus der anderen BA
+	- ToDo's:
+		- Was muss ich beim abgeben beachten?
+			- ausgedruckt im studienbüro abgeben?
+			- noch irgendwas bzgl dem code tun? Reicht es, dass der in gitlab ist? Muss ich noch explizit drauf verweisen, dass der dort vorliegt?
 	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
 		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
 

@@ -1,0 +1,50 @@
+
+
+2. Architektur
+	2.1 Vorherige Arbeit
+	2.2 Erweiterbarkeit um weitere Datenstruktur (am Beispiel von Bäumen)
+	2.3 Zusammenfassung
+
+
+
+Kapitel
+
+
+2 Architektur
+
+
+2.1 Vorherige Arbeit
+	- auf MS BA weiterhin verweisen
+	- erklären was InfoDatenstrukturen sind 
+	
+	Beachtet sei dabei, dass der Fokus dieser Arbeit auf der Beleuchtung der Erweiterungen liegt und daher die Anwendung selbst nicht groß erläutert wird. Dies wurde bereits in PLATZHALTER \todo{Quellenverweis auf die andere BA} getan. Um die grundlegenden Abläufe und Architektur zu verstehen, sollte daher die genannte Arbeit betrachtet werden. 
+	Allerdings ist es sinnvoll den Begriff der "Info-Datenstruktur", der in den nachfolgenden Kapiteln häufiger aufkommt, noch einmal kurz in den passenden Kontext zu setzen und zu erläutern:
+		- Für jede Datenstruktur muss eine Klasse existieren, die vom Nutzer aufgerufen und genutzt werden kann. Dabei werden die Elemente und Werte der Datenstruktur nicht direkt in der vom Nutzer bedienten Klasse gespeichert, sondern die Klasse speichert eine sogenannte "Info-Datenstruktur". Die "Info-Datenstruktur" ist dafür da die Datenstruktur abzuspeichern und die je Befehl passenden Visualisierungen aufzurufen.
+
+
+2.2 Erweiterbarkeit um weitere Datenstruktur
+	{Beim Teil der abzuändernden Dateien auch noch Beispielcode aus den beiden Dateien einfügen? Wär nicht viel im Vergleich zum Beispielcode einer ganzen Datenstruktur...}
+	
+	// Hinzuzufügende Dateien
+	Um aufzuzeigen, wie eine weitere Datenstruktur grundsätzlich hinzuzufügen ist, wird nachfolgend erläutert, welche Dateien erstellt werden sollten und welche Dateien angepasst werden müssen. Angenommen eine Datenstruktur mit dem Namen "XY" solle hinzugefügt werden und die vorhandenen Namenskonventionen für die Dateien werden beibehalten, so müssten folgende Dateien erstellt werden:
+			datastructures.XY, 
+			datastructures.InfoXY, 
+			builders.XYBuilder,
+			commands.XYCommands.XYCommand, 
+			visualization.XYVisualization,
+			visualization.animationCreation.XYAnimation,
+			Algorithms.XYAlgorithm
+	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "XYCommand" erbt, im Ordner "commands" erstellt werden muss. So könnte noch, analog zu den bereits vorhandenen Datenstrukturen, bspw. "commands.CreateXY" oder "commands.InsertElementXY" hinzugefügt werden. 
+	Sollen mehrere Algorithmen zur Klasse auswählbar und vorführbar sein, so ist für jeden dieser eine Klasse in "Algorithms" hinzuzufügen. Neben der bereits gelisteten Datei "Algorithms.XYAlgorithm", wären Beispiele hierfür "Algorithms.SortXYAlgorithm" oder "Algorithms.SearchXYAlgorithm".
+	
+	// Abzuändernde Dateien
+	Was der Wartbarkeit des Programms sehr zugute kommt ist, dass beim Hinzufügen einer Datenstruktur nur zwei bereits existierende Dateien, zudem nur in geringem Maße, tatsächlich abgeändert werden müssen. Diese beiden Dateien sind:
+		abstractAlgorithm.AbstractAlgorithm
+		model.ParentViewModel
+	So ist in "AbstractAlgorithm" ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, der bereits als "builders.XYBuilder" erstellt wurde. Dieses Attribut wird in der hinzuzufügenden Methode "create_XY" verwendet, welche wiederum in den von "AbstractAlgorithm" erbenden Algorithmen-Klassen genutzt werden kann. Soll die Datenstruktur mehr als eine Möglichkeit haben eine neue Instanz in den Algorithmen erzeugen zu können, so müssen gegebenenfalls weitere Methoden erstellt werden. 
+	"ParentViewModel" muss um ein Attribut und zwei Methoden erweitert werden. Das hinzuzufügende Attribut ist die in "visualization.XYVisualization" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sind nur wenige Zeilen Programmcode erforderlich. So muss "exeCommand" zusätzlich den Fall "XYCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für XY zurücksetzen.
+
+
+2.3 Zusammenfassung 
+	{Kurz erwähnen dass es animationen gibt}
+
