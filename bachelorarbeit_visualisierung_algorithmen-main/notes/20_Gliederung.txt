@@ -15,12 +15,11 @@ Gliederung (neu neu neu):
 		!X 1.2 Vergleich von bestehenden ähnlichen Programmen
 		!X 1.3 Zielsetzung 
 		!X 1.4 Strukturierung des Inhalts der Arbeit
-
 	! 2 Architektur
 		!_ 2.1 Vorherige Arbeit
 		!X 2.2 Erweiterbarkeit um weitere Datenstruktur (am Beispiel von Bäumen)
-		!_ 2.3 Zusammenfassung (Kurz erwähnen dass es animationen gibt)
-		
+		!X 2.3 Erweiterung der Architektur (UML & Sequenz Diagramm)
+		!_ 2.4 Zusammenfassung (Kurz erwähnen dass es animationen gibt)
 	! 3 Überarbeitung des bestehenden Codes
 				- Änderungen am Code, die nicht zu den großen Erweiterungen gehören (Animation, Bewegung, Zoomen, Bäume)
 		!X 3.1 Refaktorierung & Kommentare
@@ -46,14 +45,13 @@ Gliederung (neu neu neu):
 		!_ 5.5 Zusammenfassung
 	! 6 Erweiterung um visuelle Funktionalitäten
 				- Umsetzung der Animationen, Zoomen und Bewegen
-		!X 6.1 Neue Struktur der Architektur (UML & Sequenz Diagramm)
-		!X 6.2 Animationen 
-		!X 6.3 Erweiterbarkeit um weitere Animationen
-		!X 6.4 Konkrete Animationen
-			!X 6.4.1 Animationen in ArrayList
-			!X 6.4.2 Animationen in Bäumen 
-		!X 6.5 Zoomen & Bewegen 
-		!_ 6.6 Zusammenfassung
+		!X 6.1 Animationen 
+		!X 6.2 Erweiterbarkeit um weitere Animationen
+		!X 6.3 Konkrete Animationen
+			!X 6.3.1 Animationen in ArrayList
+			!X 6.3.2 Animationen in Bäumen 
+		!X 6.4 Zoomen & Bewegen 
+		!_ 6.5 Zusammenfassung
 	! 7 Zukünftige Arbeit
 				- Woran man ansetzen kann
 		!X 7.1 Bestehende Probleme

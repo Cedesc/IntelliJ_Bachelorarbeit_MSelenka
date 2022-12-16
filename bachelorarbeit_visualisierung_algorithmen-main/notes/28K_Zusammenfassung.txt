@@ -1,6 +1,6 @@
 
 
-7 Zusammenfassung
+8 Zusammenfassung
 			- grundlegende Zusammenfassung
 
 
@@ -11,7 +11,9 @@ Was ich reinbringen kann:
 Kapitel:
 
 
-7
+[ ] 8
+	{nochmal überarbeiten, weil Ziele nun etwas anders sind}
+
 	// Schöner Einleitungssatz
 	Um ein Fazit dieser Arbeit zu fassen, werden im nachfolgenden Abschnitt die am Anfang in PLATZHALTER \todo{Verweis auf 1.3 Zielsetzung} definierten Ziele mit der resultierenden Anwendung verglichen.
 	

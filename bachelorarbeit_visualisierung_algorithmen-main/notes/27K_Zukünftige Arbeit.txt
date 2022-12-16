@@ -16,7 +16,10 @@ Was ich reinbringen kann:
 Kapitel:
 
 
-7.1 Bestehende Probleme
+[ ] 7 Zukünftige Arbeit
+
+
+[ ] 7.1 Bestehende Probleme
 	
 	// Allgemein
 	Wie bereits gezeigt, wurde die Anwendung um einige Funktionalitäten erweitert. Jedoch bleiben zwei größere, bislang ungelöste Probleme bestehen. Diese wollen wir in diesem Unterkapitel aufzeigen und dazu mögliche Lösungsansätze präsentieren. 
@@ -85,7 +88,7 @@ Kapitel:
 \end{lstlisting}
 
 
-7.2 Ausblick
+[ ] 7.2 Ausblick
 	
 	// Schöner Einleitungssatz
 	...
@@ -99,3 +102,6 @@ Kapitel:
 	
 	// Weiteres
 	Auch die implementierten allgemeinen Bäume können erweitert werden. So können komplexere Befehle hinzugefügt werden, wie bspw. Rotationen. Diese können, wenn gewünscht, einzig und allein mit einer Kombination aus den bereits vorhandenen atomaren Operationen umgesetzt werden.
+
+
+[ ] 7.3 Zusammenfassung

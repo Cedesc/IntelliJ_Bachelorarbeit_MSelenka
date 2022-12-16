@@ -3,13 +3,13 @@
 Erweiterung um visuelle Funktionalitäten
 			- Umsetzung der Animationen, Zoomen und Bewegen
 	6.1 Neue Struktur der Architektur (UML & Sequenz Diagramm)
-	6.2 Animationen 
-	6.3 Erweiterbarkeit um weitere Animationen
-	6.4 Konkrete Animationen
-		6.4.1 Animationen in ArrayList
-		6.4.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
-	6.5 Zoomen & Bewegen 
-	6.6 Zusammenfassung
+	6.1 Animationen 
+	6.2 Erweiterbarkeit um weitere Animationen
+	6.3 Konkrete Animationen
+		6.3.1 Animationen in ArrayList
+		6.3.2 Animationen in Bäumen (ist noch in "4.? Atomare Funktionen + Art der Abspeicherung")
+	6.4 Zoomen & Bewegen 
+	6.5 Zusammenfassung
 
 
 
@@ -22,30 +22,11 @@ Was ich reinbringen kann:
 Kapitel:
 
 
-6
+[ ] 6
 	{"Möglichst versucht Animationen, Zoomen und Bewegung voneinander abgekapselt zu haben"}
 
 
-6.1 Neue Struktur der Architektur
-
-	{Richtige Abbildungsbezeichnungen reinpacken}
-	{Richtiger Kapitelverweis reinpacken und auch verlinken (zu dem wie man eine Datenstruktur hinzufügt}
-	%// Generelles
-	Um die strukturellen Erweiterungen und Änderungen der Anwendungsarchitektur übersichtlich aufzuzeigen, liegt mit {Abbildung 1?} ein UML-Diagramm vor. Dieses stellt nicht das komplette Programm dar, sondern nur die neu erstellten Klassen im Bereich der Animationen, Zoomen und Bewegung. Dabei ist alles, was neu hinzugefügt wurde grün markiert und alles, was bereits zuvor vorhanden war, in schwarz. Damit einzelne Klassen nicht durch zu viele, für diese Darstellung unwichtige, Attribute und Methoden unübersichtlich werden, wurden einige dieser ausgelassen. Dies ist in den Klassen ParentViewModel, ExecuteAlgorithmController und der JavaFX-Klasse Pane der Fall. Abgesehen von der hinzugefügten Datenstruktur Baum und einer Klasse um die Config-Datei einzulesen, hat der Rest der Anwendung ein, im Vergleich zur vorigen Version, unverändertes UML-Diagramm. Auf die genannten Ausnahmen wird später eingegangen.
-
-	{ab erster Erwähnung von "initialize" Code davon zeigen ums schöner zu haben? Oder Sequenzdiagramm?}
-	%// Bewegen
-	Für das Feature der Bewegung innerhalb des Anzeigefensters wurden die Klassen DragContext und NodeGestures hinzugefügt. Dabei ist DragContext nur dafür da um für den Prozess wichtige Werte abzuspeichern, während NodeGestures für das korrekte Ausführen der Bewegung verantwortlich ist. Dafür wird lediglich in initialize() von ExecuteAlgorithmController eine Instanz von NodeGestures erstellt und zum zugehörigen Anzeigefenster als Events hinzugefügt. 
-	%// Zoomen
-	Das Zoomen wird von ZoomPane und SceneGestures ermöglicht. ZoomPane dient dafür als sichtbares Fenster, weshalb es auch von der JavaFX-Klasse Pane erbt. Der tatsächliche Vorgang wird allerdings von der Klasse SceneGestures übernommen. Von SceneGestures wird, ähnlich wie bei NodeGestures, in der initialize-Methode von ExecuteAlgorithmController eine Instanz erstellt und zum Fenster, in dem das ZoomPane liegt, als Event hinzugefügt. 
-	%// Animation
-	Etwas aufwendigere Änderungen waren für die hinzuzufügenden Animationen notwendig. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Außerdem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen. Insgesamt sorgt Abkapselung der Animationen von der Visualisierung für eine besser Lesbarkeit und Wartbarkeit des Programmcodes. Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain, welche für leichtere Verwaltung mehrerer Animationen sorgt. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain vorzeitig zum Animationsende springen.
-
-	%// Klassen, die nicht vom UML Diagramm gezeigt werden
-	Es wurden noch weitere Klassen zum Programmcode hinzugefügt, die nicht in {Abbildung 1?} vorzufinden sind. Zum einen ConfigReader, welche allerdings einzig das Auslesen der zusätzlich hinzugefügten Config-Datei übernimmt. Zudem wurden mehrere Dateien zu Bäumen hinzugefügt, wobei es sich hier, zumindest bezüglich der Softwarearchitektur, einfach um eine weitere Datenstruktur handelt. Wie im Allgemeinen eine neue Datenstruktur hinzugefügt werden kann, wie auch die Bäume hinzugefügt wurden, wird in {Kapitel XY} erklärt.	
-
-
-6.2 Animationen
+[ ] 6.1 Animationen
 	{War zuvor ein Unterkapitel mit dem Namen "Animationen an den bestehenden Datenstrukturen" => Text überprüfen ob nicht gewisse Sachen raus müssen}
 	{mit "arraylist" aufpassen, da das jetzt was anderes als "arrays" ist}
 	
@@ -69,7 +50,7 @@ Kapitel:
 	Da man in der Anwendung in der Step-by-Step Visualization sowohl einen Schritt nach vorne als auch einen Schritt zurück gehen kann, stellt sich die Frage, wie man Animationen bei einem Schritt zurück ausführen kann und ob dabei Problematiken auftauchen. Der Code ist jedoch durch das Command-Pattern so geschrieben, dass gar keine Anpassungen getroffen werden mussten um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen und das ohne, dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig war.
 	
 
-6.3 Erweiterbarkeit um weitere Animationen
+[ ] 6.2 Erweiterbarkeit um weitere Animationen
 	// Allgemein nochmal kurz Gegebenheiten erklären
 	In PLATZHALTER \todo{Verweis auf "5.1 Animationen"} wird beschrieben wie eine Animation vom Programm erstellt und abgespielt wird. Die Animationen liegen in einer, von der Klasse, die sich um die Visualisierung kümmert, abgekapselten Klasse. Die Animation für einen spezifischen Befehl wird in der Regel von je einer Funktion dieser Animationsklasse erzeugt und zurückgegeben. In der Visualisierungsklasse sind in den jeweiligen Befehlsvisualisierungen nur die Funktionsaufrufe vorzufinden. 
 	
@@ -85,11 +66,11 @@ Kapitel:
 	Ändert sich nichts an der grundlegenden Struktur der Anwendung und werden all diese Punkte beachtet, ist es möglich sowohl Befehle der derzeitig vorhandenen Datenstrukturen, als auch zukünftig hinzugefügte Befehle und Befehle zukünftiger Datenstrukturen zu animieren. 
 
 
-6.4 Konkrete Animationen
+[X] 6.3 Konkrete Animationen
 	--- leer lassen ---
 
 
-6.4.1 Animationen in ArrayList
+[ ] 6.3.1 Animationen in ArrayList
 	{deletions macht probleme (auf kapitel mit "bestehende probleme" verweisen) und get ist schlichtweg noch nicht drin}
 
 	%// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und warums besser für den Nutzer ist
@@ -102,7 +83,7 @@ Kapitel:
 	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} von ArrayList zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} ArrayListInfo getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
 
 
-6.4.2 Animationen in Bäumen
+[ ] 6.3.2 Animationen in Bäumen
 	
 	%// Animationen der atomaren Funktionen
 	Da es sich hier um atomare Funktionen handelt, werden ihre Animationen wahrscheinlich am häufigsten abgespielt. Sogar ausschließlich, angenommen man stellt alle Funktionen mit diesen Methoden dar und behält dabei die Animationen dieser bei. Daher lohnt es sich einen genaueren Blick auf diese spezifischen Animationen zu werfen. 
@@ -111,7 +92,7 @@ Kapitel:
 	Auch für das Ändern des Werts eines Knotens wurde eine Animation hinzugefügt. Dabei handelt es sich allerdings um eine simple Fade-Out- gefolgt von einer Fade-In-Animation. Hier greifen die gleichen Vorteile wie bei den Animation für die ersten beiden Methoden.
 
 
-6.5 Zoomen & Bewegen
+[ ] 6.4 Zoomen & Bewegen
 	
 	%// Zoomen und Bewegen nötig um Übersicht zu halten, wenn die Strukturen sehr groß werden
 	Bislang war es nicht möglich die angezeigten Datenstrukturen visuell zu verkleinern oder zu vergrößern. Waren nur wenige Elemente vorhanden, was dies auch nicht nötig. Jedoch war schon bei den Arraylists ab ein paar dutzend Elementen ein Teil der Datenstruktur nicht zu sehen und der Nutzer hatte keine Möglichkeit diesen verdeckten Teil ins Sichtfeld zu bringen. Um die Anwendung für größere Datensätze gut nutzen zu können, ist es smit notwendig dieses Problem zu beheben. 
@@ -128,3 +109,6 @@ Kapitel:
 	
 	%// wie Zoomen und rumbewegen umgesetzt wurde - von stackoverflow; erklären was ich geändert hab
 	Die Grundidee der konkreten Implementierung dieser Funktionalitäten stammt von \todo{Quellenverweis auf https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer}. Für das Programm passend abgeändert und teilweise erweitert, ist der Code, in vier Klassen aufgeteilt, vorzufinden. Unter "supportClasses.zooming" und "supportClasses.moving". Beim Zoomen wird durch eine Bindung von den Scale-Properties des Fensters der komplette Inhalt vergrößert oder auch verkleinert. Beim Bewegen können sogar einzelne Inhalte des Fenster ausgewählt werden, die bewegt werden sollen. Bislang entspricht dieser ausgewählte Inhalt in jedem Fall dem kompletten Inhalt des Fensters. Die Möglichkeit nur einzelne Elemente des Fensters zu bewegen, könnte allerdings für spätere Funktionalitäten genutzt werden. Eine andere mögliche Funktionalität für diesen Kontext wäre die Möglichkeit auf einen Klick den Zoom oder auch die Translation auf den Standard zurückzusetzen. Dies wäre leicht einbringbar, indem jeweils eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, implementiert und mit einer neu hinzugefügten Schaltfläche verbunden wird.
+
+
+[ ] 6.5 Zusammenfassung
