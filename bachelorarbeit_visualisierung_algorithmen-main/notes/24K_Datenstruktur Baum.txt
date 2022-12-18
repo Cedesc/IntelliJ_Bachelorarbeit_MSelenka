@@ -11,7 +11,7 @@
 
 
 
-Was ich reinbringen kann:
+Was ich hereinbringen kann:
 	- Grafik, in der veranschaulicht wird, wie etwas aus der "echten" Welt als Baum dargestellt wird ?
 		- Güting Dieker S. 92 (106) / 93 (107)
 	- Selbstgemachte Grafik für 4.2 a la "was ist ein Baum, was nicht" ?
@@ -69,7 +69,7 @@ Kapitel:
 		(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
 		
 	Zur Veranschaulichung dieser Definition, folgendes Beispiel:
-	Angenommen es liege ein Wald, also mehrere nicht verbundene Bäume, vor, dann kann daraus ein einzelner Baum kreiert werden. Dies kann erreicht werden indem ein neuer Knoten y erstellt wird, der für sich allein nach der vorliegenden Definition durch Fall (i) bereits ein Baum ist, und die Wurzeln der Bäume des Walds als Kindknoten zu y hinzugefügt werden. Dadurch entsteht nach Fall (ii) ein Baum mit Wurzel y, der die Bäume des erwähnten Walds als Teilbäume beinhaltet. 
+	Angenommen es liege ein Wald, also mehrere nicht verbundene Bäume, vor, dann kann daraus ein einzelner Baum kreiert werden. Dies kann erreicht werden, indem ein neuer Knoten y erstellt wird, der für sich allein nach der vorliegenden Definition durch Fall (i) bereits ein Baum ist, und die Wurzeln der Bäume des Walds als Kindknoten zu y hinzugefügt werden. Dadurch entsteht nach Fall (ii) ein Baum mit Wurzel y, der die Bäume des erwähnten Walds als Teilbäume beinhaltet.
 
 
 [X] 4.3 Speicherung von Bäumen
@@ -114,11 +114,11 @@ Kapitel:
 	% // Binärbäume
 	Die wohl am häufigsten genutzte Art sind, die bereits erwähnten, Binärbäume, die sich dadurch auszeichnen, dass jeder Knoten maximal zwei Kinder hat. 
 	% // Suchbäume
-	Suchbäume bieten eine bessere Laufzeit bei Suchoperationen, da die gesetzten Schlüssel des linken Teilbaums eines Knoten alle kleiner und die Schlüssel des rechten Teilbaums alle größer sind als der Schlüssel des betrachteten Knotens [PLATZHALTER \todo{Verweis auf Ottmann 263 (282) Kapitel 5 Bäume}].
+	Suchbäume bieten eine bessere Laufzeit bei Suchoperationen, da die gesetzten Schlüssel des linken Teilbaums eines Knotens alle kleiner und die Schlüssel des rechten Teilbaums alle größer sind als der Schlüssel des betrachteten Knotens [PLATZHALTER \todo{Verweis auf Ottmann 263 (282) Kapitel 5 Bäume}].
 	% // AVL-Bäume
-	Wird ein zuverlässig ausgeglichener Baum benötigt, können AVL-Bäume aushelfen. Durch ein für jeden Knoten zusätzlich hinzugefügtes Attribut [PLATZHALTER \todo{Verweis auf Solymosi 154 (169) Kapitel 6.4 ausgeglichene Bäume}], sorgen diese für einen stetig ausgeglichenen Baum. 
+	Wird ein zuverlässig ausgeglichener Baum benötigt, können AVL-Bäume aushelfen. Durch ein für jeden Knoten zusätzliches Attribut [PLATZHALTER \todo{Verweis auf Solymosi 154 (169) Kapitel 6.4 ausgeglichene Bäume}], sorgen diese für einen stetig ausgeglichenen Baum.
 	% // Rot-Schwarz-Bäume
-	Als Alternative zu AVL-Bäumen können auch Rot-Schwarz-Bäume verwendet werden um die Ausgeglichenheit des Baums zu wahren. Bei diesen werden die Kanten entweder schwarz oder rot gefärbt [PLATZHALTER \todo{Verweis auf Solymosi 165 (180) Kapitel 6.6 Rot-Schwarz-Bäume}]. 
+	Als Alternative zu AVL-Bäumen können auch Rot-Schwarz-Bäume verwendet werden, um die Ausgeglichenheit des Baums zu wahren. Bei diesen werden die Kanten entweder schwarz oder rot gefärbt [PLATZHALTER \todo{Verweis auf Solymosi 165 (180) Kapitel 6.6 Rot-Schwarz-Bäume}].
 	% // (a, b)-Bäume
 	Das letzte aufgezeigte Beispiel sind (a, b)-Bäume, die sogenannte externe Suchbäume sind. Das bedeutet, dass ihre inneren Knoten nur Verwaltungsinformationen bereithalten, während die Daten exklusiv von den Blättern gespeichert werden [PLATZHALTER \todo{Verweis auf Hubwieser 264 (280) Kapitel 21.6 Bäume}]. B-Bäume, ein Spezialfall der (a, b)-Bäume, sind nach Hubwieser \todo{NUR Hubwieser, oder noch andere Autoren, die ich da aufzählen sollte??} "eine bedeutende Speicherlösung für Sekundärspeicher (z.B. Festplatten)" [PLATZHALTER \todo{direktes Zitat von Hubwieser 245 (261) Kapitel 21 Bäume}].
 	
