@@ -11,74 +11,93 @@
 Kapitel
 
 
-[ ] 2 Architektur
+[X] 2 Architektur
+
+	In diesem Kapitel wird die Architektur der Anwendung aufgezeigt. Dabei wird einerseits am Beispiel von Bäumen gezeigt wie die Anwendung um neue Datenstrukturen erweiterbar ist, andererseits was an der Architektur beim Implementieren der Erweiterungen geändert wurde.
 
 
-[ ] 2.1 Vorherige Arbeit
+[X] 2.1 Vorherige Arbeit
 	
-	Beachtet sei, dass der Fokus dieser Arbeit auf der Beleuchtung der Erweiterungen liegt und daher die Anwendung "Algorithm Visual Studio" selbst nicht groß erläutert wird. Dies wurde bereits in PLATZHALTER \todo{Quellenverweis auf die andere BA} getan. Um die grundlegenden Abläufe und die Architektur zu verstehen, sollte daher die genannte Arbeit betrachtet werden. 
-	Allerdings ist es sinnvoll die grundlegende Art, wie Datenstrukturen im Programm vorliegen, noch einmal zu beleuchten:
-		- Für jede zu Datenstruktur muss eine Klasse existieren, die vom Nutzer aufgerufen und genutzt werden kann. Dabei werden die Elemente und Werte der Datenstruktur nicht direkt in der vom Nutzer bedienten Klasse gespeichert, sondern die Klasse speichert eine sogenannte "Info-Datenstruktur". Die "Info-Datenstruktur" ist dafür da die Datenstruktur abzuspeichern und die je Befehl passenden Visualisierungen aufzurufen. Dabei wird zunächst der Datenstruktur-ändernde Befehl dieser ausgeführt und danach die Visualisierung aufgerufen.
+	Beachtet sei, dass der Fokus dieser Arbeit auf der Beleuchtung der Erweiterungen liegt und daher die Anwendung "Algorithm Visual Studio" \todo{Anführungszeichen richtig setzen} selbst weitestgehend nicht erläutert wird. Dies wurde bereits in PLATZHALTER \todo{Quellenverweis auf die andere BA} von Manuel Selenka getan. Um die grundlegenden Abläufe und die Architektur zu verstehen, sollte daher die vorherige Arbeit betrachtet werden. 
+	
+	Allerdings ist es sinnvoll die grundlegende Art, wie Datenstrukturen im Programm vorliegen, noch einmal zusammenzufassen:
+	Für jede Datenstruktur muss eine Klasse existieren, die vom Nutzer aufgerufen und genutzt werden kann. Dabei existiert eine weitere Klasse im Hintergrund, die von erstgenannter abgespeichert wird. Diese im Hintergrund liegende Klasse ist die sogenannte "Info-Datenstruktur" PLATZHALTER \todo{Anführungszeichen richtig setzen oder kursiv machen}. Die "Info-Datenstruktur" PLATZHALTER \todo{Anführungszeichen richtig setzen oder kursiv machen} manipuliert die Datenstruktur und ruft die je Befehl passende Visualisierungen auf. Dabei wird zunächst der Datenstruktur-ändernde Befehl dieser ausgeführt und danach die Visualisierung aufgerufen.
 
 
-[ ] 2.2 Erweiterbarkeit um weitere Datenstruktur
-	{Beim Teil der abzuändernden Dateien auch noch Beispielcode aus den beiden Dateien einfügen? Wär nicht viel im Vergleich zum Beispielcode einer ganzen Datenstruktur...}
+[X] 2.2 Erweiterbarkeit um weitere Datenstruktur
 	
-	%// Allgemein
-	Um aufzuzeigen, wie eine weitere Datenstruktur grundsätzlich hinzuzufügen ist, wird nachfolgend zuerst erläutert, welche Dateien erstellt werden sollten und welche Dateien angepasst werden müssen und daraufhin warum das alles so ist. Das wird am Beispiel der Bäume aufgezeigt, die im Rahmen dieser Arbeit hinzugefügt wurden. Dabei wurden die bereits vorhandenen Namenskonventionen für die Dateien beibehalten. Die später beschriebenen Abbildungen 1, 2, 3 und 4 PLATZHALTER \todo{Verweis auf all die UML-Klassendiagramme} sind Ausschnitte aus dem UML-Klassendiagramm PLATZHALTER \todo{Verweis auf Anhang ganzes UML-Klassendiagramm}. In diesem Diagramm sind alle Klassen, Methoden und Attribute, die für eine Datenstruktur neu hinzugefügt werden müssen, in grün dargestellt. Methoden, deren Inhalt geändert werden muss, sind blau. Insgesamt wurde nicht das ganze Programm dargestellt und einige Attribute und Methoden mit "..." abgekürzt, da dies die Lesbarkeit stören würde und die gekürzten Sachen Funktionen und Attribute sind, die in PLATZHALTER \todo{Quellenverweis auf BA UML} bereits gezeigt werden und nicht von den Änderungen betroffen waren. Alle an diesem Beispiel aufgezeigten Abhängigkeiten und Funktionen müssen bei einer neuen Datenstruktur implementiert werden. 
+	% // Allgemein
+	Um darzustellen, wie eine weitere Datenstruktur grundsätzlich hinzuzufügen ist, wird nachfolgend zuerst aufgezählt, welche Dateien erstellt werden sollten und welche Dateien angepasst werden müssen. Daraufhin welche Zwecke die jeweiligen erstellen Klassen haben. Das wird am Beispiel der Bäume gezeigt, die im Rahmen dieser Arbeit hinzugefügt wurden. Die bereits vorhandenen Namenskonventionen für die Dateien wurden beibehalten. Die später beschriebenen Abbildungen 1, 2, 3 und 4 PLATZHALTER \todo{Verweis auf all die UML-Klassendiagramme} sind Ausschnitte aus dem UML-Klassendiagramm PLATZHALTER \todo{Verweis auf Anhang ganzes UML-Klassendiagramm}. In diesem Diagramm sind alle Klassen, Methoden und Attribute, die für eine Datenstruktur neu hinzugefügt werden müssen, in grün dargestellt. Bestehende Methoden, deren Inhalt geändert werden muss, sind blau geschrieben. Um die Lesbarkeit zu verbessern wurde insgesamt nicht das ganze Programm dargestellt und einige Attribute und Methoden mit "..." \todo{Anführungszeichen richtig} abgekürzt. Die gekürzten Funktionen und Attribute werden in PLATZHALTER \todo{Quellenverweis auf BA UML} bereits gezeigt und waren nicht von den Änderungen betroffen. 
+	Alle an diesem Beispiel aufgezeigten Abhängigkeiten und Funktionen müssen bei einer neuen Datenstruktur implementiert werden. 
 	
-	%// Hinzuzufügende Dateien
+	% // Hinzuzufügende Dateien
 	Folgende Dateien wurden erstellt:
 			datastructures.Tree, 
 			datastructures.InfoTree, 
 			builders.TreeBuilder,
 			commands.treeCommands.TreeCommand, 
 			visualization.TreeVisualization			
-	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "TreeCommand" erbt, im Ordner "commands.treeCommands" erstellt werden muss. So wurde noch u.a. "commands.treeCommands.ChangeValue" und "commands.treeCommands.DeleteLeaf" hinzugefügt. 
-	Für jeden auswählbaren Algorithmus muss eine Klasse in "Algorithms" hinzugefügt werden. Im Fall der Bäume ist das u.a. "Algorithms.TreeDemo" und "Algorithms.TreeSimple". 
-	Zudem war es bei Bäumen nötig, diese an sich zu implementieren. Das ist mit MyTree und MyNode geschehen. 
+	Zu beachten ist hierbei, dass für jeden grundlegenden Befehl der Datenstruktur eine eigene Klasse, die von "TreeCommand" erbt, im Ordner "commands.treeCommands" erstellt werden muss. So wurde noch u.a. commands.treeCommands.ChangeValue \todo{kursiv oder so} und commands.treeCommands.DeleteLeaf \todo{kursiv oder so} hinzugefügt. 
+	Für jeden auswählbaren Algorithmus muss eine Klasse in Algorithms \todo{kursiv oder so} hinzugefügt werden. Im Fall der Bäume ist das u.a. Algorithms.TreeDemo \todo{kursiv oder so} und Algorithms.TreeSimple \todo{kursiv oder so}. 
+	Bei den implementierten Bäumen war es nötig, die Datenstruktur an sich zu implementieren. Das ist mit MyTree und MyNode geschehen.
+	Es besteht zudem die Option eine Klasse für Animationen zu erstellen. Dies wird später näher beleuchtet. 
 	
-	%// Abzuändernde Dateien
-	Was der Wartbarkeit des Programms sehr zugute kommt ist, dass beim Hinzufügen einer Datenstruktur nur zwei bereits existierende Dateien, zudem nur in geringem Maße, tatsächlich abgeändert werden müssen. Diese beiden Dateien sind:
+	% // Abzuändernde Dateien
+	Was der Wartbarkeit des Programms sehr zugute kommt ist, dass beim Hinzufügen einer Datenstruktur nur zwei bereits existierende Dateien abgeändert werden müssen. Dies auch nur in geringem Maße. Diese beiden Dateien sind:
 		abstractAlgorithm.AbstractAlgorithm
 		model.ParentViewModel
-	So ist in "AbstractAlgorithm" ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, der bereits als "builders.TreeBuilder" erstellt wurde. Dieses Attribut wird in der hinzuzufügenden Methode "create_Tree" verwendet. 
-	"ParentViewModel" muss um ein Attribut und zwei Methoden erweitert werden. Das hinzuzufügende Attribut ist die als "visualization.TreeVisualization" abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sind nur wenige Zeilen Programmcode erforderlich. So muss "exeCommand" zusätzlich den Fall "TreeCommand" abdecken und "resetVisualization" auch die als Attribut abgespeicherte Visualisierung für Tree zurücksetzen.
+	So ist in AbstractAlgorithm \todo{kursiv oder so} ein Attribut und eine Methode hinzuzufügen. Das Attribut ist der Builder, der bereits als "builders.TreeBuilder" erstellt wurde. Dieses Attribut wird in der hinzuzufügenden Methode create_Tree \todo{kursiv oder so} verwendet. 
+	ParentViewModel \todo{kursiv oder so} muss um ein Attribut und zwei Methoden erweitert werden. Das hinzuzufügende Attribut ist die als visualization.TreeVisualization \todo{kursiv oder so} abgespeicherte Klasse zur Visualisierung. Bei den zu erweiternden Methoden sind nur wenige Zeilen Programmcode erforderlich. So muss exeCommand \todo{kursiv oder so} zusätzlich den Fall TreeCommand \todo{kursiv oder so} abdecken und resetVisualization \todo{kursiv oder so} auch die als Attribut abgespeicherte Visualisierung für Tree zurücksetzen.
 
-	%// Warum was gemacht wurde
-	%// #1 Builder
-	Jede hinzugefügte Algorithmus-Klasse erbt von AbstractAlgorithm PLATZHALTER \todo{Verweis auf UML Ausschnitt #1}. Dank diesem Erben, kann jeder Algorithmus mit der jeweiligen "create" Funktion auf alle Builder zurückgreifen. Im gezeigten Fall kann mit "create_Tree" eine Instanz von Tree und InfoTree erzeugt werden. Diese Struktur ist das Erbauer-Entwurfsmuster bzw. Builder-Pattern, wie in PLATZHALTER \todo{Quellenverweis auf BA wo Builder-Pattern gezeigt wird (S.28 (36))} gezeigt wird.
-	%// #3 Command
-	Alle Commands erben von der abstrakten Klasse TreeCommand, die bereits von Command erbt PLATZHALTER \todo{Verweis auf UML Ausschnitt #3}. Beispielhaft sind hier ChangeValue und DeleteLeaf abgebildet. Insbesondere die Befehle exeCommand und backCommand sind hier wichtig. exeCommand führt den normalen Befehl aus, backCommand führt die nötigen Schritte aus um den jeweiligen Befehl rückgängig zu machen. Hier wurde das Befehls-Entwurfsmuster bzw. Command-Pattern verwendet, wie auch in PLATZHALTER \todo{Quellenverweis auf BA wo Command-Pattern gezeigt wird (S.27 (35))} aufgezeigt wird. 
-	%// #2 Tree & InfoTree
-	Die Klassen Tree und InfoTree sind zentrale Klassen des ganzen PLATZHALTER \todo{Verweis auf UML Ausschnitt #2}. Beide erben von AbstractDataStructure und speichern die Datenstruktur MyTree, haben aber unterschiedliche Aufgaben. Tree ist die für den User anwendbare Klasse und InfoTree kümmert sich ums management der hinterliegenden datenstruktur inklusive weiterleitung an visualisierungsklasse. Konkret läuft das, wie in PLATZHALTER \todo{Verweis auf UML Sequenz Ausschnitt #A} am Beispiel von addLeaf gezeigt. Ruft der Nutzer addLeaf auf, so leitet Tree das an InfoTree weiter. Dort werden gewisse Vorbereitungen getroffen, hier konkret das bestimmen des parents anhand des parentIndex, und dann an die pure Datenstruktur MyTree geleitet. Dort wird die Datenstruktur geändert. Daraufhin wird von InfoTree die passende Visualisierung von TreeVisualization aufgerufen.
-	%// #4 Visualisierung
-	Die Klasse zur Visualisierung TreeVisualization bietet für jeden ausführbaren Befehl eine passende Visualisierung PLATZHALTER \todo{Verweis auf UML Ausschnitt #4}. Sie speichert für jede dargestellte Instanz von Tree den zugehörigen InfoTree. Außerdem besteht hier auch eine Verbindung zum ExecuteAlgorithmController, um nach den getätigten Änderungen in der Visualisierungsklasse die Darstellung mit einem Aufruf von updateVisualization des ExecuteAlgorithmController's aktualisiert werden muss. 
+	% // Warum was gemacht wurde
+	% // #1 Builder
+	Jede hinzugefügte Algorithmus-Klasse erbt von AbstractAlgorithm PLATZHALTER \todo{Verweis auf UML Ausschnitt #1}. Dank diesem Erben, kann jeder Algorithmus mit der jeweiligen "create"-Funktion \todo{Anführungszeichen richtig setzen} auf alle Builder zurückgreifen. Im gezeigten Fall kann mit create_Tree \todo{kursiv oder so} eine Instanz von Tree und InfoTree erzeugt werden. Diese Struktur ist das Erbauer-Entwurfsmuster bzw. Builder-Pattern, wie in PLATZHALTER \todo{Quellenverweis auf BA wo Builder-Pattern gezeigt wird (S.28 (36))} gezeigt wird.
+	% // #3 Command
+	Alle Commands erben von der abstrakten Klasse TreeCommand \todo{kursiv oder so}, die bereits von Command \todo{kursiv oder so} erbt PLATZHALTER \todo{Verweis auf UML Ausschnitt #3}. Beispielhaft sind hier ChangeValue \todo{kursiv oder so} und DeleteLeaf \todo{kursiv oder so} abgebildet. Insbesondere die Befehle exeCommand \todo{kursiv oder so} und backCommand \todo{kursiv oder so} sind wichtig. exeCommand \todo{kursiv oder so} führt den normalen Befehl aus, backCommand \todo{kursiv oder so} führt die nötigen Schritte aus um den jeweiligen Befehl rückgängig zu machen. Hier wurde das Befehls-Entwurfsmuster bzw. Command-Pattern verwendet, wie auch in PLATZHALTER \todo{Quellenverweis auf BA wo Command-Pattern gezeigt wird (S.27 (35))} aufgezeigt wird. 
+	% // #2 Tree & InfoTree
+	Die Klassen Tree \todo{kursiv oder so} und InfoTree \todo{kursiv oder so} sind zentrale Klassen des ganzen PLATZHALTER \todo{Verweis auf UML Ausschnitt #2}. Beide erben von AbstractDataStructure \todo{kursiv oder so} und speichern die Datenstruktur MyTree \todo{kursiv oder so}, haben aber unterschiedliche Aufgaben. Tree \todo{kursiv oder so} ist die für den Nutzer anwendbare Klasse. InfoTree \todo{kursiv oder so} kümmert sich um das Management der hinterliegenden Datenstruktur inklusive der Weiterleitung an Visualisierungsklassen. Konkret läuft das, wie in PLATZHALTER \todo{Verweis auf UML Sequenz Ausschnitt #A} am Beispiel von addLeaf \todo{kursiv oder so} gezeigt. Ruft der Nutzer addLeaf \todo{kursiv oder so} auf, so leitet Tree \todo{kursiv oder so} den Befehl InfoTree \todo{kursiv oder so} weiter. Dort werden gewisse Vorbereitungen getroffen, hier konkret das bestimmen des parents \todo{kursiv oder so} anhand des parent Index\todo{kursiv oder so}. Daraufhin wird es an MyTree \todo{kursiv oder so} geleitet, um die Datenstruktur zu ändern. Im Anschluss wird von InfoTree \todo{kursiv oder so} die passende Visualisierung von TreeVisualization \todo{kursiv oder so} aufgerufen.
+	% // #4 Visualisierung
+	Die Klasse zur Visualisierung TreeVisualization \todo{kursiv oder so} bietet für jeden ausführbaren Befehl eine passende Visualisierung PLATZHALTER \todo{Verweis auf UML Ausschnitt #4}. Sie speichert für jede dargestellte Instanz von Tree \todo{kursiv oder so} den zugehörigen InfoTree \todo{kursiv oder so}. Außerdem besteht eine Verbindung zum ExecuteAlgorithmController \todo{kursiv oder so}, um nach den getätigten Änderungen in der Visualisierungsklasse die Darstellung mit einem Aufruf von updateVisualization \todo{kursiv oder so} des ExecuteAlgorithmController's \todo{kursiv oder so} zu aktualisieren. 
 	
 	
-[ ] 2.3 Erweiterung der Architektur
+[X] 2.3 Erweiterung der Architektur
 
-	Neben dem Hinzufügen der Bäume, wurde die Architektur zwangsläufig geändert um Animationen, Bewegen und Zooming reinzubekommen. Dabei kann eine Datenstruktur weiterhin wie in 2.2 PLATZHALTER \todo{Auf Kapitel verweisen} aufgezeigt hinzugefügt werden. Das einzige, was dazu kommt, ist die Möglichkeit, nicht der Zwang, eine Animationsklasse hinzuzufügen. Wie solch eine hinzuzufügen ist und wie sich die Klassen zur Bewegung und Zoomen einordnen, wird in diesem Unterkapitel beleuchtet.
+	Neben dem Hinzufügen der Bäume, wurde die Architektur zwangsläufig geändert um Animationen, Zoomen und Bewegung einzubauen. Dabei kann eine Datenstruktur weiterhin wie in 2.2 PLATZHALTER \todo{Auf Kapitel verweisen} aufgezeigt hinzugefügt werden. Was dazu kommt ist die Möglichkeit, nicht der Zwang, eine Animationsklasse hinzuzufügen. Wie solch eine hinzuzufügen ist und wie sich die Klassen zur Bewegung und Zoomen einordnen, wird in diesem Unterkapitel beleuchtet.
 
-	{Richtige Abbildungsbezeichnungen reinpacken}
-	{Richtiger Kapitelverweis reinpacken und auch verlinken (zu dem wie man eine Datenstruktur hinzufügt}
-	%// Generelles
-	Um die strukturellen Erweiterungen und Änderungen der Anwendungsarchitektur übersichtlich aufzuzeigen, liegt mit \todo{Abbildung 1?} ein UML-Diagramm vor. Dieses stellt nicht das komplette Programm dar, sondern nur die neu erstellten Klassen im Bereich der Animationen, Zoomen und Bewegung. Dabei ist alles, was neu hinzugefügt wurde grün markiert und alles, was bereits zuvor vorhanden war, in schwarz. Damit einzelne Klassen nicht durch zu viele, für diese Darstellung unwichtige, Attribute und Methoden unübersichtlich werden, wurden einige dieser ausgelassen. Dies ist in den Klassen ParentViewModel, ExecuteAlgorithmController und der JavaFX-Klasse Pane der Fall. Abgesehen von der hinzugefügten Datenstruktur Baum und einer Klasse um die Config-Datei einzulesen, hat der Rest der Anwendung ein, im Vergleich zur vorigen Version, unverändertes UML-Diagramm. Auf die genannten Ausnahmen wird später eingegangen.
+	% // Generelles
+	Um die strukturellen Erweiterungen und Änderungen der Anwendungsarchitektur übersichtlich aufzuzeigen, liegt mit \todo{Abbildung 1?} ein UML-Klassendiagramm vor. Dieses stellt nicht das komplette Programm dar, sondern nur die neu erstellten Klassen im Bereich der Animationen, Zoomen und Bewegung. Dabei ist alles, was neu hinzugefügt wurde, grün markiert und alles, was bereits zuvor vorhanden war, in schwarz. Damit einzelne Klassen nicht durch zu viele, für diese Darstellung unwichtige, Attribute und Methoden unübersichtlich werden, wurden einige dieser ausgelassen. Dies ist in den Klassen ParentViewModel, ExecuteAlgorithmController und der JavaFX-Klasse Pane der Fall. Abgesehen von der hinzugefügten Datenstruktur Baum, hat der Rest der Anwendung ein, im Vergleich zur vorigen Version, unverändertes UML-Klassendiagramm. 
 
-	{ab erster Erwähnung von "initialize" Code davon zeigen ums schöner zu haben? Oder Sequenzdiagramm?}
-	%// Bewegen
-	Für das Feature der Bewegung innerhalb des Anzeigefensters wurden die Klassen DragContext und NodeGestures hinzugefügt. Dabei ist DragContext nur dafür da um für den Prozess wichtige Werte abzuspeichern, während NodeGestures für das korrekte Ausführen der Bewegung verantwortlich ist. Dafür wird lediglich in initialize() von ExecuteAlgorithmController eine Instanz von NodeGestures erstellt und zum zugehörigen Anzeigefenster als Events hinzugefügt. 
-	%// Zoomen
-	Das Zoomen wird von ZoomPane und SceneGestures ermöglicht. ZoomPane dient dafür als sichtbares Fenster, weshalb es auch von der JavaFX-Klasse Pane erbt. Der tatsächliche Vorgang wird allerdings von der Klasse SceneGestures übernommen. Von SceneGestures wird, ähnlich wie bei NodeGestures, in der initialize-Methode von ExecuteAlgorithmController eine Instanz erstellt und zum Fenster, in dem das ZoomPane liegt, als Event hinzugefügt. 
-	%// Animation
-	Etwas aufwendigere Änderungen waren für die hinzuzufügenden Animationen notwendig. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Außerdem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen. 
-	In 2.2 PLATZHALTER \todo{Verweis auf Kapitel} wurde der Ablauf zur Visualisierung eines Befehls anhand von PLATZHALTER \todo{Verweis auf UML Sequenz Ausschnitt #A} gezeigt. Hat eine Klasse Animationen drin, gibt es kleine Änderungen in dem Ablauf. In PLATZHALTER \todo{Verweis auf UML Sequenz komplett} ist das aktualisierte Diagramm, wobei die Änderung im Vergleich zu PLATZHALTER \todo{Verweis auf UML Sequenz Abschnitt #A} in grün dargestellt wird. Wie zu sehen ist, ist nur ein Aufruf innerhalb der Visualisierungsmethode hinzugekommen, der die Methode zur Erstellung der Animation aufruft. Die Abkapselung der Animationen von der Visualisierung, anstatt dass die Animationen auch in den Visualisierungsklassen erstellt werden, sorgt für eine bessere Lesbarkeit und Wartbarkeit des Programmcodes. 
-	Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain, welche für leichtere Verwaltung mehrerer Animationen sorgt. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain vorzeitig zum Animationsende springen.
+	% // Zoomen
+	Das Zoomen wird von ZoomPane \todo{kursiv oder so} und SceneGestures \todo{kursiv oder so} ermöglicht. ZoomPane \todo{kursiv oder so} dient dabei als sichtbares Fenster, weshalb es von der JavaFX-Klasse Pane erbt. Der tatsächliche Vorgang wird allerdings von der Klasse SceneGestures \todo{kursiv oder so} übernommen. Von SceneGestures \todo{kursiv oder so} wird in der initialize-Methode \todo{kursiv oder so} von ExecuteAlgorithmController \todo{kursiv oder so} eine Instanz erstellt und zum Fenster, in dem das ZoomPane \todo{kursiv oder so} liegt, als Event hinzugefügt. In Abbildung 1 PLATZHALTER \todo{Verweis auf Code} Zeile 3-5 PLATZHALTER \todo{Richtige Zeilen in letztlicher Abbildung??} ist dies veranschaulicht. Dabei wird das vorhandene ZoomPane \todo{kursiv oder so} (in der Abbildung als zoomPane \todo{kursiv oder so}) und das visuelle Objekt, in dem das ZoomPane \todo{kursiv oder so} liegt (in der Abbildung als parentOfZoomPane \todo{kursiv oder so}) übergeben. parentOfZoomPane \todo{kursiv oder so} muss übergeben werden, damit innerhalb der Klasse die relativen Koordinaten bestimmt werden können, um Zoomen relativ zur Maus zu ermöglichen. Nach dem Erstellen von SceneGestures \todo{kursiv oder so} wird dessen Event zu einem anderen grafischen Element hinzugefügt. In der Abbildung ist dies parentOfZoomPane \todo{kursiv oder so}. Der Zweck davon ist, das visuelle Objekt zu wählen, auf dem die Eingaben von der Maus erkannt werden sollen. 
+	% // Bewegen
+	Für das Feature der Bewegung innerhalb des Anzeigefensters wurden die Klassen DragContext \todo{kursiv oder so} und NodeGestures \todo{kursiv oder so} hinzugefügt. Dabei ist DragContext \todo{kursiv oder so} nur für den Zweck da, Werte abzuspeichern. NodeGestures ist für das korrekte Ausführen der Bewegung verantwortlich. Dafür wird, ähnlich wie für SceneGestures \todo{kursiv oder so}, lediglich in initialize \todo{kursiv oder so} von ExecuteAlgorithmController \todo{kursiv oder so} eine Instanz von NodeGestures \todo{kursiv oder so} erstellt und zum zugehörigen Anzeigefenster als Events hinzugefügt. In Abbildung 1 PLATZHALTER \todo{Verweis auf Code} wird das in Zeile 7-10 PLATZHALTER \todo{Richtige Zeilen in letztlicher Abbildung??} gezeigt. Der zu übergebene Parameter, hier zoomPane \todo{kursiv oder so} ist das visuelle Objekt, in dem das Bewegen möglich sein soll. Weitere Verbindungen zwischen NodeGestures \todo{kursiv oder so} und den bestehenden Klassen müssen nicht geschaffen werden. Wie bei SceneGestures \todo{kursiv oder so} werden die Events von NodeGestures \todo{kursiv oder so} zu einem grafischen Element hinzugefügt, welches die Mauseingaben empfangen soll. Im gezeigten Fall parentOfZoomPane \todo{kursiv oder so}.
+	% // Animation
+	Etwas aufwendigere Änderungen finden sich bei den hinzugefügten Animationen wieder. Für jede Datenstruktur, die Animationen bieten soll, wird eine Animationsklasse erstellt und als Attribut in der zugehörigen Visualisierungsklasse abgespeichert. Die jeweiligen Animationen werden in dieser Animationsklasse erstellt. Zudem erbt sie von AbstractAnimationCreator, um gewisse einheitliche Methoden zu ermöglichen. 
+	In 2.2 PLATZHALTER \todo{Verweis auf Kapitel} wurde der Ablauf zur Visualisierung eines Befehls anhand von PLATZHALTER \todo{Verweis auf UML Sequenz Ausschnitt #A} gezeigt. Beinhaltet die Darstellung einer Klasse Animationen, gibt es kleine Änderungen in dem gezeigten Ablauf. In PLATZHALTER \todo{Verweis auf UML Sequenz komplett} ist das aktualisierte Diagramm abgebildet. Die Änderung im Vergleich zu PLATZHALTER \todo{Verweis auf UML Sequenz Abschnitt #A} sind in grün dargestellt. Wie zu sehen ist, ist nur ein Aufruf innerhalb der Visualisierungsmethode hinzugekommen, der die Methode zur Erstellung der Animation aufruft. Die Abkapselung der Animationen von der Visualisierung, anstatt dass die Animationen auch in den Visualisierungsklassen erstellt werden, sorgt für eine bessere Lesbarkeit und Wartbarkeit des Programmcodes. 
+	Eine weitere Klasse, die für die Animationen hinzugefügt wird ist TransitionChain \todo{kursiv oder so}. Diese ermöglicht eine leichtere Verwaltung mehrerer Animationen. Jedes mal wenn eine Animation erstellt wird, wird sie zu TransitionChain \todo{kursiv oder so} hinzugefügt. Soll nun z.B. die Visualisierung beendet werden, können alle Animationen durch einen einzigen Zugriff auf TransitionChain \todo{kursiv oder so} vorzeitig zum Animationsende springen.
+
+
+[X] 2.4 Zusammenfassung 
 	
-	%// Veränderungen SequenzDiagramm Animationen
-	In 2.2 PLATZHALTER \todo{Verweis auf Kapitel} wurde der Ablauf zur Visualisierung eines Befehls anhand von PLATZHALTER \todo{Verweis auf UML Sequenz Ausschnitt #A} gezeigt. Hat eine Klasse Animationen drin, gibt es kleine Änderungen in dem Ablauf. In PLATZHALTER \todo{Verweis auf UML Sequenz komplett} das aktualisierte Diagramm, wobei die Änderung im Vergleich zu PLATZHALTER \todo{Verweis auf UML Sequenz Abschnitt #A} in grün dargestellt wird. Wie zu sehen ist, ist nur ein Aufruf innerhalb der Visualisierungsmethode hinzugekommen, der die Methode zur Erstellung der Animation aufruft. Das macht deutlich, dass 
+	In diesem Kapitel wurde in 2.2 PLATZHALTER \todo{Verweis auf Kapitel} anhand von Ausschnitten aus PLATZHALTER \todo{Verweis Anhang UML-Klassendiagramm} die Erweiterung um Bäume erklärt und damit gleichzeitig erläutert, wie eine neue Datenstruktur in das Programm einzugliedern ist. In 2.3 PLATZHALTER \todo{Verweis auf Kapitel} wurde daraufhin aufgezeigt, wie die Animationen, Zoomen und Bewegung hinzugefügt wurden. Außerdem wurden, anhand eines Sequenzdiagramms PLATZHALTER \todo{Verweis auf Sequenzdia}, die Unterschiede zwischen dem Visualisierungsablauf ohne und mit Animationen dargestellt.
 
 
-[ ] 2.4 Zusammenfassung 
-	
-	In diesem Kapitel wurde in 2.2 PLATZHALTER \todo{Verweis auf Kapitel} anhand von Ausschnitten aus PLATZHALTER \todo{Verweis Anhang UML-Klassendiagramm} die Erweiterung um Bäume erklärt und damit gleichzeitig aufgezeigt, wie eine andere neue Datenstruktur hinzuzufügen wäre. In 2.3 PLATZHALTER \todo{Verweis auf Kapitel} wurde daraufhin aufgezeigt, wie die Animationen, Zoomen und Bewegen hinzugefügt wurden. Außerdem wurde anhand eines Sequenzdiagramms PLATZHALTER \todo{Verweis auf Sequenzdia} aufgezeigt, was für ein Unterschied in der Visualisierung zwischen dem Ablaufen ohne und mit Animation liegt.
+
+
+
+
+
+\todo{write caption and label}
+\begin{lstlisting}[language=Java, caption={}\label{Abbildung 1}]
+	@Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // create SceneGestures and add its event
+        SceneGestures sceneGestures = new SceneGestures(zoomPane, parentOfZoomPane);
+        parentOfZoomPane.addEventFilter(ScrollEvent.ANY, sceneGestures.getOnScrollEventHandler());
+		
+        // create NodeGestures and add its events
+        NodeGestures nodeGestures = new NodeGestures(zoomPane);
+        parentOfZoomPane.addEventFilter(MouseEvent.MOUSE_PRESSED, nodeGestures.getOnMousePressedEventHandler());
+        parentOfZoomPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, nodeGestures.getOnMouseDraggedEventHandler());
+    }
+\end{lstlisting}

@@ -13,55 +13,45 @@ Erweiterung um visuelle Funktionalitäten
 
 
 
-
-
-Was ich reinbringen kann:
-
-
-
 Kapitel:
 
 
-[ ] 6
-	{"Möglichst versucht Animationen, Zoomen und Bewegung voneinander abgekapselt zu haben"}
+[X] 6
+	
+	Das vorherige Kapitel hat sich mit der Erweiterung um Bäume befasst. In diesem Kapitel werden mit den Animationen, dem Zoomen und dem Bewegen die anderen Erweiterungen aufgezeigt. Konkrete Animationen und die Erweiterbarkeit um weitere Animationen werden dabei auch behandelt. Wie die Erweiterungen die Architektur beeinflussen und was sich durch die Animationen für ein Unterschied in der Abfolge der Visualisierung ergibt, wird in Kapitel 2.3 PLATZHALTER \todo{Verweis auf Kapitel} erklärt. 
 
 
-[ ] 6.1 Animationen
-	{War zuvor ein Unterkapitel mit dem Namen "Animationen an den bestehenden Datenstrukturen" => Text überprüfen ob nicht gewisse Sachen raus müssen}
-	{mit "arraylist" aufpassen, da das jetzt was anderes als "arrays" ist}
+[X] 6.1 Animationen
+
+	% // warum Animationen toll sind
+	Animationen können ungemein zur Verständlichkeit eines Ablaufs beitragen. Im Vergleich zum unmittelbaren Auftauchen oder Verschwinden eines Elements, kann der Nutzer bei bspw. einer kurzen Fade-in oder Fade-out Animation das betroffene Element viel schneller identifizieren, da dieses sich durch seine Bewegung vom Rest der Elemente abhebt. Es existieren zudem Operationen, bei denen ohne eine Animation nur sehr schwierig auszumachen ist, was passiert. In solchen Fällen haben schon kleine Animationen sehr große Wirkung.
 	
-	%// warum Animationen toll sind
-	Animationen sind nicht nur ein nettes Gimmick, sondern sie können ungemein zur Verständlichkeit eines Ablaufs beitragen. Denn im Vergleich zum unmittelbaren Auftauchen oder Verschwinden eines Elements, kann der Nutzer bei bspw. einer kurzen Fade-in oder Fade-out Animation das betroffene Element viel schneller identifizieren, da dieses sich durch seine Bewegung vom Rest der Elemente abhebt. Es gibt auch Operationen, bei denen man ohne eine Animation nur sehr schwierig ausmachen kann, was passiert. So zum Beispiel die "insert" oder "delete" Operation der Arraylists, auf die später näher eingegangen wird. In solchen Fällen haben schon kleine Animationen sehr große Wirkung.
+	% // Schwierigkeiten beim Implementieren von Animation
+	Es kann sich allerdings als sehr umständlich herausstellen gut funktionierende Animationen zu implementieren. Wie wird mit Nutzereingaben umgegangen, wenn bisherige Animationen noch nicht abgeschlossen sind? Ist es für das Programm notwendig zu wissen, wann eine Animation abgeschlossen ist? Wenn ja, wie setzt man dies um? Das sind Beispiele für Fragen, die im Kopf behalten werden sollten, wenn Animationen implementiert werden. Wird sich darüber keine Gedanken gemacht, so kann es leicht passieren, dass Elemente an Positionen landen, an denen sie nicht sein dürften oder dass Animationen zu unsinnigen Zeitpunkten abgespielt werden.
 	
-	%// Schwierigkeiten beim Implementieren von Animation
-	Jedoch kann es sehr umständlich sein gut funktionierende Animationen zu implementieren. Wie geht man zum Beispiel mit Nutzereingaben um, wenn bisherige Animationen noch nicht abgeschlossen sind? Und ist es für das Programm notwendig zu wissen, wann eine Animation abgeschlossen ist? Wenn ja, wie setzt man dies um? Das sind beispielsweise Fragen, die man im Kopf behalten sollte, möchte man Animationen implementieren. Macht man sich darüber keine Gedanken, so kann es leicht passieren, dass Elemente an Positionen landen, an denen sie nichts zu suchen haben oder dass Animationen zu unsinnigen Zeitpunkten abgespielt werden.
+	% // Eigene Umsetzung
+	In unserem Fall ist es besonders für die Schritt-für-Schritt Visualisierung durchaus wichtig einen korrekten Umgang mit Eingaben, die während laufender Animationen getätigt werden, einzubauen. Zwar können auch bei der kompletten Visualisierung während Animationen Eingaben getätigt werden, diese Beschränkungen sich jedoch auf das Abbrechen oder das Neustarten des Algorithmus. In beiden Fällen sind die derzeitigen Elemente irrelevant und somit kein besonderer Umgang nötig. Sollten noch Funktionen hinzukommen, bei denen dies wichtiger ist, lässt sich das Programm leicht in der updateVisualization-Methode \todo{kursiv oder so schreiben} des ExecuteAlgorithmController \todo{kursiv oder so schreiben} anpassen, um es mit der kompletten Visualisierung so zu handhaben wie mit der Schritt-für-Schritt Visualisierung. 
+	Bei der Schritt-für-Schritt Visualisierung springt zunächst die zuletzt ausgeführte Animation zum Ende, woraufhin die nächste gestartet und schließlich diese als lastTransition \todo{kursiv oder so schreiben} abgespeichert wird. Damit ist es wiederum möglich auf diese in der nächsten Iteration zuzugreifen, um sie ggf. vorzeitig zu beenden. Für den Nutzer bedeutet das, dass eine vorzeitige Eingabe zu keinen Fehlern, sondern nur zu einem vorzeitigen Beenden der Animation führt.
 	
-	%// Eigene Umsetzung
-	In unserem Fall, ist es besonders für die Step-by-Step Visualization durchaus wichtig einen korrekten Umgang mit Eingaben, die während laufender Animationen getätigt werden, einzubauen. Zwar können auch bei der Complete Visualization während Animationen Eingaben getätigt werden, diese Beschränkungen sich jedoch auf das Abbrechen oder das Neustarten des Algorithmus. In beiden Fällen sind die derzeitigen Elemente irrelevant und somit kein besonderer Umgang nötig. Sollten noch Funktionen hinzukommen, bei denen dies wichtiger ist, lässt sich das Programm leicht in der updateVisualization-Methode des ExecuteAlgorithmController anpassen, um es mit der Complete Visualization so zu handhaben wie mit der Step-by-Step Visualization. 
-	Denn bei der Step-by-Step Visualization springt zunächst die letzt ausgeführte Animation zum Ende, dann wird die nächste gestartet und schließlich diese als "lastTransition" gespeichert, damit man wiederum auf diese in der nächsten Iteration zugreifen kann, um sie ggf. vorzeitig zu beenden. Für den Nutzer bedeutet das, dass eine vorzeitige Eingabe zu keinen Fehlern, sondern nur zu einem vorzeitigen Sprung zum Ende der Animation führt.
-	
-	\todo{korrekt auf sequenzdiagramm verweisen}
-	\todo{bei InfoTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
-	\todo{bei MyTree auf Kapitel verweisen / verlinken, das erklärt, was die Info-Datenstruktur sein soll?}
-	%// auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden
-	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, wurde hier ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. Der Vorgang ist in PLATZHALTER \todo{Abbildung 1} anhand eines UML-Sequenzdiagramms am Beispiel des "addLeaf"-Befehls der Bäume verdeutlich. Wird der Befehl in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} InfoTree aufgerufen, so wird zunächst durch einen Aufruf der addLeaf-Methode des von InfoTree gespeicherten "MyTree"s, die Änderung der Daten ausgeführt. Konkret bedeutet dies in dem Fall das Hinzufügen des Blatts, das als newLeaf abgespeichert wird. Nach der Manipulierung der Daten wird die Visualisierungsklasse, hier TreeVisualization, aufgerufen. Dabei werden zunächst visuelle Elemente hinzugefügt, gelöscht oder geändert und daraufhin die passende Animation dazu erstellt. Im Beispiel bedeutet das erst einen Aufruf von drawAllTrees, wodurch anhand der Daten der Bäume, all diese neu erstellt werden und danach die Erstellung der Animation mithilfe der forAddLeaf-Methode. Diese Trennung zwischen Visualisierung und Erstellung der Animationen sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden können.
-	
-	%// Sowohl backward als auch forward geht es
-	Da man in der Anwendung in der Step-by-Step Visualization sowohl einen Schritt nach vorne als auch einen Schritt zurück gehen kann, stellt sich die Frage, wie man Animationen bei einem Schritt zurück ausführen kann und ob dabei Problematiken auftauchen. Der Code ist jedoch durch das Command-Pattern so geschrieben, dass gar keine Anpassungen getroffen werden mussten um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen und das ohne, dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig war.
+	% // Sowohl backward als auch forward geht es
+	Da es bei der Schritt-für-Schritt Visualisierung sowohl möglich ist einen Schritt nach vorne als auch einen Schritt zurück zu gehen, stellt sich die Frage, wie Animationen bei Rückwärtsschritten auszuführen sind und ob dabei Problematiken auftauchen. Dank des Command-Patterns, das im Programmcode verwendet wurde, waren keine Anpassungen nötig um dies zu erreichen. Sowohl vorwärts als auch rückwärts funktionieren die Animationen, ohne dass zusätzliche Codezeilen für eine korrekte "Rückwärtsanimation" nötig waren.
 	
 
-[ ] 6.2 Erweiterbarkeit um weitere Animationen
-	// Allgemein nochmal kurz Gegebenheiten erklären
-	In PLATZHALTER \todo{Verweis auf "5.1 Animationen"} wird beschrieben wie eine Animation vom Programm erstellt und abgespielt wird. Die Animationen liegen in einer, von der Klasse, die sich um die Visualisierung kümmert, abgekapselten Klasse. Die Animation für einen spezifischen Befehl wird in der Regel von je einer Funktion dieser Animationsklasse erzeugt und zurückgegeben. In der Visualisierungsklasse sind in den jeweiligen Befehlsvisualisierungen nur die Funktionsaufrufe vorzufinden. 
+[X] 6.2 Erweiterbarkeit um weitere Animationen
+
+	In diesem Abschnitt soll das Hinzufügen neuer Animationen genauer aufgezeigt werden.
+
+	% // Allgemein nochmal kurz Gegebenheiten erklären
+	Die Erstellung von Animationen ist nicht in den Visualisierungsklassen eingebaut, sondern abgekapselt in einer eigenen Klasse. Die Animation für einen spezifischen Befehl wird in der Regel von je einer Funktion der Animationsklasse erzeugt und zurückgegeben. In der Visualisierungsklasse sind in den jeweiligen Befehlsvisualisierungen nur die Funktionsaufrufe vorzufinden. Welche Klassen mit den Animationen hinzukommen \todo{Verweis auf UML Klassendiagramm Ausschnitt mit Animationen} und wie sich durch die Animationen ein Visualisierungsbefehl ändert \todo{Verweis auf Sequenzdiagramm mit Animationen}, wird in Kapitel PLATZHALTER \todo{auf Kapitel 2.3 verweisen} näher aufgezeigt.
 	
-	// Wo platzieren
-	Um neue Animationen hinzufügen, sollte geprüft werden, ob bereits eine Klasse zur Erstellung der Animationen vorliegt. Ist dies nicht der Fall, ist eine solche zu erstellen. Dabei sollte sie von der abstrakten Klasse "AbstractAnimationCreator" erben und als Attribut zur passenden Visualisierungsklasse hinzugefügt werden. Im anderen Fall, dass noch keine Animationsklasse existiert, muss lediglich eine Funktion hinzugefügt werden, die eine zu dem Befehl passende Animation erstellt und zurückgibt. Diese muss nur noch in der Visualisierungsklasse von der korrekten Methode zur Visualisierung des Befehls aufgerufen werden.
+	% // Wo platzieren
+	Um neue Animationen hinzuzufügen, sollte geprüft werden, ob bereits eine Klasse zur Erstellung der Animationen vorliegt. Ist dies nicht der Fall, ist eine solche zu erstellen. Dabei sollte sie von der abstrakten Klasse AbstractAnimationCreator \todo{kursiv oder so} erben und als Attribut zur passenden Visualisierungsklasse hinzugefügt werden. Im anderen Fall, dass noch keine Animationsklasse existiert, muss lediglich eine Funktion hinzugefügt werden, die eine zu dem Befehl passende Animation erstellt und zurückgibt. Diese muss in der Visualisierungsklasse von der korrekten Methode zur Visualisierung des Befehls aufgerufen werden.
 	
-	// Konkrete Animation erstellen
-	Die konkrete Animation kann letztlich eine beliebige Instanz der "Transition"-Klasse von JavaFX sein. Zu beachten ist dabei nur, dass die Dauer der zurückgegebenen "Transition" nicht Null sein sollte und die Dauer nicht mit einer festen Zahl, sondern durch multiplizieren oder dividieren des geerbten Attributs "standardDuration" bestimmt werden sollte. Dadurch kann mit einfachem Ändern der Config-Datei die Länge aller Animationen angepasst werden. 
+	% // Konkrete Animation erstellen
+	Die konkrete Animation kann letztlich eine beliebige Instanz der Transition-Klasse \todo{kursiv oder so} von JavaFX sein. Zu beachten ist dabei, dass die Dauer der zurückgegebenen Transition \todo{kursiv oder so} größer Null sein muss. Die Dauer sollte nicht mit einer festen Zahl, sondern durch multiplizieren oder dividieren des geerbten Attributs standardDuration \todo{kursiv oder so} bestimmt werden. Diese Vorgaben sorgen dafür, dass mit einfachem Ändern der Config-Datei die Länge aller Animationen angepasst werden kann. 
 	
-	// Beachte: Zusammenspiel mit Visualisierungsklasse
-	Zu beachten ist, dass trotz der Abkapselung von der jeweiligen Visualisierungsklasse, selbstverständlich ein gewisse Abhängigkeit nötig sind. So sollte jedes visuelle Element, das in der Animation bewegt werden soll, von der Visualisierungsklasse nicht nur erzeugt, sondern auch als Parameter beim Aufruf der jeweiligen Methode zur Erstellung der Animation übergeben werden. Natürlich kann sich dies durch zukünftige Änderungen am Programmcode ändern, insbesondere wenn, wie in PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} beschrieben, eine komplette automatische Justierung stattfinden kann. 
+	% // Beachte: Zusammenspiel mit Visualisierungsklasse
+	Trotz der Abkapselung der Animationsklasse von der jeweiligen Visualisierungsklasse, ist selbstverständlich eine gewisse Abhängigkeit nötig. So muss jedes visuelle Element, das in der Animation bewegt werden soll, von der Visualisierungsklasse nicht nur erzeugt, sondern auch als Parameter beim Aufruf der jeweiligen Methode zur Erstellung der Animation übergeben werden. Natürlich kann sich dies durch zukünftige Änderungen am Programmcode ändern, insbesondere wenn, wie in PLATZHALTER \todo{Verweis auf "6.2 Bestehende Probleme"} beschrieben, eine komplette automatische Justierung stattfinden kann. 
 	
 	Ändert sich nichts an der grundlegenden Struktur der Anwendung und werden all diese Punkte beachtet, ist es möglich sowohl Befehle der derzeitig vorhandenen Datenstrukturen, als auch zukünftig hinzugefügte Befehle und Befehle zukünftiger Datenstrukturen zu animieren. 
 
@@ -70,45 +60,61 @@ Kapitel:
 	--- leer lassen ---
 
 
-[ ] 6.3.1 Animationen in ArrayList
-	{deletions macht probleme (auf kapitel mit "bestehende probleme" verweisen) und get ist schlichtweg noch nicht drin}
+[X] 6.3.1 Animationen in ArrayList
 
-	%// auf Art der Animationen eingehen, also zb warum ich mich für reinfaden bei insert etc entschieden hab und warums besser für den Nutzer ist
-	Bei den Arraylists wurden drei verschiedene Animationen eingebaut. Eine für das Erstellen einer Arraylists, eine für das Einfügen eines Elements und eine für das Tauschen zweier Elemente innerhalb einer Arraylist. 
-	%// Erstellen einer Arraylist
-	Beim Erstellen einer Arraylist ist es eine simple Fade-in Animation von rechts nach links. Jedoch war es schon zuvor für den Nutzer nicht schwer die neue Struktur auf dem Bildschirm auszumachen.
-	%// Einfügen eines Elements
-	Interessanter ist das Einfügen eines Elements. Während die Animation für das Einfügen am Ende der Arraylist fast genau so simpel wie die Animation für das Erstellen einer Arraylist aussieht und vergleichsweise geringen Mehrwert für den Nutzer hat, so wird der Nutzen deutlich größer, wenn man ein Element zwischen anderen Elementen in einer Arraylist hinzufügt. In diesem Fall werden alle Elemente, die hinter dem neu einzusetzenden Element stehen sollen, während der Fade-in Animation des einzufügenden Elements, einen Platz weiter nach rechts geschoben. Um dies korrekt umzusetzen, habe ich mich eines Tricks bedient, auf den ich näher beim Erklären der Tauschoperation eingehe. Für den Nutzer kann diese Einfügeanimation das Nachvollziehen des Programms deutlich vereinfachen, da dieser direkt sieht, welches Element wo eingefügt wurde.
-	%// Tauschen zweier Elemente
-	Beim Tauschen zweier Elemente bewegen sich die Elemente erst nach oben bzw. unten, dann nach rechts bzw. links und schließlich nach unten bzw. oben, sodass sie dann am jeweils anderen Platz sind. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} von ArrayList zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden und somit auch visuell schon auf dem Platz sind, auf dem sie enden sollten. Um dies aber dennoch korrekt darzustellen, läuft das ganze folgendermaßen ab: Zunächst, werden die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} ArrayListInfo getauscht, dann werden sie allerdings auf visueller Ebene, ohne Animation, nochmals getauscht, um sie dann mit der beschriebenen Animation zu tauschen oder besser gesagt, an den korrekten Platz zurück zu verschieben. Da die ersten beiden Schritte jedoch keine Animation und auch keine merkbare Verzögerung aufweisen, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurde. Dies wird hier so oder so ähnlich in jeder Animation genutzt, bei der die Startposition eine andere ist. Besonders aber auch beim Verschieben der Elemente, wenn man ein Element mitten in eine Arraylist einfügt.
-
-
-[ ] 6.3.2 Animationen in Bäumen
+	% // Welche Funktionen Animationen haben
+	Bei den Arraylists wurden drei verschiedene Animationen eingebaut. Eine für das Erstellen einer ArrayList, eine für das Einfügen eines Elements und eine für das Tauschen zweier Elemente innerhalb einer ArrayList. Operationen, die das Löschen eines Elements beinhalten, haben bislang noch keine Animation, da bei der Implementierung Schwierigkeiten aufkamen. Diese Schwierigkeiten werden, zusammen mit einem Lösungsvorschlag, in Kapitel PLATZHALTER \todo{Verweis auf 7.1 Bestehende Probleme} näher betrachtet.
 	
-	%// Animationen der atomaren Funktionen
-	Da es sich hier um atomare Funktionen handelt, werden ihre Animationen wahrscheinlich am häufigsten abgespielt. Sogar ausschließlich, angenommen man stellt alle Funktionen mit diesen Methoden dar und behält dabei die Animationen dieser bei. Daher lohnt es sich einen genaueren Blick auf diese spezifischen Animationen zu werfen. 
-	Das Hinzufügen und das Löschen eines Blatts haben eine simple Fade-In- beziehungsweise Fade-Out-Animation. Nachzuvollziehen wo im Baum ein Blatt hinzugefügt oder entfernt wurde, sollte sich ohne Animation nicht als schwer für den Nutzer herausstellen. Dennoch wird dies mit den Animationen weiter erleichtert. Besonders die Fade-Out-Animation beim Löschen ist noch aus einem weiteren Aspekt hilfreich. Der Nutzer sieht welchen Wert und welchen Index der Knoten hatte, bevor er entfernt wurde.
-	Eine gute, nachvollziehbare Animation für das Ändern eines Elternknotens zu finden ist komplexer, aber gleichzeitig für die Verständlichkeit wichtiger. Um die neue Platzierung des Kindknotens genau aufzuzeigen, wird zunächst die Kante zwischen dem alten Elternknoten und dem Kindknoten entfernt, dann der Kindknoten, mit ggf. seinen Kindknoten unter dem neuen Elternknoten platziert und dann mit einer Kante verbunden. Diese direkte Bewegung zum Zielort hat den Nachteil, dass sich ein Teilbaum durch den kompletten Baum bewegt, was zu unschönen Überlagerungen führen kann. Dieser Nachteil ist allerdings vernachlässigbar, da die Alternativen schlechtere Nachvollziehbarkeit oder komplizierteren Code, bis hin zu große Umstrukturierungen des vorhandenen Codes, mit sich führen würden.
-	Auch für das Ändern des Werts eines Knotens wurde eine Animation hinzugefügt. Dabei handelt es sich allerdings um eine simple Fade-Out- gefolgt von einer Fade-In-Animation. Hier greifen die gleichen Vorteile wie bei den Animation für die ersten beiden Methoden.
+	% // Erstellen einer ArrayList
+	Beim Erstellen einer ArrayList wird eine simple Fade-in Animation von rechts nach links abgespielt. Zwar wertet die Animation die Darstellung auf, allerdings war bereits vor der Animation für den Nutzer leicht auszumachen, welche Instanz hinzugefügt wurde.
+	% // Einfügen eines Elements
+	Interessanter ist das Einfügen eines Elements. Während die Animation für das Einfügen am Ende der ArrayList fast genau so simpel wie die Animation für das Erstellen einer ArrayList aussieht und vergleichsweise geringen Mehrwert für den Nutzer hat, so wird der Nutzen deutlich größer, wenn ein Element zwischen anderen Elementen in einer ArrayList hinzufügt wird. In diesem Fall werden alle Elemente, die hinter dem neu einzusetzenden Element stehen, während der Fade-in Animation des einzufügenden Elements, einen Platz weiter nach rechts geschoben. Um dies korrekt umzusetzen, wurde sich eines Tricks bedient, auf den näher beim Erklären der Tauschoperation eingegangen wird. Für den Nutzer kann diese Einfügeanimation das Nachvollziehen des Programms deutlich vereinfachen, da dieser direkt sieht, welches Element wo eingefügt wurde.
+	% // Tauschen zweier Elemente
+	Beim Tauschen zweier Elemente bewegt sich ein Element nach oben, nach rechts und schließlich nach unten. Analog dazu bewegt sich gleichzeitig das andere nach unten, dann nach links und zuletzt nach oben. Im Endbild stehen die Elemente an der zuvorigen Startposition des jeweils anderen Elements. Die Problematik bei der Umsetzung dafür war, dass die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} von ArrayList zum Zeitpunkt, an dem die Animation startet, bereits getauscht wurden. Somit waren die Elemente auch auf visueller Ebene bereits auf dem Platz, auf dem sie enden sollten. Um dies zu umgehen und die Animation korrekt darzustellen, läuft der Prozess folgendermaßen ab: Zunächst werden die Elemente in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} InfoArrayList getauscht. Da die Elemente dadurch auf visueller Ebene sofort getauscht sind, werden sie auf visueller Ebene direkt zurückgetauscht. Da dazu keine Animation abgespielt wird und auch keine merkbare Verzögerung vorliegt, bemerkt der Nutzer nicht, dass die Elemente zum Start der Animation auf visueller Ebene bereits zweimal getauscht wurden. Nachfolgend können mit einer Animation die Elemente an die korrekten Zielorte visuell getauscht werden. 
+	Genutzt wird dieser Ablauf in jeder vorhandenen Animation, bei der die Startposition eine andere als die Zielposition ist. So auch beim zuvor beschriebenen Verschieben der Elemente, wenn ein Element mitten in eine ArrayList eingefügt wird.
 
 
-[ ] 6.4 Zoomen & Bewegen
+[X] 6.3.2 Animationen in Bäumen
+
+	% // Welche Funktionen Animationen haben
+	In Kapitel 5.3 \todo{Verweis auf Kapitel} werden die zu den Bäumen hinzugefügten Funktionen aufgezählt. Davon haben create_Tree, addLeaf, changeValue, getIndexByValue und getNodeByIndex \todo{kursiv oder so} Animationen. Zu deleteLeaf und changeParent \todo{kursiv oder so} wurden noch keine Animationen erstellt. Bei deleteLeaf \todo{kursiv oder so} ist die Löschoperationen-Problematik der Grund. Bei changeParent \todo{kursiv oder so} liegt es daran, dass eine Animation für diesen Befehl nicht sinnvoll ist, wenn nicht der ganze Baum mit einer Animation visuell justiert werden kann. Ansonsten kann es zu übereinander liegenden Elementen kommen. Näher auf diese Probleme der Löschoperationen und dem Neujustieren des Baums wird in Kapitel PLATZHALTER \todo{Verweis auf Bestehende Probleme} eingegangen. 
 	
-	%// Zoomen und Bewegen nötig um Übersicht zu halten, wenn die Strukturen sehr groß werden
-	Bislang war es nicht möglich die angezeigten Datenstrukturen visuell zu verkleinern oder zu vergrößern. Waren nur wenige Elemente vorhanden, was dies auch nicht nötig. Jedoch war schon bei den Arraylists ab ein paar dutzend Elementen ein Teil der Datenstruktur nicht zu sehen und der Nutzer hatte keine Möglichkeit diesen verdeckten Teil ins Sichtfeld zu bringen. Um die Anwendung für größere Datensätze gut nutzen zu können, ist es smit notwendig dieses Problem zu beheben. 
-	Es wurde sowohl die Möglichkeit zu Zoomen, als auch die Möglichkeit die Datenstruktur zu bewegen eingebaut. Um das vorige Problem zu beheben, dass es in einigen Fällen unmöglich ist Teile der Datenstruktur zu sehen, hätte für sich bereits eine der beiden neuen Funktionalitäten ausgereicht. Allerdings sorgen beide zusammen für eine deutlich einfachere Nutzung der Anwendung. Durch das Zoomen kann sich der Nutzer bei größeren Strukturen deutlich einfacher einen Gesamtüberblick verschaffen. Mit der Möglichkeit der Bewegung der Datenstruktur geht eine intuitive und anwenderfreundliche Nutzung der Software einher.
+	% // Lohnt besonders bei Animationen der atomaren Funktionen
+	Besonders bei den vorhandenen atomaren Funktionen lohnt sich ein genauerer Blick, da diese Animationen wahrscheinlich am häufigsten abgespielt werden. Sogar ausschließlich, angenommen alle Funktionen werden mit diesen Methoden dargestellt.
 	
-	%// Wie Nutzer es anwenden kann und zoomen möglich relativ zur Mausposition
-	Für den Nutzer der Anwendung ist es nun möglich die Datenstruktur mit dem Mausrad zu skalieren und durch das Halten der Maustaste mit gleichzeitigem Bewegen der Maus sie im Fenster zu bewegen. Beim Zoomen, wird zu der Stelle herangefahren, an der die Maus zu dem Zeitpunkt platziert ist. Dies ist für den Nutzer intuitiver zu Bedienen, als würde das Fenster immer auf einen festen Punkt zoomen. Beides ist so angepasst, dass es nur funktioniert, wenn die Maus auf einen Punkt innerhalb des jeweiligen Fensters zeigt. Eine gewisse Ausnahme bildet dabei das bewegen mit der gedrückt gehaltenen Maustaste, da sich, sollte die Taste innerhalb des Fensters gedrückt worden sein, die Datenstruktur auch noch weiter bewegen lässt, wenn die Maus außerhalb des Fensters gezogen wird. 
+	\todo{So ne Art Aufzählung mit dieser dicken Schrift wie bei Mateusz? Also dass da zB addLeaf dick steht und dahinter der Satz?}
 	
-	%// Zoomen und Bewegen führen zu keinen Fehler mit Animationen, wenn es gleichzeitig ausgeführt wird
+	% // addLeaf
+	Das Hinzufügen eines Blatts hat eine Fade-In-Animation. Nachzuvollziehen an welcher Stelle im Baum ein Blatt hinzugefügt wurde, sollte sich ohne Animation nicht als schwer für den Nutzer herausstellen. Dennoch wird dies mit Animationen weiter erleichtert. Das gleiche gilt für das Erstellen einer Instanz der Bäume.
+	
+	% // changeValue
+	Bei der Animationen für das Ändern eines Knotenwerts handelt es sich um eine Fade-Out- gefolgt von einer Fade-In-Animation. Der Vorteil ist, dass durch den langsam verschwindenden Wert, dieser noch für den Nutzer zu erkennen ist, sodass er noch einmal sehen kann, welchen Wert der Knoten vor der Änderung hatte.
+	
+	% // getIndexByValue und getNodeByIndex
+	Die Zugriffsoperationen können sich eine Animation teilen. Dabei wird der gefundene Knoten bzw. der Knoten des gefundenen Index für kurze Zeit vergrößert. Wahlweise kann die Animation für den Zugriff auf den Index so geändert werden, dass nicht der komplette Knoten, sondern nur der Index vergrößert wird. 
+	
+
+[X] 6.4 Zoomen & Bewegen
+
+	Wie das Zoomen und Bewegen in die Architektur eingebaut wurden, wird in Kapitel PLATZHALTER \todo{Verweis auf 2.3} gezeigt. Dabei wird auf die UML-Klassendiagramme in Abbildung PLATZHALTER \todo{Verweis auf UML Klassendiagramm zu Bewegen} und PLATZHALTER \todo{Verweis auf UML Klassendiagramm zu Zoomen} eingegangen.
+	
+	% // Zoomen und Bewegen nötig um Übersicht zu halten, wenn die Strukturen sehr groß werden
+	Bislang war es nicht möglich die angezeigten Datenstrukturen visuell zu verkleinern oder zu vergrößern. Waren nur wenige Elemente vorhanden, was dies nicht nötig. Jedoch war es schon bei den Arrays der Fall, dass ab ein paar dutzend Elementen ein Teil der Datenstruktur nicht zu sehen war und der Nutzer keine Möglichkeit hatte diesen verdeckten Teil ins Sichtfeld zu bringen. Um die Anwendung für größere Datensätze gut nutzen zu können, ist es somit notwendig dieses Problem zu beheben. 
+	Es wurde sowohl die Möglichkeit zu gewählten Punkten zu Zoomen, als auch die Möglichkeit die Datenstruktur zu bewegen eingebaut. Um das vorige Problem zu beheben, dass es in einigen Fällen unmöglich ist Teile der Datenstruktur zu sehen, hätte für sich bereits eine der beiden neuen Funktionalitäten ausgereicht. Allerdings sorgen beide zusammen für eine deutlich bessere Nutzung der Anwendung. Durch das Zoomen kann sich der Nutzer bei größeren Strukturen einfacher einen Gesamtüberblick verschaffen. Mit der Möglichkeit der Bewegung der Datenstruktur geht eine intuitive und anwenderfreundliche Nutzung der Software einher.
+	
+	% // Wie Nutzer es anwenden kann und zoomen möglich relativ zur Mausposition
+	Für den Nutzer der Anwendung ist es nun möglich mit dem Mausrad zu skalieren und durch das Halten der Maustaste mit gleichzeitigem Bewegen der Maus die Datenstruktur im Fenster zu bewegen. Beim Zoomen, wird zu der Stelle herangefahren, auf der die Maus liegt. Dies ist für den Nutzer intuitiver zu Bedienen, als würde das Fenster immer auf einen festen Punkt zoomen. Beides ist so angepasst, dass es nur funktioniert, wenn die Maus auf einen Punkt innerhalb des jeweiligen Fensters zeigt. Eine gewisse Ausnahme bildet dabei das bewegen mit der gedrückt gehaltenen Maustaste, da sich, sollte die Taste innerhalb des Fensters gedrückt worden sein, die Datenstruktur auch noch weiter bewegen lässt, wenn die Maus außerhalb des Fensters gezogen wird. 
+	
+	% // Zoomen und Bewegen führen zu keinen Fehler mit Animationen, wenn es gleichzeitig ausgeführt wird
 	Sowohl das Zoomen als auch das Bewegen lassen sich ohne Probleme parallel zu den Animationen ausführen. Selbst bei schnellen Bewegungen, laufen die Animationen mit den richtigen Koordinaten weiter. Durch das parallele Nutzen kann die Animation gegebenenfalls besser nachverfolgt werden.
 	
-	%// Bei Auswahl anderes Algorithmus kein Problem
-	Weiterhin gibt es auch keine Probleme, wenn mit veränderter Skalierung oder Translation die Schaltfläche zur Änderung des Algorithmus oder der Visualisierung betätigt wird. Denn wird der Algorithmus oder die Visualisierung dessen gewechselt, wird der Zoom und die Translation der zu sehenden Datenstruktur auf die Standardwerte zurückgesetzt, da bei jeder neuen Auswahl alle der betroffenen Klassen neu erstellt werden und somit keine veralteten Werte beinhalten können.
+	% // Bei Auswahl anderes Algorithmus kein Problem
+	Weiterhin gibt es auch keine Probleme, wenn mit veränderter Skalierung oder Translation die Schaltfläche zur Änderung des Algorithmus oder der Visualisierung betätigt wird. Wird der Algorithmus oder die Visualisierung dessen gewechselt, wird der Zoom und die Translation der zu sehenden Datenstruktur auf die Standardwerte zurückgesetzt. Dies geschieht, indem bei jeder neuen Auswahl alle der betroffenen Klassen neu erstellt werden und somit keine veralteten Werte beinhalten können.
 	
-	%// wie Zoomen und rumbewegen umgesetzt wurde - von stackoverflow; erklären was ich geändert hab
-	Die Grundidee der konkreten Implementierung dieser Funktionalitäten stammt von \todo{Quellenverweis auf https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer}. Für das Programm passend abgeändert und teilweise erweitert, ist der Code, in vier Klassen aufgeteilt, vorzufinden. Unter "supportClasses.zooming" und "supportClasses.moving". Beim Zoomen wird durch eine Bindung von den Scale-Properties des Fensters der komplette Inhalt vergrößert oder auch verkleinert. Beim Bewegen können sogar einzelne Inhalte des Fenster ausgewählt werden, die bewegt werden sollen. Bislang entspricht dieser ausgewählte Inhalt in jedem Fall dem kompletten Inhalt des Fensters. Die Möglichkeit nur einzelne Elemente des Fensters zu bewegen, könnte allerdings für spätere Funktionalitäten genutzt werden. Eine andere mögliche Funktionalität für diesen Kontext wäre die Möglichkeit auf einen Klick den Zoom oder auch die Translation auf den Standard zurückzusetzen. Dies wäre leicht einbringbar, indem jeweils eine simple Methode, die den gespeicherten Wert auf den Standardwert zurücksetzt, implementiert und mit einer neu hinzugefügten Schaltfläche verbunden wird.
+	% // wie Zoomen und rumbewegen umgesetzt wurde - von stackoverflow; erklären was ich geändert hab
+	Die Grundidee der konkreten Implementierung dieser Funktionalitäten stammt von PLATZHALTER \todo{Quellenverweis auf https://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer}. Für das Programm passend abgeändert und teilweise erweitert, ist der Code in vier Klassen aufgeteilt vorzufinden. Unter supportClasses.zooming \todo{kursiv oder so} und supportClasses.moving \todo{kursiv oder so}. Beim Zoomen wird durch eine Bindung von den Scale-Properties des Fensters der komplette Inhalt vergrößert oder auch verkleinert. Beim Bewegen können sogar einzelne Inhalte des Fenster ausgewählt werden, die bewegt werden sollen. Bislang entspricht dieser ausgewählte Inhalt in jedem Fall dem kompletten Inhalt des Fensters. Die Möglichkeit nur einzelne Elemente des Fensters zu bewegen, könnte allerdings für spätere Funktionalitäten genutzt werden. 
 
 
-[ ] 6.5 Zusammenfassung
+[X] 6.5 Zusammenfassung
+	
+	In diesem Kapitel wurde die Funktionsweise der Animationen, des Zoomens und des Bewegens erklärt. Außerdem wurde erläutert auf welche Weise neue Animationen hinzuzufügen sind und welche konkreten Animation vorliegen. Beim Erweitern um die visuellen Funktionalitäten wurde darauf geachtet diese möglichst sowohl voneinander als auch von den bestehenden Klassen abgekapselt zu implementieren. Wie in Kapitel 2.3 \todo{Verweis auf Kapitel} anhand der Abbildungen \todo{Verweis auf UML-Klassendiagramme zu Animation, Bewegen und Zoomen} und des kompletten UML-Klassendiagramms im Anhang \todo{Verweis auf Diagramm im Anhang} zu sehen, wurde dieses Ziel weitgehend erreicht. Somit wurde für verbesserte Wartbarkeit und Erweiterbarkeit gesorgt.

@@ -19,43 +19,32 @@ Kapitel:
 
 [X] 1.1 Motivation
 
-	%// Was bisher geschah
+	% // Was bisher geschah
 	"Algorithm Visual Studio" bietet die Möglichkeit Arrays, Listen und Variablen zu visualisieren PLATZHALTER \todo{Quellenverweis auf die BA}. Jedoch existieren noch viele weitere Datenstrukturen, für die eine Visualisierung hilfreich sein kann. 
 	
-	%// Bäume sind voll toll
+	% // Bäume sind voll toll
 	Eine dieser ist die Datenstruktur Baum. Dank mehrerer nützlicher Eigenschaften, werden Bäume sehr häufig angewandt, wie beim Verwalten von Daten oder für effizientes Suchen eines Elements. Mit zahlreichen Unterarten, wie B-Bäumen oder Rot-Schwarz-Bäumen, gehören Bäume zu den wichtigsten Datenstrukturen in der Informatik. 
 	
-	%// Bäume visualisieren ist toll
+	% // Bäume visualisieren ist toll
 	Allerdings können sich komplexere Operationen auf Bäumen für Programmieranfänger als schwierig nachzuvollziehen herausstellen, da sich durch die, im Vergleich zu Arrays und Listen, komplexere Struktur mehr zu beachtende Eigenschaften ergeben. Durch die Wichtigkeit von Bäumen, bietet es sich an die Anwendung um diese zu erweitern. Eine Visualisierung von Bäumen und den darauf ausgeführten Algorithmen kann die Verständlichkeit stark erhöhen.
 	
-	%// Was ohne Animationen Kacke ist
+	% // Was ohne Animationen Kacke ist
 	Da "Algorithm Visual Studio" jedoch nur das Endresultat bei jedem Befehl zeigt, können ausgeführte Algorithmen auf den visualisierten Bäumen teilweise schwierig nachzuvollziehen sein. Die visuelle Darstellung eines Baums muss bei beinahe allen Operationen großflächig geändert werden, um ein übersichtliches und geordnetes Bild zu wahren. So kann es sich bspw. als schwierig erweisen zu erkennen welche Verbindungen zwischen Knoten geändert wurden. Dieser Schwachpunkt der Anwendung kann bereits bei anderen Datenstrukturen zu Schwierigkeiten führen, wenn z.B. ein Element mitten im Array eingesetzt oder gelöscht wird. Durch die strukturell komplexeren Bäume wird dieses Problem allerdings deutlich größer. 
 	
-	%// Animationen yey
+	% // Animationen yey
 	Eine Lösung hierfür sind Animationen. Gut nachvollziehbare visuelle Übergänge zwischen der Ausgangslage und dem Endbild können die komplette Verständlichkeit deutlich erhöhen. Bereits bei einfachen Operationen kann der Nutzer die gezeigte Änderung erheblich einfacher und angenehmer aufnehmen. 
 	
-	%// Was ohne Zoomen und Bewegen Kacke ist
+	% // Was ohne Zoomen und Bewegen Kacke ist
 	Eine weitere Problematik ist, dass bei größeren oder zahlreichen Instanzen einer Datenstrukturen, diese über das gezeigte Fenster hinausragen. Dabei ist es in der bisherigen Version nicht möglich die Datenstrukturen, die teilweise oder komplett außerhalb des gezeigten Fensters liegen, anzeigen zu lassen. Besonders mit dem Hinzufügen von Bäumen, die schon bei wenigen Elementen beträchtlichen Platz einnehmen, kommt dieses Problem häufiger vor. 
 	
-	%// Zoomen und Bewegen yey
+	% // Zoomen und Bewegen yey
 	Die Möglichkeit das Bild zu zoomen und die gezeigten Datenstrukturen zu bewegen löst dieses Problem. Damit ist es sowohl möglich die Gesamtlage als auch einzelne genaue Bereiche im Auge zu behalten. 
 
-	%// Schlusssatz
+	% // Schlusssatz
 	Nachfolgend wird die Erweiterung der Anwendung um das Zoomen und Bewegen im Fenster, der Bäume und den Animationen behandelt. 
 
 
-[ ] 1.2 Vergleich von bestehenden Programmen
-	{
-	kriterien:
-		1. allgemeine bäume, keine unterarten
-		2. zoomen und bewegen oder zumindest auch bei großen übersichtlich
-		3. animationen oder zumindest gut nachvollziehbar
-		4. zahlreiche befehle vorhanden
-		5. Funktionen von der anwendung generell sollen drin sein
-			5a. überhaupt verschiedene strukturen, auch gleichzeitig angezeigt, möglich sind
-			5b. step back
-			5c. man kann algorithmus (als script) schreiben, der dann komplett ausgeführt wird
-	}
+[X] 1.2 Vergleich von bestehenden Programmen
 	{
 	zu vergleichende Websites:
 		aus vorheriger BA:
@@ -71,7 +60,6 @@ Kapitel:
 				4. inserten ist automatisch, wodurch zb umhängen nicht geht
 				3. keine animationen, aber kleinteilige schritte, sodass es sehr verständlich ist
 				5. ne
-				
 		dazu noch:
 			- tree-visualizer - https://tree-visualizer.netlify.app/
 				1. nur binärbäume
@@ -81,43 +69,32 @@ Kapitel:
 				5. ne
 	}
 	
-	%// Schöner Einleitungssatz
+	% // Schöner Einleitungssatz
 	Um zu prüfen, ob eine bereits existierende Anwendung sowohl Bäume korrekt visualisieren kann als auch die in PLATZHALTER \todo{Verweis auf 1.1 Motivation} erwähnten Problematiken löst, werden in diesem Kapitel verschiedene Anwendungen verglichen. Dabei werden insbesondere folgende Punkte beachtet:
 		1. Können allgemeine Bäume, ohne festen Grad oder sonstige Einschränkungen genutzt werden?
 		2. Sind grundlegende Operationen vorhanden?
 		3. Ist die Visualisierung auch bei großen Datenmengen übersichtlich?
 		4. Sind die getätigten Schritte gut nachvollziehbar?
 	
-	%// tree-visualizer - https://tree-visualizer.netlify.app/
+	% // tree-visualizer - https://tree-visualizer.netlify.app/
 	Die erste Anwendung ist der "tree-visualizer" \todo{Quellenverweis auf die Website plus wann zuletzt besucht 16.12.}. Diese minimalistische Anwendung ist nur in der Lage Binärbäume anzuzeigen. Die Möglichkeiten einen Knoten hinzuzufügen, zu löschen, den Wert eines Knotens zu ändern und verschiedene Traversierungen auszuführen, sind vorhanden. Was nicht möglich ist, ist den Elternknoten eines Knotens zu einem anderen Knoten zu ändern. Die Darstellung ist zoom- und bewegbar, wodurch der Baum stets übersichtlich und im Ganzen sichtbar ist. Auch größere Datenmengen kann die Anwendung gut darstellen. Die getätigten Schritte sind gut nachvollziehbar, was allerdings nicht an Animationen oder kleinteilig aufgezeigten Schritten liegt, sondern daran, dass der Nutzer die Knoten auswählen und mit einem Mausklick einen Knoten an die jeweilige Position manuell setzen muss. 
+	
+	% // David Galles - https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+	Als zweite Visualisierung wurde "Data Structure Visualization" von David Galles betrachtet \todo{Quellenverweis auf die Website plus wann zuletzt besucht 16.12.}. Die Anwendung hat eine breite Auswahl an Bäumen, u.a. AVL-Bäume, Rot-Schwarz-Bäume und binäre Suchbäume. Allerdings sind keine Bäume mit unbeschränktem Grad vorhanden. Bei allen aufrufbaren Bäumen handelt es sich um Baum-Unterarten, bei denen neue Elemente an einen bestimmten Platz gesetzt werden. Daher ist es für den Nutzer beim Hinzufügen neuer Elemente nicht möglich zu bestimmen an welcher Stelle diese eingesetzt werden sollen. Insgesamt sind grundlegende Operationen aber vorhanden. Die Darstellung ist zwar übersichtlich, bei sehr großen Datenmengen können diese aber nicht komplett im Fenster abgebildet werden. Möglich ist dabei nur manuell die Größe der Darstellungsfläche zu bestimmen und diese zu den jeweiligen Seiten zu verschieben. Durch Animationen und ausführlich aufgezeigten Schritten der Operationen, sind die Abläufe sehr gut verständlich. 
+	
+	% // visualgo.net - https://visualgo.net/en
+	Die dritte und letzte betrachtete Anwendung in diesem Kapitel ist "VisuAlgo", die unter der Leitung von Dr. Steven Halim und Dr. Felix Halim entwickelt wurde PLATZHALTER \todo{Verweis auf Website plus wann zuletzt besucht}. Diese bietet, im Vergleich zur Anwendung von David Galles, eine geringere Auswahl an Bäumen. Alle ausführbaren Bäume, außer den Suffixbäumen, sind binäre Bäume. Da es sich hier wieder nur um Baum-Unterarten handelt, die neue Elemente nur an feste Plätze setzen können, ist es auch in dieser Anwendung für den Nutzer nicht möglich den Elternknoten für einen neu hinzugefügten Knoten zu bestimmen. Insgesamt werden allerdings eine breite Auswahl an Operationen unterstützt. Die Darstellung bleibt insgesamt zwar übersichtlich, jedoch kommt dies davon, dass die visualisierten Bäume starke Limitationen aufweisen. So ist z.B. die maximale Tiefe eines binären Suchbaums auf neun festgelegt und es können maximal 100 Knoten dargestellt werden. Trotz dieser Limitation kann es zu grafischen Überlappungen von Knoten kommen. Die ausgeführten Befehle sind sehr übersichtlich mit Animationen dargestellt. 
 
-	--- AB HIER WEITER ---
-	
-	%// David Galles - https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
-	1. PLATZHALTER hat breitere auswahl an bäumen, so können selbst rot-schwarz-bäume angezeigt werden. Dennoch keine allgemeinen bäume mit unbeschränktem grad vorhanden. 
-	2. Es sind grundlegende Befehle vorhanden. Insert läuft dabei aber auch nur automatisch ab, sodass der nutzer nicht selbst bestimmen kann, wo welches blatt angefügt wird. 
-	3. Bei zu großen Datenstrukturen sind diese nicht mehr ganz abgebildet. Man hat dennoch, auf etwas unpraktischem weg, die möglichkeit diese sichtbar zu machen. Und zwar muss dafür auf der seite manuell die größe oder breite des fensters geändert werden und dann im browser gescrollt werden. Geht aber auch nur bis gewissen grad. 
-	4. Animationen gibt es und die abläufe sind sehr gut verständlich, da diese sehr kleinteilig dargestellt werden.	
-	- Scheitert somit bei der anforderung an allgemeine bäume und kann schlecht sehr große Mengen zeigen
-	
-	%// visualgo.net - https://visualgo.net/en
-	1. PLATZHALTER hat nur eine geringe Auswahl an Bäumen. Außer Suffixbäume sind nur binäre Bäume vorhanden. 
-	2. Es gibt viele Befehle, aber diese sind zum großen Teil automatisiert, das bedeutet, dass man nicht selbst bestimmen kann, wo ein neues blatt platziert wird. Wie bei der erstgenannten website, sind diese aber durch 
-	3. Die Darstellung bleibt insgesamt zwar übersichtlich, allerdings kommt das davon, dass die Bäume limitationen haben, wie maximale tiefe 9 und es können maximal 100 knoten abgebildet sein. Leider kommt es dennoch zu grafischen überlappungen von knoten. 
-	4. Die ausgeführten Befehle sind sehr gut übersichtlich, da animationen drin sind und die befehle kleinteilig ausgeführt werden. 
-
-	
-	%// Das reicht uns nicht!!
-	Was an allen drei auszusetzen ist:
-	Für unsere Zwecke reicht das nicht. Zudem sind elementare Funktionalitäten der anwendung nicht in den verglichenen drin. Step-Back (bei galles schon), verschiedene strukturen gleichzeitig anzeigen lassen und einen algorithmus als script zu schreiben, der dann komplett ausgeführt wird (statt jeden befehl immer einzeln auszuführen) sind nicht vorhanden. 
+	% // Das reicht uns nicht!!
+	Keine der betrachteten Visualisierungen erfüllen die gesetzten Anforderungen. Insbesondere das Darstellen allgemeiner Bäume wird von keinem Programm erfüllt. Aber auch gewisse elementare Funktionalitäten der Anwendung sind nicht in den verglichenen drin. Die Möglichkeit Schritte zurückzugehen ist nur in Programm von David Galles PLATZHALTER \todo{Verweis auf Website} vorhanden. Verschiedene Strukturen gleichzeitig anzeigen zu lassen oder ein Skript zu schreiben, das an einem Stück ausgeführt wird, war in keiner der verglichenen Anwendungen möglich. 
 
 
 [X] 1.3 Zielsetzung
 	
-	%// Einleitungssatz
-	Die Erweiterungen, die in "Algorithm Visual Studio" eingebaut werden sollen, wurden in Abschnitt 1.1 \todo{Auf Abschnitt verweisen} kurz angerissen. In Abschnitt 1.2 \todo{Auf Abschnitt verweisen} wurden andere Visualisierungsprogramme betrachtet, um zu prüfen ob eins dieser die Anforderungen erfüllt. Anhand der zuvor betrachteten anderen Visualisierungsprogramme sollen nachfolgend in diesem Abschnitt die spezifischen Ziele zu den Erweiterungen formuliert werden.
+	% // Einleitungssatz
+	Die Erweiterungen, die in "Algorithm Visual Studio" \todo{richtige Anführungszeichen} eingebaut werden sollen, wurden in Abschnitt 1.1 \todo{Auf Abschnitt verweisen} kurz angerissen. In Abschnitt 1.2 \todo{Auf Abschnitt verweisen} wurden andere Visualisierungsprogramme betrachtet, um zu prüfen ob eins dieser die Anforderungen erfüllt. Anhand der zuvor betrachteten anderen Visualisierungsprogramme sollen nachfolgend in diesem Abschnitt die spezifischen Ziele zu den Erweiterungen formuliert werden.
 	
-	%// Ziele
+	% // Ziele
 	Es sollen drei große Erweiterungen hinzugefügt werden: 
 		1. Das Zoomen und Bewegen in der visuellen Darstellung der Datenstrukturen
 		2. Die Möglichkeit Animationen für etwaige Befehle einzubauen

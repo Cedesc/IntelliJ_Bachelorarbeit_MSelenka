@@ -11,99 +11,113 @@
 		[X1] Diagramm in "2.2 Erweiterbarkeit um weitere Datenstruktur" einbauen
 		[X8] "2.3 Zusammenfassung" schreiben
 		[X2] Diagramm ordnen und aufteilen 
-
-
-		
-		[_6, X0] ALLE Einleitungstexte schreiben (zwingend, aber nur 1-2 Sätze was davor gemacht wurde und was jetzt gemacht wird)
-			- [_1] 2 Architektur
-			- [_1] 3 Überarbeitungen am bestehenden Code
-			- [_1] 4 Datenstruktur Baum
-			- [_1] 5 Umsetzung Baum im Programm
-			- [_1] 6 Erweiterung um visuelle Funktionalitäten
-			- [_1] 7 Zukünftige Arbeit
-		[_9, X9] ALLE Zusammenfassungstexte schreiben (nicht zwingend, nur wenn es sich anbietet)
+		[_0, X6] ALLE Einleitungstexte schreiben (zwingend, aber nur 1-2 Sätze was davor gemacht wurde und was jetzt gemacht wird)
+			- [X1] 2 Architektur
+			- [X1] 3 Überarbeitungen am bestehenden Code
+			- [X1] 4 Datenstruktur Baum
+			- [X1] 5 Umsetzung Baum im Programm
+			- [X1] 6 Erweiterung um visuelle Funktionalitäten
+			- [X1] 7 Zukünftige Arbeit
+		[X10] um ganzen kleinen ToDos kümmern (die nicht bzgl latex)
+		[_0, X18] ALLE Zusammenfassungstexte schreiben (nicht zwingend, nur wenn es sich anbietet)
 			- [X3] 2 Architektur
 			- [X3] 3 Überarbeitungen am bestehenden Code
 			- [X3] 4 Datenstruktur Baum
-			- [_3] 5 Umsetzung Baum im Programm
-			- [_3] 6 Erweiterung um visuelle Funktionalitäten
-			- [_3] 7 Zukünftige Arbeit
-
-		[_26 , X15] Texte überarbeiten (41 Texte)
+			- [X3] 5 Umsetzung Baum im Programm
+			- [X3] 6 Erweiterung um visuelle Funktionalitäten
+			- [X3] 7 Zukünftige Arbeit
+		[_0 , X41] Texte überarbeiten (41 Texte)
 			- [X1] Abstract
 			- 1 Einleitung
 				- [X1] Anfang
 				- [X1] 1.1 Motivation
-				- [_1] 1.2 Vergleich von ähnlichen Programmen
+				- [X1] 1.2 Vergleich von ähnlichen Programmen
 				- [X1] 1.3 Zielsetzung
 				- [X1] 1.4 Strukturierung des Inhalts der Arbeit
 			- 2 Architektur
-				- [_1] 2.1 Vorherige Arbeit
-				- [_1] 2.2 Erweiterbarkeit um weitere Datenstruktur (am Beispiel von Bäumen)
-				- [_1] 2.3 Erweiterung der Architektur
-				- [_1] 2.4 Zusammenfassung
+				- [X1] 2.1 Vorherige Arbeit
+				- [X1] 2.2 Erweiterbarkeit um weitere Datenstruktur (am Beispiel von Bäumen)
+				- [X1] 2.3 Erweiterung der Architektur
+				- [X1] 2.4 Zusammenfassung
 			- 3 Überarbeitung des bestehenden Codes
-				- [_1] Anfang
+				- [X1] Anfang
 				- [X1] 3.1 Refaktorierung und Kommentare
 				- [X1] 3.2 ArrayList
 				- [X1] 3.3 Komplette Darstellung
 				- [X1] 3.4 Config Datei
 				- [X1] 3.5 Zusammenfassung
 			- 4 Datenstruktur Baum
-				- [_1] Anfang
+				- [X1] Anfang
 				- [X1] 4.1 Terminologie
 				- [X1] 4.2 Definition
-				- [_1] 4.3 Speicherung von Bäumen
+				- [X1] 4.3 Speicherung von Bäumen
 				- [X1] 4.4 Atomare Operationen
 				- [X1] 4.5 Anwendung von Bäumen
 				- [X1] 4.6 Zusammenfassung
 			- 5 Umsetzung Baum im Programm
-				- [_1] Anfang
-				- [_1] 5.1 Problematik
-				- [_1] 5.2 Visualisierungsalgorithmus
-				- [_1] 5.3 Implementierung
-				- [_1] 5.4 Erweiterbarkeit um Baum-Unterarten
-				- [_1] 5.5 Zusammenfassung
+				- [X1] Anfang
+				- [X1] 5.1 Problematik
+				- [X1] 5.2 Visualisierungsalgorithmus
+				- [X1] 5.3 Implementierung
+				- [X1] 5.4 Erweiterbarkeit um Baum-Unterarten
+				- [X1] 5.5 Zusammenfassung
 			- 6 Erweiterung um visuelle Funktionalitäten
-				- [_1] Anfang
-				- [_1] 6.1 Animationen
-				- [_1] 6.2 Erweiterbarkeit um weitere Animationen
+				- [X1] Anfang
+				- [X1] 6.1 Animationen
+				- [X1] 6.2 Erweiterbarkeit um weitere Animationen
 				- 6.3 Konkrete Animationen
-					- [_1] 6.3.1 Animationen in ArrayList
-					- [_1] 6.3.2 Animationen in Bäumen
-				- [_1] 6.4 Zoomen und Bewegen
-				- [_1] 6.5 Zusammenfassung
+					- [X1] 6.3.1 Animationen in ArrayList
+					- [X1] 6.3.2 Animationen in Bäumen
+				- [X1] 6.4 Zoomen und Bewegen
+				- [X1] 6.5 Zusammenfassung
 			- 7 Zukünftige Arbeit
-				- [_1] Anfang
-				- [_1] 7.1 Bestehende Probleme
-				- [_1] 7.2 Ausblick
-				- [_1] 7.3 Zusammenfassung
+				- [X1] Anfang
+				- [X1] 7.1 Bestehende Probleme
+				- [X1] 7.2 Ausblick
+				- [X1] 7.3 Zusammenfassung
 			- 8 Zusammenfassung
-				- [_1] Inhalt
+				- [X1] Inhalt
 		
-		[_14 , X4] Sachen aus "noch vielleicht einbringen"
-		[_10] um ganzen kleinen ToDos kümmern (die nicht bzgl latex)
+
+
+		
+		[_0] Mit IntelliJ auf Rechtschreibung prüfen
+		
 		[_9] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
 			[_1] Grafiken korrekt trennen und als einzelne Grafiken einbringen (aufpassen, dass alles leserlich ist, ggf zusammenrücken)
-		[_0] In IntelliJ wegen Autokorrektur durchgehen
+		[_0] Alles an "ConfigReader" raushauen
+		[_12 , X6] Sachen aus "noch vielleicht einbringen"
 		[_0] Leute Korrekturlesen lassen
 			- einmal für Rechtschreibung
 				- Dinah ?
 				- Selina ?
 			- einmal für Inhaltliches
 				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
+		[_0] Fragen an inhaltlichen Korrekturleser
+			- nach lesen von Kapitel 4 (Datenstruktur Baum) und 5.3 (Umsetzung.Implementierung), was bleiben noch für Fragen offen bzgl Bäume?
 		
 	- noch vielleicht reinbringen
 		[X2] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ?? (wenn dann zoomen plus eventuell bewegen)
 		[X2] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
+		[X2] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
+		[X0] Selbstgemachte Grafik, in der an einem Baum die ganzen Sachen beschriftet ist????? Eher nicht
 		- UML Sequenzdiagramm:
 			[_4] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
-				- wohin? (4.1?)
+				- Vergleich zu alter Methode
+				- wohin? (5.1 / 5.2)
 				- zu beachten: man muss auch was dazu schreiben
-			[_2] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
 		[_2] Anhang wie?
 		[_2] Alle Wörter, die abkürzbar sind, einheitlich abkürzen oder nicht abkürzen: ggf., bspw., z.B., u.a.,...
 		[_4] Einleitungssätze auch für (alle) Unterkapitel??
+		[_0] In 7.2 nice to have stuff reinbringen ??? 
+			"Weniger wichtig, aber mögliche punkte, wären:"
+				- Button zum Zurücksetzen des Zooms 
+				- Button zum Zurücksetzen der Translation
+				- Mehr Optionen bei complete visualization:
+					- Button um direkt zum Endergebnis zu springen
+					- Button um Pause zu drücken
+					- automatisches Skalieren bei complete visualization (bei Bäumen gut zu beobachten)
+				- Animationen schneller oder langsamer zur Laufzeit machen können.
 		
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
@@ -111,6 +125,7 @@
 	- Bei Websites auch letzter Zugriff angeben
 	- Klassen in Text erwähnen mit dieser Schriftart aus der anderen BA
 	- Alle "PLATZHALTER" rausschmeißen
+	- alle funktionen, klassen etc im text in anderer schriftweise schreiben und ohne anführungszeichen
 	- ToDo's:
 		- Was muss ich beim abgeben beachten?
 			- ausgedruckt im studienbüro abgeben?
@@ -218,3 +233,13 @@ Wenn-zu-viel-Zeit-TDL:
 			<ScrollPane  minWidth="500" fx:id="algVisScrollPane"
 						 hmax="0" vmax="0" hbarPolicy="NEVER" vbarPolicy="NEVER">
 	
+
+
+
+
+
+
+Gelöscht aus Kapitel 6 Erweiterung um visuelle Funktionalitäten 6.1 Animationen nach "% // Eigene Umsetzung", da eig bereits in 2 Architektur 2.3 Erweiterung der Architektur vorhanden
+
+% // auf die Ordnerstruktur bezogen auf die Animationen eingehen und schreiben wo die erstellt und ausgeführt werden
+	So wie es für jede Datenstruktur eine eigene Klasse für die Visualisierung gibt, wurde hier ebenso für jede Datenstruktur eine Klasse zum Erstellen der jeweiligen Animationen hinzugefügt. Der Vorgang ist in PLATZHALTER \todo{Abbildung 1} anhand eines UML-Sequenzdiagramms am Beispiel des "addLeaf"-Befehls der Bäume verdeutlich. Wird der Befehl in der Info-Datenstruktur \todo{Auf eine Definition verweisen?} InfoTree aufgerufen, so wird zunächst durch einen Aufruf der addLeaf-Methode des von InfoTree gespeicherten "MyTree"s, die Änderung der Daten ausgeführt. Konkret bedeutet dies in dem Fall das Hinzufügen des Blatts, das als newLeaf abgespeichert wird. Nach der Manipulierung der Daten wird die Visualisierungsklasse, hier TreeVisualization, aufgerufen. Dabei werden zunächst visuelle Elemente hinzugefügt, gelöscht oder geändert und daraufhin die passende Animation dazu erstellt. Im Beispiel bedeutet das erst einen Aufruf von drawAllTrees, wodurch anhand der Daten der Bäume, all diese neu erstellt werden und danach die Erstellung der Animation mithilfe der forAddLeaf-Methode. Diese Trennung zwischen Visualisierung und Erstellung der Animationen sorgt für eine bessere Wartbarkeit des Codes, da es sowohl klarer ist, welche Codeabschnitte was bewirken, als auch die Funktionen kürzer und übersichtlicher gehalten werden können.

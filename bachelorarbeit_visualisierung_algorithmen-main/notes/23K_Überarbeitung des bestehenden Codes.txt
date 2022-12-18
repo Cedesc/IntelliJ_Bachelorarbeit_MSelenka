@@ -11,18 +11,12 @@
 
 
 
-Was ich reinbringen kann:
-	{Sequenzdiagramm einfügen?}
-	{"Config" überarbeiten? Auch auf ConfigReader eingehen oder das so lassen? Sollte ich irgendwo in der Arbeit ConfigReader erwähnen, sollte ich das hier aufgreifen}
-
-
-
 Kapitel:
 
 
-[ ] 3 Überarbeitungen am bestehenden Code
+[X] 3 Überarbeitungen am bestehenden Code
 
-	In diesem Kapitel werden die ersten Anpassungen im Code beleuchtet. Dabei befasst sich das Kapitel hauptsächlich mit Überarbeitungen des Codes und nicht mit den in nachfolgenden Kapiteln behandelten Erweiterungen um Bäume, Zooming und Bewegung. Bei den in diesem Kapitel betrachteten Überarbeitungen wurde versucht möglichst nah am bereits vorhandenen Code anzuknüpfen, sodass der Programmcode im gesamten kohärent erscheint und keine großen Änderungen eingebaut werden, die zu unerwarteten Verhalten führen können. 
+	Nachdem die Änderungen der grundlegenden Architektur aufgezeigt wurden, werden nachfolgend Anpassungen im Code beleuchtet. Dabei befasst sich das Kapitel hauptsächlich mit Überarbeitungen des Codes und nicht mit den in anderen Kapiteln behandelten Erweiterungen um Bäume, Zooming und Bewegung. Bei den in diesem Kapitel betrachteten Überarbeitungen wurde versucht möglichst nah am bereits vorhandenen Code anzuknüpfen, sodass der Programmcode im gesamten kohärent erscheint und unerwartetes Verhalten durch große Änderungen vermieden wird. 
 
 
 [X] 3.1 Refaktorierung & Kommentare
@@ -50,7 +44,6 @@ Kapitel:
 		2. Die Funktion zum Starten des nächsten Befehls wird als "onFinishedEvent" zu der Animation hinzugefügt, welches bewirkt, dass der hinzugefügte Befehl dann gestartet wird, wenn die Animation fertig ist.
 		3. Die momentane Animation wird gestartet.
 		4. Nach der Animation wird durch das Event der nächste Befehl ausgeführt und die Schritte wiederholen sich.
-		PLATZHALTER \todo{Hier Sequenzdiagramm?}
 	Nachteile dieser Herangehensweise sind, dass es unintuitiv erscheint und dass gewisse Klassen dabei mehr ineinander verzahnt sind. Dies kann die Verständlichkeit des Codes beeinträchtigen, weshalb eine ausführliche Dokumentierung dazu angestrebt wurde. Auf den ersten Blick ist ein weiterer Nachteil, dass jeder Befehl eine Animation benötigt, da ansonsten der dritte Schritt nicht ausgeführt werden kann. Dies lässt sich aber mit einem Platzhalter beheben. Durch eine Überladung der Methode "generateNode" in den Visualisierungsklassen wird, angenommen der Befehl hat keine Animation, automatisch eine Animation erstellt. Die erstellte Animation hat zwar eine bestimmte Laufzeit, durch die jedoch nichts bewegt oder geändert wird.
 	Auf der Seite der Vorteile wäre zunächst, dass der Nutzer ohne Probleme Eingaben während den Animationen tätigen kann. Weiterhin besteht keine Abhängigkeit zu Timern, wodurch möglicherweise unterschiedliche Zeiten vermieden werden. Die Funktionalität dieses Algorithmus hängt auch nicht von der Länge der Animationen ab, sodass sie beliebig und unterschiedlich lang sein können. Mit dieser Lösung bewegt sich nun die Hervorhebung des ausgewählten Befehls in der Befehlsliste mit Befehl zu Befehl mit. Trotz des etwas befremdlichen Ansatzes, mussten für die Umsetzung nur kleine Änderungen an bestehendem Code getätigt werden. Die Umsetzung benötigt, im Vergleich zu anderen Überlegungen zur Lösung des Problems, deutlich weniger Zeilen im Code.
 
