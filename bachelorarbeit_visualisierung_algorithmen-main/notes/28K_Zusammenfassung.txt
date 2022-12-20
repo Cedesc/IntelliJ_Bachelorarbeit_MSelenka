@@ -10,25 +10,25 @@ Kapitel:
 
 [X] 8
 
-	% // Schöner Einleitungssatz
-	Um ein Fazit dieser Arbeit zu fassen, werden im letzten Kapitel die am Anfang in PLATZHALTER \todo{Verweis auf 1.4 Zielsetzung} definierten Ziele mit der resultierenden Anwendung verglichen.
-	
-	% // Welche Hauptziele wurden erfüllt, welche nicht erfüllt?
-	% // Bäume
-	Die Anwendung wurde um allgemeine Bäume erweitert. Die in PLATZHALTER \todo{Verweis auf "2.? Atomare Funktionen"} beschriebenen atomaren Funktionen und Zugriffsoperationen wurden zu den Bäumen hinzugefügt. Es wurde ein Weg gefunden Bäume zuverlässig einheitlich zu visualisieren, ohne dass unnatürliche Abstände oder unübersichtliche Anordnungen entstehen. Bäume können durch die Operationen und die besagte Visualisierung bereits vollumfänglich genutzt werden. So können Nutzer bereits gewisse Baum-Unterarten in der Anwendung umsetzen. Die zuvor bereits in den anderen Datenstrukturen vorhandenen Funktionalitäten wurden für die implementierten Bäumen ermöglicht. Dazu gehören das rückgängig Machen eines Befehls oder die Möglichkeit mehrere Instanzen einer oder verschiedener Datenstrukturen zu visualisieren.
-	% // Animationen
-	Für das Erstellen erster simpler Animationen wurde die Datenstruktur "ArrayList" hinzugefügt, welche zwar wenige Funktionalitäten aufweist, dafür allerdings stabil läuft. Für "ArrayList" wurden jeweils für die Befehle des Erzeugens einer Instanz, des Einsetzens eines Elements und des Tauschens zweier Elemente Animationen erstellt. Bei den Bäumen wurden Animationen für das Erzeugen einer Instanz, das Hinzufügen eines Blatts, das Ändern eines Werts und den Zugriffsoperationen erstellt. Was an dieser Stelle bislang noch nicht funktioniert sind Animationen für Löschoperationen. Zudem ist es bislang nicht möglich Bäume automatisch zu justieren. Animationen sind weitgehend unabhängig von anderen Klassen, sodass für neue Animationen keine Dateien, außer teilweise der Visualisierungsklasse, abgeändert werden müssen. Insgesamt konnte durch das Hinzufügen von Animationen für den Nutzer eine bessere Nachvollziehbarkeit des Programms erreicht werden. 
-	% // Zoomen & Bewegen
-	Es wurde die Möglichkeit implementiert die dargestellte Datenstruktur zu vergrößern oder auch zu verkleinern. Dieses Zooming wird mit dem Mausrad ausgeführt und skaliert relativ zur Mausposition. Der maximale und minimale Grad des Zooms kann in der Config-Datei angepasst werden. Außerdem kann sich mit der Maus durch das Bild bewegt werden. Die Bewegung durch das Bild und Zoomen zum oder aus dem Bild heraus kann gleichzeitig mit abgespielten Animationen genutzt werden. 
-	
-	% // Erweiterbarkeit
-	Die generelle Erweiterbarkeit wurde beim Implementieren der Funktionen berücksichtigt. So wurde in PLATZHALTER \todo{Verweis auf 2.2} aufgezeigt wie weitere Datenstrukturen in der Zukunft hinzuzufügen sind. In PLATZHALTER \todo{Verweis auf 6.2} wurde erklärt wie neue Animationen zu erstellen sind. 
-	
-	% // Weiteres
-	Abseits der formulierten großen Ziele wurde noch weiteres geändert oder verbessert. Es wurden sehr viele Codeabschnitte überarbeitet und zahlreiche Kommentare hinzugefügt, um die generelle Wartbarkeit des Programmcodes zu erhöhen. Weiterhin wurde auf Dokumentation des neu hinzugefügten Programmcodes geachtet. Die nicht funktionierende Umsetzung der "kompletten Visualisierung" \todo{Anführungszeichen richtig setzen} wurde durch einen anderen Ansatz ersetzt und ist somit nun ausführbar. Eine Config-Datei wurde hinzugefügt um gewisse Einstellungen, wie die Länge der Animationen oder die Größe des Fensters, in einer Datei zu sammeln und leichter umändern zu können.
-	
-	% // Nichts neues kaputt
-	Trotz der zahlreichen hinzugefügten Elemente, haben bereits vorhandene Elemente und Datenstrukturen nichts an ihrer Funktionalität einbüßen müssen.
-	
-	% // Zusammenfassend
-	Somit wurden beinahe alle gesetzten Ziele erreicht. Die beiden größten Problemstellen bilden dabei das automatische Justieren des Baums und die Animationen für Löschoperationen. Diese beiden Probleme werden in PLATZHALTER \todo{Verweis auf "6.? Bestehende Probleme"} genauer beleuchtet und erste mögliche Lösungsansätze aufgezeigt. 
+% // Schöner Einleitungssatz
+Um ein Fazit dieser Arbeit zu fassen, werden im letzten Kapitel die am Anfang in PLATZHALTER \todo{Verweis auf 1.4 Zielsetzung} definierten Ziele mit der resultierenden Anwendung verglichen.
+
+% // Welche Hauptziele wurden erfüllt, welche nicht erfüllt?
+% // Bäume
+Die Anwendung wurde um allgemeine Bäume erweitert. Die in PLATZHALTER \todo{Verweis auf "2.? Atomare Funktionen"} beschriebenen atomaren Funktionen und Zugriffsoperationen wurden zu den Bäumen hinzugefügt. Es wurde ein Weg gefunden Bäume zuverlässig einheitlich zu visualisieren, ohne dass unnatürliche Abstände oder unübersichtliche Anordnungen entstehen. Bäume können durch die Operationen und die besagte Visualisierung bereits vollumfänglich genutzt werden. So können Nutzer bereits gewisse Baum-Unterarten in der Anwendung umsetzen. Die zuvor bereits in den anderen Datenstrukturen vorhandenen Funktionalitäten wurden für die implementierten Bäumen ermöglicht. Dazu gehören das rückgängig Machen eines Befehls oder die Möglichkeit mehrere Instanzen einer oder verschiedener Datenstrukturen zu visualisieren.
+% // Animationen
+Für das Erstellen erster simpler Animationen wurde die Datenstruktur "ArrayList" hinzugefügt, welche zwar wenige Funktionalitäten aufweist, dafür allerdings stabil läuft. Für "ArrayList" wurden jeweils für die Befehle des Erzeugens einer Instanz, des Einsetzens eines Elements und des Tauschens zweier Elemente Animationen erstellt. Bei den Bäumen wurden Animationen für das Erzeugen einer Instanz, das Hinzufügen eines Blatts, das Ändern eines Werts und den Zugriffsoperationen erstellt. Was an dieser Stelle bislang noch nicht funktioniert sind Animationen für Löschoperationen. Zudem ist es bislang nicht möglich Bäume automatisch zu justieren. Animationen sind weitgehend unabhängig von anderen Klassen, sodass für neue Animationen keine Dateien, außer teilweise der Visualisierungsklasse, abgeändert werden müssen. Insgesamt konnte durch das Hinzufügen von Animationen für den Nutzer eine bessere Nachvollziehbarkeit des Programms erreicht werden. 
+% // Zoomen & Bewegen
+Es wurde die Möglichkeit implementiert die dargestellte Datenstruktur zu vergrößern oder auch zu verkleinern. Dieses Zooming wird mit dem Mausrad ausgeführt und skaliert relativ zur Mausposition. Der maximale und minimale Grad des Zooms kann in der Config-Datei angepasst werden. Außerdem kann sich mit der Maus durch das Bild bewegt werden. Die Bewegung durch das Bild und Zoomen zum oder aus dem Bild heraus kann gleichzeitig mit abgespielten Animationen genutzt werden. 
+
+% // Erweiterbarkeit
+Die generelle Erweiterbarkeit wurde beim Implementieren der Funktionen berücksichtigt. So wurde in PLATZHALTER \todo{Verweis auf 2.2} aufgezeigt wie weitere Datenstrukturen in der Zukunft hinzuzufügen sind. In PLATZHALTER \todo{Verweis auf 6.2} wurde erklärt wie neue Animationen zu erstellen sind. 
+
+% // Weiteres
+Abseits der formulierten großen Ziele wurde noch weiteres geändert oder verbessert. Es wurden sehr viele Codeabschnitte überarbeitet und zahlreiche Kommentare hinzugefügt, um die generelle Wartbarkeit des Programmcodes zu erhöhen. Weiterhin wurde auf Dokumentation des neu hinzugefügten Programmcodes geachtet. Die nicht funktionierende Umsetzung der "kompletten Visualisierung" \todo{Anführungszeichen richtig setzen} wurde durch einen anderen Ansatz ersetzt und ist somit nun ausführbar. Eine Config-Datei wurde hinzugefügt um gewisse Einstellungen, wie die Länge der Animationen oder die Größe des Fensters, in einer Datei zu sammeln und leichter umändern zu können.
+
+% // Nichts neues kaputt
+Trotz der zahlreichen hinzugefügten Elemente, haben bereits vorhandene Elemente und Datenstrukturen nichts an ihrer Funktionalität einbüßen müssen.
+
+% // Zusammenfassend
+Somit wurden beinahe alle gesetzten Ziele erreicht. Die beiden größten Problemstellen bilden dabei das automatische Justieren des Baums und die Animationen für Löschoperationen. Diese beiden Probleme werden in PLATZHALTER \todo{Verweis auf "6.? Bestehende Probleme"} genauer beleuchtet und erste mögliche Lösungsansätze aufgezeigt. 

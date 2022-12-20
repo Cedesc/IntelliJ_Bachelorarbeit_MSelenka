@@ -5,13 +5,24 @@ Einsteigerkurs:
 
 
 
+- kursiv:
+	\textit{PLATZHALTER}
+
+
+- Schreibmaschinenschrift:
+	\texttt{PLATZHALTER}
+
+
+- Meine Weise:
+	\textit{\texttt{PLATZHALTER}}
+
 
 - Auf Quellen verweisen:
 	\cite{Apple:keynote:2010}
 
 
 - Auf andere Kapitel verweisen:
-	\ref{sec:baumumsetzung:sec4}
+	\ref{sec:kapitelname:sec?}
 
 
 - Grafiken einfügen:
@@ -114,11 +125,3 @@ möglicher Aufbau für "Struktur der Arbeit":
 	\textbf{Chapter \ref{sec:conclusion}} \\[0.2em]
 	\todo{schreiben}
 	Inhalt oder so
-
-
-Liste:
-	\begin{itemize}	
-		\item Knoten - Element im Baum
-		\item Kanten - Verbindung zwischen zwei Knoten
-		\item Wurzelknoten - Festgelegter Startknoten
-	\end{itemize}

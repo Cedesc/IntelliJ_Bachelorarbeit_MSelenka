@@ -28,9 +28,13 @@ Kapitel:
 
 
 [X] 4
-	\todo{Als Zitat am Kapitelanfang reinhauen:   - Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]}
+	
+\todo{Als Zitat am Kapitelanfang reinhauen:   - Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen. [Ottmann 259 (278) Kapitel 5 Bäume]}
 
-	Bevor im nächsten Kapitel die konkrete Umsetzung der Bäume im Programm näher betrachtet wird, sollen in diesem Kapitel theoretische Grundlagen erklärt und Anwendungsbereiche gezeigt werden. 
+Bevor im nächsten Kapitel die konkrete Umsetzung der Bäume im Programm näher betrachtet wird, sollen in diesem Kapitel theoretische Grundlagen erklärt und Anwendungsbereiche gezeigt werden. 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 [X] 4.1 Terminologie
@@ -38,93 +42,101 @@ Kapitel:
 			  https://en.wikipedia.org/wiki/Tree_(data_structure)#Terminology,
 			  Cormen Seite 1186 / 1187 bzw 1206 / 1027}
 	
-	Die genutzten Begriffe zu Bäumen sind von Quelle zu Quelle leicht unterschiedlich. In dieser Arbeit werden die folgenden Begriffe mit nebenstehender Bedeutung wie folgt verwendet:
-	
-		Knoten - Element im Baum
-		Kanten - Verbindung zwischen zwei Knoten
-		Wurzelknoten - Festgelegter Startknoten
-		Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
-		Tiefe (eines Knotens) - Abstand zur Wurzel
-		Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
-		Ebene - Alle Knoten einer Tiefe
-		Kind / Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
-		Elternteil / Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
-		Vorfahre (von betrachtetem Knoten) - Knoten, der auf dem Pfad zwischen der Wurzel und dem betrachteten Knoten ist, wobei die Wurzel mit eingeschlossen, der betrachtete Knoten jedoch ausgeschlossen ist
-		Nachfahre (von betrachtetem Knoten) - Knoten, bei dem der betrachtete Knoten ein Vorfahre ist
-		Blattknoten - Knoten ohne Kindknoten
-		Innerer Knoten - Knoten, der kein Blattknoten ist
-		Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
-		Ausgeglichener Baum - Die Differenz der Tiefen zweier beliebige Blätter ist höchstens eins 
-		Teilbaum - Eine Teilmenge des Baums, wobei jeder Knoten als Wurzel des Teilbaums betrachtet werden kann und dieser mit seinen Nachfahren den benannten Teilbaum bildet
-		Grad (eines Knotens) - Anzahl der Kinder
-		Grad (eines Baums) - Höchster Grad eines Knotens im Baum
-		Wald - Bäume mit disjunkten Knotenmengen
-	
+Die genutzten Begriffe zu Bäumen sind von Quelle zu Quelle leicht unterschiedlich. In dieser Arbeit werden die folgenden Begriffe mit nebenstehender Bedeutung wie folgt verwendet:
+
+	Knoten - Element im Baum
+	Kanten - Verbindung zwischen zwei Knoten
+	Wurzelknoten - Festgelegter Startknoten
+	Abstand - Kürzester Weg, also niedrigste Anzahl an Kanten, zwischen zwei Knoten (wobei bei einem Baum, ohne doppeltes Begehen von Kanten, der kürzeste Weg zwischen zwei Knoten auch immer der einzige Weg ist)
+	Tiefe (eines Knotens) - Abstand zur Wurzel
+	Tiefe (eines Baums) - Maximaler Abstand von der Wurzel zu einem Blattknoten
+	Ebene - Alle Knoten einer Tiefe
+	Kind / Kindknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene unter dem betrachteten Knoten steht, also eine um eins größere Tiefe hat, und mit ihm verbunden ist
+	Elternteil / Elternknoten (von betrachtetem Knoten) - Knoten, der genau eine Ebene über dem betrachteten Knoten steht, also eine um eins kleinere Tiefe hat, und mit ihm verbunden ist
+	Vorfahre (von betrachtetem Knoten) - Knoten, der auf dem Pfad zwischen der Wurzel und dem betrachteten Knoten ist, wobei die Wurzel mit eingeschlossen, der betrachtete Knoten jedoch ausgeschlossen ist
+	Nachfahre (von betrachtetem Knoten) - Knoten, bei dem der betrachtete Knoten ein Vorfahre ist
+	Blattknoten - Knoten ohne Kindknoten
+	Innerer Knoten - Knoten, der kein Blattknoten ist
+	Geschwisterknoten - Zwei Knoten, die den selben Elternknoten haben
+	Ausgeglichener Baum - Die Differenz der Tiefen zweier beliebige Blätter ist höchstens eins 
+	Teilbaum - Eine Teilmenge des Baums, wobei jeder Knoten als Wurzel des Teilbaums betrachtet werden kann und dieser mit seinen Nachfahren den benannten Teilbaum bildet
+	Grad (eines Knotens) - Anzahl der Kinder
+	Grad (eines Baums) - Höchster Grad eines Knotens im Baum
+	Wald - Bäume mit disjunkten Knotenmengen
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 	
 [X] 4.2 Definition
 	
-	Eine Definition von Bäumen (nach Dieker Güting) \todo{Quelle Dieker Güting Seite 102 (116) angeben} ist:
+Eine Definition von Bäumen (nach Dieker Güting) \todo{Quelle Dieker Güting Seite 102 (116) angeben} ist:
+
+	(i) Ein einzelner Knoten x ist ein Baum.
+	(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
 	
-		(i) Ein einzelner Knoten x ist ein Baum.
-		(ii) Wenn x ein Knoten ist und T_1,..., T_k Bäume sind, dann ist auch das (k+1)-Tupel (x, T_1,..., T_k) ein Baum.
-		
-	Zur Veranschaulichung dieser Definition, folgendes Beispiel:
-	Angenommen es liege ein Wald, also mehrere nicht verbundene Bäume, vor, dann kann daraus ein einzelner Baum kreiert werden. Dies kann erreicht werden, indem ein neuer Knoten y erstellt wird, der für sich allein nach der vorliegenden Definition durch Fall (i) bereits ein Baum ist, und die Wurzeln der Bäume des Walds als Kindknoten zu y hinzugefügt werden. Dadurch entsteht nach Fall (ii) ein Baum mit Wurzel y, der die Bäume des erwähnten Walds als Teilbäume beinhaltet.
+Zur Veranschaulichung dieser Definition, folgendes Beispiel:
+Angenommen es liege ein Wald, also mehrere nicht verbundene Bäume, vor, dann kann daraus ein einzelner Baum kreiert werden. Dies kann erreicht werden, indem ein neuer Knoten y erstellt wird, der für sich allein nach der vorliegenden Definition durch Fall (i) bereits ein Baum ist, und die Wurzeln der Bäume des Walds als Kindknoten zu y hinzugefügt werden. Dadurch entsteht nach Fall (ii) ein Baum mit Wurzel y, der die Bäume des erwähnten Walds als Teilbäume beinhaltet.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 [X] 4.3 Speicherung von Bäumen
 	
-	% // Arten Bäume abzuspeichern
-	Es existieren verschiedene Möglichkeiten Bäume abzuspeichern. In der Annahme, dass der Baum einen fest vorgeschriebenen Grad nicht überschreiten darf, ist es möglich alle Kindknoten eines Knotens in je einem Attribut zu speichern [1] \todo{Quelle richtig angeben}. Auf diese Weise wäre gleichzeitig die angenommene Bedingung, dass kein Knoten den vorgeschriebenen Grad überschreiten kann, gewährleistet. 
-	
-	Doch dies ist bei einem höheren Grad des Baums unpraktisch und insbesondere keine Lösung für Bäume mit beliebigem Grad. Eine gut umsetzbare Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2] \todo{Quelle richtig angeben}. Hierbei verweist jeder innere Knoten nur auf eins seiner Kindknoten. Dieses Kind, das am weitesten links steht, wird als "linkes Kind" hinterlegt. Dazu speichert jeder Knoten seinen "rechten Bruder", seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt. Bei der Wurzel muss dieser "rechte Bruder" in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein neuer Knoten an einen anderen Knoten mit mehreren Kindern angehangen werden, so ist der erste Schritt den Kindknoten zu finden, der am weitesten rechts liegt. Dessen "rechter Bruder"-Attribut hat zwangsläufig den Wert "null". Wurde dieser Knoten gefunden, wird der neue an diesen als "rechter Bruder" angehangen.
-	Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. Beispielsweise kann, wie in [3] \todo{Quelle richtig angeben} veranschaulicht, ein (fast) vollständiger binärer Baum als ein Array abgespeichert werden.
-	
-	[1] Cormen Seite 246-248
-	[2] Cormen Seite 248
-	[3] Cormen Seite 153 / 154
+% // Arten Bäume abzuspeichern
+Es existieren verschiedene Möglichkeiten Bäume abzuspeichern. In der Annahme, dass der Baum einen fest vorgeschriebenen Grad nicht überschreiten darf, ist es möglich alle Kindknoten eines Knotens in je einem Attribut zu speichern [1] \todo{Quelle richtig angeben}. Auf diese Weise wäre gleichzeitig die angenommene Bedingung, dass kein Knoten den vorgeschriebenen Grad überschreiten kann, gewährleistet. 
+
+Doch dies ist bei einem höheren Grad des Baums unpraktisch und insbesondere keine Lösung für Bäume mit beliebigem Grad. Eine gut umsetzbare Lösung für diese Herausforderung bietet die "linkes-Kind-, rechter-Bruder-Darstellung" [2] \todo{Quelle richtig angeben}. Hierbei verweist jeder innere Knoten nur auf eins seiner Kindknoten. Dieses Kind, das am weitesten links steht, wird als "linkes Kind" hinterlegt. Dazu speichert jeder Knoten seinen "rechten Bruder", seinen Geschwisterknoten, der einen Platz weiter rechts von ihm liegt. Bei der Wurzel muss dieser "rechte Bruder" in jedem Fall "null" sein, da die Wurzel im Baum keinen Elternknoten und somit auch keine Geschwisterknoten haben kann. Soll nun ein neuer Knoten an einen anderen Knoten mit mehreren Kindern angehangen werden, so ist der erste Schritt den Kindknoten zu finden, der am weitesten rechts liegt. Dessen "rechter Bruder"-Attribut hat zwangsläufig den Wert "null". Wurde dieser Knoten gefunden, wird der neue an diesen als "rechter Bruder" angehangen.
+Neben der "linkes-Kind-, rechtes-Kind-Darstellung" und der "linkes-Kind-, rechter-Bruder-Darstellung" gibt es noch weitere Arten Bäume abzuspeichern. Beispielsweise kann, wie in [3] \todo{Quelle richtig angeben} veranschaulicht, ein (fast) vollständiger binärer Baum als ein Array abgespeichert werden.
+
+[1] Cormen Seite 246-248
+[2] Cormen Seite 248
+[3] Cormen Seite 153 / 154
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 [X] 4.4 Atomare Operationen
 	
-	% // Auflistung atomarer Funktionen
-	Nach Ottmann \todo{Nur Ottmann?? Oder noch mehr Namen, die ich hier nennen sollte??} sind das Suchen, Einfügen und Entfernen, die auch die Wörterbuchoperationen genannt werden, die wichtigsten drei Operationen PLATZHALTER \todo{Verweis auf [Ottmann 262 (281) Kapitel 5 Bäume]}. Wir ergänzen diese Liste noch mit einer Operation, mit der der Wert eines Knotens geändert werden kann. Somit liegt die folgende Liste vor:
-		1. Das Hinzufügen eines Blatts
-		2. Das Löschen eines Blatts
-		3. Den Elternknoten eines Knotens ändern
-		4. Den Wert eines Knotens ändern
-	
-	% // genauere Erklärung
-	Die erste Funktion kann schlichtweg ein Blatt an einen Knoten hinzufügen. Hier ist, falls vorhanden, der maximal zulässige Grad im Baum zu beachten. 
-	Die zweite Funktion löscht ein Blatt aus dem Baum. Dabei ist die Einschränkung, dass nur ein Blatt gelöscht werden kann sehr wichtig, da sich das Löschen eines inneren Knotens aus einem Baum als sehr umständlich rausstellen kann. Beim Löschen eines inneren Knotens muss geregelt sein wie mit den Kindknoten verfahren werden soll, da es hier sonst zu Verletzungen etwaiger Eigenschaften des Baums, wie das Überschreiten eines festgelegten maximalen Grads, kommen kann. Der Spezialfall des Löschens eines Blattknotens ist im Vergleich simpel. In Kombination mit den anderen hier genannten atomaren Operationen ist es dennoch möglich, einen inneren Knoten zu löschen, worauf später weiter eingegangen wird.
-	Die dritte Funktion ändert den im Knoten gespeicherten Elternknoten. Das bedeutet nicht, dass der Elternknoten selbst in jeglicher Weise geändert wird, sondern die im Knoten hinterlegte Variable, die auf den Elternknoten zeigt, auf einen übergebenen Knoten geändert werden soll. 
-	Die vierte und letzte der gelisteten atomaren Funktionen beschreibt das Ändern des Werts des Knotens. 
-	
-	% // Damit können alle Operationen konstruiert werden 
-	Werden Bäume mit weiteren Eigenschaften, wie gefärbten Knoten, außer Acht gelassen, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann durch geschicktes Umändern der Elternknoten aus einem neu hinzugefügten Blattknoten ein, an einer beliebigen Position stehender, innerer Knoten werden. Andersrum ist es, wie bereits erwähnt, möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
+% // Auflistung atomarer Funktionen
+Nach Ottmann \todo{Nur Ottmann?? Oder noch mehr Namen, die ich hier nennen sollte??} sind das Suchen, Einfügen und Entfernen, die auch die Wörterbuchoperationen genannt werden, die wichtigsten drei Operationen PLATZHALTER \todo{Verweis auf [Ottmann 262 (281) Kapitel 5 Bäume]}. Wir ergänzen diese Liste noch mit einer Operation, mit der der Wert eines Knotens geändert werden kann. Somit liegt die folgende Liste vor:
+	1. Das Hinzufügen eines Blatts
+	2. Das Löschen eines Blatts
+	3. Den Elternknoten eines Knotens ändern
+	4. Den Wert eines Knotens ändern
+
+% // genauere Erklärung
+Die erste Funktion kann schlichtweg ein Blatt an einen Knoten hinzufügen. Hier ist, falls vorhanden, der maximal zulässige Grad im Baum zu beachten. 
+Die zweite Funktion löscht ein Blatt aus dem Baum. Dabei ist die Einschränkung, dass nur ein Blatt gelöscht werden kann sehr wichtig, da sich das Löschen eines inneren Knotens aus einem Baum als sehr umständlich rausstellen kann. Beim Löschen eines inneren Knotens muss geregelt sein wie mit den Kindknoten verfahren werden soll, da es hier sonst zu Verletzungen etwaiger Eigenschaften des Baums, wie das Überschreiten eines festgelegten maximalen Grads, kommen kann. Der Spezialfall des Löschens eines Blattknotens ist im Vergleich simpel. In Kombination mit den anderen hier genannten atomaren Operationen ist es dennoch möglich, einen inneren Knoten zu löschen, worauf später weiter eingegangen wird.
+Die dritte Funktion ändert den im Knoten gespeicherten Elternknoten. Das bedeutet nicht, dass der Elternknoten selbst in jeglicher Weise geändert wird, sondern die im Knoten hinterlegte Variable, die auf den Elternknoten zeigt, auf einen übergebenen Knoten geändert werden soll. 
+Die vierte und letzte der gelisteten atomaren Funktionen beschreibt das Ändern des Werts des Knotens. 
+
+% // Damit können alle Operationen konstruiert werden 
+Werden Bäume mit weiteren Eigenschaften, wie gefärbten Knoten, außer Acht gelassen, so reichen diese Funktionen aus um praktisch alle weiteren relevanten Funktionen darzustellen. So kann durch geschicktes Umändern der Elternknoten aus einem neu hinzugefügten Blattknoten ein, an einer beliebigen Position stehender, innerer Knoten werden. Andersrum ist es, wie bereits erwähnt, möglich auch innere Knoten zu löschen. Dies lässt sich durch aufeinanderfolgendes Umhängen von Elternknoten realisieren, bis der zu löschende Knoten ein Blatt des Baums ist. 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 [X] 4.5 Anwendung von Bäumen
 	
-	% // Bäume in der "Realität"
-	Durch Bäume ist es möglich hierarchische Beziehungen zwischen Objekten darzustellen. Auch im Alltag begegnet man dem Konzept der Bäume. Besonders offensichtlich ist dies beim Ordnersystem eines PCs oder Handys der Fall. Dabei ist klassischerweise ein Ordner, welcher weitere Dateien beinhaltet, ein innerer Knoten und Dateien, wie Bild- oder Textdateien, die Blätter. Ein leerer Ordner kann auch als Blatt aufgefasst werden. Aber auch in Bereichen fernab von Computern sind diese Strukturen vorzufinden, wie in Ahnentafeln, ein Diagramm, welches die Vorfahren einer Person zeigt. Ein klassischer Stammbaum würde nur in dem Fall, dass alle vorkommenden Personen Einzelkinder sind, einen korrekten Baum darstellen. 
-	
-	% // Welche Bäume in der Informatik genutzt werden 
-	Wie bereits in PLATZHALTER \todo{auf Kapitel 1.? verweisen} aufgezeigt, gehören Bäume zu den wichtigsten und meistgenutzten Datenstrukturen der Informatik. Daher ist es nicht verwunderlich, dass viele verschiedene Unterarten und Spezialfälle von Bäumen genutzt werden. Zunächst sei zu erwähnen, dass diese Unterarten von Bäumen nicht disjunkt sind. So kann der nachfolgend beschriebene Suchbaum ein binärer Baum sein oder ein Binärbaum ein Suchbaum sein, während ein AVL-Baum allerdings per Definition ein Binärbaum ist, Binärbäume jedoch weitaus mehr als nur AVL-Bäume umfassen.
-	% // Binärbäume
-	Die wohl am häufigsten genutzte Art sind, die bereits erwähnten, Binärbäume, die sich dadurch auszeichnen, dass jeder Knoten maximal zwei Kinder hat. 
-	% // Suchbäume
-	Suchbäume bieten eine bessere Laufzeit bei Suchoperationen, da die gesetzten Schlüssel des linken Teilbaums eines Knotens alle kleiner und die Schlüssel des rechten Teilbaums alle größer sind als der Schlüssel des betrachteten Knotens [PLATZHALTER \todo{Verweis auf Ottmann 263 (282) Kapitel 5 Bäume}].
-	% // AVL-Bäume
-	Wird ein zuverlässig ausgeglichener Baum benötigt, können AVL-Bäume aushelfen. Durch ein für jeden Knoten zusätzliches Attribut [PLATZHALTER \todo{Verweis auf Solymosi 154 (169) Kapitel 6.4 ausgeglichene Bäume}], sorgen diese für einen stetig ausgeglichenen Baum.
-	% // Rot-Schwarz-Bäume
-	Als Alternative zu AVL-Bäumen können auch Rot-Schwarz-Bäume verwendet werden, um die Ausgeglichenheit des Baums zu wahren. Bei diesen werden die Kanten entweder schwarz oder rot gefärbt [PLATZHALTER \todo{Verweis auf Solymosi 165 (180) Kapitel 6.6 Rot-Schwarz-Bäume}].
-	% // (a, b)-Bäume
-	Das letzte aufgezeigte Beispiel sind (a, b)-Bäume, die sogenannte externe Suchbäume sind. Das bedeutet, dass ihre inneren Knoten nur Verwaltungsinformationen bereithalten, während die Daten exklusiv von den Blättern gespeichert werden [PLATZHALTER \todo{Verweis auf Hubwieser 264 (280) Kapitel 21.6 Bäume}]. B-Bäume, ein Spezialfall der (a, b)-Bäume, sind nach Hubwieser \todo{NUR Hubwieser, oder noch andere Autoren, die ich da aufzählen sollte??} "eine bedeutende Speicherlösung für Sekundärspeicher (z.B. Festplatten)" [PLATZHALTER \todo{direktes Zitat von Hubwieser 245 (261) Kapitel 21 Bäume}].
-	
-	% // wo das hier aufgezeigte nochmal genutzt wird
-	In PLATZHALTER \todo{auf Kapitel "6.? Erweiterbarkeit zu Bäumen" verweisen} werden die hier genannten Beispiele in Bezug auf die Umsetzbarkeit im Programm beleuchtet.
+% // Bäume in der "Realität"
+Durch Bäume ist es möglich hierarchische Beziehungen zwischen Objekten darzustellen. Auch im Alltag begegnet man dem Konzept der Bäume. Besonders offensichtlich ist dies beim Ordnersystem eines PCs oder Handys der Fall. Dabei ist klassischerweise ein Ordner, welcher weitere Dateien beinhaltet, ein innerer Knoten und Dateien, wie Bild- oder Textdateien, die Blätter. Ein leerer Ordner kann auch als Blatt aufgefasst werden. Aber auch in Bereichen fernab von Computern sind diese Strukturen vorzufinden, wie in Ahnentafeln, ein Diagramm, welches die Vorfahren einer Person zeigt. Ein klassischer Stammbaum würde nur in dem Fall, dass alle vorkommenden Personen Einzelkinder sind, einen korrekten Baum darstellen. 
 
+% // Welche Bäume in der Informatik genutzt werden 
+Wie bereits in PLATZHALTER \todo{auf Kapitel 1.? verweisen} aufgezeigt, gehören Bäume zu den wichtigsten und meistgenutzten Datenstrukturen der Informatik. Daher ist es nicht verwunderlich, dass viele verschiedene Unterarten und Spezialfälle von Bäumen genutzt werden. Zunächst sei zu erwähnen, dass diese Unterarten von Bäumen nicht disjunkt sind. So kann der nachfolgend beschriebene Suchbaum ein binärer Baum sein oder ein Binärbaum ein Suchbaum sein, während ein AVL-Baum allerdings per Definition ein Binärbaum ist, Binärbäume jedoch weitaus mehr als nur AVL-Bäume umfassen.
+% // Binärbäume
+Die wohl am häufigsten genutzte Art sind, die bereits erwähnten, Binärbäume, die sich dadurch auszeichnen, dass jeder Knoten maximal zwei Kinder hat. 
+% // Suchbäume
+Suchbäume bieten eine bessere Laufzeit bei Suchoperationen, da die gesetzten Schlüssel des linken Teilbaums eines Knotens alle kleiner und die Schlüssel des rechten Teilbaums alle größer sind als der Schlüssel des betrachteten Knotens [PLATZHALTER \todo{Verweis auf Ottmann 263 (282) Kapitel 5 Bäume}].
+% // AVL-Bäume
+Wird ein zuverlässig ausgeglichener Baum benötigt, können AVL-Bäume aushelfen. Durch ein für jeden Knoten zusätzliches Attribut [PLATZHALTER \todo{Verweis auf Solymosi 154 (169) Kapitel 6.4 ausgeglichene Bäume}], sorgen diese für einen stetig ausgeglichenen Baum.
+% // Rot-Schwarz-Bäume
+Als Alternative zu AVL-Bäumen können auch Rot-Schwarz-Bäume verwendet werden, um die Ausgeglichenheit des Baums zu wahren. Bei diesen werden die Kanten entweder schwarz oder rot gefärbt [PLATZHALTER \todo{Verweis auf Solymosi 165 (180) Kapitel 6.6 Rot-Schwarz-Bäume}].
+% // (a, b)-Bäume
+Das letzte aufgezeigte Beispiel sind (a, b)-Bäume, die sogenannte externe Suchbäume sind. Das bedeutet, dass ihre inneren Knoten nur Verwaltungsinformationen bereithalten, während die Daten exklusiv von den Blättern gespeichert werden [PLATZHALTER \todo{Verweis auf Hubwieser 264 (280) Kapitel 21.6 Bäume}]. B-Bäume, ein Spezialfall der (a, b)-Bäume, sind nach Hubwieser \todo{NUR Hubwieser, oder noch andere Autoren, die ich da aufzählen sollte??} "eine bedeutende Speicherlösung für Sekundärspeicher (z.B. Festplatten)" [PLATZHALTER \todo{direktes Zitat von Hubwieser 245 (261) Kapitel 21 Bäume}].
 
-[X] 4.6 Zusammenfassung
-	--- leer lassen ---
+% // wo das hier aufgezeigte nochmal genutzt wird
+In PLATZHALTER \todo{auf Kapitel "6.? Erweiterbarkeit zu Bäumen" verweisen} werden die hier genannten Beispiele in Bezug auf die Umsetzbarkeit im Programm beleuchtet.

@@ -45,7 +45,6 @@
 				- [X1] 3.2 ArrayList
 				- [X1] 3.3 Komplette Darstellung
 				- [X1] 3.4 Config Datei
-				- [X1] 3.5 Zusammenfassung
 			- 4 Datenstruktur Baum
 				- [X1] Anfang
 				- [X1] 4.1 Terminologie
@@ -53,14 +52,12 @@
 				- [X1] 4.3 Speicherung von Bäumen
 				- [X1] 4.4 Atomare Operationen
 				- [X1] 4.5 Anwendung von Bäumen
-				- [X1] 4.6 Zusammenfassung
 			- 5 Umsetzung Baum im Programm
 				- [X1] Anfang
 				- [X1] 5.1 Problematik
 				- [X1] 5.2 Visualisierungsalgorithmus
 				- [X1] 5.3 Implementierung
 				- [X1] 5.4 Erweiterbarkeit um Baum-Unterarten
-				- [X1] 5.5 Zusammenfassung
 			- 6 Erweiterung um visuelle Funktionalitäten
 				- [X1] Anfang
 				- [X1] 6.1 Animationen
@@ -74,27 +71,62 @@
 				- [X1] Anfang
 				- [X1] 7.1 Bestehende Probleme
 				- [X1] 7.2 Ausblick
-				- [X1] 7.3 Zusammenfassung
 			- 8 Zusammenfassung
 				- [X1] Inhalt
+		[X0] Mit IntelliJ auf Rechtschreibung prüfen
 		
 
 
 		
-		[_0] Mit IntelliJ auf Rechtschreibung prüfen
-		
-		[_9] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
-			[_1] Grafiken korrekt trennen und als einzelne Grafiken einbringen (aufpassen, dass alles leserlich ist, ggf zusammenrücken)
+		[_10] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
+			[X] Auflistungen korrekt darstellen lassen
+			[X] Matheumgebungen richtig setzen
+			[X] Grafiken korrekt trennen und als einzelne Grafiken einbringen (aufpassen, dass alles leserlich ist, ggf zusammenrücken)
+				[X] sequenzdiagramm
+				[X] uml erweiterung um bäume
+				[X] uml erweiterung um animationen
+				[X] bilder von visualisierten baum (TreeDemo)
+			[X] Anführungszeichen korrekt setzen
+			[X] Text kursiv oder in schreibmaschinenschrift setzen? Was davon? Was anderes? => Beides!
+			[X] Verweise auf andere Kapitel einbringen
+			[X] Wie mach ich das mit dem Quellenverweis auf die BA von Selenka?
+			[X] Info-Datenstruktur kursiv oder in Anführungszeichen? => nichts
+			[X] Website-Verweise einbringen
+			[ ] Quellenverweise einbringen
+			[ ] Vernünftige Absätze einbringen
+			[ ] Grafiken so anbringen, dass sie richtig zusammen angezeigt werden
+			[ ] Größen der Grafiken anpassen
+			[ ] Fußnoten ?
+			[ ] Grafiken zu Anhang hinzufügen
+			[ ] nach Dingen suchen
+				- PLATZHALTER
+				- Anführungszeichen
+			[ ] "Listing" zu "Codeabschnitt" umbenennen
+			[ ] in bibliografy die zwei defaults löschen
 		[_0] Alles an "ConfigReader" raushauen
 		[_12 , X6] Sachen aus "noch vielleicht einbringen"
 		[_0] Leute Korrekturlesen lassen
 			- einmal für Rechtschreibung
 				- Dinah ?
 				- Selina ?
+				- Alice ?
 			- einmal für Inhaltliches
 				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
+			- Gliederung
+				- 1
+					- Dinah
+				- 2
+				- 3
+				- 4
+				- 5
+				- 6
+				- 7
+					- Robin
+				- 8
+					- Robin
 		[_0] Fragen an inhaltlichen Korrekturleser
 			- nach lesen von Kapitel 4 (Datenstruktur Baum) und 5.3 (Umsetzung.Implementierung), was bleiben noch für Fragen offen bzgl Bäume?
+		
 		
 	- noch vielleicht reinbringen
 		[X2] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ?? (wenn dann zoomen plus eventuell bewegen)
@@ -109,7 +141,7 @@
 		[_2] Anhang wie?
 		[_2] Alle Wörter, die abkürzbar sind, einheitlich abkürzen oder nicht abkürzen: ggf., bspw., z.B., u.a.,...
 		[_4] Einleitungssätze auch für (alle) Unterkapitel??
-		[_0] In 7.2 nice to have stuff reinbringen ??? 
+		[_?] In 7.2 nice to have stuff reinbringen ??? 
 			"Weniger wichtig, aber mögliche punkte, wären:"
 				- Button zum Zurücksetzen des Zooms 
 				- Button zum Zurücksetzen der Translation
@@ -118,6 +150,7 @@
 					- Button um Pause zu drücken
 					- automatisches Skalieren bei complete visualization (bei Bäumen gut zu beobachten)
 				- Animationen schneller oder langsamer zur Laufzeit machen können.
+		[_?] Folgendes irgendwie einbringen?? "Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen." [Ottmann 259 (278) Kapitel 5 Bäume]}
 		
 	- geschriebenes überarbeiten
 	- verlinkungen zu nutzungen der terminologie begriffe
