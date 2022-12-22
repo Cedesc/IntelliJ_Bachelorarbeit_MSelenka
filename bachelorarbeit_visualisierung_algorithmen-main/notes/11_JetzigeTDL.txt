@@ -74,11 +74,7 @@
 			- 8 Zusammenfassung
 				- [X1] Inhalt
 		[X0] Mit IntelliJ auf Rechtschreibung prüfen
-		
-
-
-		
-		[_10] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
+		[X10 gefühlt 100] in latex einbringen (dabei auch um die latex bezogenen ToDos in den Texten kümmern)
 			[X] Auflistungen korrekt darstellen lassen
 			[X] Matheumgebungen richtig setzen
 			[X] Grafiken korrekt trennen und als einzelne Grafiken einbringen (aufpassen, dass alles leserlich ist, ggf zusammenrücken)
@@ -92,79 +88,59 @@
 			[X] Wie mach ich das mit dem Quellenverweis auf die BA von Selenka?
 			[X] Info-Datenstruktur kursiv oder in Anführungszeichen? => nichts
 			[X] Website-Verweise einbringen
-			[ ] Quellenverweise einbringen
-			[ ] Vernünftige Absätze einbringen
-			[ ] Grafiken so anbringen, dass sie richtig zusammen angezeigt werden
-			[ ] Größen der Grafiken anpassen
-			[ ] Fußnoten ?
-			[ ] Grafiken zu Anhang hinzufügen
-			[ ] nach Dingen suchen
-				- PLATZHALTER
-				- Anführungszeichen
-			[ ] "Listing" zu "Codeabschnitt" umbenennen
-			[ ] in bibliografy die zwei defaults löschen
-		[_0] Alles an "ConfigReader" raushauen
-		[_12 , X6] Sachen aus "noch vielleicht einbringen"
-		[_0] Leute Korrekturlesen lassen
-			- einmal für Rechtschreibung
-				- Dinah ?
-				- Selina ?
-				- Alice ?
-			- einmal für Inhaltliches
-				- Mateusz ? Bisschen zu spät i guess, wegen seiner BA
+			[X] Quellenverweise einbringen
+			[X] in bibliografy die defaults löschen
+			[X] Vernünftige Absätze einbringen
+		[X0] Leute Korrekturlesen lassen
 			- Gliederung
 				- 1
 					- Dinah
-				- 2
-				- 3
-				- 4
-				- 5
+				- 2 
+					- Selina
+				- 3 
+					- Selina
+				- 4 
+					- Dinah 
+				- 5 
+					- Dinah
 				- 6
+					- Dinah
 				- 7
 					- Robin
 				- 8
 					- Robin
-		[_0] Fragen an inhaltlichen Korrekturleser
-			- nach lesen von Kapitel 4 (Datenstruktur Baum) und 5.3 (Umsetzung.Implementierung), was bleiben noch für Fragen offen bzgl Bäume?
+			[X] Änderungsvorschläge einbringen
+			[X] Fragen an Mateusz
+				[X] Direktes Zitat?
+				[X] "Listing" (Codeabschnitt) und "List of Listings" (Code Verzeichnis) umbenennen?
+				[X] wie mit "appendix" verfahren? 
+					- umbenennen?
+				[X] acknowledgement löschen
+				[X] Grafiken mit UML-Diagramm so nennen? Oder mit "Ausschnitt aus..."
+				[X] Grafiken kleiner / größer?
+			[X] Abb. 2.4 (Visualization in Bäumen) und Abb. 2.6 "Erweiterung um visuelle funktionalitäten" in zum code packen
+			[X] Fußnoten einbringen
+			[X] Grafiken hochladen auf gitlab zum code
+			[X] nach Wörtern suchen
+				[X] PLATZHALTER
+				[X] Anführungszeichen
+				[X] todo
+				[X] Selina
+				[X] Mateusz
+			[X] Alle Warnungen von Overleaf abarbeiten
+			[X] Einmal komplett durchlesen
+			
+			
+			
+		[X0] 1. Auf USB-Stick laden
+		[X0] 2. USB-Stick einpacken
+		[X0] 3. Digital unterschreiben
+		[_0] 4. Per Mail schicken 
+			- Studienbüro
+			- Endler und Fischer
 		
-		
-	- noch vielleicht reinbringen
-		[X2] Screenshots aus Programm (also der ausgeführten Anwendung) einbauen ?? (wenn dann zoomen plus eventuell bewegen)
-		[X2] "5.? Neue Struktur der Architektur" aufsplitten auf die beiden Sachen davor?
-		[X2] UML Sequenz Diagramm zu controller.ExecuteAlgorithmController.initialize() (wegen SceneGestures und NodeGestures um zu sehen, wann diese mit reinspielen) erstellen??? Oder zu controller.ExecuteAlgorithmController.updateVisualization()???
-		[X0] Selbstgemachte Grafik, in der an einem Baum die ganzen Sachen beschriftet ist????? Eher nicht
-		- UML Sequenzdiagramm:
-			[_4] Sequenzdiagramm für visualisierung mit drawBefehl für Bäume ?
-				- Vergleich zu alter Methode
-				- wohin? (5.1 / 5.2)
-				- zu beachten: man muss auch was dazu schreiben
-		[_2] Anhang wie?
-		[_2] Alle Wörter, die abkürzbar sind, einheitlich abkürzen oder nicht abkürzen: ggf., bspw., z.B., u.a.,...
-		[_4] Einleitungssätze auch für (alle) Unterkapitel??
-		[_?] In 7.2 nice to have stuff reinbringen ??? 
-			"Weniger wichtig, aber mögliche punkte, wären:"
-				- Button zum Zurücksetzen des Zooms 
-				- Button zum Zurücksetzen der Translation
-				- Mehr Optionen bei complete visualization:
-					- Button um direkt zum Endergebnis zu springen
-					- Button um Pause zu drücken
-					- automatisches Skalieren bei complete visualization (bei Bäumen gut zu beobachten)
-				- Animationen schneller oder langsamer zur Laufzeit machen können.
-		[_?] Folgendes irgendwie einbringen?? "Bäume gehören zu den wichtigsten in der Informatik auftretenden Datenstrukturen. Entscheidungsbäume, Syntaxbäume, Ableitungsbäume, Kodebäume, spannende Bäume, baumartig strukturierte Suchräume, Suchbäume und viele andere belegen die Allgegenwart von Bäumen." [Ottmann 259 (278) Kapitel 5 Bäume]}
-		
-	- geschriebenes überarbeiten
-	- verlinkungen zu nutzungen der terminologie begriffe
-	- überall "ich" mit "wir" und "man" mit passivem ersetzen
-	- Bei Websites auch letzter Zugriff angeben
-	- Klassen in Text erwähnen mit dieser Schriftart aus der anderen BA
-	- Alle "PLATZHALTER" rausschmeißen
-	- alle funktionen, klassen etc im text in anderer schriftweise schreiben und ohne anführungszeichen
-	- ToDo's:
-		- Was muss ich beim abgeben beachten?
-			- ausgedruckt im studienbüro abgeben?
-			- noch irgendwas bzgl dem code tun? Reicht es, dass der in gitlab ist? Muss ich noch explizit drauf verweisen, dass der dort vorliegt?
-	- Achtung: Bei "4.? Algorithmus zum Baum visualisieren" wurde der erste Absatz rausgenommen, was ich auch bei Latex nochmal anpassen sollte
-		- generell, wenn ich alles (bzw das meiste) geschrieben habe, sollte ich aus den txt Dateien sicherheitshalber nochmal alles neu einsetzen
+
+
 
 
 
